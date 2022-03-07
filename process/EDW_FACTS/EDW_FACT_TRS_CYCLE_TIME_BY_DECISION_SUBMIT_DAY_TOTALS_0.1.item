@@ -1,0 +1,1684 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Development" jobType="Standard" xmi:version="2.0">
+  <context confirmationNeeded="false" name="QA">
+    <contextParameter comment="" name="parameter_etl_job_name" prompt="parameter_etl_job_name?" promptNeeded="false" type="id_String" value="TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS"/>
+    <contextParameter comment="" name="parameter_base_etl_file_path" prompt="parameter_base_etl_file_path?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="c:/Talend/ETL/files/QA"/>
+    <contextParameter comment="" name="parameter_flow_file_name" prompt="parameter_flow_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_flow_pivot_file_name" prompt="parameter_flow_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot_flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_pivot_file_name" prompt="parameter_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name" prompt="parameter_records_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name_hist" prompt="parameter_records_file_name_hist?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records_hist.csv"/>
+    <contextParameter comment="" name="parameter_edw_hist_inserted" prompt="parameter_edw_hist_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_hist_updated" prompt="parameter_edw_hist_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_inserted" prompt="parameter_edw_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_removed" prompt="parameter_edw_removed?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_updated" prompt="parameter_edw_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_id" prompt="parameter_etl_job_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_run_id" prompt="parameter_etl_job_run_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_last_run_date" prompt="parameter_etl_last_run_date?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_Date" value="2018-01-01 00:00:00"/>
+    <contextParameter comment="" name="parameter_edw_hist_insert_updated" prompt="parameter_edw_hist_insert_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="connection_OracleEDW_AdditionalParams" prompt="connection_OracleEDW_AdditionalParams?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDW_Login" prompt="connection_OracleEDW_Login?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDW_Password" prompt="connection_OracleEDW_Password?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:KfdBCYZoCF361jXo4ClBDN/Ctkx22gzNGZtf9QmrmeFlIYITlJXa2Q=="/>
+    <contextParameter comment="" name="connection_OracleEDW_Port" prompt="connection_OracleEDW_Port?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDW_Schema" prompt="connection_OracleEDW_Schema?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="EDW"/>
+    <contextParameter comment="" name="connection_OracleEDW_Server" prompt="connection_OracleEDW_Server?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="cltp10-ldbqa.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDW_ServiceName" prompt="connection_OracleEDW_ServiceName?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="DBQA07"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_AdditionalParams" prompt="connection_OracleEDWHist_AdditionalParams?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Login" prompt="connection_OracleEDWHist_Login?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Password" prompt="connection_OracleEDWHist_Password?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:rxhX7tnDjx+sG+YzLCKyamTyAFS1kSFrrJFZuB3FqqfcrqHYinj9SQ=="/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Port" prompt="connection_OracleEDWHist_Port?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Schema" prompt="connection_OracleEDWHist_Schema?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="EDW_HIST"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Server" prompt="connection_OracleEDWHist_Server?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="cltp10-ldbqa.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_ServiceName" prompt="connection_OracleEDWHist_ServiceName?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="DBQA07"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_AdditionalParams" prompt="connection_OracleEDWStg_AdditionalParams?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Login" prompt="connection_OracleEDWStg_Login?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Password" prompt="connection_OracleEDWStg_Password?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_Password" value="enc:system.encryption.key.v1:zPVQUzCsbql534gzippx/yPP3egzAP6Ag8UM9yNsCz3oLsHZHI3FrA=="/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Port" prompt="connection_OracleEDWStg_Port?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Schema" prompt="connection_OracleEDWStg_Schema?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="EDW_STG"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Server" prompt="connection_OracleEDWStg_Server?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="cltp10-ldbqa.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_ServiceName" prompt="connection_OracleEDWStg_ServiceName?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="DBQA07"/>
+    <contextParameter comment="" name="connection_OracleTRS_AdditionalParams" prompt="connection_OracleTRS_AdditionalParams?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleTRS_Login" prompt="connection_OracleTRS_Login?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleTRS_Password" prompt="connection_OracleTRS_Password?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:k3qqWle7CMtshYTwN02KOUAqxJO0vd9uxkExS3TpcAZK/JRBDcGNRA=="/>
+    <contextParameter comment="" name="connection_OracleTRS_Port" prompt="connection_OracleTRS_Port?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleTRS_Schema" prompt="connection_OracleTRS_Schema?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TRS"/>
+    <contextParameter comment="" name="connection_OracleTRS_Server" prompt="connection_OracleTRS_Server?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="cltp10-ldbqa.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleTRS_ServiceName" prompt="connection_OracleTRS_ServiceName?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="DBQA07"/>
+  </context>
+  <context confirmationNeeded="false" name="Load">
+    <contextParameter comment="" name="parameter_etl_job_name" prompt="parameter_etl_job_name?" promptNeeded="false" type="id_String" value="TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS"/>
+    <contextParameter comment="" name="parameter_base_etl_file_path" prompt="parameter_base_etl_file_path?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="c:/Talend/ETL/files/Load"/>
+    <contextParameter comment="" name="parameter_flow_file_name" prompt="parameter_flow_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_flow_pivot_file_name" prompt="parameter_flow_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot_flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_pivot_file_name" prompt="parameter_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name" prompt="parameter_records_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name_hist" prompt="parameter_records_file_name_hist?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records_hist.csv"/>
+    <contextParameter comment="" name="parameter_edw_hist_inserted" prompt="parameter_edw_hist_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_hist_updated" prompt="parameter_edw_hist_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_inserted" prompt="parameter_edw_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_removed" prompt="parameter_edw_removed?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_updated" prompt="parameter_edw_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_id" prompt="parameter_etl_job_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_run_id" prompt="parameter_etl_job_run_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_last_run_date" prompt="parameter_etl_last_run_date?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_Date" value="2018-01-01 00:00:00"/>
+    <contextParameter comment="" name="parameter_edw_hist_insert_updated" prompt="parameter_edw_hist_insert_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="connection_OracleEDW_AdditionalParams" prompt="connection_OracleEDW_AdditionalParams?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDW_Login" prompt="connection_OracleEDW_Login?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDW_Password" prompt="connection_OracleEDW_Password?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:vZ11XgE8O5Jl6bp0/IPr2hM/BTaTFxKN+1R9lxUp4Qk/TsHo0Kqh1A=="/>
+    <contextParameter comment="" name="connection_OracleEDW_Port" prompt="connection_OracleEDW_Port?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDW_Schema" prompt="connection_OracleEDW_Schema?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="EDW"/>
+    <contextParameter comment="" name="connection_OracleEDW_Server" prompt="connection_OracleEDW_Server?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="cltp10-ldbload.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDW_ServiceName" prompt="connection_OracleEDW_ServiceName?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="DBLOAD11"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_AdditionalParams" prompt="connection_OracleEDWHist_AdditionalParams?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Login" prompt="connection_OracleEDWHist_Login?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Password" prompt="connection_OracleEDWHist_Password?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:yxvJdLBQmDIOMEhkM6PYKXxcsczwmelsXxaJyR5Ne7LSHe6BqL8UTw=="/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Port" prompt="connection_OracleEDWHist_Port?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Schema" prompt="connection_OracleEDWHist_Schema?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="EDW_HIST"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Server" prompt="connection_OracleEDWHist_Server?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="cltp10-ldbload.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_ServiceName" prompt="connection_OracleEDWHist_ServiceName?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="DBLOAD11"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_AdditionalParams" prompt="connection_OracleEDWStg_AdditionalParams?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Login" prompt="connection_OracleEDWStg_Login?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Password" prompt="connection_OracleEDWStg_Password?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_Password" value="enc:system.encryption.key.v1:fxXJ4M5ym+/mWRwT2Pnl595rZpiLdjdQFBRSxb6/Ef8QwlvnMWM13g=="/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Port" prompt="connection_OracleEDWStg_Port?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Schema" prompt="connection_OracleEDWStg_Schema?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="EDW_STG"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Server" prompt="connection_OracleEDWStg_Server?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="cltp10-ldbload.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_ServiceName" prompt="connection_OracleEDWStg_ServiceName?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="DBLOAD11"/>
+    <contextParameter comment="" name="connection_OracleTRS_AdditionalParams" prompt="connection_OracleTRS_AdditionalParams?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleTRS_Login" prompt="connection_OracleTRS_Login?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleTRS_Password" prompt="connection_OracleTRS_Password?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:AGagxTfNgmN0VSLVnHKdJVT4nKZAj2O4kba7IN1iJqlUQj8r/OgwnA=="/>
+    <contextParameter comment="" name="connection_OracleTRS_Port" prompt="connection_OracleTRS_Port?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleTRS_Schema" prompt="connection_OracleTRS_Schema?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TRS"/>
+    <contextParameter comment="" name="connection_OracleTRS_Server" prompt="connection_OracleTRS_Server?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="cltp10-ldbload.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleTRS_ServiceName" prompt="connection_OracleTRS_ServiceName?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="DBLOAD11"/>
+  </context>
+  <context confirmationNeeded="false" name="Production">
+    <contextParameter comment="" name="parameter_etl_job_name" prompt="parameter_etl_job_name?" promptNeeded="false" type="id_String" value="TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS"/>
+    <contextParameter comment="" name="parameter_base_etl_file_path" prompt="parameter_base_etl_file_path?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="E:/Talend/ETL/files/Prod"/>
+    <contextParameter comment="" name="parameter_flow_file_name" prompt="parameter_flow_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_flow_pivot_file_name" prompt="parameter_flow_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot_flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_pivot_file_name" prompt="parameter_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name" prompt="parameter_records_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name_hist" prompt="parameter_records_file_name_hist?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records_hist.csv"/>
+    <contextParameter comment="" name="parameter_edw_hist_inserted" prompt="parameter_edw_hist_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_hist_updated" prompt="parameter_edw_hist_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_inserted" prompt="parameter_edw_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_removed" prompt="parameter_edw_removed?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_updated" prompt="parameter_edw_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_id" prompt="parameter_etl_job_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_run_id" prompt="parameter_etl_job_run_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_last_run_date" prompt="parameter_etl_last_run_date?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_Date" value="2018-01-01 00:00:00"/>
+    <contextParameter comment="" name="parameter_edw_hist_insert_updated" prompt="parameter_edw_hist_insert_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="connection_OracleEDW_AdditionalParams" prompt="connection_OracleEDW_AdditionalParams?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDW_Login" prompt="connection_OracleEDW_Login?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDW_Password" prompt="connection_OracleEDW_Password?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_Password" value=""/>
+    <contextParameter comment="" name="connection_OracleEDW_Port" prompt="connection_OracleEDW_Port?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDW_Schema" prompt="connection_OracleEDW_Schema?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="EDW"/>
+    <contextParameter comment="" name="connection_OracleEDW_Server" prompt="connection_OracleEDW_Server?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="dbrpt.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDW_ServiceName" prompt="connection_OracleEDW_ServiceName?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="DBRPT"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_AdditionalParams" prompt="connection_OracleEDWHist_AdditionalParams?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Login" prompt="connection_OracleEDWHist_Login?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Password" prompt="connection_OracleEDWHist_Password?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_Password" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Port" prompt="connection_OracleEDWHist_Port?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Schema" prompt="connection_OracleEDWHist_Schema?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="EDW_HIST"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Server" prompt="connection_OracleEDWHist_Server?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="dbrpt.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_ServiceName" prompt="connection_OracleEDWHist_ServiceName?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="DBRPT"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_AdditionalParams" prompt="connection_OracleEDWStg_AdditionalParams?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Login" prompt="connection_OracleEDWStg_Login?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Password" prompt="connection_OracleEDWStg_Password?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_Password" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Port" prompt="connection_OracleEDWStg_Port?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Schema" prompt="connection_OracleEDWStg_Schema?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="EDW_STG"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Server" prompt="connection_OracleEDWStg_Server?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="dbrpt.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_ServiceName" prompt="connection_OracleEDWStg_ServiceName?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="DBRPT"/>
+    <contextParameter comment="" name="connection_OracleTRS_AdditionalParams" prompt="connection_OracleTRS_AdditionalParams?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleTRS_Login" prompt="connection_OracleTRS_Login?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleTRS_Password" prompt="connection_OracleTRS_Password?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_Password" value=""/>
+    <contextParameter comment="" name="connection_OracleTRS_Port" prompt="connection_OracleTRS_Port?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleTRS_Schema" prompt="connection_OracleTRS_Schema?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TRS"/>
+    <contextParameter comment="" name="connection_OracleTRS_Server" prompt="connection_OracleTRS_Server?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="dbrpt.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleTRS_ServiceName" prompt="connection_OracleTRS_ServiceName?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="DBRPT"/>
+  </context>
+  <context confirmationNeeded="false" name="Development">
+    <contextParameter comment="" name="parameter_etl_job_name" prompt="parameter_etl_job_name?" promptNeeded="false" type="id_String" value="TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS"/>
+    <contextParameter comment="" name="parameter_base_etl_file_path" prompt="parameter_base_etl_file_path?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="C:/Talend/ETL/files/Dev"/>
+    <contextParameter comment="" name="parameter_flow_file_name" prompt="parameter_flow_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_flow_pivot_file_name" prompt="parameter_flow_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot_flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_pivot_file_name" prompt="parameter_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name" prompt="parameter_records_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name_hist" prompt="parameter_records_file_name_hist?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records_hist.csv"/>
+    <contextParameter comment="" name="parameter_edw_hist_inserted" prompt="parameter_edw_hist_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_hist_updated" prompt="parameter_edw_hist_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_inserted" prompt="parameter_edw_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_removed" prompt="parameter_edw_removed?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_updated" prompt="parameter_edw_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_id" prompt="parameter_etl_job_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_run_id" prompt="parameter_etl_job_run_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_last_run_date" prompt="parameter_etl_last_run_date?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_Date" value="2018-01-01 00:00:00"/>
+    <contextParameter comment="" name="parameter_edw_hist_insert_updated" prompt="parameter_edw_hist_insert_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="connection_OracleEDW_AdditionalParams" prompt="connection_OracleEDW_AdditionalParams?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDW_Login" prompt="connection_OracleEDW_Login?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDW_Password" prompt="connection_OracleEDW_Password?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:b1O5q4Ls7I+PSxD3WmU9jEiW9jquDM44hwVu+Z5UZS0vd70acl8tMQ=="/>
+    <contextParameter comment="" name="connection_OracleEDW_Port" prompt="connection_OracleEDW_Port?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDW_Schema" prompt="connection_OracleEDW_Schema?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="EDW"/>
+    <contextParameter comment="" name="connection_OracleEDW_Server" prompt="connection_OracleEDW_Server?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="tpap10-ldbdev.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDW_ServiceName" prompt="connection_OracleEDW_ServiceName?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="DBDI02"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_AdditionalParams" prompt="connection_OracleEDWHist_AdditionalParams?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Login" prompt="connection_OracleEDWHist_Login?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Password" prompt="connection_OracleEDWHist_Password?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:kx2QMQhuRiYuAJ125M+hvi3oy78ctM3RYVCk+Lt/7iPHeLZDBE1edg=="/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Port" prompt="connection_OracleEDWHist_Port?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Schema" prompt="connection_OracleEDWHist_Schema?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="EDW_HIST"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Server" prompt="connection_OracleEDWHist_Server?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="tpap10-ldbdev.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_ServiceName" prompt="connection_OracleEDWHist_ServiceName?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="DBDI02"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_AdditionalParams" prompt="connection_OracleEDWStg_AdditionalParams?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Login" prompt="connection_OracleEDWStg_Login?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Password" prompt="connection_OracleEDWStg_Password?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_Password" value="enc:system.encryption.key.v1:XbiOUQvVeS53nmA/0s2txFntBNtDmnyqpl+l7PXe61rGG2Xi8CFzXQ=="/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Port" prompt="connection_OracleEDWStg_Port?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Schema" prompt="connection_OracleEDWStg_Schema?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="EDW_STG"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Server" prompt="connection_OracleEDWStg_Server?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="tpap10-ldbdev.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_ServiceName" prompt="connection_OracleEDWStg_ServiceName?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="DBDI02"/>
+    <contextParameter comment="" name="connection_OracleTRS_AdditionalParams" prompt="connection_OracleTRS_AdditionalParams?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleTRS_Login" prompt="connection_OracleTRS_Login?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleTRS_Password" prompt="connection_OracleTRS_Password?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:Us+KrpUBFhfePUD0Bi+EN/HaXbGwpfInwhDC2HdubWBvOZB72bliGQ=="/>
+    <contextParameter comment="" name="connection_OracleTRS_Port" prompt="connection_OracleTRS_Port?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleTRS_Schema" prompt="connection_OracleTRS_Schema?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TRS"/>
+    <contextParameter comment="" name="connection_OracleTRS_Server" prompt="connection_OracleTRS_Server?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="tpap10-ldbdev.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleTRS_ServiceName" prompt="connection_OracleTRS_ServiceName?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="DBDI02"/>
+  </context>
+  <context confirmationNeeded="false" name="UAT">
+    <contextParameter comment="" name="parameter_etl_job_name" prompt="parameter_etl_job_name?" promptNeeded="false" type="id_String" value="TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS"/>
+    <contextParameter comment="" name="parameter_base_etl_file_path" prompt="parameter_base_etl_file_path?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="c:/Talend/ETL/files/UAT"/>
+    <contextParameter comment="" name="parameter_flow_file_name" prompt="parameter_flow_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_flow_pivot_file_name" prompt="parameter_flow_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot_flow_rows.csv"/>
+    <contextParameter comment="" name="parameter_pivot_file_name" prompt="parameter_pivot_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="pivot.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name" prompt="parameter_records_file_name?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records.csv"/>
+    <contextParameter comment="" name="parameter_records_file_name_hist" prompt="parameter_records_file_name_hist?" promptNeeded="false" repositoryContextId="_TzUhAMOqEeqn05jyT66QIw" type="id_String" value="records_hist.csv"/>
+    <contextParameter comment="" name="parameter_edw_hist_inserted" prompt="parameter_edw_hist_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_hist_updated" prompt="parameter_edw_hist_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_inserted" prompt="parameter_edw_inserted?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_removed" prompt="parameter_edw_removed?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_edw_updated" prompt="parameter_edw_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_id" prompt="parameter_etl_job_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_job_run_id" prompt="parameter_etl_job_run_id?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="parameter_etl_last_run_date" prompt="parameter_etl_last_run_date?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_Date" value="2018-01-01 00:00:00"/>
+    <contextParameter comment="" name="parameter_edw_hist_insert_updated" prompt="parameter_edw_hist_insert_updated?" promptNeeded="false" repositoryContextId="_vfQuQE9wEeuuxPMAGHgmhw" type="id_BigDecimal" value="0"/>
+    <contextParameter comment="" name="connection_OracleEDW_AdditionalParams" prompt="connection_OracleEDW_AdditionalParams?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDW_Login" prompt="connection_OracleEDW_Login?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDW_Password" prompt="connection_OracleEDW_Password?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:H2teXdOR3tqWFQlkkeE5LVG0B5NBXnhsboLqWjkkNCReveBevS7XRA=="/>
+    <contextParameter comment="" name="connection_OracleEDW_Port" prompt="connection_OracleEDW_Port?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDW_Schema" prompt="connection_OracleEDW_Schema?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="EDW"/>
+    <contextParameter comment="" name="connection_OracleEDW_Server" prompt="connection_OracleEDW_Server?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="cltp10-ldbuat.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDW_ServiceName" prompt="connection_OracleEDW_ServiceName?" promptNeeded="false" repositoryContextId="_UoYdMMg-EeqrSa5zYoov6g" type="id_String" value="DBUAT1"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_AdditionalParams" prompt="connection_OracleEDWHist_AdditionalParams?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Login" prompt="connection_OracleEDWHist_Login?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Password" prompt="connection_OracleEDWHist_Password?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:ip/kxbwwnPJo9GOVyPrTxTPBi9MfnSIxFOuwUF6+IKNO5K8zu/BXXQ=="/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Port" prompt="connection_OracleEDWHist_Port?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Schema" prompt="connection_OracleEDWHist_Schema?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="EDW_HIST"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_Server" prompt="connection_OracleEDWHist_Server?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="cltp10-ldbuat.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWHist_ServiceName" prompt="connection_OracleEDWHist_ServiceName?" promptNeeded="false" repositoryContextId="_izRvcMhbEeqrSa5zYoov6g" type="id_String" value="DBUAT01"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_AdditionalParams" prompt="connection_OracleEDWStg_AdditionalParams?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Login" prompt="connection_OracleEDWStg_Login?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Password" prompt="connection_OracleEDWStg_Password?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_Password" value="enc:system.encryption.key.v1:zriQZ/eYKdqMbJKWzLw5b7e3iIOXwL4VYxx8k2g0dkEISi4v4PrWdw=="/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Port" prompt="connection_OracleEDWStg_Port?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Schema" prompt="connection_OracleEDWStg_Schema?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="EDW_STG"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_Server" prompt="connection_OracleEDWStg_Server?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="cltp10-ldbuat.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleEDWStg_ServiceName" prompt="connection_OracleEDWStg_ServiceName?" promptNeeded="false" repositoryContextId="_MpPk8N5OEequQJbpOXQMpA" type="id_String" value="DBUAT1"/>
+    <contextParameter comment="" name="connection_OracleTRS_AdditionalParams" prompt="connection_OracleTRS_AdditionalParams?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_OracleTRS_Login" prompt="connection_OracleTRS_Login?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TALEND_USER"/>
+    <contextParameter comment="" name="connection_OracleTRS_Password" prompt="connection_OracleTRS_Password?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_Password" value="enc:system.encryption.key.v1:BFkc4TX5gNSj4SlW1cYyehVAZIYuQb0FnlICadpUlSD+7UZ0g+P0Jg=="/>
+    <contextParameter comment="" name="connection_OracleTRS_Port" prompt="connection_OracleTRS_Port?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="1521"/>
+    <contextParameter comment="" name="connection_OracleTRS_Schema" prompt="connection_OracleTRS_Schema?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="TRS"/>
+    <contextParameter comment="" name="connection_OracleTRS_Server" prompt="connection_OracleTRS_Server?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="cltp10-ldbuat.arbfile.org"/>
+    <contextParameter comment="" name="connection_OracleTRS_ServiceName" prompt="connection_OracleTRS_ServiceName?" promptNeeded="false" repositoryContextId="_gVOCUMg_EeqrSa5zYoov6g" type="id_String" value="DBUAT01"/>
+  </context>
+  <parameters>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="480"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" show="false" value=""/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" show="false" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:g2lZVZqWvjTtxk/+lHdIUdgkQSNMJfYokPIPSXzI"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" show="false" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" show="false" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/Talend/Talend-Studio-20200219_1130-V7.3.1/workspace/.metadata&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="tJDBCOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:7GJWOuMmc81ONBNCuF/bjdaOdcsjsZGEN6ms+hMC"/>
+    <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
+    <routinesParameter id="__7OMwMIKEeqRu4gqjENfLg" name="DQTechnical"/>
+    <routinesParameter id="__6XRIMIKEeqRu4gqjENfLg" name="DataMasking"/>
+    <routinesParameter id="__0hu4MIKEeqRu4gqjENfLg" name="DataOperation"/>
+    <routinesParameter id="__6zWAMIKEeqRu4gqjENfLg" name="DataQualityDependencies"/>
+    <routinesParameter id="__6mhsMIKEeqRu4gqjENfLg" name="DataQuality"/>
+    <routinesParameter id="__7AKUMIKEeqRu4gqjENfLg" name="DqStringHandling"/>
+    <routinesParameter id="__1uBsMIKEeqRu4gqjENfLg" name="Mathematical"/>
+    <routinesParameter id="__2DY4MIKEeqRu4gqjENfLg" name="Numeric"/>
+    <routinesParameter id="__2SCYMIKEeqRu4gqjENfLg" name="Relational"/>
+    <routinesParameter id="__6InoMIKEeqRu4gqjENfLg" name="SQLike"/>
+    <routinesParameter id="__2gE0MIKEeqRu4gqjENfLg" name="StringHandling"/>
+    <routinesParameter id="__5MMcMIKEeqRu4gqjENfLg" name="TalendDataGenerator"/>
+    <routinesParameter id="__5cEEMIKEeqRu4gqjENfLg" name="TalendDate"/>
+    <routinesParameter id="__57zUMIKEeqRu4gqjENfLg" name="TalendStringUtil"/>
+    <routinesParameter id="__5siwMIKEeqRu4gqjENfLg" name="TalendString"/>
+  </parameters>
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-288" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Failed opening TRS connection&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="4"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
+    <elementParameter field="CHECK" name="EXIT_JVM" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDie_1"/>
+  </node>
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-160" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_2"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Failed opening EDW connection&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="4"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
+    <elementParameter field="CHECK" name="EXIT_JVM" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDie_2"/>
+  </node>
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_4"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Failed opening EDW_STG connection&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="4"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
+    <elementParameter field="CHECK" name="EXIT_JVM" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDie_4"/>
+  </node>
+  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-448" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tFileDelete" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-448" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileDelete_1"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.parameter_base_etl_file_path +&quot;/&quot; + context.parameter_etl_job_name + &quot;/&quot; + context.parameter_flow_file_name"/>
+    <elementParameter field="DIRECTORY" name="DIRECTORY" show="false" value="&quot;/Applications/TOSDI-7.3.1/studio/workspace/delete_folder&quot;"/>
+    <elementParameter field="TEXT" name="PATH" show="false" value="&quot;/Applications/TOSDI-7.3.1/studio/workspace/delete_folder or delete_file&quot;"/>
+    <elementParameter field="CHECK" name="FAILON" value="false"/>
+    <elementParameter field="CHECK" name="FOLDER" value="false"/>
+    <elementParameter field="CHECK" name="FOLDER_FILE" value="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note &quot;CURRENT_STATUS&quot; including:&#10;&quot;File (or path) deleted.&quot;&#10;&quot;No file (or path) deleted.&quot;&#10;&quot;File (or path) does not exist or is invalid.&quot;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileDelete_1"/>
+  </node>
+  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-448" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_1"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
+    <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
+    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="GET_ETL_JOB_RUN_ID"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_CONTEXT" value="Development"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="LOCAL_PROJECT:_LCMmIJkXEeqQsqWqMlaz0A"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="TEXT" name="CONTEXT_NAME" show="false" value="Default"/>
+    <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_CHILD_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="TRANSMIT_WHOLE_CONTEXT" value="true"/>
+    <elementParameter field="TABLE" name="CONTEXTPARAMS">
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="parameter_etl_job_name"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.parameter_etl_job_name"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
+    <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CHILD_JVM_SETTING" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CUSTOM_JVM_SETTING" show="false" value="false"/>
+    <elementParameter field="TABLE" name="JVM_ARGUMENTS" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tRunJob_1">
+      <column comment="The primary key for the ETL Job Run." defaultValue="" key="false" length="16" name="JOB_RUN_ID" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value="The primary key for the ETL Job Run."/>
+      </column>
+      <column comment="" key="false" length="-1" name="LAST_RUN_DATE" nullable="true" originalLength="-1" pattern="&quot;yyyyMMdd HHmmss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="JOB_ID" nullable="true" originalLength="16" pattern="" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-320" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;context.parameter_etl_job_run_id = input_row.JOB_RUN_ID;&#10;context.parameter_etl_last_run_date = input_row.LAST_RUN_DATE;&#10;context.parameter_etl_job_id = input_row.JOB_ID;"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_1"/>
+  </node>
+  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-288" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_H5FDkMg_EeqrSa5zYoov6g"/>
+    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="RAC_URL" show="false" value="context.connection_OracleTRS_Server"/>
+    <elementParameter field="CHECK" name="USE_TNS_FILE" value="false"/>
+    <elementParameter field="FILE" name="TNS_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TNS_EDITOR" name="TNS_EDITOR" show="false" value=""/>
+    <elementParameter field="TEXT" name="HOST" value="context.connection_OracleTRS_Server"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter field="TEXT" name="PORT" value="context.connection_OracleTRS_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.connection_OracleTRS_ServiceName"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="context.connection_OracleTRS_ServiceName"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_OracleTRS_Schema"/>
+    <elementParameter field="TEXT" name="USER" value="context.connection_OracleTRS_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:CjxShQsmay90dEQfZ8fAu5bNqYxzYFnJic1zHsnN0rmh1RBMKRaVoHKZEo7o5XqzsVVU60BiWrGBbfnyCPWgxWQ="/>
+    <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
+    <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:HAffD9ssplIpYSEF64ahLBg0cq1q9y/mdePPI7im"/>
+    <elementParameter field="CHECK" name="NEED_CLIENT_AUTH" show="false" value="false"/>
+    <elementParameter field="FILE" name="SSL_KEYSTORE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:jmjKdVD7EHgHrqE0r+Hq/z8QbRV5ggT9CJiskk7w"/>
+    <elementParameter field="CHECK" name="DISABLE_CBC_PROTECTION" show="false" value="true"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.connection_OracleTRS_AdditionalParams"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" show="false" value=""/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:thin:USER/MDP@server&quot;"/>
+    <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="TRS"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-192" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;ETL_JOB_RUN_ID: &quot; +context.parameter_etl_job_run_id);&#10;System.out.println(&quot;ETL_JOB_ID: &quot; +context.parameter_etl_job_id);&#10;System.out.println(&quot;ETL_JOB_NAME: &quot; +context.parameter_etl_job_name);"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_1"/>
+  </node>
+  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-160" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_2"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_g6zqYMg5EeqrSa5zYoov6g"/>
+    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="RAC_URL" show="false" value="context.connection_OracleEDW_Server"/>
+    <elementParameter field="CHECK" name="USE_TNS_FILE" value="false"/>
+    <elementParameter field="FILE" name="TNS_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TNS_EDITOR" name="TNS_EDITOR" show="false" value=""/>
+    <elementParameter field="TEXT" name="HOST" value="context.connection_OracleEDW_Server"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter field="TEXT" name="PORT" value="context.connection_OracleEDW_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.connection_OracleEDW_ServiceName"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="context.connection_OracleEDW_ServiceName"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_OracleEDW_Schema"/>
+    <elementParameter field="TEXT" name="USER" value="context.connection_OracleEDW_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ysekA/Etasw9j14EhcPidDUCt2EYdnkCXozu4adMVCDnsmcHRiycCigGHJcgDkGcGl9bgncsgKzesCJCZzg5k7c="/>
+    <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
+    <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:akUDyHxhXfB9LE9xrhVt/lqtCv0VN2IefzMzggc5"/>
+    <elementParameter field="CHECK" name="NEED_CLIENT_AUTH" show="false" value="false"/>
+    <elementParameter field="FILE" name="SSL_KEYSTORE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:c4OAFAT+mn/1Ylo6PmbOSkIpD7yBbIffpgTL9Kan"/>
+    <elementParameter field="CHECK" name="DISABLE_CBC_PROTECTION" show="false" value="true"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.connection_OracleEDW_AdditionalParams"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" show="false" value=""/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:thin:USER/MDP@server&quot;"/>
+    <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="EDW"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_3"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_SymhIMhbEeqrSa5zYoov6g"/>
+    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="RAC_URL" show="false" value="context.connection_OracleEDWHist_Server"/>
+    <elementParameter field="CHECK" name="USE_TNS_FILE" value="false"/>
+    <elementParameter field="FILE" name="TNS_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TNS_EDITOR" name="TNS_EDITOR" show="false" value=""/>
+    <elementParameter field="TEXT" name="HOST" value="context.connection_OracleEDWHist_Server"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter field="TEXT" name="PORT" value="context.connection_OracleEDWHist_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.connection_OracleEDWHist_ServiceName"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="context.connection_OracleEDWHist_ServiceName"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_OracleEDWHist_Schema"/>
+    <elementParameter field="TEXT" name="USER" value="context.connection_OracleEDWHist_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:I+uOs0EV/+UHigwpXsjmIduyXiGrfaGBMqP/mQ2Xg4Rxza+1rypTgDrMRoOjABsSSBFJUhUQK+9Kj2+xcDb+l471B7aU"/>
+    <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
+    <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:RTWC1hvcYvPxXmSSZcgOxcU7OuWjNf5mdCv9/ws+"/>
+    <elementParameter field="CHECK" name="NEED_CLIENT_AUTH" show="false" value="false"/>
+    <elementParameter field="FILE" name="SSL_KEYSTORE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:J6P9jDtkBNmPlAIeVwsBdAmSjMxMSyS0hvj0S/U4"/>
+    <elementParameter field="CHECK" name="DISABLE_CBC_PROTECTION" show="false" value="true"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.connection_OracleEDWHist_AdditionalParams"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" show="false" value=""/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:thin:USER/MDP@server&quot;"/>
+    <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="EDW_HIST"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_4"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_xnQyoOiQEeqGmY5DbgngcQ"/>
+    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="RAC_URL" show="false" value="context.connection_OracleEDWStg_Server"/>
+    <elementParameter field="CHECK" name="USE_TNS_FILE" value="false"/>
+    <elementParameter field="FILE" name="TNS_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TNS_EDITOR" name="TNS_EDITOR" show="false" value=""/>
+    <elementParameter field="TEXT" name="HOST" value="context.connection_OracleEDWStg_Server"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SERVICE_NAME"/>
+    <elementParameter field="TEXT" name="PORT" value="context.connection_OracleEDWStg_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.connection_OracleEDWStg_ServiceName"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="context.connection_OracleEDWStg_ServiceName"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_OracleEDWStg_Schema"/>
+    <elementParameter field="TEXT" name="USER" value="context.connection_OracleEDWStg_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:9LqhMedwMAG6Y1eWIUJ2Oyo2FaLyFyX85mDeIoS5iX+eMFLmkIxLZaeSlk8gdUBy8XKwU8a7pWGB3JWgKDqWpb9NN5U="/>
+    <elementParameter field="CHECK" name="USE_SSL" show="false" value="false"/>
+    <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="enc:system.encryption.key.v1:8PMsbjvKKx29KXqsVpRfUUKmjc9jTT+eTDj/0bVE"/>
+    <elementParameter field="CHECK" name="NEED_CLIENT_AUTH" show="false" value="false"/>
+    <elementParameter field="FILE" name="SSL_KEYSTORE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SSL_KEYSTORE_PASSWORD" show="false" value="enc:system.encryption.key.v1:fEs+F0O9+K6q2DlNbwAVnLwGwb46IbQ7H6t613lb"/>
+    <elementParameter field="CHECK" name="DISABLE_CBC_PROTECTION" show="false" value="true"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.connection_OracleEDWStg_AdditionalParams"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" show="false" value=""/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:thin:USER/MDP@server&quot;"/>
+    <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="EDW_STG"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Database connections completed&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="3"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_1"/>
+  </node>
+  <node componentName="tFlowMeterCatcher" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="32" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowMeterCatcher_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFlowMeterCatcher_1">
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="8" name="system_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job_repository_id" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job_version" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="label" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="count" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="reference" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="thresholds" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.parameter_base_etl_file_path +&quot;/&quot; + context.parameter_etl_job_name + &quot;/&quot; + context.parameter_flow_file_name"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="true"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="COMPRESS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" show="false" value="&quot;&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" show="false" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_1">
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="8" name="system_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Long" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job_repository_id" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job_version" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="label" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="count" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="reference" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="thresholds" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_3"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Failed opening EDW_HIST connection&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="4"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
+    <elementParameter field="CHECK" name="EXIT_JVM" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDie_3"/>
+  </node>
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tOracleClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="TEXT" name="LABEL" value="Close_TRS"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tOracleClose" componentVersion="0.102" offsetLabelX="13" offsetLabelY="0" posX="288" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_2"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
+    <elementParameter field="TEXT" name="LABEL" value="Close_EDW"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tOracleClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_3"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_3"/>
+    <elementParameter field="TEXT" name="LABEL" value="Close_EDW_HIST"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tOracleClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_4"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_4"/>
+    <elementParameter field="TEXT" name="LABEL" value="Close_EDW_STG"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-384" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_2"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
+    <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
+    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="UPDATE_ETL_JOB_RUN"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_CONTEXT" value="Development"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="LOCAL_PROJECT:_nukB8JktEeqQsqWqMlaz0A"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="TEXT" name="CONTEXT_NAME" show="false" value="Default"/>
+    <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_CHILD_ERROR" value="false"/>
+    <elementParameter field="CHECK" name="TRANSMIT_WHOLE_CONTEXT" value="true"/>
+    <elementParameter field="TABLE" name="CONTEXTPARAMS">
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="parameter_etl_job_name"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.parameter_etl_job_name"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="parameter_etl_job_run_id"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.parameter_etl_job_run_id"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
+    <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CHILD_JVM_SETTING" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CUSTOM_JVM_SETTING" show="false" value="false"/>
+    <elementParameter field="TABLE" name="JVM_ARGUMENTS" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tRunJob_2"/>
+  </node>
+  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-448" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" show="false" value="ORACLE_SID"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_18"/>
+    <elementParameter field="TEXT" name="RAC_URL" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="Oracle"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;1521&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:yPjfR/k1eVProq5+l5OrRNik6b0RKchg0VL+RWhW"/>
+    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;EDW_FACT_TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#13;&#10;        SELECT&#13;&#10;    ---- DATES&#13;&#10;            CAST(TO_CHAR(DEC_HEARD_DATE, 'YYYYMMDD') AS NUMBER(16))                                                 AS DECISION_SUBMIT_DATE_KEY,&#13;&#10;&#9;&#9;&#9;CAST(TO_CHAR(DEC_HEARD_DATE, 'YYYY') AS NUMBER(16))&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;AS DECISION_SUBMIT_YEAR,&#13;&#10;&#9;&#9;&#9;CAST(TO_CHAR(DEC_HEARD_DATE, 'MONTH') AS VARCHAR2(10))&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;                    AS DECISION_SUBMIT_MONTH,&#13;&#10;&#9;&#9;&#9;CAST(TO_CHAR(DEC_HEARD_DATE, 'MM') AS NUMBER(16))&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;AS DECISION_SUBMIT_MONTH_NUMBER,&#13;&#10;&#9;&#9;&#9;CAST(TO_CHAR(DEC_HEARD_DATE, 'DD') AS NUMBER(16))&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;AS DECISION_SUBMIT_DAY, &#13;&#10;            CAST(HAS_DD AS CHAR(1))                                                                                 AS HAS_DAMAGE_DISPUTE,&#13;&#10;&#9;---- FEATURE COUNTS                         &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#13;&#10;&#9;&#9;&#9;CAST(COUNT(DISTINCT DTL.FEATURE_ID) AS NUMBER(16))&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;AS TOTAL_FEATURES_HEARD,&#13;&#10;&#9;&#9;&#9;CAST(SUM(EXT_FLAG) AS NUMBER(16))&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;AS FEATURES_W_EXT,&#13;&#10;&#9;&#9;&#9;CAST(SUM(WO_EXT_FLAG) AS NUMBER(16))&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;AS FEATURES_WO_EXT,&#13;&#10;&#9;---- CYCLE TIME&#13;&#10;&#9;&#9;&#9;CAST(ROUND(SUM(DEC_HEARD_DATE - FEATURE_SUBMIT_DATE) / COUNT(DISTINCT DTL.FEATURE_ID),1) as NUMBER(10,1))&#9;&#9;&#9;&#9;&#9;&#9;AS AVG_CYCLE_TIME_ALL_FEATURES,&#13;&#10;&#9;&#9;&#9;CAST(ROUND(SUM(CASE WHEN EXT_FLAG &gt; 0 THEN (DEC_HEARD_DATE - FEATURE_SUBMIT_DATE)END) / SUM(EXT_FLAG), 1) as NUMBER(10,1))      AS AVG_CYCLE_TIME_FT_W_EXTS,&#13;&#10;&#9;&#9;&#9;CAST(ROUND(SUM(CASE WHEN EXT_FLAG = 0 THEN (DEC_HEARD_DATE - FEATURE_SUBMIT_DATE)END) / SUM(WO_EXT_FLAG), 1) as NUMBER(10,1))   AS AVG_CYCLE_TIME_FT_WO_EXTS,&#13;&#10;&#9;---- TOTAL DAYS&#13;&#10;&#9;&#9;&#9;CAST(ROUND(SUM(CASE WHEN EXT_FLAG &gt; 0 THEN (DEC_HEARD_DATE - FEATURE_SUBMIT_DATE)END), 1) as NUMBER(10,1))                      AS TOT_DAYS_FEATURES_W_EXTS,&#13;&#10;&#9;&#9;&#9;CAST(ROUND(SUM(CASE WHEN EXT_FLAG = 0 THEN (DEC_HEARD_DATE - FEATURE_SUBMIT_DATE)END), 1) as NUMBER(10,1))                      AS TOT_DAYS_FEATURES_WO_EXTS,&#13;&#10;&#9;&#9;&#9;CAST(ROUND(SUM(DEC_HEARD_DATE - FEATURE_SUBMIT_DATE),1) as NUMBER(10,1))                                                        AS TOT_DAYS_ALL_FEATURES,&#13;&#10;            COVERAGE_GROUP_CODE                                                                                                             AS COVERAGE_GROUP_TYPE,&#13;&#10;            COVERAGE_GROUP_NAME                                                                                                             AS COVERAGE_GROUP_NAME,&#13;&#10;            COVERAGE_TYPE                                                                                                                   AS COVERAGE_TYPE,&#13;&#10;            COVERAGE_NAME                                                                                                                   AS COVERAGE_NAME,&#13;&#10;            POLICY_TYPE                                                                                                                     AS POLICY_TYPE,&#13;&#10;            POLICY_DESC                                                                                                                     AS POLICY_DESC,&#13;&#10;            PROGRAM                                                                                                                         AS PROGRAM,&#13;&#10;            PROGRAM_DESC                                                                                                                    AS PROGRAM_DESC&#13;&#10;&#9;&#9;FROM&#13;&#10;&#9;&#9;(&#13;&#10;&#9;&#9;&#9;SELECT DISTINCT&#13;&#10;&#9;&#9;&#9;&#9;FEAT.FEATURE_ID,&#13;&#10;&#9;&#9;&#9;&#9;FEAT.SUBMIT_DATE AS FEATURE_SUBMIT_DATE,&#13;&#10;&#9;&#9;&#9;&#9;DECS.INITIAL_SUBMIT_DATE AS DEC_HEARD_DATE,&#13;&#10;&#9;&#9;&#9;----CONDITION TO TEST FOR THE EXISTANCE OF AT LEAST ONE EXTENSION WHEN THERE IS A FILING PARTY MATCH&#13;&#10;&#9;&#9;&#9;&#9;MAX(CASE WHEN (FIL_PTY2.FILING_PARTY_ID  =  EXT.FILING_PARTY_ID AND FIL.FILING_ID = FIL_EXT.FILING_ID)&#13;&#10;&#9;&#9;&#9;&#9;&#9;OR (FIL_PTY.FILING_PARTY_ID   =  EXT.FILING_PARTY_ID AND FIL.FILING_ID = FIL_EXT.FILING_ID) THEN 1 ELSE 0 END) &#9;&#9;&#9;&#9;&#9;&#9;&#9;AS EXT_FLAG,&#13;&#10;&#9;&#9;&#9;&#9;CASE WHEN (MAX(CASE WHEN (FIL_PTY2.FILING_PARTY_ID  =  EXT.FILING_PARTY_ID AND FIL.FILING_ID = FIL_EXT.FILING_ID)&#13;&#10;&#9;&#9;&#9;&#9;&#9;OR (FIL_PTY.FILING_PARTY_ID   =  EXT.FILING_PARTY_ID AND FIL.FILING_ID = FIL_EXT.FILING_ID) THEN 1 ELSE 0 END)) = 0 THEN 1 ELSE 0 END&#9;AS WO_EXT_FLAG,&#13;&#10;                DDF.HAS_DD                                                                                                                                  AS HAS_DD,&#13;&#10;            ----COVERAGE TYPES - Added 12/29/20 ---&#13;&#10;                COV_GRP.COVERAGE_GROUP_CODE,&#13;&#10;                COV_GRP.COVERAGE_GROUP_NAME,&#13;&#10;                COV_GRP.POLICY_TYPE,&#13;&#10;                POL_TYP.POLICY_DESC                 AS POLICY_DESC,&#13;&#10;                COV_DEF.COVERAGE_TYPE,&#13;&#10;                COV_TYP.COVERAGE_NAME,&#13;&#10;                PROG.PROGRAM        AS PROGRAM,&#13;&#10;                PROG.DESCRIPTION    AS PROGRAM_DESC&#13;&#10;&#9;&#9;&#9;FROM TRS.TRS_FILING                    FIL&#13;&#10;&#9;&#9;&#9;--/* REQUIERS A STRAIGHT JOIN TO TRS.TRS_DECISION MAKE SURE THE FILING HAS A PUBLISHED DECISION */&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_CASE                     CAS            ON (FIL.CASE_ID                   =   CAS.CASE_ID)&#13;&#10;&#9;&#9;&#9;--/* RECOVERING PARTY */&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_CASE_PARTY_ASSC          PTY_ASC        ON (CAS.CASE_ID                   =   PTY_ASC.CASE_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_FILING_PARTY             FIL_PTY        ON (PTY_ASC.CASE_PARTY_ASSC_ID    =   FIL_PTY.CASE_PARTY_ASSC_ID AND  FIL.FILING_ID = FIL_PTY.FILING_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_PARTY                    PTY            ON (PTY_ASC.PARTY_ID              =   PTY.PARTY_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_OCCURRENCE               OCC            ON (PTY.OCCURRENCE_ID             =   OCC.OCCURRENCE_ID)&#13;&#10;&#9;&#9;&#9;&#9;--JOIN  CCA.R_STATE                      ST             ON (OCC.LOSS_STATE                =   ST.STATE_CD)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  CPS.CPS_COMPANY                  CCOMP          ON (PTY.COMPANY_ID                =   CCOMP.COMPANY_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  CCA.COMPANY                      COMP           ON (CCOMP.COCODE                  =   COMP.COCODE)&#13;&#10;&#9;&#9;&#9;--/* ADVERSE PARTY */&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_CASE_PARTY_ASSC          PTY_ASC2       ON (CAS.CASE_ID                   =   PTY_ASC2.CASE_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_PARTY                    PTY2           ON (PTY_ASC2.PARTY_ID             =   PTY2.PARTY_ID )&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_FILING_PARTY             FIL_PTY2       ON (PTY_ASC2.CASE_PARTY_ASSC_ID   =   FIL_PTY2.CASE_PARTY_ASSC_ID AND  FIL.FILING_ID =      FIL_PTY2.FILING_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  CPS.CPS_COMPANY                  CCOMP2         ON (PTY2.COMPANY_ID               =   CCOMP2.COMPANY_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  CCA.COMPANY                      COMP2          ON (CCOMP2.COCODE                 =   COMP2.COCODE)&#13;&#10;&#9;&#9;&#9;--/* COVERAGE - FEATURE */&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_COVERAGE                 COV            ON (PTY_ASC.CASE_PARTY_ASSC_ID    =   COV.CASE_PARTY_ASSC_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_FEATURE                  FEAT           ON (COV.COVERAGE_ID               =   FEAT.COVERAGE_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_DECISION                 DECS           ON (FIL.FILING_ID                 =   DECS.FILING_ID )&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_ARBITR_DEC_PART          ADC_P          ON (DECS.DECISION_ID              =   ADC_P.DECISION_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_FEATURE_DECISION         FT_DEC         ON (ADC_P.ARBITR_DEC_PART_ID      =   FT_DEC.ARBITR_DEC_PART_ID    AND  FEAT.FEATURE_ID              =   FT_DEC.FEATURE_ID)&#13;&#10;&#9;&#9;&#9;&#9;JOIN  TRS.TRS_FEATURE_AWARD            FT_AWRD        ON (FT_DEC.FEATURE_DECISION_ID    =   FT_AWRD.FEATURE_DECISION_ID  AND  PTY_ASC2.CASE_PARTY_ASSC_ID  =   FT_AWRD.CASE_PARTY_ASSC_ID )&#13;&#10;            --/* COVERAGE TYPES */--&#13;&#10;                JOIN TRS.TRS_COVERAGE_DEF               COV_DEF       ON (COV_DEF.COVERAGE_DEF_ID = COV.COVERAGE_DEF_ID)&#13;&#10;                JOIN TRS.TRS_COVERAGE_GROUP_TYPE        COV_GRP       ON (COV_GRP.COVERAGE_GROUP_CODE = COV_DEF.COVERAGE_GROUP_TYPE)&#13;&#10;                JOIN TRS.TRS_POLICY_TYPE                POL_TYP       ON (POL_TYP.POLICY_CODE = COV_GRP.POLICY_TYPE)&#13;&#10;                JOIN TRS.TRS_COVERAGE_TYPE              COV_TYP       ON (COV_TYP.COVERAGE_CODE = COV_DEF.COVERAGE_TYPE)&#13;&#10;                JOIN CCA.R_PROGRAM_CODES                PROG          ON (PROG.PROGRAM = COV_TYP.PROGRAM)  &#13;&#10;&#9;&#9;&#9;--/* FILINGS WITH EXTENSIONS */&#13;&#10;&#9;&#9;&#9;&#9;LEFT OUTER JOIN&#13;&#10;&#9;&#9;&#9;&#9;(SELECT DISTINCT F.FILING_ID&#13;&#10;   &#9;&#9;&#9;&#9;&#9;FROM TRS.TRS_FILING F, TRS.TRS_FILING_PARTY P, TRS.TRS_FILING_EXT FE&#13;&#10;  &#9;&#9;&#9;&#9;&#9;WHERE F.FILING_ID = P.FILING_ID AND FE.FILING_PARTY_ID = P.FILING_PARTY_ID) FIL_EXT ON FIL.FILING_ID = FIL_EXT.FILING_ID&#13;&#10;&#9;&#9;&#9;--/* EXTENSION TABLE JOINS */&#13;&#10;&#9;&#9;&#9;&#9;LEFT JOIN TRS.TRS_FILING_EXT            EXT    ON   (FIL_PTY2.FILING_PARTY_ID    =   EXT.FILING_PARTY_ID)&#13;&#10;&#9;&#9;&#9;--/* ADD A LEFT JOIN TO THE DAMAGE DISPUTE TABLE TO BE USED AS A PARAMETER IN THE REPORT  BI-2828 */&#13;&#10;&#9;&#9;&#9;&#9;JOIN (&#9;SELECT DISTINCT &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;FR.FEATURE_ID,&#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;CASE WHEN FR.FEATURE_RESPONSE_ID = DD.FEATURE_RESPONSE_ID THEN 'Y' ELSE 'N' END AS HAS_DD&#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;FROM TRS.TRS_FEATURE_RESPONSE FR&#13;&#10;            &#9;  &#9;&#9;LEFT JOIN TRS.TRS_DAMAGE_DISPUTE DD ON FR.FEATURE_RESPONSE_ID = DD.FEATURE_RESPONSE_ID) DDF ON FEAT.FEATURE_ID = DDF.FEATURE_ID&#13;&#10;&#9;&#9;&#9;--/* ADDITIONAL FILTERS */&#13;&#10;&#9;&#9;&#9;WHERE   PTY.PARTY_ID                    &lt;&gt; PTY2.PARTY_ID&#13;&#10;&#9;&#9;&#9;&#13;&#10;&#9;&#9;&#9;--Only get up to the previous day's data so we don't report a partial day's number&#13;&#10;&#9;&#9;&#9;&#9;AND     DECS.INITIAL_SUBMIT_DATE        BETWEEN TRUNC(SYSDATE - 180) AND TRUNC(SYSDATE)&#13;&#10;&#9;&#9;&#9;&#9;&#13;&#10;&#9;&#9;&#9;&#9;AND     DECS.STATUS_TYPE                =  'DECPUB' &#13;&#10;&#9;&#9;&#9;&#9;AND     FIL.STATUS_TYPE                 &lt;&gt; 'VOID'&#13;&#10;&#9;&#9;&#9;&#9;AND     NVL(OCC.STATUS_TYPE, 'NA')      &lt;&gt; 'DISCONTINUED'&#13;&#10;&#9;&#9;&#9;&#9;AND     NVL(PTY_ASC.DELETED,'N')        &lt;&gt; 'Y'&#13;&#10;&#9;&#9;&#9;&#9;AND     NVL(PTY_ASC2.DELETED,'N')       &lt;&gt; 'Y'&#13;&#10;&#9;&#9;&#9;--/* THE CASE WAS NOT DEFERRED */ &#13;&#10;&#9;&#9;&#9;&#9;AND     CAS.CASE_ID NOT IN (SELECT DISTINCT F.CASE_ID FROM TRS.TRS_DEFERMENT F)&#13;&#10;&#9;&#9;&#9;--/* DID NOT HAVE AN INTERNAL FILING EXTENSION */ &#13;&#10;&#9;&#9;&#9;&#9;AND     CAS.CASE_ID NOT IN (SELECT DISTINCT CASX.CASE_ID  &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;FROM TRS.TRS_FILING_EXT EXT &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;JOIN TRS.TRS_FILING_PARTY FPX ON FPX.FILING_PARTY_ID = EXT.FILING_PARTY_ID&#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;JOIN TRS.TRS_CASE_PARTY_ASSC PAX ON FPX.CASE_PARTY_ASSC_ID = PAX.CASE_PARTY_ASSC_ID&#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;JOIN TRS.TRS_CASE CASX ON PAX.CASE_ID = CASX.CASE_ID&#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;WHERE EXT.EXT_REASON_CODE IN ('AF_SUPPORT', 'NATURAL_DISASTER', 'POWER_OUTAGE'))&#13;&#10;            --* EXCLUDE ANYTHING THAT WAS ON HOLD FOR ANY REASON */&#13;&#10;            AND NOT EXISTS (SELECT 1 FROM TRS.TRS_HOLD HLD &#13;&#10;                                WHERE (HLD.HOLD_REF_ID = OCC.OCCURRENCE_ID AND HOLD_TYPE = 'OCCURRENCE')&#13;&#10;                                    OR (HLD.HOLD_REF_ID = FIL.FILING_ID AND HOLD_TYPE = 'FILING')&#13;&#10;                                    OR (HLD.HOLD_REF_ID = ADC_P.ARBITR_DEC_PART_ID AND HOLD_TYPE = 'DECISION_PART')&#13;&#10;                                    )&#13;&#10;                --/* EXCLUDES CASES THAT CONTAINED A NON COMPULSORY CONSENT */&#13;&#10;&#9;&#9;&#9;&#9;AND     CAS.CASE_ID NOT IN (SELECT &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;PA.CASE_ID&#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;FROM TRS.TRS_CONSENT_REQUEST CSTR &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;JOIN TRS.TRS_CASE_PARTY_ASSC PA ON CSTR.REQ_CASE_PARTY_ID = PA.CASE_PARTY_ASSC_ID )&#13;&#10;&#9;&#9;&#9;--/* EXCLUDES CASES THAT HAD AN AF SUPPORT CASE - REGARDLESS OF THE CASE STATUS OF THE SUPPORT CASE */&#13;&#10;&#9;&#9;&#9;&#9;AND     CAS.CASE_ID NOT IN (SELECT DISTINCT &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;CSUP.CASE_ID &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;FROM TRS.TRS_CASE_SUPP_REQ CSUP)&#13;&#10;&#9;&#9;&#9;&#9;--/* EXCLUDES CASES THAT HAD AN ARBITRATOR SUPPORT CASE - REGARDLESS OF THE CASE STATUS OF THE ARB CASE */&#13;&#10;&#9;&#9;&#9;&#9;AND     CAS.CASE_ID NOT IN (SELECT DISTINCT &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;ASUP.CASE_ID &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;FROM TRS.TRS_ARBITR_SUPP_REQ ASUP)&#13;&#10;&#9;&#9;&#9;&#9;--/* EXCLUDE CASES THAT HAD A PDI REQUEST FROM ANY OF THE PARTIES INVOLVED */                                                   &#13;&#10;&#9;&#9;&#9;&#9;AND     CAS.CASE_ID NOT IN (SELECT DISTINCT &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;PDI.CASE_ID &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;FROM TRS.TRS_PDI_REQ PDI)&#13;&#10;&#9;&#9;&#9;&#9;--/* EXCLUDE CASES THAT HAD A COLLABORATIVE HEARING REQUESTS FROM ANY OF THE PARTIES INVOLVED */&#13;&#10;&#9;&#9;&#9;&#9;AND     NVL(FIL_PTY.PO3, 'N') = 'N' &#13;&#10;&#9;&#9;&#9;&#9;AND &#9;NVL(FIL_PTY2.PO3, 'N') = 'N'&#13;&#10;&#9;&#9;&#9;&#9;--/* EXCLUDE CASES THAT HAD JE REQUESTS */&#13;&#10;&#9;&#9;&#9;&#9;AND   CAS.AF_CASE_ID NOT IN (SELECT DISTINCT &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;EFT.AF_CASE_ID  &#13;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;FROM AF_RPTS.AFR_EXCLUSION_FACT EFT)&#13;&#10;&#9;&#9;&#9;GROUP BY OCC.OCCURRENCE_ID,&#13;&#10;        &#9;&#9;CAS.AF_CASE_ID,&#13;&#10;        &#9;&#9;CAS.CASE_ID,&#13;&#10;        &#9;&#9;FIL.AF_FILING_ID,&#13;&#10;        &#9;&#9;FEAT.FEATURE_ID,&#13;&#10;        &#9;&#9;FEAT.AF_FEATURE_ID,&#13;&#10;        &#9;&#9;FEAT.SUBMIT_DATE,&#13;&#10;        &#9;&#9;DECS.INITIAL_SUBMIT_DATE,&#13;&#10;        &#9;&#9;DDF.HAS_DD,&#13;&#10;        &#9;&#9;FIL_PTY.FILING_PARTY_ID,&#13;&#10;                COV_GRP.COVERAGE_GROUP_CODE,&#13;&#10;                COV_GRP.COVERAGE_GROUP_NAME,&#13;&#10;                COV_GRP.POLICY_TYPE,&#13;&#10;                POL_TYP.POLICY_DESC,&#13;&#10;                COV_DEF.COVERAGE_TYPE,&#13;&#10;                COV_TYP.COVERAGE_NAME,&#13;&#10;                PROG.PROGRAM,&#13;&#10;                PROG.DESCRIPTION&#13;&#10;&#9;&#9;) DTL&#13;&#10;&#9;&#9;GROUP BY  &#13;&#10;&#9;&#9;&#9;TO_CHAR(DEC_HEARD_DATE, 'YYYYMMDD'),&#13;&#10;&#9;&#9;&#9;TO_CHAR(DEC_HEARD_DATE, 'YYYY'),&#13;&#10;        &#9;TO_CHAR(DEC_HEARD_DATE, 'MONTH'),&#13;&#10;        &#9;TO_CHAR(DEC_HEARD_DATE, 'MM'),&#13;&#10;        &#9;TO_CHAR(DEC_HEARD_DATE, 'DD'),&#13;&#10;            COVERAGE_GROUP_CODE,&#13;&#10;            COVERAGE_GROUP_NAME,&#13;&#10;            POLICY_TYPE,&#13;&#10;            POLICY_DESC,&#13;&#10;            COVERAGE_TYPE,&#13;&#10;            COVERAGE_NAME,&#13;&#10;            PROGRAM,&#13;&#10;            PROGRAM_DESC,            &#13;&#10;        &#9;HAS_DD&#13;&#10;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="oracle_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="IS_CONVERT_XMLTYPE" value="false"/>
+    <elementParameter field="TABLE" name="CONVERT_XMLTYPE" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
+    <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_DATE_KEY"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_YEAR"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_MONTH"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_MONTH_NUMBER"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_DAY"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="HAS_DAMAGE_DISPUTE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TOTAL_FEATURES_HEARD"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="FEATURES_W_EXT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="FEATURES_WO_EXT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AVG_CYCLE_TIME_ALL_FEATURES"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AVG_CYCLE_TIME_FT_W_EXTS"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AVG_CYCLE_TIME_FT_WO_EXTS"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TOT_DAYS_FEATURES_W_EXTS"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TOT_DAYS_FEATURES_WO_EXTS"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TOT_DAYS_ALL_FEATURES"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COVERAGE_GROUP_TYPE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COVERAGE_GROUP_NAME"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COVERAGE_TYPE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COVERAGE_NAME"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="POLICY_TYPE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="POLICY_DESC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PROGRAM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PROGRAM_DESC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="EDW_FACT_TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS" name="tDBInput_1">
+      <column comment="" key="true" length="16" name="DECISION_SUBMIT_DATE_KEY" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_YEAR" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="DECISION_SUBMIT_MONTH" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_MONTH_NUMBER" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_DAY" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="HAS_DAMAGE_DISPUTE" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="TOTAL_FEATURES_HEARD" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_W_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_WO_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_GROUP_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_GROUP_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="POLICY_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="POLICY_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="PROGRAM" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="PROGRAM_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="-288" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_GIx9AE9qEeuuxPMAGHgmhw-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="EDW_FACT_TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS" name="edw_insert">
+      <column comment="" key="true" length="16" name="DECISION_SUBMIT_DATE_KEY" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_YEAR" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="DECISION_SUBMIT_MONTH" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_MONTH_NUMBER" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_DAY" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="HAS_DAMAGE_DISPUTE" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="TOTAL_FEATURES_HEARD" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_W_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_WO_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_GROUP_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_GROUP_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="POLICY_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="POLICY_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="PROGRAM" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="PROGRAM_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="ETL_JOB_RUN_ID" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="ETL_MOD_DATE" nullable="true" pattern="&quot;yyyyMMdd HHmmss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="ETL_ADD_DATE" nullable="false" pattern="&quot;yyyyMMdd HHmmss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables name="Var" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="context.parameter_etl_job_run_id" name="JOB_RUN_ID" type="id_BigDecimal"/>
+        <mapperTableEntries expression="TalendDate.getCurrentDate()" name="CURRENT_DATE" type="id_Date"/>
+      </varTables>
+      <outputTables name="edw_insert" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row3.DECISION_SUBMIT_DATE_KEY" name="DECISION_SUBMIT_DATE_KEY" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.DECISION_SUBMIT_YEAR" name="DECISION_SUBMIT_YEAR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.DECISION_SUBMIT_MONTH" name="DECISION_SUBMIT_MONTH" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.DECISION_SUBMIT_MONTH_NUMBER" name="DECISION_SUBMIT_MONTH_NUMBER" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.DECISION_SUBMIT_DAY" name="DECISION_SUBMIT_DAY" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.HAS_DAMAGE_DISPUTE" name="HAS_DAMAGE_DISPUTE" type="id_String"/>
+        <mapperTableEntries expression="row3.TOTAL_FEATURES_HEARD" name="TOTAL_FEATURES_HEARD" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.FEATURES_W_EXT" name="FEATURES_W_EXT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.FEATURES_WO_EXT" name="FEATURES_WO_EXT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.AVG_CYCLE_TIME_ALL_FEATURES" name="AVG_CYCLE_TIME_ALL_FEATURES" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.AVG_CYCLE_TIME_FT_W_EXTS" name="AVG_CYCLE_TIME_FT_W_EXTS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.AVG_CYCLE_TIME_FT_WO_EXTS" name="AVG_CYCLE_TIME_FT_WO_EXTS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.TOT_DAYS_FEATURES_W_EXTS" name="TOT_DAYS_FEATURES_W_EXTS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.TOT_DAYS_FEATURES_WO_EXTS" name="TOT_DAYS_FEATURES_WO_EXTS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.TOT_DAYS_ALL_FEATURES" name="TOT_DAYS_ALL_FEATURES" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row3.COVERAGE_GROUP_TYPE" name="COVERAGE_GROUP_TYPE" type="id_String"/>
+        <mapperTableEntries expression="row3.COVERAGE_GROUP_NAME" name="COVERAGE_GROUP_NAME" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.COVERAGE_TYPE" name="COVERAGE_TYPE" type="id_String"/>
+        <mapperTableEntries expression="row3.COVERAGE_NAME" name="COVERAGE_NAME" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.POLICY_TYPE" name="POLICY_TYPE" type="id_String"/>
+        <mapperTableEntries expression="row3.POLICY_DESC" name="POLICY_DESC" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.PROGRAM" name="PROGRAM" type="id_String"/>
+        <mapperTableEntries expression="row3.PROGRAM_DESC" name="PROGRAM_DESC" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Var.JOB_RUN_ID " name="ETL_JOB_RUN_ID" type="id_BigDecimal"/>
+        <mapperTableEntries expression="Var.CURRENT_DATE " name="ETL_MOD_DATE" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="Var.CURRENT_DATE " name="ETL_ADD_DATE" type="id_Date"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="DECISION_SUBMIT_DATE_KEY" type="id_BigDecimal"/>
+        <mapperTableEntries name="DECISION_SUBMIT_YEAR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="DECISION_SUBMIT_MONTH" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DECISION_SUBMIT_MONTH_NUMBER" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="DECISION_SUBMIT_DAY" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="HAS_DAMAGE_DISPUTE" type="id_String"/>
+        <mapperTableEntries name="TOTAL_FEATURES_HEARD" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="FEATURES_W_EXT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="FEATURES_WO_EXT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="AVG_CYCLE_TIME_ALL_FEATURES" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="AVG_CYCLE_TIME_FT_W_EXTS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="AVG_CYCLE_TIME_FT_WO_EXTS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="TOT_DAYS_FEATURES_W_EXTS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="TOT_DAYS_FEATURES_WO_EXTS" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="TOT_DAYS_ALL_FEATURES" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="COVERAGE_GROUP_TYPE" type="id_String"/>
+        <mapperTableEntries name="COVERAGE_GROUP_NAME" nullable="true" type="id_String"/>
+        <mapperTableEntries name="COVERAGE_TYPE" type="id_String"/>
+        <mapperTableEntries name="COVERAGE_NAME" nullable="true" type="id_String"/>
+        <mapperTableEntries name="POLICY_TYPE" type="id_String"/>
+        <mapperTableEntries name="POLICY_DESC" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PROGRAM" type="id_String"/>
+        <mapperTableEntries name="PROGRAM_DESC" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowMeter_4"/>
+    <elementParameter field="CHECK" name="USEROWLABEL" value="true"/>
+    <elementParameter field="TEXT" name="METTERLABEL" show="false" value="&quot;MyLabel&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="ABSOLUTE" value="Relative"/>
+    <elementParameter field="CONNECTION_LIST" name="CONNECTIONS" value="edw_insert"/>
+    <elementParameter field="TABLE" name="THRESHLODS"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="EDW_FACT_TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS" name="tFlowMeter_4">
+      <column comment="" key="true" length="16" name="DECISION_SUBMIT_DATE_KEY" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_YEAR" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="DECISION_SUBMIT_MONTH" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_MONTH_NUMBER" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_DAY" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="HAS_DAMAGE_DISPUTE" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="TOTAL_FEATURES_HEARD" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_W_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_WO_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_GROUP_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_GROUP_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="POLICY_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="POLICY_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="PROGRAM" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="PROGRAM_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="ETL_JOB_RUN_ID" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="ETL_MOD_DATE" nullable="true" pattern="&quot;yyyyMMdd HHmmss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="ETL_ADD_DATE" nullable="false" pattern="&quot;yyyyMMdd HHmmss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="576">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
+    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" show="false" value="ORACLE_SID"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_18"/>
+    <elementParameter field="TEXT" name="RAC_URL" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;1521&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="Oracle"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TABLESCHEMA" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:V7Jr7+NczyFgf9l9vyH1AVAwX1wu7RBHiY8UULcI"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;EDW_FACT_TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE_OR_INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="oracle_id"/>
+    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_DATE_KEY"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_YEAR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_MONTH"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_MONTH_NUMBER"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DECISION_SUBMIT_DAY"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="HAS_DAMAGE_DISPUTE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TOTAL_FEATURES_HEARD"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="FEATURES_W_EXT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="FEATURES_WO_EXT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AVG_CYCLE_TIME_ALL_FEATURES"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AVG_CYCLE_TIME_FT_W_EXTS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AVG_CYCLE_TIME_FT_WO_EXTS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TOT_DAYS_FEATURES_W_EXTS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TOT_DAYS_FEATURES_WO_EXTS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TOT_DAYS_ALL_FEATURES"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COVERAGE_GROUP_TYPE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COVERAGE_GROUP_NAME"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COVERAGE_TYPE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COVERAGE_NAME"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="POLICY_TYPE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="POLICY_DESC"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PROGRAM"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PROGRAM_DESC"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ETL_JOB_RUN_ID"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ETL_MOD_DATE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ETL_ADD_DATE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" show="false" value="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" show="false" value="10000"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
+    <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
+    <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="EDW_FACT_TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS" name="tDBOutput_1">
+      <column comment="" key="true" length="16" name="DECISION_SUBMIT_DATE_KEY" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_YEAR" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="DECISION_SUBMIT_MONTH" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_MONTH_NUMBER" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_DAY" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="HAS_DAMAGE_DISPUTE" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="TOTAL_FEATURES_HEARD" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_W_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_WO_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_GROUP_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_GROUP_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="POLICY_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="POLICY_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="PROGRAM" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="PROGRAM_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="ETL_JOB_RUN_ID" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="ETL_MOD_DATE" nullable="true" pattern="&quot;yyyyMMdd HHmmss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="ETL_ADD_DATE" nullable="false" pattern="&quot;yyyyMMdd HHmmss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <metadata connector="REJECT" label="EDW_FACT_TRS_CYCLE_TIME_BY_DECISION_SUBMIT_DAY_TOTALS" name="REJECT">
+      <column comment="" key="true" length="16" name="DECISION_SUBMIT_DATE_KEY" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_YEAR" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="DECISION_SUBMIT_MONTH" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_MONTH_NUMBER" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="DECISION_SUBMIT_DAY" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="HAS_DAMAGE_DISPUTE" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="TOTAL_FEATURES_HEARD" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_W_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="FEATURES_WO_EXT" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="AVG_CYCLE_TIME_FT_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_W_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_FEATURES_WO_EXTS" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TOT_DAYS_ALL_FEATURES" nullable="true" pattern="" precision="1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_GROUP_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_GROUP_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="COVERAGE_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="COVERAGE_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="20" name="POLICY_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="POLICY_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="1" name="PROGRAM" nullable="false" pattern="" precision="0" sourceType="CHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="PROGRAM_DESC" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="ETL_JOB_RUN_ID" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="ETL_MOD_DATE" nullable="true" pattern="&quot;yyyyMMdd HHmmss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="ETL_ADD_DATE" nullable="false" pattern="&quot;yyyyMMdd HHmmss&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tDBConnection_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileDelete_1" offsetLabelX="0" offsetLabelY="0" source="tFileDelete_1" target="tRunJob_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+  </connection>
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tRunJob_1" offsetLabelX="0" offsetLabelY="0" source="tRunJob_1" target="tJavaRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="JOB_RUN_ID"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tRunJob_1" offsetLabelX="0" offsetLabelY="0" source="tRunJob_1" target="tDBInput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk10"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJavaRow_1" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_1" target="tJava_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
+  </connection>
+  <connection connectorName="SUBJOB_ERROR" label="OnSubjobError" lineStyle="4" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDie_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobError1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_2" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_2" target="tDBConnection_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
+  </connection>
+  <connection connectorName="SUBJOB_ERROR" label="OnSubjobError" lineStyle="4" metaname="tDBConnection_2" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_2" target="tDie_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobError2"/>
+  </connection>
+  <connection connectorName="SUBJOB_ERROR" label="OnSubjobError" lineStyle="4" metaname="tDBConnection_3" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_3" target="tDie_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobError3"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_3" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_3" target="tDBConnection_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
+  </connection>
+  <connection connectorName="SUBJOB_ERROR" label="OnSubjobError" lineStyle="4" metaname="tDBConnection_4" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_4" target="tDie_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobError4"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_4" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tDBConnection_4" target="tWarn_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk5"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_4" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tDBConnection_4" target="tFileDelete_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk6"/>
+  </connection>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFlowMeterCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tFlowMeterCatcher_1" target="tFileOutputDelimited_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_1" offsetLabelX="0" offsetLabelY="0" source="tPostjob_1" target="tDBClose_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBClose_1" offsetLabelX="0" offsetLabelY="0" source="tDBClose_1" target="tDBClose_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk7"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBClose_2" offsetLabelX="0" offsetLabelY="0" source="tDBClose_2" target="tDBClose_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk8"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBClose_3" offsetLabelX="0" offsetLabelY="0" source="tDBClose_3" target="tDBClose_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk9"/>
+  </connection>
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tRunJob_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk11"/>
+  </connection>
+  <connection connectorName="FLOW" label="edw_insert" lineStyle="0" metaname="edw_insert" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tFlowMeter_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="edw_insert"/>
+  </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tFlowMeter_4" offsetLabelX="0" offsetLabelY="0" source="tFlowMeter_4" target="tDBOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+  </connection>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_4"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileDelete_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_3"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_4"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowMeterCatcher_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_3"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_3"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_4"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5e1deec5-b1e1-4f46-a565-3ac145ffb497"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2mtI4sIDJ711DCN+wnmBRY68Nbtd4cLI+IFmXzEEzYzzdw2SKtZCTtsOQOVclh0WhRbjWB98PR5g
+Jm9ilQjVFA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9e20982f-e4cd-4b17-98ac-084a1910e2c4"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xbXPnVOSWbnGo5u522EhYVSG1gF9pFZtvNxVCTnmrk1kYS8I08x18fONDAfER1wyyT1v5Oa53Hls
+inLF1Ss3zw==</DigestValue></Reference></SignedInfo><SignatureValue>YSSHtlu2J+2k9aR4tT3lboUkiq2M6PnF2KXvzmwdb+l4l5bAeLV/JF02DUyzcQ/sbmW4fdqPamd+
+jBdT6r7vE3NDGPrZ/n0Wy3ckR9D46bxLL4xVnPNKvg9WBPpmQQjYExGK+gR9t3pfHpqgERNtbic8
+fBdia1Jf1PzylJt2EGZ3nh6OqKKkNAK3e4jfSHI8w3EKOLFfgihFMPdu2XkQizXTsNeEBz5Aqtbk
+wchny2f7vK367+otpYdtDDDRQIeg6Q2gprmP0ZzPZV0coc4xj0cFDEc4mZ38igBQib4/P518+Bhs
+64vImKrinjw50capFZpE1QVPrtKEx6TyR8F9qg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9e20982f-e4cd-4b17-98ac-084a1910e2c4" Target="#_5e1deec5-b1e1-4f46-a565-3ac145ffb497"><Timestamp>2021-02-03 13:10:11</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
