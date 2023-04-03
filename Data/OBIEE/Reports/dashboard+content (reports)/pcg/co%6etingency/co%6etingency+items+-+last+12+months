@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;PCG&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb3251334effca709">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Period&quot;.&quot;Date Key&quot; = -1 then null else &quot;D Period&quot;.&quot;Full Date&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42082" oldID="kcap1564723511283_11368">
+            <saw:text>D Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42083" oldID="kcap1564723511283_11369">
+            <saw:text>Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cddce03235784b1ed">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Period&quot;.&quot;Full Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42084" oldID="kcap1564723511283_11370">
+            <saw:text>D Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42085" oldID="kcap1564723511283_11371">
+            <saw:text>Date Sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1150c1a28ffb4088">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when  &quot;D Contingency Item&quot;.&quot;Contingency Reg Pkey&quot; is not null then &#39;&lt;a target=_blank href=&quot;&#39; || VALUEOF(&quot;RV_URL_WORKFLOWDS&quot;)|| case when &quot;D Period&quot;.&quot;Date Key&quot; = -1 then &quot;D Contingency Item&quot;.&quot;Contingency Reg Pkey&quot; else &quot;D Contingency Item&quot;.&quot;Contingency Item Pkey&quot; end ||&#39;&quot;&gt;&#39; ||&quot;D Contingency Item&quot;.&quot;Summary&quot;|| &#39;&lt;/a&gt;&#39; else&quot;D Contingency Item&quot;.&quot;Summary&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none" width="400">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42086" oldID="kcap1564723511283_11372">
+            <saw:text>D Contingency Item</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42087" oldID="kcap1564723511283_11373">
+            <saw:text>Description of Change</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf276ade31537165d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Contingency Item&quot;.&quot;Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42088" oldID="kcap1564723511283_11374">
+            <saw:text>F Contingency Item</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42089" oldID="kcap1564723511283_11375">
+            <saw:text>Amount of Change</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf72520fb67f79ac2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Contingency Type&quot;.&quot;Contingency Type&quot; = &#39;Built Form Construction&#39; then 3 when &quot;D Contingency Type&quot;.&quot;Contingency Type&quot; = &#39;Civil Construction&#39; then 2 when &quot;D Contingency Type&quot;.&quot;Contingency Type&quot; = &#39;Project/Management Reserve&#39; then 1 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" fontStyle="bold" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42090" oldID="kcap1564723511283_11376">
+            <saw:text>D Contingency Type</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42091" oldID="kcap1564723511283_11377">
+            <saw:text>Contingency Type Sort</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4f44f607c0f77907">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Contingency Type&quot;.&quot;Contingency Type&quot; || &#39; Contingency&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" fontStyle="bold" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c46e44f7733ee7f01">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Contingency Type&quot;.&quot;Contingency Type&quot; = &#39;Built Form Construction&#39; then &quot;F Contingency Registry&quot;.&quot;Built Form Construction Report Balance&quot; when &quot;D Contingency Type&quot;.&quot;Contingency Type&quot; = &#39;Civil Construction&#39; then &quot;F Contingency Registry&quot;.&quot;Civil Construction Report Balance&quot; when &quot;D Contingency Type&quot;.&quot;Contingency Type&quot; = &#39;Project/Management Reserve&#39; then &quot;F Contingency Registry&quot;.&quot;Project /Management Reserve Report Balance&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42092" oldID="kcap1564723511283_11378">
+            <saw:text>D Contingency Type</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42093" oldID="kcap1564723511283_11379">
+            <saw:text>Opening Balance</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0035620aa9820977">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">RSUM(&quot;F Contingency Item&quot;.&quot;Amount&quot; by &quot;D Contingency Type&quot;.&quot;Contingency Type&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710459_42094" oldID="kcap1564723511283_11380">
+            <saw:text>F Contingency Registry</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710460_42095" oldID="kcap1564723511283_11381">
+            <saw:text>Running Total</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c829f83dc38183522">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">RMAX(case when &quot;D Contingency Type&quot;.&quot;Contingency Type&quot; = &#39;Built Form Construction&#39; then &quot;F Contingency Registry&quot;.&quot;Built Form Construction Report Balance&quot; when &quot;D Contingency Type&quot;.&quot;Contingency Type&quot; = &#39;Civil Construction&#39; then &quot;F Contingency Registry&quot;.&quot;Civil Construction Report Balance&quot; when &quot;D Contingency Type&quot;.&quot;Contingency Type&quot; = &#39;Project/Management Reserve&#39; then &quot;F Contingency Registry&quot;.&quot;Project /Management Reserve Report Balance&quot; end by &quot;D Contingency Type&quot;.&quot;Contingency Type&quot;) - RSUM(&quot;F Contingency Item&quot;.&quot;Amount&quot; by &quot;D Contingency Type&quot;.&quot;Contingency Type&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710460_42096" oldID="kcap1564723511283_11382">
+            <saw:text>D Contingency Type</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710460_42097" oldID="kcap1564723511283_11383">
+            <saw:text>New Contingency Amount</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8c8d022e1e8d9e1b" aggRule="avg">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">max(&quot;F Contingency Registry&quot;.&quot;Built Form Construction Report Balance&quot; by &quot;D Contingency Type&quot;.&quot;Contingency Type&quot;) + max(&quot;F Contingency Registry&quot;.&quot;Civil Construction Report Balance&quot; by &quot;D Contingency Type&quot;.&quot;Contingency Type&quot;) + max(&quot;F Contingency Registry&quot;.&quot;Project /Management Reserve Report Balance&quot; by &quot;D Contingency Type&quot;.&quot;Contingency Type&quot;) - sum(&quot;F Contingency Item&quot;.&quot;Amount&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710460_42098" oldID="kcap1564723511283_11384">
+            <saw:text>F Contingency Registry</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723710460_42099" oldID="kcap1564723511283_11385">
+            <saw:text>Total Remaining Contingency</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Empty</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:logical" op="or">
+          <sawx:expr xsi:type="sawx:comparison" op="less">
+            <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPDIFF(SQL_TSI_DAY, &quot;D Period&quot;.&quot;Full Date&quot;, CURRENT_DATE)</sawx:expr>
+            <sawx:expr xsi:type="xsd:decimal">366</sawx:expr>
+          </sawx:expr>
+          <sawx:expr xsi:type="sawx:comparison" op="equal">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Period&quot;.&quot;Date Key&quot;</sawx:expr>
+            <sawx:expr xsi:type="xsd:decimal">-1</sawx:expr>
+          </sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="cf72520fb67f79ac2" direction="ascending"/>
+      <saw:columnOrderRef columnID="cddce03235784b1ed" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723710459_42080" oldID="kcap1564723511283_11366">
+          <saw:text>Contingency Items Table</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf72520fb67f79ac2"/>
+            <saw:edgeLayer type="column" columnID="c4f44f607c0f77907"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cddce03235784b1ed"/>
+            <saw:edgeLayer type="column" columnID="cb3251334effca709"/>
+            <saw:edgeLayer type="column" columnID="c1150c1a28ffb4088"/>
+            <saw:edgeLayer type="column" columnID="cf276ade31537165d"/>
+            <saw:edgeLayer type="column" columnID="c46e44f7733ee7f01"/>
+            <saw:edgeLayer type="column" columnID="c0035620aa9820977"/>
+            <saw:edgeLayer type="column" columnID="c829f83dc38183522"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+      <saw:greenBarFormat greenBar="allLayers" enabled="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2" scrollingEnabled="false">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723710459_42081" oldID="kcap1564723511283_11367">
+          <saw:text>Contingency Items Total</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c8c8d022e1e8d9e1b"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

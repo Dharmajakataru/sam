@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:view xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saw:globalFilterPrompt" name="">
+  <saw:prompts scope="dashboard" subjectArea="&quot;Leasing&quot;">
+    <saw:promptStep setWidthToAllPrompts="true" autoApplyPrompt="true" showResetButton="false">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c3" subjectArea="&quot;Leasing&quot;" required="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Lease Expiry V&quot;.&quot;Lease End Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723702007_40952" oldID="kcap1564723571676_25460">
+              <saw:text>Lease End Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            <saw:promptDefaultValue>RV_CURRENT_FIN_YEAR_FY</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c4" subjectArea="&quot;Leasing&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Lease Expiry V&quot;.&quot;Lease End Date Month&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723702007_40953" oldID="kcap1564723571676_25461">
+              <saw:text>Lease End Date Month</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="specificPrompts">
+            <saw:constrainedByFormula>
+              <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Lease Expiry V&quot;.&quot;Lease End Date FY&quot;</sawx:expr>
+            </saw:constrainedByFormula>
+          </saw:constrainPrompt>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c1" subjectArea="&quot;Leasing&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Dim Lease&quot;.&quot;Ownership&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723702007_40954" oldID="kcap1564723571676_25462">
+              <saw:text>Ownership</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c2" subjectArea="&quot;Leasing&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Dim Lease&quot;.&quot;Compliancy&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723702007_40955" oldID="kcap1564723571676_25463">
+              <saw:text>Compliancy</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c5" subjectArea="&quot;Leasing&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Dim Lease&quot;.&quot;Client Flag&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723702007_40956" oldID="kcap1564723571676_25464">
+              <saw:text>Client Flag</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c6" subjectArea="&quot;Leasing&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Dim Lease&quot;.&quot;SRC&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723702007_40957" oldID="kcap1564723571676_25465">
+              <saw:text>SRC</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c7" subjectArea="&quot;Leasing&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Dim Lease&quot;.&quot;DHF Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723702007_40958" oldID="kcap1564723571676_25466">
+              <saw:text>DHF Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c8" subjectArea="&quot;Leasing&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Dim Lease&quot;.&quot;Management Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723702007_40959" oldID="kcap1564723571676_25467">
+              <saw:text>Management Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c10" subjectArea="&quot;Leasing&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Lease Expiry V&quot;.&quot;Issue Status&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723702007_40960" oldID="kcap1564723571676_25468">
+              <saw:text>Issue Status</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+      <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c11" subjectArea="&quot;Leasing&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Lease Expiry V&quot;.&quot;Expiry Type&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource xsi:type="saw:allChoices"/></saw:prompt></saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:view>

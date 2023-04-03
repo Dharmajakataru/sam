@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Finance&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c88b53faa3b7bcbab">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;CP Element&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8d12cdbb8e39337f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Property Number&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="true" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c8d12cdbb8e39337f_aldc85e54bd0681b29">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723688451_38823" oldID="kcap1564723682695_37904">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8d12cdbb8e39337f"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c8d12cdbb8e39337f_al1f230d32d01a7b4c">
+                <saw:action>
+                  <saw:actionName>Navigate - @[staffservices]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Property_id</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[staffservices]?property_id=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723688452_38824" oldID="kcap1564723682695_37905">
+                  <saw:text>View Property in Homefind</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8d12cdbb8e39337f"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdead7754657420de">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Month&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb111a1e65443e53e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1a4ce6ac457bacac">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0e6ecb3316a9beed">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Street Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf445deeab03b5e9b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9abd22d82313b7b7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;State&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7625ea60c0c2afec">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Post Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2b235bb2b8a09bbb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Property Class&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf7beb8abb479eeef">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Property Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf18fe97e4d8f6a97">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Rent Band Flag&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c343a894901f70738">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Current Agreement Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c55ae6675fac7b278">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca2c7934118956452">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Ownership&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdb8e32376c447375">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Lease Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cefad1e368fcf1cc0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Rent Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf5971a6d44a44843">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Repairs Area Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c32e04ea3a2e74c3c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Pre NHCP Classification&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbf9223944d4702d7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;SRC&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf20ddc13e648dbc8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Compliancy&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4c71e1a453ca6868">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Member Entitlement&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfac93af371a25d46">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Beds&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5b66e7c878cd282a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Market Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0768d73a82c1c464">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;House Size&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c81ea30e4334ccd88">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Asset Status Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c034a89042292d0cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;SLB Flag&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38806" oldID="kcap1564723682695_37887">
+            <saw:text>TM1 Direct Lease</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38807" oldID="kcap1564723682695_37888">
+            <saw:text>SLB Flag</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8b00a8dfa70229d9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;SLB Flag Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38808" oldID="kcap1564723682695_37889">
+            <saw:text>TM1 Direct Lease</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38809" oldID="kcap1564723682695_37890">
+            <saw:text>SLB Flag Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb30a5692d6ddd2fa">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Lease Ref&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7f501e9863883cb6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Lease Current Flag&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccfe10c9728a4f76f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Lease Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c60ef4f907540d572">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Lease Edition&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c14277fc400338f99">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Lease Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca067d3be20383621">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Lease Start Month YY&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccf1e4403cd447f42">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Options Months&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38810" oldID="kcap1564723682695_37891">
+            <saw:text>TM1 Direct Lease</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38811" oldID="kcap1564723682695_37892">
+            <saw:text>Options (Months)</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c096a1a1fe888b92f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Options Used&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38812" oldID="kcap1564723682695_37893">
+            <saw:text>TM1 Direct Lease</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38813" oldID="kcap1564723682695_37894">
+            <saw:text>Options Used</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd8d94e7a62d75c83">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Right To Vary Term&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38814" oldID="kcap1564723682695_37895">
+            <saw:text>TM1 Direct Lease</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38815" oldID="kcap1564723682695_37896">
+            <saw:text>Rights To Vary Term</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd478c55bf2e1882e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Rights To Vary Used&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38816" oldID="kcap1564723682695_37897">
+            <saw:text>TM1 Direct Lease</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38817" oldID="kcap1564723682695_37898">
+            <saw:text>Rights To Vary Used</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce9c9c1099b8b4169">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38818" oldID="kcap1564723682695_37899">
+            <saw:text>TM1 Direct Lease</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38819" oldID="kcap1564723682695_37900">
+            <saw:text>Renegotiated Flag</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca517db4584ab5661">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38820" oldID="kcap1564723682695_37901">
+            <saw:text>TM1 Direct Lease</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723688451_38821" oldID="kcap1564723682695_37902">
+            <saw:text>Rent</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c97dabcaeff86b315">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Defence Rent Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0711d0bf3334c478">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Market Rent Valuation Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7dc8de4334bf30ce">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Weekly Rent&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c52a3f1bec780cbfd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Rent Review Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="filtersView!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Reports+Page+-+Finance" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c88b53faa3b7bcbab"/>
+            <saw:edgeLayer type="column" columnID="c8d12cdbb8e39337f"/>
+            <saw:edgeLayer type="column" columnID="cdead7754657420de"/>
+            <saw:edgeLayer type="column" columnID="cb111a1e65443e53e"/>
+            <saw:edgeLayer type="column" columnID="c1a4ce6ac457bacac"/>
+            <saw:edgeLayer type="column" columnID="c0e6ecb3316a9beed"/>
+            <saw:edgeLayer type="column" columnID="cf445deeab03b5e9b"/>
+            <saw:edgeLayer type="column" columnID="c9abd22d82313b7b7"/>
+            <saw:edgeLayer type="column" columnID="c7625ea60c0c2afec"/>
+            <saw:edgeLayer type="column" columnID="c2b235bb2b8a09bbb"/>
+            <saw:edgeLayer type="column" columnID="cf7beb8abb479eeef"/>
+            <saw:edgeLayer type="column" columnID="cf18fe97e4d8f6a97"/>
+            <saw:edgeLayer type="column" columnID="c343a894901f70738"/>
+            <saw:edgeLayer type="column" columnID="c55ae6675fac7b278"/>
+            <saw:edgeLayer type="column" columnID="ca2c7934118956452"/>
+            <saw:edgeLayer type="column" columnID="cdb8e32376c447375"/>
+            <saw:edgeLayer type="column" columnID="cefad1e368fcf1cc0"/>
+            <saw:edgeLayer type="column" columnID="cf5971a6d44a44843"/>
+            <saw:edgeLayer type="column" columnID="c32e04ea3a2e74c3c"/>
+            <saw:edgeLayer type="column" columnID="cbf9223944d4702d7"/>
+            <saw:edgeLayer type="column" columnID="cf20ddc13e648dbc8"/>
+            <saw:edgeLayer type="column" columnID="c4c71e1a453ca6868"/>
+            <saw:edgeLayer type="column" columnID="cfac93af371a25d46"/>
+            <saw:edgeLayer type="column" columnID="c5b66e7c878cd282a"/>
+            <saw:edgeLayer type="column" columnID="c0768d73a82c1c464"/>
+            <saw:edgeLayer type="column" columnID="c81ea30e4334ccd88"/>
+            <saw:edgeLayer type="column" columnID="c034a89042292d0cb"/>
+            <saw:edgeLayer type="column" columnID="c8b00a8dfa70229d9"/>
+            <saw:edgeLayer type="column" columnID="cb30a5692d6ddd2fa"/>
+            <saw:edgeLayer type="column" columnID="c7f501e9863883cb6"/>
+            <saw:edgeLayer type="column" columnID="ccfe10c9728a4f76f"/>
+            <saw:edgeLayer type="column" columnID="c60ef4f907540d572"/>
+            <saw:edgeLayer type="column" columnID="c14277fc400338f99"/>
+            <saw:edgeLayer type="column" columnID="ca067d3be20383621"/>
+            <saw:edgeLayer type="column" columnID="ccf1e4403cd447f42"/>
+            <saw:edgeLayer type="column" columnID="c096a1a1fe888b92f"/>
+            <saw:edgeLayer type="column" columnID="cd8d94e7a62d75c83"/>
+            <saw:edgeLayer type="column" columnID="cd478c55bf2e1882e"/>
+            <saw:edgeLayer type="column" columnID="ce9c9c1099b8b4169"/>
+            <saw:edgeLayer type="column" columnID="ca517db4584ab5661"/>
+            <saw:edgeLayer type="column" columnID="c97dabcaeff86b315"/>
+            <saw:edgeLayer type="column" columnID="c0711d0bf3334c478"/>
+            <saw:edgeLayer type="column" columnID="c7dc8de4334bf30ce"/>
+            <saw:edgeLayer type="column" columnID="c52a3f1bec780cbfd"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:filtersView" name="filtersView!1"/>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Finance&quot;">
+    <saw:promptStep>
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c39" subjectArea="&quot;Finance&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;TM1 Direct Lease&quot;.&quot;Acquisition Date&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723688451_38822" oldID="kcap1564723682695_37903">
+              <saw:text>Renegotiated Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            <saw:promptDefaultValue>RV_CURRENT_MTH_START_DATE_STR</saw:promptDefaultValue>
+            <saw:promptDefaultValue>RV_CURRENT_DATE_STR</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:report>

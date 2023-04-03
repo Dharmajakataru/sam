@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sawd:dashboardPage xmlns:sawd="com.siebel.analytics.web/dashboard/v1.1" xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlVersion="200810300" isEmpty="false" duid="o46ddlun8pu2ejkd">
+  <sawd:dashboardColumn name="Column 4" duid="0is9od564rte54kl" canFreeze="true" layoutType="bestFit"><sawd:dashboardSection name="Section 10" duid="hg155sjt1lcsm0bh" showSectionTitle="false" collapsible="false" horizontalLayout="true" layoutType="bestFit">
+      <saw:displayFormat>
+        <saw:formatSpec hAlign="center" wrapText="true"/>
+      </saw:displayFormat>
+      <sawd:htmlView name="HTML 4" duid="bl9eisd8jrnoioqc">
+        <sawd:HTML fmt="html">&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;a href=&quot;https://intranet.dha.gov.au/display/BSTARC/ACQ+Land+Settlements+-+BI+Report&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;../custom_styles/s_dha/dha/Info.png&quot;  style=&quot;width:24px; height:24px;top:10px; left:1px; position:absolute; z-index:10;&quot; title=&quot;Display info explaining dashboard page content&quot; alt=&quot;Display info explaining dashboard page content&quot;&gt;&lt;/a&gt;&lt;/div&gt;</sawd:HTML>
+      </sawd:htmlView>
+      <sawd:globalFilterView name="GFP 6" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/dp Fin Year-forecast LA" scope="dashboardPage" duid="erglqg9nomd4gs99"><saw:caption>
+          <saw:text>Dp Fin Year-forecast LA</saw:text>
+        </saw:caption>
+        
+      </sawd:globalFilterView>
+      <sawd:globalFilterView name="GFP 7" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/dp Fin Month-forecast LA" scope="dashboardPage" duid="t6ou65s1lquh20hu"><saw:caption>
+          <saw:text>Dp Fin Month-forecast LA</saw:text>
+        </saw:caption>
+        
+      </sawd:globalFilterView>
+      <sawd:globalFilterView name="GFP 8" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/Dp Ownership - LA" scope="dashboardPage" duid="drhgg6rqrc47tcsf"><saw:caption>
+          <saw:text>Dp Ownership - LA</saw:text>
+        </saw:caption>
+        
+      </sawd:globalFilterView>
+      <sawd:globalFilterView name="GFP 9" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/dp rent bill client-forecast LA" scope="dashboardPage" duid="f7nrgci7lu7viki0"><saw:caption>
+          <saw:text>Dp rent bill client-forecast LA</saw:text>
+        </saw:caption>
+        
+      </sawd:globalFilterView>
+    </sawd:dashboardSection><saw:displayFormat>
+      <saw:formatSpec wrapText="true" hAlign="left"/>
+    </saw:displayFormat></sawd:dashboardColumn>
+  <sawd:dashboardColumn name="Column 5" break="column" duid="346sq9d2gdfjoa3m" frozen="false" canFreeze="false" layoutType="bestFit"><sawd:dashboardSection name="Section 2" duid="83sns8atu7dvvf32" showSectionTitle="false" collapsible="false" layoutType="bestFit">
+      <sawd:reportView name="Report 4" display="embed" showView="" duid="se3p7sqdmq7lvbv9" links="efrdg" overrideParentLinks="true"><saw:caption>
+          <saw:text>Land Additions With Forecast</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/Land Additions With Forecast"/>
+      </sawd:reportView>
+    </sawd:dashboardSection></sawd:dashboardColumn>
+  <sawd:dashboardColumn name="Column 6" break="column" duid="1rvfp79nf2ooncdg" frozen="false" canFreeze="false" layoutType="minimumSize"><sawd:dashboardSection name="Section 9" duid="a4t5fvqp4o1lkbed" showSectionTitle="false" collapsible="false" layoutType="minimumSize">
+      <saw:displayFormat>
+        <saw:formatSpec wrapText="true" borderPosition="none" width="10px" height="425px"/>
+      </saw:displayFormat>
+      <sawd:globalFilterView name="GFP 5" path="/shared/Components/Dashboard Content/Acquisitions/DP Report Selector" duid="4eimtaopraporosi" scope="dashboardPage"><saw:caption>
+          <saw:text>DP Report Selector</saw:text>
+        </saw:caption>
+        
+      </sawd:globalFilterView>
+    </sawd:dashboardSection><saw:displayFormat>
+      <saw:formatSpec wrapText="true" borderPosition="none" width="50px"/>
+    </saw:displayFormat></sawd:dashboardColumn>
+  <sawd:dashboardColumn name="Column 7" duid="7h49qtbp30ag7gc2" frozen="false" canFreeze="false" layoutType="bestFit"><sawd:dashboardSection name="Section 8" duid="143knmmta3dnaqvl" showSectionTitle="false" collapsible="false" layoutType="minimumSize">
+      <saw:caption>
+        <saw:text>Cumulative National</saw:text>
+      </saw:caption>
+      <saw:displayFormat>
+        <saw:formatSpec wrapText="true" height="425px"/>
+      </saw:displayFormat>
+      <cond:condition xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" name="ROWCOUNT(&#39;Rep Selector-Cum National&#39;) &gt; 0" autoGenerateName="true">
+        <cond:comparison op="greater">
+          <cond:rowcount op="ROWCOUNT">
+            <saw:reportRef path="/shared/Components/Dashboard Content/Acquisitions/Rep Selector-Cum National">
+              <saw:filterOverrides/>
+            </saw:reportRef>
+          </cond:rowcount>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </cond:comparison>
+      </cond:condition>
+      <sawd:reportView name="Report 5" display="embed" showView="viewSelector!1" duid="b22vcdnmt56t94cs" links="efrdg" overrideParentLinks="true"><saw:caption>
+          <saw:text>Land Additions Frcst National Monthly</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/Land Additions Frcst National Monthly"/>
+      </sawd:reportView>
+    </sawd:dashboardSection><sawd:dashboardSection name="Section 0" duid="84mt9i8rer3r50hh" showSectionTitle="false" collapsible="false" layoutType="minimumSize">
+      <saw:caption>
+        <saw:text>Cumulative Regional</saw:text>
+      </saw:caption>
+      <saw:displayFormat>
+        <saw:formatSpec wrapText="true" height="425px"/>
+      </saw:displayFormat>
+      <cond:condition xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" name="ROWCOUNT(&#39;Rep Selector-Cum Regional&#39;) &gt; 0" autoGenerateName="true">
+        <cond:comparison op="greater">
+          <cond:rowcount op="ROWCOUNT">
+            <saw:reportRef path="/shared/Components/Dashboard Content/Acquisitions/Rep Selector-Cum Regional">
+              <saw:filterOverrides/>
+            </saw:reportRef>
+          </cond:rowcount>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </cond:comparison>
+      </cond:condition>
+      <sawd:globalFilterView name="GFP 10" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/DP Land Additions Frcst DHF" scope="dashboardPage" duid="am013kkmj9sitvtl"><saw:caption>
+          <saw:text>DP Land Additions Frcst DHF</saw:text>
+        </saw:caption>
+        
+      </sawd:globalFilterView>
+      <sawd:reportView name="Report 6" display="embed" showView="compoundView!2" showViewCaption="Graph Layout" duid="3261vdd9pkb7avno" links="efrdg" overrideParentLinks="true"><saw:caption>
+          <saw:text>Land Additions Frcst DHF Monthly</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/Land Additions Frcst DHF Monthly"/>
+      </sawd:reportView>
+    </sawd:dashboardSection><saw:displayFormat>
+      <saw:formatSpec hAlign="left" wrapText="true"/>
+    </saw:displayFormat><sawd:dashboardSection name="Section 11" duid="dqm9p6mrracb30ab" showSectionTitle="false" collapsible="false" layoutType="minimumSize">
+      <saw:caption>
+        <saw:text>Monthly National</saw:text>
+      </saw:caption>
+      <saw:displayFormat><saw:formatSpec height="425px" wrapText="true"/></saw:displayFormat><cond:condition xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" name="ROWCOUNT(&#39;Rep Selector-Mon National&#39;) &gt; 0" autoGenerateName="true">
+        <cond:comparison op="greater">
+          <cond:rowcount op="ROWCOUNT">
+            <saw:reportRef path="/shared/Components/Dashboard Content/Acquisitions/Rep Selector-Mon National">
+              <saw:filterOverrides/>
+            </saw:reportRef>
+          </cond:rowcount>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </cond:comparison>
+      </cond:condition>
+      <sawd:reportView name="Report 8" display="embed" showView="compoundView!3" showViewCaption="National Level - Monthly" duid="hg3f29gg2ic0s9hd" links="efrdg" overrideParentLinks="true"><saw:caption>
+          <saw:text>Land Additions With Forecast</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/Land Additions With Forecast"/>
+      </sawd:reportView>
+    </sawd:dashboardSection><sawd:dashboardSection name="Section 1" duid="su4i9r5i9md2aej7" showSectionTitle="false" collapsible="false" layoutType="minimumSize">
+      <saw:caption>
+        <saw:text>Monthly Regional</saw:text>
+      </saw:caption>
+      <saw:displayFormat><saw:formatSpec height="425px" wrapText="true"/></saw:displayFormat><cond:condition xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" name="ROWCOUNT(&#39;Rep Selector-Mon Regional&#39;) &gt; 0" autoGenerateName="true">
+        <cond:comparison op="greater">
+          <cond:rowcount op="ROWCOUNT">
+            <saw:reportRef path="/shared/Components/Dashboard Content/Acquisitions/Rep Selector-Mon Regional">
+              <saw:filterOverrides/>
+            </saw:reportRef>
+          </cond:rowcount>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </cond:comparison>
+      </cond:condition>
+      <sawd:reportView name="Report 9" display="embed" showView="compoundView!2" showViewCaption="DHF Level - Monthly" duid="dnkgiskf8cf1ua6m" links="efrdg" overrideParentLinks="true"><saw:caption>
+          <saw:text>Land Additions With Forecast</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/Land Additions With Forecast"/>
+      </sawd:reportView>
+    </sawd:dashboardSection><sawd:dashboardSection name="Section 3" collapsible="false" duid="vjns9osrlkbm2lkh" showSectionTitle="false" layoutType="minimumSize">
+      <saw:caption>
+        <saw:text>YTD Regional</saw:text>
+      </saw:caption>
+      <saw:displayFormat><saw:formatSpec height="425px" wrapText="true"/></saw:displayFormat><cond:condition xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" name="ROWCOUNT(&#39;Rep Selector-YTD Regional&#39;) &gt; 0" autoGenerateName="true">
+        <cond:comparison op="greater">
+          <cond:rowcount op="ROWCOUNT">
+            <saw:reportRef path="/shared/Components/Dashboard Content/Acquisitions/Rep Selector-YTD Regional">
+              <saw:filterOverrides/>
+            </saw:reportRef>
+          </cond:rowcount>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </cond:comparison>
+      </cond:condition>
+      <sawd:reportView name="Report 10" display="embed" showView="compoundView!4" showViewCaption="DHF Level - YTD" duid="dmuso3squs95e96j" links="efrdg" overrideParentLinks="true"><saw:caption>
+          <saw:text>Land Additions With Forecast</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Acquisitions/ACQ Land Settlements/Land Additions With Forecast"/>
+      </sawd:reportView>
+    </sawd:dashboardSection></sawd:dashboardColumn>
+</sawd:dashboardPage>

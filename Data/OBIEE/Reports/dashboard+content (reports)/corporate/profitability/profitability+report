@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">  
+   <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Profitability&quot;" withinHierarchy="true">    
+      <saw:columns><saw:column xsi:type="saw:hierarchicalColumn" hierarchyID="D Property Profitability Hier H - DHF" tableName="&quot;D Property Profitability Hier&quot;" dimensionID="D Property Profitability Hier H" columnID="cc3d08e148f94088a"><saw:hierarchyLevels><saw:hierarchyLevel levelID="Total"/><saw:hierarchyLevel levelID="DHF"/><saw:hierarchyLevel levelID="Revenue/Expense"/><saw:hierarchyLevel levelID="Transaction Type"/></saw:hierarchyLevels></saw:column>      
+               
+         <saw:column xsi:type="saw:regularColumn" columnID="c110abf53f0bc16b3">        
+            <saw:columnFormula>          
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Property Profitability Hier&quot;.&quot;DHF Area&quot;</sawx:expr>        </saw:columnFormula>        
+            <saw:displayFormat>          
+               <saw:formatSpec suppress="suppress" wrapText="true"/>        </saw:displayFormat>        
+            <saw:columnHeading>          
+               <saw:displayFormat>            
+                  <saw:formatSpec/>          </saw:displayFormat>        </saw:columnHeading>      </saw:column>      
+         <saw:column xsi:type="saw:regularColumn" columnID="c0b797628f8563f6b">        
+            <saw:columnFormula>          
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Property Profitability Hier&quot;.&quot;Rev/Exp&quot;</sawx:expr>        </saw:columnFormula>        
+            <saw:displayFormat>          
+               <saw:formatSpec suppress="suppress" wrapText="true"/>        </saw:displayFormat>        
+            <saw:columnHeading>          
+               <saw:displayFormat>            
+                  <saw:formatSpec/>          </saw:displayFormat>        </saw:columnHeading>      </saw:column>      
+         <saw:column xsi:type="saw:regularColumn" columnID="cb740eee82947f160">        
+            <saw:columnFormula>          
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Property Profitability Hier&quot;.&quot;Trans Type&quot;</sawx:expr>        </saw:columnFormula>        
+            <saw:displayFormat>          
+               <saw:formatSpec suppress="suppress" wrapText="true"/>        </saw:displayFormat>        
+            <saw:columnHeading>          
+               <saw:displayFormat>            
+                  <saw:formatSpec/>          </saw:displayFormat>        </saw:columnHeading>      </saw:column>      
+               
+               
+         <saw:column xsi:type="saw:hierarchicalColumn" hierarchyID="D Property Trans Period H" tableName="&quot;D Property Trans Period&quot;" dimensionID="D Property Trans Period H" columnID="c9cda531b447600ea"><saw:hierarchyLevels><saw:hierarchyLevel levelID="Total"/><saw:hierarchyLevel levelID="Fin Year"/><saw:hierarchyLevel levelID="Month"/></saw:hierarchyLevels></saw:column><saw:column xsi:type="saw:regularColumn" columnID="ca4f452e3bf9e5077">        
+            <saw:columnFormula>          
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Property Trans Period&quot;.&quot;Fin Year&quot;</sawx:expr>        </saw:columnFormula>        
+            <saw:displayFormat>          
+               <saw:formatSpec suppress="suppress" wrapText="true" interaction="clientEvent">            
+                  <saw:clientEventSpec channel="YR1"/>          </saw:formatSpec>        </saw:displayFormat>        
+            <saw:columnHeading>          
+               <saw:displayFormat>            
+                  <saw:formatSpec/>          </saw:displayFormat>        </saw:columnHeading>      </saw:column>      
+         <saw:column xsi:type="saw:regularColumn" columnID="cfa70c0e8049b4ca7">        
+            <saw:columnFormula>          
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Property Trans Det&quot;.&quot;Trans Amount&quot;</sawx:expr>        </saw:columnFormula>        
+            <saw:displayFormat>          
+               <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">            
+                  <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="paren" minDigits="0" maxDigits="0"/>          </saw:formatSpec>          
+               <saw:conditionalDisplayFormats>            
+                              
+                              
+                            <saw:conditionalDisplayFormat><saw:formatRule><saw:condition><sawx:expr xsi:type="sawx:logical" op="and">                    
+                                                  
+                                                  
+                                                  
+                                                <sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="c110abf53f0bc16b3"/></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="null"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0b797628f8563f6b"/></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="null"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="cb740eee82947f160"/></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="ca4f452e3bf9e5077"/></sawx:expr></sawx:expr></saw:condition><saw:formatSpec interaction="action"><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false"><saw:actionLink actionLinkID="cfa70c0e8049b4ca7_al526f9f486a255bc4">                      
+                                                       
+                                 <saw:action><saw:actionName>Profitability Report Det Lvl1</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false"><saw:prompt>__navigateToBIContent__</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Corporate/Profitability/Profitability Report Det Lvl1</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">                          
+                                       <saw:functionName>__navigateToBIContent__</saw:functionName>                          
+                                       <saw:scriptLanguage>JScript</saw:scriptLanguage>                          
+                                       <saw:scriptPath/>                        </saw:implementation><saw:clientImplementation>                          
+                                       <saw:customisation invokeConfirmation="false" openNewWindow="true"/>                        </saw:clientImplementation></saw:action><saw:caption captionID="kcap1564723663221_34622" oldID="kcap1564723487128_6426">                        
+                                    <saw:text>Lvl1 Details</saw:text>                      </saw:caption>                    </saw:actionLink></saw:actionLinks></saw:formatSpec></saw:formatRule></saw:conditionalDisplayFormat><saw:conditionalDisplayFormat><saw:formatRule><saw:condition><sawx:expr xsi:type="sawx:logical" op="and">                    
+                                                  
+                                                  
+                                                  
+                                                <sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="c110abf53f0bc16b3"/></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0b797628f8563f6b"/></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="null"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="cb740eee82947f160"/></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="ca4f452e3bf9e5077"/></sawx:expr></sawx:expr></saw:condition><saw:formatSpec interaction="action"><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false"><saw:actionLink actionLinkID="cfa70c0e8049b4ca7_al003c4020dd262203">                      
+                                                       
+                                 <saw:action><saw:actionName>Profitability Report Det Lvl2</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false"><saw:prompt>__navigateToBIContent__</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Corporate/Profitability/Profitability Report Det Lvl2</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">                          
+                                       <saw:functionName>__navigateToBIContent__</saw:functionName>                          
+                                       <saw:scriptLanguage>JScript</saw:scriptLanguage>                          
+                                       <saw:scriptPath/>                        </saw:implementation><saw:clientImplementation>                          
+                                       <saw:customisation invokeConfirmation="false" openNewWindow="true"/>                        </saw:clientImplementation></saw:action><saw:caption captionID="kcap1564723663221_34623" oldID="kcap1564723487128_6427">                        
+                                    <saw:text>Lvl2 Details</saw:text>                      </saw:caption>                    </saw:actionLink></saw:actionLinks></saw:formatSpec></saw:formatRule></saw:conditionalDisplayFormat><saw:conditionalDisplayFormat><saw:formatRule><saw:condition><sawx:expr xsi:type="sawx:logical" op="and">                    
+                                                  
+                                                  
+                                                  
+                                                <sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="c110abf53f0bc16b3"/></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0b797628f8563f6b"/></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="cb740eee82947f160"/></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="ca4f452e3bf9e5077"/></sawx:expr></sawx:expr></saw:condition><saw:formatSpec interaction="action"><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false"><saw:actionLink actionLinkID="cfa70c0e8049b4ca7_ala112793a2db5b8e1">                      
+                                                       
+                                 <saw:action><saw:actionName>Profitability Report Det Lvl3</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false"><saw:prompt>__navigateToBIContent__</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Corporate/Profitability/Profitability Report Det Lvl3</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">                          
+                                       <saw:functionName>__navigateToBIContent__</saw:functionName>                          
+                                       <saw:scriptLanguage>JScript</saw:scriptLanguage>                          
+                                       <saw:scriptPath/>                        </saw:implementation><saw:clientImplementation>                          
+                                       <saw:customisation invokeConfirmation="false" openNewWindow="true"/>                        </saw:clientImplementation></saw:action><saw:caption captionID="kcap1564723663221_34624" oldID="kcap1564723487128_6428">                        
+                                    <saw:text>Lvl3 Details</saw:text>                      </saw:caption>                    </saw:actionLink></saw:actionLinks></saw:formatSpec></saw:formatRule></saw:conditionalDisplayFormat></saw:conditionalDisplayFormats>        </saw:displayFormat>        
+            <saw:tableHeading>          
+               <saw:caption fmt="text" captionID="kcap1564723663221_34620" oldID="kcap1564723487128_6424">            
+                  <saw:text>Property Fin Trans Det</saw:text>          </saw:caption>        </saw:tableHeading>        
+            <saw:columnHeading>          
+               <saw:caption fmt="text" captionID="kcap1564723663221_34621" oldID="kcap1564723487128_6425">            
+                  <saw:text>Amount</saw:text>          </saw:caption>          
+               <saw:displayFormat>            
+                  <saw:formatSpec/>          </saw:displayFormat>        </saw:columnHeading>      </saw:column>    </saw:columns>    
+      <saw:filter>      
+             <sawx:expr xsi:type="sawx:logical" op="and"><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Property Profitability Hier&quot;.&quot;Cashflow Type&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Dim Managed Properties&quot;.&quot;Property Class&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Dim Managed Properties&quot;.&quot;Rent Band&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Dim Managed Properties&quot;.&quot;UPRN&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Dim Managed Properties&quot;.&quot;Beds&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Dim Managed Properties&quot;.&quot;Ownership Description&quot;</sawx:expr></sawx:expr></sawx:expr></saw:filter>  <saw:columnOrder><saw:columnOrderRef columnID="c9cda531b447600ea" direction="descending"/></saw:columnOrder></saw:criteria>  
+   <saw:views currentView="0">    
+      <saw:view xsi:type="saw:compoundView" name="compoundView!1">      
+         <saw:cvTable>        
+            <saw:cvRow>          
+               <saw:cvCell viewName="titleView!1">            
+                  <saw:displayFormat>              
+                     <saw:formatSpec/>            </saw:displayFormat>          </saw:cvCell>        </saw:cvRow>        
+            <saw:cvRow>          
+               <saw:cvCell viewName="pivotTableView!1">            
+                  <saw:displayFormat>              
+                     <saw:formatSpec/>            </saw:displayFormat>          </saw:cvCell>        </saw:cvRow>      </saw:cvTable>    </saw:view>    
+      <saw:view xsi:type="saw:titleView" name="titleView!1"/>    
+      <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" scrollingEnabled="true" height="600" width="2500">      
+               
+             <saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">          
+               <saw:displayGrandTotals>            
+                  <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>          </saw:displayGrandTotals>          
+                       <saw:edgeLayers><saw:edgeLayer type="column" columnID="cc3d08e148f94088a"/><saw:edgeLayer type="column" columnID="c110abf53f0bc16b3" visibility="hidden"/><saw:edgeLayer type="column" columnID="c0b797628f8563f6b" visibility="hidden"/><saw:edgeLayer type="column" columnID="cb740eee82947f160" visibility="hidden"/></saw:edgeLayers></saw:edge><saw:edge axis="column">          
+               <saw:displayGrandTotals>            
+                  <saw:displayGrandTotal id="t2" grandTotalPosition="none"/>          </saw:displayGrandTotals>          
+                       <saw:edgeLayers><saw:edgeLayer type="column" columnID="ca4f452e3bf9e5077" visibility="hidden"/><saw:edgeLayer type="column" columnID="c9cda531b447600ea"><saw:drillState><saw:drillStep drillType="down"><saw:QDR><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="ca4f452e3bf9e5077"/></saw:groupType><saw:members xsi:type="saw:specialValueMembers"><saw:value specialValue="any"/></saw:members></saw:staticMemberGroup><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="c9cda531b447600ea"/></saw:groupType><saw:hierarchyMembers><saw:hierarchyLevelMembers><saw:hierarchyLevel levelID="Total"/><saw:members xsi:type="saw:integerMembers"><saw:value>1</saw:value></saw:members></saw:hierarchyLevelMembers></saw:hierarchyMembers></saw:staticMemberGroup><saw:target><sawx:columnRefExpr columnID="c9cda531b447600ea"/></saw:target></saw:QDR><saw:selectionGroups><saw:selectionGroup columnID="ca4f452e3bf9e5077" groupID="0"/><saw:selectionGroup columnID="c9cda531b447600ea" groupID="0"/></saw:selectionGroups></saw:drillStep></saw:drillState></saw:edgeLayer></saw:edgeLayers></saw:edge></saw:edges><saw:measuresList>        
+                  <saw:measure columnID="cfa70c0e8049b4ca7"/></saw:measuresList></saw:view>    
+      <saw:view xsi:type="saw:compoundView" name="compoundView!2">      
+         <saw:cvTable>        
+            <saw:cvRow>          
+               <saw:cvCell viewName="dvtchart!1">            
+                  <saw:displayFormat>              
+                     <saw:formatSpec/>            </saw:displayFormat>          </saw:cvCell>        </saw:cvRow>      </saw:cvTable>    </saw:view>    
+      <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">      
+         <saw:display type="bar" subtype="default" renderFormat="default" mode="online" clientEventEnabled="true" clientEventChannels="DECADE_MDE">        
+            <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>      </saw:display>      
+         <saw:canvasFormat height="330" width="640">        
+            <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>        
+            <saw:title mode="custom"/>      </saw:canvasFormat>      
+         <saw:selections>        
+            <saw:categories>          
+               <saw:category>            
+                  <saw:columnRef columnID="c110abf53f0bc16b3"/>          </saw:category>        <saw:category><saw:columnRef columnID="c7d855aedffebc51f"/></saw:category><saw:category><saw:columnRef columnID="cf233a4bde4c41c8c"/></saw:category><saw:category><saw:columnRef columnID="c1e4903a83d7def14"/></saw:category><saw:category><saw:columnRef columnID="cf7df2d831530b581"/></saw:category><saw:category><saw:columnRef columnID="c9ef11d0398696665"/></saw:category><saw:category><saw:columnRef columnID="ce138b5497bf1f468"/></saw:category><saw:category><saw:columnRef columnID="cc6dfd99544f4a047"/></saw:category><saw:category><saw:columnRef columnID="ccb48acfdbfa0c108"/></saw:category><saw:category><saw:columnRef columnID="c9cda531b447600ea"/></saw:category><saw:category><saw:columnRef columnID="cc3d08e148f94088a"/></saw:category></saw:categories>        
+            <saw:measures showMeasureLabelsOnCategory="false">          
+               <saw:column measureType="y">            
+                  <saw:columnRef columnID="cfa70c0e8049b4ca7"/>          </saw:column>        </saw:measures>        
+            <saw:seriesGenerators>          
+               <saw:measureLabels/>        </saw:seriesGenerators>        
+            <saw:sections displayAsSlider="true">          
+               <saw:section>            
+                  <saw:columnRef columnID="c312a04fedae7ab46"/>          </saw:section>        </saw:sections>      </saw:selections>      
+         <saw:legendFormat position="default" transparentFill="true"/>      
+         <saw:axesFormats>        
+            <saw:axisFormat axis="Y1">          
+               <saw:title mode="custom"/>          
+               <saw:scale scaleValues="datarangezoom" defaultTicks="true"/>        </saw:axisFormat>        
+            <saw:axisFormat axis="X">          
+               <saw:title mode="custom"/>        </saw:axisFormat>      </saw:axesFormats>      
+         <saw:seriesFormats>        
+            <saw:seriesFormatGroup name="bar">          
+               <saw:seriesFormatRule>            
+                  <saw:seriesCondition columnID="cfa70c0e8049b4ca7" position="0">              
+                     <saw:condition>                
+                        <sawx:expr xsi:type="sawx:comparison" op="less">                  
+                           <saw:columnRef columnID="cfa70c0e8049b4ca7"/>                  
+                           <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>                </sawx:expr>              </saw:condition>            </saw:seriesCondition>            
+                  <saw:visualFormats>              
+                     <saw:visualFormat color="#CC3333"/>            </saw:visualFormats>          </saw:seriesFormatRule>          
+               <saw:seriesFormatRule>            
+                  <saw:seriesCondition columnID="cfa70c0e8049b4ca7" position="1">              
+                     <saw:condition>                
+                        <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">                  
+                           <saw:columnRef columnID="cfa70c0e8049b4ca7"/>                  
+                           <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>                </sawx:expr>              </saw:condition>            </saw:seriesCondition>            
+                  <saw:visualFormats>              
+                     <saw:visualFormat color="#7EB679"/>            </saw:visualFormats>          </saw:seriesFormatRule>        </saw:seriesFormatGroup>      </saw:seriesFormats>    </saw:view>    
+      <saw:view xsi:type="saw:compoundView" name="compoundView!3">      
+         <saw:cvTable>        
+            <saw:cvRow>          
+               <saw:cvCell viewName="dvtchart!2">            
+                  <saw:displayFormat>              
+                     <saw:formatSpec/>            </saw:displayFormat>          </saw:cvCell>        </saw:cvRow>      </saw:cvTable>    </saw:view>    
+      <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">      
+         <saw:display type="line" subtype="default" renderFormat="default" mode="online" clientEventEnabled="true" clientEventChannels="DHF_MDE">        
+            <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>      </saw:display>      
+         <saw:canvasFormat height="330" width="640">        
+            <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>        
+            <saw:title mode="custom"/>      </saw:canvasFormat>      
+         <saw:selections>        
+            <saw:categories>          
+               <saw:category>            
+                  <saw:columnRef columnID="ca4f452e3bf9e5077"/>          </saw:category>        <saw:category><saw:columnRef columnID="c7d855aedffebc51f"/></saw:category><saw:category><saw:columnRef columnID="cf233a4bde4c41c8c"/></saw:category><saw:category><saw:columnRef columnID="c1e4903a83d7def14"/></saw:category><saw:category><saw:columnRef columnID="cf7df2d831530b581"/></saw:category><saw:category><saw:columnRef columnID="c9ef11d0398696665"/></saw:category><saw:category><saw:columnRef columnID="ce138b5497bf1f468"/></saw:category><saw:category><saw:columnRef columnID="cc6dfd99544f4a047"/></saw:category><saw:category><saw:columnRef columnID="ccb48acfdbfa0c108"/></saw:category><saw:category><saw:columnRef columnID="c9cda531b447600ea"/></saw:category><saw:category><saw:columnRef columnID="cc3d08e148f94088a"/></saw:category></saw:categories>        
+            <saw:measures showMeasureLabelsOnCategory="false">          
+               <saw:column measureType="y">            
+                  <saw:columnRef columnID="cfa70c0e8049b4ca7"/>          </saw:column>        </saw:measures>        
+            <saw:seriesGenerators>          
+               <saw:measureLabels/>        </saw:seriesGenerators>        
+            <saw:sections displayAsSlider="true">          
+               <saw:section>            
+                  <saw:columnRef columnID="c110abf53f0bc16b3"/>          </saw:section>        </saw:sections>      </saw:selections>      
+         <saw:legendFormat position="default" transparentFill="true"/>      
+         <saw:axesFormats>        
+            <saw:axisFormat axis="Y1">          
+               <saw:title mode="custom"/>          
+               <saw:scale scaleValues="datarangezoom" defaultTicks="true"/>        </saw:axisFormat>        
+            <saw:axisFormat axis="X">          
+               <saw:title mode="custom"/>        </saw:axisFormat>      </saw:axesFormats>    </saw:view>  </saw:views></saw:report>

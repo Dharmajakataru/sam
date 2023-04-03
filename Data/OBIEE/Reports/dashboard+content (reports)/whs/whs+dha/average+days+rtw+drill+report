@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;WHS&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd3b6244d59ffbb18">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;a target=_blank href=&quot;&#39; || VALUEOF(&quot;RV_URL_WORKFLOWDS&quot;)||&quot;F Whs Early Intervention&quot;.&quot;Parent Key&quot;||&#39;&quot;&gt;&#39; ||&quot;F Whs Early Intervention&quot;.&quot;Parent Key&quot;|| &#39;&lt;/a&gt;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58557" oldID="kcap1564723561632_23743">
+            <saw:text>F Whs Early Intervention</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58558" oldID="kcap1564723561632_23744">
+            <saw:text>HRSDS Key</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7e1355197efdb35d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Whs&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3ee1b837ddc85784">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Whs&quot;.&quot;Full Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58559" oldID="kcap1564723561632_23745">
+            <saw:text>Dim Period Whs</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58560" oldID="kcap1564723561632_23746">
+            <saw:text>Parent Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd1b2c608c4c30dc9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Boolean Whs&quot;.&quot;Yes No Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58561" oldID="kcap1564723561632_23747">
+            <saw:text>D Boolean Whs</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58562" oldID="kcap1564723561632_23748">
+            <saw:text>Work Injury</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5b18d5cf73be8c63">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;F Whs Early Intervention&quot;.&quot;Num Days&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58563" oldID="kcap1564723561632_23749">
+            <saw:text>F Whs Early Intervention</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58564" oldID="kcap1564723561632_23750">
+            <saw:text>Number of  Days</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4a9e6685245678b6" aggRule="count">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Count ( Case when sum(&quot;F Whs Early Intervention&quot;.&quot;Num Days&quot;) &gt; 10 then &quot;F Whs Early Intervention&quot;.&quot;Parent Key&quot; Else null End)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58565" oldID="kcap1564723561632_23751">
+            <saw:text>F Whs Early Intervention</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723802311_58566" oldID="kcap1564723561632_23752">
+            <saw:text>Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;FY &#39; ||&quot;Dim Period Whs&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Whs&quot;.&quot;Fin Qtr&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Work Capacity&quot;.&quot;Work Capa Desc&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:untypedLiteral">Unfit</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">Evaluate(&#39;INITCAP (%1)&#39;,&quot;Dim Period Whs&quot;.&quot;Month Abbrev&quot;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Boolean Whs&quot;.&quot;Yes No Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Whs&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Dha Kpi&quot;.&quot;Type&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Modified</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Whs Early Intervention&quot;.&quot;Num Days&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/HRSDS+Management"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723802311_58567" oldID="kcap1564723561632_23753">
+                  <saw:text>Total</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cd3b6244d59ffbb18"/>
+            <saw:edgeLayer type="column" columnID="cd1b2c608c4c30dc9"/>
+            <saw:edgeLayer type="column" columnID="c3ee1b837ddc85784"/>
+            <saw:edgeLayer type="column" columnID="c7e1355197efdb35d"/>
+            <saw:edgeLayer type="column" columnID="c5b18d5cf73be8c63"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

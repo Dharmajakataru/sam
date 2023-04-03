@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Allocations&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd05c543b321f83bd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Incomplete Occupancy SR&quot;.&quot;Housing Solution Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cd05c543b321f83bd_alb51d0bfea73b2bac">
+                <saw:action>
+                  <saw:actionName>SR Incomplete Occupancy Drill Through</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/SR Incomplete Occupancy Drill Through</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723633514_29980" oldID="kcap1564723466297_3366">
+                  <saw:text>Drill To Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633514_29974" oldID="kcap1564723466297_3360">
+            <saw:text>Incomplete Occupancy SR</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633514_29975" oldID="kcap1564723466297_3361">
+            <saw:text>Housing Solution</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cd05c543b321f83bd_al84113e2e3e0b0c81">
+                  <saw:action>
+                    <saw:actionName>SR Incomplete Occupancy Drill Through</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Allocations/SR Incomplete Occupancy Drill Through</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723633514_29983" oldID="kcap1564723466297_3369">
+                    <saw:text>Drill To Details</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc3f367e02f1c6de1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Incomplete Occupancy SR&quot;.&quot;Days On Report Grouping&quot; = &#39;0 - 5 Days&#39; THEN 1 WHEN &quot;Incomplete Occupancy SR&quot;.&quot;Days On Report Grouping&quot; = &#39;6 - 10 Days&#39; THEN 2 ELSE 9 END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633514_29976" oldID="kcap1564723466297_3362">
+            <saw:text>Incomplete Occupancy SR</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633514_29977" oldID="kcap1564723466297_3363">
+            <saw:text>Sort Column</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0b2d19deea26c715">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Incomplete Occupancy SR&quot;.&quot;Days On Report Grouping&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c0b2d19deea26c715_al963c540c824154a4">
+                <saw:action>
+                  <saw:actionName>SR Incomplete Occupancy Drill Through</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/SR Incomplete Occupancy Drill Through</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723633514_29981" oldID="kcap1564723466297_3367">
+                  <saw:text>Drill To Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6db3565f0916820a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Count(*)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c6db3565f0916820a_al09767b619645a55e">
+                <saw:action>
+                  <saw:actionName>SR Incomplete Occupancy Drill Through</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/SR Incomplete Occupancy Drill Through</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723633514_29982" oldID="kcap1564723466297_3368">
+                  <saw:text>Drill To Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633514_29978" oldID="kcap1564723466297_3364">
+            <saw:text>Incomplete Occupancy SR</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633514_29979" oldID="kcap1564723466297_3365">
+            <saw:text>Count</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Incomplete Occupancy SR&quot;.&quot;Report Date&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:sqlExpression">SELECT max(&quot;Incomplete Occupancy SR&quot;.&quot;Report Date&quot;) FROM &quot;Allocations&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="notIn">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Incomplete Occupancy SR&quot;.&quot;Reason Test Failed&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Preview Reservation</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">ZNULL</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723633514_29973" oldID="kcap1564723466297_3359">
+          <saw:text>Unresolved SR and MCA Occupying Tenancies</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cd05c543b321f83bd"/>
+            <saw:edgeLayer type="column" columnID="cc3f367e02f1c6de1"/>
+            <saw:edgeLayer type="column" columnID="c0b2d19deea26c715"/>
+            <saw:edgeLayer type="column" columnID="c6db3565f0916820a"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cd05c543b321f83bd"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cc3f367e02f1c6de1"/>
+            <saw:edgeLayer type="column" columnID="c0b2d19deea26c715"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c6db3565f0916820a"/>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>    &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

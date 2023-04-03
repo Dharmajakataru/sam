@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Monthly Property Portfolio&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf477d9ac784f6faa">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Property ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5e4677cf185015a0" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;@{PV_MEASURE}{Property Count}&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action" width="20px">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c5e4677cf185015a0_al485eeb329d6a9313">
+                <saw:action>
+                  <saw:actionName>MonthlyPropertyDrill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/MonthlyPropertyDrill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724030_46283" oldID="kcap1564723517815_13814">
+                  <saw:text>Property List</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c5e4677cf185015a0_al41c1271a722da221">
+                <saw:action>
+                  <saw:actionName>Finance Property Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/Finance Property Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724030_46284" oldID="kcap1564723517815_13815">
+                  <saw:text>Finance Property Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46269" oldID="kcap1564723517815_13800">
+            <saw:text>Property Daily Snapshot</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46270" oldID="kcap1564723517815_13801">
+            <saw:text>Total</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c5e4677cf185015a0_alb09ddc351a3ec2dd">
+                  <saw:action>
+                    <saw:actionName>MonthlyPropertyDrill</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/MonthlyPropertyDrill</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723724031_46297" oldID="kcap1564723517815_13828">
+                    <saw:text>Property List</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+                <saw:actionLink actionLinkID="c5e4677cf185015a0_al7e892f6d19381c4d">
+                  <saw:action>
+                    <saw:actionName>Finance Property Drill</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/Finance Property Drill</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723724031_46298" oldID="kcap1564723517815_13829">
+                    <saw:text>Finance Property Drill</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c82ba97dfd0745ade">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;@{PV_ROW1}{Management Area}&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c82ba97dfd0745ade_alff61ece45adbd26a">
+                <saw:action>
+                  <saw:actionName>MonthlyPropertyDrill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/MonthlyPropertyDrill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724030_46285" oldID="kcap1564723517815_13816">
+                  <saw:text>Property List</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c82ba97dfd0745ade_alc8f17698d234fd29">
+                <saw:action>
+                  <saw:actionName>Finance Property Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/Finance Property Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724030_46286" oldID="kcap1564723517815_13817">
+                  <saw:text>Finance Property Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46271" oldID="kcap1564723517815_13802">
+            <saw:text>Property Daily Snapshot</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46272" oldID="kcap1564723517815_13803">
+            <saw:text>@{PV_ROW1}{Row Level 1}</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2d760f85a17361bf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;@{PV_ROW2}{Asset Status Desc}&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c2d760f85a17361bf_aldeb4b1c54157ce36">
+                <saw:action>
+                  <saw:actionName>MonthlyPropertyDrill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/MonthlyPropertyDrill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724030_46287" oldID="kcap1564723517815_13818">
+                  <saw:text>Property List</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c2d760f85a17361bf_al21327e23985afc5f">
+                <saw:action>
+                  <saw:actionName>Finance Property Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/Finance Property Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724031_46288" oldID="kcap1564723517815_13819">
+                  <saw:text>Finance Property Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46273" oldID="kcap1564723517815_13804">
+            <saw:text>Property Daily Snapshot</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46274" oldID="kcap1564723517815_13805">
+            <saw:text>@{PV_ROW2}{Row Level 2}</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3b2e0e6e5b0a70dc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;@{PV_ROW3}{Client Description}&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c3b2e0e6e5b0a70dc_alada57197a435761d">
+                <saw:action>
+                  <saw:actionName>MonthlyPropertyDrill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/MonthlyPropertyDrill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724031_46289" oldID="kcap1564723517815_13820">
+                  <saw:text>Property List</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c3b2e0e6e5b0a70dc_al6a3514b3654657f3">
+                <saw:action>
+                  <saw:actionName>Finance Property Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/Finance Property Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724031_46290" oldID="kcap1564723517815_13821">
+                  <saw:text>Finance Property Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46275" oldID="kcap1564723517815_13806">
+            <saw:text>Property Daily Snapshot</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46276" oldID="kcap1564723517815_13807">
+            <saw:text>@{PV_ROW3}{Row Level 3}</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4e956d92824b9ee4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;@{PV_COL1}{Agreement Type Desc}&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c4e956d92824b9ee4_al6aba9d62ec7a5ed5">
+                <saw:action>
+                  <saw:actionName>MonthlyPropertyDrill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/MonthlyPropertyDrill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724031_46291" oldID="kcap1564723517815_13822">
+                  <saw:text>Property List</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c4e956d92824b9ee4_alf2e9c3b50678ab05">
+                <saw:action>
+                  <saw:actionName>Finance Property Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/Finance Property Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724031_46292" oldID="kcap1564723517815_13823">
+                  <saw:text>Finance Property Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46277" oldID="kcap1564723517815_13808">
+            <saw:text>Property Daily Snapshot</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46278" oldID="kcap1564723517815_13809">
+            <saw:text>@{PV_COL1}{Column Level 1}</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce420d43dee6a53fe">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;@{PV_COL2}{Agreement Type Desc}&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="ce420d43dee6a53fe_al61e57905558ada27">
+                <saw:action>
+                  <saw:actionName>MonthlyPropertyDrill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/MonthlyPropertyDrill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724031_46293" oldID="kcap1564723517815_13824">
+                  <saw:text>Property List</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="ce420d43dee6a53fe_al38ea2a38da69e54d">
+                <saw:action>
+                  <saw:actionName>Finance Property Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/Finance Property Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724031_46294" oldID="kcap1564723517815_13825">
+                  <saw:text>Finance Property Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46279" oldID="kcap1564723517815_13810">
+            <saw:text>Property Daily Snapshot</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46280" oldID="kcap1564723517815_13811">
+            <saw:text>@{PV_COL2}{Column Level 2}</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd1cb05e9386a8574">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;@{PV_COL3}{Start Date}&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cd1cb05e9386a8574_al795384d14bd6883c">
+                <saw:action>
+                  <saw:actionName>MonthlyPropertyDrill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/MonthlyPropertyDrill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724031_46295" oldID="kcap1564723517815_13826">
+                  <saw:text>Property List</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="cd1cb05e9386a8574_al99706c5428b416cc">
+                <saw:action>
+                  <saw:actionName>Finance Property Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Monthly Snapshot/Finance Property Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723724031_46296" oldID="kcap1564723517815_13827">
+                  <saw:text>Finance Property Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46281" oldID="kcap1564723517815_13812">
+            <saw:text>Property Daily Snapshot</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724030_46282" oldID="kcap1564723517815_13813">
+            <saw:text>@{PV_COL3}{Column Level 3}</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Acquisition Type Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Agreement Type Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Asset Status Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Client Description&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Compliancy&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;GRS&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Market Type Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Ownership Description&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Property Class&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;SRC&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Property ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Property Class&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">1</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">6</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">9</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when @{PV_AS_AT_DATE}{CURRENT_DATE} &gt;= &quot;Property Daily Snapshot&quot;.&quot;Start Date&quot; and @{PV_AS_AT_DATE}{CURRENT_DATE} &lt;= &quot;Property Daily Snapshot&quot;.&quot;End Date&quot; then 1 else 0 end</sawx:expr>
+          <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!11">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf477d9ac784f6faa"/>
+            <saw:edgeLayer type="column" columnID="c5e4677cf185015a0"/>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c2d760f85a17361bf"/>
+            <saw:edgeLayer type="column" columnID="c3b2e0e6e5b0a70dc"/>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+            <saw:edgeLayer type="column" columnID="ce420d43dee6a53fe"/>
+            <saw:edgeLayer type="column" columnID="cd1cb05e9386a8574"/>
+            <saw:edgeLayer type="column" columnID="c5403c8d91e65c570"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!3">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!4">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!3">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!5">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!4">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!6">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!5">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!7">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!6">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!8">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!7">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!9">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!10"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723724030_46259" oldID="kcap1564723517815_13790">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+hideMenuItemLinks(&quot;Hide&quot;);
+addGrandTotalDDMenu(&#39;Grand Total&#39;);
+hideMenuItemLinks(&quot;Hide&quot;);
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!10">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723724030_46260" oldID="kcap1564723517815_13791">
+          <saw:text>Pivot Table:1x1</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t31" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c5403c8d91e65c570"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t32" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e4677cf185015a0"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!11">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723724030_46261" oldID="kcap1564723517815_13792">
+          <saw:text>Pivot Table:3x3</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t34" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c2d760f85a17361bf"/>
+            <saw:edgeLayer type="column" columnID="c3b2e0e6e5b0a70dc"/>
+            
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t35" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+            <saw:edgeLayer type="column" columnID="ce420d43dee6a53fe"/>
+            <saw:edgeLayer type="column" columnID="cd1cb05e9386a8574"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e4677cf185015a0" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723724030_46262" oldID="kcap1564723517815_13793">
+          <saw:text>Pivot Table 3x2</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t36" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c2d760f85a17361bf"/>
+            <saw:edgeLayer type="column" columnID="c3b2e0e6e5b0a70dc"/>
+            <saw:edgeLayer type="column" columnID="c5403c8d91e65c570"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t37" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+            <saw:edgeLayer type="column" columnID="ce420d43dee6a53fe"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e4677cf185015a0" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723724030_46263" oldID="kcap1564723517815_13794">
+          <saw:text>Pivot Table:3x1</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t39" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c2d760f85a17361bf"/>
+            <saw:edgeLayer type="column" columnID="c3b2e0e6e5b0a70dc"/>
+            <saw:edgeLayer type="column" columnID="c5403c8d91e65c570"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t38" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e4677cf185015a0" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!3">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723724030_46264" oldID="kcap1564723517815_13795">
+          <saw:text>Pivot Table:2x3</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t41" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c2d760f85a17361bf"/>
+            <saw:edgeLayer type="column" columnID="c5403c8d91e65c570"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t40" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+            <saw:edgeLayer type="column" columnID="ce420d43dee6a53fe"/>
+            <saw:edgeLayer type="column" columnID="cd1cb05e9386a8574"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e4677cf185015a0" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!4">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723724030_46265" oldID="kcap1564723517815_13796">
+          <saw:text>Pivot Table:2x2</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t42" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c2d760f85a17361bf"/>
+            <saw:edgeLayer type="column" columnID="c5403c8d91e65c570"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t43" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+            <saw:edgeLayer type="column" columnID="ce420d43dee6a53fe"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e4677cf185015a0" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!5">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723724030_46266" oldID="kcap1564723517815_13797">
+          <saw:text>Pivot Table:2x1</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t45" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c2d760f85a17361bf"/>
+            <saw:edgeLayer type="column" columnID="c5403c8d91e65c570"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t44" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e4677cf185015a0" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!6">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723724030_46267" oldID="kcap1564723517815_13798">
+          <saw:text>Pivot Table:1x3</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t46" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c5403c8d91e65c570"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t47" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+            <saw:edgeLayer type="column" columnID="ce420d43dee6a53fe"/>
+            <saw:edgeLayer type="column" columnID="cd1cb05e9386a8574"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e4677cf185015a0" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!7">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723724030_46268" oldID="kcap1564723517815_13799">
+          <saw:text>Pivot Table:1x2</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t49" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82ba97dfd0745ade"/>
+            <saw:edgeLayer type="column" columnID="c5403c8d91e65c570"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t48" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4e956d92824b9ee4"/>
+            <saw:edgeLayer type="column" columnID="ce420d43dee6a53fe"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e4677cf185015a0" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

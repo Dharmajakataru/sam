@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" cacheControl="bypassCache"><saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Detail Pivot&quot;" withinHierarchy="true"><saw:columns><saw:column xsi:type="saw:regularColumn" columnID="c068836e6fb1d3acb"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;SH_PIVOT_VIEW_SELECTOR_VS&quot;.&quot;DIMENSIONS&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cddee19606f0ee630"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;SH_PIVOT_VIEW_SELECTOR_VS&quot;.&quot;ROWN&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c572fd751417b654d"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&#39;@{PV_MEASURE}{Not Found}&#39;</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>SH_PIVOT_VIEW_SELECTOR_VS</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>DIMENSIONS</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="ca6e48da2509908c2"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">CASE 
+WHEN &#39;@{PV_ROW2}{Blank}&#39; = &#39;Blank&#39; THEN  CASE 
+WHEN &#39;@{PV_COL1}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;1x0&#39;   
+WHEN &#39;@{PV_COL2}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;1x1&#39;       
+WHEN &#39;@{PV_COL3}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;1x2&#39;  ELSE            &#39;1x3&#39;  END  
+WHEN &#39;@{PV_ROW3}{Blank}&#39; = &#39;Blank&#39; THEN  CASE 
+WHEN &#39;@{PV_COL1}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;2x0&#39;  
+WHEN &#39;@{PV_COL2}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;2x1&#39;       
+WHEN &#39;@{PV_COL3}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;2x2&#39;  ELSE            &#39;2x3&#39;  END  
+WHEN &#39;@{PV_ROW3}{Blank}&#39; != &#39;Blank&#39; THEN  CASE 
+WHEN &#39;@{PV_COL1}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;3x0&#39;  
+WHEN &#39;@{PV_COL2}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;3x1&#39;       
+WHEN &#39;@{PV_COL3}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;3x2&#39;  ELSE            &#39;3x3&#39;  END   
+ELSE   &#39;2x1&#39; END || case 
+when &#39;@{PV_MEASURE2}{Blank}&#39;  = &#39;Blank&#39; then &#39;x1&#39;  
+when &#39;@{PV_MEASURE3}{Blank}&#39;  = &#39;Blank&#39; then &#39;x2&#39; 
+when &#39;@{PV_MEASURE4}{Blank}&#39;  = &#39;Blank&#39; then &#39;x3&#39; 
+when &#39;@{PV_MEASURE5}{Blank}&#39;  = &#39;Blank&#39; then &#39;x4&#39; else &#39;x5&#39; end</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>SH_PIVOT_VIEW_SELECTOR_VS</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>DIMENSIONS</saw:text></saw:caption></saw:columnHeading></saw:column></saw:columns><saw:filter><sawx:expr xsi:type="sawx:list" op="in"><sawx:expr xsi:type="sawx:sqlExpression">CASE 
+WHEN &#39;@{PV_ROW2}{Blank}&#39; = &#39;Blank&#39; THEN  CASE 
+WHEN &#39;@{PV_COL1}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;1x0&#39;   
+WHEN &#39;@{PV_COL2}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;1x1&#39;       
+WHEN &#39;@{PV_COL3}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;1x2&#39;  ELSE            &#39;1x3&#39;  END  
+WHEN &#39;@{PV_ROW3}{Blank}&#39; = &#39;Blank&#39; THEN  CASE 
+WHEN &#39;@{PV_COL1}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;2x0&#39;  
+WHEN &#39;@{PV_COL2}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;2x1&#39;       
+WHEN &#39;@{PV_COL3}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;2x2&#39;  ELSE            &#39;2x3&#39;  END  
+WHEN &#39;@{PV_ROW3}{Blank}&#39; != &#39;Blank&#39; THEN  CASE 
+WHEN &#39;@{PV_COL1}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;3x0&#39;  
+WHEN &#39;@{PV_COL2}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;3x1&#39;       
+WHEN &#39;@{PV_COL3}{Blank}&#39; = &#39;Blank&#39; THEN                &#39;3x2&#39;  ELSE            &#39;3x3&#39;  END   
+ELSE   &#39;2x1&#39; END || case 
+when &#39;@{PV_MEASURE2}{Blank}&#39;  = &#39;Blank&#39; then &#39;x1&#39;  
+when &#39;@{PV_MEASURE3}{Blank}&#39;  = &#39;Blank&#39; then &#39;x2&#39; 
+when &#39;@{PV_MEASURE4}{Blank}&#39;  = &#39;Blank&#39; then &#39;x3&#39; 
+when &#39;@{PV_MEASURE5}{Blank}&#39;  = &#39;Blank&#39; then &#39;x4&#39; else &#39;x5&#39; end</sawx:expr><sawx:expr xsi:type="sawx:sqlExpression">&quot;SH_PIVOT_VIEW_SELECTOR_VS&quot;.&quot;DIMENSIONS&quot;</sawx:expr></sawx:expr></saw:filter></saw:criteria><saw:views currentView="0"><saw:view xsi:type="saw:compoundView" name="compoundView!1"><saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1"><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1"><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:cvCell></saw:cvRow></saw:cvTable></saw:view><saw:view xsi:type="saw:titleView" name="titleView!1"/><saw:view xsi:type="saw:tableView" name="tableView!1"><saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true"><saw:edgeLayers><saw:edgeLayer type="column" columnID="c068836e6fb1d3acb"/><saw:edgeLayer type="column" columnID="cddee19606f0ee630"/><saw:edgeLayer type="column" columnID="c572fd751417b654d"/><saw:edgeLayer type="column" columnID="ca6e48da2509908c2"/></saw:edgeLayers></saw:edge><saw:edge axis="column"/></saw:edges></saw:view></saw:views></saw:report>
