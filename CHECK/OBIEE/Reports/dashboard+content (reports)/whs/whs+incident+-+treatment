@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;WHS&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c982ad8b2d41d5896">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Whs Proj&quot;.&quot;Contractor Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c34266bd1e603f5cc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Projects&quot;.&quot;Summary&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c20926638e89c7410">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;a target=_blank href=&quot;&#39; || VALUEOF(&quot;RV_URL_WORKFLOWDS&quot;)||&quot;D Whs Incident&quot;.&quot;Project Key&quot;||&#39;&quot;&gt;&#39; ||&quot;D Whs Incident&quot;.&quot;Project Key&quot;|| &#39;&lt;/a&gt;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59325" oldID="kcap1564723563782_24356">
+            <saw:text>D Whs Incident</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59326" oldID="kcap1564723563782_24357">
+            <saw:text>Project Key</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c07267e77fe82f2a7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Projects&quot;.&quot;Project Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c064db3f7c14e3014">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Trim(Both &#39; &#39; from monthname(&quot;D Whs Incident&quot;.&quot;Incident Date&quot;) || &#39;-&#39; || cast(year(&quot;D Whs Incident&quot;.&quot;Incident Date&quot;) as char))</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59327" oldID="kcap1564723563782_24358">
+            <saw:text>D Whs Incident</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59328" oldID="kcap1564723563782_24359">
+            <saw:text>Incident Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cddcf68930d48ab1f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Incident&quot;.&quot;Month Abbrev&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59329" oldID="kcap1564723563782_24360">
+            <saw:text>D Whs Incident</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59330" oldID="kcap1564723563782_24361">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb4bfa382e04a1046">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Incident&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59331" oldID="kcap1564723563782_24362">
+            <saw:text>D Whs Incident</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59332" oldID="kcap1564723563782_24363">
+            <saw:text>Fin Year</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6355b9f6084c2735" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">COUNT(&quot;D Whs Incident&quot;.&quot;ID&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59333" oldID="kcap1564723563782_24364">
+            <saw:text>D Whs Incident</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59334" oldID="kcap1564723563782_24365">
+            <saw:text>Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5dc9a0a51fffdb17">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">REPLACE(&quot;D Whs Incident&quot;.&quot;Treatment Required&quot;, &#39;_&#39;, &#39; &#39;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59335" oldID="kcap1564723563782_24366">
+            <saw:text>D Whs Incident</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59336" oldID="kcap1564723563782_24367">
+            <saw:text>Treatment Required</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c532e2afe2a9f407f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CAST(YEAR(&quot;D Whs Incident&quot;.&quot;Incident Date&quot;) AS CHAR) ||  CASE WHEN LENGTH(CAST(Month(&quot;D Whs Incident&quot;.&quot;Incident Date&quot;) AS CHAR)) = 2 THEN CAST(Month(&quot;D Whs Incident&quot;.&quot;Incident Date&quot;) AS CHAR) WHEN LENGTH(CAST(Month(&quot;D Whs Incident&quot;.&quot;Incident Date&quot;) AS CHAR)) = 1 THEN &#39;0&#39;||CAST(Month(&quot;D Whs Incident&quot;.&quot;Incident Date&quot;) AS CHAR) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59337" oldID="kcap1564723563782_24368">
+            <saw:text>D Whs Incident</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59338" oldID="kcap1564723563782_24369">
+            <saw:text>Sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdd3bedd66f32532d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Incident&quot;.&quot;ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59339" oldID="kcap1564723563782_24370">
+            <saw:text>D Whs Incident</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723805343_59340" oldID="kcap1564723563782_24371">
+            <saw:text>ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Whs Proj&quot;.&quot;Contractor Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Incident&quot;.&quot;Month Abbrev&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Incident&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Incident&quot;.&quot;Project Key&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">REPLACE(&quot;D Whs Incident&quot;.&quot;Treatment Required&quot;, &#39;_&#39;, &#39; &#39;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Whs Projects&quot;.&quot;Project Type&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder/>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="2" textDelivery="compoundView!2" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723805342_59322" oldID="kcap1564723563782_24353">
+          <saw:text>Treatment</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2" scrollingEnabled="false">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723805342_59323" oldID="kcap1564723563782_24354">
+          <saw:text>Treatment</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c982ad8b2d41d5896"/>
+            <saw:edgeLayer type="column" columnID="c34266bd1e603f5cc"/>
+            <saw:edgeLayer type="column" columnID="c20926638e89c7410"/>
+            <saw:edgeLayer type="column" columnID="c07267e77fe82f2a7"/>
+            <saw:edgeLayer type="column" columnID="c532e2afe2a9f407f"/>
+            <saw:edgeLayer type="column" columnID="c064db3f7c14e3014"/>
+            <saw:edgeLayer type="column" columnID="cddcf68930d48ab1f"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c5dc9a0a51fffdb17"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c6355b9f6084c2735" aggRule="count"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723805342_59324" oldID="kcap1564723563782_24355">
+          <saw:text>Compound Layout:</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="pie" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723805343_59341" oldID="kcap1564723563782_24372">
+            <saw:text>Treatment Required</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:measureLabels/>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="pie">
+            <saw:columnRef columnID="c6355b9f6084c2735"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c5dc9a0a51fffdb17"/>
+          </saw:seriesGenerator>
+        </saw:seriesGenerators>
+        <saw:page>
+          <saw:column>
+            <saw:columnRef columnID="c07267e77fe82f2a7"/>
+          </saw:column>
+        </saw:page>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:pageEdgeState>
+        <saw:QDR>
+          <saw:staticMemberGroup>
+            <saw:groupType>
+              <sawx:columnRefExpr columnID="c07267e77fe82f2a7"/>
+            </saw:groupType>
+            <saw:members xsi:type="saw:stringMembers">
+              <saw:value>Upgrade Project</saw:value>
+            </saw:members>
+          </saw:staticMemberGroup>
+        </saw:QDR>
+        <saw:selectionGroups>
+          <saw:selectionGroup columnID="c07267e77fe82f2a7" groupID="0"/>
+        </saw:selectionGroups>
+      </saw:pageEdgeState>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

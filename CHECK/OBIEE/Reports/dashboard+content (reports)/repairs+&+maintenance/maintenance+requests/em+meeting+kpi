@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Work Orders&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1ef44bb66e8f8e61">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Mgmt Area&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c84f4c59702909760">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Period&quot;.&quot;Fin Year&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce04561a4a1151a30">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Maint Req&quot;.&quot;Sort Order&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfef88a7696982867">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Period&quot;.&quot;Month&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8e5f0a8f0d7e0669" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Maint Req&quot;.&quot;Met&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c8e5f0a8f0d7e0669_ala6b455001825d319">
+                <saw:action>
+                  <saw:actionName>KPI 2a PriorTo3MonthsMet</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Maintenance Requests/KPI 2a PriorTo3MonthsMet</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723751639_51516" oldID="kcap1564723535320_18495">
+                  <saw:text>KPI 2a PriorTo3MonthsMet</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751639_51504" oldID="kcap1564723535320_18483">
+            <saw:text>Sum Maint Req</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723751639_51505" oldID="kcap1564723535320_18484">
+            <saw:text>Met</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc7845b2559ab3642" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Maint Req&quot;.&quot;Missed&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cc7845b2559ab3642_al3b1975c8acdd2810">
+                <saw:action>
+                  <saw:actionName>KPI 2a PriorTo3MonthsMissed</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Maintenance Requests/KPI 2a PriorTo3MonthsMissed</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723751639_51517" oldID="kcap1564723535320_18496">
+                  <saw:text>KPI 2a PriorTo3MonthsMissed</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751639_51506" oldID="kcap1564723535320_18485">
+            <saw:text>Sum Maint Req</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723751639_51507" oldID="kcap1564723535320_18486">
+            <saw:text>Missed</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c65b9b246ecde6201" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(&quot;Sum Maint Req&quot;.&quot;Met&quot;)/SUM(&quot;Sum Maint Req&quot;.&quot;Met&quot; + &quot;Sum Maint Req&quot;.&quot;Missed&quot;))* 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c65b9b246ecde6201_alfa939934484fb928">
+                <saw:action>
+                  <saw:actionName>KPI 2a PriorTo3MonthsMet</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Maintenance Requests/KPI 2a PriorTo3MonthsMet</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723751640_51518" oldID="kcap1564723535320_18497">
+                  <saw:text>KPI 2a PriorTo3MonthsMet</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751639_51508" oldID="kcap1564723535320_18487">
+            <saw:text>Sum Maint Req</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751639_51509" oldID="kcap1564723535320_18488">
+            <saw:text>Met Perc</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdf635c927a846517">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(&quot;Sum Maint Req&quot;.&quot;Missed&quot;)/SUM(&quot;Sum Maint Req&quot;.&quot;Met&quot; + &quot;Sum Maint Req&quot;.&quot;Missed&quot;))* 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cdf635c927a846517_al9147c255734efefb">
+                <saw:action>
+                  <saw:actionName>KPI 2a PriorTo3MonthsMissed</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Maintenance Requests/KPI 2a PriorTo3MonthsMissed</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723751640_51519" oldID="kcap1564723535320_18498">
+                  <saw:text>KPI 2a PriorTo3MonthsMissed</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751639_51510" oldID="kcap1564723535320_18489">
+            <saw:text>Sum Maint Req</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751639_51511" oldID="kcap1564723535320_18490">
+            <saw:text>Missed Perc</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Period&quot;.&quot;Fin Year&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_CURRENT_FIN_YEAR_FY</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_PREVIOUS_FIN_YEAR_FY</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_TWO_PREVIOUS_FIN_YEAR_FY</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Maint Req&quot;.&quot;Run Date&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_DFL_DATE</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Maint Req&quot;.&quot;Priority Code&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">EMERGENCY</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum Mgmt Area&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1" colSpan="2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1" colSpan="2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+          <saw:cvCell viewName="pivotTableView!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c84f4c59702909760"/>
+            <saw:edgeLayer type="column" columnID="ce04561a4a1151a30"/>
+            <saw:edgeLayer type="column" columnID="cfef88a7696982867"/>
+            <saw:edgeLayer type="column" columnID="c8e5f0a8f0d7e0669"/>
+            <saw:edgeLayer type="column" columnID="cc7845b2559ab3642"/>
+            <saw:edgeLayer type="column" columnID="c65b9b246ecde6201"/>
+            <saw:edgeLayer type="column" columnID="cdf635c927a846517"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ce04561a4a1151a30"/>
+            <saw:edgeLayer type="column" columnID="cfef88a7696982867"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c84f4c59702909760"/>
+            <saw:edgeLayer type="measure"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c65b9b246ecde6201">
+          <saw:memberFormat>
+            <saw:displayFormat>
+              <saw:formatSpec wrapText="true"/>
+            </saw:displayFormat>
+            <saw:caption captionID="kcap1564723751639_51513" oldID="kcap1564723535320_18492">
+              <saw:text>Met</saw:text>
+            </saw:caption>
+          </saw:memberFormat>
+          <saw:dataBodyFormat/>
+        </saw:measure>
+        <saw:measure columnID="cdf635c927a846517">
+          <saw:memberFormat>
+            <saw:displayFormat>
+              <saw:formatSpec wrapText="true"/>
+            </saw:displayFormat>
+            <saw:caption captionID="kcap1564723751639_51514" oldID="kcap1564723535320_18493">
+              <saw:text>Missed</saw:text>
+            </saw:caption>
+          </saw:memberFormat>
+        </saw:measure>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ce04561a4a1151a30"/>
+            <saw:edgeLayer type="column" columnID="cfef88a7696982867"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c84f4c59702909760"/>
+            <saw:edgeLayer type="measure"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c8e5f0a8f0d7e0669"/>
+        <saw:measure columnID="cc7845b2559ab3642"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723751639_51512" oldID="kcap1564723535320_18491">
+            <saw:text>Emergency Maintenance Requests Meeting KPI (80%) By HMC</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="ce04561a4a1151a30"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cfef88a7696982867"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c65b9b246ecde6201"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c84f4c59702909760"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1">
+          <saw:scale scaleValues="custom" min="40" max="100" defaultTicks="true"/>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723751639_51515" oldID="kcap1564723535320_18494">
+              <saw:text>% Meeting KPI</saw:text>
+            </saw:caption>
+          </saw:title>
+          <saw:scaleMarkers>
+            <saw:scaleMarker color="#FF0000" xsi:type="saw:scaleMarkerLine">
+              <saw:markerLabel>
+                <saw:title mode="custom">
+                  <saw:caption captionID="kcap1564723751640_51520" oldID="kcap1564723535320_18499">
+                    <saw:text>KPI Threshold</saw:text>
+                  </saw:caption>
+                </saw:title>
+              </saw:markerLabel>
+              <saw:lineWidth>
+                <sawx:expr xsi:type="xsd:decimal">2</sawx:expr>
+              </saw:lineWidth>
+              <saw:linePosition>
+                <sawx:expr xsi:type="xsd:decimal">80</sawx:expr>
+              </saw:linePosition>
+            </saw:scaleMarker>
+          </saw:scaleMarkers>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="line">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat lineStyle="default" lineWidth="7" symbol="square"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="2"/>
+            <saw:visualFormats>
+              <saw:visualFormat lineStyle="default" lineWidth="7" symbol="round"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="3"/>
+            <saw:visualFormats>
+              <saw:visualFormat lineStyle="default" lineWidth="7" symbol="diamond"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

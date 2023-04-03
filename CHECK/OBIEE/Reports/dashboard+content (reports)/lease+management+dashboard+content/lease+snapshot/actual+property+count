@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:derivedCriteria" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:derivedColumn" columnID="cccf386ef2a64f47b">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true">
+              
+            <saw:actionLink actionLinkID="cccf386ef2a64f47b_al1cfb79e1c196ff5a">
+                <saw:action>
+                  <saw:actionName>Actual Property Count - Lease Type Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Lease Management Dashboard Content/Lease Snapshot/Actual Property Count - Lease Type Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723699740_40544" oldID="kcap1564723505870_10273">
+                  <saw:text>Drill to Details</saw:text>
+                </saw:caption>
+              </saw:actionLink></saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40532" oldID="kcap1564723505870_10261">
+            <saw:text>D Lease Snapshot DT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40533" oldID="kcap1564723505870_10262">
+            <saw:text>Lease Type</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="cb6e9a9bf324a152c" aggRule="sum">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            
+            
+          <saw:conditionalDisplayFormat><saw:formatRule><saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c5d40e37dad363216"/>
+                    <sawx:expr xsi:type="xsd:string">Compliancy</sawx:expr>
+                  </sawx:expr>
+                </saw:condition><saw:formatSpec interaction="action"><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="cb6e9a9bf324a152c_ala8e76902107fbf55">
+                      <saw:action>
+                        <saw:actionName>Actual Property Count - Drill</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Lease Management Dashboard Content/Lease Snapshot/Actual Property Count - Drill</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723699740_40561" oldID="kcap1564723505870_10290">
+                        <saw:text>Drill to Detail</saw:text>
+                      </saw:caption>
+                    </saw:actionLink></saw:actionLinks></saw:formatSpec></saw:formatRule></saw:conditionalDisplayFormat><saw:conditionalDisplayFormat><saw:formatRule><saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c5d40e37dad363216"/>
+                    <sawx:expr xsi:type="xsd:string">Compliancy</sawx:expr>
+                  </sawx:expr>
+                </saw:condition><saw:formatSpec interaction="action"><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="cb6e9a9bf324a152c_alb492d36ecf8f084b">
+                      <saw:action>
+                        <saw:actionName>Actual Property Count - Compliancy Drill</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Lease Management Dashboard Content/Lease Snapshot/Actual Property Count - Compliancy Drill</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723699740_40562" oldID="kcap1564723505870_10291">
+                        <saw:text>Drill to Compliancy Detail</saw:text>
+                      </saw:caption>
+                    </saw:actionLink></saw:actionLinks></saw:formatSpec></saw:formatRule></saw:conditionalDisplayFormat></saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40534" oldID="kcap1564723505870_10263">
+            <saw:text>D Lease Snapshot DT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40535" oldID="kcap1564723505870_10264">
+            <saw:text>Lease Count</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="cc7c62fe557a61b73">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" hAlign="center" wrapText="true" interaction="action"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40536" oldID="kcap1564723505870_10265">
+            <saw:text>D Lease Snapshot DT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40537" oldID="kcap1564723505870_10266">
+            <saw:text>Rent Band</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false"/>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="cfeb82a52cc7c4b9d">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="55" wrapText="true" hAlign="center" interaction="action"><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="cfeb82a52cc7c4b9d_alfa7a7e50217b78be"><saw:action><saw:actionName>Actual Property Count - Lease Type Drill</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>__navigateToBIContent__</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Lease Management Dashboard Content/Lease Snapshot/Actual Property Count - Lease Type Drill</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>__navigateToBIContent__</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false" openNewWindow="true"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to Details</saw:text></saw:caption></saw:actionLink></saw:actionLinks></saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40538" oldID="kcap1564723505870_10267">
+            <saw:text>D Lease Snapshot DT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40539" oldID="kcap1564723505870_10268">
+            <saw:text>Lease Status Stage</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="cefc51758b1bd7d66">
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40540" oldID="kcap1564723505870_10269">
+            <saw:text>D Lease Snapshot DT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40541" oldID="kcap1564723505870_10270">
+            <saw:text>Sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c5d40e37dad363216" xsi:type="saw:derivedColumn">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40542" oldID="kcap1564723505870_10271">
+            <saw:text>D Lease Snapshot DT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723699740_40543" oldID="kcap1564723505870_10272">
+            <saw:text>Navigation</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:from>
+      <saw:criteria xsi:type="saw:setCriteria" op="union">
+        <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Leasing&quot;" withinHierarchy="true">
+          <saw:columns>
+            <saw:column xsi:type="saw:regularColumn" columnID="c37f3777190651e79">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Lease Type&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c16ee5c36d5be5cb0" aggRule="sum">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">Count(&quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;)</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c94f63a0def48b063">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Rent Band&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c1d68e032b4d9801a">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="ca2ccf290ba7adcc7">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;= &#39;Initial&#39; then 1 when &quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;= &#39;In Progress&#39; then 2 when &quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;= &#39;Committed&#39; then 3 END</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40545" oldID="kcap1564723505870_10274">
+                  <saw:text>D Lease Snapshot DT</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40546" oldID="kcap1564723505870_10275">
+                  <saw:text>Sort</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="cc7640dd6eceaaea7">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&#39;Rent Band&#39;</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40547" oldID="kcap1564723505870_10276">
+                  <saw:text>D Lease Snapshot DT</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40548" oldID="kcap1564723505870_10277">
+                  <saw:text>Navigation</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+          </saw:columns>
+          <saw:filter>
+            <sawx:expr xsi:type="sawx:logical" op="and">
+              <sawx:expr xsi:type="sawx:list" op="in">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;</sawx:expr>
+                <sawx:expr xsi:type="xsd:string">Committed</sawx:expr>
+                <sawx:expr xsi:type="xsd:string">In Progress</sawx:expr>
+                <sawx:expr xsi:type="xsd:string">Initial</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Dhf Area&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Fin Year&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:list" op="notIn">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Rent Band&quot;</sawx:expr>
+                <sawx:expr xsi:type="xsd:string">NRB</sawx:expr>
+                <sawx:expr xsi:type="xsd:string">ZNULL</sawx:expr>
+              </sawx:expr>
+            <sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Rent Bill Client&quot;</sawx:expr></sawx:expr></sawx:expr>
+          </saw:filter>
+        </saw:criteria>
+        <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Leasing&quot;">
+          <saw:columns>
+            <saw:column xsi:type="saw:regularColumn" columnID="c8c78624b4c3dc1cd">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Lease Type&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="cfc37f929c80fa95a">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">Sum(Case when &quot;D Lease Snapshot DT&quot;.&quot;Compliancy&quot; = &#39;FAIL&#39; and &quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot; = &#39;Committed&#39; then 1 end)</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40549" oldID="kcap1564723505870_10278">
+                  <saw:text>D Lease Snapshot DT</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40550" oldID="kcap1564723505870_10279">
+                  <saw:text>FAILED</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="cd5a018bb6aea72ea">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&#39;FAILED&#39;</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40551" oldID="kcap1564723505870_10280">
+                  <saw:text>D Lease Snapshot DT</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40552" oldID="kcap1564723505870_10281">
+                  <saw:text>FAILED</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c986b87ac58e0392d">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&#39;Committed&#39;</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40553" oldID="kcap1564723505870_10282">
+                  <saw:text>D Lease Snapshot DT</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40554" oldID="kcap1564723505870_10283">
+                  <saw:text>Lease Status Stage</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c26df95b69f9cffdf">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;= &#39;Initial&#39; then 1 when &quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;= &#39;In Progress&#39; then 2 when &quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;= &#39;Committed&#39; then 3 END</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40555" oldID="kcap1564723505870_10284">
+                  <saw:text>D Lease Snapshot DT</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40556" oldID="kcap1564723505870_10285">
+                  <saw:text>Sort</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="cf29e559b03318259">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&#39;Compliancy&#39;</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40557" oldID="kcap1564723505870_10286">
+                  <saw:text>D Lease Snapshot DT</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723699740_40558" oldID="kcap1564723505870_10287">
+                  <saw:text>Navigation</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+          </saw:columns>
+          <saw:filter>
+            <sawx:expr xsi:type="sawx:logical" op="and">
+              <sawx:expr xsi:type="sawx:comparison" op="equal">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Lease Status Stage&quot;</sawx:expr>
+                <sawx:expr xsi:type="xsd:string">Committed</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Dhf Area&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Fin Year&quot;</sawx:expr>
+              </sawx:expr>
+            <sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Snapshot DT&quot;.&quot;Rent Bill Client&quot;</sawx:expr></sawx:expr></sawx:expr>
+          </saw:filter>
+        </saw:criteria>
+      </saw:criteria>
+    </saw:from>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" currentView="0">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="pivotTableView!2"/></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="none">
+      <saw:title>
+        <saw:displayFormat>
+          <saw:formatSpec hAlign="center" wrapText="true"/>
+        </saw:displayFormat>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="true">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cccf386ef2a64f47b"/>
+            
+            <saw:edgeLayer type="column" columnID="cc7c62fe557a61b73"/>
+            <saw:edgeLayer type="column" columnID="cefc51758b1bd7d66"/>
+            <saw:edgeLayer type="column" columnID="cfeb82a52cc7c4b9d"/>
+            <saw:edgeLayer type="column" columnID="cb6e9a9bf324a152c"/>
+            <saw:edgeLayer type="column" columnID="c5d40e37dad363216"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723699740_40559" oldID="kcap1564723505870_10288">
+                  <saw:text>Totals</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cccf386ef2a64f47b"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723699740_40560" oldID="kcap1564723505870_10289">
+                  <saw:text>Totals</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cc7c62fe557a61b73">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="st_cc7c62fe557a61b73" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cefc51758b1bd7d66"/>
+            <saw:edgeLayer type="column" columnID="cfeb82a52cc7c4b9d"/>
+            <saw:edgeLayer type="column" columnID="c5d40e37dad363216"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="cb6e9a9bf324a152c"/>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view><saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2" scrollingEnabled="false">
+      
+      
+    <saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723699740_40559" oldID="kcap1564723505870_10288">
+                  <saw:text>Totals</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="cc7c62fe557a61b73">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="st_cc7c62fe557a61b73" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer><saw:edgeLayer type="column" columnID="c5d40e37dad363216"/></saw:edgeLayers></saw:edge><saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723699740_40560" oldID="kcap1564723505870_10289">
+                  <saw:text>Totals</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="cccf386ef2a64f47b"/><saw:edgeLayer type="column" columnID="cefc51758b1bd7d66"/><saw:edgeLayer type="column" columnID="cfeb82a52cc7c4b9d"/></saw:edgeLayers></saw:edge></saw:edges><saw:measuresList>
+        
+      <saw:measure columnID="cb6e9a9bf324a152c"/></saw:measuresList></saw:view></saw:views>
+</saw:report>

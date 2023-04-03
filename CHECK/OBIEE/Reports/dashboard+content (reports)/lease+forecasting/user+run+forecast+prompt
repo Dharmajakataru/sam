@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160"><saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Writeback Test 2&quot;" withinHierarchy="true"><saw:columns><saw:column xsi:type="saw:regularColumn" columnID="ca245ffb5d7fa267e"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">VALUEOF(NQ_SESSION.USER)</sawx:expr></saw:columnFormula><saw:tableHeading/><saw:columnHeading><saw:caption fmt="text"><saw:text>USER</saw:text></saw:caption></saw:columnHeading></saw:column></saw:columns></saw:criteria><saw:views currentView="0"><saw:view xsi:type="saw:compoundView" name="compoundView!1"><saw:cvTable><saw:cvRow><saw:cvCell viewName="narrativeView!1"/></saw:cvRow></saw:cvTable></saw:view><saw:view xsi:type="saw:titleView" name="titleView!1"/><saw:view xsi:type="saw:tableView" name="tableView!1"><saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true"><saw:edgeLayers><saw:edgeLayer type="column" columnID="ca245ffb5d7fa267e"/></saw:edgeLayers></saw:edge><saw:edge axis="column"/></saw:edges></saw:view><saw:view xsi:type="saw:narrativeView" name="narrativeView!1"><saw:narrative rowCount="1"><saw:caption fmt="html"><saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+
+function dha_run_forecast() {
+var counter=0;
+xmlResponse = &quot;running&quot;;
+
+dha_callWebServiceMethod(&#39;http://businessintel.dha.gov.au/PLSQL_Services-DB_WebServices-context-root/DWH_ServicePort&#39;, 
+			  &#39;fForecastLeasingRunNSave&#39;, &#39;http://dwh/DWH_Service.wsdl&#39;, [&#39;pForecastId&#39;, &#39;pUserid&#39;, &#39;pYears&#39;, &#39;pDescription&#39;], [-1, &#39;@{ca245ffb5d7fa267e}&#39;, dha_ls_getNumYears(), dha_getForecastDesc()], &quot;dha_refresh()&quot;);
+
+//while (xmlResponse == &quot;running&quot;) {
+// counter++;
+//}
+}
+&lt;/script&gt;
+
+&lt;form&gt;
+ &lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Enter Forecast Description:        &lt;span style=&quot;float:right&quot;&gt; Years: 
+			&lt;select id=&quot;numyears&quot;&gt;
+			  &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+			  &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+			  &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+			  &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+			  &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+			  &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+			  &lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+			  &lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+			  &lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;
+			  &lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;
+			  &lt;option value=&quot;15&quot;&gt;15&lt;/option&gt;
+			  &lt;option value=&quot;16&quot;&gt;16&lt;/option&gt;
+			  &lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;
+			  &lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;
+			  &lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;
+			  &lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;
+			&lt;/select&gt;
+			&lt;input value=&quot;Run Forecast&quot; type=&quot;button&quot; onclick=&quot;dha_applyThenRunForecast(&#39;Apply Parameters&#39;)&quot;&gt;&lt;/span&gt;
+		&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;textarea name=&quot;comments&quot; id=&quot;dha_forecast_desc&quot; rows=&quot;2&quot; cols=&quot;85&quot; style=&quot;height:30px&quot;&gt;&lt;/textarea&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;/table&gt;
+&lt;/form&gt;
+
+
+</saw:text></saw:caption></saw:narrative><saw:postfix><saw:caption fmt="html"><saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+dha_resetYears();
+&lt;/script&gt;
+</saw:text></saw:caption></saw:postfix><saw:prefix><saw:caption fmt="html"><saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+function dha_extract_result(theResponse) {
+ var from = theResponse.indexOf(&quot;&lt;result&gt;&quot;);
+ var to = theResponse.indexOf(&quot;&lt;/result&gt;&quot;);
+ var retValue = theResponse.substring(from + 8, to - 1);
+return retValue;
+}
+
+function dha_getForecastDesc() {
+   return document.getElementById(&quot;dha_forecast_desc&quot;).value;
+
+}
+
+function dha_ls_getNumYears() {
+		var e = document.getElementById(&quot;numyears&quot;);
+		var numYears = e.options[e.selectedIndex].value;
+		return numYears;
+}
+&lt;/script&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+function dha_applyThenRunForecast(buttonText) {
+    var applyButton;
+	var resultsRefresh;
+	
+	var els = document.getElementsByTagName(&quot;A&quot;);
+	for (i = 0; i &lt; els.length; i++) {
+		if(els[i].innerHTML == buttonText) {
+			applyButton = els[i];
+		}
+		if(els[i].innerHTML == &quot;Refresh&quot;) {
+			resultsRefresh = els[i];
+		}
+	}
+
+	if(applyButton) {
+		applyButton.click();
+	} else {
+		alert(&quot;No Apply button found&quot;);
+	}
+	
+	dha_run_forecast();
+
+}
+
+&lt;/script&gt;
+</saw:text></saw:caption></saw:prefix></saw:view></saw:views></saw:report>

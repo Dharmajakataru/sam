@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:derivedCriteria" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:derivedColumn" columnID="c3bd05071bf5cd0bf">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="MMM YYYY"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723661175_34211" oldID="kcap1564723485318_6075">
+            <saw:text>F_DHA_STAFF_HISTORY</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723661175_34212" oldID="kcap1564723485318_6076">
+            <saw:text>As At Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="c45e17f12ba6c8d34">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cf66e23361643c124"/>
+                    <sawx:expr xsi:type="xsd:string">&#39;Head Count&#39;</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723661175_34213" oldID="kcap1564723485318_6077">
+            <saw:text>F_DHA_STAFF_HISTORY</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723661175_34214" oldID="kcap1564723485318_6078">
+            <saw:text>FTE</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="cf66e23361643c124">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661175_34215" oldID="kcap1564723485318_6079">
+            <saw:text>F_DHA_STAFF_HISTORY</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723661175_34216" oldID="kcap1564723485318_6080">
+            <saw:text>Measure Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c4a355761513aa499" xsi:type="saw:derivedColumn">
+        <saw:tableHeading>
+          <saw:caption captionID="kcap1564723661175_34217" oldID="kcap1564723485318_6081">
+            <saw:text>F_DHA_STAFF_HISTORY</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723661175_34218" oldID="kcap1564723485318_6082">
+            <saw:text>Unit</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="ccae1d4f9a97ed822" xsi:type="saw:derivedColumn">
+        <saw:tableHeading>
+          <saw:caption captionID="kcap1564723661175_34219" oldID="kcap1564723485318_6083">
+            <saw:text>F_DHA_STAFF_HISTORY</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723661175_34220" oldID="kcap1564723485318_6084">
+            <saw:text>Next Unit Level</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:from>
+      <saw:criteria xsi:type="saw:setCriteria" op="union">
+        <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Staff&quot;" withinHierarchy="true">
+          <saw:columns>
+            <saw:column xsi:type="saw:regularColumn" columnID="c70c2fb37fe397224">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;As At Date&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c282978afcfa94c28" aggRule="sum">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;F_DHA_STAFF_HISTORY&quot;.&quot;FTE&quot;)</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="ce6a71efc5ebd1cce">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&#39;FTE&#39;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c5bce63a4e33e9c79">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Unit&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c67823532cc6e30e2">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Next Unit Level&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+          </saw:columns>
+          <saw:filter>
+            <sawx:expr xsi:type="sawx:logical" op="and">
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Unit&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Next Unit Level&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;As At Date&quot;</sawx:expr>
+              </sawx:expr>
+            </sawx:expr>
+          </saw:filter>
+        </saw:criteria>
+        <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Staff&quot;">
+          <saw:columns>
+            <saw:column xsi:type="saw:regularColumn" columnID="cb8b1b6df56bede4a">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;As At Date&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c75c7da5984ef83e6" aggRule="sum">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Head Count&quot;)</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c6d939c218b321b2e">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&#39;Head Count&#39;</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723661175_34221" oldID="kcap1564723485318_6085">
+                  <saw:text>F_DHA_STAFF_HISTORY</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723661175_34222" oldID="kcap1564723485318_6086">
+                  <saw:text>Measure Type</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="ca01c0c24a0c5edb4">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Unit&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c4d94e310cbe374ce">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Next Unit Level&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+          </saw:columns>
+          <saw:filter>
+            <sawx:expr xsi:type="sawx:logical" op="and">
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Unit&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Next Unit Level&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;As At Date&quot;</sawx:expr>
+              </sawx:expr>
+            </sawx:expr>
+          </saw:filter>
+        </saw:criteria>
+      </saw:criteria>
+    </saw:from>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" clientEventChannels="CH_UNIT" clientEventEnabled="true">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="false">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf66e23361643c124"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c3bd05071bf5cd0bf"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c45e17f12ba6c8d34"/>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text> &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

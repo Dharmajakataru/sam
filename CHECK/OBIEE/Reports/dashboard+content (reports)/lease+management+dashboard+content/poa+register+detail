@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Leasing&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8306569f9a06e45f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;POA Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cacb51eb5819062a4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;POA Name&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723703684_41159" oldID="kcap1564723509543_10804">
+            <saw:text>Leasing POA</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723703684_41160" oldID="kcap1564723509543_10805">
+            <saw:text>Name of POA</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="ccef9fc871dccaa3c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;Lessor Names&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="ca0974bff853efe67">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="c379842885d4d9d5e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;POA Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c60bf173bc56ad76d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case when &quot;Leasing POA&quot;.&quot;POA Type&quot; in (&#39;Disposal Contract&#39;,&#39;Disposal Agency Agreement&#39;) then &#39;&lt;a target=&quot;_blank&quot; href=&quot;&#39; || VALUEOF(&quot;RV_URL_WORKFLOWPM&quot;) || &quot;Leasing POA&quot;.&quot;Pkey&quot;|| &#39;&quot;&gt;&#39; || &quot;Leasing POA&quot;.&quot;Pkey&quot; || &#39;&lt;/a&gt;&#39; Else &#39;&lt;a target=&quot;_blank&quot; href=&quot;&#39; || VALUEOF(&quot;RV_URL_WORKFLOWDS&quot;) || &quot;Leasing POA&quot;.&quot;Pkey&quot;|| &#39;&quot;&gt;&#39; || &quot;Leasing POA&quot;.&quot;Pkey&quot; || &#39;&lt;/a&gt;&#39; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none">
+            
+          <saw:dataFormat xsi:type="saw:text" textFormat="html"/><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false"/></saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723703684_41161" oldID="kcap1564723509543_10806">
+            <saw:text>Leasing POA</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723703684_41162" oldID="kcap1564723509543_10807">
+            <saw:text>Pkey</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="c03d7d442d4e8c5dc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;Property ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="false" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c03d7d442d4e8c5dc_al0fb9b5650bc29ea8">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723703684_41163" oldID="kcap1564723509543_10808">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c03d7d442d4e8c5dc"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c17ecd1ab5f5de662">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;Lease Ref&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="false" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c17ecd1ab5f5de662_al268ffc8c5fc2d642">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsm]/property/leasing/lease/summary.action</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>leaseId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsm]/property/leasing/lease/summary.action?requestTimestamp=@{1}&amp;propertyId=@{2}&amp;leaseId=@{3}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723703684_41164" oldID="kcap1564723509543_10809">
+                  <saw:text>View property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c03d7d442d4e8c5dc"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="3" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c17ecd1ab5f5de662"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5bb5f999b896b761">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;Property Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="c5ebc3447dc2bbc13">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="cbf12ca5d77b750c8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;State&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="c4fa5f9b637bf4850">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;Post Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="c0bfe240e54d0bf11">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;Effective Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1bd6c0d5410ed878">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;End Effective Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      
+      
+      
+      
+      
+      
+      
+      
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Leasing POA&quot;.&quot;POA Type&quot; in (&#39;ACQ of Dwelling Contract&#39;, &#39;ACQ of Dwelling Transfer&#39;) then &#39;ACQ of Dwelling&#39; when &quot;Leasing POA&quot;.&quot;POA Type&quot; in (&#39;ACQ of Land Contract&#39;, &#39;ACQ of Land Transfer&#39;) then &#39;ACQ of Land&#39;  when &quot;Leasing POA&quot;.&quot;POA Type&quot; in (&#39;Dev Disposal Contract&#39;, &#39;Dev Disposal Transfer&#39;, &#39;Residual Lot to Council&#39;) then &#39;Dev Disposal&#39; else &quot;Leasing POA&quot;.&quot;POA Type&quot; end</sawx:expr>
+        </sawx:expr>
+        
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;POA Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;POA Date FY Month&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Leasing POA&quot;.&quot;POA Type&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Tender Contract</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/POA+Register" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false" rowsPerPage="100" repeat="false"><saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="c8306569f9a06e45f" reportAgg="false"/><saw:edgeLayer type="column" columnID="cacb51eb5819062a4"/><saw:edgeLayer type="column" columnID="ccef9fc871dccaa3c"/><saw:edgeLayer type="column" columnID="ca0974bff853efe67"/><saw:edgeLayer type="column" columnID="c379842885d4d9d5e"/><saw:edgeLayer type="column" columnID="c60bf173bc56ad76d" aggRule="count"/><saw:edgeLayer type="column" columnID="c03d7d442d4e8c5dc"/><saw:edgeLayer type="column" columnID="c17ecd1ab5f5de662"/><saw:edgeLayer type="column" columnID="c5bb5f999b896b761"/><saw:edgeLayer type="column" columnID="c5ebc3447dc2bbc13"/><saw:edgeLayer type="column" columnID="cbf12ca5d77b750c8"/><saw:edgeLayer type="column" columnID="c4fa5f9b637bf4850"/><saw:edgeLayer type="column" columnID="c0bfe240e54d0bf11"/><saw:edgeLayer type="column" columnID="c1bd6c0d5410ed878"/></saw:edgeLayers></saw:edge><saw:edge axis="column"/></saw:edges><saw:greenBarFormat greenBar="allLayers" enabled="false"/>
+    
+      
+      <saw:sectionContent>
+        <saw:displayFormat>
+          <saw:formatSpec/>
+        </saw:displayFormat>
+      </saw:sectionContent></saw:view>
+    <saw:view xsi:type="saw:filtersView" name="filtersView!1"/>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

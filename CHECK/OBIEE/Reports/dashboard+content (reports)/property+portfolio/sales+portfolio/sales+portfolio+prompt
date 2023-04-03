@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Production Model&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4f4cbc82f9afc841">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">VALUEOF(NQ_SESSION.USER)</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4f4cbc82f9afc841"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723727899_47111" oldID="kcap1564723521731_14632">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+function dha_extract_result(theResponse) {
+ var from = theResponse.indexOf(&quot;&lt;result&gt;&quot;);
+ var to = theResponse.indexOf(&quot;&lt;/result&gt;&quot;);
+ var retValue = theResponse.substring(from + 8, to - 1);
+return retValue;
+}
+
+function dha_get_list_value(id) {
+		var e = document.getElementById(id);
+		var theValue = e.options[e.selectedIndex].value;
+		return theValue;
+}
+
+function dha_get_input_value(id) {
+   return document.getElementById(id).value;
+}
+
+function dha_refresh() {
+	var resultsRefresh;
+	
+	var els = document.getElementsByTagName(&quot;A&quot;);
+	for (i = 0; i &lt; els.length; i++) {
+		if(els[i].innerHTML == &quot;Refresh&quot;) {
+			resultsRefresh = els[i];
+		}
+	}
+
+	if(resultsRefresh) {
+		resultsRefresh.click();
+	} else {
+		alert(&quot;No refresh button found&quot;);
+	}
+}
+
+
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:narrative rowCount="1">
+        <saw:caption fmt="html" captionID="kcap1564723727899_47112" oldID="kcap1564723521731_14633">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+
+function dha_run_model() {
+var counter=0;
+xmlResponse = &quot;running&quot;;
+
+dha_callWebServiceMethod(&#39;http://businessintel-dev.dha.gov.au/PLSQL_Services-DB_WebServices-context-root/DWH_ServicePort&#39;, 
+			  &#39;fCreateProductionModels&#39;, &#39;http://dwh/DWH_Service.wsdl&#39;, [&#39;pModelUserid&#39;, &#39;pMargin&#39;, &#39;pForecastMonths&#39;, &#39;pDescription&#39;], [&#39;@{c4f4cbc82f9afc841}&#39;, dha_get_input_value(&#39;dha_margin&#39;), dha_get_list_value(&#39;dha_forecast_month&#39;),   dha_get_input_value(&#39;dha_model_desc&#39;)], &quot;dha_refresh()&quot;);
+}
+&lt;/script&gt;
+
+
+&lt;form&gt;
+ &lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Enter Portfolio Description:        &lt;span style=&quot;float:right&quot;&gt; Forecast Month: 
+			&lt;select id=&quot;dha_forecast_month&quot;&gt;
+			  &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+			  &lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+			  &lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;
+			  &lt;option value=&quot;24&quot; SELECTED&gt;24&lt;/option&gt;
+			 &lt;/select&gt;
+			 &lt;input value=&quot;Run Portfolio&quot; type=&quot;button&quot; onclick=&quot;dha_run_model()&quot;&gt;&lt;/span&gt;
+		&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;textarea name=&quot;comments&quot; id=&quot;dha_model_desc&quot; rows=&quot;2&quot; cols=&quot;85&quot; style=&quot;height:30px&quot;&gt;&lt;/textarea&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Margin ($): &lt;input type=&quot;text&quot; name=&quot;Margin&quot; id=&quot;dha_margin&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+ &lt;/table&gt;
+&lt;/form&gt;</saw:text>
+        </saw:caption>
+      </saw:narrative>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>
