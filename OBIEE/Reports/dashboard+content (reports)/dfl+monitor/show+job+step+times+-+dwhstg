@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160" cacheControl="bypassCache"><saw:criteria xsi:type="saw:physicalCriteria" connectionPool="dwhstg"><saw:columns><saw:column columnID="c0" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>LS_ID</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c1" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>ACTION_TYPE</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c2" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>PROC_NAME</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c3" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>DEPENDS_ON</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c4" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>DEPEND_CNT</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c5" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>STATUS</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c6" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>DF</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c7" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>S_DATE</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c8" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>S_TIME</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c9" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>E_TIME</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c10" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>Sec</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c11" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>Min</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c12" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>Hrs</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column columnID="c13" xsi:type="saw:physicalColumnRef"><saw:columnHeading><saw:caption><saw:text>&quot;1 hour&quot;</saw:text></saw:caption></saw:columnHeading></saw:column></saw:columns><saw:sql>select	substr(to_char(jrs.load_step_id),1,5)               as ls_id,
+        substr(jls.action_type,1,10)                        as action_type,
+        substr(jls.name,1,26)                               as proc_name,
+            (
+             SELECT COUNT(*)
+             FROM dfl.JCS_LOAD_STEP_DEPENDS_ON
+             WHERE LOAD_STEP_ID = JRS.LOAD_STEP_ID
+            )   AS DEPENDS_ON,
+            (
+             SELECT COUNT(*)
+             FROM dfl.JCS_LOAD_STEP_DEPENDS_ON,
+                  dfl.JCS_JOB_STEP
+             WHERE DEPENDS_ON_ID = JRS.LOAD_STEP_ID
+             AND   JCS_JOB_STEP.LOAD_STEP_ID = JCS_LOAD_STEP_DEPENDS_ON.LOAD_STEP_ID
+             AND   JCS_JOB_STEP.JOB_ID = jr.job_id
+             )  AS DEPEND_CNT,
+	    substr(jrs.STATUS,1,10)                             as status,
+        rpad(DEPENDENT_FAIL,2,&#39; &#39;)                          as DF,
+    	TO_CHAR(jrs.STARTED_AT,&#39;YYYY-MM-DD&#39;)                as S_date,
+    	TO_CHAR(jrs.STARTED_AT,&#39;HH24:MI:SS&#39;)                as S_Time,
+    	TO_CHAR(jrs.FINISHED_AT,&#39;HH24:MI:SS&#39;)               as E_Time,
+    	trunc(86400*(jrs.FINISHED_AT-jrs.STARTED_AT))-60*(trunc((86400*(jrs.FINISHED_AT-jrs.STARTED_AT))/60)) &quot;Sec&quot;,
+    	trunc((86400*(jrs.FINISHED_AT-jrs.STARTED_AT))/60)-60*(trunc(((86400*(jrs.FINISHED_AT-jrs.STARTED_AT))/60)/60)) &quot;Min&quot;,
+    	trunc(((86400*(jrs.FINISHED_AT-jrs.STARTED_AT))/60)/60)-24*(trunc((((86400*(jrs.FINISHED_AT-jrs.STARTED_AT))/60)/60)/24)) &quot;Hrs&quot;,
+    	substr(&#39;************************************************************&#39;,1,
+        (
+        (trunc((86400*(jrs.FINISHED_AT-jrs.STARTED_AT))/60)-60*(trunc(((86400*(jrs.FINISHED_AT-jrs.STARTED_AT))/60)/60))
+        )
+        +
+        ((trunc(((86400*(jrs.FINISHED_AT-jrs.STARTED_AT))/60)/60)-24*(trunc((((86400*(jrs.FINISHED_AT-jrs.STARTED_AT))/60)/60)/24))) * 60
+        )
+        )
+        ) &quot;1 hour&quot;
+from	dfl.jcs_job_step jjs,
+	    dfl.jcs_run_step jrs,
+	    dfl.jcs_load_step jls,
+        dfl.jcs_run jr
+--where   jjs.load_step_id = jls.id
+where   jls.id = jjs.load_step_id(+)
+and	    jrs.load_step_id = jls.id
+and     jrs.run_id = (select Max(id) from dfl.jcs_run)
+and     jrs.run_id = jr.id
+--and 	jjs.job_id = jr.job_id
+order by nvl(s_date,TO_CHAR(sysdate,&#39;YYYY-MM-DD&#39;)), nvl(s_time,e_time)
+</saw:sql></saw:criteria><saw:views currentView="0"><saw:view xsi:type="saw:compoundView" name="compoundView!1"><saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1"><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1"><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:cvCell></saw:cvRow></saw:cvTable></saw:view><saw:view xsi:type="saw:titleView" name="titleView!1"/><saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="500"><saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true"><saw:edgeLayers><saw:edgeLayer type="column" columnID="c0"/><saw:edgeLayer type="column" columnID="c1"/><saw:edgeLayer type="column" columnID="c2"/><saw:edgeLayer type="column" columnID="c3"/><saw:edgeLayer type="column" columnID="c4"/><saw:edgeLayer type="column" columnID="c5"/><saw:edgeLayer type="column" columnID="c6"/><saw:edgeLayer type="column" columnID="c7"/><saw:edgeLayer type="column" columnID="c8"/><saw:edgeLayer type="column" columnID="c9"/><saw:edgeLayer type="column" columnID="c10"/><saw:edgeLayer type="column" columnID="c11"/><saw:edgeLayer type="column" columnID="c12"/><saw:edgeLayer type="column" columnID="c13"/></saw:edgeLayers><saw:columnOrder><saw:columnOrderRef columnID="c9" direction="ascending"/></saw:columnOrder></saw:edge><saw:edge axis="column"/></saw:edges></saw:view></saw:views></saw:report>

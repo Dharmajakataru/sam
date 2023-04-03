@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Tenancy&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c64e7baacc2f54075">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb2dadbb54b49ad6b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Occupying Case ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf3e1ef99adcf9252">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Service&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7351e14727798e47">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Employee ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c7351e14727798e47_al437f88bed953cac1">
+                <saw:action>
+                  <saw:actionName>Navigate - @[clmmember]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>employeeID</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[clmmember]?employeeId=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723772511_54651" oldID="kcap1564723547134_21034">
+                  <saw:text>View Employee Info in CLM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c7351e14727798e47"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf2d92eec3f8d3828">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Service Number&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccb94b9f7c3afe2c0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Rank&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb19011c702fb4ee4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Override Rank&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd0a4c9f33b5eec4d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Apply Oride Rnk To Ra Sub Calc&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54583" oldID="kcap1564723547134_20966">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54584" oldID="kcap1564723547134_20967">
+            <saw:text>Apply Override Rank To RA Subsidy  Calculation</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8aa28fdb649edabc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Surname&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1b1565d49f345504">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;First Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c07bac014007a2030">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c07bac014007a2030_al5fded0d9be848343">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723772511_54652" oldID="kcap1564723547134_21035">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c07bac014007a2030"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c07bac014007a2030_al28f5a4f2c60fbabe">
+                <saw:action>
+                  <saw:actionName>Navigate - @[staffservices]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>property_id</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[staffservices]?property_id=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723772511_54653" oldID="kcap1564723547134_21036">
+                  <saw:text>View Property in Homefind</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c07bac014007a2030"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd460e4d2286029a3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Street Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cffbc4bfb34451478">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0fb484d04813aa87">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;State&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c204e02b14ab246d1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Post Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1862eed0513b8d2c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8b3f25f3e92c8e20">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Postal Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c356f67f4fb67873a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Country Of Orgin&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54585" oldID="kcap1564723547134_20968">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54586" oldID="kcap1564723547134_20969">
+            <saw:text>Country Of Origin</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4f89e635e77d2d8e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Special Needs&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c30570fd8ccc87656">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Member Active&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c90c5fa0289fed32f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Work Unit&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54587" oldID="kcap1564723547134_20970">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54588" oldID="kcap1564723547134_20971">
+            <saw:text>TC Work Unit</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf5c5275fe33d9bb1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Unit&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54589" oldID="kcap1564723547134_20972">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54590" oldID="kcap1564723547134_20973">
+            <saw:text>Current Work Unit</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cefc605fe11df6030">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Gaining Unit Name&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54591" oldID="kcap1564723547134_20974">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54592" oldID="kcap1564723547134_20975">
+            <saw:text>Gaining Unit</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cca43250a3b309ae2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Occupying Categorisation&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54593" oldID="kcap1564723547134_20976">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54594" oldID="kcap1564723547134_20977">
+            <saw:text>Occupying Categorisation</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf3b4b6fdf7eef3cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;Tenancy Categorisation&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfef39b76f703ac56">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Occ Member Bedrooms&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54595" oldID="kcap1564723547134_20978">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54596" oldID="kcap1564723547134_20979">
+            <saw:text>Member Bedrooms</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf6e7d94706568dc5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Override Bedroom Entitlement&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2506b8143fbb83c8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current GRE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce3bcd12ee1a5a403">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Override GRE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce460189588959560">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Occupation Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54597" oldID="kcap1564723547134_20980">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54598" oldID="kcap1564723547134_20981">
+            <saw:text>Occupancy Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf63a986603633cde">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Vacancy Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7f5c4f11d06a8c9c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Application Received&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54599" oldID="kcap1564723547134_20982">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" oldID="kcap1564723772510_54600">
+            <saw:text>RA Application Received Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="ca71d58c40988e493"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;RA Approval Date&quot;</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>MV Tenancy</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>RA Entitlement Approval Date</saw:text></saw:caption></saw:columnHeading></saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc9c9bacb1b0f820a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ra Approval Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54601" oldID="kcap1564723547134_20984">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54602" oldID="kcap1564723547134_20985">
+            <saw:text>RA Approval Reason</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5ebe4b03a19f9a73">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ra Locality&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54603" oldID="kcap1564723547134_20986">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54604" oldID="kcap1564723547134_20987">
+            <saw:text>RA Locality</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c175903da931cab9e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;RA Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cadeab0f3a7c95dc5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Share Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb95dbb75cc395c91">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Property Rent&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0686e52fccaed09f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Tenancy Agreement Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf81446e82f459742">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Tenancy Agreement End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c467fb54ab05e0a23">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Month To Month Lease Agreement&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3fc5a1312b688808">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;No Bedrooms Rental Property&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54605" oldID="kcap1564723547134_20988">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54606" oldID="kcap1564723547134_20989">
+            <saw:text>Number Of Bedrooms In Rental Property</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8bf7ae0cc67ea8e3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Release Clause&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c097092f5f9f3b1c7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ra Ceiling Wef Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54607" oldID="kcap1564723547134_20990">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54608" oldID="kcap1564723547134_20991">
+            <saw:text>RA Rates WEF Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3e65b208050ab19f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Effective Pay Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf5bb978291f18a31">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ra Ceiling Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54609" oldID="kcap1564723547134_20992">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54610" oldID="kcap1564723547134_20993">
+            <saw:text>RA Ceiling Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce18067c91f1b1c98">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Set Ceiling Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccec6d754d1a5b902">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ceiling Increase Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb7b35ee2007a1e99">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ceiling Increase Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8f93ac61cc4d7321">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ceiling Increase Approver&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6d0743c0e5140c92">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ceiling Increase Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c73818c999ee798ef">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Member Contribution Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3de35a5f30c53991">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Add Member Contribution Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc50da75604f79496">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Total Member Contribution&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc2de528239980f36">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rental Income From Subletting&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe1661cc6ed0a9c0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Member Allowance Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8eeaec01b0be6a53">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Member Allowance Wef Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54611" oldID="kcap1564723547134_20994">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54612" oldID="kcap1564723547134_20995">
+            <saw:text>Member Allowance WEF Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0e961444e31cfeee">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Bond Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb9df4ef1f4de4d07">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Bond Repayment Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c39e8189fa580b2c0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Bond Repayment Option&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c79c00689c35e6d02">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent Inadvance Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54613" oldID="kcap1564723547134_20996">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54614" oldID="kcap1564723547134_20997">
+            <saw:text>Rent In Advance Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c382dbb6444224101">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent Inadvance Repayment&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54615" oldID="kcap1564723547134_20998">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772510_54616" oldID="kcap1564723547134_20999">
+            <saw:text>Rent In Advance Repayment</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4955d06db0be655a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent Inadvancere Payment Opt&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54617" oldID="kcap1564723547134_21000">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54618" oldID="kcap1564723547134_21001">
+            <saw:text>Rent In Advance Payment Option</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9b48ad983f3c8a2e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Utils Advance Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54619" oldID="kcap1564723547134_21002">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54620" oldID="kcap1564723547134_21003">
+            <saw:text>Utilities Advance Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c74865d31b6a09371">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Utils Advance Repayment Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54621" oldID="kcap1564723547134_21004">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54622" oldID="kcap1564723547134_21005">
+            <saw:text>Utilities Advance Repayment Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7f1a15953fd210bd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Utils Advance Repayment Option&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54623" oldID="kcap1564723547134_21006">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54624" oldID="kcap1564723547134_21007">
+            <saw:text>Utilitites Advance Repayment Option</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c84884d66871253a4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent Prior To Occupancy&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9f95cedbd1f653d2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent Prior To Occ Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54625" oldID="kcap1564723547134_21008">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54626" oldID="kcap1564723547134_21009">
+            <saw:text>Rent Prior To Occupancy Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cef027b1601b9e9c7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent Prior To Occ Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54627" oldID="kcap1564723547134_21010">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54628" oldID="kcap1564723547134_21011">
+            <saw:text>Rent Prior To Occupancy Start Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca5cd50c0e5c6f348">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent Prior To Occ End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54629" oldID="kcap1564723547134_21012">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54630" oldID="kcap1564723547134_21013">
+            <saw:text>Rent Prior To Occupancy End Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c064a695c221fe8b5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent After Occ Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54631" oldID="kcap1564723547134_21014">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54632" oldID="kcap1564723547134_21015">
+            <saw:text>Rent After Occupancy Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c18de864708363754">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent After Occ Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54633" oldID="kcap1564723547134_21016">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54634" oldID="kcap1564723547134_21017">
+            <saw:text>Rent After Occupancy Start Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8fab7c96602c468d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Rent After Occ End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54635" oldID="kcap1564723547134_21018">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54636" oldID="kcap1564723547134_21019">
+            <saw:text>Rent After Occupancy End Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbb21f67201d4fee9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Date Vacation Notice Received&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c985e03483b03bd2b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Utils Reimburse Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54637" oldID="kcap1564723547134_21020">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54638" oldID="kcap1564723547134_21021">
+            <saw:text>Utilities Reimburse Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8e61c3bb2788f64c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Utils Reimburse Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54639" oldID="kcap1564723547134_21022">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54640" oldID="kcap1564723547134_21023">
+            <saw:text>Utilities Reimburse Start Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c975d737488dc61b9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Utils Reimburse End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54641" oldID="kcap1564723547134_21024">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54642" oldID="kcap1564723547134_21025">
+            <saw:text>Utilities Reimburse End Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1e69acb972c36a82">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Furniturerentalamount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54643" oldID="kcap1564723547134_21026">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54644" oldID="kcap1564723547134_21027">
+            <saw:text>Furniture Rental Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd9882b2905464c03">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Furniture Rental Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cac16d24e75fbdb4e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Furniture Rental End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c996b3cf47cf8717a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Garaging Allowance Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c43447061504960ba">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Garaging Allowance Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c93044a9900d5b25a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Garaging Allowance End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca0dc23949fc6bd1e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Transaction Vary Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c19037ee7908245e3" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Housing Solution&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0642bd691420aa0c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Last PAY Transaction for Tenancy&quot;.&quot;Transaction Key&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54645" oldID="kcap1564723547134_21028">
+            <saw:text>Last PAY Transaction for Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54646" oldID="kcap1564723547134_21029">
+            <saw:text>Key</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c409d4b14a12abce2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Last PAY Transaction for Tenancy&quot;.&quot;Total Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c476ff48589423466">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Last PAY Transaction for Tenancy&quot;.&quot;Occupation Rank Group&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0d08936e21c658b8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Last PAY Transaction for Tenancy&quot;.&quot;Transaction Class&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c69f6fbf4b27dae80">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Last PAY Transaction for Tenancy&quot;.&quot;Transaction Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cac7d06a32ff10af6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Last PAY Transaction for Tenancy&quot;.&quot;Share Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfcab28e47ea4d8a9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Last PAY Transaction for Tenancy&quot;.&quot;Date Sent To MPAC&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54647" oldID="kcap1564723547134_21030">
+            <saw:text>Last PAY Transaction for Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54648" oldID="kcap1564723547134_21031">
+            <saw:text>PAC transfer date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6e000d6eca88e929">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Last PAY Transaction for Tenancy&quot;.&quot;Effective Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfaf83ef2ecefe284">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Last PAY Transaction for Tenancy&quot;.&quot;Member Category&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54649" oldID="kcap1564723547134_21032">
+            <saw:text>Last PAY Transaction for Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772511_54650" oldID="kcap1564723547134_21033">
+            <saw:text>Categorisation</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;RA Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Housing Solution&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Occupying Categorisation&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;SRC&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Occupying Rank&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Occupying GRE&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current GRE&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Service&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Tenant&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Multiple Tenant&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;FY Year Occupancy Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;FY Year Ready Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;FY Year Vacate Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;FY Month Occupancy Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;FY Month Ready Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;FY Month Vacate Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Child Age Between 0_4&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Child Age Between 5_12&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Child Age Over 13&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Relocation Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;UPRN&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Share Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Member Active&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ra Locality&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Base Dhf Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ceiling Increase Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Ra Approval Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Upcoming RA Lease End&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Child Care Resident&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Work Base Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Gaining Base Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Occ Member Bedrooms&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;No Bedrooms Rental Property&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Spouse YN&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Total Number of Children&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Total Number of Pets&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Number of Cats&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Number of Dogs&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Tenancy Categorisation&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Employee ID&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="filtersView!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Tenancy+Detail" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="100">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c64e7baacc2f54075"/>
+            <saw:edgeLayer type="column" columnID="cb2dadbb54b49ad6b" aggRule="count"/>
+            <saw:edgeLayer type="column" columnID="cf3e1ef99adcf9252"/>
+            <saw:edgeLayer type="column" columnID="c7351e14727798e47"/>
+            <saw:edgeLayer type="column" columnID="cf2d92eec3f8d3828"/>
+            <saw:edgeLayer type="column" columnID="ccb94b9f7c3afe2c0"/>
+            <saw:edgeLayer type="column" columnID="cb19011c702fb4ee4"/>
+            <saw:edgeLayer type="column" columnID="cd0a4c9f33b5eec4d"/>
+            <saw:edgeLayer type="column" columnID="c8aa28fdb649edabc"/>
+            <saw:edgeLayer type="column" columnID="c1b1565d49f345504"/>
+            <saw:edgeLayer type="column" columnID="c07bac014007a2030"/>
+            <saw:edgeLayer type="column" columnID="cd460e4d2286029a3"/>
+            <saw:edgeLayer type="column" columnID="cffbc4bfb34451478"/>
+            <saw:edgeLayer type="column" columnID="c0fb484d04813aa87"/>
+            <saw:edgeLayer type="column" columnID="c204e02b14ab246d1"/>
+            <saw:edgeLayer type="column" columnID="c1862eed0513b8d2c"/>
+            <saw:edgeLayer type="column" columnID="c8b3f25f3e92c8e20"/>
+            <saw:edgeLayer type="column" columnID="c356f67f4fb67873a"/>
+            <saw:edgeLayer type="column" columnID="c4f89e635e77d2d8e"/>
+            <saw:edgeLayer type="column" columnID="c30570fd8ccc87656"/>
+            <saw:edgeLayer type="column" columnID="c90c5fa0289fed32f"/>
+            <saw:edgeLayer type="column" columnID="cf5c5275fe33d9bb1"/>
+            <saw:edgeLayer type="column" columnID="cefc605fe11df6030"/>
+            <saw:edgeLayer type="column" columnID="cca43250a3b309ae2"/>
+            <saw:edgeLayer type="column" columnID="cf3b4b6fdf7eef3cb"/>
+            <saw:edgeLayer type="column" columnID="cfef39b76f703ac56"/>
+            <saw:edgeLayer type="column" columnID="cf6e7d94706568dc5"/>
+            <saw:edgeLayer type="column" columnID="c2506b8143fbb83c8"/>
+            <saw:edgeLayer type="column" columnID="ce3bcd12ee1a5a403"/>
+            <saw:edgeLayer type="column" columnID="ce460189588959560"/>
+            <saw:edgeLayer type="column" columnID="cf63a986603633cde"/>
+            <saw:edgeLayer type="column" columnID="c7f5c4f11d06a8c9c"/><saw:edgeLayer type="column" columnID="ca71d58c40988e493"/>
+            <saw:edgeLayer type="column" columnID="cc9c9bacb1b0f820a"/>
+            <saw:edgeLayer type="column" columnID="c5ebe4b03a19f9a73"/>
+            <saw:edgeLayer type="column" columnID="c175903da931cab9e"/>
+            <saw:edgeLayer type="column" columnID="cadeab0f3a7c95dc5"/>
+            <saw:edgeLayer type="column" columnID="cb95dbb75cc395c91"/>
+            <saw:edgeLayer type="column" columnID="c0686e52fccaed09f"/>
+            <saw:edgeLayer type="column" columnID="cf81446e82f459742"/>
+            <saw:edgeLayer type="column" columnID="c467fb54ab05e0a23"/>
+            <saw:edgeLayer type="column" columnID="c3fc5a1312b688808"/>
+            <saw:edgeLayer type="column" columnID="c8bf7ae0cc67ea8e3"/>
+            <saw:edgeLayer type="column" columnID="c097092f5f9f3b1c7"/>
+            <saw:edgeLayer type="column" columnID="c3e65b208050ab19f"/>
+            <saw:edgeLayer type="column" columnID="cf5bb978291f18a31"/>
+            <saw:edgeLayer type="column" columnID="ce18067c91f1b1c98"/>
+            <saw:edgeLayer type="column" columnID="ccec6d754d1a5b902"/>
+            <saw:edgeLayer type="column" columnID="cb7b35ee2007a1e99"/>
+            <saw:edgeLayer type="column" columnID="c8f93ac61cc4d7321"/>
+            <saw:edgeLayer type="column" columnID="c6d0743c0e5140c92"/>
+            <saw:edgeLayer type="column" columnID="c73818c999ee798ef"/>
+            <saw:edgeLayer type="column" columnID="c3de35a5f30c53991"/>
+            <saw:edgeLayer type="column" columnID="cc50da75604f79496"/>
+            <saw:edgeLayer type="column" columnID="cc2de528239980f36"/>
+            <saw:edgeLayer type="column" columnID="cfe1661cc6ed0a9c0"/>
+            <saw:edgeLayer type="column" columnID="c8eeaec01b0be6a53"/>
+            <saw:edgeLayer type="column" columnID="c0e961444e31cfeee"/>
+            <saw:edgeLayer type="column" columnID="cb9df4ef1f4de4d07"/>
+            <saw:edgeLayer type="column" columnID="c39e8189fa580b2c0"/>
+            <saw:edgeLayer type="column" columnID="c79c00689c35e6d02"/>
+            <saw:edgeLayer type="column" columnID="c382dbb6444224101"/>
+            <saw:edgeLayer type="column" columnID="c4955d06db0be655a"/>
+            <saw:edgeLayer type="column" columnID="c9b48ad983f3c8a2e"/>
+            <saw:edgeLayer type="column" columnID="c74865d31b6a09371"/>
+            <saw:edgeLayer type="column" columnID="c7f1a15953fd210bd"/>
+            <saw:edgeLayer type="column" columnID="c84884d66871253a4"/>
+            <saw:edgeLayer type="column" columnID="c9f95cedbd1f653d2"/>
+            <saw:edgeLayer type="column" columnID="cef027b1601b9e9c7"/>
+            <saw:edgeLayer type="column" columnID="ca5cd50c0e5c6f348"/>
+            <saw:edgeLayer type="column" columnID="c064a695c221fe8b5"/>
+            <saw:edgeLayer type="column" columnID="c18de864708363754"/>
+            <saw:edgeLayer type="column" columnID="c8fab7c96602c468d"/>
+            <saw:edgeLayer type="column" columnID="cbb21f67201d4fee9"/>
+            <saw:edgeLayer type="column" columnID="c985e03483b03bd2b"/>
+            <saw:edgeLayer type="column" columnID="c8e61c3bb2788f64c"/>
+            <saw:edgeLayer type="column" columnID="c975d737488dc61b9"/>
+            <saw:edgeLayer type="column" columnID="c1e69acb972c36a82"/>
+            <saw:edgeLayer type="column" columnID="cd9882b2905464c03"/>
+            <saw:edgeLayer type="column" columnID="cac16d24e75fbdb4e"/>
+            <saw:edgeLayer type="column" columnID="c996b3cf47cf8717a"/>
+            <saw:edgeLayer type="column" columnID="c43447061504960ba"/>
+            <saw:edgeLayer type="column" columnID="c93044a9900d5b25a"/>
+            <saw:edgeLayer type="column" columnID="ca0dc23949fc6bd1e"/>
+            <saw:edgeLayer type="column" columnID="c0642bd691420aa0c"/>
+            <saw:edgeLayer type="column" columnID="c409d4b14a12abce2"/>
+            <saw:edgeLayer type="column" columnID="c476ff48589423466"/>
+            <saw:edgeLayer type="column" columnID="c0d08936e21c658b8"/>
+            <saw:edgeLayer type="column" columnID="c69f6fbf4b27dae80"/>
+            <saw:edgeLayer type="column" columnID="cac7d06a32ff10af6"/>
+            <saw:edgeLayer type="column" columnID="cfcab28e47ea4d8a9"/>
+            <saw:edgeLayer type="column" columnID="c6e000d6eca88e929"/>
+            <saw:edgeLayer type="column" columnID="cfaf83ef2ecefe284"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:filtersView" name="filtersView!1"/>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

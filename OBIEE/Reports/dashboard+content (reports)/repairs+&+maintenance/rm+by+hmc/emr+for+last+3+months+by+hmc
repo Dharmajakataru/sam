@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Work Orders&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c62a16a4145feb7b0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;RUN_DATE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8e77168b20155c19">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;MANAGEMENT_AREA&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="caed0c085cac328f8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;TOTAL_COUNT&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="caed0c085cac328f8_alcd2c8ed619b1f403">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P0</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/RM BY HMC/KPI 2a Detail Report</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Dim Management Area&quot;.&quot;Management Area&quot;</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;path=@{2}&amp;Action=@{3}&amp;P0=@{4}&amp;P1=@{5}&amp;P2=@{6}&amp;P3=&quot;@{7}&quot;</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723752591_51678" oldID="kcap1564723536260_18655">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8e77168b20155c19"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c76d204d2e7437134">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;KPI_MET_COUNT&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c76d204d2e7437134_al0e436421bb361a35">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P0</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/RM BY HMC/KPI 2aMetCount</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Dim Management Area&quot;.&quot;Management Area&quot;</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;path=@{2}&amp;Action=@{3}&amp;P0=@{4}&amp;P1=@{5}&amp;P2=@{6}&amp;P3=&quot;@{7}&quot;</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723752591_51679" oldID="kcap1564723536260_18656">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8e77168b20155c19"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cab3d9c1686566b4d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;KPI_MISSED_COUNT&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cab3d9c1686566b4d_al2b8fc46070905392">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P0</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/RM BY HMC/KPI 2aMissedCount</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Dim Management Area&quot;.&quot;Management Area&quot;</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;path=@{2}&amp;Action=@{3}&amp;P0=@{4}&amp;P1=@{5}&amp;P2=@{6}&amp;P3=&quot;@{7}&quot;</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723752591_51680" oldID="kcap1564723536260_18657">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8e77168b20155c19"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9e796af1391c01db">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;PRESUME_MISSED_KPI_COUNT&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c9e796af1391c01db_alc086af20e2b2419e">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P0</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/RM BY HMC/KPI 2aPresumeMissedCount</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Dim Management Area&quot;.&quot;Management Area&quot;</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;path=@{2}&amp;Action=@{3}&amp;P0=@{4}&amp;P1=@{5}&amp;P2=@{6}&amp;P3=&quot;@{7}&quot;</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723752591_51681" oldID="kcap1564723536260_18658">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8e77168b20155c19"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce8df28bce65110d5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;KPI_MET_PERC&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="ce8df28bce65110d5_alda2e00a7b5f3c11f">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P0</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/RM BY HMC/KPI 2aMetCount</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Dim Management Area&quot;.&quot;Management Area&quot;</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;path=@{2}&amp;Action=@{3}&amp;P0=@{4}&amp;P1=@{5}&amp;P2=@{6}&amp;P3=&quot;@{7}&quot;</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723752592_51682" oldID="kcap1564723536260_18659">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8e77168b20155c19"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cac8ead53f67e549b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;KPI_MISSED_PERC&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cac8ead53f67e549b_aldbd231dbb924212e">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P0</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/RM BY HMC/KPI 2aMissedCount</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Dim Management Area&quot;.&quot;Management Area&quot;</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;path=@{2}&amp;Action=@{3}&amp;P0=@{4}&amp;P1=@{5}&amp;P2=@{6}&amp;P3=&quot;@{7}&quot;</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723752592_51683" oldID="kcap1564723536260_18660">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8e77168b20155c19"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd410261f8fd86d8f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;PRESUME_MISSED_KPI_PERC&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cd410261f8fd86d8f_al730e052e37e6c06c">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P0</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>P3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Repairs &amp; Maintenance/RM BY HMC/KPI 2aPresumeMissedCount</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Dim Management Area&quot;.&quot;Management Area&quot;</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;path=@{2}&amp;Action=@{3}&amp;P0=@{4}&amp;P1=@{5}&amp;P2=@{6}&amp;P3=&quot;@{7}&quot;</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723752592_51684" oldID="kcap1564723536260_18661">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8e77168b20155c19"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:comparison" op="equal">
+        <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sum KPI Maint Req 1Day L3M&quot;.&quot;RUN_DATE&quot;</sawx:expr>
+        <sawx:expr xsi:type="sawx:variable" op="server">RV_DFL_DATE</sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="viewSelector!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c8e77168b20155c19">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+              </saw:headerFormat>
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c76d204d2e7437134">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723752592_51685" oldID="kcap1564723536260_18662">
+                  <saw:text>MET</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c9e796af1391c01db">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723752592_51686" oldID="kcap1564723536260_18663">
+                  <saw:text>PRESUME_MISSED</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cab3d9c1686566b4d">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723752592_51687" oldID="kcap1564723536260_18664">
+                  <saw:text>MISSED</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="caed0c085cac328f8">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723752592_51688" oldID="kcap1564723536260_18665">
+                  <saw:text>TOTAL</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723752591_51670" oldID="kcap1564723536260_18647">
+          <saw:text>Count of EM for Last 3 Months</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c8e77168b20155c19">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+              </saw:headerFormat>
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="ce8df28bce65110d5">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723752592_51689" oldID="kcap1564723536260_18666">
+                  <saw:text>MET</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cd410261f8fd86d8f">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723752592_51690" oldID="kcap1564723536260_18667">
+                  <saw:text>PRESUME_MISSED</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cac8ead53f67e549b">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723752592_51691" oldID="kcap1564723536260_18668">
+                  <saw:text>MISSED</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723752591_51671" oldID="kcap1564723536260_18648">
+          <saw:text>Percentage of EM for Last 3 Months</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online" xAxisLiveScrolling="false" yAxisLiveScrolling="false" clientEventEnabled="false" animateOnDisplay="true">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="300" width="640" showGradient="true">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723752591_51672" oldID="kcap1564723536260_18649">
+            <saw:text>Emergency Maintenance Requests for Last 3 Months BY HMC</saw:text>
+          </saw:caption>
+        </saw:title>
+        <saw:gridlines default="true">
+          <saw:horizontal>
+            <saw:major visible="false"/>
+            <saw:minor visible="false"/>
+          </saw:horizontal>
+          <saw:vertical>
+            <saw:major visible="false"/>
+            <saw:minor visible="false"/>
+          </saw:vertical>
+        </saw:gridlines>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c8e77168b20155c19"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c9e796af1391c01db"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cab3d9c1686566b4d"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c76d204d2e7437134"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats syncAxis="false">
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723752591_51674" oldID="kcap1564723536260_18651">
+              <saw:text>Number of Emergency Maintenance Requests</saw:text>
+            </saw:caption>
+          </saw:title>
+          <saw:scale scaleValues="auto" showMajorTicks="false" showMinorTicks="false" logarithmic="false" defaultTicks="true"/>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723752591_51675" oldID="kcap1564723536260_18652">
+              <saw:text>MANAGEMENT AREA</saw:text>
+            </saw:caption>
+          </saw:title>
+          <saw:scale scaleValues="auto" showMajorTicks="false" showMinorTicks="false" logarithmic="false"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF9933"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="2"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF0000"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="3"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#336633"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online" xAxisLiveScrolling="false" yAxisLiveScrolling="false" clientEventEnabled="false" animateOnDisplay="true">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="300" width="640" showGradient="true">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723752591_51673" oldID="kcap1564723536260_18650">
+            <saw:text>% Emergency Maintenance Requests for Last 3 Months BY HMC</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:title>
+        <saw:gridlines default="true">
+          <saw:horizontal>
+            <saw:major visible="false"/>
+            <saw:minor visible="false"/>
+          </saw:horizontal>
+          <saw:vertical>
+            <saw:major visible="false"/>
+            <saw:minor visible="false"/>
+          </saw:vertical>
+        </saw:gridlines>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c8e77168b20155c19"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cd410261f8fd86d8f"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cac8ead53f67e549b"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="ce8df28bce65110d5"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats syncAxis="false">
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723752591_51676" oldID="kcap1564723536260_18653">
+              <saw:text>% Of Emergency Maintenance Requests</saw:text>
+            </saw:caption>
+          </saw:title>
+          <saw:scaleMarkers>
+            <saw:scaleMarker color="#00FF00" xsi:type="saw:scaleMarkerLine">
+              <saw:markerLabel>
+                <saw:title mode="custom">
+                  <saw:caption captionID="kcap1564723752592_51692" oldID="kcap1564723536260_18669">
+                    <saw:text>KPI Threshold</saw:text>
+                  </saw:caption>
+                </saw:title>
+              </saw:markerLabel>
+              <saw:lineWidth>
+                <sawx:expr xsi:type="xsd:decimal">2</sawx:expr>
+              </saw:lineWidth>
+              <saw:linePosition>
+                <sawx:expr xsi:type="xsd:decimal">80</sawx:expr>
+              </saw:linePosition>
+            </saw:scaleMarker>
+          </saw:scaleMarkers>
+          <saw:scale scaleValues="auto" showMajorTicks="false" showMinorTicks="false" logarithmic="false" defaultTicks="true"/>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723752591_51677" oldID="kcap1564723536260_18654">
+              <saw:text>MANAGEMENT AREA</saw:text>
+            </saw:caption>
+          </saw:title>
+          <saw:scale scaleValues="auto" showMajorTicks="false" showMinorTicks="false" logarithmic="false"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF9933"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="2"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF0000"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="3"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#336633"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:viewSelector" name="viewSelector!1">
+      <saw:viewSelectorCaption position="left"/>
+      <saw:viewList>
+        <saw:viewItem type="view" name="tableView!2"/>
+        <saw:viewItem type="view" name="tableView!1"/>
+      </saw:viewList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

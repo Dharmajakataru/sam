@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:view xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saw:globalFilterPrompt" name="">
+  <saw:prompts scope="dashboard" subjectArea="&quot;WHS&quot;">
+    <saw:promptStep setWidthToAllPrompts="true" autoApplyPrompt="true" showResetButton="false">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c1" subjectArea="&quot;WHS&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58601" oldID="kcap1564723578074_26352">
+              <saw:text>Fin Year</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            <saw:promptDefaultValue>RV_FIN_YEAR_NAME</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;D Whs Incident Dha&quot;.&quot;Fin Year Name&quot; FROM &quot;WHS&quot; order by 1 desc"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c2" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Month Abbrev&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58602" oldID="kcap1564723578074_26353">
+              <saw:text>Month</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="specificPrompts">
+            <saw:constrainedByFormula>
+              <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+            </saw:constrainedByFormula>
+          </saw:constrainPrompt>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c15" subjectArea="&quot;WHS&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Office&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58603" oldID="kcap1564723578074_26354">
+              <saw:text>Office</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c12" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Pkey&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58604" oldID="kcap1564723578074_26355">
+              <saw:text>WHS Key</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;D Whs Incident Dha&quot;.&quot;Pkey&quot; FROM &quot;WHS&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c4" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Business Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58605" oldID="kcap1564723578074_26356">
+              <saw:text>Business Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c7" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Incdnt Typ Dha Reptd&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58606" oldID="kcap1564723578074_26357">
+              <saw:text>Incident Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c8" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Injury Typ Dha Reptd&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58607" oldID="kcap1564723578074_26358">
+              <saw:text>Injury Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c11" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Status&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58608" oldID="kcap1564723578074_26359">
+              <saw:text>Status</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;D Whs Incident Dha&quot;.&quot;Status&quot; FROM &quot;WHS&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c9" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Emergncy Ser Attend&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58609" oldID="kcap1564723578074_26360">
+              <saw:text>Emergency Services</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c10" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Treatment Recvd&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58610" oldID="kcap1564723578074_26361">
+              <saw:text>Treatment Received</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c13" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Dura Days&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58611" oldID="kcap1564723578074_26362">
+              <saw:text>Duration</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c14" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Relationship To Dha&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58612" oldID="kcap1564723578074_26363">
+              <saw:text>Relationship To Dha</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;D Whs Incident Dha&quot;.&quot;Relationship To Dha&quot; FROM &quot;WHS&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c5" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">CAST(&quot;D Whs Incident Dha&quot;.&quot;Start Date&quot; as Date)</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58613" oldID="kcap1564723578074_26364">
+              <saw:text>Start Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c6" subjectArea="&quot;WHS&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">Cast(&quot;D Whs Incident Dha&quot;.&quot;End Date&quot; AS DATE)</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723802511_58614" oldID="kcap1564723578074_26365">
+              <saw:text>End Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+      <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c16" subjectArea="&quot;WHS&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;D Whs Incident Dha&quot;.&quot;Comcare Reprtble&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:label><saw:caption><saw:text>Notifiable</saw:text></saw:caption></saw:label><saw:promptSource xsi:type="saw:allChoices"/></saw:prompt></saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:view>

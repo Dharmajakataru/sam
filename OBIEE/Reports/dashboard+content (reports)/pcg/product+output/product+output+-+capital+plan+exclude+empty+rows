@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;PCG&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c866c57071c55c101"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot;</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/></saw:displayFormat><saw:columnHeading><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c2e10e86b7fb5f8bd"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type Description&quot;</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="suppress" fontStyle="bold,italic" wrapText="true" backgroundColor="#99CCFF" fontColor="#FFFFFF" fontSize="20"/><saw:conditionalDisplayFormats/></saw:displayFormat><saw:columnHeading><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cfecfdcfaf34aa048"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>D Development Project</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Development Project</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c6e7ee9ff031f9aba"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;DHF&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="ca813c07ee05fc116"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">case when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; in (2, 3) then case when &quot;D Rent Band&quot;.&quot;Rent Band&quot; = &#39;N/A&#39; then &#39;Other&#39; else &quot;D Rent Band&quot;.&quot;Rent Band&quot; end else  null end</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>D Product Output Type</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Rent Band</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c1bf628049d755e55">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case  when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; in (2, 3) then &#39;5A&#39; when cast(&quot;D Product Output Type&quot;.&quot;ID&quot; as char(1)) = &#39;5&#39; then &#39;4&#39; else cast(&quot;D Product Output Type&quot;.&quot;ID&quot; as char(1)) end</sawx:expr>
+        </saw:columnFormula>
+        
+        
+        
+      <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true" visibility="hidden"/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Product Output Type</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Type Id</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+      
+      
+      
+      
+      
+      
+      <saw:column xsi:type="saw:regularColumn" columnID="cb96ad813b4547629"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">case when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; = 1 then case when &quot;D Product Output Type&quot;.&quot;Type&quot; = &#39;Provisioning&#39; then &#39;Provisioning Lots&#39; when &quot;D Product Output Type&quot;.&quot;Type&quot; = &#39;Other&#39; then char(127) || &quot;D Product Output Type&quot;.&quot;Type&quot; else &quot;D Product Output Type&quot;.&quot;Type&quot; end when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; in (2, 3) then &#39;Provisioning Dwellings&#39; end</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>D Product Output Type</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Type</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c025eaec7ca79e986"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">case when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; = 2 then case when &quot;D Product Classification&quot;.&quot;Product Classification&quot; = &#39;N/A&#39; then &#39;Other Clients&#39; else &quot;D Product Classification&quot;.&quot;Product Classification&quot; end when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; = 3 then case when &quot;D Product Classification&quot;.&quot;Product Classification&quot; = &#39;N/A&#39; then &#39;Defence SR&#39; else &quot;D Product Classification&quot;.&quot;Product Classification&quot; end when &quot;D Product Output Type&quot;.&quot;Type&quot; = &#39;Residual&#39; then null else &quot;D Product Output Type&quot;.&quot;Sub Type&quot; end</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>D Product Output Type</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Sub Type</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c17b236dfd2ec54c4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; = 1 then case    when &quot;D Period&quot;.&quot;Year&quot; &gt;= YEAR(CURRENT_DATE) then      &quot;D Period&quot;.&quot;Fin Year Name&quot;    when &quot;D Period&quot;.&quot;Year&quot; = YEAR(CURRENT_DATE)-1  and QUARTER_OF_YEAR(CURRENT_DATE) &lt;= 2 then      case when &quot;D Period&quot;.&quot;Fin Qtr&quot; &lt; 3 then        &quot;D Period&quot;.&quot;Fin Year Name&quot;      else        &#39; Prior Years&#39;      end  else     &#39; Prior Years&#39;   end when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; in (2, 3) then case    when &quot;D Practical Completion Date&quot;.&quot;YEAR&quot; &gt;= YEAR(CURRENT_DATE) then      &quot;D Practical Completion Date&quot;.&quot;FIN_YEAR_NAME&quot;    when &quot;D Practical Completion Date&quot;.&quot;YEAR&quot; = YEAR(CURRENT_DATE)-1  and QUARTER_OF_YEAR(CURRENT_DATE) &lt;= 2 then      case when &quot;D Practical Completion Date&quot;.&quot;FY_QTR_NO&quot; &lt; 3 then        &quot;D Practical Completion Date&quot;.&quot;FIN_YEAR_NAME&quot;     else        &#39; Prior Years&#39;      end  else     &#39; Prior Years&#39;   end end</sawx:expr>
+        </saw:columnFormula>
+        
+        
+        
+      <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/><saw:conditionalDisplayFormats/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Period</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Fin Year</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+      
+    <saw:column xsi:type="saw:regularColumn" columnID="c84faac97c478ce03" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Property Count&quot;)</sawx:expr>
+        </saw:columnFormula>
+        
+        
+        
+      <saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true"><saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/></saw:formatSpec><saw:conditionalDisplayFormats/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>F Disposals with Provisioned Lots and Dwellings combined</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Number of Properties</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column></saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        
+        
+        
+        
+        
+      <sawx:expr xsi:type="sawx:list" op="in"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Product Output Type&quot;.&quot;Type&quot;</sawx:expr><sawx:expr xsi:type="xsd:string">Disposals</sawx:expr><sawx:expr xsi:type="xsd:string">Provisioning</sawx:expr><sawx:expr xsi:type="xsd:string">Residual</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="lessOrEqual"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Period&quot;.&quot;Year&quot;</sawx:expr><sawx:expr xsi:type="sawx:sqlExpression">YEAR(CURRENT_DATE) + 10</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notEqual"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr><sawx:expr xsi:type="xsd:string">EMPTY</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="equal"><sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Product Output Type&quot;.&quot;Type&quot; = &#39;Provisioning&#39; and &quot;D Rent Band&quot;.&quot;Rent Band&quot; = &#39;N/A&#39; then 0 else 1 end</sawx:expr><sawx:expr xsi:type="xsd:decimal">1</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:list" op="notIn"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Status&quot;</sawx:expr><sawx:expr xsi:type="xsd:string">Project Cancelled</sawx:expr><sawx:expr xsi:type="xsd:string">Project Complete</sawx:expr><sawx:expr xsi:type="xsd:string">Template Only</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:sqlExpression">&quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Dev Proj Id&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="equal"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Include in PCG Report&quot;</sawx:expr><sawx:expr xsi:type="xsd:string">Y</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notNull"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Number of Stages&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:sql">(&quot;D Practical Completion Date&quot;.&quot;YEAR&quot; &lt;= (YEAR(CURRENT_DATE) + 10) OR &quot;D Practical Completion Date&quot;.&quot;DATE_KEY&quot; = -1)</sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notEqual"><sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Property Count&quot;)</sawx:expr><sawx:expr xsi:type="xsd:decimal">0</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;DHF&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Product Output Type&quot;.&quot;Type&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">case when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; = 1 then case when &quot;D Product Output Type&quot;.&quot;Type&quot; = &#39;Provisioning&#39; then &#39;Provisioning Lots&#39; when &quot;D Product Output Type&quot;.&quot;Type&quot; = &#39;Other&#39; then char(127) || &quot;D Product Output Type&quot;.&quot;Type&quot; else &quot;D Product Output Type&quot;.&quot;Type&quot; end when &quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Row Type&quot; in (2, 3) then &#39;Provisioning Dwellings&#39; end</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">case when  &quot;D Development Project&quot;.&quot;Summary&quot; is not null and sum(&quot;F Disposals with Provisioned Lots and Dwellings combined&quot;.&quot;Property Count&quot;) &lt;&gt; 0 then 1 else 0 end</sawx:expr></sawx:expr></sawx:expr>
+    </saw:filter>
+    
+  <saw:columnOrder/></saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true" hidecolumns="false"/>
+  <saw:views textDelivery="compoundView!1" parentsBefore="true" includeNewColumns="true" valueHierarchyIndent="false" nullSuppress="true" currentView="0">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="pivotTableView!2"/></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" oldID="kcap1564723710851_42156">
+          <saw:text>Capital Plan</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2" scrollingEnabled="false" rowsPerPage="100">
+      
+      
+    <saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723710851_42175" oldID="kcap1564723511615_11453">
+                  <saw:text>Total of All Lots</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="cfecfdcfaf34aa048"/><saw:edgeLayer type="column" columnID="c6e7ee9ff031f9aba"/><saw:edgeLayer type="column" columnID="c1bf628049d755e55" visibility="visible"/><saw:edgeLayer type="column" columnID="cb96ad813b4547629"/><saw:edgeLayer type="column" columnID="c025eaec7ca79e986"/><saw:edgeLayer type="column" columnID="ca813c07ee05fc116"/></saw:edgeLayers></saw:edge><saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="none">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723710851_42176" oldID="kcap1564723511615_11454">
+                  <saw:text>Total</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="c2e10e86b7fb5f8bd"><saw:levels><saw:level><saw:displaySubTotal id="st_c2e10e86b7fb5f8bd" subTotalPosition="none"><saw:memberFormat><saw:displayFormat><saw:formatSpec wrapText="true"/></saw:displayFormat></saw:memberFormat></saw:displaySubTotal></saw:level></saw:levels><saw:memberFormat><saw:displayFormat><saw:formatSpec wrapText="true"/></saw:displayFormat></saw:memberFormat></saw:edgeLayer><saw:edgeLayer type="column" columnID="c17b236dfd2ec54c4"/></saw:edgeLayers></saw:edge></saw:edges><saw:measuresList>
+        
+      <saw:measure columnID="c84faac97c478ce03"/></saw:measuresList></saw:view>
+    
+  </saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;PCG&quot;"/>
+</saw:report>

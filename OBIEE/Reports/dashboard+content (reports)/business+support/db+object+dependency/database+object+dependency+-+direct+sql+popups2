@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160" cacheControl="bypassCache">
+  <saw:criteria xsi:type="saw:physicalCriteria" connectionPool="DWH">
+    <saw:columns>
+      <saw:column columnID="c0" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30340" oldID="kcap1564723468293_3582">
+            <saw:text>SOURCE</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c1" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30341" oldID="kcap1564723468293_3583">
+            <saw:text>TARGET</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c2" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30342" oldID="kcap1564723468293_3584">
+            <saw:text>START_OF_BRANCH</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c3" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30343" oldID="kcap1564723468293_3585">
+            <saw:text>END_OF_BRANCH</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c4" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30344" oldID="kcap1564723468293_3586">
+            <saw:text>DB_OBJ_NAME</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c5" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30345" oldID="kcap1564723468293_3587">
+            <saw:text>SOURCE_SCHEMA_DB</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c6" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30346" oldID="kcap1564723468293_3588">
+            <saw:text>TARGET_SCHEMA_DB</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c7" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30347" oldID="kcap1564723468293_3589">
+            <saw:text>SOURCE_OBJECT_TYPE</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c8" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30348" oldID="kcap1564723468293_3590">
+            <saw:text>TARGET_OBJECT_TYPE</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c9" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30349" oldID="kcap1564723468293_3591">
+            <saw:text>SOURCE_SOURCE</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c10" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30350" oldID="kcap1564723468293_3592">
+            <saw:text>TARGET_SOURCE</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c11" xsi:type="saw:physicalColumnRef">
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723638195_30351" oldID="kcap1564723468293_3593">
+            <saw:text>COLUMN_NAME</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:sql>select a.source, a.target, start_of_branch, end_of_branch, 
+&#39;@{PV_SCHEMA_NAME}{Empty}.&#39; || &#39;@{PV_TABLE_NAME}{Empty}@&#39; || &#39;@{PV_DB_NAME}{Empty}&#39; as db_obj_name, 
+source_schema_db, target_schema_db,
+nvl(b.object_type, &#39;TABLE&#39;) as source_object_type,
+nvl(c.object_type, &#39;TABLE&#39;) as target_object_type,
+replace(replace(b.object_source, CHR(13), &#39;&#39;), CHR(10), &#39;\n&#39;) as source_source,
+replace(replace(c.object_source, CHR(13), &#39;&#39;), CHR(10), &#39;\n&#39;) as target_source,
+&#39;@{PV_COL_NAME}{Empty}&#39; as column_name
+from (select distinct  source, target, start_of_branch, end_of_branch, 
+        source_schema_db, target_schema_db from dfl.dfl_remote_objects_used_linked where instr(branch || &#39;/&#39;, &#39;/@{PV_SCHEMA_NAME}{Empty}.&#39; || &#39;@{PV_TABLE_NAME}{Empty}@&#39; || &#39;@{PV_DB_NAME}{Empty}/&#39;) &gt; 0) a
+--
+left outer join dfl.dfl_remote_source b 
+on substr(source, instr(source, &#39;.&#39;) + 1, instr(source, &#39;@&#39;) - (instr(source, &#39;.&#39;) + 1)) = b.object_name 
+and substr(source, 1, instr(source, &#39;.&#39;) - 1) = b.schema_name 
+and substr(source, instr(source, &#39;@&#39;)+1) = b.database_name
+--
+left outer join dfl.dfl_remote_source c 
+on substr(target, instr(target, &#39;.&#39;) + 1, instr(target, &#39;@&#39;) - (instr(target, &#39;.&#39;) + 1)) = c.object_name 
+and substr(target, 1, instr(target, &#39;.&#39;) - 1) = c.schema_name 
+and substr(target, instr(target, &#39;@&#39;)+1) = c.database_name</saw:sql>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true" hidecolumns="false"/>
+  <saw:views textDelivery="compoundView!1" parentsBefore="true" includeNewColumns="true" currentView="0" valueHierarchyIndent="false">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723638195_30330" oldID="kcap1564723468293_3572">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/jquery_1.10.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/jquery_1.10.1/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/visjs/vis.js&quot;&gt;&lt;/script&gt;
+
+&lt;link href=&quot;../custom_styles/js/dha/jquery_1.10.1/jquery-ui-themes-1.12.1/themes/south-street/jquery-ui.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;../custom_styles/js/dha/visjs/vis-network.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+table th,
+table td{
+  text-align: left;
+}
+table.layout{
+  width: 100%;
+  border-collapse: collapse;
+}
+table.display{
+  margin: 1em 0;
+}
+table.display th,
+table.display td{
+  border: 1px solid #B3BFAA;
+  padding: .5em 1em;
+}
+
+table.display th{ background: #D5E0CC; }
+table.display1 th{ background: #b3cead; }
+table.display td{ background: #fff; }
+
+    #mynetwork {
+      width: 1600px;
+      height: 660px;
+      border: 1px solid lightgray;
+    }
+
+  &lt;/style&gt;
+
+&lt;style&gt;
+.highlight
+{
+background-color:yellow;
+}
+&lt;/style&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+// check if an element exists in array using a comparer function
+// comparer : function(currentElement)
+Array.prototype.inArray = function(comparer) { 
+    for(var i=0; i &lt; this.length; i++) { 
+        if(comparer(this[i])) return true; 
+    }
+    return false; 
+}; 
+
+// adds an element to the array if it does not already exist using a comparer 
+// function
+Array.prototype.pushIfNotExist = function(element, comparer) { 
+    if (!this.inArray(comparer)) {
+        this.push(element);
+    }
+}; 
+
+
+Array.prototype.indexOfObj = function(element) { 
+    for(var i=0,e={}; i &lt; this.length; i++) { 
+		e=this[i];
+		if(e.label === element.label) return i;
+    }
+    return -1; 
+}; 
+
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+// check if an element exists in array using a comparer function
+// comparer : function(currentElement)
+Array.prototype.inArray = function(comparer) { 
+    for(var i=0; i &lt; this.length; i++) { 
+        if(comparer(this[i])) return true; 
+    }
+    return false; 
+}; 
+
+// adds an element to the array if it does not already exist using a comparer 
+// function
+Array.prototype.pushIfNotExist = function(element, comparer) { 
+    if (!this.inArray(comparer)) {
+        this.push(element);
+    }
+}; 
+
+
+Array.prototype.indexOfObj = function(element) { 
+    for(var i=0,e={}; i &lt; this.length; i++) { 
+		e=this[i];
+		if(e.label === element.label) return i;
+    }
+    return -1; 
+}; 
+
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723638195_30331" oldID="kcap1564723468293_3573">
+          <saw:text>&lt;div id=&quot;dialog&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;mynetwork&quot;&gt;&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+var newSNode = {};
+var newTNode = {};
+var nodes = [];
+var edges = [];
+
+var sdb=&quot;&quot;;
+var tdb =&quot;&quot;;
+var dbs = [];
+var i=0;
+var col;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:narrative rowCount="500">
+        <saw:caption fmt="html" captionID="kcap1564723638195_30332" oldID="kcap1564723468293_3574">
+          <saw:text>if(standalone===true) {
+	nodes[0] = {id: 0, label: &#39;@{c1}&#39;, shape:&#39;diamond&#39;, type: &#39;@{c8}&#39;, group: 1, title:&#39;&lt;table class=&quot;layout display display1&quot;&gt;&lt;tr&gt;&lt;th&gt;@{c1} - @{c8}&lt;/th&gt;&lt;/tr&gt;&#39;, usedby: [], uses: []};
+} else {
+
+	
+if((&#39;@{c0}&#39; + &#39;@{c1}&#39;).indexOf(&#39;- NON DFL&#39;) === -1) {
+	col=&#39;@{c11}&#39;;
+	newSNode = {id: 0, label: &quot;@{c0}&quot;, shape:(&#39;@{c0}&#39; === &#39;@{c4}&#39;) ? &#39;diamond&#39; : &#39;box&#39;, schema: &#39;@{c5}&#39;, type: &#39;@{c7}&#39;, title:&#39;&lt;table class=&quot;layout display display1&quot;&gt;&lt;tr&gt;&lt;th&gt;@{c0} - @{c7}&lt;/th&gt;&lt;/tr&gt;&#39;, source: &quot;@{c9}&quot;, usedby: [], uses: []};
+	nodes.pushIfNotExist(newSNode, function(e) { 
+		return e.label === newSNode.label
+	});
+
+	s = nodes.indexOfObj(newSNode);
+	if(s != -1) {nodes[s].id = s;}
+
+	newTNode = {id: 0, label: &quot;@{c1}&quot;, shape:(&#39;@{c1}&#39; === &#39;@{c4}&#39;) ? &#39;diamond&#39; : &#39;box&#39;, schema: &#39;@{c6}&#39;, type: &#39;@{c8}&#39;, title:&#39;&lt;table class=&quot;layout display display1&quot;&gt;&lt;tr&gt;&lt;th&gt;@{c1} - @{c8}&lt;/th&gt;&lt;/tr&gt;&#39;, source:&#39;@{c10}&#39;, usedby: [], uses: []};
+	nodes.pushIfNotExist(newTNode, function(e) { 
+		return e.label === newTNode.label
+	});
+
+	t = nodes.indexOfObj(newTNode);
+	if(t != -1) {nodes[t].id = t;}
+
+	if(!nodes[s].title.includes(nodes[t].label)) nodes[s].uses.push(nodes[t].label);
+	if(!nodes[t].title.includes(nodes[s].label)) nodes[t].usedby.push(nodes[s].label);
+	
+	//if(!nodes[s].title.includes(nodes[t].label)) nodes[s].title += &#39;&lt;br/&gt;&#39; + nodes[t].label;
+	//if(!nodes[t].title.includes(nodes[s].label)) nodes[t].title += &#39;&lt;br/&gt;&#39; + nodes[s].label;
+
+	edges[i] = {from: s, to: t, arrows: &quot;to&quot;};
+	i++;
+
+	sdb = &#39;@{c5}&#39;;
+	tdb = &#39;@{c6}&#39;;
+
+	if(dbs.indexOf(sdb) === -1) dbs.push(sdb);
+	if(dbs.indexOf(tdb) === -1) dbs.push(tdb);
+
+	nodes[s].group = dbs.indexOf(sdb);
+	nodes[t].group = dbs.indexOf(tdb);
+	if(col !== &#39;Empty&#39;) {
+	  if(nodes[s].source.toLowerCase().indexOf(col.toLowerCase()) &gt;= 0) nodes[s].shape=&quot;star&quot;;
+	  if(nodes[t].source.toLowerCase().indexOf(col.toLowerCase()) &gt;= 0) nodes[t].shape=&quot;star&quot;;
+	}
+
+	if (&#39;@{c1}&#39; === &#39;@{c4}&#39;) {var rootnode = dbs.indexOf(tdb);}
+}
+}</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:postfix>
+        <saw:caption fmt="html" captionID="kcap1564723638195_30333" oldID="kcap1564723468293_3575">
+          <saw:text>$(function() {
+			$(&quot;#dialog&quot;).dialog({
+				autoOpen: false
+			});
+		});
+
+var usblh=&#39;&#39;, uslh=&#39;&#39;;
+
+for(var j=0;j&lt;nodes.length;j++) {
+	if(nodes[j].usedby.length &gt; 0)  {
+		usblh = &#39;&lt;table class=&quot;layout display&quot;&gt;&lt;tr&gt;&lt;th&gt;Is used by&lt;/th&gt;&lt;/tr&gt;&#39;;
+		for(var k=0;k&lt;nodes[j].usedby.length;k++) {
+			usblh += &#39;&lt;tr&gt;&lt;td&gt;&#39; + nodes[j].usedby[k] + &#39;&lt;/td&gt;&lt;/tr&gt;&#39;;
+		}
+		usblh += &quot;&lt;/table&gt;&quot;;
+	}
+
+	if(nodes[j].uses.length &gt; 0)  {
+		uslh = &#39;&lt;table class=&quot;layout display&quot;&gt;&lt;tr&gt;&lt;th&gt;Uses&lt;/th&gt;&lt;/tr&gt;&#39;;
+		for(var k=0;k&lt;nodes[j].uses.length;k++) {
+			uslh += &#39;&lt;tr&gt;&lt;td&gt;&#39; + nodes[j].uses[k] + &#39;&lt;/td&gt;&lt;/tr&gt;&#39;;
+		}
+		uslh += &quot;&lt;/table&gt;&quot;;
+	}
+
+	if(usblh != null) (nodes[j].title += usblh);
+	if(uslh != null) (nodes[j].title += uslh);
+        usblh=&#39;&#39;;
+        uslh=&#39;&#39;;
+}
+
+
+console.log(&#39;col=&#39;+col);
+var vnodes = new vis.DataSet(nodes);
+var vedges = new vis.DataSet(edges);
+
+  // create a network
+  var container = document.getElementById(&#39;mynetwork&#39;);
+
+
+    var data = {
+        nodes: vnodes,
+        edges: vedges
+    };
+    // create a network
+    var container = document.getElementById(&#39;mynetwork&#39;);
+    var options = {
+        layout: {
+            hierarchical: {
+                direction: &quot;RL&quot;,
+                sortMethod: &quot;directed&quot;,
+				levelSeparation: -400,
+				nodeSpacing: 70,
+				blockShifting: false,
+				edgeMinimization: true,
+				parentCentralization: false
+            }
+        },
+        interaction: {dragNodes :true, hover:true},
+        physics: {
+            enabled: false
+        },
+    };
+    var network = new vis.Network(container, data, options);
+
+    var nth =0;
+    network.on(&quot;click&quot;, function (params) {
+		var nsrc = nodes[params.nodes[0]].source;
+
+		nsrc = nsrc.replace(RegExp(col, &quot;ig&quot;), &#39;&lt;span class=&quot;highlight&quot;&gt;&#39;+col+&quot;&lt;/span&gt;&quot;);
+		
+		if(nodes[params.nodes[0]].type === &#39;TABLE&#39;) {
+			nsrc = &#39;&lt;table&gt;&#39; + nsrc.replace(/ /g, function (match, i, original) {
+				nth++;
+				return (nth % 3 === 0) ? &quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot; : match;
+			});
+			nsrc += &#39;&lt;/table&gt;&#39;;
+		}
+
+		//nsrc = nsrc.replace(RegExp(col, &quot;g&quot;), &#39;&lt;span class=&quot;highlight&quot;&gt;&#39;+col+&quot;&lt;/span&gt;&quot;);
+
+		
+		//$(&#39;#dialog&#39;).dialog(&#39;open&#39;).html(&#39;&lt;p&gt;&#39; + nsrc + &#39;&lt;/p&gt;&#39;);
+
+var x =params.pointer.DOM.x -$(document).scrollLeft();
+    var y =params.pointer.DOM.y -$(document).scrollTop();
+//alert(&#39;x = &#39; + x + &#39;, y = &#39; + y);
+		$(&#39;&lt;div /&gt;&#39;).html(nsrc).dialog({height:500,width:300,title:nodes[params.nodes[0]].label,    buttons: [{text: &quot;Ok&quot;, click: function() {$( this ).dialog( &quot;close&quot; );}}]});
+
+    });
+
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:postfix>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!2"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4"/>
+            <saw:edgeLayer type="column" columnID="c11"/>
+            <saw:edgeLayer type="column" columnID="c2"/>
+            <saw:edgeLayer type="column" columnID="c3"/>
+            <saw:edgeLayer type="column" columnID="c7"/>
+            <saw:edgeLayer type="column" columnID="c8"/>
+            <saw:edgeLayer type="column" columnID="c6"/>
+            <saw:edgeLayer type="column" columnID="c5"/>
+            <saw:edgeLayer type="column" columnID="c9"/>
+            <saw:edgeLayer type="column" columnID="c10"/>
+            <saw:edgeLayer type="column" columnID="c1"/>
+            <saw:edgeLayer type="column" columnID="c0"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:noresultsview" name="noresultsview!1">
+      
+      <saw:detail>
+        <saw:caption oldID="kcap1564723638195_30335" fmt="html">
+          <saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text>
+        </saw:caption>
+      </saw:detail>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723638195_30336" oldID="kcap1564723468293_3578">
+          <saw:text>Check for standalone</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723638195_30337" oldID="kcap1564723468293_3579">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+var standalone=true;
+var rc=0;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:narrative rowCount="2">
+        <saw:caption fmt="html" captionID="kcap1564723638195_30338" oldID="kcap1564723468293_3580">
+          <saw:text>rc++;</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:postfix>
+        <saw:caption fmt="html" captionID="kcap1564723638195_30339" oldID="kcap1564723468293_3581">
+          <saw:text>standalone=(rc===1);
+standalone=false;
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:postfix>
+    </saw:view>
+  </saw:views>
+</saw:report>
