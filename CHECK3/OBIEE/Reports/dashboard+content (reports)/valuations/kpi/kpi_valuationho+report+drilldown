@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Valuations&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2bad6c17db0df9fa">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Days Overdue&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57832" oldID="kcap1564723558998_23189">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57833" oldID="kcap1564723558998_23190">
+            <saw:text>Actual Days</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="paren" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c4ed7da6a07ddad20"/>
+                    <sawx:expr xsi:type="xsd:string">Critical</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#CC3333" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3bde8c0afa3266c8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">VALUEOF(&quot;RV_KPI_HO_APPROVAL_CRITICAL&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57834" oldID="kcap1564723558998_23191">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57835" oldID="kcap1564723558998_23192">
+            <saw:text>Target</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4ed7da6a07ddad20">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Dim Valuation&quot;.&quot;Days Overdue&quot;&gt; VALUEOF(&quot;RV_KPI_HO_APPROVAL_CRITICAL&quot;)  THEN &#39;Critical&#39; ELSE  &#39;OK&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57836" oldID="kcap1564723558998_23193">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57837" oldID="kcap1564723558998_23194">
+            <saw:text>Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec interaction="default" hAlign="center"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c4ed7da6a07ddad20"/>
+                    <sawx:expr xsi:type="xsd:string">OK</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:common/kpi_ok_status.gif" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c4ed7da6a07ddad20"/>
+                    <sawx:expr xsi:type="xsd:string">Warning</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:common/kpi_warning_status.gif" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c4ed7da6a07ddad20"/>
+                    <sawx:expr xsi:type="xsd:string">Critical</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/icons_l/01_alert.png" imagePlacement="left,imageOnly" interaction="action">
+                  <saw:actionLinks>
+                    <saw:actionLink>
+                      <saw:action>
+                        <saw:actionName>KPI_ValuationTeam Report</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Jasmeen_Test/KPI_ValuationTeam Report</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723797196_57860" oldID="kcap1564723558998_23217">
+                        <saw:text>Val Team Report</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c863d1bfb4cb02ef1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Management Area&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf61bf7db51115e29">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Valuation Status&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723797195_57838" oldID="kcap1564723558998_23195">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723797195_57839" oldID="kcap1564723558998_23196">
+            <saw:text>Current Valuation Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca734a2308effa85b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Due Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57840" oldID="kcap1564723558998_23197">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57841" oldID="kcap1564723558998_23198">
+            <saw:text>Due Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbef80b44f3200bef">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Overdue&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57842" oldID="kcap1564723558998_23199">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57843" oldID="kcap1564723558998_23200">
+            <saw:text>Overdue</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9414953ba0ff670f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57844" oldID="kcap1564723558998_23201">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57845" oldID="kcap1564723558998_23202">
+            <saw:text>Reason</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb827cae4d72af852">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57846" oldID="kcap1564723558998_23203">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57847" oldID="kcap1564723558998_23204">
+            <saw:text>Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cee1bf67982829017">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Valuation Basis&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57848" oldID="kcap1564723558998_23205">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57849" oldID="kcap1564723558998_23206">
+            <saw:text>Valuation Basis</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0d17c8c403b1a4dc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Property Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c0d17c8c403b1a4dc_al17d17872f650956d">
+                <saw:action>
+                  <saw:actionName>Navigate - @[staffservicesvals]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Property_ID</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[staffservicesvals]?property_id=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723797196_57858" oldID="kcap1564723558998_23215">
+                  <saw:text>View property in Homefind</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c0d17c8c403b1a4dc"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57850" oldID="kcap1564723558998_23207">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57851" oldID="kcap1564723558998_23208">
+            <saw:text>Property ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0656370f31ab5401">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Valuer&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57852" oldID="kcap1564723558998_23209">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723797195_57853" oldID="kcap1564723558998_23210">
+            <saw:text>Valuer</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf4abeaf79f2831a9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Ownership&quot;.&quot;CODE&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723797195_57854" oldID="kcap1564723558998_23211">
+            <saw:text>Dim Ownership</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723797195_57855" oldID="kcap1564723558998_23212">
+            <saw:text>Ownership</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0cbb018815ae9a6e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Valuation Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c0cbb018815ae9a6e_albf5fdf2bf4f92bc7">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>P0</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>P1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>P2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>P3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Valuations/KPI/KPI_Valuation Status Report</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Dim Valuation&quot;.&quot;VALUATION_ID&quot;</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Path=@{2}&amp;Action=@{3}&amp;P0=@{4}&amp;P1=@{5}&amp;P2=@{6}&amp;P3=@{7}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723797196_57859" oldID="kcap1564723558998_23216">
+                  <saw:text>View Valuation Detail</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c0cbb018815ae9a6e"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723797195_57856" oldID="kcap1564723558998_23213">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723797196_57857" oldID="kcap1564723558998_23214">
+            <saw:text>Valuation ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdb18a25084b0de24">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Property Class&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf322b4535ab42541">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Requestor&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Valuation Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:untypedLiteral">Valuer Approved</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:sql">&quot;Dim Valuation&quot;.&quot;Reason&quot; in (&#39;SLB&#39;,&#39;2REV&#39;,&#39;ACQ&#39;,&#39;DI&#39;) or  (&quot;Dim Valuation&quot;.&quot;Reason&quot; = &#39;CONS&#39; AND &quot;Dim Valuation&quot;.&quot;Type&quot; = &#39;ASIS&#39;)</sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c2bad6c17db0df9fa" direction="descending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1"/></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/KPI+-+Valuation">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723797195_57831" oldID="kcap1564723558998_23188">
+          <saw:text>Valuation Detail Report by Reason</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:columnOrder>
+            <saw:columnOrderRef columnID="c2bad6c17db0df9fa" direction="descending"/>
+          </saw:columnOrder>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c9414953ba0ff670f"/>
+            <saw:edgeLayer type="column" columnID="c863d1bfb4cb02ef1"/>
+            <saw:edgeLayer type="column" columnID="c0d17c8c403b1a4dc"/>
+            <saw:edgeLayer type="column" columnID="c0cbb018815ae9a6e"/>
+            <saw:edgeLayer type="column" columnID="cf322b4535ab42541"/>
+            <saw:edgeLayer type="column" columnID="cf61bf7db51115e29"/>
+            <saw:edgeLayer type="column" columnID="ca734a2308effa85b"/>
+            <saw:edgeLayer type="column" columnID="cbef80b44f3200bef"/>
+            <saw:edgeLayer type="column" columnID="cb827cae4d72af852"/>
+            <saw:edgeLayer type="column" columnID="cee1bf67982829017"/>
+            <saw:edgeLayer type="column" columnID="cdb18a25084b0de24"/>
+            <saw:edgeLayer type="column" columnID="cf4abeaf79f2831a9"/>
+            <saw:edgeLayer type="column" columnID="c0656370f31ab5401"/>
+            <saw:edgeLayer type="column" columnID="c2bad6c17db0df9fa"/>
+            <saw:edgeLayer type="column" columnID="c4ed7da6a07ddad20" visibility="hidden"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c2bad6c17db0df9fa"/>
+        <saw:measure columnID="c3bde8c0afa3266c8"/>
+        <saw:measure columnID="c4ed7da6a07ddad20"/>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

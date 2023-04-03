@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Staff&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3bd05071bf5cd0bf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;As At Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb0185666986667c6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Unit&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="clientEvent">
+            <saw:clientEventSpec channel="CH_UNIT"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:dimensionSelection>
+          <saw:selectionStep stepID="1" type="startWith" category="member">
+            <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+              <saw:staticMemberGroup>
+                <saw:members xsi:type="saw:specialValueMembers">
+                  <saw:value specialValue="all"/>
+                </saw:members>
+              </saw:staticMemberGroup>
+            </saw:stepMembers>
+          </saw:selectionStep>
+          <saw:selectionStep type="add" stepID="2" category="customGroup">
+            <saw:customGroup customGroupID="cb0185666986667c6_g1">
+              <saw:caption captionID="kcap1564723661226_34230" oldID="kcap1564723485410_6094">
+                <saw:text>All</saw:text>
+              </saw:caption>
+              <saw:selectionStep type="add" stepID="3" category="member">
+                <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+                  <saw:staticMemberGroup>
+                    <saw:members xsi:type="saw:stringMembers">
+                      <saw:value>Business Development</saw:value>
+                      <saw:value>Business Solutions &amp; Tech</saw:value>
+                      <saw:value>Chief Operating Officer&#39;s</saw:value>
+                      <saw:value>Client Relations</saw:value>
+                      <saw:value>Corporate</saw:value>
+                      <saw:value>Corporate Affairs</saw:value>
+                      <saw:value>DHA Investment Mgt Ltd</saw:value>
+                      <saw:value>Develop. &amp; Construction</saw:value>
+                      <saw:value>Finance</saw:value>
+                      <saw:value>IT Services</saw:value>
+                      <saw:value>Inoperative</saw:value>
+                      <saw:value>Managing Directors Office</saw:value>
+                      <saw:value>Operations OLD</saw:value>
+                      <saw:value>People &amp; Corp Resources</saw:value>
+                      <saw:value>Property Provisioning Grp</saw:value>
+                      <saw:value>Property and Tenancy Services</saw:value>
+                      <saw:value>Public Affairs(OLD)</saw:value>
+                      <saw:value>Sales and Marketing</saw:value>
+                    </saw:members>
+                  </saw:staticMemberGroup>
+                </saw:stepMembers>
+                <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+                  <saw:staticMemberGroup>
+                    <saw:members xsi:type="saw:specialValueMembers">
+                      <saw:value specialValue="null"/>
+                    </saw:members>
+                  </saw:staticMemberGroup>
+                </saw:stepMembers>
+              </saw:selectionStep>
+            </saw:customGroup>
+          </saw:selectionStep>
+        </saw:dimensionSelection>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0a651d37948ec126">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Classification&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1c32cdb956d5f633" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Commencements&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c45e17f12ba6c8d34" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;FTE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf66e23361643c124" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Head Count&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccbdfb7c99520d8ac">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;F_DHA_STAFF_HISTORY&quot;.&quot;Classification&quot; in (&#39;EXEC1&#39;, &#39;EXEC2&#39;) then &#39;EXEC1-2&#39; when &quot;F_DHA_STAFF_HISTORY&quot;.&quot;Classification&quot; in (&#39;DHA5&#39;, &#39;DHA6&#39;) then &#39;DHA5-6&#39; when &quot;F_DHA_STAFF_HISTORY&quot;.&quot;Classification&quot; in (&#39;DHA2&#39;, &#39;DHA3&#39;, &#39;DHA4&#39;) then &#39;DHA2-4&#39; else &quot;F_DHA_STAFF_HISTORY&quot;.&quot;Classification&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661226_34224" oldID="kcap1564723485410_6088">
+            <saw:text>F_DHA_STAFF_HISTORY</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661226_34225" oldID="kcap1564723485410_6089">
+            <saw:text>Group Classification</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c92f86cf11d86d4f5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Next Unit Level&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="cb324324682bb3286" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPADD(SQL_TSI_MONTH, -13, CURRENT_DATE)</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Unit&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;Next Unit Level&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_HISTORY&quot;.&quot;As At Date&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723661226_34226" oldID="kcap1564723485410_6090">
+            <saw:text>Head Count and FTE by Month</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c3bd05071bf5cd0bf"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c45e17f12ba6c8d34"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cf66e23361643c124"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1">
+          <saw:scale scaleValues="datarangezoom" defaultTicks="true"/>
+          <saw:title mode="custom"/>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="line">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#133278" lineStyle="default" lineWidth="1" symbol="triangle"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="2"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#cd2127" lineStyle="default" lineWidth="2" symbol="diamond"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723661226_34227" oldID="kcap1564723485410_6091">
+            <saw:text>DHA Recruitment Summary by Month</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c3bd05071bf5cd0bf"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c92f86cf11d86d4f5"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c1c32cdb956d5f633"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="ccbdfb7c99520d8ac"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page>
+          <saw:column>
+            <saw:columnRef columnID="cb0185666986667c6"/>
+          </saw:column>
+        </saw:page>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723661226_34228" oldID="kcap1564723485410_6092">
+              <saw:text>Number of Employees</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723661226_34229" oldID="kcap1564723485410_6093">
+              <saw:text>Month of Engagement by Classification</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="ccbdfb7c99520d8ac" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="ccbdfb7c99520d8ac"/>
+                  <sawx:expr xsi:type="xsd:string">DHA2-4</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#133278"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="ccbdfb7c99520d8ac" position="1">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="ccbdfb7c99520d8ac"/>
+                  <sawx:expr xsi:type="xsd:string">DHA5-6</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#9accef"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="ccbdfb7c99520d8ac" position="2">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="ccbdfb7c99520d8ac"/>
+                  <sawx:expr xsi:type="xsd:string">EXEC1-2</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#cd2127"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+      <saw:pageEdgeState>
+        <saw:QDR>
+          <saw:staticMemberGroup>
+            <saw:groupType>
+              <sawx:columnRefExpr columnID="cb0185666986667c6"/>
+            </saw:groupType>
+            <saw:members xsi:type="saw:stringMembers">
+              <saw:value>cb0185666986667c6__@@#$__cb0185666986667c6_g1</saw:value>
+            </saw:members>
+          </saw:staticMemberGroup>
+        </saw:QDR>
+        <saw:selectionGroups>
+          <saw:selectionGroup columnID="cb0185666986667c6" groupID="1"/>
+        </saw:selectionGroups>
+      </saw:pageEdgeState>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

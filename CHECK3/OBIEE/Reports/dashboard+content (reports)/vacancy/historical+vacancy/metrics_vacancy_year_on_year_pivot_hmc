@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Metrics&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c268236909e8ab132">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Metrics Kpi Matrix&quot;.&quot;Date Run&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc4d03a89a86f3bb6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Metrics Kpi Matrix&quot;.&quot;Date Run&quot; =    TIMESTAMPADD( SQL_TSI_DAY , -(1), TIMESTAMPADD( SQL_TSI_MONTH , 1, TIMESTAMPADD( SQL_TSI_DAY , DAYOFMONTH( &quot;Metrics Kpi Matrix&quot;.&quot;Date Run&quot;) * -(1) + 1,&quot;Metrics Kpi Matrix&quot;.&quot;Date Run&quot;)))       then &#39;Y&#39;  when &quot;Metrics Kpi Matrix&quot;.&quot;Date Run&quot; = TIMESTAMPADD(SQL_TSI_DAY, -1, current_date) then &#39;Y&#39;  else &#39;N&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775947_55091" oldID="kcap1564723548317_21330">
+            <saw:text>Metrics Kpi Matrix</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775947_55092" oldID="kcap1564723548317_21331">
+            <saw:text>End of Month Flag</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb41575c14caa267a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Metrics Kpi Matrix&quot;.&quot;Dha Stock Let Percent&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd405a7a1a3f97508">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Metrics Kpi Matrix&quot;.&quot;Dha Vac Total Percent&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd5f6ad240624f09b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period&quot;.&quot;Fin Year&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce5e5016820abe797">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;JAN&#39; then &#39;Jan&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;FEB&#39; then &#39;Feb&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;MAR&#39; then &#39;Mar&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;APR&#39; then &#39;Apr&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;MAY&#39; then &#39;May&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;JUN&#39; then &#39;Jun&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;JUL&#39; then &#39;Jul&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;AUG&#39; then &#39;Aug&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;SEP&#39; then &#39;Sep&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;OCT&#39; then &#39;Oct&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;NOV&#39; then &#39;Nov&#39;
+when &quot;Dim Period&quot;.&quot;Month Abbrev&quot; = &#39;DEC&#39; then &#39;Dec&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775947_55093" oldID="kcap1564723548317_21332">
+            <saw:text>Dim Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775947_55094" oldID="kcap1564723548317_21333">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca2b3b68b47a68aed">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period&quot;.&quot;Fin Month&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce38f63ea0c600b8b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Metrics KPI Location&quot;.&quot;Location&quot; = &#39;Total Australia&#39; then &#39;Nationwide&#39; else &quot;Metrics KPI Location&quot;.&quot;Location&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775947_55095" oldID="kcap1564723548317_21334">
+            <saw:text>Metrics KPI Location</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775947_55096" oldID="kcap1564723548317_21335">
+            <saw:text>Management Area</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period&quot;.&quot;Fin Year&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_TWO_PREVIOUS_FIN_YEAR</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Metrics Kpi Matrix&quot;.&quot;Date Run&quot; =    TIMESTAMPADD( SQL_TSI_DAY , -(1), TIMESTAMPADD( SQL_TSI_MONTH , 1, TIMESTAMPADD( SQL_TSI_DAY , DAYOFMONTH( &quot;Metrics Kpi Matrix&quot;.&quot;Date Run&quot;) * -(1) + 1,&quot;Metrics Kpi Matrix&quot;.&quot;Date Run&quot;)))       then &#39;Y&#39; 
+when &quot;Metrics Kpi Matrix&quot;.&quot;Date Run&quot; = TIMESTAMPADD(SQL_TSI_DAY, -1, current_date)
+then &#39;Y&#39;
+
+else &#39;N&#39; end</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Y</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:logical" op="or">
+          <sawx:expr xsi:type="sawx:comparison" op="notNull">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Metrics KPI Location&quot;.&quot;Management Area ID&quot;</sawx:expr>
+          </sawx:expr>
+          <sawx:expr xsi:type="sawx:comparison" op="equal">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Metrics KPI Location&quot;.&quot;Location Type&quot;</sawx:expr>
+            <sawx:expr xsi:type="xsd:string">Total</sawx:expr>
+          </sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="ca2b3b68b47a68aed" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cd5f6ad240624f09b"/>
+            <saw:edgeLayer type="column" columnID="ca2b3b68b47a68aed" visibility="hidden"/>
+            <saw:edgeLayer type="column" columnID="ce5e5016820abe797"/>
+            <saw:edgeLayer type="column" columnID="ce38f63ea0c600b8b"/>
+            <saw:edgeLayer type="column" columnID="cb41575c14caa267a" visibility="visible"/>
+            <saw:edgeLayer type="column" columnID="cd405a7a1a3f97508"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cd405a7a1a3f97508"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cb41575c14caa267a"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page>
+          <saw:column>
+            <saw:columnRef columnID="ce38f63ea0c600b8b"/>
+          </saw:column>
+        </saw:page>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ce38f63ea0c600b8b"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ca2b3b68b47a68aed" visibility="hidden"/>
+            <saw:edgeLayer type="column" columnID="ce5e5016820abe797"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="measure"/>
+            <saw:edgeLayer type="column" columnID="cd5f6ad240624f09b"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="cd405a7a1a3f97508"/>
+      </saw:measuresList>
+      <saw:pageEdgeState>
+        <saw:QDR>
+          <saw:staticMemberGroup>
+            <saw:groupType>
+              <sawx:columnRefExpr columnID="ce38f63ea0c600b8b"/>
+            </saw:groupType>
+            <saw:members xsi:type="saw:stringMembers">
+              <saw:value>Nationwide</saw:value>
+            </saw:members>
+          </saw:staticMemberGroup>
+        </saw:QDR>
+        <saw:selectionGroups>
+          <saw:selectionGroup columnID="ce38f63ea0c600b8b" groupID="0"/>
+        </saw:selectionGroups>
+      </saw:pageEdgeState>
+      <saw:nestedViews>
+        <saw:nestedView position="chart only">
+          <saw:view xsi:type="saw:dvtchart" name="pivotTableView!1::GridChart">
+            <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+              <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+            </saw:display>
+            <saw:canvasFormat height="330" width="640">
+              <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default">
+                <saw:textFormat/>
+              </saw:dataLabels>
+              <saw:title mode="custom">
+                <saw:caption captionID="kcap1564723775947_55097" oldID="kcap1564723548317_21336">
+                  <saw:text>% DHA Vacant Stock (Year on Year)</saw:text>
+                </saw:caption>
+              </saw:title>
+            </saw:canvasFormat>
+            <saw:legendFormat position="bottom" transparentFill="true">
+              <saw:textFormat/>
+            </saw:legendFormat>
+            <saw:axesFormats>
+              <saw:axisFormat axis="Y1">
+                <saw:labels/>
+                <saw:textFormat/>
+                <saw:title mode="custom">
+                  <saw:caption captionID="kcap1564723775947_55098" oldID="kcap1564723548317_21337">
+                    <saw:text>% Stock Vacant</saw:text>
+                  </saw:caption>
+                </saw:title>
+              </saw:axisFormat>
+              <saw:axisFormat axis="X" displayScaleLabels="true">
+                <saw:labels rotate="45" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+                <saw:textFormat/>
+                <saw:title mode="custom"/>
+              </saw:axisFormat>
+            </saw:axesFormats>
+            
+          <saw:selections><saw:categories><saw:category><saw:columnRef columnID="ca2b3b68b47a68aed"/></saw:category><saw:category><saw:columnRef columnID="ce5e5016820abe797"/></saw:category></saw:categories><saw:measures showMeasureLabelsOnCategory="false"><saw:column measureType="y"><saw:columnRef columnID="cd405a7a1a3f97508"/></saw:column></saw:measures><saw:seriesGenerators><saw:seriesGenerator><saw:columnRef columnID="cd5f6ad240624f09b"/></saw:seriesGenerator><saw:measureLabels/></saw:seriesGenerators></saw:selections></saw:view>
+        </saw:nestedView>
+      </saw:nestedViews>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

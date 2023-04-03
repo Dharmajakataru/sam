@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Tenancy&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce757c16d486b9430">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Base Name&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54536" oldID="kcap1564723547004_20931">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54537" oldID="kcap1564723547004_20932">
+            <saw:text>Base Name</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c02945a094eb1e373">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(EVALUATE_AGGR(&#39;LISTAGG(%1,%2) WITHIN GROUP (ORDER BY %3 DESC)&#39;,&quot;D Lia Access&quot;.&quot;Unit Name&quot;,&#39;,&#39;,&quot;D Lia Access&quot;.&quot;Unit Name&quot;) as VARCHAR(3000))</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="300px" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54538" oldID="kcap1564723547004_20933">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54539" oldID="kcap1564723547004_20934">
+            <saw:text>Unit Name</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3754918b65711939">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Username&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8f5bc809cc51074f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;First Name&quot;||&#39; &#39;||&quot;D Lia Access&quot;.&quot;Surname&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54540" oldID="kcap1564723547004_20935">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54541" oldID="kcap1564723547004_20936">
+            <saw:text>Name</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cffca68b13a26af88">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Employee Id&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c212495a3d191b22b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Service&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5cc173306d0498a4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Number of Logged in&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54542" oldID="kcap1564723547004_20937">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54543" oldID="kcap1564723547004_20938">
+            <saw:text>Count of Logins in previous 12 months</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c572841782d934868">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;D Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaBaseAuthority&#39; then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54544" oldID="kcap1564723547004_20939">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54545" oldID="kcap1564723547004_20940">
+            <saw:text>BA</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbe1253ff309dce4a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;D Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaBaseManager&#39; then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54546" oldID="kcap1564723547004_20941">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54547" oldID="kcap1564723547004_20942">
+            <saw:text>BM</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdd28553cdf61a782">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;D Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaCourseCoordinator&#39; then 1 Else 0 End) &gt;  0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54548" oldID="kcap1564723547004_20943">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54549" oldID="kcap1564723547004_20944">
+            <saw:text>CC</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c950b26fb57680d7e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;D Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaServiceProviderLeap&#39; then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54550" oldID="kcap1564723547004_20945">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54551" oldID="kcap1564723547004_20946">
+            <saw:text>SPL</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca67e8f51201c04f3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;D Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaServiceProviderNonLeap&#39; then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54552" oldID="kcap1564723547004_20947">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54553" oldID="kcap1564723547004_20948">
+            <saw:text>SPNL</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca16800e611619ba1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;D Lia Access&quot;.&quot;Unit Role&quot; = &#39;LiaApprovingAuthority&#39; Then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54554" oldID="kcap1564723547004_20949">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54555" oldID="kcap1564723547004_20950">
+            <saw:text>AA</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7452f427d1dd78ac">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;D Lia Access&quot;.&quot;Unit Role&quot; = &#39;LiaUnitManager&#39; Then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54556" oldID="kcap1564723547004_20951">
+            <saw:text>D Lia Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723772210_54557" oldID="kcap1564723547004_20952">
+            <saw:text>UM</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Base Role&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Unit Role&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Base Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Unit Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Logged In Prev 12 Mnths&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Reports+-+Tenancy" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="200">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ce757c16d486b9430"/>
+            <saw:edgeLayer type="column" columnID="c02945a094eb1e373"/>
+            <saw:edgeLayer type="column" columnID="c3754918b65711939"/>
+            <saw:edgeLayer type="column" columnID="c8f5bc809cc51074f"/>
+            <saw:edgeLayer type="column" columnID="cffca68b13a26af88"/>
+            <saw:edgeLayer type="column" columnID="c212495a3d191b22b"/>
+            <saw:edgeLayer type="column" columnID="c5cc173306d0498a4"/>
+            <saw:edgeLayer type="column" columnID="c572841782d934868"/>
+            <saw:edgeLayer type="column" columnID="cbe1253ff309dce4a"/>
+            <saw:edgeLayer type="column" columnID="cdd28553cdf61a782"/>
+            <saw:edgeLayer type="column" columnID="c950b26fb57680d7e"/>
+            <saw:edgeLayer type="column" columnID="ca67e8f51201c04f3"/>
+            <saw:edgeLayer type="column" columnID="ca16800e611619ba1"/>
+            <saw:edgeLayer type="column" columnID="c7452f427d1dd78ac"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Tenancy&quot;">
+    <saw:promptStep setWidthToAllPrompts="true">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c10" subjectArea="&quot;Tenancy&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Base Name&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723772210_54558" oldID="kcap1564723547004_20953">
+              <saw:text>Base Name</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;D Lia Access&quot;.&quot;Base Name&quot; FROM &quot;Tenancy&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c11" subjectArea="&quot;Tenancy&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Unit Name&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723772210_54559" oldID="kcap1564723547004_20954">
+              <saw:text>Unit Name</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none">
+            <saw:constrainedByFormula>
+              <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Base Name&quot;</sawx:expr>
+            </saw:constrainedByFormula>
+          </saw:constrainPrompt>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c12" subjectArea="&quot;Tenancy&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Base Role&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723772210_54560" oldID="kcap1564723547004_20955">
+              <saw:text>Base Role</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c13" subjectArea="&quot;Tenancy&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lia Access&quot;.&quot;Unit Role&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723772210_54561" oldID="kcap1564723547004_20956">
+              <saw:text>Unit Role</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:report>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sawd:dashboardPage xmlns:sawd="com.siebel.analytics.web/dashboard/v1.1" xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlVersion="200810300" isEmpty="false" duid="m1jq49omabhv17ih">
+  <sawd:dashboardColumn name="Column 1" canFreeze="true" duid="lf70iq1kt5glhd6a" layoutType="bestFit"><sawd:dashboardSection name="Section 8" duid="31nvo07fuu2ee493" showSectionTitle="false" collapsible="false" layoutType="bestFit" horizontalLayout="true">
+      <sawd:htmlView name="HTML 1" duid="kabaiu74j53onqg6"><sawd:HTML fmt="html">&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;a href=&quot;https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=DHAPT&amp;title=Business+Intelligence+-+Contractor+Availability&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;../custom_styles/s_dha/dha/Info.png&quot;  style=&quot;width:24px; height:24px;top:10px; left:20px; position:absolute; z-index:10;&quot; title=&quot;Display info explaining dashboard page content&quot; alt=&quot;Display info explaining dashboard page content&quot;&gt;&lt;/a&gt;&lt;/div&gt;</sawd:HTML></sawd:htmlView><sawd:globalFilterView name="GFP 1" path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/DP Contractor Availability Top Lvl" duid="vms7pa4a9hc5oqpo" scope="dashboardPage"><saw:caption>
+          <saw:text>DP Contractor Availability Top Lvl</saw:text>
+        </saw:caption>
+        
+      </sawd:globalFilterView>
+    </sawd:dashboardSection><sawd:dashboardSection name="Section 2" duid="4ktpfftdei9tq3q7" showSectionTitle="false" collapsible="false" layoutType="bestFit">
+      <sawd:globalFilterView name="GFP 0" path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/DP Report Selector" duid="bm9p41130kmirr9k" scope="dashboardPage"><saw:caption>
+          <saw:text>DP Report Selector</saw:text>
+        </saw:caption>
+        
+      </sawd:globalFilterView>
+    </sawd:dashboardSection></sawd:dashboardColumn>
+  <sawd:dashboardColumn name="Column 5" frozen="false" canFreeze="false" duid="gpc9ave45en5fahs" break="column" layoutType="bestFit"><sawd:dashboardSection name="Section 10" duid="qudmj5v5v1fgvikh" showSectionTitle="false" collapsible="false" layoutType="bestFit">
+      <saw:displayFormat>
+        <saw:formatSpec wrapText="true"/>
+      </saw:displayFormat>
+      <cond:condition xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" name="ROWCOUNT(&#39;rep_selector_routine_avail&#39;) &gt; 0" autoGenerateName="true">
+        <cond:comparison op="greater">
+          <cond:rowcount op="ROWCOUNT">
+            <saw:reportRef path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/rep_selector_routine_avail">
+              <saw:filterOverrides/>
+            </saw:reportRef>
+          </cond:rowcount>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </cond:comparison>
+      </cond:condition>
+      <sawd:reportView name="Report 1" display="embed" showView="compoundView!3" duid="715b5tu5n8o4len5"><saw:caption>
+          <saw:text>Contractor Routine Availability - Top Level</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/Contractor Routine Availability - Top Level"/>
+      </sawd:reportView>
+    </sawd:dashboardSection><sawd:dashboardSection name="Section 0" duid="mfeku7ggs4nc279o" showSectionTitle="false" collapsible="false" layoutType="bestFit">
+      <saw:displayFormat>
+        <saw:formatSpec wrapText="true"/>
+      </saw:displayFormat>
+      <cond:condition xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" name="ROWCOUNT(&#39;rep_selector_emerg_avail&#39;) &gt; 0" autoGenerateName="true">
+        <cond:comparison op="greater">
+          <cond:rowcount op="ROWCOUNT">
+            <saw:reportRef path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/rep_selector_emerg_avail">
+              <saw:filterOverrides/>
+            </saw:reportRef>
+          </cond:rowcount>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </cond:comparison>
+      </cond:condition>
+      <sawd:reportView name="Report 0" display="embed" showView="compoundView!3" duid="kof86n0buvlbbj2e"><saw:caption>
+          <saw:text>Contractor Emergency Availability - Top Level</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/Contractor Emergency Availability - Top Level"/>
+      </sawd:reportView>
+    </sawd:dashboardSection><sawd:dashboardSection name="Section 11" duid="rgtaidpmmv6ud9c6" showSectionTitle="false" collapsible="false" layoutType="bestFit">
+      <cond:condition xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" name="ROWCOUNT(&#39;rep_selector_routine_exc_avail&#39;) &gt; 0" autoGenerateName="true">
+        <cond:comparison op="greater">
+          <cond:rowcount op="ROWCOUNT">
+            <saw:reportRef path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/rep_selector_routine_exc_avail">
+              <saw:filterOverrides/>
+            </saw:reportRef>
+          </cond:rowcount>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </cond:comparison>
+      </cond:condition>
+      <sawd:reportView name="Report 2" display="embed" showView="default" duid="8p44bnp3dg2p467o"><saw:caption>
+          <saw:text>Contractor Exc Routine Availability - Top Level</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/Contractor Exc Routine Availability - Top Level"/>
+      </sawd:reportView>
+    </sawd:dashboardSection><sawd:dashboardSection name="Section 1" collapsible="false" duid="8sl3pvfdk54i9t6k" showSectionTitle="false" layoutType="bestFit">
+      <cond:condition xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" name="ROWCOUNT(&#39;rep_selector_emerg_exc_avail&#39;) &gt; 0" autoGenerateName="true">
+        <cond:comparison op="greater">
+          <cond:rowcount op="ROWCOUNT">
+            <saw:reportRef path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/rep_selector_emerg_exc_avail">
+              <saw:filterOverrides/>
+            </saw:reportRef>
+          </cond:rowcount>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </cond:comparison>
+      </cond:condition>
+      <sawd:reportView name="Report 3" display="embed" showView="" duid="bub6bb3r1cfvvtk7"><saw:caption>
+          <saw:text>Contractor Exc Emergency Availability - Top Level</saw:text>
+        </saw:caption>
+        
+        <sawd:reportRef type="catalog" path="/shared/Components/Dashboard Content/Repairs &amp; Maintenance/Contractor Availability/Contractor Exc Emergency Availability - Top Level"/>
+      </sawd:reportView>
+    </sawd:dashboardSection></sawd:dashboardColumn>
+</sawd:dashboardPage>

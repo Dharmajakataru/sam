@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Runway&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8166022e09bad8de">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Opp Status Periods&quot;.&quot;Fin Year&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0e30def8d5b4635b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Opp Status Periods&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53774" oldID="kcap1564723544883_20467">
+            <saw:text>Dim Opp Status Periods</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53775" oldID="kcap1564723544883_20468">
+            <saw:text>Financial Year</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5c57f760a83ba8d6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Opp Status Periods&quot;.&quot;Month Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf15b4935de3f77d4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Opp Status Periods&quot;.&quot;Month Abbrev&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9fa8db81c2205781">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Opp Status Periods&quot;.&quot;Fin Month&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" width="20px" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c78a41a948ffa791e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MAX(&quot;Dim Opp Status Periods&quot;.&quot;Fin Year End Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="cdbae34b692148a92" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CAST(&quot;Dim Opp Status Periods&quot;.&quot;Month Start Date&quot; AS DATE)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca45277f2f8661686" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Fact Rwy Opportunity Statuses&quot;.&quot;Status ID&quot; = 3 THEN COUNT(&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Opp Status ID&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="ca45277f2f8661686_alc9c5de2fc6249545">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>PortalGo</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Status Comparison Drill Thru</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Hold Fin Year Name&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Hold Month&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723766194_53792" oldID="kcap1564723544883_20485">
+                  <saw:text>Held - Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c0e30def8d5b4635b"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf15b4935de3f77d4"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53776" oldID="kcap1564723544883_20469">
+            <saw:text>Fact Rwy Opportunity Statuses</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53777" oldID="kcap1564723544883_20470">
+            <saw:text>Hold</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c53dea3500c491796" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Fact Rwy Opportunity Statuses&quot;.&quot;Status ID&quot; = 7 THEN COUNT(&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Opp Status ID&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c53dea3500c491796_alef619b9741b8fdde">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>PortalGo</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Status Comparison Drill Thru</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Offhold Fin Year Name&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Offhold Month&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723766194_53793" oldID="kcap1564723544883_20486">
+                  <saw:text>Off Held - Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c0e30def8d5b4635b"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf15b4935de3f77d4"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53778" oldID="kcap1564723544883_20471">
+            <saw:text>Fact Rwy Opportunity Statuses</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53779" oldID="kcap1564723544883_20472">
+            <saw:text>Off Hold</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0ae9f2dcdd7fc67d" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Fact Rwy Opportunity Statuses&quot;.&quot;Status ID&quot; = 4 THEN COUNT(&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Opp Status ID&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c0ae9f2dcdd7fc67d_al91b71884ee5e0b52">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>PortalGo</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Status Comparison Drill Thru</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Offer Fin Year Name&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Offer Month&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723766194_53794" oldID="kcap1564723544883_20487">
+                  <saw:text>Offered - Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c0e30def8d5b4635b"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf15b4935de3f77d4"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53780" oldID="kcap1564723544883_20473">
+            <saw:text>Fact Rwy Opportunity Statuses</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53781" oldID="kcap1564723544883_20474">
+            <saw:text>Offered</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf24de4b96201f92e" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Fact Rwy Opportunity Statuses&quot;.&quot;Status ID&quot; = 6 THEN COUNT(&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Opp Status ID&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cf24de4b96201f92e_alb8394899ec8b8fec">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>PortalGo</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Status Comparison Drill Thru</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Withdrawal Fin Year Name&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Withdrawal Month&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723766194_53795" oldID="kcap1564723544883_20488">
+                  <saw:text>Withdrawn - Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c0e30def8d5b4635b"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf15b4935de3f77d4"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53782" oldID="kcap1564723544883_20475">
+            <saw:text>Fact Rwy Opportunity Statuses</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53783" oldID="kcap1564723544883_20476">
+            <saw:text>Withdrawn</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cab2f7de661bcf749" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Fact Rwy Opportunity Statuses&quot;.&quot;Status ID&quot; = 5 THEN COUNT(&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Opp Status ID&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cab2f7de661bcf749_alce6f2d392ab93f0f">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>PortalGo</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Status Comparison Drill Thru</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Unconditional Fin Year Name&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Unconditional Month&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723766194_53796" oldID="kcap1564723544883_20489">
+                  <saw:text>Unconditional - Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c0e30def8d5b4635b"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf15b4935de3f77d4"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53784" oldID="kcap1564723544883_20477">
+            <saw:text>Fact Rwy Opportunity Statuses</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53785" oldID="kcap1564723544883_20478">
+            <saw:text>Unconditional</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c93642e4abb565a28" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Fact Rwy Opportunity Statuses&quot;.&quot;Status ID&quot; = 2 THEN COUNT(&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Opp Status ID&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c93642e4abb565a28_al9672c3dce6c72d72">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>PortalGo</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Status Comparison Drill Thru</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Settle Fin Year Name&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Settle Month&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723766194_53797" oldID="kcap1564723544883_20490">
+                  <saw:text>Settled - Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c0e30def8d5b4635b"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf15b4935de3f77d4"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53786" oldID="kcap1564723544883_20479">
+            <saw:text>Fact Rwy Opportunity Statuses</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766193_53787" oldID="kcap1564723544883_20480">
+            <saw:text>Settled</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c02fa1a0cba88ff73" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Fact Rwy Opportunity Statuses&quot;.&quot;Status ID&quot; = 1 THEN COUNT(&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Opp Status ID&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c02fa1a0cba88ff73_alaea2e7d072a57f78">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>PortalGo</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Status Comparison Drill Thru</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Archive Fin Year Name&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;MV Rwy Opportunities with Statuses&quot;.&quot;Archive Month&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723766194_53798" oldID="kcap1564723544883_20491">
+                  <saw:text>Archived - Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c0e30def8d5b4635b"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf15b4935de3f77d4"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766194_53788" oldID="kcap1564723544883_20481">
+            <saw:text>Fact Rwy Opportunity Statuses</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723766194_53789" oldID="kcap1564723544883_20482">
+            <saw:text>Archived</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c28d4a614b4395e4d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Status ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:subQuery" op="greaterOrEqualAny">
+          <sawx:expr xsi:type="sawx:sqlExpression">CAST(&quot;Dim Opp Status Periods&quot;.&quot;Month Start Date&quot; AS DATE)</sawx:expr>
+          <saw:catalogColumnRef path="/shared/Components/Dashboard Content/Sales and Marketing/13 Month Dates Test" columnID="c60decf530d18fc01"/>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:subQuery" op="lessOrEqualAny">
+          <sawx:expr xsi:type="sawx:sqlExpression">MAX(&quot;Dim Opp Status Periods&quot;.&quot;Fin Year End Date&quot;)</sawx:expr>
+          <saw:catalogColumnRef path="/shared/Components/Dashboard Content/Sales and Marketing/13 Month Dates Test" columnID="cacd5c6efc02c8e86"/>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723766193_53771" oldID="kcap1564723544883_20464">
+          <saw:text>Runway Status Comparison</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c0e30def8d5b4635b"/>
+            <saw:edgeLayer type="column" columnID="c9fa8db81c2205781"/>
+            <saw:edgeLayer type="column" columnID="c5c57f760a83ba8d6"/>
+            <saw:edgeLayer type="column" columnID="cf15b4935de3f77d4"/>
+            <saw:edgeLayer type="column" columnID="ca45277f2f8661686"/>
+            <saw:edgeLayer type="column" columnID="c53dea3500c491796"/>
+            <saw:edgeLayer type="column" columnID="c0ae9f2dcdd7fc67d"/>
+            <saw:edgeLayer type="column" columnID="cf24de4b96201f92e"/>
+            <saw:edgeLayer type="column" columnID="cab2f7de661bcf749"/>
+            <saw:edgeLayer type="column" columnID="c93642e4abb565a28"/>
+            <saw:edgeLayer type="column" columnID="c8166022e09bad8de"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="380" width="1000">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c8166022e09bad8de"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c9fa8db81c2205781"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cf15b4935de3f77d4"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c0e30def8d5b4635b"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="ca45277f2f8661686"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c53dea3500c491796"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c0ae9f2dcdd7fc67d"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cf24de4b96201f92e"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cab2f7de661bcf749"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c93642e4abb565a28"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections displayAsSlider="false"/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:labels rotate="-90" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723766194_53790" oldID="kcap1564723544883_20483">
+              <saw:text>Fin Months</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723766194_53791" oldID="kcap1564723544883_20484">
+              <saw:text>No. of Transactions</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="line">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#003366" lineStyle="default" lineWidth="2" symbol="default"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="2"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#0000FF" lineStyle="default" lineWidth="2" symbol="default"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="3"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF9933" lineStyle="default" lineWidth="2" symbol="default"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="4"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333" lineStyle="default" lineWidth="2" symbol="default"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="5"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#800080" lineStyle="default" lineWidth="2" symbol="default"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="6"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#00EE22" lineStyle="default" lineWidth="2" symbol="default"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723766193_53772" oldID="kcap1564723544883_20465">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-120px; left:250px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723766193_53773" oldID="kcap1564723544883_20466">
+          <saw:text>Graph Layout</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

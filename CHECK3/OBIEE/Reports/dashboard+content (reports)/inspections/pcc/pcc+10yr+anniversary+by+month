@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Inspections&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6f1979d4170ff485" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Count(&quot;D Hsm Prop Pcc&quot;.&quot;Property Id&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true">
+              <saw:actionLink actionLinkID="c6f1979d4170ff485_al34b51e8587821302">
+                <saw:action>
+                  <saw:actionName>Pcc Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Inspections/Pcc/Pcc Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723689208_38924" oldID="kcap1564723498014_8882">
+                  <saw:text>Drill to Detail</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723689208_38915" oldID="kcap1564723498014_8873">
+            <saw:text>D Hsm Prop Pcc</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723689208_38916" oldID="kcap1564723498014_8874">
+            <saw:text>Count</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8f5bac57c487477b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Hsm Prop Pcc&quot;.&quot;Pcc 10 Year Status&quot; =  &#39;Overdue and not booked&#39; then 1 when &quot;D Hsm Prop Pcc&quot;.&quot;Pcc 10 Year Status&quot; =  &#39;Due and not booked&#39; then 2 when &quot;D Hsm Prop Pcc&quot;.&quot;Pcc 10 Year Status&quot; = &#39;Booking required&#39;  then 3 when &quot;D Hsm Prop Pcc&quot;.&quot;Pcc 10 Year Status&quot; = &#39;Booked&#39; then 4 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723689208_38917" oldID="kcap1564723498014_8875">
+            <saw:text>D Hsm Prop Pcc</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723689208_38918" oldID="kcap1564723498014_8876">
+            <saw:text>Sort Pcc 10 Year Status</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7ac7cd1ef058684e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Hsm Prop Pcc&quot;.&quot;Pcc 10 Year Status&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:dimensionSelection>
+          <saw:selectionStep stepID="1" type="startWith" category="member">
+            <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+              <saw:staticMemberGroup>
+                <saw:members xsi:type="saw:specialValueMembers">
+                  <saw:value specialValue="all"/>
+                </saw:members>
+              </saw:staticMemberGroup>
+            </saw:stepMembers>
+          </saw:selectionStep>
+        </saw:dimensionSelection>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceeb95bfc14966b77">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Hsm Prop Pcc&quot;.&quot;Financial Year&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf4decab39a7c5a20">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Pcc&quot;.&quot;Fin Month&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2561174b428b8803">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Pcc&quot;.&quot;Month Name&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723689208_38919" oldID="kcap1564723498014_8877">
+            <saw:text>Dim Period Pcc</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723689208_38920" oldID="kcap1564723498014_8878">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Mv Dim Managed Properties Pcc&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Mv Dim Managed Properties Pcc&quot;.&quot;Dhf Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Mv Dim Managed Properties Pcc&quot;.&quot;Ownership&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Mv Dim Managed Properties Pcc&quot;.&quot;Compliancy&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Hsm Prop Pcc&quot;.&quot;Financial Year&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_FIN_YEAR_NAME</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Mv Dim Managed Properties Pcc&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Hsm Prop Pcc&quot;.&quot;Future PCC Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Hsm Prop Pcc&quot;.&quot;Release Notice Yn&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723689208_38912" oldID="kcap1564723498014_8870">
+          <saw:text>Pcc 10 Year Anniversary Reporting</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" scrollingEnabled="false">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723689208_38913" oldID="kcap1564723498014_8871">
+          <saw:text>Count</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf4decab39a7c5a20"/>
+            <saw:edgeLayer type="column" columnID="c2561174b428b8803"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c7ac7cd1ef058684e"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c6f1979d4170ff485"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723689208_38921" oldID="kcap1564723498014_8879">
+            <saw:text>PCC 10yr Anniversary by Month</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cf4decab39a7c5a20"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c2561174b428b8803"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c6f1979d4170ff485"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c8f5bac57c487477b"/>
+          </saw:seriesGenerator>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c7ac7cd1ef058684e"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections/>
+        <saw:page/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723689208_38922" oldID="kcap1564723498014_8880">
+              <saw:text>Property Count</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723689208_38923" oldID="kcap1564723498014_8881">
+              <saw:text>Month</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2" scrollingEnabled="false">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723689208_38914" oldID="kcap1564723498014_8872">
+          <saw:text>Percentage</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf4decab39a7c5a20"/>
+            <saw:edgeLayer type="column" columnID="c2561174b428b8803"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c7ac7cd1ef058684e"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c6f1979d4170ff485">
+          <saw:showAs type="percentOfAxis" axis="row">
+            <saw:displayFormat>
+              <saw:formatSpec>
+                <saw:dataFormat xsi:type="saw:percent" minDigits="1" maxDigits="1" scale="2"/>
+              </saw:formatSpec>
+            </saw:displayFormat>
+          </saw:showAs>
+          <saw:dataBodyFormat/>
+        </saw:measure>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>
