@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9a17a90d27db74fd" aggRule="countDistinct">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Location&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c13c5dbf9803f3194">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Location&quot;.&quot;Longitude&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="12" maxDigits="12"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7c6beeb3909fd21e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Location&quot;.&quot;Latitude&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="12" maxDigits="12"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6efd3b75a9dce273">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;Issue Status&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723707538_41483" oldID="kcap1564723510140_10976">
+            <saw:text>Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cea3a96dc82140637">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2d706d9baa0c2b31">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;a target=_blank href=&quot;&#39; || VALUEOF(&quot;RV_URL_WORKFLOWDS&quot;)||&quot;Constr Ppline Detail&quot;.&quot;Jira Property Key&quot;||&#39;&quot;&gt;&#39; ||&quot;Constr Ppline Detail&quot;.&quot;Jira Property Key&quot;|| &#39;&lt;/a&gt;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723707538_41484" oldID="kcap1564723510140_10977">
+            <saw:text>Constr Ppline Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723707538_41485" oldID="kcap1564723510140_10978">
+            <saw:text>Property Key</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c836447b537ac0980">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Location&quot;.&quot;Full Property Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccfc1d0c02eae3bf9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Jira Constr Proj Key&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8bb74d99b7947e28">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Summary&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;DHF&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Ownership Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Asset Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Delivery Year&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Rntb&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">UPPER(&quot;Constr Ppline Detail&quot;.&quot;Status&quot;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">Upper(&quot;Constr Ppline Detail&quot;.&quot;Status&quot;)</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">COMPLETED DWELLING</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">DEFECT LIABILITY PERIOD</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">HANDOVER DOCUMENTS BEING COLLATED</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">IN QA FOLLOW-UP</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">OPEN</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">QA CHECKING</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">READY TO START WORKS</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">WORKS IN PROGRESS</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Constr Report Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Smrzd&quot;.&quot;Ownership Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Smrzd&quot;.&quot;Asset Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Smrzd&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Smrzd&quot;.&quot;Rent Bill Client&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Detail&quot;.&quot;Total Completed YTD&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Constr Ppline Location&quot;.&quot;Latitude&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c6efd3b75a9dce273" direction="ascending"/>
+      <saw:columnOrderRef columnID="cc4b0d5f4b38f0fe8" direction="ascending"/>
+      <saw:columnOrderRef columnID="c396fc4b52c05ecbc" direction="ascending"/>
+      <saw:columnOrderRef columnID="c182f916b79996420" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!2"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="narrativeView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="narrativeView!2"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!4"/></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Cons+Pipeline" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723707538_41467" oldID="kcap1564723510140_10960">
+          <saw:text>Load JS</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723707538_41468" oldID="kcap1564723510140_10961">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/BasesMappingData.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/dhf.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery-migrate-1.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.qtip.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/flexigrid.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jshashtable-2.1_src.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/dha_mapping_obiee_whereisV2t.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/whereis-maps/jquery.qtip.min.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/whereis-maps/flexigrid-1.1/css/flexigrid.pack.css&quot; /&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723707538_41469" oldID="kcap1564723510140_10962">
+          <saw:text>Map Container</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723707538_41470" oldID="kcap1564723510140_10963">
+          <saw:text>&lt;style type=&quot;text/css&quot;&gt;
+#content
+{
+	width: 100%;
+	background-color: #eee;
+	clear: both;
+}
+#mapContainer
+{
+	height: 720px;
+	background-color: #fff;
+	border: solid 1px #888;
+	clear: both;
+	position: relative;
+	z-index: 0;
+}
+
+.ui-tooltip .ui-tooltip-content,
+.ui-tooltip p,
+.ui-tooltip ul,
+.ui-tooltip li,
+.ui-tooltip,
+.qtip {
+    /*max-height: 300px;
+    overflow-x: auto;
+    overflow-y: auto;*/
+
+    max-width: 1200px;
+    min-width: 50px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    border-color: #666;
+}
+
+.qtip-light .qtip-titlebar{background-color:#505050;color:#f3f3f3}
+
+div.dhaMapLegend {
+z-index:20000;
+    display:block;
+
+background-color:rgba(255,255,255,0.1);
+border:1px solid #ddd;
+}
+
+.dhaLegendTable th(text-aligin:center}
+
+&lt;/style&gt;
+
+&lt;div id=&quot;content&quot; style=&quot;width:1500px&quot;&gt;
+    &lt;div id=&quot;mapContainer&quot; class=&quot;dhaMapContainer&quot; style=&quot;float:left;width:1200px&quot; &gt;
+        &lt;div id=&quot;loading&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+         &lt;div id=&quot;dhaLegendContainer&quot; style=&quot;float:right&quot;&gt;
+             &lt;div id=&quot;dhaMapLegend&quot; class=&quot;dhaMapLegend&quot; style=&quot;width:280px&quot;&gt;
+             &lt;/div&gt;
+&lt;a href=&#39;#&#39; onclick=&quot;	generateMarkers_init();&quot;&gt;&lt;img src=&quot;/custom_styles/s_dha/dha/refresh.png&quot; /&gt;&lt;/a&gt;
+         &lt;/div&gt;
+
+ &lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723707538_41471" oldID="kcap1564723510140_10964">
+          <saw:text>Filter By</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723707538_41472" oldID="kcap1564723510140_10965">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:narrative rowCount="1">
+        <saw:caption fmt="html" captionID="kcap1564723707538_41473" oldID="kcap1564723510140_10966">
+          <saw:text>var filterBy=&quot;@{c6efd3b75a9dce273}&quot;;</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:postfix>
+        <saw:caption fmt="html" captionID="kcap1564723707538_41474" oldID="kcap1564723510140_10967">
+          <saw:text>&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:postfix>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!2">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723707538_41475" oldID="kcap1564723510140_10968">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+cols = [{name:&quot;UPRN&quot;, width:50}, {name:&quot;Issue Key&quot;, width:70}, {name:&quot;Address&quot;, width:200}, {name:&quot;Issue Status&quot;, width:200}];
+
+function dhaLoaded() {
+  geocoder=new EMS.Service.Geocode;
+  map=new EMS.Map(&quot;mapContainer&quot;,{zoom:0,onInit:setupMap});
+}
+
+var props = [], i=0;
+uniqueColHdr=&quot;Issue Key&quot;;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:narrative rowCount="5000">
+        <saw:caption fmt="html" captionID="kcap1564723707538_41476" oldID="kcap1564723510140_10969">
+          <saw:text>props[i]={uprn:@{c9a17a90d27db74fd},lat:@{c7c6beeb3909fd21e},lon:@{c13c5dbf9803f3194},fVal:&#39;@{cea3a96dc82140637}&#39;,uniqueCol:&#39;@{c2d706d9baa0c2b31}&#39;, &#39;Issue Status&#39;:&#39;@{cea3a96dc82140637}&#39;, &#39;Issue Key&#39;:&#39;@{c2d706d9baa0c2b31}&#39;, Address:&#39;@{c836447b537ac0980}&#39;};i++;</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:postfix>
+        <saw:caption fmt="html" captionID="kcap1564723707538_41477" oldID="kcap1564723510140_10970">
+          <saw:text>var totalRowCount= i;
+displayBases=false;
+displayTotalsCheckbox=false;
+
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.ems.sensis.com.au/v2/web/js/ems/?token=2499777234106764371&quot;&gt;&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:postfix>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!3">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723707538_41478" oldID="kcap1564723510140_10971">
+          <saw:text>Override displayMarkers</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723707538_41479" oldID="kcap1564723510140_10972">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+
+function getTipTableWidth() {
+    var w=0;
+    for(var i=0;i&lt;cols.length;i++) {
+        w += cols[i].width;
+    }
+    return w;
+}
+
+//now override the displayMarkers function
+function displayMarkers(explodeSlice){
+	var slices = [];
+	//displayBases = document.getElementById(&#39;dhaDisplayBases&#39;).checked;
+	if(displayTotalsCheckbox) showTotals = document.getElementById(&#39;dhaShowTotals&#39;).checked;
+	//slices = getSlices();
+
+
+	
+	//if no argument supplied then default
+	if(typeof explodeSlice == &quot;undefined&quot;) explodeSlice = &quot;&quot;;
+	var totalForZoomLevel=0;
+	
+	timeoutID=0;
+	for(var a=map.getExtent().asWGS84(),c=[],b=0;b&lt;markers.length;b++){
+		var e=markers[b];
+		if(a.containsLonLat(e.lonlat.asWGS84())) {
+
+		if(nx.map(function(e) { return (e.chk==true)?e.name:null; }).indexOf(e.property.fVal) &gt; -1) {
+		//if(slices.indexOf(e.property.fVal) &gt; -1 ) {
+				totalForZoomLevel+=1;
+				c.push(e);
+			}
+		}
+	}
+
+	c=(new EMS.CombinerCalculator(map.getResolution(),c)).calculateCombined();
+	//for(var i=map.markersLayer.markers.length-1;i&gt;=0;i--) {
+	//	if(map.markersLayer.markers[i].title != &#39;Defence Base&#39;) map.markersLayer.removeMarker(map.markersLayer.markers[i]);
+	//}
+	
+	map.markersLayer.clearMarkers();
+	map.vlayer.destroyFeatures();
+
+	if(displayBases) {
+		if(!filteredbases) {
+			var selBase = document.getElementById(&#39;dhaSelBase&#39;);
+			selBase.options.length=0;
+			/*
+			var def = document.createElement(&#39;option&#39;);
+			def.value=&quot;default&quot;; 
+			def.disabled=true;
+			def.innerHTML = &quot;Select a Defence Base--&quot;;
+			selBase.appendChild(def);
+			*/
+			for(a=map.getExtent().asWGS84(),b=0;b&lt;baseMarkers.length;b++){
+				var f=baseMarkers[b];
+				if(a.containsLonLat(f.lonlat.asWGS84())) {
+					var opt = document.createElement(&#39;option&#39;);
+					opt.innerHTML = f.description;
+					opt.value = f.description;
+					selBase.appendChild(opt);
+				}
+			}
+			selBase.selectedIndex = -1;
+			filteredbases=true;
+			$(&#39;select option&#39;).click(function() {
+				dispBase(this.value, true);});
+		}
+	}
+	
+    var tiptablewidth = getTipTableWidth();
+
+	for(b=0,f=0;b&lt;c.length;b++){
+		a=c[b];
+		e=null;
+		var pPropsHashMap = new Hashtable();
+
+
+        var tt=&#39;&lt;table class=&quot;scrollTable&quot; cellspacing=&quot;0&quot;&gt;&lt;thead style=&quot;font-weight:bold&quot;&gt;&lt;tr&gt;&#39;;
+        for(var i=0;i&lt;cols.length;i++) {
+            tt+= &#39;&lt;th width=&quot;&#39; + [cols[i].width] + &#39;&quot;&gt;&#39; + cols[i].name + &#39;&lt;/th&gt;&#39;;
+        }
+        tt+=&#39;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#39;;
+
+        if(a.combined.length &gt; 1){
+            f=0;
+            a.combined = a.combined.sort(compare);
+            for(var n=0;n&lt;a.combined.length;n++) {
+                var g=a.combined[n];
+                f++;
+                
+                var vFilterVal = g.property.fVal;
+                if(vFilterVal == &quot;&amp;nbsp;&quot;) vFilterVal = &quot;NULL&quot;;
+                var icount = pPropsHashMap.get(vFilterVal);
+                if( icount == null) icount = 0;
+                
+                pPropsHashMap.put(vFilterVal, ++icount);
+                        
+                if(a.combined.length&lt;101) {
+                    tt+= &quot;&lt;tr&gt;&quot;;
+                
+                    for(var i=0;i&lt;cols.length;i++) {
+                        if(cols[i].name == &quot;UPRN&quot;) {
+                            tt+= &#39;&lt;td&gt;&lt;a style=&quot;color:#0000ff&quot; target=&quot;_blank&quot; href=&quot;&#39;;
+                            tt+= propLink;
+                            tt+= g.property.uprn + &#39;&quot;&gt;&#39; + g.property.uprn;
+                            tt+= &quot;&lt;/a&gt;&lt;/td&gt;&quot;;
+                        } else {
+                            tt+= &quot;&lt;td&gt;&quot; + g.property[cols[i].name] + &quot;&lt;/td&gt;&quot;;
+                        }
+                    }
+                    tt+= &quot;&lt;/tr&gt;&quot;;
+                }
+
+            }
+        
+            tt+= &#39;&lt;/tbody&gt;&lt;/table&gt;&#39;;
+			var imgSize = calcImgSize(c.length, f, totalForZoomLevel);
+			
+			if(f &gt; 1) {
+				e=createIconFromMap(pPropsHashMap, imgSize, explodeSlice);
+				e=new OpenLayers.Marker(a.lonlat,e);
+				e.title=&quot;Multiple properties (&quot;+f+&quot;)&quot;;
+				e.summary = createFilterString(pPropsHashMap);
+				e.description = e.summary + &quot;&lt;br&gt;&quot; + (f&lt;101?tt:tooMany);
+				e.hashMap = pPropsHashMap;
+			}
+			
+			if(e != null) map.markersLayer.addMarker(e);
+		} else if(a.combined.length == 1) {
+			g=a.combined[0];
+			pPropsHashMap.put(g.property.fVal, 1);
+			var imgSize = calcImgSize(c.length, 1, totalForZoomLevel);
+			e=createIconFromMap(pPropsHashMap, imgSize, explodeSlice);
+			e=new OpenLayers.Marker(g.lonlat,e);
+			e.title=&quot;Single Property&quot;;
+			e.description=&#39;&lt;a style=&quot;color:#0000ff&quot; target=&quot;_blank&quot; href=&quot;&#39; + propLink + g.property.uprn + &#39;&quot;&gt;&#39; + g.property.uprn + &quot;&lt;/a&gt;&quot; + (uniqueColHdr?&#39;&amp;nbsp&amp;nbsp&#39;+g.property.uniqueCol:&#39;&#39;)
+			e.summary=e.description;
+			e.hashMap = pPropsHashMap;
+
+			if(nx.map(function(e) { return (e.chk==true)?e.name:null; }).indexOf(g.property.fVal) &gt; -1) {
+			//if(slices.indexOf(g.property.fVal) &gt; -1 ) {
+				map.markersLayer.addMarker(e);
+			}
+		}
+
+	}
+
+	//var tiptablewidth=(uniqueColHdr?310:260);
+	var tipW = tiptablewidth + 100;
+	$(map.markersLayer.markers).each(
+		function(){
+			var a=$(this.icon.imageDiv);
+
+			a.qtip({
+				content:{title:{button: true, text:this.title},text:this.description},
+				
+				events:{
+					render: function(event, api) {
+						// Grab the tooltip element from the API
+						var tooltip = api.elements.tooltip;
+			 
+						// ...and here&#39;s the extra event binds
+						tooltip.bind(&#39;tooltipshow&#39;, function(event, api) {
+//								$(&#39;.scrollTable&#39;).tableScroll({height:100,width:200});
+							$(&#39;.scrollTable&#39;).flexigrid({height:100,width:tiptablewidth+70,showToggleBtn:false});
+						})
+					}
+				},
+				
+				hide:false,
+				show:{event:&#39;click&#39;,solo:true},
+				style:{classes:&#39;qtip-light qtip-rounded tablescroll tablescroll_wrapper&#39;,width:tipW},
+				position:{viewport: $(window), adjust:{method:&quot;flip&quot;}}
+			})
+			.removeData(&#39;qtip&#39;)
+			.qtip({
+						content:{title:{button: false, text:this.title},text:this.summary},
+						show:{solo:!0},
+						style:{classes:&#39;qtip-light qtip-rounded&#39;,width:tipW},
+						position:{viewport: $(window), adjust:{method:&quot;flip&quot;}}
+					});
+			}
+	);
+
+	//map.vlayer.destroyFeatures();
+	showBases();
+
+	for(var i=0;i&lt;map.markersLayer.markers.length;i++) {
+		if(map.markersLayer.markers[i].title == &#39;Defence Base&#39;) map.markersLayer.drawMarker(map.markersLayer.markers[i]);
+	}
+	
+}
+
+
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!4">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723707538_41480" oldID="kcap1564723510140_10973">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+ setTimeout(function(){if (typeof map == &quot;undefined&quot;) setupMap();},1000);
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!5">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723707538_41481" oldID="kcap1564723510140_10974">
+          <saw:text>Override DisplayMarkers v2</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723707538_41482" oldID="kcap1564723510140_10975">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+
+function getTipTableWidth() {
+    var w=0;
+    for(var i=0;i&lt;cols.length;i++) {
+        w += cols[i].width;
+    }
+    return w;
+}
+
+//now override the displayMarkers function
+function displayMarkers(explodeSlice) {
+	var slices = [];
+	if(displayTotalsCheckbox) showTotals = document.getElementById(&#39;dhaShowTotals&#39;).checked;
+
+
+	
+	//if no argument supplied then default
+	if(typeof explodeSlice == &quot;undefined&quot;) explodeSlice = &quot;&quot;;
+	var totalForZoomLevel=0;
+	
+	timeoutID=0;
+	for(var a=map.getExtent().asWGS84(),c=[],b=0;b&lt;markers.length;b++) {
+		var e=markers[b];
+		if(a.containsLonLat(e.lonlat.asWGS84())) {
+			if(nx.map(function(e) { return (e.chk==true)?e.name:null; }).indexOf(e.property.fVal) &gt; -1) {
+				totalForZoomLevel+=1;
+				c.push(e);
+			}
+		}
+	}
+
+	c=(new EMS.CombinerCalculator(map.getResolution(),c)).calculateCombined();
+	
+	map.getLayerByName(EMS.Layer.MARKERS).clearMarkers();
+	var vlayer = map.getLayerByName(&quot;vlayer&quot;)
+	if(vlayer) vlayer.destroyFeatures();
+
+	if(displayBases) {
+		if(!filteredbases) {
+			var selBase = document.getElementById(&#39;dhaSelBase&#39;);
+			selBase.options.length=0;
+			for(a=map.getExtent().asWGS84(),b=0;b&lt;baseMarkers.length;b++){
+				var f=baseMarkers[b];
+				if(a.containsLonLat(f.lonlat.asWGS84())) {
+					var opt = document.createElement(&#39;option&#39;);
+					opt.innerHTML = f.description;
+					opt.value = f.description;
+					selBase.appendChild(opt);
+				}
+			}
+			selBase.selectedIndex = -1;
+			filteredbases=true;
+			$(&#39;select option&#39;).click(function() {
+				dispBase(this.value, true);});
+		}
+	}
+	
+    var tiptablewidth = getTipTableWidth();
+
+	for(b=0,f=0;b&lt;c.length;b++){
+		a=c[b];
+		e=null;
+		var pPropsHashMap = new Hashtable();
+
+
+        var tt=&#39;&lt;table class=&quot;scrollTable&quot; cellspacing=&quot;0&quot;&gt;&lt;thead style=&quot;font-weight:bold&quot;&gt;&lt;tr&gt;&#39;;
+        for(var i=0;i&lt;cols.length;i++) {
+            tt+= &#39;&lt;th width=&quot;&#39; + [cols[i].width] + &#39;&quot;&gt;&#39; + cols[i].name + &#39;&lt;/th&gt;&#39;;
+        }
+        tt+=&#39;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#39;;
+
+        if(a.combined.length &gt; 1){
+            f=0;
+            a.combined = a.combined.sort(compare);
+            for(var n=0;n&lt;a.combined.length;n++) {
+                var g=a.combined[n];
+                f++;
+                
+                var vFilterVal = g.property.fVal;
+                if(vFilterVal == &quot;&amp;nbsp;&quot;) vFilterVal = &quot;NULL&quot;;
+                var icount = pPropsHashMap.get(vFilterVal);
+                if( icount == null) icount = 0;
+                
+                pPropsHashMap.put(vFilterVal, ++icount);
+                        
+                if(a.combined.length&lt;101) {
+                    tt+= &quot;&lt;tr&gt;&quot;;
+                
+                    for(var i=0;i&lt;cols.length;i++) {
+                        if(cols[i].name == &quot;UPRN&quot;) {
+                            tt+= &#39;&lt;td&gt;&lt;a style=&quot;color:#0000ff&quot; target=&quot;_blank&quot; href=&quot;&#39;;
+                            tt+= propLink;
+                            tt+= g.property.uprn + &#39;&quot;&gt;&#39; + g.property.uprn;
+                            tt+= &quot;&lt;/a&gt;&lt;/td&gt;&quot;;
+                        } else {
+                            tt+= &quot;&lt;td&gt;&quot; + g.property[cols[i].name] + &quot;&lt;/td&gt;&quot;;
+                        }
+                    }
+                    tt+= &quot;&lt;/tr&gt;&quot;;
+                }
+
+            }
+        
+            tt+= &#39;&lt;/tbody&gt;&lt;/table&gt;&#39;;
+			var imgSize = calcImgSize(c.length, f, totalForZoomLevel);
+			
+			if(f &gt; 1) {
+				e=createIconFromMap(pPropsHashMap, imgSize, explodeSlice);
+				e=new EMS.Marker(a.lonlat,e);
+//				e=new OpenLayers.Marker(a.lonlat,e);
+				e.title=&quot;Multiple properties (&quot;+f+&quot;)&quot;;
+				e.summary = createFilterString(pPropsHashMap);
+				e.description = e.summary + &quot;&lt;br&gt;&quot; + (f&lt;101?tt:tooMany);
+				e.hashMap = pPropsHashMap;
+			}
+			
+			if(e != null) map.getLayerByName(EMS.Layer.MARKERS).addMarker(e);			
+//			if(e != null) map.markersLayer.addMarker(e);
+		} else if(a.combined.length == 1) {
+			g=a.combined[0];
+			pPropsHashMap.put(g.property.fVal, 1);
+			var imgSize = calcImgSize(c.length, 1, totalForZoomLevel);
+			e=createIconFromMap(pPropsHashMap, imgSize, explodeSlice);
+			e=new EMS.Marker(g.lonlat,e);
+//			e=new OpenLayers.Marker(g.lonlat,e);
+			e.title=&quot;Single Property&quot;;
+			e.description=&#39;&lt;a style=&quot;color:#0000ff&quot; target=&quot;_blank&quot; href=&quot;&#39; + propLink + g.property.uprn + &#39;&quot;&gt;&#39; + g.property.uprn + &quot;&lt;/a&gt;&quot; + (uniqueColHdr?&#39;&amp;nbsp&amp;nbsp&#39;+g.property.uniqueCol:&#39;&#39;)
+			e.summary=e.description;
+			e.hashMap = pPropsHashMap;
+
+			if(nx.map(function(e) { return (e.chk==true)?e.name:null; }).indexOf(g.property.fVal) &gt; -1) {
+				map.getLayerByName(EMS.Layer.MARKERS).addMarker(e);
+//				map.markersLayer.addMarker(e);
+			}
+		}
+
+	}
+
+	var tipW = tiptablewidth + 100;
+	$(map.getLayerByName(EMS.Layer.MARKERS).markers).each(
+//	$(map.markersLayer.markers).each(
+		function(){
+			var a=$(this.icon.imageDiv);
+
+			a.qtip({
+				content:{title:{button: true, text:this.title},text:this.description},
+				
+				events:{
+					render: function(event, api) {
+						// Grab the tooltip element from the API
+						var tooltip = api.elements.tooltip;
+			 
+						// ...and here&#39;s the extra event binds
+						tooltip.bind(&#39;tooltipshow&#39;, function(event, api) {
+							$(&#39;.scrollTable&#39;).flexigrid({height:100,width:tiptablewidth+70,showToggleBtn:false});
+						})
+					}
+				},
+				
+				hide:false,
+				show:{event:&#39;click&#39;,solo:true},
+				style:{classes:&#39;qtip-light qtip-rounded tablescroll tablescroll_wrapper&#39;,width:tipW},
+				position:{viewport: $(window), adjust:{method:&quot;flip&quot;}}
+			})
+			.removeData(&#39;qtip&#39;)
+			.qtip({
+						content:{title:{button: false, text:this.title},text:this.summary},
+						show:{solo:!0},
+						style:{classes:&#39;qtip-light qtip-rounded&#39;,width:tipW},
+						position:{viewport: $(window), adjust:{method:&quot;flip&quot;}}
+					});
+			}
+	);
+
+	showBases();
+
+//	for(var i=0;i&lt;map.markersLayer.markers.length;i++) {
+//		if(map.markersLayer.markers[i].title == &#39;Defence Base&#39;) map.markersLayer.drawMarker(map.markersLayer.markers[i]);
+//	}
+	for(var i=0;i&lt;map.getLayerByName(EMS.Layer.MARKERS).markers.length;i++) {
+		if(map.getLayerByName(EMS.Layer.MARKERS).markers[i].title == &#39;Defence Base&#39;) map.getLayerByName(EMS.Layer.MARKERS).drawMarker(map.getLayerByName(EMS.Layer.MARKERS).markers[i]);
+	}
+	
+}
+
+
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c6efd3b75a9dce273"/>
+            <saw:edgeLayer type="column" columnID="cea3a96dc82140637"/>
+            <saw:edgeLayer type="column" columnID="c7c6beeb3909fd21e"/>
+            <saw:edgeLayer type="column" columnID="c13c5dbf9803f3194"/>
+            <saw:edgeLayer type="column" columnID="ccfc1d0c02eae3bf9"/>
+            <saw:edgeLayer type="column" columnID="c9a17a90d27db74fd">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="st_c9a17a90d27db74fd" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c2d706d9baa0c2b31"/>
+            <saw:edgeLayer type="column" columnID="c836447b537ac0980"/>
+            <saw:edgeLayer type="column" columnID="c8bb74d99b7947e28"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

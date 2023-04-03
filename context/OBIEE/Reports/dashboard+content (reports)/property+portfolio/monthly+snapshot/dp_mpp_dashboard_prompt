@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:view xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saw:globalFilterPrompt" name="">
+  <saw:prompts scope="dashboard" subjectArea="&quot;Monthly Property Portfolio&quot;">
+    <saw:promptStep setWidthToAllPrompts="true" autoApplyPrompt="true" showResetButton="false">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c12" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;End Date&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>As At</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="sql" usingCodeValue="false">
+            <saw:promptDefaultValue>SELECT
+   CURRENT_DATE s_1
+FROM &quot;Monthly Property Portfolio&quot;</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="presentationVariable" variableFormula="PV_AS_AT_DATE"/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c7" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Management Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>Management Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;MANAGEMENT_AREA&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c2" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Acquisition Type Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>Acquisition Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="presentationVariable" variableFormula="PV_ACQ"/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ACQ_TYPE_DESC&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c3" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Agreement Type Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>Agreement Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;AGREEMENT_TYPE_DESC&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c4" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Asset Status Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>Asset Status</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ASSET_STATUS_DESC&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c5" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Client Description&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>Client</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;CLIENT_DESCRIPTION&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c6" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Compliancy&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>Compliancy</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;COMPLIANCY&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c8" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Market Type Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>Market Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;MARKET_TYPE_DESC&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c9" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Ownership Description&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>Ownership</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;OWNERSHIP_DESCRIPTION&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c10" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;Property Class&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>Property Class</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="specificValue" usingCodeValue="false">
+            <saw:promptDefaultValue>1</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;PROPERTY_CLASS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; IN (&#39;1&#39;,&#39;6&#39;,&#39;9&#39;)) )"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c11" subjectArea="&quot;Monthly Property Portfolio&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Property Daily Snapshot&quot;.&quot;SRC&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="140" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption>
+              <saw:text>SRC</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;PROPERTY_DAILY_SNAPSHOT&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;SRC&#39;))"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="140" using="custompixels"/>
+      <saw:title/>
+      <saw:displayFormat>
+        <saw:formatSpec wrapText="true"/>
+      </saw:displayFormat>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:view>

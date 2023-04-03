@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Finance&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb6a1c5a0ba568424">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Invoice ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce722d967b1339ed6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Invoice Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb1c345b114274ea1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Agent ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cb1c345b114274ea1_al30597c20b9ceb52d">
+                <saw:action>
+                  <saw:actionName>Navigate - @[clm]/agent/dashboard.action</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>AgentId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[clm]/agent/dashboard.action?agentId=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723678266_36854" oldID="kcap1564723492908_7801">
+                  <saw:text>Drill Down to Agent Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cb1c345b114274ea1"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccb7e9a69381990ca">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Agent Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce7f5c576094c9b23">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Agent Account ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd5fd8e737d6a5d83">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c249d515affd8582e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Total Due&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36826" oldID="kcap1564723492908_7773">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36827" oldID="kcap1564723492908_7774">
+            <saw:text>Invoice Total Due</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0ac94bf3622f65d8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39; THEN 0 Else &quot;D Agent Invoice Details&quot;.&quot;Total Remitted&quot; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36828" oldID="kcap1564723492908_7775">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36829" oldID="kcap1564723492908_7776">
+            <saw:text>Invoice Total Remitted</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdc23763438ce33f5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Total Mfee Inc Gst&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36830" oldID="kcap1564723492908_7777">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36831" oldID="kcap1564723492908_7778">
+            <saw:text>Invoice Total MFee</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="caeda63e8b10f5426">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Total Net&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36832" oldID="kcap1564723492908_7779">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36833" oldID="kcap1564723492908_7780">
+            <saw:text>Invoice Total Net</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1932cf97bf2cba7c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Total Carried Forward&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36834" oldID="kcap1564723492908_7781">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36835" oldID="kcap1564723492908_7782">
+            <saw:text>Invoice Total Carried Fwd</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c97c3af5f872fa698">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Property Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36836" oldID="kcap1564723492908_7783">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36837" oldID="kcap1564723492908_7784">
+            <saw:text>Property ID</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb34f6a0a10b78d91">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Property Street Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe1c2707d2b9a3eb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c558427c55f549ff1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;State&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1160ddc935fbef32">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Post Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc907d41e991e9f1a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;HMC&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd7ad47691d8fe910">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Ownership&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9a8fecbca5233ad1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Cten ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c9a8fecbca5233ad1_ala21ec08521865c9c">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsm]/property/tenancy/civilian/view.action</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>key</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsm]/property/tenancy/civilian/view.action?propertyId=@{1}&amp;key=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723678266_36855" oldID="kcap1564723492908_7802">
+                  <saw:text>Drill Down to Civilian Tenancy Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c97c3af5f872fa698"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c9a8fecbca5233ad1"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c23edb14630422c12">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;CTEN Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c39b683f8a5fa9324">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Tenant St Dt&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c21a5d1cf3f9d4f45">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Tenant End Dt&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9c9cf3b311dd8086">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Forename&quot; || &#39; &#39; ||&quot;D Agent Invoice Details&quot;.&quot;Surname&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36838" oldID="kcap1564723492908_7785">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36839" oldID="kcap1564723492908_7786">
+            <saw:text>Tenant Name</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd585416219f88def">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Weekly Rent&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c172695f2898ed5af">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Management Rate&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4ab8688a7108e504">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Management Rate Override&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca9c73f24b0101dea">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Rent Due&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf4f7eeb043958e98">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Rent Due Mfee Inc Gst&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c84fe53649ef8a539">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Rent Due Mfee Ex Gst&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2c2d76e3624be81d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Rent Due Mfee Gst&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd89474114866ef77">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Rent Brought Forward&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc74b33ab794817c7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Total Rent Due&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc06f030bed3f68fd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Rent Remitted&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36840" oldID="kcap1564723492908_7787">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36841" oldID="kcap1564723492908_7788">
+            <saw:text>Rent Remitted</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c419c7967f56356ec">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Rent Carried Forward&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36842" oldID="kcap1564723492908_7789">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36843" oldID="kcap1564723492908_7790">
+            <saw:text>Rent Carried Forward</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c94224b98c111ed60">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Mfee Inc Gst&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36844" oldID="kcap1564723492908_7791">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36845" oldID="kcap1564723492908_7792">
+            <saw:text>Mfee Inc Gst</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf75dbd5f2abdc2f8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Mfee Ex Gst&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36846" oldID="kcap1564723492908_7793">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36847" oldID="kcap1564723492908_7794">
+            <saw:text>Mfee Ex Gst</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3ea920a66efea2b6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Mfee Gst&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36848" oldID="kcap1564723492908_7795">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36849" oldID="kcap1564723492908_7796">
+            <saw:text>Mfee Gst</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8b97c931ae24db86">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Invoice Total&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36850" oldID="kcap1564723492908_7797">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36851" oldID="kcap1564723492908_7798">
+            <saw:text>Total Net</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c55406bf9c4e1be83">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot; = &#39;PENDING&#39;  Then 0 Else &quot;D Agent Invoice Details&quot;.&quot;Debt Recovery&quot; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36852" oldID="kcap1564723492908_7799">
+            <saw:text>D Agent Invoice Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678266_36853" oldID="kcap1564723492908_7800">
+            <saw:text>Debt Recovery</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Agent Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Invoice ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Invoice Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Agent ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Invoice Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Property Id&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;HMC&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Ownership&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Cten ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;CTEN Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Invoice Month&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Invoice Year&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Current Property Reason Code&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Agent Invoice Details&quot;.&quot;Total Due&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Agent+Invoice+Detail" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cb6a1c5a0ba568424"/>
+            <saw:edgeLayer type="column" columnID="ce722d967b1339ed6"/>
+            <saw:edgeLayer type="column" columnID="cb1c345b114274ea1"/>
+            <saw:edgeLayer type="column" columnID="ccb7e9a69381990ca"/>
+            <saw:edgeLayer type="column" columnID="ce7f5c576094c9b23"/>
+            <saw:edgeLayer type="column" columnID="cd5fd8e737d6a5d83"/>
+            <saw:edgeLayer type="column" columnID="c249d515affd8582e"/>
+            <saw:edgeLayer type="column" columnID="c0ac94bf3622f65d8"/>
+            <saw:edgeLayer type="column" columnID="cdc23763438ce33f5"/>
+            <saw:edgeLayer type="column" columnID="caeda63e8b10f5426"/>
+            <saw:edgeLayer type="column" columnID="c1932cf97bf2cba7c"/>
+            <saw:edgeLayer type="column" columnID="c97c3af5f872fa698"/>
+            <saw:edgeLayer type="column" columnID="cb34f6a0a10b78d91"/>
+            <saw:edgeLayer type="column" columnID="cfe1c2707d2b9a3eb"/>
+            <saw:edgeLayer type="column" columnID="c558427c55f549ff1"/>
+            <saw:edgeLayer type="column" columnID="c1160ddc935fbef32"/>
+            <saw:edgeLayer type="column" columnID="cc907d41e991e9f1a"/>
+            <saw:edgeLayer type="column" columnID="cd7ad47691d8fe910"/>
+            <saw:edgeLayer type="column" columnID="c9a8fecbca5233ad1"/>
+            <saw:edgeLayer type="column" columnID="c23edb14630422c12"/>
+            <saw:edgeLayer type="column" columnID="c39b683f8a5fa9324"/>
+            <saw:edgeLayer type="column" columnID="c21a5d1cf3f9d4f45"/>
+            <saw:edgeLayer type="column" columnID="c9c9cf3b311dd8086"/>
+            <saw:edgeLayer type="column" columnID="cd585416219f88def"/>
+            <saw:edgeLayer type="column" columnID="c172695f2898ed5af"/>
+            <saw:edgeLayer type="column" columnID="c4ab8688a7108e504"/>
+            <saw:edgeLayer type="column" columnID="ca9c73f24b0101dea"/>
+            <saw:edgeLayer type="column" columnID="cf4f7eeb043958e98"/>
+            <saw:edgeLayer type="column" columnID="c84fe53649ef8a539"/>
+            <saw:edgeLayer type="column" columnID="c2c2d76e3624be81d"/>
+            <saw:edgeLayer type="column" columnID="cd89474114866ef77"/>
+            <saw:edgeLayer type="column" columnID="cc74b33ab794817c7"/>
+            <saw:edgeLayer type="column" columnID="cc06f030bed3f68fd"/>
+            <saw:edgeLayer type="column" columnID="c419c7967f56356ec"/>
+            <saw:edgeLayer type="column" columnID="c94224b98c111ed60"/>
+            <saw:edgeLayer type="column" columnID="cf75dbd5f2abdc2f8"/>
+            <saw:edgeLayer type="column" columnID="c3ea920a66efea2b6"/>
+            <saw:edgeLayer type="column" columnID="c8b97c931ae24db86"/>
+            <saw:edgeLayer type="column" columnID="c55406bf9c4e1be83"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

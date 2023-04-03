@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Leasing&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceeb787a453b4fcda">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim DHA Employee&quot;.&quot;Surname&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc8157ba9d574f7ee">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim DHA Employee&quot;.&quot;Given Names&quot;</sawx:expr>
+        </saw:columnFormula>
+      <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/></saw:displayFormat><saw:columnHeading><saw:displayFormat><saw:formatSpec fontStyle="bold" wrapText="true"/></saw:displayFormat></saw:columnHeading></saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6c96caaab61d3da5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim DHA Employee&quot;.&quot;Preferred Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/></saw:displayFormat><saw:columnHeading><saw:displayFormat><saw:formatSpec fontStyle="bold" wrapText="true"/></saw:displayFormat></saw:columnHeading></saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca33eee99554831ff">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when UPPER(SUBSTRING(&quot;Dim DHA Employee&quot;.&quot;Actual Job Title&quot; FROM 1 FOR 9)) = &#39;MATERNITY&#39; then &#39;Leave&#39; ELSE &quot;Dim DHA Employee&quot;.&quot;Actual Job Title&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/></saw:displayFormat><saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641221_30943" oldID="kcap1564723470867_4108">
+            <saw:text>Dim DHA Employee</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641221_30944" oldID="kcap1564723470867_4109">
+            <saw:text>Actual Job Title</saw:text>
+          </saw:caption>
+        <saw:displayFormat><saw:formatSpec fontStyle="bold" wrapText="true"/></saw:displayFormat></saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c359d866499a2c0a9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim DHA Employee&quot;.&quot;Location Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/></saw:displayFormat><saw:columnHeading><saw:displayFormat><saw:formatSpec fontStyle="bold" wrapText="true"/></saw:displayFormat></saw:columnHeading></saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c895a729e60ead537">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim DHA Employee&quot;.&quot;Authority Internal&quot;</sawx:expr>
+        </saw:columnFormula>
+      <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/></saw:displayFormat><saw:columnHeading><saw:displayFormat><saw:formatSpec fontStyle="bold" wrapText="true"/></saw:displayFormat></saw:columnHeading></saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc83b136dfc3841af">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim DHA Employee&quot;.&quot;Authority Idcard&quot;</sawx:expr>
+        </saw:columnFormula>
+      <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/></saw:displayFormat><saw:columnHeading><saw:displayFormat><saw:formatSpec fontStyle="bold" wrapText="true"/></saw:displayFormat></saw:columnHeading></saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c511df8580712030e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim DHA Employee&quot;.&quot;Date Printed&quot;</sawx:expr>
+        </saw:columnFormula>
+      <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/></saw:displayFormat><saw:columnHeading><saw:displayFormat><saw:formatSpec fontStyle="bold" wrapText="true"/></saw:displayFormat></saw:columnHeading></saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1c9d51d02e4c5147">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim DHA Employee&quot;.&quot;Comments&quot;</sawx:expr>
+        </saw:columnFormula>
+      <saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/></saw:displayFormat><saw:columnHeading><saw:displayFormat><saw:formatSpec fontStyle="bold" wrapText="true"/></saw:displayFormat></saw:columnHeading></saw:column>
+    </saw:columns>
+  <saw:filter><sawx:expr xsi:type="sawx:comparison" op="equal"><sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim DHA Employee&quot;.&quot;Employment Status&quot;</sawx:expr><sawx:expr xsi:type="xsd:string">ACTIVE</sawx:expr></sawx:expr></saw:filter></saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Reports+-+Business+Support" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false" rowsPerPage="700" repeat="false">
+      
+    <saw:greenBarFormat greenBar="allLayers" enabled="true"/><saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          
+        <saw:displayGrandTotals><saw:displayGrandTotal id="gt_row" grandTotalPosition="after"><saw:memberFormat><saw:displayFormat><saw:formatSpec wrapText="true" fontStyle="bold"/></saw:displayFormat><saw:caption><saw:text>Count</saw:text></saw:caption></saw:memberFormat><saw:dataBodyFormat><saw:displayFormat><saw:formatSpec wrapText="true"/></saw:displayFormat></saw:dataBodyFormat></saw:displayGrandTotal></saw:displayGrandTotals><saw:edgeLayers><saw:edgeLayer type="column" columnID="ceeb787a453b4fcda"><saw:levels><saw:level><saw:displaySubTotal id="st_ceeb787a453b4fcda" subTotalPosition="none"><saw:memberFormat><saw:displayFormat><saw:formatSpec wrapText="true"/></saw:displayFormat></saw:memberFormat></saw:displaySubTotal></saw:level></saw:levels></saw:edgeLayer><saw:edgeLayer type="column" columnID="cc8157ba9d574f7ee" aggRule="count"/><saw:edgeLayer type="column" columnID="c6c96caaab61d3da5"/><saw:edgeLayer type="column" columnID="ca33eee99554831ff"/><saw:edgeLayer type="column" columnID="c359d866499a2c0a9"/><saw:edgeLayer type="column" columnID="c895a729e60ead537"/><saw:edgeLayer type="column" columnID="cc83b136dfc3841af"/><saw:edgeLayer type="column" columnID="c511df8580712030e"/><saw:edgeLayer type="column" columnID="c1c9d51d02e4c5147"/></saw:edgeLayers></saw:edge><saw:edge axis="column" showColumnHeader="rollover"/></saw:edges></saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

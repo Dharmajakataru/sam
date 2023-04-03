@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Finance&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c55b75819c3a1e6e4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c92b1f90459ca27c8" aggRule="max">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(max(&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;) as INT)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38277" oldID="kcap1564723680675_37360">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38278" oldID="kcap1564723680675_37361">
+            <saw:text>MAX Period</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfa1c3dd3bf68e968" aggRule="min">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(min(&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;) as INT)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38279" oldID="kcap1564723680675_37362">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38280" oldID="kcap1564723680675_37363">
+            <saw:text>MIN Period</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8ae99c545d8572e2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Rntb Changes Sum&quot;.&quot;Rent Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38281" oldID="kcap1564723680675_37364">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38282" oldID="kcap1564723680675_37365">
+            <saw:text>Management Area</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb1d284a0702f4b26" aggRule="none">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;=@{V_From_Period}{VALUEOF(&quot;RV_DFLT_RENT_BILL_PERIOD_STR&quot;)} then sum(&quot;Rntb Changes Sum&quot;.&quot;Opening Property Count&quot;) else 0 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38283" oldID="kcap1564723680675_37366">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38284" oldID="kcap1564723680675_37367">
+            <saw:text>Opening Balance Property Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5cd4a0c2ee6e664b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;=@{V_From_Period}{VALUEOF(&quot;RV_DFLT_RENT_BILL_PERIOD_STR&quot;)} then sum(&quot;Rntb Changes Sum&quot;.&quot;Opening Rent Amount&quot;) else 0 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38285" oldID="kcap1564723680675_37368">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38286" oldID="kcap1564723680675_37369">
+            <saw:text>Opening Balance Rent Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c975663990599c35f" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Rntb Changes Sum&quot;.&quot;On Property Count&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38287" oldID="kcap1564723680675_37370">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38288" oldID="kcap1564723680675_37371">
+            <saw:text>Movements On Property Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7938dd6b4bc8aafe">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Rntb Changes Sum&quot;.&quot;On Rent Amount&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38289" oldID="kcap1564723680675_37372">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38290" oldID="kcap1564723680675_37373">
+            <saw:text>Movements On Rent Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c05ba2b1561df80bc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Rntb Changes Sum&quot;.&quot;Off Property Count&quot;*-1)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38291" oldID="kcap1564723680675_37374">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38292" oldID="kcap1564723680675_37375">
+            <saw:text>Movements Off Property Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="caf427cf825c68f0c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Rntb Changes Sum&quot;.&quot;Off Rent Amount&quot;* -1)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38293" oldID="kcap1564723680675_37376">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38294" oldID="kcap1564723680675_37377">
+            <saw:text>Movements Off Rent Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c530e96d5e7371027">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Rntb Changes Sum&quot;.&quot;Changes Property Count&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38295" oldID="kcap1564723680675_37378">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38296" oldID="kcap1564723680675_37379">
+            <saw:text>Rent Changes Property Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c041663551f438332">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Rntb Changes Sum&quot;.&quot;Changes Rent Amount&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38297" oldID="kcap1564723680675_37380">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38298" oldID="kcap1564723680675_37381">
+            <saw:text>Rent Changes Rent Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0b864913c42f2764">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;=@{V_To_Period} then sum(&quot;Rntb Changes Sum&quot;.&quot;Closing Property Count&quot;) else 0 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38299" oldID="kcap1564723680675_37382">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38300" oldID="kcap1564723680675_37383">
+            <saw:text>Closing Balance Property Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceaf2dab74b01cabb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;=@{V_To_Period} then sum(&quot;Rntb Changes Sum&quot;.&quot;Closing Rent Amount&quot;) else 0 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38301" oldID="kcap1564723680675_37384">
+            <saw:text>Rntb Changes Sum</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686451_38302" oldID="kcap1564723680675_37385">
+            <saw:text>Closing Balance Rent Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="cc6369f40a821fd13" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(max(&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;) as INT)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="ce167af975ce1b572" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(max(&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;) as INT)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="cc95e08faf4cdd0ed" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(max(&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;) as INT)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Rntb Changes Sum&quot;.&quot;Dmca Properties&quot;</sawx:expr>
+          
+        <sawx:expr xsi:type="xsd:string">Y</sawx:expr></sawx:expr>
+        
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Rntb Changes Sum&quot;.&quot;Rent Area&quot;</sawx:expr>
+          
+        <sawx:expr xsi:type="xsd:string">Darwin MCA Trial</sawx:expr></sawx:expr>
+      <sawx:expr xsi:type="sawx:comparison" op="between"><sawx:expr xsi:type="sawx:sqlExpression">cast(max(&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot;) as INT)</sawx:expr><sawx:expr xsi:type="sawx:eval" default="VALUEOF(&quot;RV_DFLT_RENT_BILL_PERIOD_STR&quot;)">V_From_Period</sawx:expr><sawx:expr xsi:type="sawx:eval" default="VALUEOF(&quot;RV_DFLT_RENT_BILL_PERIOD_STR&quot;)">V_To_Period</sawx:expr></sawx:expr></sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="narrativeView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Reports+Page+-+Finance" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t11" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cfa1c3dd3bf68e968"/>
+            <saw:edgeLayer type="column" columnID="c92b1f90459ca27c8"/>
+            <saw:edgeLayer type="column" columnID="c8ae99c545d8572e2">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t12" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cb1d284a0702f4b26" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t1" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c5cd4a0c2ee6e664b" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t2" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c975663990599c35f" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t3" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c7938dd6b4bc8aafe" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t4" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c05ba2b1561df80bc" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t5" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="caf427cf825c68f0c" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t6" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c530e96d5e7371027" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t7" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c041663551f438332" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t8" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c0b864913c42f2764" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t9" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="ceaf2dab74b01cabb" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t10" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:filtersView" name="filtersView!1"/>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:narrative rowCount="1">
+        <saw:caption fmt="text" captionID="kcap1564723686451_38276" oldID="kcap1564723680675_37359">
+          <saw:text>[b] Period @{V_From_Period} To @{V_To_Period} [/b]</saw:text>
+        </saw:caption>
+      </saw:narrative>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Finance&quot;">
+    <saw:promptStep>
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:variablePrompt" columnID="c15" required="false">
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="1">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT CAST(&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot; AS INT) FROM &quot;Finance&quot; order by &quot;Rntb Changes Sum&quot;.&quot;Current Period&quot; desc" dataType="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="presentationVariable" variableFormula="V_From_Period"/>
+          </saw:setPromptVariables>
+          <saw:promptOperator/>
+          <saw:constrainPrompt type="none"/>
+          <saw:label>
+            <saw:caption captionID="kcap1564723686451_38303" oldID="kcap1564723680675_37386">
+              <saw:text>From Period</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            <saw:promptDefaultValue>RV_DFLT_RENT_BILL_PERIOD_STR</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:variablePrompt" columnID="c16" required="false">
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="1">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT CAST(&quot;Rntb Changes Sum&quot;.&quot;Current Period&quot; AS INT) FROM &quot;Finance&quot; order by &quot;Rntb Changes Sum&quot;.&quot;Current Period&quot; desc" dataType="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="presentationVariable" variableFormula="V_To_Period"/>
+          </saw:setPromptVariables>
+          <saw:promptOperator/>
+          <saw:constrainPrompt type="none"/>
+          <saw:label>
+            <saw:caption captionID="kcap1564723686451_38304" oldID="kcap1564723680675_37387">
+              <saw:text>To Period</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            <saw:promptDefaultValue>RV_DFLT_RENT_BILL_PERIOD_STR</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:report>

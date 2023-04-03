@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Corporate Property&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c833e43b4f0510716">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Management Area&quot;.&quot;Mangement Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" fontColor="#FFFFFF" backgroundColor="#0000FF" wrapText="false"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723783819_56433" oldID="kcap1564723554852_22588">
+            <saw:text>Average Days Vacant</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" wrapText="false"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec fontColor="#FFFFFF" backgroundColor="#0000FF" wrapText="false"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723783820_56434" oldID="kcap1564723554852_22589">
+            <saw:text>Mangement Area</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca494621af5a3348d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Average Days Vacant&quot;.&quot;VAC_AVAIL_TO_OCC&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723783820_56435" oldID="kcap1564723554852_22590">
+            <saw:text>DHA VACANT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec fontColor="#FFFFFF" backgroundColor="#0000FF" wrapText="false"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723783820_56436" oldID="kcap1564723554852_22591">
+            <saw:text>Vacant Available to Occupy</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c199c90b9cc08dc7c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Average Days Vacant&quot;.&quot;VAC_NOT_AVAIL_TO_OCC&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723783820_56437" oldID="kcap1564723554852_22592">
+            <saw:text>DHA VACANT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec fontColor="#FFFFFF" backgroundColor="#0000FF" wrapText="false"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723783820_56438" oldID="kcap1564723554852_22593">
+            <saw:text>Vacant Not Available to Occupy</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="cee2ab508f8b80a65" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Average Days Vacant&quot;.&quot;RUN_DATE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="notIn">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Management Area&quot;.&quot;Mangement Area&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">ALL</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">DHA Nationwide - Head Office</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Darwin MCA Trial</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Repairs Only</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">UNKNOWN</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">ZNULL</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Average Days Vacant&quot;.&quot;RUN_DATE&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval" default="30/06/2011">PV_RUN_DATE</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Average Days Vacant&quot;.&quot;RNTB_STATUS&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval">PV_RNTB_STATUS</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Average Days Vacant&quot;.&quot;Record Type&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">V</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" headingDisplay="table2Rows">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c833e43b4f0510716" visibility="visible"/>
+            <saw:edgeLayer type="column" columnID="ca494621af5a3348d"/>
+            <saw:edgeLayer type="column" columnID="c199c90b9cc08dc7c" visibility="visible"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail><saw:headline><saw:caption fmt="html"><saw:text>Vacancy Average Days Summary</saw:text></saw:caption></saw:headline></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Corporate Property&quot;"/>
+</saw:report>

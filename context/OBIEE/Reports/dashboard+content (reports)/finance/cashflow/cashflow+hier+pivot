@@ -1,0 +1,1601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb9932f89b884b341">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Year No&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf0892b1673bab60e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Month No&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd9ff7e2689bb6487">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Full Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:hierarchicalColumn" columnID="c4b6ab5987ac4b486" hierarchyID="Cash Flow Periods" tableName="&quot;CF. Dim Period Cash Flow&quot;" dimensionID="Cash Flow Periods">
+        <saw:displayFormat>
+          <saw:formatSpec wrapText="true" interaction="action"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Year No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Month No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Full Date&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c4b6ab5987ac4b486_al09de45fa6ab18ec6">
+                      <saw:action>
+                        <saw:actionName>Cashflow Hier Pivot Year Lvl DT</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Finance/Cashflow/Cashflow Hier Pivot Year Lvl DT</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723678431_36874" oldID="kcap1564723493071_7820">
+                        <saw:text>Drill to Year Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Year No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Month No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Full Date&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c4b6ab5987ac4b486_alb3e656c36d4f416f">
+                      <saw:action>
+                        <saw:actionName>Cashflow Hier Pivot Month Lvl DT</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Finance/Cashflow/Cashflow Hier Pivot Month Lvl DT</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723678431_36875" oldID="kcap1564723493071_7821">
+                        <saw:text>Drill to Month Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Year No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Month No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Full Date&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c4b6ab5987ac4b486_al7726aedca8a52de3">
+                      <saw:action>
+                        <saw:actionName>Cashflow Hier Pivot Date Lvl DT</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Finance/Cashflow/Cashflow Hier Pivot Date Lvl DT</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723678431_36876" oldID="kcap1564723493071_7822">
+                        <saw:text>Drill to Date Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:hierarchyLevels>
+          <saw:hierarchyLevel levelID="All Years">
+            <saw:displayFormat>
+              <saw:formatSpec suppress="suppress" wrapText="true"/>
+            </saw:displayFormat>
+          </saw:hierarchyLevel>
+          <saw:hierarchyLevel levelID="Fin Year">
+            <saw:displayFormat>
+              <saw:formatSpec suppress="suppress" wrapText="true"/>
+              <saw:conditionalDisplayFormats/>
+            </saw:displayFormat>
+          </saw:hierarchyLevel>
+          <saw:hierarchyLevel levelID="Fin Month">
+            <saw:displayFormat>
+              <saw:formatSpec suppress="suppress" wrapText="true"/>
+            </saw:displayFormat>
+          </saw:hierarchyLevel>
+          <saw:hierarchyLevel levelID="Date">
+            <saw:displayFormat>
+              <saw:formatSpec suppress="suppress" wrapText="true"/>
+            </saw:displayFormat>
+          </saw:hierarchyLevel>
+        </saw:hierarchyLevels>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca2c3a45de06e4ad1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Jira Cash Flow&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc3ca48ea19750ab7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Jira Cash Flow&quot;.&quot;Project Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4125ce6711805da6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Jira Cash Flow&quot;.&quot;Trans Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6593077b7996541b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Jira Cash Flow&quot;.&quot;Project Type&quot; ||&#39; - &#39;|| &quot;CF. Dim Jira Cash Flow&quot;.&quot;Trans Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678431_36870" oldID="kcap1564723493071_7816">
+            <saw:text>Dim Jira Cash Flow</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678431_36871" oldID="kcap1564723493071_7817">
+            <saw:text>Project and Trans Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c775c9bcc01534577" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(case when &quot;CF. Dim Jira Cash Flow&quot;.&quot;Project Type&quot; in (&#39;Dev Sales&#39;, &#39;Disposal&#39;) then &quot;CF. Dim Jira Cash Flow&quot;.&quot;Trans Amount&quot; else -1*(&quot;CF. Dim Jira Cash Flow&quot;.&quot;Trans Amount&quot;) end)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Year No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Month No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Full Date&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c775c9bcc01534577_al09c69de1a3aa25a0">
+                      <saw:action>
+                        <saw:actionName>Cashflow Hier Pivot Year Lvl DT</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Finance/Cashflow/Cashflow Hier Pivot Year Lvl DT</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723678431_36877" oldID="kcap1564723493071_7823">
+                        <saw:text>Drill to Yearl Level Detail</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Year No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Month No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Full Date&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c775c9bcc01534577_al89eeb01a4305b3c0">
+                      <saw:action>
+                        <saw:actionName>Cashflow Hier Pivot Month Lvl DT</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Finance/Cashflow/Cashflow Hier Pivot Month Lvl DT</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723678431_36878" oldID="kcap1564723493071_7824">
+                        <saw:text>Drill to Month Level Detail</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Year No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Month No&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Full Date&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c775c9bcc01534577_al61aad089292bce10">
+                      <saw:action>
+                        <saw:actionName>Cashflow Hier Pivot Date Lvl DT</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Finance/Cashflow/Cashflow Hier Pivot Date Lvl DT</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723678431_36879" oldID="kcap1564723493071_7825">
+                        <saw:text>Dtill to Date Level Detail</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678431_36872" oldID="kcap1564723493071_7818">
+            <saw:text>Dim Jira Cash Flow</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723678431_36873" oldID="kcap1564723493071_7819">
+            <saw:text>Trans Amount</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Period Cash Flow&quot;.&quot;Fin Year No&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Jira Cash Flow&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Jira Cash Flow&quot;.&quot;Project Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Jira Cash Flow&quot;.&quot;Trans Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(&quot;CF. Dim Jira Cash Flow&quot;.&quot;Trans Amount&quot;)</sawx:expr>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Jira Cash Flow&quot;.&quot;Anticipated Rent Bill Client&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;CF. Dim Jira Cash Flow&quot;.&quot;Issuestatus Desc&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Rejected Proposal</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723678431_36869" oldID="kcap1564723493071_7815">
+          <saw:text>Cashflow Hierarchy Pivot</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" rowsPerPage="300">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cb9932f89b884b341"/>
+            <saw:edgeLayer type="column" columnID="cf0892b1673bab60e"/>
+            <saw:edgeLayer type="column" columnID="cd9ff7e2689bb6487"/>
+            <saw:edgeLayer type="column" columnID="c4b6ab5987ac4b486">
+              <saw:drillState>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Year"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>2007</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="All Years">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cd9ff7e2689bb6487"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2013&quot;.&quot;1&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="cd9ff7e2689bb6487" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2013</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="up">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cd9ff7e2689bb6487"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2013&quot;.&quot;1&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="cd9ff7e2689bb6487" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2013</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="up">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cd9ff7e2689bb6487"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2013&quot;.&quot;1&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="cd9ff7e2689bb6487" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2013</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cd9ff7e2689bb6487"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2014&quot;.&quot;2&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="cd9ff7e2689bb6487" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2014</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="up">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cd9ff7e2689bb6487"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2014&quot;.&quot;2&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="cd9ff7e2689bb6487" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2014</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="up">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cd9ff7e2689bb6487"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2014&quot;.&quot;2&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="cd9ff7e2689bb6487" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2014</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="All Years"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>1</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Year"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>2013</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="All Years">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2013&quot;.&quot;1&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2013</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="up">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2013&quot;.&quot;1&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2013</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="All Years"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>1</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Year"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>2008</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="All Years">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2008&quot;.&quot;6&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2008</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="up">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;2008&quot;.&quot;6&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2008</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="All Years"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>1</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Year"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>2004</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="All Years">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Fin Month"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>&quot;6&quot;.&quot;2004&quot;</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c4b6ab5987ac4b486" levelID="Fin Year">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>2004</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cb9932f89b884b341"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cf0892b1673bab60e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="cd9ff7e2689bb6487"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="All Years"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>1</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c4b6ab5987ac4b486"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="cb9932f89b884b341" groupID="0"/>
+                    <saw:selectionGroup columnID="cf0892b1673bab60e" groupID="0"/>
+                    <saw:selectionGroup columnID="cd9ff7e2689bb6487" groupID="0"/>
+                    <saw:selectionGroup columnID="c4b6ab5987ac4b486" groupID="0"/>
+                  </saw:selectionGroups>
+                </saw:drillStep>
+              </saw:drillState>
+            </saw:edgeLayer>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t2" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ca2c3a45de06e4ad1"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c775c9bcc01534577"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!3">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!3">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!3">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t5" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4b6ab5987ac4b486"/>
+            <saw:edgeLayer type="column" columnID="cb9932f89b884b341"/>
+            <saw:edgeLayer type="column" columnID="cf0892b1673bab60e"/>
+            <saw:edgeLayer type="column" columnID="cd9ff7e2689bb6487"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t6" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ca2c3a45de06e4ad1"/>
+            <saw:edgeLayer type="column" columnID="cc3ca48ea19750ab7"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c775c9bcc01534577"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!4">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cb9932f89b884b341"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c775c9bcc01534577"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="cc3ca48ea19750ab7"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="3d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cb9932f89b884b341"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c775c9bcc01534577"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c6593077b7996541b"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!5">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!6">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!3">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!3">
+      <saw:display type="pie" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="3d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:measureLabels/>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="pie">
+            <saw:columnRef columnID="c775c9bcc01534577"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c6593077b7996541b"/>
+          </saw:seriesGenerator>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!7">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="viewSelector!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!2"/>
+    <saw:view xsi:type="saw:viewSelector" name="viewSelector!1">
+      <saw:viewSelectorCaption position="left"/>
+      <saw:viewList>
+        <saw:viewItem type="view" name="compoundView!1"/>
+        <saw:viewItem type="view" name="compoundView!2"/>
+        <saw:viewItem type="view" name="compoundView!3"/>
+        <saw:viewItem type="view" name="compoundView!4"/>
+        <saw:viewItem type="view" name="compoundView!5"/>
+        <saw:viewItem type="view" name="compoundView!6"/>
+      </saw:viewList>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t7" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4b6ab5987ac4b486" visibility="visible"/>
+            <saw:edgeLayer type="column" columnID="cb9932f89b884b341" visibility="visible"/>
+            <saw:edgeLayer type="column" columnID="cf0892b1673bab60e"/>
+            <saw:edgeLayer type="column" columnID="cd9ff7e2689bb6487"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t8" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ca2c3a45de06e4ad1"/>
+            <saw:edgeLayer type="column" columnID="c4125ce6711805da6"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c775c9bcc01534577"/>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>    &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

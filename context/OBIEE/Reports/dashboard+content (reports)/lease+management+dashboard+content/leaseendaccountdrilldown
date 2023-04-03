@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Lease Management&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c17fb0050c2b6a8e8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_LEASE_HANDBACK_LM&quot;.&quot;Property Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="false" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c17fb0050c2b6a8e8_ald72c3e04a8af41ef">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723703235_41129" oldID="kcap1564723509108_10777">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c17fb0050c2b6a8e8"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca6b0694a65975a66">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_LEASE_HANDBACK_LM&quot;.&quot;Lease Ref&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="ca6b0694a65975a66_ala99cdaf60cf805a9">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsm]/property/leasing/lease/summary.action</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>leaseId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsm]/property/leasing/lease/summary.action?requestTimestamp=@{1}&amp;propertyId=@{2}&amp;leaseId=@{3}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723703235_41130" oldID="kcap1564723509108_10778">
+                  <saw:text>View Lease in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c17fb0050c2b6a8e8"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="3" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="ca6b0694a65975a66"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3fa984e1622a65a2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DIM_PROPERTY_LM&quot;.&quot;Property Street Address&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9b565339e5f3cf31">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DIM_PROPERTY_LM&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c536acd798e61e609">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DIM_PROPERTY_LM&quot;.&quot;State&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe3a8cb98399a611">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DIM_PROPERTY_LM&quot;.&quot;Post Code&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3d80f98618c1b0f0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DIM_PROPERTY_LM&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc03c2fb6a769c864">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DIM_PROPERTY_LM&quot;.&quot;Dhf Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c29bb64bb7ec7e1a8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_LM&quot;.&quot;Lease Last Debit Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1f02e380280103b1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_LM&quot;.&quot;Lease Hold Payment Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3c3b01c034676bb6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_LM&quot;.&quot;Hold Payment Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3d695a52cd7347ee">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_LM&quot;.&quot;FMS Reference&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd2d3454f0052c32b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_LM&quot;.&quot;Number Current Future Leases&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c73b17a0411751488">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_LM&quot;.&quot;Account Status&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c03eb5a661fccf399">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_LM&quot;.&quot;Pay Stat&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4407bb933fa633bf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_LEASE_HANDBACK_LM&quot;.&quot;Amount Outstanding SUN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+                    <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_LEASE_HANDBACK_LM&quot;.&quot;Amount Outstanding SUN&quot;</sawx:expr>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false">
+                    <saw:actionLink actionLinkID="c4407bb933fa633bf_ald12c36ca8e459ce6">
+                      <saw:actionPath>/shared/Components/Dashboard Content/Lease Management Dashboard Content/Action Handback SUN Trans</saw:actionPath>
+                      <saw:caption captionID="kcap1564723703235_41132" oldID="kcap1564723509108_10780">
+                        <saw:text>View SUN Transactions</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:stringAssign" name="7" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c3d695a52cd7347ee"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723703235_41123" oldID="kcap1564723509108_10771">
+            <saw:text>F_LEASE_HANDBACK_LM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723703235_41124" oldID="kcap1564723509108_10772">
+            <saw:text>Amount Outstanding Tech 1</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c440e60ca719fd2b8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_LEASE_HANDBACK_LM&quot;.&quot;Amount Outstanding HSM&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" width="20px" interaction="action"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="less">
+                    <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_LEASE_HANDBACK_LM&quot;.&quot;Amount Outstanding HSM&quot;</sawx:expr>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false">
+                    <saw:actionLink actionLinkID="c440e60ca719fd2b8_alc404a12a5e029294">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="2" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                            <saw:prompt>path</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="3" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                            <saw:prompt>Action</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="4" type="string" mandatory="false" removable="true" order="2" multiValues="false">
+                            <saw:prompt>P0</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="5" type="string" mandatory="false" removable="true" order="3" multiValues="false">
+                            <saw:prompt>P1</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="6" type="string" mandatory="false" removable="true" order="4" multiValues="false">
+                            <saw:prompt>P2</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="7" type="string" mandatory="false" removable="true" order="5" multiValues="false">
+                            <saw:prompt>P3</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Lease Management Dashboard Content/Lease Handback HSM Trans Report</saw:value>
+                          </saw:assign>
+                          <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>Navigate</saw:value>
+                          </saw:assign>
+                          <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>2</saw:value>
+                          </saw:assign>
+                          <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>eq</saw:value>
+                          </saw:assign>
+                          <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>&quot;Dim Jobs&quot;.&quot;UPRN&quot;</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;path=@{2}&amp;Action=@{3}&amp;P0=@{4}&amp;P1=@{5}&amp;P2=@{6}&amp;P3=@{7}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723703235_41133" oldID="kcap1564723509108_10781">
+                        <saw:text>View HSM Transactions</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c17fb0050c2b6a8e8"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce2fe02f0f8d21237">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_LEASE_HANDBACK_LM&quot;.&quot;Total Amount Outstanding&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c581641d6827568b2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Approved Maint Payout&quot;, 0)+ ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Approved Rent Payout&quot;,0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723703235_41125" oldID="kcap1564723509108_10773">
+            <saw:text>D_LEASE_HANDBACK_LM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723703235_41126" oldID="kcap1564723509108_10774">
+            <saw:text>Approved Payout</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca6e9f155d06a6101">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Pkey&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="ca6e9f155d06a6101_aleb2949c13f319ce6">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsm]/property/leasing/lease/handback/view.action</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="2" multiValues="false">
+                      <saw:prompt>key</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="3" multiValues="false">
+                      <saw:prompt>leaseId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsm]/property/leasing/lease/handback/view.action?requestTimestamp=@{1}&amp;propertyId=@{2}&amp;key=@{3}&amp;leaseId=@{4}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723703235_41131" oldID="kcap1564723509108_10779">
+                  <saw:text>View Lease in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c17fb0050c2b6a8e8"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="3" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="ca6e9f155d06a6101"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="ca6b0694a65975a66"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c734a887df130b97f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce9afd0d3666f2105">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c62c53ba75ff0d449">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce70d17a9a7418f43">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;DIM_DHA_EMPLOYEE_LM&quot;.&quot;Os User&quot; is null then &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Leasing Officer&quot; else ucase(&quot;DIM_DHA_EMPLOYEE_LM&quot;.&quot;Preferred Name&quot;)||&#39; &#39;||&quot;DIM_DHA_EMPLOYEE_LM&quot;.&quot;Surname&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723703235_41127" oldID="kcap1564723509108_10775">
+            <saw:text>D_LEASE_HANDBACK_LM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723703235_41128" oldID="kcap1564723509108_10776">
+            <saw:text>Leasing Officer</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c63e3dcfd8d72d442">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:special" op="prompted">
+        <sawx:expr xsi:type="sawx:sqlExpression">case   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Critical&#39;   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is not null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Warning&#39;    when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;)  between  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and TIMESTAMPADD(SQL_TSI_day, 90, VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and  &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;OK&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot; between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; in(&#39;Awaiting Finalisation&#39;,&#39;Completed&#39;) then &#39;Completed&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Cancel Date&quot;  between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;))  and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; = &#39;Cancelled&#39; then &#39;Cancelled&#39; ELSE NULL END</sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1"/></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Handback+Priority" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c17fb0050c2b6a8e8"/>
+            <saw:edgeLayer type="column" columnID="ca6b0694a65975a66"/>
+            <saw:edgeLayer type="column" columnID="c3fa984e1622a65a2"/>
+            <saw:edgeLayer type="column" columnID="c9b565339e5f3cf31"/>
+            <saw:edgeLayer type="column" columnID="c536acd798e61e609"/>
+            <saw:edgeLayer type="column" columnID="cfe3a8cb98399a611"/>
+            <saw:edgeLayer type="column" columnID="c3d80f98618c1b0f0"/>
+            <saw:edgeLayer type="column" columnID="c29bb64bb7ec7e1a8"/>
+            <saw:edgeLayer type="column" columnID="c1f02e380280103b1"/>
+            <saw:edgeLayer type="column" columnID="c3c3b01c034676bb6"/>
+            <saw:edgeLayer type="column" columnID="c3d695a52cd7347ee"/>
+            <saw:edgeLayer type="column" columnID="cd2d3454f0052c32b"/>
+            <saw:edgeLayer type="column" columnID="c73b17a0411751488"/>
+            <saw:edgeLayer type="column" columnID="c03eb5a661fccf399"/>
+            <saw:edgeLayer type="column" columnID="c4407bb933fa633bf"/>
+            <saw:edgeLayer type="column" columnID="c440e60ca719fd2b8"/>
+            <saw:edgeLayer type="column" columnID="ce2fe02f0f8d21237"/>
+            <saw:edgeLayer type="column" columnID="c581641d6827568b2"/>
+            <saw:edgeLayer type="column" columnID="ca6e9f155d06a6101"/>
+            <saw:edgeLayer type="column" columnID="c734a887df130b97f"/>
+            <saw:edgeLayer type="column" columnID="ce9afd0d3666f2105"/>
+            <saw:edgeLayer type="column" columnID="c62c53ba75ff0d449"/>
+            <saw:edgeLayer type="column" columnID="ce70d17a9a7418f43"/>
+            <saw:edgeLayer type="column" columnID="c63e3dcfd8d72d442"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>
