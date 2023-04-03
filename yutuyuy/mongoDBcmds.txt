@@ -1,0 +1,158 @@
+
+Database----->Database
+Tables------->Collections
+Rows--------->documents
+cols--------->fields
+table joins--->$lookup, embedded document
+
+
+mainly Key Value Pair
+
+
+Database commands
+------------------------
+show dbs--->shows database
+
+use dbName
+
+view currentdb
+--------------
+db
+
+update the colelctions
+--------------------------
+db.COLLECTION_NAME.update(SELECTIOIN_CRITERIA, UPDATED_DATA)  
+db.erwinCollections.update({'course':'java'},{$set:{'course':'android'}})
+
+delete database
+------------------
+db.dropDatabase()
+
+to find any fields/documents
+-----------------------------
+db.collname.find()---->finds all the records in the collections
+
+
+to know the count
+-------------------
+db.collname.find.count()
+
+
+ADMIN RIGHTS
+-------------------
+--------------------
+----------------------
+
+To create a user and different types of roles
+db.adminCommand(  
+  {  
+    createUser: "palliUser",  
+    pwd: passwordPrompt(),  
+    roles: [  
+      { role: "dbOwner", db: "admin" }  //read//readWrite//dbOwner//root//dbAdmin
+    ]  
+  }  
+)  
+
+create user
+db.createUser({"user": "root", "pwd": passwordPrompt(), "roles": ["root"]})
+
+db.createUser({"user": "user_2", "pwd": passwordPrompt(), "roles": ["readWrite"]})
+db.createUser({user: "palli", pwd: passwordPrompt(), roles:[{"read",db:"erwinDataBase"}]})
+
+db.createUser({user:"fromCLI",pwd:"12345",roles:[{role:"read",db:"erwinsampledatacollections"}]})
+db.dropUser("root")
+db.auth( "user", passwordPrompt() )
+
+dbAdmin---->ability to provide admin tasks like schema related tasks,indexing,gathering stats and doesn't have privilege
+for role and user management
+
+use admin
+
+
+
+db.createUser({user:"PalliVinay",pwd:passwordPrompt(),roles:[{role:"read",db:"erwinDataBase"}]})
+
+
+
+db.getCollectionNames()
+
+
+
+
+
+	
+	
+user1 has access to table_A from database3
+	------------------------------------------
+	
+	test>db.getSiblingDB("erwinCollection")
+	
+	use admin
+db.createRole(
+   {
+     role: "myClusterwideAdmin",
+     privileges: [
+       { resource: { cluster: true }, actions: [ "addShard" ] },
+       { resource: { db: "config", collection: "" }, actions: [ "find", "update", "insert", "remove" ] },
+       { resource: { db: "users", collection: "usersCollection" }, actions: [ "update", "insert", "remove" ] },
+       { resource: { db: "", collection: "" }, actions: [ "find" ] }
+     ],
+     roles: [
+       { role: "read", db: "admin" }
+     ]
+   },
+   { w: "majority" , wtimeout: 5000 }
+)
+
+GRANT ROLES
+============
+db.grantRolesToUser( "<username>", [ <roles> ], { <writeConcern> } )
+
+db.getUser("mynewuser");
+{
+        "_id" : "test.mynewuser",
+        "user" : "mynewuser",
+        "db" : "test",
+        "roles" : [
+                {
+                        "role" : "readWrite",
+                        "db" : "test"
+                },
+                {
+                        "role" : "dbAdmin",
+                        "db" : "test"
+                }
+        ]
+}
+db.grantRolesToUser() method is used to grants an additional role and its privileges to a user.
+
+
+use test
+
+
+db.grantRolesToUser(
+   "mynewuser",
+   [ "readWrite" , { role: "read", db: "orders" } ],
+   { w: "majority" , wtimeout: 4000 }
+);
+
+db.getUser("mynewuser");
+
+      "_id" : "test.mynewuser",
+      "user" : "mynewuser",
+      "db" : "test",
+      "roles" : [
+              {
+                      "role" : "read",
+                      "db" : "orders"
+              },
+              {
+                      "role" : "readWrite",
+                      "db" : "test"
+              },
+              {
+                      "role" : "dbAdmin",
+                      "db" : "test"
+              }
+      ]
