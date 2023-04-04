@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Estate Master&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cea9ae9189248e17c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Code&quot;.&quot;Finance Report Section Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0d841019c35b29df">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Code&quot;.&quot;Category Description&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c96a2d49c6610841a"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Date&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c88c77dd776de290e" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; &lt; &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot;), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading><saw:caption fmt="text"><saw:text>F DM CashFlow Monthly</saw:text></saw:caption></saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36601" oldID="kcap1564723492363_7581">
+            <saw:text>Previous Years</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca8cd3e21d0523808" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 1), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36602" oldID="kcap1564723492363_7582">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36603" oldID="kcap1564723492363_7583">
+            <saw:text>JUL</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8608c6f71dbacd29" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 2), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36604" oldID="kcap1564723492363_7584">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36605" oldID="kcap1564723492363_7585">
+            <saw:text>AUG</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb6a8a0f00cf988cd" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 3), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36606" oldID="kcap1564723492363_7586">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36607" oldID="kcap1564723492363_7587">
+            <saw:text>SEP</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cafc48424c1b2a6a3" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 4), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36608" oldID="kcap1564723492363_7588">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36609" oldID="kcap1564723492363_7589">
+            <saw:text>OCT</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1c30d3588a4222d3" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 5), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36610" oldID="kcap1564723492363_7590">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36611" oldID="kcap1564723492363_7591">
+            <saw:text>NOV</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c06d39cbf86838d71" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 6), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36612" oldID="kcap1564723492363_7592">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36613" oldID="kcap1564723492363_7593">
+            <saw:text>DEC</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c174ea96a6c4546ee" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 7), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36614" oldID="kcap1564723492363_7594">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36615" oldID="kcap1564723492363_7595">
+            <saw:text>JAN</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c68c7dfedaec68b8d" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 8), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36616" oldID="kcap1564723492363_7596">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36617" oldID="kcap1564723492363_7597">
+            <saw:text>FEB</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c50511b15125f27f0" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 9), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36618" oldID="kcap1564723492363_7598">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36619" oldID="kcap1564723492363_7599">
+            <saw:text>MAR</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c573d3690ab5df32a" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 10), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36620" oldID="kcap1564723492363_7600">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36621" oldID="kcap1564723492363_7601">
+            <saw:text>APR</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf3da4c6d3cc79053" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 11), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36622" oldID="kcap1564723492363_7602">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36623" oldID="kcap1564723492363_7603">
+            <saw:text>MAY</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c47e5b6807eaf1ef2" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST - YTD&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value - YTD&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; = 12), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36624" oldID="kcap1564723492363_7604">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36625" oldID="kcap1564723492363_7605">
+            <saw:text>JUN</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c804a7ef6e6f09544" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; END) USING &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; &gt; &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot;), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36626" oldID="kcap1564723492363_7606">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36627" oldID="kcap1564723492363_7607">
+            <saw:text>Later Years</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb4dcd00075d5dd1b" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL((CASE WHEN &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; THEN &quot;F DM Corporate Plan&quot;.&quot;Amount Inclusive GST&quot; ELSE &quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; END), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="redParen" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36628" oldID="kcap1564723492363_7608">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677541_36629" oldID="kcap1564723492363_7609">
+            <saw:text>Project Total</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Code&quot;.&quot;Finance Report Section Name&quot;</sawx:expr>
+          
+          
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Cash Flow&quot;.&quot;Project Code&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Cash Flow&quot;.&quot;Project Code&quot;</sawx:expr>
+          
+        <sawx:expr xsi:type="xsd:string">Empty</sawx:expr></sawx:expr>
+        
+        
+      <sawx:expr xsi:type="sawx:comparison" op="notEqual"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Code&quot;.&quot;Category Description&quot;</sawx:expr><sawx:expr xsi:type="xsd:string">GST Adjustment</sawx:expr></sawx:expr></sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="cea9ae9189248e17c" direction="descending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true" currentView="0">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell><saw:cvCell viewName="narrativeView!1"><saw:displayFormat><saw:formatSpec hAlign="left"/></saw:displayFormat></saw:cvCell><saw:cvCell viewName="narrativeView!2"><saw:displayFormat><saw:formatSpec hAlign="left"/></saw:displayFormat></saw:cvCell><saw:cvCell viewName="titleView!2"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1" colSpan="4">
+            <saw:displayFormat>
+              <saw:formatSpec borderPosition="2"/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="dateTime"><saw:title><saw:caption fmt="text"><saw:text>Current Year - Cumulative</saw:text></saw:caption></saw:title></saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" headingDisplay="columns">
+      
+    <saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="none"/>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="cea9ae9189248e17c">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="st_cea9ae9189248e17c" subTotalPosition="after"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer><saw:edgeLayer type="column" columnID="c0d841019c35b29df"/><saw:edgeLayer type="column" columnID="c88c77dd776de290e"/><saw:edgeLayer type="column" columnID="ca8cd3e21d0523808"/><saw:edgeLayer type="column" columnID="c8608c6f71dbacd29"/><saw:edgeLayer type="column" columnID="cb6a8a0f00cf988cd"/><saw:edgeLayer type="column" columnID="cafc48424c1b2a6a3"/><saw:edgeLayer type="column" columnID="c1c30d3588a4222d3"/><saw:edgeLayer type="column" columnID="c06d39cbf86838d71"/><saw:edgeLayer type="column" columnID="c174ea96a6c4546ee"/><saw:edgeLayer type="column" columnID="c68c7dfedaec68b8d"/><saw:edgeLayer type="column" columnID="c50511b15125f27f0"/><saw:edgeLayer type="column" columnID="c573d3690ab5df32a"/><saw:edgeLayer type="column" columnID="cf3da4c6d3cc79053"/><saw:edgeLayer type="column" columnID="c47e5b6807eaf1ef2"/><saw:edgeLayer type="column" columnID="c804a7ef6e6f09544"/><saw:edgeLayer type="column" columnID="cb4dcd00075d5dd1b"/></saw:edgeLayers></saw:edge><saw:edge axis="column" showColumnHeader="rollover"/></saw:edges></saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view><saw:view xsi:type="saw:narrativeView" name="narrativeView!1"><saw:viewCaption><saw:caption><saw:text>upto date</saw:text></saw:caption></saw:viewCaption><saw:narrative rowCount="1"><saw:caption fmt="html"><saw:text>Cashflow Up to Date: [b]@{c96a2d49c6610841a}[/b]</saw:text></saw:caption></saw:narrative><saw:displayFormat><saw:formatSpec fontColor="#000080" fontStyle="italic"/></saw:displayFormat></saw:view><saw:view xsi:type="saw:narrativeView" name="narrativeView!2"><saw:viewCaption><saw:caption><saw:text>incl of gst</saw:text></saw:caption></saw:viewCaption><saw:narrative rowCount="1"><saw:caption fmt="html"><saw:text>+ all figures reported are inclusive of GST&lt;br/&gt;
++ Corporate Overheads and Interest costs are included in the presented results&lt;br/&gt;
++ &quot;Corporate Plan - Current FY&quot; portfolio is sourced from TM1, while rest of the portfolios are direct from EMDM database</saw:text></saw:caption></saw:narrative><saw:displayFormat><saw:formatSpec fontColor="#000080" fontStyle="italic"/></saw:displayFormat></saw:view><saw:view xsi:type="saw:titleView" name="titleView!2" includeName="false" startedDisplay="none" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Current+Year+-+Progressive"><saw:viewCaption><saw:caption><saw:text>Help Icon</saw:text></saw:caption></saw:viewCaption></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Estate Master&quot;"/>
+</saw:report>

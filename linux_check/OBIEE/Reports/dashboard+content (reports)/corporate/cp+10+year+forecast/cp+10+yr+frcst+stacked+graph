@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdc6f7ac461b15c00">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast for Fin Year No&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb25afd2ea9f2de4f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Transaction Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc7f0d0ae571d97a8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:dimensionSelection>
+          <saw:selectionStep stepID="1" type="startWith" category="member">
+            <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+              <saw:staticMemberGroup>
+                <saw:members xsi:type="saw:specialValueMembers">
+                  <saw:value specialValue="all"/>
+                </saw:members>
+              </saw:staticMemberGroup>
+            </saw:stepMembers>
+          </saw:selectionStep>
+        </saw:dimensionSelection>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3cc78f1006ec65f7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Achieved Count&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33956" oldID="kcap1564723484398_5837">
+            <saw:text>Annual Forecast Yearly Smrzd</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33957" oldID="kcap1564723484398_5838">
+            <saw:text>Achieved</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2d61fc9bcb37161f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Expected Count&quot;) - SUM(&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Achieved Count&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33958" oldID="kcap1564723484398_5839">
+            <saw:text>Annual Forecast Yearly Smrzd</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33959" oldID="kcap1564723484398_5840">
+            <saw:text>Expected</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca33b778cd323ff25">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast Count&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33960" oldID="kcap1564723484398_5841">
+            <saw:text>Annual Forecast Yearly Smrzd</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33961" oldID="kcap1564723484398_5842">
+            <saw:text>Forecast</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc102487ae2c3d99a" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(CASE WHEN UPPER(&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast Type&quot;) IN (&#39;DISPOSED&#39;, &#39;LEASE END&#39;, &#39;LEASE EXTENSIONS (ADJ)&#39;, &#39;LEASE OPTIONS (ADJ)&#39;, &#39;LEASE RENEWALS (ADJ)&#39;) THEN &quot;Annual Forecast Yearly Smrzd&quot;.&quot;Achieved Count&quot; * -1 ELSE &quot;Annual Forecast Yearly Smrzd&quot;.&quot;Achieved Count&quot; END)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33962" oldID="kcap1564723484398_5843">
+            <saw:text>Annual Forecast Yearly Smrzd</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33963" oldID="kcap1564723484398_5844">
+            <saw:text>Achieved(u)</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7a8e42eea3ec522e" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(CASE WHEN UPPER(&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast Type&quot;) IN (&#39;DISPOSED&#39;, &#39;LEASE END&#39;, &#39;LEASE EXTENSIONS (ADJ)&#39;, &#39;LEASE OPTIONS (ADJ)&#39;, &#39;LEASE RENEWALS (ADJ)&#39;) THEN (&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Expected Count&quot;) * -1 ELSE (&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Expected Count&quot;) END) - SUM(CASE WHEN UPPER(&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast Type&quot;) IN (&#39;DISPOSED&#39;, &#39;LEASE END&#39;, &#39;LEASE EXTENSIONS (ADJ)&#39;, &#39;LEASE OPTIONS (ADJ)&#39;, &#39;LEASE RENEWALS (ADJ)&#39;) THEN (&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Achieved Count&quot;) * -1 ELSE (&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Achieved Count&quot;) END)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33964" oldID="kcap1564723484398_5845">
+            <saw:text>Annual Forecast Yearly Smrzd</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33965" oldID="kcap1564723484398_5846">
+            <saw:text>Expected(u)</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdf7b346e97141ce2" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(CASE WHEN UPPER(&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast Type&quot;) IN (&#39;DISPOSED&#39;, &#39;LEASE END&#39;, &#39;LEASE EXTENSIONS (ADJ)&#39;, &#39;LEASE OPTIONS (ADJ)&#39;, &#39;LEASE RENEWALS (ADJ)&#39;) THEN &quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast Count&quot; * -1 ELSE &quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast Count&quot; END)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33966" oldID="kcap1564723484398_5847">
+            <saw:text>Annual Forecast Yearly Smrzd</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723659971_33967" oldID="kcap1564723484398_5848">
+            <saw:text>Forecast(u)</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:sql">&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Forecast for Fin Year No&quot; BETWEEN CAST(VALUEOF(&quot;RV_CURRENT_FIN_YEAR_STRING&quot;) AS INT) AND CAST(VALUEOF(&quot;RV_CURRENT_FIN_YEAR_STRING&quot;) AS INT) +9</sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Annual Forecast Yearly Smrzd&quot;.&quot;DHF&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Compliancy&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Ownership Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Rent Band&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Annual Forecast Yearly Smrzd&quot;.&quot;Rent Bill Client&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="3" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cdc6f7ac461b15c00"/>
+            <saw:edgeLayer type="column" columnID="cb25afd2ea9f2de4f"/>
+            <saw:edgeLayer type="column" columnID="cc7f0d0ae571d97a8"/>
+            <saw:edgeLayer type="column" columnID="c3cc78f1006ec65f7"/>
+            <saw:edgeLayer type="column" columnID="c2d61fc9bcb37161f"/>
+            <saw:edgeLayer type="column" columnID="ca33b778cd323ff25"/>
+            <saw:edgeLayer type="column" columnID="cc102487ae2c3d99a"/>
+            <saw:edgeLayer type="column" columnID="c7a8e42eea3ec522e"/>
+            <saw:edgeLayer type="column" columnID="cdf7b346e97141ce2"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723659971_33951" oldID="kcap1564723484398_5832">
+          <saw:text>Yearly Cumulative Achievements</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!2" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723659971_33952" oldID="kcap1564723484398_5833">
+          <saw:text>Yearly Cumulative Achievements (un-signed values)</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="lineBar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="300" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cdc6f7ac461b15c00"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c7a8e42eea3ec522e"/>
+          </saw:column>
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="cc102487ae2c3d99a"/>
+          </saw:column>
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="cdf7b346e97141ce2"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections displayAsSlider="true">
+          <saw:section>
+            <saw:columnRef columnID="cc7f0d0ae571d97a8"/>
+          </saw:section>
+        </saw:sections>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats syncAxis="true">
+        <saw:axisFormat axis="Y1">
+          <saw:scaleMarkers/>
+          <saw:scale showMajorTicks="true" majorTicks="2000" defaultTicks="true" scaleValues="datarangezoom"/>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723659971_33968" oldID="kcap1564723484398_5849">
+              <saw:text>No. of Achievements</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723659971_33969" oldID="kcap1564723484398_5850">
+              <saw:text>Financial Years</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="lineBarLine">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333" lineStyle="default" lineWidth="2" symbol="plus" symbolColor="#CC3333"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!3">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723659971_33953" oldID="kcap1564723484398_5834">
+          <saw:text>Yearly Stock Position</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!3">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!3" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723659971_33954" oldID="kcap1564723484398_5835">
+          <saw:text>Yearly Stock Position</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="lineBar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="300" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cdc6f7ac461b15c00"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c2d61fc9bcb37161f"/>
+          </saw:column>
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c3cc78f1006ec65f7"/>
+          </saw:column>
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="ca33b778cd323ff25"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats syncAxis="true">
+        <saw:axisFormat axis="Y1">
+          <saw:labels/>
+          <saw:textFormat/>
+          <saw:scale scaleValues="datarangezoom" defaultTicks="true"/>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723659971_33970" oldID="kcap1564723484398_5851">
+              <saw:text>No. of Properties</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723659971_33971" oldID="kcap1564723484398_5852">
+              <saw:text>Financial Years</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="lineBarLine">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333" lineStyle="plain" lineWidth="2" symbol="plus" symbolColor="#CC3333"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!4">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="viewSelector!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:viewSelector" name="viewSelector!1">
+      <saw:viewSelectorCaption position="left">
+        <saw:caption captionID="kcap1564723659971_33955" oldID="kcap1564723484398_5836">
+          <saw:text>Select View</saw:text>
+        </saw:caption>
+      </saw:viewSelectorCaption>
+      <saw:viewList>
+        <saw:viewItem type="view" name="compoundView!3"/>
+        <saw:viewItem type="view" name="compoundView!2"/>
+      </saw:viewList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf84858fa6134b9b7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Monthly Forecast Summarized&quot;.&quot;Rent Bill Client&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c00c4cae3725dc8e7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Monthly Forecast Summarized&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c00c4cae3725dc8e7_alba15e5c54c5b7f90">
+                <saw:action>
+                  <saw:actionName>Invoke a Browser Script</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Report</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                      <saw:prompt>Table</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="2" multiValues="false">
+                      <saw:prompt>Column</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="3" multiValues="false">
+                      <saw:prompt>Value</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Acquisitions/ACQ Dwelling Settlements/Acq Dwelling Settlements Detail</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>D Acq Dwelling Settlement Detail</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Management Area</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>USERSCRIPT.customGoNavEx</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723619889_27465" oldID="kcap1564723454969_1168">
+                  <saw:text>Settled - Current Month</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c00c4cae3725dc8e7"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c00c4cae3725dc8e7_alecabf44545318e6e">
+                <saw:action>
+                  <saw:actionName>Invoke a Browser Script</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Report</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                      <saw:prompt>Table</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="2" multiValues="false">
+                      <saw:prompt>Column</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>Value</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Acquisitions/ACQ Dwelling Settlements/Acq Dwelling Settlements Detail YTD</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>D Acq Dwelling Settlement Detail</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Management Area</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>USERSCRIPT.customGoNavEx</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723619889_27466" oldID="kcap1564723454969_1169">
+                  <saw:text>Settled - YTD</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c00c4cae3725dc8e7"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27423" oldID="kcap1564723454969_1126">
+            <saw:text>Management Area</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3c9304822b19ecad">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Monthly Forecast Summarized&quot;.&quot;DHF&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27424" oldID="kcap1564723454969_1127">
+            <saw:text>DHF</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+        <saw:dimensionSelection>
+          <saw:selectionStep stepID="1" type="startWith" category="member">
+            <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+              <saw:staticMemberGroup>
+                <saw:members xsi:type="saw:specialValueMembers">
+                  <saw:value specialValue="all"/>
+                </saw:members>
+              </saw:staticMemberGroup>
+            </saw:stepMembers>
+          </saw:selectionStep>
+        </saw:dimensionSelection>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1ef53b218a0415a0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c41b86c11c36e291e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Monthly Forecast Summarized&quot;.&quot;Ownership Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd072203fdc8b6c40" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; = @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot;) ELSE 0 END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cd072203fdc8b6c40_al7feb4a2fc60af1e5">
+                <saw:action>
+                  <saw:actionName>Invoke a Browser Script</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Report</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                      <saw:prompt>Table</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="2" multiValues="false">
+                      <saw:prompt>Column</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="3" multiValues="false">
+                      <saw:prompt>Value</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Acquisitions/ACQ Dwelling Settlements/Acq Dwelling Settlements Detail</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>D Acq Dwelling Settlement Detail</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>DHF Area</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>USERSCRIPT.customGoNavEx</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723619889_27467" oldID="kcap1564723454969_1170">
+                  <saw:text>Settled - Current Month</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c3c9304822b19ecad"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cd072203fdc8b6c40"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27425" oldID="kcap1564723454969_1128">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27426" oldID="kcap1564723454969_1129">
+            <saw:text>Settled Current Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cd072203fdc8b6c40_al6cb2b08b0ff2bf19">
+                  <saw:action>
+                    <saw:actionName>Acq Dwelling Settlements Detail</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Acquisitions/ACQ Dwelling Settlements/Acq Dwelling Settlements Detail</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723619889_27469" oldID="kcap1564723454969_1172">
+                    <saw:text>Settled - Current Month</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c87ed5d91909cdf8d" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; = @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Corp Plan&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c87ed5d91909cdf8d"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27427" oldID="kcap1564723454969_1130">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27428" oldID="kcap1564723454969_1131">
+            <saw:text>Monthly Corp Plan</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cee132de41ff47376">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; = @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot;) ELSE 0 END) / SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; = @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Corp Plan&quot;) END)) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27429" oldID="kcap1564723454969_1132">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27430" oldID="kcap1564723454969_1133">
+            <saw:text>Monthly Settled vs CP</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c75686e9ac80dda25" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; = @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Latest Ver&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c75686e9ac80dda25"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27431" oldID="kcap1564723454969_1134">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27432" oldID="kcap1564723454969_1135">
+            <saw:text>Monthly Latest Forecast</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce515ccbd11b9166e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; = @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot;) ELSE 0 END) / SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; = @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Latest Ver&quot;) END)) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27433" oldID="kcap1564723454969_1136">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27434" oldID="kcap1564723454969_1137">
+            <saw:text>Monthly Settled vs LF</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbf90702eb6e41ee5" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot;) ELSE 0 END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action" width="20px">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cbf90702eb6e41ee5_al8b24a8f799ba78a5">
+                <saw:action>
+                  <saw:actionName>Invoke a Browser Script</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Report</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                      <saw:prompt>Table</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="false" removable="true" order="2" multiValues="false">
+                      <saw:prompt>Column</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="false" removable="true" order="3" multiValues="false">
+                      <saw:prompt>Value</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Acquisitions/ACQ Dwelling Settlements/Acq Dwelling Settlements Detail YTD</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>D Acq Dwelling Settlement Detail</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>DHF Area</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>USERSCRIPT.customGoNavEx</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723619889_27468" oldID="kcap1564723454969_1171">
+                  <saw:text>Settled - YTD</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c3c9304822b19ecad"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cbf90702eb6e41ee5"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27435" oldID="kcap1564723454969_1138">
+            <saw:text>Year to Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27436" oldID="kcap1564723454969_1139">
+            <saw:text>Settled Year to Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cbf90702eb6e41ee5_al151e5d1ff1e51f00">
+                  <saw:action>
+                    <saw:actionName>Acq Dwelling Settlements Detail YTD</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Acquisitions/ACQ Dwelling Settlements/Acq Dwelling Settlements Detail YTD</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723619889_27470" oldID="kcap1564723454969_1173">
+                    <saw:text>Settled - YTD</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c13cb1917dd51886b" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Corp Plan&quot;) ELSE 0 END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c13cb1917dd51886b"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27437" oldID="kcap1564723454969_1140">
+            <saw:text>Year to Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27438" oldID="kcap1564723454969_1141">
+            <saw:text>YTD Corporate Plan</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4150cc69af4828b1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot;) ELSE 0 END) / SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Corp Plan&quot;) ELSE 0 END)) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27439" oldID="kcap1564723454969_1142">
+            <saw:text>Year to Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27440" oldID="kcap1564723454969_1143">
+            <saw:text>YTD Settled vs CP</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb6c1082f83776f1f" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Latest Ver&quot;) ELSE 0 END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cb6c1082f83776f1f"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27441" oldID="kcap1564723454969_1144">
+            <saw:text>Year to Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27442" oldID="kcap1564723454969_1145">
+            <saw:text>YTD Latest Forecast</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cba4804450de63ed8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot;) ELSE 0 END) / SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Latest Ver&quot;) ELSE 0 END)) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27443" oldID="kcap1564723454969_1146">
+            <saw:text>Year to Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27444" oldID="kcap1564723454969_1147">
+            <saw:text>YTD Settled vs LF</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0d28fc4170611732" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot;) ELSE 0 END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true" visibility="hidden">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27445" oldID="kcap1564723454969_1148">
+            <saw:text>Full Year</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27446" oldID="kcap1564723454969_1149">
+            <saw:text>Settled (YTD)</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9bb9d58a5a631562" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Corp Plan&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c9bb9d58a5a631562"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27447" oldID="kcap1564723454969_1150">
+            <saw:text>Full Year</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27448" oldID="kcap1564723454969_1151">
+            <saw:text>Annual Corporate Plan</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8cd3f9304ccd78b5" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot;) ELSE 0 END - CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Corp Plan&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27449" oldID="kcap1564723454969_1152">
+            <saw:text>Full Year</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27450" oldID="kcap1564723454969_1153">
+            <saw:text>Annual CP Variance</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf107f57a772620f4" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN  SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Latest Ver&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cf107f57a772620f4"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27451" oldID="kcap1564723454969_1154">
+            <saw:text>Full Year</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27452" oldID="kcap1564723454969_1155">
+            <saw:text>Annual Latest Forecast</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc988dcb507ed021d" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot;) ELSE 0 END - CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN  SUM(&quot;Monthly Forecast Summarized&quot;.&quot;Forecasted Acq-Latest Ver&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27453" oldID="kcap1564723454969_1156">
+            <saw:text>Full Year</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27454" oldID="kcap1564723454969_1157">
+            <saw:text>Annual LF Variance</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4dabd6877658758d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN &quot;Monthly Forecast Summarized&quot;.&quot;PCC Y/N&quot; ELSE 0 END) / SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN &quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot; ELSE 0 END)) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27455" oldID="kcap1564723454969_1158">
+            <saw:text>YTD PCC Loaded</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca943efc7a86924ed">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN &quot;Monthly Forecast Summarized&quot;.&quot;PCCE Y/N&quot; ELSE 0 END) / SUM(CASE WHEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Month-End Date&quot; BETWEEN &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year-Start Date&quot; AND @{v_month_for}{&#39;31-OCT-2012&#39;} AND &quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot; in (@{v_fin_year_for}{2013}) THEN &quot;Monthly Forecast Summarized&quot;.&quot;Achieved No of Acquisitions&quot; ELSE 0 END)) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723619889_27456" oldID="kcap1564723454969_1159">
+            <saw:text>YTD PCCE Loaded</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Monthly Forecast Summarized&quot;.&quot;Rent Bill Client&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval" default="DOD">v_rent_bill_client</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Monthly Forecast Summarized&quot;.&quot;Forecast Type&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Acquisitions</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Monthly Forecast Summarized&quot;.&quot;Forecast for Fin Year No&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval" default="2013">v_fin_year_for</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Monthly Forecast Summarized&quot;.&quot;Ownership Desc&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval" default="DHA Inventory">v_ownership_ds</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec paddingTop="0px"/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723619889_27416" oldID="kcap1564723454969_1119">
+          <saw:text>Table Layout</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" headingDisplay="table2Rows">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c00c4cae3725dc8e7"/>
+            <saw:edgeLayer type="column" columnID="c3c9304822b19ecad"/>
+            <saw:edgeLayer type="column" columnID="cd072203fdc8b6c40">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c87ed5d91909cdf8d"/>
+            <saw:edgeLayer type="column" columnID="cee132de41ff47376"/>
+            <saw:edgeLayer type="column" columnID="c75686e9ac80dda25"/>
+            <saw:edgeLayer type="column" columnID="ce515ccbd11b9166e"/>
+            <saw:edgeLayer type="column" columnID="cbf90702eb6e41ee5"/>
+            <saw:edgeLayer type="column" columnID="c13cb1917dd51886b"/>
+            <saw:edgeLayer type="column" columnID="c4150cc69af4828b1"/>
+            <saw:edgeLayer type="column" columnID="cb6c1082f83776f1f"/>
+            <saw:edgeLayer type="column" columnID="cba4804450de63ed8"/>
+            <saw:edgeLayer type="column" columnID="c0d28fc4170611732"/>
+            <saw:edgeLayer type="column" columnID="c9bb9d58a5a631562"/>
+            <saw:edgeLayer type="column" columnID="c8cd3f9304ccd78b5"/>
+            <saw:edgeLayer type="column" columnID="cf107f57a772620f4"/>
+            <saw:edgeLayer type="column" columnID="cc988dcb507ed021d"/>
+            <saw:edgeLayer type="column" columnID="c4dabd6877658758d"/>
+            <saw:edgeLayer type="column" columnID="ca943efc7a86924ed"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+      <saw:sectionContent>
+        <saw:displayFormat>
+          <saw:formatSpec wrapText="true"/>
+        </saw:displayFormat>
+      </saw:sectionContent>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723619889_27417" oldID="kcap1564723454969_1120">
+          <saw:text>DHF Level - Monthly</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!2"/>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="lineBar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="310" width="900">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723619889_27457" oldID="kcap1564723454969_1160">
+            <saw:text>Corporate Plan/Latest Forecast vs Settled (YTD) By Region</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c3c9304822b19ecad"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c0d28fc4170611732"/>
+          </saw:column>
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="c9bb9d58a5a631562"/>
+          </saw:column>
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="cf107f57a772620f4"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections displayAsSlider="false"/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats syncAxis="true">
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:labels rotate="-90" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+        </saw:axisFormat>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723619889_27460" oldID="kcap1564723454969_1163">
+              <saw:text>Settled Year to Date</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="lineBarLine">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#008000" lineStyle="plain" lineWidth="2" symbol="square"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="2"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333" lineStyle="plain" lineWidth="2" symbol="round"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="lineBar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="310" width="900">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default">
+          <saw:textFormat/>
+        </saw:dataLabels>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723619889_27458" oldID="kcap1564723454969_1161">
+            <saw:text>Corporate Plan/Latest Forecast vs Settled (YTD)</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories/>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="c9bb9d58a5a631562"/>
+          </saw:column>
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="cf107f57a772620f4"/>
+          </saw:column>
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c0d28fc4170611732"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections displayAsSlider="true">
+          <saw:section>
+            <saw:columnRef columnID="c3c9304822b19ecad"/>
+          </saw:section>
+        </saw:sections>
+      </saw:selections>
+      <saw:legendFormat position="right" transparentFill="true">
+        <saw:textFormat/>
+      </saw:legendFormat>
+      <saw:axesFormats syncAxis="true">
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:labels rotate="-90" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723619889_27461" oldID="kcap1564723454969_1164">
+              <saw:text>Month</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="Y1">
+          <saw:labels/>
+          <saw:textFormat/>
+          <saw:title mode="custom">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+            <saw:caption captionID="kcap1564723619889_27462" oldID="kcap1564723454969_1165">
+              <saw:text>No. of Dwellings</saw:text>
+            </saw:caption>
+          </saw:title>
+          <saw:scaleMarkers/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="lineBarLine">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#008000" lineStyle="plain" lineWidth="2" symbol="square"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="2"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333" lineStyle="plain" lineWidth="2" symbol="round"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!3">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!3"/>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723619889_27418" oldID="kcap1564723454969_1121">
+          <saw:text>National Level - Monthly</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!4">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723619889_27419" oldID="kcap1564723454969_1122">
+          <saw:text>DHF Level - YTD</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!3"/>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!3">
+      <saw:display type="lineBar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="310" width="900">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default">
+          <saw:textFormat/>
+        </saw:dataLabels>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723619889_27459" oldID="kcap1564723454969_1162">
+            <saw:text>Corporate Plan/Latest Forecast vs Settled By Month</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories/>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c0d28fc4170611732"/>
+          </saw:column>
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="c9bb9d58a5a631562"/>
+          </saw:column>
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="cf107f57a772620f4"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats syncAxis="true">
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:labels rotate="-90" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723619889_27463" oldID="kcap1564723454969_1166">
+              <saw:text>Month</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723619889_27464" oldID="kcap1564723454969_1167">
+              <saw:text>No. of Dwellings</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="lineBarLine">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#008000" lineStyle="default" lineWidth="2" symbol="square"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="2"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333" lineStyle="default" lineWidth="2" symbol="round"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!5">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="viewSelector!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723619889_27420" oldID="kcap1564723454969_1123">
+          <saw:text>View Selector</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!4"/>
+    <saw:view xsi:type="saw:viewSelector" name="viewSelector!1">
+      <saw:viewSelectorCaption position="left">
+        <saw:caption captionID="kcap1564723619889_27421" oldID="kcap1564723454969_1124">
+          <saw:text>Select Chart View</saw:text>
+        </saw:caption>
+      </saw:viewSelectorCaption>
+      <saw:viewList>
+        <saw:viewItem type="view" name="compoundView!3"/>
+        <saw:viewItem type="view" name="compoundView!2"/>
+        <saw:viewItem type="view" name="compoundView!4"/>
+      </saw:viewList>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723619889_27422" oldID="kcap1564723454969_1125">
+          <saw:text>&lt;script =&quot;text/javascript&quot;&gt;
+(function() {
+  // log all calls to setArray
+  var proxied = PTPCAct;
+  PTPCAct = function() {
+    console.log(this, arguments );
+    lstClick=arguments[1];
+    return proxied.apply( this, arguments );
+  };
+})();
+
+(function() {
+  // log all calls to setArray
+  var proxied = PTPCHAct;
+  PTPCHAct = function() {
+    console.log(this, arguments );
+    lstClick=arguments[1];
+    return proxied.apply( this, arguments );
+  };
+})();
+
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>    &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

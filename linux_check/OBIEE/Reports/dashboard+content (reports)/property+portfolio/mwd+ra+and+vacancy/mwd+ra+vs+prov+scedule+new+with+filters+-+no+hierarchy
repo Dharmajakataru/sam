@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160" xmlns:sawx="com.siebel.analytics.web/expression/v1.1"><saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Vacancy&quot;" withinHierarchy="true"><saw:columns><saw:column xsi:type="saw:hierarchicalColumn" columnID="ca5fad2063d0b2a15" hierarchyID="Region DHF" tableName="&quot;D DHF Region Location&quot;" dimensionID="Region DHF"><saw:hierarchyLevels><saw:hierarchyLevel levelID="National Total"/><saw:hierarchyLevel levelID="Region"/><saw:hierarchyLevel levelID="DHF"/></saw:hierarchyLevels></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c3a340ef45e6e770e"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF Region Location&quot;.&quot;Region&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c08de86797db702a7"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF Region Location&quot;.&quot;DHF Area&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c821e4924c2f0849e"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF Region Location&quot;.&quot;DHF Area&quot;</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>D DHF Region Location</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>DHF Area - Not Visible</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cbf39f59cb0909d45"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39;)) / (FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39;)) + FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;SR DOD Occup&#39;))) * 100</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true"><saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/></saw:formatSpec></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>% RA</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c5b09ab55a929addb"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING ( (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39; and not  ( IFNULL(&quot;D Vacancy N MWDRA&quot;.&quot;RA Approval Reason&quot;, &#39;NULL&#39;) in (&#39;DFCO&#39;, &#39;MGE&#39;) or (&quot;D Vacancy N MWDRA&quot;.&quot;Marital Status&quot; = &#39;MWOD&#39; and &quot;D Vacancy N MWDRA&quot;.&quot;Tenancy Categorisation&quot; = &#39;MWD&#39;)))))   /   (  FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING ( (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39; and not  ( IFNULL(&quot;D Vacancy N MWDRA&quot;.&quot;RA Approval Reason&quot;, &#39;NULL&#39;) in (&#39;DFCO&#39;, &#39;MGE&#39;) or (&quot;D Vacancy N MWDRA&quot;.&quot;Marital Status&quot; = &#39;MWOD&#39; and &quot;D Vacancy N MWDRA&quot;.&quot;Tenancy Categorisation&quot; = &#39;MWD&#39;)))))  +   FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;SR DOD Occup&#39;))  ) * 100</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true"><saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/></saw:formatSpec></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>% True RA</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c2c862fe54c07a4a3"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING ((&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39; and (&quot;D Vacancy N MWDRA&quot;.&quot;RA Approval Reason&quot; in (&#39;DFCO&#39;, &#39;MGE&#39;) or (&quot;D Vacancy N MWDRA&quot;.&quot;Marital Status&quot; = &#39;MWOD&#39; and &quot;D Vacancy N MWDRA&quot;.&quot;Tenancy Categorisation&quot; = &#39;MWD&#39;)))))</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true" interaction="action"><saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="c2c862fe54c07a4a3_al09e21e89b4079cc1"><saw:action><saw:actionName>Invoke a Browser Script</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false"><saw:prompt>Report</saw:prompt><saw:description/></saw:parameter><saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false"><saw:prompt>Table</saw:prompt><saw:description/></saw:parameter><saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false"><saw:prompt>Column</saw:prompt><saw:description/></saw:parameter><saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false"><saw:prompt>Value</saw:prompt><saw:description/></saw:parameter><saw:parameter name="6" type="string" mandatory="true" removable="true" order="4" multiValues="false"><saw:prompt>Table2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="7" type="string" mandatory="true" removable="true" order="5" multiValues="false"><saw:prompt>Column2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="8" type="string" mandatory="true" removable="true" order="6" multiValues="false"><saw:prompt>Value2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="9" type="string" mandatory="true" removable="true" order="7" multiValues="false"><saw:prompt>Table3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="10" type="string" mandatory="true" removable="true" order="8" multiValues="false"><saw:prompt>Column3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="11" type="string" mandatory="true" removable="true" order="9" multiValues="false"><saw:prompt>Value3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="12" type="string" mandatory="true" removable="true" order="10" multiValues="false"><saw:prompt>Table4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="13" type="string" mandatory="true" removable="true" order="11" multiValues="false"><saw:prompt>Value4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="14" type="string" mandatory="true" removable="true" order="12" multiValues="false"><saw:prompt>Enter Prompt Here...</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/MWD RA vs Prov Scedule New with Filters DT</saw:value></saw:assign><saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>RA Defacto Reason YN</saw:value></saw:assign><saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Y</saw:value></saw:assign><saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D DHF Region Location</saw:value></saw:assign><saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>DHF Area</saw:value></saw:assign><saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Rent Band</saw:value></saw:assign><saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="13" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Current Member GRE</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>USERSCRIPT.customGoNavEx1</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to Detail - DHF</saw:text></saw:caption><saw:paramMapping><saw:assign xsi:type="saw:anyTypeAssign" name="8" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c08de86797db702a7"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="11" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c10cc384b1a77405d"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="14" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c547420a8f6a96219"/></saw:mapping></saw:assign></saw:paramMapping></saw:actionLink></saw:actionLinks></saw:formatSpec><saw:conditionalDisplayFormats/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Defacto RA</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c72c43f7b6017201c"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING ((&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39; and not ( IFNULL(&quot;D Vacancy N MWDRA&quot;.&quot;RA Approval Reason&quot;, &#39;NULL&#39;) in (&#39;DFCO&#39;, &#39;MGE&#39;) or (&quot;D Vacancy N MWDRA&quot;.&quot;Marital Status&quot; = &#39;MWOD&#39; and &quot;D Vacancy N MWDRA&quot;.&quot;Tenancy Categorisation&quot; = &#39;MWD&#39;)))))</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true" interaction="action"><saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="c72c43f7b6017201c_al7e99b1ae687afdea"><saw:action><saw:actionName>Invoke a Browser Script</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false"><saw:prompt>Report</saw:prompt><saw:description/></saw:parameter><saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false"><saw:prompt>Table1</saw:prompt><saw:description/></saw:parameter><saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false"><saw:prompt>Column1</saw:prompt><saw:description/></saw:parameter><saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false"><saw:prompt>Value1</saw:prompt><saw:description/></saw:parameter><saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false"><saw:prompt>Table2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false"><saw:prompt>Column2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false"><saw:prompt>Value2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false"><saw:prompt>Table3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false"><saw:prompt>Column3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false"><saw:prompt>Value3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false"><saw:prompt>Enter Prompt Here...</saw:prompt><saw:description/></saw:parameter><saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false"><saw:prompt>Enter Prompt Here...</saw:prompt><saw:description/></saw:parameter><saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false"><saw:prompt>Enter Prompt Here...</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/MWD RA vs Prov Scedule New with Filters DT</saw:value></saw:assign><saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>RA Defacto Reason YN</saw:value></saw:assign><saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>N</saw:value></saw:assign><saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D DHF Region Location</saw:value></saw:assign><saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>DHF Area</saw:value></saw:assign><saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Rent Band</saw:value></saw:assign><saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Current Member GRE</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>USERSCRIPT.customGoNavEx1</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to detail - DHF</saw:text></saw:caption><saw:paramMapping><saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c08de86797db702a7"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="10" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c10cc384b1a77405d"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c547420a8f6a96219"/></saw:mapping></saw:assign></saw:paramMapping></saw:actionLink></saw:actionLinks></saw:formatSpec><saw:conditionalDisplayFormats/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>True RA</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c4f9f7535623fe059"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39;))</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true" interaction="action"><saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="c4f9f7535623fe059_al372b5c20584fe248"><saw:action><saw:actionName>Invoke a Browser Script</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false"><saw:prompt>Report</saw:prompt><saw:description/></saw:parameter><saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false"><saw:prompt>Table</saw:prompt><saw:description/></saw:parameter><saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false"><saw:prompt>Column</saw:prompt><saw:description/></saw:parameter><saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false"><saw:prompt>Value</saw:prompt><saw:description/></saw:parameter><saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false"><saw:prompt>Table2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false"><saw:prompt>Column2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false"><saw:prompt>Value2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false"><saw:prompt>Table3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false"><saw:prompt>Column3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false"><saw:prompt>Value3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false"><saw:prompt>Table4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false"><saw:prompt>Column4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false"><saw:prompt>Value4</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/MWD RA vs Prov Scedule New with Filters DT</saw:value></saw:assign><saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Trans Type</saw:value></saw:assign><saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>MWD RA</saw:value></saw:assign><saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D DHF Region Location</saw:value></saw:assign><saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>DHF Area</saw:value></saw:assign><saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Rent Band</saw:value></saw:assign><saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Current Member GRE</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>USERSCRIPT.customGoNavEx1</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to Detail - DHF Area</saw:text></saw:caption><saw:paramMapping><saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c08de86797db702a7"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="10" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c10cc384b1a77405d"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c547420a8f6a96219"/></saw:mapping></saw:assign></saw:paramMapping></saw:actionLink></saw:actionLinks></saw:formatSpec><saw:conditionalDisplayFormats/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Total RA</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="ce7cef98b63a289bb"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;SR DOD Occup&#39;))</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true" interaction="action"><saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="ce7cef98b63a289bb_alf666cd1cac409e3e"><saw:action><saw:actionName>Invoke a Browser Script</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false"><saw:prompt>Report</saw:prompt><saw:description/></saw:parameter><saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false"><saw:prompt>Table</saw:prompt><saw:description/></saw:parameter><saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false"><saw:prompt>Column</saw:prompt><saw:description/></saw:parameter><saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false"><saw:prompt>Value</saw:prompt><saw:description/></saw:parameter><saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false"><saw:prompt>Table2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false"><saw:prompt>Column2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false"><saw:prompt>Value2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false"><saw:prompt>Table3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false"><saw:prompt>Column3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false"><saw:prompt>Value3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false"><saw:prompt>Table4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false"><saw:prompt>Column4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false"><saw:prompt>Value4</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/MWD RA vs Prov Scedule New with Filters DT</saw:value></saw:assign><saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Trans Type</saw:value></saw:assign><saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>SR DOD Occup</saw:value></saw:assign><saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D DHF Region Location</saw:value></saw:assign><saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>DHF Area</saw:value></saw:assign><saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Rent Band</saw:value></saw:assign><saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Current Member GRE</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>USERSCRIPT.customGoNavEx1</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to Detail - DHF</saw:text></saw:caption><saw:paramMapping><saw:assign xsi:type="saw:anyTypeAssign" name="7" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c08de86797db702a7"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="10" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c10cc384b1a77405d"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c547420a8f6a96219"/></saw:mapping></saw:assign></saw:paramMapping></saw:actionLink></saw:actionLinks></saw:formatSpec><saw:conditionalDisplayFormats/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>SR Occupied</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c1d345a8f7e4ae3e8"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; in ( &#39;MWD RA&#39;, &#39;SR DOD Occup&#39;)))</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true" interaction="action"><saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="c1d345a8f7e4ae3e8_al262826ef57caffbd"><saw:action><saw:actionName>Invoke a Browser Script</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false"><saw:prompt>Report</saw:prompt><saw:description/></saw:parameter><saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false"><saw:prompt>Table</saw:prompt><saw:description/></saw:parameter><saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false"><saw:prompt>Column</saw:prompt><saw:description/></saw:parameter><saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false"><saw:prompt>Value</saw:prompt><saw:description/></saw:parameter><saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false"><saw:prompt>Operator</saw:prompt><saw:description/></saw:parameter><saw:parameter name="6" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Table2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="7" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Column2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="8" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Value2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="9" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Operator2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="10" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Table3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="11" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Column3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="12" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Value3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="13" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Operator3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="14" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Table4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="15" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Column4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="16" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Value4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="17" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Operator4</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/MWD RA vs Prov Scedule New with Filters DT</saw:value></saw:assign><saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Trans Type</saw:value></saw:assign><saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>SR DOD Occup;MWD RA</saw:value></saw:assign><saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>in</saw:value></saw:assign><saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D DHF Region Location</saw:value></saw:assign><saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>DHF Area</saw:value></saw:assign><saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>eq</saw:value></saw:assign><saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Rent Band</saw:value></saw:assign><saw:assign name="13" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>eq</saw:value></saw:assign><saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="15" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Current Member GRE</saw:value></saw:assign><saw:assign name="17" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>eq</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>USERSCRIPT.customGoNavEx3</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to detail - DHF</saw:text></saw:caption><saw:paramMapping><saw:assign xsi:type="saw:anyTypeAssign" name="8" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c08de86797db702a7"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="12" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c10cc384b1a77405d"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="16" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c547420a8f6a96219"/></saw:mapping></saw:assign></saw:paramMapping></saw:actionLink></saw:actionLinks></saw:formatSpec><saw:conditionalDisplayFormats/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Total Occupied</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c275bc1cfd168cecd" aggRule="sum"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;Total DOD SR&#39;))</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true" interaction="action"><saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="c275bc1cfd168cecd_alcabc8b666a391947"><saw:action><saw:actionName>Invoke a Browser Script</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false"><saw:prompt>Report</saw:prompt><saw:description/></saw:parameter><saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false"><saw:prompt>Table</saw:prompt><saw:description/></saw:parameter><saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false"><saw:prompt>Column</saw:prompt><saw:description/></saw:parameter><saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false"><saw:prompt>Value</saw:prompt><saw:description/></saw:parameter><saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false"><saw:prompt>Operator</saw:prompt><saw:description/></saw:parameter><saw:parameter name="6" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Table2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="7" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Column2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="8" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Value2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="9" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Operator2</saw:prompt><saw:description/></saw:parameter><saw:parameter name="10" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Table3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="11" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Column3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="12" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Value3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="13" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Operator3</saw:prompt><saw:description/></saw:parameter><saw:parameter name="14" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Table4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="15" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Column4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="16" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Value4</saw:prompt><saw:description/></saw:parameter><saw:parameter name="17" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>Operator4</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/MWD RA vs Prov Scedule New with Filters DT</saw:value></saw:assign><saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Trans Type</saw:value></saw:assign><saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Total DOD SR</saw:value></saw:assign><saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>eq</saw:value></saw:assign><saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D DHF Region Location</saw:value></saw:assign><saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>DHF Area</saw:value></saw:assign><saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>eq</saw:value></saw:assign><saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Rent Band</saw:value></saw:assign><saw:assign name="13" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>eq</saw:value></saw:assign><saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>D Vacancy N MWDRA</saw:value></saw:assign><saw:assign name="15" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>Proxy Current Member GRE</saw:value></saw:assign><saw:assign name="17" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>eq</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>USERSCRIPT.customGoNavEx3</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to detail - DHF</saw:text></saw:caption><saw:paramMapping><saw:assign xsi:type="saw:anyTypeAssign" name="8" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c08de86797db702a7"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="12" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c10cc384b1a77405d"/></saw:mapping></saw:assign><saw:assign xsi:type="saw:anyTypeAssign" name="16" fixed="true" hidden="true"><saw:mapping xsi:type="saw:contextColumnMappingType"><sawx:columnRefExpr columnID="c547420a8f6a96219"/></saw:mapping></saw:assign></saw:paramMapping></saw:actionLink></saw:actionLinks></saw:formatSpec><saw:conditionalDisplayFormats/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Total SR</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c14190eb7b9a7b345" aggRule="server"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">(FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;SR DOD Occup&#39;)) / (FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;Total DOD SR&#39;)))) * 100</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true"><saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/></saw:formatSpec></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>%SR Occupied</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c10cc384b1a77405d"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Vacancy N MWDRA&quot;.&quot;Proxy Rent Band&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c547420a8f6a96219"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Vacancy N MWDRA&quot;.&quot;Proxy Current Member GRE&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cc7b5de1a63d2591f"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39; then case when &quot;D Vacancy N MWDRA&quot;.&quot;Current Member Gre&quot; = &#39;RB1A&#39; then &#39;RB1&#39; else &quot;D Vacancy N MWDRA&quot;.&quot;Current Member Gre&quot; end else &quot;D Vacancy N MWDRA&quot;.&quot;Rent Band&quot; end</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Rent Band</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cb76946be72746ccf"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;DHA Stock Total&#39; then &quot;D Vacancy N MWDRA&quot;.&quot;SRC&quot; else case when &quot;D Vacancy N MWDRA&quot;.&quot;Current Member Gre&quot; = &#39;RB1A&#39; then &#39;RB1&#39; else &quot;D Vacancy N MWDRA&quot;.&quot;Current Member Gre&quot; end end</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Current Member GRE</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cbf5e735926071d10"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Vacancy N MWDRA&quot;.&quot;Current Member Gre&quot;</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>Current Member GRE w ith Total</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Current Member GRE</saw:text></saw:caption></saw:columnHeading><saw:dimensionSelection><saw:selectionStep stepID="1" type="startWith" category="member"><saw:stepMembers xsi:type="saw:staticMemberGroupDef"><saw:staticMemberGroup><saw:members xsi:type="saw:specialValueMembers"><saw:value specialValue="all"/></saw:members></saw:staticMemberGroup></saw:stepMembers></saw:selectionStep><saw:selectionStep type="add" stepID="2" category="customGroup"><saw:customGroup customGroupID="cbf5e735926071d10_g1" addToAllViews="true"><saw:caption><saw:text>Total</saw:text></saw:caption><saw:displayFormat><saw:formatSpec fontStyle="bold" wrapText="true"/></saw:displayFormat><saw:selectionStep type="add" stepID="3" category="member"><saw:stepMembers xsi:type="saw:staticMemberGroupDef"><saw:staticMemberGroup><saw:members xsi:type="saw:stringMembers"><saw:value>RB1</saw:value><saw:value>RB1A</saw:value><saw:value>RB2</saw:value><saw:value>RB3</saw:value><saw:value>RB4</saw:value><saw:value>RB5</saw:value></saw:members></saw:staticMemberGroup></saw:stepMembers><saw:stepMembers xsi:type="saw:staticMemberGroupDef"><saw:staticMemberGroup><saw:members xsi:type="saw:specialValueMembers"><saw:value specialValue="null"/></saw:members></saw:staticMemberGroup></saw:stepMembers></saw:selectionStep></saw:customGroup></saw:selectionStep></saw:dimensionSelection></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cb50590cd833d05b3"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING ( (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39; and not  ( IFNULL(&quot;D Vacancy N MWDRA&quot;.&quot;RA Approval Reason&quot;, &#39;NULL&#39;) in (&#39;DFCO&#39;, &#39;MGE&#39;) or (&quot;D Vacancy N MWDRA&quot;.&quot;Marital Status&quot; = &#39;MWOD&#39; and &quot;D Vacancy N MWDRA&quot;.&quot;Tenancy Categorisation&quot; = &#39;MWD&#39;)) ))) / (FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;MWD RA&#39;)) + FILTER(&quot;D Vacancy N MWDRA&quot;.&quot;Trans Count&quot; USING (&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot; = &#39;SR DOD Occup&#39;))) * 100</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>D Vacancy N MWDRA</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>RA Non Defacto - As % of Total Occupied</saw:text></saw:caption></saw:columnHeading></saw:column></saw:columns><saw:filter><sawx:expr xsi:type="sawx:logical" op="and"><sawx:expr xsi:type="sawx:list" op="in"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Vacancy N MWDRA&quot;.&quot;Trans Type&quot;</sawx:expr><sawx:expr xsi:type="xsd:string">MWD RA</sawx:expr><sawx:expr xsi:type="xsd:string">SR DOD Occup</sawx:expr><sawx:expr xsi:type="xsd:string">Total DOD SR</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF Region Location&quot;.&quot;Region&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF Region Location&quot;.&quot;DHF Area&quot;</sawx:expr></sawx:expr></sawx:expr></saw:filter></saw:criteria><saw:views currentView="5"><saw:view xsi:type="saw:compoundView" name="compoundView!1"><saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1"><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!2"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="pivotTableView!3"/></saw:cvRow></saw:cvTable><saw:viewCaption><saw:caption><saw:text>Main Pivot</saw:text></saw:caption></saw:viewCaption></saw:view><saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none"><saw:viewCaption><saw:caption><saw:text>Title: RA Occupation Breakdown</saw:text></saw:caption></saw:viewCaption><saw:title><saw:caption fmt="text"><saw:text>Daily RA Occupation Breakdown By Members Posted Location</saw:text></saw:caption></saw:title><saw:displayFormat><saw:formatSpec wrapText="true"/></saw:displayFormat></saw:view><saw:view xsi:type="saw:pivotTableView" name="pivotTableView!3" scrollingEnabled="false" rowsPerPage="1000"><saw:viewCaption><saw:caption><saw:text>Pivot Table: Main</saw:text></saw:caption></saw:viewCaption><saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"><saw:displayGrandTotals><saw:displayGrandTotal id="gt_section" grandTotalPosition="none"/></saw:displayGrandTotals></saw:edge><saw:edge axis="row" showColumnHeader="true"><saw:displayGrandTotals><saw:displayGrandTotal id="gt_row" grandTotalPosition="before"/></saw:displayGrandTotals><saw:edgeLayers><saw:edgeLayer type="column" columnID="ca5fad2063d0b2a15"><saw:drillState><saw:drillStep drillType="down"><saw:QDR><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:groupType><saw:hierarchyMembers><saw:hierarchyLevelMembers><saw:hierarchyLevel levelID="National Total"/><saw:members xsi:type="saw:integerMembers"><saw:value>1</saw:value></saw:members></saw:hierarchyLevelMembers></saw:hierarchyMembers></saw:staticMemberGroup><saw:target><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:target></saw:QDR><saw:selectionGroups><saw:selectionGroup columnID="ca5fad2063d0b2a15" groupID="0"/></saw:selectionGroups></saw:drillStep><saw:drillStep drillType="down"><saw:QDR><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:groupType><saw:hierarchyMembers><saw:hierarchyLevelMembers><saw:hierarchyLevel levelID="Region"/><saw:members xsi:type="saw:stringMembers"><saw:value>Hunter Region</saw:value></saw:members></saw:hierarchyLevelMembers></saw:hierarchyMembers></saw:staticMemberGroup><saw:target><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:target></saw:QDR><saw:selectionGroups><saw:selectionGroup columnID="ca5fad2063d0b2a15" groupID="0"/></saw:selectionGroups><saw:drillParents><saw:drillParent columnID="ca5fad2063d0b2a15" levelID="National Total"><saw:members xsi:type="saw:integerMembers"><saw:value>1</saw:value></saw:members></saw:drillParent></saw:drillParents></saw:drillStep><saw:drillStep drillType="down"><saw:QDR><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:groupType><saw:hierarchyMembers><saw:hierarchyLevelMembers><saw:hierarchyLevel levelID="Region"/><saw:members xsi:type="saw:stringMembers"><saw:value>North Queensland Region</saw:value></saw:members></saw:hierarchyLevelMembers></saw:hierarchyMembers></saw:staticMemberGroup><saw:target><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:target></saw:QDR><saw:selectionGroups><saw:selectionGroup columnID="ca5fad2063d0b2a15" groupID="0"/></saw:selectionGroups><saw:drillParents><saw:drillParent columnID="ca5fad2063d0b2a15" levelID="National Total"><saw:members xsi:type="saw:integerMembers"><saw:value>1</saw:value></saw:members></saw:drillParent></saw:drillParents></saw:drillStep><saw:drillStep drillType="down"><saw:QDR><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:groupType><saw:hierarchyMembers><saw:hierarchyLevelMembers><saw:hierarchyLevel levelID="Region"/><saw:members xsi:type="saw:stringMembers"><saw:value>Riverina Region</saw:value></saw:members></saw:hierarchyLevelMembers></saw:hierarchyMembers></saw:staticMemberGroup><saw:target><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:target></saw:QDR><saw:selectionGroups><saw:selectionGroup columnID="ca5fad2063d0b2a15" groupID="0"/></saw:selectionGroups><saw:drillParents><saw:drillParent columnID="ca5fad2063d0b2a15" levelID="National Total"><saw:members xsi:type="saw:integerMembers"><saw:value>1</saw:value></saw:members></saw:drillParent></saw:drillParents></saw:drillStep><saw:drillStep drillType="down"><saw:QDR><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:groupType><saw:hierarchyMembers><saw:hierarchyLevelMembers><saw:hierarchyLevel levelID="Region"/><saw:members xsi:type="saw:stringMembers"><saw:value>South Queensland Region</saw:value></saw:members></saw:hierarchyLevelMembers></saw:hierarchyMembers></saw:staticMemberGroup><saw:target><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:target></saw:QDR><saw:selectionGroups><saw:selectionGroup columnID="ca5fad2063d0b2a15" groupID="0"/></saw:selectionGroups><saw:drillParents><saw:drillParent columnID="ca5fad2063d0b2a15" levelID="National Total"><saw:members xsi:type="saw:integerMembers"><saw:value>1</saw:value></saw:members></saw:drillParent></saw:drillParents></saw:drillStep><saw:drillStep drillType="down"><saw:QDR><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:groupType><saw:hierarchyMembers><saw:hierarchyLevelMembers><saw:hierarchyLevel levelID="Region"/><saw:members xsi:type="saw:stringMembers"><saw:value>Sydney Region</saw:value></saw:members></saw:hierarchyLevelMembers></saw:hierarchyMembers></saw:staticMemberGroup><saw:target><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:target></saw:QDR><saw:selectionGroups><saw:selectionGroup columnID="ca5fad2063d0b2a15" groupID="0"/></saw:selectionGroups><saw:drillParents><saw:drillParent columnID="ca5fad2063d0b2a15" levelID="National Total"><saw:members xsi:type="saw:integerMembers"><saw:value>1</saw:value></saw:members></saw:drillParent></saw:drillParents></saw:drillStep><saw:drillStep drillType="down"><saw:QDR><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:groupType><saw:hierarchyMembers><saw:hierarchyLevelMembers><saw:hierarchyLevel levelID="Region"/><saw:members xsi:type="saw:stringMembers"><saw:value>Victorian Region</saw:value></saw:members></saw:hierarchyLevelMembers></saw:hierarchyMembers></saw:staticMemberGroup><saw:target><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:target></saw:QDR><saw:selectionGroups><saw:selectionGroup columnID="ca5fad2063d0b2a15" groupID="0"/></saw:selectionGroups><saw:drillParents><saw:drillParent columnID="ca5fad2063d0b2a15" levelID="National Total"><saw:members xsi:type="saw:integerMembers"><saw:value>1</saw:value></saw:members></saw:drillParent></saw:drillParents></saw:drillStep><saw:drillStep drillType="down"><saw:QDR><saw:staticMemberGroup><saw:groupType><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:groupType><saw:hierarchyMembers><saw:hierarchyLevelMembers><saw:hierarchyLevel levelID="Region"/><saw:members xsi:type="saw:stringMembers"><saw:value>West Australia Region</saw:value></saw:members></saw:hierarchyLevelMembers></saw:hierarchyMembers></saw:staticMemberGroup><saw:target><sawx:columnRefExpr columnID="ca5fad2063d0b2a15"/></saw:target></saw:QDR><saw:selectionGroups><saw:selectionGroup columnID="ca5fad2063d0b2a15" groupID="0"/></saw:selectionGroups><saw:drillParents><saw:drillParent columnID="ca5fad2063d0b2a15" levelID="National Total"><saw:members xsi:type="saw:integerMembers"><saw:value>1</saw:value></saw:members></saw:drillParent></saw:drillParents></saw:drillStep></saw:drillState></saw:edgeLayer><saw:edgeLayer type="column" columnID="c821e4924c2f0849e" visibility="hidden"><saw:levels><saw:level><saw:displaySubTotal id="st_c821e4924c2f0849e" subTotalPosition="after"/></saw:level></saw:levels></saw:edgeLayer><saw:edgeLayer type="column" columnID="c10cc384b1a77405d"><saw:levels><saw:level><saw:displaySubTotal id="st_c10cc384b1a77405d" subTotalPosition="after"/></saw:level></saw:levels></saw:edgeLayer><saw:edgeLayer type="column" columnID="c547420a8f6a96219"/></saw:edgeLayers></saw:edge><saw:edge axis="column" showColumnHeader="rollover"><saw:displayGrandTotals><saw:displayGrandTotal id="gt_column" grandTotalPosition="none"/></saw:displayGrandTotals><saw:edgeLayers><saw:edgeLayer type="measure"/></saw:edgeLayers></saw:edge></saw:edges><saw:measuresList><saw:measure columnID="cbf39f59cb0909d45"/><saw:measure columnID="c5b09ab55a929addb"/><saw:measure columnID="c2c862fe54c07a4a3"/><saw:measure columnID="c72c43f7b6017201c"/><saw:measure columnID="c4f9f7535623fe059"/><saw:measure columnID="ce7cef98b63a289bb"/><saw:measure columnID="c1d345a8f7e4ae3e8"/><saw:measure columnID="c275bc1cfd168cecd"/><saw:measure columnID="c14190eb7b9a7b345"/></saw:measuresList></saw:view><saw:view xsi:type="saw:htmlview" name="htmlview!1"><saw:viewCaption><saw:caption><saw:text>JS required for CustomGoNavEx</saw:text></saw:caption></saw:viewCaption><saw:staticText><saw:caption fmt="html"><saw:text>&lt;script =&quot;text/javascript&quot;&gt;
+(function() {
+  // log all calls to setArray
+  var proxied = PTPCAct;
+  PTPCAct = function() {
+    console.log(this, arguments );
+    lstClick=arguments[1];
+    return proxied.apply( this, arguments );
+  };
+})();
+
+(function() {
+  // log all calls to setArray
+  var proxied = PTPCHAct;
+  PTPCHAct = function() {
+    console.log(this, arguments );
+    lstClick=arguments[1];
+    return proxied.apply( this, arguments );
+  };
+})();
+
+
+
+(function() {
+  // log all calls to setArray
+  var proxied = PTPBAct;
+  PTPBAct = function() {
+    console.log(this, arguments );
+    lstClick=arguments[1];
+    return proxied.apply( this, arguments );
+  };
+})();
+
+&lt;/script&gt;</saw:text></saw:caption></saw:staticText></saw:view><saw:view xsi:type="saw:htmlview" name="htmlview!2"><saw:viewCaption><saw:caption><saw:text>JS Override</saw:text></saw:caption></saw:viewCaption><saw:staticText><saw:caption fmt="html"><saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+
+//if(!window.saw_viewhelper_js){
+
+saw_viewhelper_js=1;
+if(typeof(saw)==&quot;undefined&quot;){saw=function(){}}
+var strPortletIDReporPrefix=&quot;m:portlet~r:&quot;;
+
+getIdsMapElementId=function(b){var a=b.indexOf(strPortletIDReporPrefix);
+if(a!=-1){b=b.substr(a+strPortletIDReporPrefix.length,b.length-a-strPortletIDReporPrefix.length)}a=b.indexOf(&quot;~&quot;);
+if(a!=-1){b=b.substr(0,a)}return b}
+
+getEffectiveID=function(b,d){if(d==undefined||d==null||d.length==0){return b}var a=getIdsMapElementId(d);
+vDiv=document.getElementById(a);
+if(vDiv==undefined||vDiv==null){return b}var c=vDiv.getAttribute(&quot;Effective_&quot;+b+&quot;_ID&quot;);
+if(c!=null){return c}return b}
+
+HereLink=function(c,a,b){
+if(typeof(CompoundViewEditor)!=&quot;undefined&quot;){CompoundViewEditor.refreshData()}else{if(typeof(TableViewEditor)!=&quot;undefined&quot;){TableViewEditor.onRefresh(&quot;idView&quot;)}else{if(typeof(PivotViewEditor)!=&quot;undefined&quot;){XUIPreviewer.onClick(&quot;idPivotPreview&quot;)}else{obips.views.ViewController.handleViewAction(&quot;Refresh&quot;,c,(b?{ViewState:b}:null),null,null,{isCumulative:true})}}}
+}
+
+GetMySearchID=function(a){while(a&amp;&amp;!((a.tagName==&quot;DIV&quot;||a.tagName==&quot;TD&quot;)&amp;&amp;a.getAttribute(&quot;sid&quot;)!=null)){a=saw.getParentElement(a)}if(a){return a.getAttribute(&quot;sid&quot;)}else{return&quot;&quot;}}
+
+GetMyViewID=function(a){while(a&amp;&amp;!((a.tagName==&quot;DIV&quot;||a.tagName==&quot;TD&quot;)&amp;&amp;a.getAttribute(&quot;vid&quot;)!=null)){a=saw.getParentElement(a)}if(a){return a.getAttribute(&quot;vid&quot;)}else{return&quot;&quot;}}
+
+GetMyPromptSearchID=function(a){while(a&amp;&amp;!((a.tagName==&quot;DIV&quot;||a.tagName==&quot;TD&quot;)&amp;&amp;a.getAttribute(&quot;sid&quot;)!=null)){a=saw.getParentElement(a)}if(a){return a.getAttribute(&quot;pid&quot;)}else{return&quot;&quot;}}
+
+PortalPageNav=function(b,e,j){
+b=saw.getEvent(b);
+var g=new NavigateInfo();
+g.SetSearchID(GetMySearchID(saw.getEventTarget(b)));
+g.SetPromptSearchID(GetMyPromptSearchID(saw.getEventTarget(b)));
+g.SetViewID(GetMyViewID(saw.getEventTarget(b)));
+g.SetTargets(new Array(new Array(NQWNavPortal,e,j)));
+var a=0;
+for(var f=3;(f+2&lt;arguments.length)&amp;&amp;(a&lt;10);f+=3){
+	var h=arguments[f]
+	var d=arguments[f+1]
+	var c=arguments[f+2]
+	if(c){g.AddValue(&quot;eq&quot;,NQMakeFormula(h,d),c)}++a
+	}
+g.oNavObject=g;
+NQNavigate(b,g);
+}
+
+PortalNav=function(e,c,a,d,b){PortalPageNav(e,c,null,a,d,b)}
+
+NavigateInfo_SetPortal=function(c,a,b){
+this.sPortal=c;
+this.sPage=a;
+this.sIsMeasure=(null!=b)?b:&quot;false&quot;
+}
+
+NavigateInfo_SetReportPath=function(a,b){this.sPath=a;
+this.sIsMeasure=(null!=b)?b:&quot;false&quot;}
+
+NavigateInfo_SetActionLink=function(a,b,d,c){this.sSWEView=a
+this.sSWEApplet=b;
+this.sSWESrcColumnID=d;
+this.sSWESrcFormula=c}
+
+NQFixTableName=function(a){if(a.search(/\s/)!=-1){a=&#39;&quot;&#39;+a+&#39;&quot;&#39;}return a}
+
+NavigateInfo_AddValue=function(a,b,c){this.AddCodeValue(a,b,c)}
+
+NavigateInfo_AddCodeValue=function(b,a,e,c){
+var d=new Object();
+d.sFormula=a;
+if(c){d.sCodeFormula=c}
+if(e==null){e=&quot;*NQ_NULL*&quot;}
+if(e==&quot;*NQ_NULL*&quot;){
+	d.sOp=(b==&quot;nin&quot;||b==&quot;neq&quot;)?&quot;nnull&quot;:&quot;null&quot;
+}else{
+	d.sOp=b;
+}
+d.sValue=e;
+this.vValues[this.vValues.length]=d;
+}
+
+
+NavigateInfo_SetSearchID=function(a){this.sSearchID=a}
+NavigateInfo_SetPromptSearchID=function(a){this.sPromptSearchID=a}
+NavigateInfo_SetViewID=function(a){this.sViewID=a}
+NavigateInfo_SetTargets=function(a){this.vTargets=a}
+NavigateInfo_setIsNewWindow=function(a){this.sWindowTarget=a}
+
+NavigateInfo=function(){
+	this.SetReportPath=NavigateInfo_SetReportPath;
+	this.SetPortal=NavigateInfo_SetPortal;
+	this.SetActionLink=NavigateInfo_SetActionLink;
+	this.AddValue=NavigateInfo_AddValue;
+	this.SetSearchID=NavigateInfo_SetSearchID;
+	this.SetPromptSearchID=NavigateInfo_SetPromptSearchID;
+	this.SetViewID=NavigateInfo_SetViewID;
+	this.SetTargets=NavigateInfo_SetTargets;
+	this.AddCodeValue=NavigateInfo_AddCodeValue;
+	this.setIsNewWindow=NavigateInfo_setIsNewWindow;
+	this.sPath=null;
+	this.sPortal=null;
+	this.sPage=null;
+	this.sIsMeasure=null;
+	this.sWindowTarget=&quot;_self&quot;;
+	this.sSWEView=null;
+	this.sSWEApplet=null;
+	this.sSWESrcColumnID=null;
+	this.sSWESrcFormula=null;
+	this.vValues=new Array();
+	this.vTargets=null;
+}
+
+NQNavigate=function(a,c,e){var f=c.oNavObject.vTargets;
+var b=&quot;NQNavigateHandler(&quot;+c.sJSObjName+&quot;,&quot;;
+var d=c.oNavObject.sSWEView!=null;
+if(d){NQNavigateHandler(c,null);
+return false}if(f.length==1){NQNavigateHandler(c,0);
+return false}return false}
+
+
+generateColumnFormulaXMlNode=function(a,b,e){var c=XUICreateElement(saw.xml.kSawNamespace,&quot;columnFormula&quot;);
+c.setAttribute(&quot;formulaUse&quot;,b);
+var d=XUICreateElement(saw.xml.kSawxNamespace,&quot;expr&quot;);
+d.setAttribute(&quot;xsi:type&quot;,&quot;sawx:sqlExpression&quot;);
+XUISetElementText(d,e);
+c.appendChild(d);
+a.appendChild(c)}
+
+setExprLHSXMlForMappedColumn=function(b,a,c,d){var e=XUICreateElement(saw.xml.kSawxNamespace,&quot;expr&quot;);
+e.setAttribute(&quot;xsi:type&quot;,&quot;sawx:columnExpression&quot;);
+e.setAttribute(&quot;formulaUse&quot;,d?&quot;code&quot;:&quot;display&quot;);
+generateColumnFormulaXMlNode(e,&quot;display&quot;,a);
+b.appendChild(e)}
+
+setExprLHSXMlForUnMappedColumn=function(b,c){var a=XUICreateElement(saw.xml.kSawxNamespace,&quot;expr&quot;);
+a.setAttribute(&quot;xsi:type&quot;,&quot;sawx:sqlExpression&quot;);
+XUISetElementText(a,c);
+b.appendChild(a)}
+
+NQNavigateHandler=function(h,v){
+	NQWClearActiveMenu();
+	var k=h.oNavObject;
+	var m=k.sSWEView!=null;
+	var l=Math.min(k.vValues.length,64);
+	if(m){if(k.sNavValue!=&quot;&quot;){NQSWENav(k.sSWEView,k.sSWEApplet,k.sNavValue)}return}var g=k.vTargets[v];
+	g[0](g,k);
+	var n=k.sPortal!=null;
+	var u=XUICreateElement(saw.xml.kSawxNamespace,&quot;expr&quot;);
+	if(l&gt;0){u=XUICreateElement(saw.xml.kSawxNamespace,&quot;expr&quot;);
+	u.setAttribute(&quot;xmlns:xsi&quot;,&quot;http://www.w3.org/2001/XMLSchema-instance&quot;);
+	u.setAttribute(&quot;xsi:type&quot;,&quot;sawx:logical&quot;);
+	u.setAttribute(&quot;op&quot;,&quot;and&quot;);
+	for(var o=0;o!=l;++o){
+		var a=k.vValues[o];
+		if(!k.navColType||k.navColType[o]==false){
+			var c=XUIAppendNewElement(u,saw.xml.kSawxNamespace,&quot;expr&quot;);
+			XUISetXsiType(c,saw.xml.kSawxNamespace,&quot;comparison&quot;);
+//			XUISetAttributeString(c,&quot;op&quot;,(null!=a.sOp&amp;&amp;a.sOp==&quot;null&quot;)?&quot;null&quot;:&quot;equal&quot;);
+			XUISetAttributeString(c,&quot;op&quot;,(null!=a.sOp&amp;&amp;a.sOp==&quot;null&quot;)?&quot;null&quot;:a.sOp);
+			var r=(a.sCodeFormula!=null);
+			if(r){setExprLHSXMlForMappedColumn(c,a.sFormula,a.sCodeFormula,true)}
+			else{setExprLHSXMlForUnMappedColumn(c,a.sFormula)}
+			//check for multiple values for &#39;IN&#39; operator
+			if(a.sOp==&quot;in&quot;||a.sOp==&quot;notIn&quot;){
+				var vx=a.sValue.split(&quot;;&quot;);
+				for(var i=0;i&lt;vx.length;i++) {
+					if(null==a.sOp||a.sOp!=&quot;null&quot;)
+						{
+						var q=XUIAppendNewElement(c,saw.xml.kSawxNamespace,&quot;expr&quot;);
+						XUISetXsiType(q,saw.xml.kSawxNamespace,&quot;untypedLiteral&quot;);
+						XUISetElementText(q,vx[i])
+					}
+				}
+			} else {
+				if(null==a.sOp||a.sOp!=&quot;null&quot;){var q=XUIAppendNewElement(c,saw.xml.kSawxNamespace,&quot;expr&quot;);
+				XUISetXsiType(q,saw.xml.kSawxNamespace,&quot;untypedLiteral&quot;);
+				XUISetElementText(q,a.sValue)}
+			}
+		} else{
+			if(k.navColType&amp;&amp;o&lt;k.navColType.length&amp;&amp;k.navColType[o]==true){
+				var p=obips.XMLDOM.parseXML(a.sValue);
+				var d=obips.XMLDOM.selectSingleNode(p,&quot;sawx:expr&quot;);
+				if(d){u.appendChild(d.cloneNode(true))}
+			}
+		}
+	}
+
+	if(l==1){u=u.firstChild}}var f={reloadInplace:false,commandRequest:&quot;go&quot;};
+	var s={};
+	s.Path=k.sPath;
+	s.ViewID=&quot;&quot;;
+	var b=document.getElementById(&quot;idPageID&quot;);
+	if(b){s.PageID=b.getAttribute(&quot;pageID&quot;)}if(l&gt;0){s.P0=saw.getXmlText(u)}s.P19=k.sSearchID;
+	s.P17=k.sPromptSearchID;
+	s.P16=&quot;NavRuleDefault&quot;;
+	s.NavFromViewID=k.sViewID;
+	if(n){f.command=&quot;Dashboard&quot;;
+	f.workspaceModule=&quot;biee.dashboards&quot;;
+	s.PortalPath=k.sPortal;
+	s.P1=&quot;dashboard&quot;;
+	if(k.sPage){s.Page=k.sPage}else{s.Page=&quot;&quot;}}else{var e=k.sViewID.substr(0,k.sViewID.indexOf(&quot;~v:&quot;)==-1?k.sViewID.length:k.sViewID.indexOf(&quot;~v:&quot;));
+	var j=document.getElementById(e+&quot;Result&quot;);
+	if(j){s.P18=j.getAttribute(&quot;options&quot;).replace(new RegExp(&quot;s&quot;,&quot;gi&quot;),&quot;&quot;)}}f.mobileNav=n?&quot;dashboard&quot;:&quot;report&quot;;
+	f.targetWindow=k.sWindowTarget;
+if(s.P0) console.log(&quot;s.P0=&quot;+s.P0);
+	obips.views.ViewController.handleViewAction(&quot;Navigate&quot;,k.sViewID,s,f,null,{canChangeStateId:false,requireUpToDateStateId:false});
+}
+
+
+GoNav=function(f,d,a,e,c,b){GoNavEx(f,d,b,a,e,c)}
+
+NQMakeFormula=function(b,a){return NQFixTableName(b)+&quot;.&quot;+NQFixTableName(a)}
+
+GoNavEx=function(a,c,b,h,o,p,g,n,m,f,l,k,e,j,i){
+a=saw.getEvent(a);
+var d=new NavigateInfo();
+d.SetTargets(new Array(new Array(NQWNavReport,c)));
+d.SetSearchID(GetMySearchID(saw.getEventTarget(a)));
+d.SetPromptSearchID(GetMyPromptSearchID(saw.getEventTarget(a)));
+d.SetViewID(GetMyViewID(saw.getEventTarget(a)));
+d.setIsNewWindow(b);
+if(p){d.AddValue(&quot;eq&quot;,NQMakeFormula(h,o),p)}
+if(m){d.AddValue(&quot;eq&quot;,NQMakeFormula(g,n),m)}
+if(k){d.AddValue(&quot;eq&quot;,NQMakeFormula(f,l),k)}
+if(i){d.AddValue(&quot;eq&quot;,NQMakeFormula(e,j),i)}
+d.oNavObject=d;
+NQNavigate(a,d);
+}
+
+NQWNavReport=function(a,b){b.SetReportPath(a[1],a[2])}
+NQWNavPortal=function(a,b){b.SetPortal(a[1],a[2],a[3])}
+NQWNavActionLink=function(a,b){b.SetActionLink(a[1],a[2],a[3],a[4])}
+NQSWENav=function(a,c,d){try{top.SWEPersonalizationGotoview(a,&quot;SWEPostnApplet=&quot;+saw.encodeURIComponent(c)+&quot;&amp;SWEPostnRowId=&quot;+saw.encodeURIComponent(d)+&quot;&amp;SWEReloadFrames=0&quot;)}catch(b){}}
+
+saw.doDownload=function(b){var a=new obips.DownloadGuard(b)}
+
+saw._download=function(a){
+var e=a.url;
+var f=a.viewname;
+var g=a.id;
+var b=saw.view.getClientStateManager();
+var d=b.getCurrentStateXmlAsString();
+if(f!=null){e=e+&quot;&amp;ViewName=&quot;+f}
+var c=saw.createFormFromString(e);
+saw.addHiddenInput(c,&quot;DownloadId&quot;,g);
+if(d){saw.addHiddenInput(c,&quot;clientStateXml&quot;,d)}
+if(is_ie7){
+	c.target=&quot;_blank&quot;
+} else {
+	if(is_ie){
+		saw.createHiddenIFrame(&quot;sawIEDownload&quot;,&quot;sawIEDownload&quot;,null);
+		c.target=&quot;sawIEDownload&quot;;
+	} else {
+		saw.createHiddenIFrame(&quot;sawMozDownload&quot;,&quot;sawMozDownload&quot;,null);
+		c.target=&quot;sawMozDownload&quot;;
+	}
+}
+c.submit();
+}
+
+Download=function(a,b){saw.doDownload({url:a,viewname:b,downloadFunc:saw._download})}
+
+saw.printAnalysis=function(g,c,b){
+if(c){g+=&quot;&amp;Format=&quot;+c}
+var f=saw.createFormFromString(g);
+saw.addHiddenInput(f,&quot;Action&quot;,&quot;print&quot;);
+b=saw.getEvent(b);
+var a=saw.getEventCurrentTarget(b).target||&quot;_blank&quot;;
+f.target=a;
+var d=saw.view.getClientStateManager();
+var e=d.getCurrentStateXmlAsString();
+if(e){saw.addHiddenInput(f,&quot;clientStateXml&quot;,e)}
+f.submit();
+}
+
+ViewBack=function(e,a,c){
+var d={};
+if(&quot;PromptRestart&quot;==a){d={ignoreClientStateXml:true}}
+if(c==null){
+	var b=obips.views.ViewController.getController(e);
+	if(b){c=b.getViewEnvParam(&quot;ViewState&quot;)}
+}
+obips.views.ViewController.handleViewAction(a,e,{ViewState:c},d)}
+
+ModifyReport=function(f,d){
+	if(NQWIsInAnswers()){
+		if(parent.saw&amp;&amp;parent.saw.runThisURL){parent.saw.runThisURL(f)}else{parent.location.href=f}
+	}
+	else{
+		var e={workspaceModule:&quot;biee.answers&quot;,ensureFreshUrl:true};
+		var b=saw.getSessionInfos().user.prefs.getValue(&quot;defaultAnalysisMode&quot;);
+		if(saw.getSessionInfos().isEnableSection508()||(b==&quot;composer&quot;&amp;&amp;saw.catalog.getPrivilege(&quot;canUseBIComposer&quot;)&amp;&amp;saw.catalog.getPrivilege(&quot;biComposerEnabled&quot;))){
+			e={workspaceModule:&quot;biee.answers&quot;,targetWindow:&quot;_blank&quot;};
+			var c=saw.createFormFromString(f);
+			if(saw.getSessionInfos().isEnableSection508()){
+				f=saw.getSessionInfos().getProperty(&quot;biComposerContext&quot;)+&quot;/faces/answersWizard.jspx?accMode=screenReader&quot;;
+			} else {
+				f=saw.getSessionInfos().getProperty(&quot;biComposerContext&quot;)+&quot;/faces/answersWizard.jspx?accMode=inaccessible&quot;;
+			}
+			var a=c.Folder.value+&quot;/&quot;+saw.captionToItemName(c.ItemName.value);
+			f+=&quot;&amp;path=&quot;+saw.encodeURIComponent(a);
+		}
+		obips.launcher.launchURL(f,e);
+		return false;
+	}
+}
+
+GetViewParent=function(a){
+	if(!saw.checkObjectReference(a)){return&quot;&quot;}
+	var b=0
+	var c=a
+	if(a){
+		while(c.indexOf(&quot;~&quot;)&gt;=0){
+			b+=c.indexOf(&quot;~&quot;);
+			c=c.substr(c.indexOf(&quot;~&quot;)+1,c.length);
+		}
+		return a.substr(0,b+1);
+	} else {return a}
+}
+
+	
+saw.getReloadInline=function(a,c){if(!c){c=a.substr(0,a.indexOf(&quot;~v:&quot;)==-1?a.length:a.indexOf(&quot;~v:&quot;))}
+	var b=document.getElementById(getEffectiveID(&quot;EmbedView&quot;+c,a));
+	return(b&amp;&amp;b.getAttribute(&quot;reloadInline&quot;)==&quot;true&quot;);
+}
+
+saw.view=function(){}
+	
+saw.view.getRefreshStatePath=function(c,d){
+	var b=c.indexOf(&quot;~v:compoundView&quot;);
+	var a=c;
+	if(b!=-1){
+		a=c.substr(0,b);
+	}else{
+		b=c.indexOf(&quot;~v:&quot;+d);
+		if(b!=-1){a=c.substr(0,b)}
+	}
+	return a;
+}
+	
+saw.view.showAddToBriefingBookDialog=function(d,f,c,b,a){
+	var e=new saw.ondemandload.FuncProxy(&quot;obips.briefingbook.launchAddToBBDialog&quot;,{messageTemplate:&quot;kuiAddToBriefingBookDialogHead&quot;});
+	e.exec(d,f,c,true,b,a);
+}
+
+saw.view.getClientStateManager=function(){
+	var a=obips.views.ClientStateManager.getReportsViewStatePath();
+	var b=obips.views.ViewController.getController(a);
+	return b.getClientStateManager();
+}
+
+saw.view.getGlobalViewStateID=function(){
+	var c=obips.views.ClientStateManager.getReportsViewStatePath();
+	var d=obips.views.ViewController.getController(c);
+	var a=null;
+	var b=d.getClientStateManager();
+	if(b){
+		a=b.getCurrentStateID();
+	}
+	if(!a&amp;&amp;d.viewEnv){
+		a=d.viewEnv.viewState;
+	}
+	return a;
+}
+
+//}
+&lt;/script&gt;
+</saw:text></saw:caption></saw:staticText></saw:view><saw:view xsi:type="saw:compoundView" name="compoundView!2"><saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1"><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!2"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="pivotTableView!1"/></saw:cvRow></saw:cvTable><saw:viewCaption><saw:caption><saw:text>Main Pivot:No Hierarchy</saw:text></saw:caption></saw:viewCaption></saw:view><saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" scrollingEnabled="false" rowsPerPage="1000"><saw:viewCaption><saw:caption><saw:text>Pivot Table: No Hierarchy</saw:text></saw:caption></saw:viewCaption><saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"><saw:displayGrandTotals><saw:displayGrandTotal id="gt_section" grandTotalPosition="none"/></saw:displayGrandTotals></saw:edge><saw:edge axis="row" showColumnHeader="true"><saw:displayGrandTotals><saw:displayGrandTotal id="gt_row" grandTotalPosition="before"/></saw:displayGrandTotals><saw:edgeLayers><saw:edgeLayer type="column" columnID="c3a340ef45e6e770e"/><saw:edgeLayer type="column" columnID="c08de86797db702a7"/><saw:edgeLayer type="column" columnID="c821e4924c2f0849e" visibility="hidden"><saw:levels><saw:level><saw:displaySubTotal id="st_c821e4924c2f0849e" subTotalPosition="after"/></saw:level></saw:levels></saw:edgeLayer><saw:edgeLayer type="column" columnID="c10cc384b1a77405d"><saw:levels><saw:level><saw:displaySubTotal id="st_c10cc384b1a77405d" subTotalPosition="after"/></saw:level></saw:levels></saw:edgeLayer><saw:edgeLayer type="column" columnID="c547420a8f6a96219"/></saw:edgeLayers></saw:edge><saw:edge axis="column" showColumnHeader="rollover"><saw:displayGrandTotals><saw:displayGrandTotal id="gt_column" grandTotalPosition="none"/></saw:displayGrandTotals><saw:edgeLayers><saw:edgeLayer type="measure"/></saw:edgeLayers></saw:edge></saw:edges><saw:measuresList><saw:measure columnID="cbf39f59cb0909d45"/><saw:measure columnID="c5b09ab55a929addb"/><saw:measure columnID="c2c862fe54c07a4a3"/><saw:measure columnID="c72c43f7b6017201c"/><saw:measure columnID="c4f9f7535623fe059"/><saw:measure columnID="ce7cef98b63a289bb"/><saw:measure columnID="c1d345a8f7e4ae3e8"/><saw:measure columnID="c275bc1cfd168cecd"/><saw:measure columnID="c14190eb7b9a7b345"/></saw:measuresList></saw:view></saw:views><saw:prompts scope="report" subjectArea="&quot;Vacancy&quot;"/></saw:report>

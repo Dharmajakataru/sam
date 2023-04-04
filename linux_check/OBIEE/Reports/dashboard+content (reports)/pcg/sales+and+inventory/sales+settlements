@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;PCG&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc7f10d1bc897c908">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Project Iss Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc522a6f93255b7ef">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Sort Col&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6bd94e886ab2cee7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true" backgroundColor="#B4C6E7"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c846b975251e10c7d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case   
+	when &quot;F Sales Settlements&quot;.&quot;Previous Years&quot; is not null and &quot;F Sales Settlements&quot;.&quot;Previous Years&quot; != 0 then    
+		case     
+			when &quot;F Sales Settlements&quot;.&quot;Type&quot; in (&#39;Budgeted Settlements (no.)&#39;, &#39;Actual Settlements (no.)&#39;,&#39;Forecast Settlements (no.)&#39;) then      
+				case
+					when &quot;F Sales Settlements&quot;.&quot;Type&quot; = &#39;Actual Settlements (no.)&#39; then        
+						&#39;&lt;span class=&quot;tt_id_actual_previous&quot;&gt;&#39;       
+					when &quot;F Sales Settlements&quot;.&quot;Type&quot; = &#39;Forecast Settlements (no.)&#39; then        
+						&#39;&lt;span class=&quot;tt_id_2_for&quot;&gt;&#39;       
+					when &quot;F Sales Settlements&quot;.&quot;Type&quot; = &#39;Budgeted Settlements (no.)&#39; then        
+						&#39;&lt;span class=&quot;tt_id_budgeted_previous&quot;&gt;&#39;      
+				end
+				|| cast(round(&quot;F Sales Settlements&quot;.&quot;Previous Years&quot;, 0) as char) || &#39;&lt;/span&gt;&#39;     
+			when &quot;F Sales Settlements&quot;.&quot;Type&quot; in (&#39;Cumulative Budgeted Settlements (no.)&#39;, &#39;Cumulative Actual Settlements (no.)&#39;) then     
+				cast(round(&quot;F Sales Settlements&quot;.&quot;Previous Years&quot;, 0) as char)    
+			else      
+				&#39;$&#39; || cast(round(&quot;F Sales Settlements&quot;.&quot;Previous Years&quot;, 2) as char)    
+		end    
+end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#BFBFBF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715565_44211" oldID="kcap1564723516306_13476">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715565_44212" oldID="kcap1564723516306_13477">
+            <saw:text>Previous Years</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c57316d31669b8ae8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Jul&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44213" oldID="kcap1564723516306_13478">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44214" oldID="kcap1564723516306_13479">
+            <saw:text>Jul-@{PV_FIRST_DEL_YEAR_MINUS_1}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6911f43eae2775d8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Aug&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44215" oldID="kcap1564723516306_13480">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44216" oldID="kcap1564723516306_13481">
+            <saw:text>Aug-@{PV_FIRST_DEL_YEAR_MINUS_1}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cae73c49c3f2fc34a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Sep&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44217" oldID="kcap1564723516306_13482">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44218" oldID="kcap1564723516306_13483">
+            <saw:text>Sep-@{PV_FIRST_DEL_YEAR_MINUS_1}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc3e30a822e106c80">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Oct&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44219" oldID="kcap1564723516306_13484">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44220" oldID="kcap1564723516306_13485">
+            <saw:text>Oct-@{PV_FIRST_DEL_YEAR_MINUS_1}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc867303e8b014b40">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Nov&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44221" oldID="kcap1564723516306_13486">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44222" oldID="kcap1564723516306_13487">
+            <saw:text>Nov-@{PV_FIRST_DEL_YEAR_MINUS_1}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c88512e8a04feda36">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Dec&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true" backgroundColor="#F2F2F2"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44223" oldID="kcap1564723516306_13488">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44224" oldID="kcap1564723516306_13489">
+            <saw:text>Dec-@{PV_FIRST_DEL_YEAR_MINUS_1}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5e28f63374d7f84a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Jan&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true" backgroundColor="#F2F2F2"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44225" oldID="kcap1564723516306_13490">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44226" oldID="kcap1564723516306_13491">
+            <saw:text>Jan-@{PV_FIRST_DEL_YEAR}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cea9142d2e07424b8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Feb&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44227" oldID="kcap1564723516306_13492">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44228" oldID="kcap1564723516306_13493">
+            <saw:text>Feb-@{PV_FIRST_DEL_YEAR}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce9c2f485840e0f1c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Mar&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44229" oldID="kcap1564723516306_13494">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44230" oldID="kcap1564723516306_13495">
+            <saw:text>Mar-@{PV_FIRST_DEL_YEAR}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0433bd52e4f10c87">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Apr&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44231" oldID="kcap1564723516306_13496">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44232" oldID="kcap1564723516306_13497">
+            <saw:text>Apr-@{PV_FIRST_DEL_YEAR}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c44d46a1b54733f07">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;May&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44233" oldID="kcap1564723516306_13498">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44234" oldID="kcap1564723516306_13499">
+            <saw:text>May-@{PV_FIRST_DEL_YEAR}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd58f65eec9c77cf0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Jun&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" backgroundColor="#DDEBF7">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#F2F2F2" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44235" oldID="kcap1564723516306_13500">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44236" oldID="kcap1564723516306_13501">
+            <saw:text>Jun-@{PV_FIRST_DEL_YEAR}</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cca7be5e405a39319">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Fy Total&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#BFBFBF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44237" oldID="kcap1564723516306_13502">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44238" oldID="kcap1564723516306_13503">
+            <saw:text>FY Total</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8e27b1bae17d94fe">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Avg Settled Per Month&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#BFBFBF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44239" oldID="kcap1564723516306_13504">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44240" oldID="kcap1564723516306_13505">
+            <saw:text>Avg Settled Per Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cce94232a38474036">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Later Years&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" visibility="hidden">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="@[html]&quot;&lt;a class=&quot;&quot;wibble&quot;&quot; href=&quot;&quot;saw.dll?Go&amp;amp;path=%2Fshared%2FComponents%2FDashboard%20Content%2FPCG%2FSales%20and%20Inventory%2FSales%20Settlements%20-%20Later%20Years%20DT&quot;&quot; target=&quot;&quot;_blank&quot;&quot;&gt;&quot;#,###&quot;&lt;/a&gt;&quot;"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#666666" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44241" oldID="kcap1564723516306_13506">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44242" oldID="kcap1564723516306_13507">
+            <saw:text>Later Years - with URL in data format</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4577c5dd598cb8cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case   
+	when &quot;F Sales Settlements&quot;.&quot;Later Years&quot; is not null and &quot;F Sales Settlements&quot;.&quot;Later Years&quot; != 0 then
+		case
+			when &quot;F Sales Settlements&quot;.&quot;Type&quot; in (&#39;Budgeted Settlements (no.)&#39;, &#39;Forecast Settlements (no.)&#39;) then
+				case       
+					when &quot;F Sales Settlements&quot;.&quot;Type&quot; = &#39;Budgeted Settlements (no.)&#39; then        
+						&#39;&lt;span class=&quot;tt_id_budgeted_later&quot;&gt;&#39;       
+					when &quot;F Sales Settlements&quot;.&quot;Type&quot; = &#39;Forecast Settlements (no.)&#39; then        
+						&#39;&lt;span class=&quot;tt_id_forecast_later&quot;&gt;&#39;      
+				end        
+				|| cast(round(&quot;F Sales Settlements&quot;.&quot;Later Years&quot;, 0) as char) || &#39;&lt;/span&gt;&#39;
+			else      
+				&#39;$&#39; || cast(round(&quot;F Sales Settlements&quot;.&quot;Later Years&quot;, 2) as char)
+		end
+end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="2" maxDigits="2"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#BFBFBF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#BFBFBF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44243" oldID="kcap1564723516306_13508">
+            <saw:text>F Sales Settlements</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723715566_44244" oldID="kcap1564723516306_13509">
+            <saw:text>Later Years</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c97299545c4cd0553">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Total Settlements&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Actual Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Budgeted Settlements ($M)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Forecast Settlements ($M)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="minus" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="in">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6bd94e886ab2cee7"/>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Actual Settlements (no.)</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Cumulative Budgeted Settlements (no.)</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#BFBFBF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#B4C6E7" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    <saw:column xsi:type="saw:regularColumn" columnID="c3885217094790b51"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Empty</sawx:expr>
+        </sawx:expr>
+      <sawx:expr xsi:type="sawx:comparison" op="equal"><sawx:expr xsi:type="sawx:sqlExpression">&quot;F Sales Settlements&quot;.&quot;Row Type&quot;</sawx:expr><sawx:expr xsi:type="xsd:decimal">1</sawx:expr></sawx:expr></sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="cc522a6f93255b7ef" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true" currentView="0">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="none"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723715565_44206" oldID="kcap1564723516306_13471">
+          <saw:text>Sales Settlements Table</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      
+    <saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="cc7f10d1bc897c908"/><saw:edgeLayer type="column" columnID="cc522a6f93255b7ef"/><saw:edgeLayer type="column" columnID="c6bd94e886ab2cee7"/><saw:edgeLayer type="column" columnID="c846b975251e10c7d"/><saw:edgeLayer type="column" columnID="c57316d31669b8ae8"/><saw:edgeLayer type="column" columnID="c6911f43eae2775d8"/><saw:edgeLayer type="column" columnID="cae73c49c3f2fc34a"/><saw:edgeLayer type="column" columnID="cc3e30a822e106c80"/><saw:edgeLayer type="column" columnID="cc867303e8b014b40"/><saw:edgeLayer type="column" columnID="c88512e8a04feda36"/><saw:edgeLayer type="column" columnID="c5e28f63374d7f84a"/><saw:edgeLayer type="column" columnID="cea9142d2e07424b8"/><saw:edgeLayer type="column" columnID="ce9c2f485840e0f1c"/><saw:edgeLayer type="column" columnID="c0433bd52e4f10c87"/><saw:edgeLayer type="column" columnID="c44d46a1b54733f07"/><saw:edgeLayer type="column" columnID="cd58f65eec9c77cf0"/><saw:edgeLayer type="column" columnID="cca7be5e405a39319"/><saw:edgeLayer type="column" columnID="c8e27b1bae17d94fe"/><saw:edgeLayer type="column" columnID="c4577c5dd598cb8cb"/><saw:edgeLayer type="column" columnID="cce94232a38474036"/><saw:edgeLayer type="column" columnID="c97299545c4cd0553"/></saw:edgeLayers></saw:edge><saw:edge axis="column" showColumnHeader="rollover"/></saw:edges></saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723715565_44207" oldID="kcap1564723516306_13472">
+          <saw:text>QTip JS</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723715565_44208" oldID="kcap1564723516306_13473">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery-migrate-1.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.qtip.min.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/whereis-maps/jquery.qtip.min.css&quot; /&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+.ui-tooltip, .qtip{
+	position: absolute;
+	left: -28000px;
+	top: -28000px;
+	display: none;
+ 
+	max-width: 1000px;
+	min-width: 50px;
+ 
+	font-size: 10.5px;
+	line-height: 12px;
+}
+&lt;/style&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+// Create the tooltips only when document ready
+ $(document).ready(function()
+ {
+     // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+     $(&#39;.tt_id_budgeted_previous&#39;).each(function() {
+         $(this).qtip({
+            content: $(&#39;#tt_id_budgeted_previous&#39;),
+            position: {
+                viewport: $(window)
+            },
+	//style:{classes:&#39;qtip-light qtip-rounded tablescroll tablescroll_wrapper&#39;,width:410},
+
+            style: &#39;qtip-wiki&#39;
+         });
+     });
+ });
+
+ $(document).ready(function()
+ {
+     // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+     $(&#39;.tt_id_budgeted_later&#39;).each(function() {
+         $(this).qtip({
+            content: $(&#39;#tt_id_budgeted_later&#39;),
+            position: {
+                viewport: $(window)
+            },
+            style: &#39;qtip-wiki&#39;
+         });
+     });
+ });
+
+ $(document).ready(function()
+ {
+     // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+     $(&#39;.tt_id_actual_previous&#39;).each(function() {
+         $(this).qtip({
+            content: $(&#39;#tt_id_actual_previous&#39;),
+            position: {
+                viewport: $(window)
+            },
+	//style:{classes:&#39;qtip-light qtip-rounded tablescroll tablescroll_wrapper&#39;,width:410},
+
+            style: &#39;qtip-wiki&#39;
+         });
+     });
+ });
+
+ $(document).ready(function()
+ {
+     // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+     $(&#39;.tt_id_forecast_later&#39;).each(function() {
+         $(this).qtip({
+            content: $(&#39;#tt_id_forecast_later&#39;),
+            position: {
+                viewport: $(window)
+            },
+	//style:{classes:&#39;qtip-light qtip-rounded tablescroll tablescroll_wrapper&#39;,width:410},
+
+            style: &#39;qtip-wiki&#39;
+         });
+     });
+ });
+
+ &lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723715565_44209" oldID="kcap1564723516306_13474">
+          <saw:text>Format Lines JS</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723715565_44210" oldID="kcap1564723516306_13475">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+(function (d) {
+	var pvt = d.getElementsByClassName(&quot;PTChildPivotTable&quot;);
+	var fycs=null;
+	
+	for (var h=0;h&lt;pvt.length; h++) {
+
+		var tbl = pvt[h].firstChild;
+		if(tbl.rows[2]) {
+			var isTarget = (tbl.rows[2].cells[0].innerHTML===&#39;Budgeted Settlements (no.)&#39;);
+			if(isTarget) {
+				for (var i = 0, row; row = tbl.rows[i]; i++) {
+				   //iterate through rows
+				   for (var j = 0, col; col = row.cells[j]; j++) {
+						if(i==1) {
+							 col.style.borderLeft = &quot;1px solid #404040&quot;;
+							 col.style.borderTop = &quot;1px solid #404040&quot;;
+						}
+						if((i==2 || i==4 || i==6 || i==8)) col.style.borderTop = &quot;2px solid #404040&quot;;
+					}  
+				}
+			}
+		}
+	}
+})(document);
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;PCG&quot;"/>
+</saw:report>
