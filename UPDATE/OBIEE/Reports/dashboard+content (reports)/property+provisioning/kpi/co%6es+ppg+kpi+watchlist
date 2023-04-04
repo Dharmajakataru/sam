@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9380a5f40bf268c8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;RNTB&quot; = &#39;DOD&#39; THEN &#39;&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&#39;|| CHAR(62) || &#39;&amp;nbsp;&amp;nbsp;CONS - Days from Completion to Handover - DOD Client stock&#39; WHEN  &quot;30. Dim Managed Properties&quot;.&quot;RNTB&quot; = &#39;DMCA&#39; THEN &#39;&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&#39;|| CHAR(62) || &#39;&amp;nbsp;&amp;nbsp;CONS - Days from Completion to Handover - DMCA Client stock&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c9380a5f40bf268c8_ald0cccf0a579fe41b">
+                <saw:action>
+                  <saw:actionName>kpi_cmplxn_vs_handover Report Drilldown</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Provisioning/KPI/kpi_cmplxn_vs_handover Report Drilldown</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723739955_49292" oldID="kcap1564723528322_16533">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49275" oldID="kcap1564723528322_16516">
+            <saw:text>&#39;&lt;img src=../custom_styles/sk_dha/catalog/kpi_ena.png title=KPI&#39;|| CHAR(62) || &#39;&amp;nbsp;&amp;nbsp;ACQ  - Days from Acquisition to Handover&#39;</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49276" oldID="kcap1564723528322_16517">
+            <saw:text>KPI Description</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7f6dd59aff0af842">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" hAlign="center"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="greater">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c5e44c03bcfc3a742"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec imagePlacement="left,imageOnly" image="fmap:meters/status/icons_l/01_alert.png" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c5e44c03bcfc3a742"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec imagePlacement="left,imageOnly" image="fmap:meters/status/general/checkmark.png" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49277" oldID="kcap1564723528322_16518">
+            <saw:text>&#39;&#39;</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49278" oldID="kcap1564723528322_16519">
+            <saw:text>Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf264601dfb5ea0ce">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">2</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49279" oldID="kcap1564723528322_16520">
+            <saw:text>Target Days</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0ef85c64715088ed">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MAX(&quot;35. Dim MV Jira Properties&quot;.&quot;Days to Handover from Construction/Acquisition&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49280" oldID="kcap1564723528322_16521">
+            <saw:text>30. Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49281" oldID="kcap1564723528322_16522">
+            <saw:text>Maximum Days</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdd2959ce41f00911" aggRule="serverAggregate">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">AVG(&quot;35. Dim MV Jira Properties&quot;.&quot;Days to Handover from Construction/Acquisition&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="greater">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cdd2959ce41f00911"/>
+                    <sawx:expr xsi:type="xsd:decimal">3</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec fontColor="#FF0000" wrapText="true" imagePlacement="right" image="fmap:meters/status/icons_l/01_alert.png"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="lessOrEqual">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cdd2959ce41f00911"/>
+                    <sawx:expr xsi:type="xsd:decimal">3</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec fontColor="#008000" wrapText="true" imagePlacement="right" image="fmap:meters/status/general/checkmark.png"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49282" oldID="kcap1564723528322_16523">
+            <saw:text>30. Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49283" oldID="kcap1564723528322_16524">
+            <saw:text>Avg Days</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3c3344ad054668ea">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;RNTB&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1264060892fd00d3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">COUNT(*)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49284" oldID="kcap1564723528322_16525">
+            <saw:text>COUNT(*)</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49285" oldID="kcap1564723528322_16526">
+            <saw:text>Total Properties</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5e44c03bcfc3a742">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(CASE WHEN &quot;35. Dim MV Jira Properties&quot;.&quot;Days to Handover from Construction/Acquisition&quot; &gt; 2 or &quot;35. Dim MV Jira Properties&quot;.&quot;Days to Handover from Construction/Acquisition&quot; &lt; 0  THEN 1.00 ELSE 0.00 END)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c5e44c03bcfc3a742_ala54dfddb4045b7ae">
+                <saw:action>
+                  <saw:actionName>kpi_cmplxn_vs_handover Report Drilldown</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Provisioning/KPI/kpi_cmplxn_vs_handover Report Drilldown</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723739955_49293" oldID="kcap1564723528322_16534">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="greater">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c5e44c03bcfc3a742"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec imagePlacement="right" image="fmap:meters/status/icons_l/01_alert.png" fontColor="#FF0000" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49286" oldID="kcap1564723528322_16527">
+            <saw:text>30. Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49287" oldID="kcap1564723528322_16528">
+            <saw:text>Missing KPI</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2fe0ec6a0df106d3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;CONS&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49288" oldID="kcap1564723528322_16529">
+            <saw:text>30. Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49289" oldID="kcap1564723528322_16530">
+            <saw:text>KPI Id</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3e86cd290b7fc8f0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c04e201250c43db21">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;Missed KPI&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49290" oldID="kcap1564723528322_16531">
+            <saw:text>30. Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723739955_49291" oldID="kcap1564723528322_16532">
+            <saw:text>Missed KPI</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Construction Date FY&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval" default="FY 2016">PV_KPI_FY</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Type&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">CONS</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;RNTB&quot; = &#39;DOD&#39; THEN &#39;&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&#39;|| CHAR(62) || &#39;&amp;nbsp;&amp;nbsp;CONS - Days from Completion to Handover - DOD Client stock&#39; WHEN  &quot;30. Dim Managed Properties&quot;.&quot;RNTB&quot; = &#39;DMCA&#39; THEN &#39;&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&#39;|| CHAR(62) || &#39;&amp;nbsp;&amp;nbsp;CONS - Days from Completion to Handover - DMCA Client stock&#39; END</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&gt;&amp;nbsp;&amp;nbsp;CONS - Days from Completion to Handover - DMCA Client stock</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&gt;&amp;nbsp;&amp;nbsp;CONS - Days from Completion to Handover - DOD Client stock</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;35. Dim MV Jira Properties&quot;.&quot;HMC Handover Date-Actual&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c3c3344ad054668ea" direction="descending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723739955_49274" oldID="kcap1564723528322_16515">
+          <saw:text>PPG KPI Watchlist - Handover</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c2fe0ec6a0df106d3"/>
+            <saw:edgeLayer type="column" columnID="c9380a5f40bf268c8"/>
+            <saw:edgeLayer type="column" columnID="c7f6dd59aff0af842"/>
+            <saw:edgeLayer type="column" columnID="cf264601dfb5ea0ce"/>
+            <saw:edgeLayer type="column" columnID="c0ef85c64715088ed"/>
+            <saw:edgeLayer type="column" columnID="cdd2959ce41f00911"/>
+            <saw:edgeLayer type="column" columnID="c1264060892fd00d3"/>
+            <saw:edgeLayer type="column" columnID="c5e44c03bcfc3a742"/>
+            <saw:edgeLayer type="column" columnID="c04e201250c43db21"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c2fe0ec6a0df106d3"/>
+            <saw:edgeLayer type="column" columnID="c3c3344ad054668ea" visibility="hidden"/>
+            <saw:edgeLayer type="column" columnID="c9380a5f40bf268c8"/>
+            <saw:edgeLayer type="column" columnID="cf264601dfb5ea0ce"/>
+            <saw:edgeLayer type="column" columnID="c0ef85c64715088ed"/>
+            <saw:edgeLayer type="column" columnID="cdd2959ce41f00911"/>
+            <saw:edgeLayer type="column" columnID="c1264060892fd00d3"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723739955_49294" oldID="kcap1564723528322_16535">
+                  <saw:text>Total Missed KPI</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c04e201250c43db21">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec hAlign="center" wrapText="true"/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c3e86cd290b7fc8f0"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c5e44c03bcfc3a742" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c9380a5f40bf268c8"/>
+            <saw:edgeLayer type="column" columnID="c7f6dd59aff0af842"/>
+            <saw:edgeLayer type="column" columnID="cf264601dfb5ea0ce"/>
+            <saw:edgeLayer type="column" columnID="c2fe0ec6a0df106d3"/>
+            <saw:edgeLayer type="column" columnID="c04e201250c43db21"/>
+            <saw:edgeLayer type="column" columnID="c3e86cd290b7fc8f0"/>
+            <saw:edgeLayer type="column" columnID="c0ef85c64715088ed"/>
+            <saw:edgeLayer type="column" columnID="cdd2959ce41f00911"/>
+            <saw:edgeLayer type="column" columnID="c1264060892fd00d3"/>
+            <saw:edgeLayer type="column" columnID="c5e44c03bcfc3a742"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail><saw:headline><saw:caption fmt="html"><saw:text>PPG KPI Watchlist - Handover</saw:text></saw:caption></saw:headline></saw:view></saw:views>
+</saw:report>

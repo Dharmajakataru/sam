@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Corporate Property&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c484e70f3b55dfcef">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(&quot;Fact Vacancy Properties&quot;.&quot;VAC_AVAIL_TO_OCC&quot;) / SUM(&quot;Fact Vacancy Properties&quot;.&quot;TOTAL_DOD_STOCK&quot;)) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775893_55083" oldID="kcap1564723548269_21322">
+            <saw:text>Fact Vacancy Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775893_55084" oldID="kcap1564723548269_21323">
+            <saw:text>% Available To Occupy</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf3721e4343c1f887">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(&quot;Fact Vacancy Properties&quot;.&quot;VAC_NOT_AVAIL_TO_OCC&quot;) / SUM(&quot;Fact Vacancy Properties&quot;.&quot;TOTAL_DOD_STOCK&quot;)) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775893_55085" oldID="kcap1564723548269_21324">
+            <saw:text>Fact Vacancy Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723775893_55086" oldID="kcap1564723548269_21325">
+            <saw:text>% Not Available to Occupy</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7d37b54a7df3c0b3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc9ac49fe03044a70">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Management Area&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:dimensionSelection>
+          <saw:selectionStep stepID="1" type="startWith" category="member">
+            <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+              <saw:staticMemberGroup>
+                <saw:members xsi:type="saw:specialValueMembers">
+                  <saw:value specialValue="all"/>
+                </saw:members>
+              </saw:staticMemberGroup>
+            </saw:stepMembers>
+          </saw:selectionStep>
+          <saw:selectionStep type="add" stepID="2" category="customGroup">
+            <saw:customGroup customGroupID="cc9ac49fe03044a70_g1">
+              <saw:caption captionID="kcap1564723775893_55089" oldID="kcap1564723548269_21328">
+                <saw:text>Nationwide</saw:text>
+              </saw:caption>
+              <saw:selectionStep type="add" stepID="3" category="member">
+                <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+                  <saw:staticMemberGroup>
+                    <saw:members xsi:type="saw:stringMembers">
+                      <saw:value>Adelaide HMC</saw:value>
+                      <saw:value>Brisbane HMC</saw:value>
+                      <saw:value>Cairns HMC</saw:value>
+                      <saw:value>Canberra HMC</saw:value>
+                      <saw:value>Darwin HMC</saw:value>
+                      <saw:value>Hunter Valley HMC</saw:value>
+                      <saw:value>Ipswich HMC</saw:value>
+                      <saw:value>Melbourne HMC</saw:value>
+                      <saw:value>Nowra HMC</saw:value>
+                      <saw:value>Perth HMC</saw:value>
+                      <saw:value>Sydney HMC</saw:value>
+                      <saw:value>Tindal HMC</saw:value>
+                      <saw:value>Toowoomba HMC</saw:value>
+                      <saw:value>Townsville HMC</saw:value>
+                      <saw:value>Wagga Wagga HMC</saw:value>
+                      <saw:value>Wodonga HMC</saw:value>
+                    </saw:members>
+                  </saw:staticMemberGroup>
+                </saw:stepMembers>
+              </saw:selectionStep>
+            </saw:customGroup>
+          </saw:selectionStep>
+        </saw:dimensionSelection>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Vacancy Properties&quot;.&quot;RNTB_STATUS&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval" default="DOD">PV_RNTB_STATUS</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPADD(SQL_TSI_DAY, -30, Current_Date)</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c484e70f3b55dfcef"/>
+            <saw:edgeLayer type="column" columnID="cf3721e4343c1f887"/>
+            <saw:edgeLayer type="column" columnID="c7d37b54a7df3c0b3"/>
+            <saw:edgeLayer type="column" columnID="cc9ac49fe03044a70"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="line" subtype="default" renderFormat="default" mode="online" xAxisLiveScrolling="false" yAxisLiveScrolling="false" clientEventEnabled="false" animateOnDisplay="true">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="300" width="1000" showGradient="true">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:gridlines default="true">
+          <saw:horizontal>
+            <saw:major visible="false"/>
+            <saw:minor visible="false"/>
+          </saw:horizontal>
+          <saw:vertical>
+            <saw:major visible="false"/>
+            <saw:minor visible="false"/>
+          </saw:vertical>
+        </saw:gridlines>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723775893_55087" oldID="kcap1564723548269_21326">
+            <saw:text>DHA Vacant Stock - %Available to Occupy v % Not Available to Occupy</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c7d37b54a7df3c0b3"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c484e70f3b55dfcef"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cf3721e4343c1f887"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page>
+          <saw:column>
+            <saw:columnRef columnID="cc9ac49fe03044a70"/>
+          </saw:column>
+        </saw:page>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats syncAxis="false">
+        <saw:axisFormat axis="Y1">
+          <saw:scale scaleValues="auto" showMajorTicks="false" showMinorTicks="false" logarithmic="false" defaultTicks="true"/>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723775893_55088" oldID="kcap1564723548269_21327">
+              <saw:text>% Value</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X">
+          <saw:scale scaleValues="auto" showMajorTicks="false" showMinorTicks="false" logarithmic="false"/>
+          <saw:title mode="auto"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:pageEdgeState>
+        <saw:QDR>
+          <saw:staticMemberGroup>
+            <saw:groupType>
+              <sawx:columnRefExpr columnID="cc9ac49fe03044a70"/>
+            </saw:groupType>
+            <saw:members xsi:type="saw:stringMembers">
+              <saw:value>cc9ac49fe03044a70__@@#$__cc9ac49fe03044a70_g1</saw:value>
+            </saw:members>
+          </saw:staticMemberGroup>
+        </saw:QDR>
+        <saw:selectionGroups>
+          <saw:selectionGroup columnID="cc9ac49fe03044a70" groupID="1"/>
+        </saw:selectionGroups>
+      </saw:pageEdgeState>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

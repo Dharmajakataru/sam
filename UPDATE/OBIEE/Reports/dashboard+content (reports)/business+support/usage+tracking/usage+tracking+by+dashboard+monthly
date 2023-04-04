@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Usage Tracking&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c275949fef71e8c7b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUBSTRING(&quot;S_NQ_ACCT_UT&quot;.&quot;SAW_DASHBOARD&quot; FROM 28 FOR 30)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31065" oldID="kcap1564723471809_4229">
+            <saw:text>S_NQ_ACCT_UT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31066" oldID="kcap1564723471809_4230">
+            <saw:text>Dashboard Name</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c19eee62cc2004db1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(SUBSTRING(&quot;S_NQ_ACCT_UT&quot;.&quot;SAW_DASHBOARD&quot; FROM 28 FOR 30))</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c19eee62cc2004db1_al28a7ba55cf833fd0">
+                <saw:action>
+                  <saw:actionName>Usage Tracking By Dashboard Page Monthly</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Business Support/Usage Tracking/Usage Tracking By Dashboard Page Monthly</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723641837_31076" oldID="kcap1564723471809_4240">
+                  <saw:text>Usage Tracking By Dashboard Page Monthly</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31067" oldID="kcap1564723471809_4231">
+            <saw:text>S_NQ_ACCT_UT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31068" oldID="kcap1564723471809_4232">
+            <saw:text>Total Count</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c19086cf02946ebc1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">RANK(count(SUBSTRING(&quot;S_NQ_ACCT_UT&quot;.&quot;SAW_DASHBOARD&quot; FROM 28 FOR 30)))</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31069" oldID="kcap1564723471809_4233">
+            <saw:text>S_NQ_ACCT_UT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31070" oldID="kcap1564723471809_4234">
+            <saw:text>Rank</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c77043048c1b2c81c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;JAN&#39; then 1
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;FEB&#39; then 2
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;MAR&#39; then 3
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;APR&#39; then 4
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;MAY&#39; then 5
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;JUN&#39; then 6
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;JUL&#39; then 7
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;AUG&#39; then 8
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;SEP&#39; then 9
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;OCT&#39; then 91
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;NOV&#39; then 92
+when MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;) = &#39;DEC&#39; then 93
+else 0 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31071" oldID="kcap1564723471809_4235">
+            <saw:text>S_NQ_ACCT_UT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31072" oldID="kcap1564723471809_4236">
+            <saw:text>Sort Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5c7a16ed6c1b4e79">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31073" oldID="kcap1564723471809_4237">
+            <saw:text>S_NQ_ACCT_UT</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641837_31074" oldID="kcap1564723471809_4238">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;S_NQ_ACCT_UT&quot;.&quot;QUERY_SRC_CD&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Report</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;S_NQ_ACCT_UT&quot;.&quot;SAW_DASHBOARD_PG&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;S_NQ_ACCT_UT&quot;.&quot;START_DT&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_FIRST_DAY_THREE_MTS_PAST</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">SUBSTRING(&quot;S_NQ_ACCT_UT&quot;.&quot;SAW_DASHBOARD&quot; FROM 28 FOR 30)</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">DFL Monitor</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c19eee62cc2004db1" direction="descending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c5c7a16ed6c1b4e79"/>
+            <saw:edgeLayer type="column" columnID="c275949fef71e8c7b"/>
+            <saw:edgeLayer type="column" columnID="c19eee62cc2004db1"/>
+            <saw:edgeLayer type="column" columnID="c19086cf02946ebc1"/>
+            <saw:edgeLayer type="column" columnID="c77043048c1b2c81c"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" rowsPerPage="15">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c5c7a16ed6c1b4e79"/>
+            <saw:edgeLayer type="column" columnID="c275949fef71e8c7b"/>
+            <saw:edgeLayer type="column" columnID="c77043048c1b2c81c"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="measure"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c19eee62cc2004db1"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723641837_31075" oldID="kcap1564723471809_4239">
+            <saw:text>Dashboard Usage Tracker for Last 3 Months</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c275949fef71e8c7b"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c19eee62cc2004db1"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c77043048c1b2c81c"/>
+          </saw:seriesGenerator>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c5c7a16ed6c1b4e79"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723641837_31064" oldID="kcap1564723471809_4228">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-65px; left:10px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

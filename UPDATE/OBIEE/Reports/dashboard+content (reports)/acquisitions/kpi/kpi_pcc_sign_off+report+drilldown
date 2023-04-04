@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe09c884d50c2153">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;35. Dim MV Jira Properties&quot;.&quot;Issue Status Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c885fb8a4bc6c13d0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;PCC YN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c885fb8a4bc6c13d0"/>
+                    <sawx:expr xsi:type="xsd:string">N</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#FF0000" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c42aa038a33926817">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf951bfcd7b977438">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cf951bfcd7b977438_al565bfcfb62efae6d">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsminspection]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsminspection]?propertyId=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723623648_28311" oldID="kcap1564723459063_1962">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf951bfcd7b977438"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723623648_28309" oldID="kcap1564723459063_1960">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723623648_28310" oldID="kcap1564723459063_1961">
+            <saw:text>Property ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cad970d77945c0a10">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7bf910c7ecb86788">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd1e526f65bfab813">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;State&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc71b301e2172bcb6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd0a5704fc1431d6c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Status Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c45a16b181673e3c7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Reason Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c72099dc4400435d2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c55a157ee6e969765">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5166a65e5752db53">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Construction Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="cefa9f05694c4c54a" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;30. Dim Managed Properties&quot;.&quot;Acquisition Type&quot; in (&#39;ACQ&#39;, &#39;CONS&#39;) and &quot;35. Dim MV Jira Properties&quot;.&quot;Issue Status Desc&quot; in (&#39;ACQ Complete - Closed&#39;, &#39;Completed Dwelling&#39;) and (CAST( cast(YEAR(&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Date&quot;) as char(4)) || RIGHT(&#39;0&#39; || trim(cast(MONTH(&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Date&quot;) as char(2))), 2) as integer) &gt;= 201207 OR CAST( cast(YEAR(&quot;30. Dim Managed Properties&quot;.&quot;Construction Date&quot;) as char(4)) || RIGHT(&#39;0&#39; || trim(cast(MONTH(&quot;30. Dim Managed Properties&quot;.&quot;Construction Date&quot;) as char(2))), 2) as integer) &gt;= 201207)  then 1.00 else 0.00 end</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6d65af29ce4c9080">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;30. Dim Managed Properties&quot;.&quot;Acquisition Type&quot; in (&#39;ACQ&#39;, &#39;CONS&#39;) and &quot;35. Dim MV Jira Properties&quot;.&quot;Issue Status Desc&quot; in (&#39;ACQ Complete - Closed&#39;,  &#39;Defect Liability Period&#39;, &#39;Completed Dwelling&#39;) and (CAST( cast(YEAR(&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Date&quot;) as char(4)) || RIGHT(&#39;0&#39; || trim(cast(MONTH(&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Date&quot;) as char(2))), 2) as integer) &gt;= 201207 OR CAST( cast(YEAR(&quot;30. Dim Managed Properties&quot;.&quot;Construction Date&quot;) as char(4)) || RIGHT(&#39;0&#39; || trim(cast(MONTH(&quot;30. Dim Managed Properties&quot;.&quot;Construction Date&quot;) as char(2))), 2) as integer) &gt;= 201207)  then 1.00 else 0.00 end</sawx:expr>
+          <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;RNTB&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">DOD</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;30. Dim Managed Properties&quot;.&quot;Acquisition Type&quot; in (&#39;ACQ&#39;, &#39;CONS&#39;) and &quot;35. Dim MV Jira Properties&quot;.&quot;Issue Status Desc&quot; in (&#39;ACQ Complete - Closed&#39;, &#39;Defect Liability Period&#39;, &#39;Completed Dwelling&#39;) and (CAST( cast(YEAR(&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Date&quot;) as char(4)) || RIGHT(&#39;0&#39; || trim(cast(MONTH(&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Date&quot;) as char(2))), 2) as integer) &gt;= 201207 OR CAST( cast(YEAR(&quot;30. Dim Managed Properties&quot;.&quot;Construction Date&quot;) as char(4)) || RIGHT(&#39;0&#39; || trim(cast(MONTH(&quot;30. Dim Managed Properties&quot;.&quot;Construction Date&quot;) as char(2))), 2) as integer) &gt;= 201207)  then 1.00 else 0.00 end</sawx:expr>
+          <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/KPI">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723623648_28308" oldID="kcap1564723459063_1959">
+          <saw:text>PCC Sign Off Drill Through</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="100">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c885fb8a4bc6c13d0"/>
+            <saw:edgeLayer type="column" columnID="c42aa038a33926817"/>
+            <saw:edgeLayer type="column" columnID="c6d65af29ce4c9080"/>
+            <saw:edgeLayer type="column" columnID="cf951bfcd7b977438" aggRule="count"/>
+            <saw:edgeLayer type="column" columnID="cad970d77945c0a10"/>
+            <saw:edgeLayer type="column" columnID="c7bf910c7ecb86788"/>
+            <saw:edgeLayer type="column" columnID="cd1e526f65bfab813"/>
+            <saw:edgeLayer type="column" columnID="cc71b301e2172bcb6"/>
+            <saw:edgeLayer type="column" columnID="cd0a5704fc1431d6c"/>
+            <saw:edgeLayer type="column" columnID="c45a16b181673e3c7"/>
+            <saw:edgeLayer type="column" columnID="c72099dc4400435d2"/>
+            <saw:edgeLayer type="column" columnID="c55a157ee6e969765"/>
+            <saw:edgeLayer type="column" columnID="c5166a65e5752db53"/>
+            <saw:edgeLayer type="column" columnID="cfe09c884d50c2153"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>   &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;KPI Met&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>
