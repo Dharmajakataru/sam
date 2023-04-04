@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:derivedCriteria" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:derivedColumn" columnID="c412c84349377793c">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723664647_34803" oldID="kcap1564723488406_6547">
+            <saw:text>Dim DHA Employee</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723664647_34804" oldID="kcap1564723488406_6548">
+            <saw:text>Department</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:dimensionSelection>
+          <saw:selectionStep stepID="1" type="startWith" category="member">
+            <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+              <saw:staticMemberGroup>
+                <saw:members xsi:type="saw:specialValueMembers">
+                  <saw:value specialValue="all"/>
+                </saw:members>
+              </saw:staticMemberGroup>
+            </saw:stepMembers>
+          </saw:selectionStep>
+        </saw:dimensionSelection>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="c675432f5c8647cf8">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723664647_34805" oldID="kcap1564723488406_6549">
+            <saw:text>Dim Period Dep Date</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723664647_34806" oldID="kcap1564723488406_6550">
+            <saw:text>Departure Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="c501cc6e2cd8b99bd">
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption captionID="kcap1564723664647_34807" oldID="kcap1564723488406_6551">
+            <saw:text>Dim Period Dep Date</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+          <saw:caption captionID="kcap1564723664647_34808" oldID="kcap1564723488406_6552">
+            <saw:text>Month Abbrev</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="c8c95ef34fd9fc89a">
+        <saw:tableHeading>
+          <saw:caption captionID="kcap1564723664647_34809" oldID="kcap1564723488406_6553">
+            <saw:text>F DS Travel</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723664647_34810" oldID="kcap1564723488406_6554">
+            <saw:text>ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:derivedColumn" columnID="c6fb6db5dd1a1d84d">
+        <saw:tableHeading>
+          <saw:caption captionID="kcap1564723664647_34811" oldID="kcap1564723488406_6555">
+            <saw:text>F DS Travel</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption captionID="kcap1564723664647_34812" oldID="kcap1564723488406_6556">
+            <saw:text>Average Number of Days</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:from>
+      <saw:criteria xsi:type="saw:setCriteria" op="union">
+        <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Travel&quot;" withinHierarchy="true">
+          <saw:columns>
+            <saw:column xsi:type="saw:regularColumn" columnID="cd125b9f5382b5785">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DS Travel&quot;.&quot;Department&quot;</sawx:expr>
+              </saw:columnFormula>
+              <saw:dimensionSelection>
+                <saw:selectionStep stepID="1" type="startWith" category="member">
+                  <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+                    <saw:staticMemberGroup>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="all"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                  </saw:stepMembers>
+                </saw:selectionStep>
+              </saw:dimensionSelection>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c545d9d66c79a1f8c">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">trim(cast(&quot;Dim Period Dep Date&quot;.&quot;Year&quot; as char))||&#39; &#39;||trim( &quot;Dim Period Dep Date&quot;.&quot;Month Abbrev&quot;)</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="cd4bff33fb93dc810">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Dep Date&quot;.&quot;Fin Month&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c3d29a25fa4238a21">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F DS Travel&quot;.&quot;ID&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c52aa14c03c4b503d">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F DS Travel&quot;.&quot;Average Number of Days&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+          </saw:columns>
+          <saw:filter>
+            <sawx:expr xsi:type="sawx:logical" op="and">
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Dep Date&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Dep Date&quot;.&quot;Month Abbrev&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DS Travel&quot;.&quot;Department&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DS Travel&quot;.&quot;Business Unit&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DS Travel&quot;.&quot;Team&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DS Status&quot;.&quot;Status&quot;</sawx:expr>
+              </sawx:expr>
+            </sawx:expr>
+          </saw:filter>
+        </saw:criteria>
+        <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Travel&quot;">
+          <saw:columns>
+            <saw:column xsi:type="saw:regularColumn" columnID="cd74dbb6ddf432425">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&#39;All of DHA&#39;</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723664647_34813" oldID="kcap1564723488406_6557">
+                  <saw:text>Dim DHA Employee</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723664647_34814" oldID="kcap1564723488406_6558">
+                  <saw:text>Department</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="cf335885a3a7d86f8">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">trim(cast(&quot;Dim Period Dep Date&quot;.&quot;Year&quot; as char))||&#39; &#39;||trim( &quot;Dim Period Dep Date&quot;.&quot;Month Abbrev&quot;)</sawx:expr>
+              </saw:columnFormula>
+              <saw:tableHeading>
+                <saw:caption fmt="text" captionID="kcap1564723664647_34815" oldID="kcap1564723488406_6559">
+                  <saw:text>Dim Period Dep Date</saw:text>
+                </saw:caption>
+              </saw:tableHeading>
+              <saw:columnHeading>
+                <saw:caption fmt="text" captionID="kcap1564723664647_34816" oldID="kcap1564723488406_6560">
+                  <saw:text>Departure Date</saw:text>
+                </saw:caption>
+              </saw:columnHeading>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="cbb082ff15843c121">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Dep Date&quot;.&quot;Fin Month&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c8c39d7dc17fee77f">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F DS Travel&quot;.&quot;ID&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+            <saw:column xsi:type="saw:regularColumn" columnID="c7d88635a22ae8e27">
+              <saw:columnFormula>
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;F DS Travel&quot;.&quot;Average Number of Days&quot;</sawx:expr>
+              </saw:columnFormula>
+            </saw:column>
+          </saw:columns>
+          <saw:filter>
+            <sawx:expr xsi:type="sawx:logical" op="and">
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Dep Date&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period Dep Date&quot;.&quot;Month Abbrev&quot;</sawx:expr>
+              </sawx:expr>
+              <sawx:expr xsi:type="sawx:special" op="prompted">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DS Status&quot;.&quot;Status&quot;</sawx:expr>
+              </sawx:expr>
+            </sawx:expr>
+          </saw:filter>
+        </saw:criteria>
+      </saw:criteria>
+    </saw:from>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c501cc6e2cd8b99bd" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!3"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723664647_34800" oldID="kcap1564723488406_6544">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-50px; left:50px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!5"/>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!3" scrollingEnabled="false">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723664647_34801" oldID="kcap1564723488406_6545">
+          <saw:text>Avg Days Line Graph Year</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c501cc6e2cd8b99bd" visibility="hidden"/>
+            <saw:edgeLayer type="column" columnID="c675432f5c8647cf8"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c412c84349377793c"/>
+            <saw:edgeLayer type="measure"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c6fb6db5dd1a1d84d"/>
+      </saw:measuresList>
+      <saw:nestedViews>
+        <saw:nestedView position="chart only">
+          <saw:view xsi:type="saw:dvtchart" name="pivotTableView!3::GridChart">
+            <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+              <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+            </saw:display>
+            <saw:canvasFormat height="330" width="1200">
+              <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+              <saw:title mode="custom"/>
+            </saw:canvasFormat>
+            <saw:legendFormat position="default" transparentFill="true"/>
+            <saw:axesFormats>
+              <saw:axisFormat axis="X" displayScaleLabels="true">
+                <saw:labels rotate="45" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+                <saw:textFormat/>
+              </saw:axisFormat>
+            </saw:axesFormats>
+            
+          <saw:selections><saw:categories><saw:category><saw:columnRef columnID="c501cc6e2cd8b99bd"/></saw:category><saw:category><saw:columnRef columnID="c675432f5c8647cf8"/></saw:category></saw:categories><saw:measures showMeasureLabelsOnCategory="false"><saw:column measureType="y"><saw:columnRef columnID="c6fb6db5dd1a1d84d"/></saw:column></saw:measures><saw:seriesGenerators><saw:seriesGenerator><saw:columnRef columnID="c412c84349377793c"/></saw:seriesGenerator><saw:measureLabels/></saw:seriesGenerators></saw:selections></saw:view>
+        </saw:nestedView>
+      </saw:nestedViews>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!4" scrollingEnabled="false">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723664647_34802" oldID="kcap1564723488406_6546">
+          <saw:text>Avg Days Line Graph Daily</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cfdaf510c67436a5f"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c412c84349377793c"/>
+            <saw:edgeLayer type="measure"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c6fb6db5dd1a1d84d"/>
+      </saw:measuresList>
+      <saw:nestedViews>
+        <saw:nestedView position="chart only">
+          <saw:view xsi:type="saw:dvtchart" name="pivotTableView!4::GridChart">
+            <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+              <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+            </saw:display>
+            <saw:canvasFormat height="330" width="1200">
+              <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default">
+                <saw:textFormat/>
+              </saw:dataLabels>
+            </saw:canvasFormat>
+            <saw:legendFormat position="default" transparentFill="true"/>
+            <saw:axesFormats>
+              <saw:axisFormat axis="X" displayScaleLabels="true">
+                <saw:labels rotate="45" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+                <saw:textFormat/>
+              </saw:axisFormat>
+            </saw:axesFormats>
+            <saw:selections>
+              <saw:categories>
+                <saw:category>
+                  <saw:columnRef columnID="cfdaf510c67436a5f"/>
+                </saw:category>
+              </saw:categories>
+              <saw:measures showMeasureLabelsOnCategory="false">
+                <saw:column measureType="y">
+                  <saw:columnRef columnID="c6fb6db5dd1a1d84d"/>
+                </saw:column>
+              </saw:measures>
+              <saw:seriesGenerators>
+                <saw:seriesGenerator>
+                  <saw:columnRef columnID="c412c84349377793c"/>
+                </saw:seriesGenerator>
+                <saw:measureLabels/>
+              </saw:seriesGenerators>
+            </saw:selections>
+          </saw:view>
+        </saw:nestedView>
+      </saw:nestedViews>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

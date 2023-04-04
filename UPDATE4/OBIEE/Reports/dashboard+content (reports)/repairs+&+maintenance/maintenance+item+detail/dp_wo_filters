@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:view xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saw:globalFilterPrompt" name="">
+  <saw:prompts scope="dashboard" subjectArea="&quot;Work Orders&quot;">
+    <saw:promptStep setWidthToAllPrompts="true" showResetButton="false" autoApplyPrompt="true">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c1" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Management Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51338" oldID="kcap1564723574515_25815">
+              <saw:text>Management Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;MANAGEMENT_AREA&#39;))">
+            <saw:promptChoices/>
+          </saw:promptSource>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c31" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Reporting Status&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51339" oldID="kcap1564723574515_25816">
+              <saw:text>Reporting Status</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;REPORTING_STATUS&#39;))">
+            <saw:promptChoices>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/Committed</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/Not Cancelled</saw:promptGroupChoice>
+            </saw:promptChoices>
+          </saw:promptSource>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c6" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Contract Name&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51340" oldID="kcap1564723574515_25817">
+              <saw:text>Contract Name</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;CONTRACT_NAME&#39;))">
+            <saw:promptChoices>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/All P&amp;T</saw:promptGroupChoice>
+            </saw:promptChoices>
+          </saw:promptSource>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c7" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Contract Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51341" oldID="kcap1564723574515_25818">
+              <saw:text>Contract Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;CONTRACT_AREA&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c8" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Maintenance Area Name&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51342" oldID="kcap1564723574515_25819">
+              <saw:text>Maintenance Area Name</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;REPAIRS_AREA_NAME&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c9" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Inspection Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51343" oldID="kcap1564723574515_25820">
+              <saw:text>Inspection Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;REPAIRS_PATCH&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c55" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Property Development&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51344" oldID="kcap1564723574515_25821">
+              <saw:text>Property Development</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c10" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Ownership&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51345" oldID="kcap1564723574515_25822">
+              <saw:text>Ownership</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;OWNERSHIP&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c11" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Asset Status&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51346" oldID="kcap1564723574515_25823">
+              <saw:text>Asset Status</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ASSET_STATUS&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c2" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Age Of Property&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51347" oldID="kcap1564723574515_25824">
+              <saw:text>Age Of Property</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_NUMBER&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;AGE_OF_PROPERTY&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c12" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Project Type&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51348" oldID="kcap1564723574515_25825">
+              <saw:text>Project Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;PROJECT_TYPE&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c13" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Delivery Year&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51349" oldID="kcap1564723574515_25826">
+              <saw:text>Delivery Year</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;DELIVERY_YEAR&#39;)) order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c14" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T4&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51350" oldID="kcap1564723574515_25827">
+              <saw:text>T4</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;T4&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c15" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Rent Bill&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51351" oldID="kcap1564723574515_25828">
+              <saw:text>Rent Bill Flag</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;RENT_BILL&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c16" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Trade&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51352" oldID="kcap1564723574515_25829">
+              <saw:text>Trade</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;TRADE&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c17" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Procurement Method&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51353" oldID="kcap1564723574515_25830">
+              <saw:text>Procurement Method</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;PROCUREMENT_METHOD&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c18" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Maintenance Code&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51354" oldID="kcap1564723574515_25831">
+              <saw:text>Maintenance Code</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;MAINTENANCE_CODE&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c42" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Quantity Range&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51355" oldID="kcap1564723574515_25832">
+              <saw:text>Quantity Range</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c19" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Charge Type&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51356" oldID="kcap1564723574515_25833">
+              <saw:text>Charge Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;CHARGE_TYPE&#39;))">
+            <saw:promptChoices>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/Accrual Charge Type</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/All P&amp;T (Excludes WI &amp; RI)</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/All P&amp;T Charge Types</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/All PPG Charge Types</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/Defence Charge Types</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/DHA Charge Types</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/Lessor Charge Types</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/Makegood Charge Type</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/R&amp;M Charge Types</saw:promptGroupChoice>
+              <saw:promptGroupChoice type="groupPath" useChildrenOnly="false">/shared/Components/_filters/Work Orders/Tenant Charge Types</saw:promptGroupChoice>
+            </saw:promptChoices>
+          </saw:promptSource>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c38" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Charge Category&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51357" oldID="kcap1564723574515_25834">
+              <saw:text>Charge Category</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;CHARGE_CATEGORY&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c20" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;GL Account&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51358" oldID="kcap1564723574515_25835">
+              <saw:text>GL Account</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;GL_ACCOUNT&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c22" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Allocation Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51359" oldID="kcap1564723574515_25836">
+              <saw:text>Allocation Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ALLOCATION_DATE_FY&#39;))  order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c21" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Registered Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51360" oldID="kcap1564723574515_25837">
+              <saw:text>Registered Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;REGISTERED_DATE_FY&#39;)) order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c43" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">cast(&quot;MV Workorders&quot;.&quot;Registered Date&quot; as date)</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="80" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51361" oldID="kcap1564723574515_25838">
+              <saw:text>Registered Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c23" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Accrued Or Actual Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51362" oldID="kcap1564723574515_25839">
+              <saw:text>Accrued Or Actual Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            <saw:promptDefaultValue>RV_CURRENT_FIN_YEAR_FY</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ACCRUED_OR_ACTUAL_DATE_FY&#39;)) order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c30" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Accrued Or Actual Month&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51363" oldID="kcap1564723574515_25840">
+              <saw:text>Accrued Or Actual Month</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="specificPrompts">
+            <saw:constrainedByFormula>
+              <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Accrued Or Actual Date FY&quot;</sawx:expr>
+            </saw:constrainedByFormula>
+          </saw:constrainPrompt>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c24" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Future Maint Start Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51364" oldID="kcap1564723574515_25841">
+              <saw:text>Future Maint Start Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;FUTURE_MAINT_START_DATE_FY&#39;)) order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c25" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Target End Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51365" oldID="kcap1564723574515_25842">
+              <saw:text>Target End Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;TARGET_END_DATE_FY&#39;)) order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c44" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">cast(&quot;MV Workorders&quot;.&quot;Target End Date&quot; as date)</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="80" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51366" oldID="kcap1564723574515_25843">
+              <saw:text>Target End Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c26" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Completion Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51367" oldID="kcap1564723574515_25844">
+              <saw:text>Completion Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;COMPLETION_DATE_FY&#39;)) order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c27" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Invoice Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51368" oldID="kcap1564723574515_25845">
+              <saw:text>Invoice Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;INVOICE_DATE_FY&#39;)) order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c29" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Approved Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51369" oldID="kcap1564723574515_25846">
+              <saw:text>Approved Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;APPROVED_DATE_FY&#39;)) order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c39" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Approved Month&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51370" oldID="kcap1564723574515_25847">
+              <saw:text>Approved Month</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="specificPrompts">
+            <saw:constrainedByFormula>
+              <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Approved Date FY&quot;</sawx:expr>
+            </saw:constrainedByFormula>
+          </saw:constrainPrompt>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c53" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Property Manager&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750968_51371" oldID="kcap1564723574515_25848">
+              <saw:text>Property Manager</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;PROPERTY_MANAGER&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c33" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Reporter&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51372" oldID="kcap1564723574515_25849">
+              <saw:text>Reporter</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT  &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;)  AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;CONTACT_OFFICER&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c34" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Raising Organisation Unit&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51373" oldID="kcap1564723574515_25850">
+              <saw:text>Raising Organisation Unit</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;RAISING_ORG_UNIT&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c36" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T1 Document Loader&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51374" oldID="kcap1564723574515_25851">
+              <saw:text>T1 Document Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:specificChoices">
+            <saw:promptChoices>
+              <saw:promptChoice>
+                <saw:value>LEASEPAY</saw:value>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:value>REPAIRCS</saw:value>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:value>REPAIRS</saw:value>
+              </saw:promptChoice>
+            </saw:promptChoices>
+          </saw:promptSource>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c37" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T1 Batch Sequence&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:editBox">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51375" oldID="kcap1564723574515_25852">
+              <saw:text>T1 Batch Sequence</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c32" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;UPRN&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51376" oldID="kcap1564723574515_25853">
+              <saw:text>Enter a Property ID (separated by &#39;;&#39;)</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT NULL FROM &quot;Work Orders&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c35" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Template ID&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51377" oldID="kcap1564723574515_25854">
+              <saw:text>Template ID</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;TEMPLATE_ID&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c40" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Target End Date IND&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51378" oldID="kcap1564723574515_25855">
+              <saw:text>Target End Date IND</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;MV Workorders&quot;.&quot;Target End Date IND&quot; FROM &quot;Work Orders&quot;"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c41" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Active Event&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51379" oldID="kcap1564723574515_25856">
+              <saw:text>Active Event</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c45" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Job Type&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51380" oldID="kcap1564723574515_25857">
+              <saw:text>Job Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;MV Workorders&quot;.&quot;Job Type&quot; FROM &quot;Work Orders&quot; where  &quot;MV Workorders&quot;.&quot;UPRN&quot; &lt;&gt; &#39;-1&#39;"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c46" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Raised From Inspection Reason&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51381" oldID="kcap1564723574515_25858">
+              <saw:text>Raised From Inspection Reason</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;RAISED_FROM_INSPECTION_REASON&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c54" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Request Decision Dependant&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51382" oldID="kcap1564723574515_25859">
+              <saw:text>MREQ Decision Dependant</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;REQ_DECISION_DEPENDANT&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c47" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Cost Tier&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51383" oldID="kcap1564723574515_25860">
+              <saw:text>Cost Tier</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;COST_TIER&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c48" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Quality Tier&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51384" oldID="kcap1564723574515_25861">
+              <saw:text>Quality Tier</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;QUALITY_TIER&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c52" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Recall Reason&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51385" oldID="kcap1564723574515_25862">
+              <saw:text>Recall Reason</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;RECALL_REASON&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c49" subjectArea="&quot;Work Orders&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Override Reason&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51386" oldID="kcap1564723574515_25863">
+              <saw:text>Override Reason</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;OVERRIDE_REASON&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c50" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Priority Code&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51387" oldID="kcap1564723574515_25864">
+              <saw:text>Priority Code</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c51" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Contractor ID&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51388" oldID="kcap1564723574515_25865">
+              <saw:text>Enter a Contractor ID (separated by &#39;;&#39;)</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT CAST(&quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_NUMBER&quot; AS INT) s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;CTM_CONTRACTOR_ID&#39;)) AND 1=1"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c56" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Maintenance Reason&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51389" oldID="kcap1564723574515_25866">
+              <saw:text>Maintenance Reason</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;MAINTENANCE_REASON&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c57" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Australian Owned&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51390" oldID="kcap1564723574515_25867">
+              <saw:text>Australian Owned</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;AUSTRALIAN_OWNED&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c58" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Indigenous&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51391" oldID="kcap1564723574515_25868">
+              <saw:text>Indigenous Owned</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;INDIGENOUS&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c59" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Company Size&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51392" oldID="kcap1564723574515_25869">
+              <saw:text>Company Size</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;COMPANY_SIZE&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c60" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Tender Reference&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723750969_51393" oldID="kcap1564723574515_25870">
+              <saw:text>Tender Reference</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;TENDER_REFERENCE&#39;))" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+      <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c61" subjectArea="&quot;Work Orders&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Fixture Maintenance Type&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT IFNULL(&quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; , &#39;ZNULL&#39;) s_2 FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;FIXTURE_MAINTENANCE_TYPE&#39;))"/><saw:label><saw:caption><saw:text>Fixture Maintenance Type</saw:text></saw:caption></saw:label></saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c62" subjectArea="&quot;Work Orders&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Fixture Type&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;FIXTURE_TYPE&#39;))"/><saw:label><saw:caption><saw:text>Fixture Type</saw:text></saw:caption></saw:label></saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c63" subjectArea="&quot;Work Orders&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Development Project Key&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;DEVELOPMENT_PROJECT_KEY&#39;)) order by &quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot;  DESC"/></saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c65" subjectArea="&quot;Work Orders&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Development Stage Key&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;DEVELOPMENT_STAGE_KEY&#39;)) order by &quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot;  DESC" xsi:type="saw:sqlPromptSource"/></saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c64" subjectArea="&quot;Work Orders&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Construction Project Key&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;CONSTRUCTION_PROJECT_KEY&#39;)) ORDER BY &quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot;  DESC" xsi:type="saw:sqlPromptSource"/></saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c68" subjectArea="&quot;Work Orders&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Upgrade Project Key&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:editBox"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="specificValue" usingCodeValue="false"><saw:promptDefaultValue>CWB-</saw:promptDefaultValue></saw:promptDefaultValues><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="presentationVariable" variableFormula="pv_upgrade"/></saw:setPromptVariables><saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT NULL FROM &quot;Work Orders&quot; FETCH FIRST 65001 ROWS ONLY"/><saw:label><saw:caption><saw:text>Enter a Upgrade Project Key</saw:text></saw:caption></saw:label></saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c66" subjectArea="&quot;Work Orders&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Defect Claim Type&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;DEFECT_CLAIM_TYPE&#39;)) order by &quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot;  DESC" xsi:type="saw:sqlPromptSource"/></saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c67" subjectArea="&quot;Work Orders&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Acquisition Type&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;MV_WORKORDERS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ACQUISITION_TYPE&#39;)) order by &quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot;  DESC" xsi:type="saw:sqlPromptSource"/></saw:prompt></saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:view>

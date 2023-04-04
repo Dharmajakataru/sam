@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Business Support&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce7a0d3e88ff54b66">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;BCP LIA Access&quot;.&quot;Base Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca83a1541cb4f840a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(EVALUATE_AGGR(&#39;LISTAGG(%1,%2) WITHIN GROUP (ORDER BY %3 DESC)&#39;,&quot;BCP LIA Access&quot;.&quot;Unit Name&quot;,&#39;,&#39;,&quot;BCP LIA Access&quot;.&quot;Unit Name&quot;) as VARCHAR(3000))</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645136_31270" oldID="kcap1564723639524_30532">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31271" oldID="kcap1564723639524_30533">
+            <saw:text>Unit</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0ae624f6abb840d2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;BCP LIA Access&quot;.&quot;Username&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf6f509c669190e4a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;BCP LIA Access&quot;.&quot;First Name&quot; || &#39; &#39; || &quot;BCP LIA Access&quot;.&quot;Surname&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31272" oldID="kcap1564723639524_30534">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31273" oldID="kcap1564723639524_30535">
+            <saw:text>Name</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="caf53fc0a582cbb20">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;BCP LIA Access&quot;.&quot;Employee Id&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdce89136e8a49a27">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;BCP LIA Access&quot;.&quot;Service&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c52bb6f0c3bf52602">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;BCP LIA Access&quot;.&quot;No Of Logged In&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31274" oldID="kcap1564723639524_30536">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31275" oldID="kcap1564723639524_30537">
+            <saw:text>Count of Logins in previous 12 months</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5225582746c1909b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;BCP Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaBaseAuthority&#39; then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31276" oldID="kcap1564723639524_30538">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31277" oldID="kcap1564723639524_30539">
+            <saw:text>BA</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2af10c86f5727041">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;BCP Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaBaseManager&#39; then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31278" oldID="kcap1564723639524_30540">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31279" oldID="kcap1564723639524_30541">
+            <saw:text>BM</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3aaad928acd018cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;BCP Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaCourseCoordinator&#39; then 1 Else 0 End) &gt;  0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31280" oldID="kcap1564723639524_30542">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31281" oldID="kcap1564723639524_30543">
+            <saw:text>CC</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca1bbbf55bf97fa33">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;BCP Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaServiceProviderLeap&#39; then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31282" oldID="kcap1564723639524_30544">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31283" oldID="kcap1564723639524_30545">
+            <saw:text>SPL</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0c786621065286d0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;BCP Lia Access&quot;.&quot;Base Role&quot; = &#39;LiaServiceProviderNonLeap&#39; then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31284" oldID="kcap1564723639524_30546">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31285" oldID="kcap1564723639524_30547">
+            <saw:text>SPNL</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7ae4ee872d7a2c2c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;BCP Lia Access&quot;.&quot;Unit Role&quot; = &#39;LiaApprovingAuthority&#39; Then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31286" oldID="kcap1564723639524_30548">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31287" oldID="kcap1564723639524_30549">
+            <saw:text>AA</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd632307e3d8fbeb2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN SUM(Case when &quot;BCP Lia Access&quot;.&quot;Unit Role&quot; = &#39;LiaUnitManager&#39; Then 1 Else 0 End) &gt; 0 THEN &#39;Y&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31288" oldID="kcap1564723639524_30550">
+            <saw:text>BCP LIA Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723645137_31289" oldID="kcap1564723639524_30551">
+            <saw:text>UM</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Reports+-+Business+Support" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ce7a0d3e88ff54b66"/>
+            <saw:edgeLayer type="column" columnID="ca83a1541cb4f840a"/>
+            <saw:edgeLayer type="column" columnID="c0ae624f6abb840d2"/>
+            <saw:edgeLayer type="column" columnID="cf6f509c669190e4a"/>
+            <saw:edgeLayer type="column" columnID="caf53fc0a582cbb20"/>
+            <saw:edgeLayer type="column" columnID="cdce89136e8a49a27"/>
+            <saw:edgeLayer type="column" columnID="c52bb6f0c3bf52602"/>
+            <saw:edgeLayer type="column" columnID="c5225582746c1909b"/>
+            <saw:edgeLayer type="column" columnID="c2af10c86f5727041"/>
+            <saw:edgeLayer type="column" columnID="c3aaad928acd018cb"/>
+            <saw:edgeLayer type="column" columnID="ca1bbbf55bf97fa33"/>
+            <saw:edgeLayer type="column" columnID="c0c786621065286d0"/>
+            <saw:edgeLayer type="column" columnID="c7ae4ee872d7a2c2c"/>
+            <saw:edgeLayer type="column" columnID="cd632307e3d8fbeb2"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

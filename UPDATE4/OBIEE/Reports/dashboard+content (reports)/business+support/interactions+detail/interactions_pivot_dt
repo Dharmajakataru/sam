@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Interactions&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9cb7de99f6e15409">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Client Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723638589_30423" oldID="kcap1564723468473_3618">
+            <saw:text>MV Interactions</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723638589_30424" oldID="kcap1564723468473_3619">
+            <saw:text>Client Type 1</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfbdcc7838b878317">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Interaction ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Client Type&quot;</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">LESSOR</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false">
+                    <saw:actionLink actionLinkID="cfbdcc7838b878317_al587b1f1439293856">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[clm]/lessor/interaction/view.action</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                            <saw:prompt>id</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                            <saw:prompt>lessorId</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments/>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[clm]/lessor/interaction/view.action?id=@{1}&amp;lessorId=@{2}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723638589_30427" oldID="kcap1564723468473_3622">
+                        <saw:text>View in CLM</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="cfbdcc7838b878317"/>
+                          </saw:mapping>
+                        </saw:assign>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c1e28cf6e23232b3d"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Client Type&quot;</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">MEMBER</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false">
+                    <saw:actionLink actionLinkID="cfbdcc7838b878317_alfb509ad0a17b9da5">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[clm]/member/interaction/view.action</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                            <saw:prompt>id</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                            <saw:prompt>employeeid</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments/>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[clm]/member/interaction/view.action?id=@{1}&amp;employeeId=@{2}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723638589_30428" oldID="kcap1564723468473_3623">
+                        <saw:text>View in CLM</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="cfbdcc7838b878317"/>
+                          </saw:mapping>
+                        </saw:assign>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="cbefccbd56c5dd9cd"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Client Type&quot;</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">CONTRACTOR</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false">
+                    <saw:actionLink actionLinkID="cfbdcc7838b878317_al5662be96b2f31141">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[clm]/contractor/interaction/view.action</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                            <saw:prompt>id</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                            <saw:prompt>contractorId</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments/>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[clm]/contractor/interaction/view.action?id=@{1}&amp;contractorId=@{2}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723638589_30429" oldID="kcap1564723468473_3624">
+                        <saw:text>View in CLM</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="cfbdcc7838b878317"/>
+                          </saw:mapping>
+                        </saw:assign>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c2a77bbfbfb15d183"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Client Type&quot;</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">AGENT</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false">
+                    <saw:actionLink actionLinkID="cfbdcc7838b878317_al4db4e86490d238da">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[clm]/agent/interaction/view.action</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                            <saw:prompt>id</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                            <saw:prompt>agentId</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments/>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[clm]/agent/interaction/view.action?id=@{1}&amp;agentId=@{2}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723638589_30430" oldID="kcap1564723468473_3625">
+                        <saw:text>View in CLM</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="cfbdcc7838b878317"/>
+                          </saw:mapping>
+                        </saw:assign>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c346faa926eb0e340"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2addb99fa8cb1fc4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Legacy Key&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce6421a92232df635">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Client Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbefccbd56c5dd9cd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Employee ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3e90b8879a416c6b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Employee Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1e28cf6e23232b3d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Lessor ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf4a6a4ac6b0ac9f8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Lessor Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2a77bbfbfb15d183">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Contractor ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf59513fba542cf29">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Contractor Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c346faa926eb0e340">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Agent ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd20e6ece9ec51b5c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Agent Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf65eb0840ce5a31d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Source&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce01be0012e096091">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Call Back&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cff8a6b7231ec9b63">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Description&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="300px">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceb921020cba84daf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Create User&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723638589_30425" oldID="kcap1564723468473_3620">
+            <saw:text>MV Interactions</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723638589_30426" oldID="kcap1564723468473_3621">
+            <saw:text>Created By User</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c865868904b89c150">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created Date Time&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9d2073a6ace74643">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created Fin Month&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce11a8f63dcf6a368">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created Fin Year Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc227aa8c543f07ab">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created By System&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6e4e48e97945ff48">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Template Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5e4ce9fe388c3eda">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Template Entity ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9b19fe61bf56dde8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Template Destination&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdb5ee1d22bb5f5f1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Template Sent Physical&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1177a850251e7dd9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c79651650085d3e60">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2a51128ec5006b08">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash Start Fin Month&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca2f95c260eeb7dd0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash Start Fin Year Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc6b728873f7e90bd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c421fd9d9bf90c459">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash End Fin Month&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9b7dfbde9beac41c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash End Fin Year Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4bc022f8e1a993b7"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash Current&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="ccb679caad55ad4b8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Legacy Note ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2f965df08bc010c8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Incoming Call ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="caec648d688a48b45">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Incoming Phone&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca3e41864e4933fca">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Incoming Email&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5ad57b8e2d5d0476">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Message ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    <saw:column xsi:type="saw:regularColumn" columnID="c5033bfc753ad14e3"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Event&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Client Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Employee Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Lessor Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Contractor Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Agent Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Source&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created By User&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created Fin Month&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created Fin Year Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created By System&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Template Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Template Sent Physical&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash Start Fin Month&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash Start Fin Year Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash End Fin Month&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash End Fin Year Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Employee ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Lessor ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Contractor ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Template Destination Filter&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Incoming Call ID Filter&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Incoming Phone Filter&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created By User&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Call Back&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created In Last 14 Days&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created User Group&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Created Date Cal Year No&quot;</sawx:expr>
+        </sawx:expr>
+      <sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Lessor Filter&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Complaint Filter&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Event&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Interactions&quot;.&quot;Flash Current&quot;</sawx:expr></sawx:expr></sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Interactions+Detail" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="100">
+      
+    <saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="c9cb7de99f6e15409"/><saw:edgeLayer type="column" columnID="cfbdcc7838b878317"/><saw:edgeLayer type="column" columnID="c2addb99fa8cb1fc4"/><saw:edgeLayer type="column" columnID="ce6421a92232df635"/><saw:edgeLayer type="column" columnID="cbefccbd56c5dd9cd"/><saw:edgeLayer type="column" columnID="c3e90b8879a416c6b"/><saw:edgeLayer type="column" columnID="c1e28cf6e23232b3d"/><saw:edgeLayer type="column" columnID="cf4a6a4ac6b0ac9f8"/><saw:edgeLayer type="column" columnID="c2a77bbfbfb15d183"/><saw:edgeLayer type="column" columnID="cf59513fba542cf29"/><saw:edgeLayer type="column" columnID="c346faa926eb0e340"/><saw:edgeLayer type="column" columnID="cd20e6ece9ec51b5c"/><saw:edgeLayer type="column" columnID="cf65eb0840ce5a31d"/><saw:edgeLayer type="column" columnID="ce01be0012e096091"/><saw:edgeLayer type="column" columnID="cff8a6b7231ec9b63"/><saw:edgeLayer type="column" columnID="ceb921020cba84daf"/><saw:edgeLayer type="column" columnID="c865868904b89c150"/><saw:edgeLayer type="column" columnID="c9d2073a6ace74643"/><saw:edgeLayer type="column" columnID="ce11a8f63dcf6a368"/><saw:edgeLayer type="column" columnID="cc227aa8c543f07ab"/><saw:edgeLayer type="column" columnID="c6e4e48e97945ff48"/><saw:edgeLayer type="column" columnID="c5e4ce9fe388c3eda"/><saw:edgeLayer type="column" columnID="c9b19fe61bf56dde8"/><saw:edgeLayer type="column" columnID="cdb5ee1d22bb5f5f1"/><saw:edgeLayer type="column" columnID="c1177a850251e7dd9"/><saw:edgeLayer type="column" columnID="c79651650085d3e60"/><saw:edgeLayer type="column" columnID="c2a51128ec5006b08"/><saw:edgeLayer type="column" columnID="ca2f95c260eeb7dd0"/><saw:edgeLayer type="column" columnID="cc6b728873f7e90bd"/><saw:edgeLayer type="column" columnID="c421fd9d9bf90c459"/><saw:edgeLayer type="column" columnID="c9b7dfbde9beac41c"/><saw:edgeLayer type="column" columnID="c4bc022f8e1a993b7"/><saw:edgeLayer type="column" columnID="ccb679caad55ad4b8"/><saw:edgeLayer type="column" columnID="c2f965df08bc010c8"/><saw:edgeLayer type="column" columnID="caec648d688a48b45"/><saw:edgeLayer type="column" columnID="ca3e41864e4933fca"/><saw:edgeLayer type="column" columnID="c5ad57b8e2d5d0476"/><saw:edgeLayer type="column" columnID="c5033bfc753ad14e3"/></saw:edgeLayers></saw:edge><saw:edge axis="column"/></saw:edges></saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

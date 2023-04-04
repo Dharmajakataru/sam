@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Corporate Property&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1551a9f70c8d98df">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MAX(case when &quot;Vacancy Source&quot;.&quot;RNTB_STATUS&quot; in (&#39;DMCA&#39;) and &quot;Vacancy Source&quot;.&quot;VACANT_YN&quot; = &#39;Y&#39;  and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &gt; CURRENT_DATE and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &lt; TIMESTAMPADD(SQL_TSI_DAY, 366, CURRENT_DATE) and &quot;Lease Renewal Dim&quot;.&quot;Resolution&quot; is null then &quot;Vacancy Source&quot;.&quot;GROSS_DAYS_VACANT&quot; else null end)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57616" oldID="kcap1564723777554_55424">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57617" oldID="kcap1564723777554_55425">
+            <saw:text>Max Days Vacant</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="paren" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="ca6989f0b09e9d04b"/>
+                    <sawx:expr xsi:type="xsd:string">OK</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="green"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="ca6989f0b09e9d04b"/>
+                    <sawx:expr xsi:type="xsd:string">Warning</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="yellow"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="ca6989f0b09e9d04b"/>
+                    <sawx:expr xsi:type="xsd:string">Critical</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="red"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7f89385b000ac861">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">7</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57618" oldID="kcap1564723777554_55426">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57619" oldID="kcap1564723777554_55427">
+            <saw:text>Target</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="paren" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca6989f0b09e9d04b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN (MAX(case when &quot;Vacancy Source&quot;.&quot;RNTB_STATUS&quot; in (&#39;DMCA&#39;) and &quot;Vacancy Source&quot;.&quot;VACANT_YN&quot; = &#39;Y&#39;  and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &gt; CURRENT_DATE and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &lt; TIMESTAMPADD(SQL_TSI_DAY, 366, CURRENT_DATE) and &quot;Lease Renewal Dim&quot;.&quot;Resolution&quot; is null then &quot;Vacancy Source&quot;.&quot;GROSS_DAYS_VACANT&quot; else null end)) &gt;= 7 THEN &#39;Critical&#39; ELSE CASE WHEN (MAX(case when &quot;Vacancy Source&quot;.&quot;RNTB_STATUS&quot; in (&#39;DMCA&#39;) and &quot;Vacancy Source&quot;.&quot;VACANT_YN&quot; = &#39;Y&#39;  and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &gt; CURRENT_DATE and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &lt; TIMESTAMPADD(SQL_TSI_DAY, 366, CURRENT_DATE) and &quot;Lease Renewal Dim&quot;.&quot;Resolution&quot; is null then &quot;Vacancy Source&quot;.&quot;GROSS_DAYS_VACANT&quot; else null end)) &gt; 5 THEN &#39;Warning&#39; ELSE CASE WHEN (MAX(case when &quot;Vacancy Source&quot;.&quot;RNTB_STATUS&quot; in (&#39;DMCA&#39;) and &quot;Vacancy Source&quot;.&quot;VACANT_YN&quot; = &#39;Y&#39;  and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &gt; CURRENT_DATE and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &lt; TIMESTAMPADD(SQL_TSI_DAY, 366, CURRENT_DATE) and &quot;Lease Renewal Dim&quot;.&quot;Resolution&quot; is null then &quot;Vacancy Source&quot;.&quot;GROSS_DAYS_VACANT&quot; else null end)) &lt;= 5 THEN &#39;OK&#39; ELSE &#39; &#39;  END END END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57620" oldID="kcap1564723777554_55428">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57621" oldID="kcap1564723777554_55429">
+            <saw:text>Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec interaction="default" hAlign="center"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="ca6989f0b09e9d04b"/>
+                    <sawx:expr xsi:type="xsd:string">OK</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/general/checkmark.png" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="ca6989f0b09e9d04b"/>
+                    <sawx:expr xsi:type="xsd:string">Warning</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/icons_l/02_warning.png" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="ca6989f0b09e9d04b"/>
+                    <sawx:expr xsi:type="xsd:string">Critical</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/icons_l/01_alert.png" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c38aadaa121cae9cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">AVG(case when &quot;Vacancy Source&quot;.&quot;RNTB_STATUS&quot; in (&#39;DMCA&#39;) and  &quot;Vacancy Source&quot;.&quot;VACANT_YN&quot; = &#39;Y&#39;  and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &gt; CURRENT_DATE and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &lt; TIMESTAMPADD(SQL_TSI_DAY, 366, CURRENT_DATE) and &quot;Lease Renewal Dim&quot;.&quot;Resolution&quot; is null then &quot;Vacancy Source&quot;.&quot;GROSS_DAYS_VACANT&quot; else null end)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57622" oldID="kcap1564723777554_55430">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57623" oldID="kcap1564723777554_55431">
+            <saw:text>Average</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="paren" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc7f5cfede20a540f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(case when &quot;Vacancy Source&quot;.&quot;RNTB_STATUS&quot; in (&#39;DMCA&#39;) and  &quot;Vacancy Source&quot;.&quot;VACANT_YN&quot; = &#39;Y&#39;  and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &gt; CURRENT_DATE and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &lt; TIMESTAMPADD(SQL_TSI_DAY, 366, CURRENT_DATE) and &quot;Lease Renewal Dim&quot;.&quot;Resolution&quot; is null then &quot;Vacancy Source&quot;.&quot;UPRN&quot; else null end)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57624" oldID="kcap1564723777554_55432">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57625" oldID="kcap1564723777554_55433">
+            <saw:text>Total Properties</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="paren" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c59c5a7283e949acf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(CASE WHEN &quot;Vacancy Source&quot;.&quot;RNTB_STATUS&quot; in (&#39;DMCA&#39;) and &quot;Vacancy Source&quot;.&quot;VACANT_YN&quot; = &#39;Y&#39; and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &gt; CURRENT_DATE and &quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot; &lt; TIMESTAMPADD(SQL_TSI_DAY, 366, CURRENT_DATE) and &quot;Lease Renewal Dim&quot;.&quot;Resolution&quot; is null and &quot;Vacancy Source&quot;.&quot;GROSS_DAYS_VACANT&quot; &gt;= 7 THEN 1 ELSE 0 END)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57626" oldID="kcap1564723777554_55434">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723793168_57627" oldID="kcap1564723777554_55435">
+            <saw:text>Missing KPI</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="paren" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdeb0f81b98701f36">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Management Area&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cdeb0f81b98701f36_al5c5ba6fba129939e">
+                <saw:action>
+                  <saw:actionName>KPI_Renewal Days Report Drilldown_DMCA</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Vacancy/KPI/DMCA/KPI_Renewal Days Report Drilldown_DMCA</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723793168_57628" oldID="kcap1564723777554_55436">
+                  <saw:text>View Property Detail</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cdeb0f81b98701f36_albd9fbb0c4d5f89ed">
+                  <saw:action>
+                    <saw:actionName>KPI_Renewal Days Report Drilldown_DMCA</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Vacancy/KPI/DMCA/KPI_Renewal Days Report Drilldown_DMCA</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723793168_57629" oldID="kcap1564723777554_55437">
+                    <saw:text>View Property Detail</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vacancy Source&quot;.&quot;RNTB_STATUS&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">DMCA</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vacancy Source&quot;.&quot;VACANT_YN&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Y</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="null">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Lease Renewal Dim&quot;.&quot;Resolution&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="greater">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:sqlExpression">CURRENT_DATE</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="less">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Lease Renewal Dim&quot;.&quot;Lease Expiry Date&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPADD(SQL_TSI_DAY, 366, CURRENT_DATE)</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/KPI+-+Vacancy"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cdeb0f81b98701f36"/>
+            <saw:edgeLayer type="column" columnID="c1551a9f70c8d98df"/>
+            <saw:edgeLayer type="column" columnID="c7f89385b000ac861" aggRule="max"/>
+            <saw:edgeLayer type="column" columnID="ca6989f0b09e9d04b" aggRule="none"/>
+            <saw:edgeLayer type="column" columnID="c38aadaa121cae9cb"/>
+            <saw:edgeLayer type="column" columnID="cc7f5cfede20a540f"/>
+            <saw:edgeLayer type="column" columnID="c59c5a7283e949acf"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c1551a9f70c8d98df"/>
+        <saw:measure columnID="c7f89385b000ac861"/>
+        <saw:measure columnID="ca6989f0b09e9d04b"/>
+        <saw:measure columnID="c38aadaa121cae9cb"/>
+        <saw:measure columnID="cc7f5cfede20a540f"/>
+        <saw:measure columnID="c59c5a7283e949acf"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c7f89385b000ac861"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cdeb0f81b98701f36"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c1551a9f70c8d98df"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="ca6989f0b09e9d04b"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c38aadaa121cae9cb"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cc7f5cfede20a540f"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c59c5a7283e949acf"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="lineBar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cdeb0f81b98701f36"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c1551a9f70c8d98df"/>
+          </saw:column>
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="c7f89385b000ac861"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats syncAxis="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:narrative rowCount="1">
+        <saw:caption fmt="html" captionID="kcap1564723793168_57615" oldID="kcap1564723777554_55423">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-65px; left:10px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:narrative>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

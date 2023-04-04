@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:hierarchicalColumn" columnID="c684a365102c5fb17" hierarchyID="Vac and MWD RA Base DHF" tableName="&quot;Vac and MWD RA Base DHF&quot;" dimensionID="Vac and MWD RA Base DHF">
+        <saw:displayFormat>
+          <saw:formatSpec wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46383" oldID="kcap1564723518915_13908">
+            <saw:text>Vac and MWD RA Base DHF</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46384" oldID="kcap1564723518915_13909">
+            <saw:text>HMC / DHF</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+        <saw:hierarchyLevels>
+          <saw:hierarchyLevel levelID="National Total"/>
+          <saw:hierarchyLevel levelID="HMC"/>
+          <saw:hierarchyLevel levelID="Base DHF"/>
+        </saw:hierarchyLevels>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7304d9078a7ae8c4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0a83cc1d95aa90b6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c036d1f048e458c2f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(&quot;Vac and MWD RA F&quot;.&quot;MWD RA Tenancies&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c036d1f048e458c2f_alf51f66289b078eda">
+                      <saw:action>
+                        <saw:actionName>MWD RA Tenancy Detail National Level</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/MWD RA Tenancy Detail National Level</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723724940_46395" oldID="kcap1564723518915_13920">
+                        <saw:text>Drill to National Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c036d1f048e458c2f_al5df44ae2f2571bf6">
+                      <saw:action>
+                        <saw:actionName>MWD RA Tenancy Detail HMC Level</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/MWD RA Tenancy Detail HMC Level</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723724940_46396" oldID="kcap1564723518915_13921">
+                        <saw:text>Drill to HMC Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c036d1f048e458c2f_al6de158e2083d51ce">
+                      <saw:action>
+                        <saw:actionName>MWD RA Tenancy Detail DHF Level</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/MWD RA Tenancy Detail DHF Level</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723724940_46397" oldID="kcap1564723518915_13922">
+                        <saw:text>Drill to DHF Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46385" oldID="kcap1564723518915_13910">
+            <saw:text>Vac and MWD RA F</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46386" oldID="kcap1564723518915_13911">
+            <saw:text>MWD RA Tenancies</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfb0f52626ed0000b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(&quot;Vac and MWD RA F&quot;.&quot;SR Tenancies&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="cfb0f52626ed0000b_al4deaf7c48ca88486">
+                      <saw:action>
+                        <saw:actionName>SR Tenancy Detail National Level</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/SR Tenancy Detail National Level</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723724940_46398" oldID="kcap1564723518915_13923">
+                        <saw:text>Drill to National Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="cfb0f52626ed0000b_al821569eb1f94079d">
+                      <saw:action>
+                        <saw:actionName>SR Tenancy Detail HMC Level</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/SR Tenancy Detail HMC Level</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723724940_46399" oldID="kcap1564723518915_13924">
+                        <saw:text>Drill to HMC Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="cfb0f52626ed0000b_al70087b27f4cba586">
+                      <saw:action>
+                        <saw:actionName>SR Tenancy Detail DHF Level</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/SR Tenancy Detail DHF Level</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723724940_46400" oldID="kcap1564723518915_13925">
+                        <saw:text>Drill to DHF Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46387" oldID="kcap1564723518915_13912">
+            <saw:text>Vac and MWD RA F</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46388" oldID="kcap1564723518915_13913">
+            <saw:text>SR Tenancies</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce80fca0305c86346" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(&quot;Vac and MWD RA F&quot;.&quot;MWD RA Tenancies&quot;)/ SUM(&quot;Vac and MWD RA F&quot;.&quot;MWD RA Ten and SR Total&quot;) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46389" oldID="kcap1564723518915_13914">
+            <saw:text>Vac and MWD RA F</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46390" oldID="kcap1564723518915_13915">
+            <saw:text>MWD RA %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4bcca1cf47eeb504">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(&quot;Vac and MWD RA F&quot;.&quot;DHA Stock Total&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c4bcca1cf47eeb504_alc437d4418d039c50">
+                      <saw:action>
+                        <saw:actionName>DHA Stock Detail National Level</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/DHA Stock Detail National Level</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723724940_46401" oldID="kcap1564723518915_13926">
+                        <saw:text>Drill to National Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="null">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c4bcca1cf47eeb504_al02f370a610050634">
+                      <saw:action>
+                        <saw:actionName>DHA Stock Detail HMC Level</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/DHA Stock Detail HMC Level</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723724940_46402" oldID="kcap1564723518915_13927">
+                        <saw:text>Drill to HMC Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:logical" op="and">
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;Management Area&quot;</sawx:expr>
+                    </sawx:expr>
+                    <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                      <sawx:expr xsi:type="sawx:sqlExpression">&quot;Vac and MWD RA Base DHF&quot;.&quot;DHF&quot;</sawx:expr>
+                    </sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c4bcca1cf47eeb504_al533eb7cf17fce873">
+                      <saw:action>
+                        <saw:actionName>DHA Stock Detail DHF Level</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>__navigateToBIContent__</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>/shared/Components/Dashboard Content/Property Portfolio/MWD RA and Vacancy/DHA Stock Detail DHF Level</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                          <saw:functionName>__navigateToBIContent__</saw:functionName>
+                          <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                          <saw:scriptPath/>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723724940_46403" oldID="kcap1564723518915_13928">
+                        <saw:text>Drill to DHF Level</saw:text>
+                      </saw:caption>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46391" oldID="kcap1564723518915_13916">
+            <saw:text>Vac and MWD RA F</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46392" oldID="kcap1564723518915_13917">
+            <saw:text>DHA Stock Total</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c44b29f5747ff0772" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(&quot;Vac and MWD RA F&quot;.&quot;DHA Vacant Total&quot;) / SUM(&quot;Vac and MWD RA F&quot;.&quot;DHA Stock Total&quot;) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46393" oldID="kcap1564723518915_13918">
+            <saw:text>Vac and MWD RA F</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723724940_46394" oldID="kcap1564723518915_13919">
+            <saw:text>DHA Vacant % Total</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="200">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c684a365102c5fb17">
+              <saw:drillState>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="National Total"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>1</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c684a365102c5fb17" groupID="0"/>
+                  </saw:selectionGroups>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="HMC"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Hunter Valley HMC</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c684a365102c5fb17" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c684a365102c5fb17" levelID="National Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="HMC"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Ipswich HMC</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c684a365102c5fb17" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c684a365102c5fb17" levelID="National Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="HMC"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Melbourne HMC</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c684a365102c5fb17" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c684a365102c5fb17" levelID="National Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="HMC"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Perth HMC</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c684a365102c5fb17" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c684a365102c5fb17" levelID="National Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="HMC"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Sydney HMC</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c684a365102c5fb17"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c684a365102c5fb17" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c684a365102c5fb17" levelID="National Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+              </saw:drillState>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c7304d9078a7ae8c4"/>
+            <saw:edgeLayer type="column" columnID="c0a83cc1d95aa90b6"/>
+            <saw:edgeLayer type="column" columnID="c036d1f048e458c2f"/>
+            <saw:edgeLayer type="column" columnID="cfb0f52626ed0000b"/>
+            <saw:edgeLayer type="column" columnID="ce80fca0305c86346"/>
+            <saw:edgeLayer type="column" columnID="c4bcca1cf47eeb504"/>
+            <saw:edgeLayer type="column" columnID="c44b29f5747ff0772"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Staff&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6bf12a5c9dffef9a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c70f897e75dd3af05">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Leave Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0ca4c4e1629c7703" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Average Days&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661571_34331" oldID="kcap1564723485789_6195">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661571_34332" oldID="kcap1564723485789_6196">
+            <saw:text>Old Average Days</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0e8ed73d2dbd433d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when MONTH(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) &gt; 6 then cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) as char(4)) || &#39;/&#39; || cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;)+1 as char(4)) else cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;)-1 as char(4)) || &#39;/&#39; || cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) as char(4)) end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661571_34333" oldID="kcap1564723485789_6197">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34334" oldID="kcap1564723485789_6198">
+            <saw:text>FY Year Desc</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cce15d4372be0b889">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Leave Type&quot; || &#39;  &#39; || case when MONTH(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) &gt; 6 then cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) as char(4)) || &#39;/&#39; || cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;)+1 as char(4)) else cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;)-1 as char(4)) || &#39;/&#39; || cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) as char(4)) end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34335" oldID="kcap1564723485789_6199">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34336" oldID="kcap1564723485789_6200">
+            <saw:text>Type and FY Year</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0f15f91151911a3f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34337" oldID="kcap1564723485789_6201">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34338" oldID="kcap1564723485789_6202">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c91bc221fcdd25e65">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when MONTH(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) &gt; 6 then YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) + 1 else YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34339" oldID="kcap1564723485789_6203">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34340" oldID="kcap1564723485789_6204">
+            <saw:text>FY Year</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c15953228c37789bf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when MONTH(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) &gt; 6 then MONTH(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) - 6 else MONTH(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) + 6 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34341" oldID="kcap1564723485789_6205">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34342" oldID="kcap1564723485789_6206">
+            <saw:text>FY Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0b89b3b44e360eca">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when (case when MONTH(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) &gt; 6 then YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) + 1 else YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) end) = 2014 then &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Average Days&quot; else null end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34343" oldID="kcap1564723485789_6207">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34344" oldID="kcap1564723485789_6208">
+            <saw:text>Current Year Avg Days</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6dfc60f1158725b6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when (case when MONTH(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) &gt; 6 then YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) + 1 else YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) end) = 2013 then &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Average Days&quot; else null end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34345" oldID="kcap1564723485789_6209">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34346" oldID="kcap1564723485789_6210">
+            <saw:text>Previous Year Avg Days</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccc1a6370de390a66">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Org Unit Level 3&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c490d95a3a0854be6" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Total Days&quot; by &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;, &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Leave Type&quot;, &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Org Unit Level 3&quot;, &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Unplanned Leave&quot;,&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Approved Before Leave&quot;) / max(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Total FTE Headcount&quot; by &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;, &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Leave Type&quot;, &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Org Unit Level 3&quot;, &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Unplanned Leave&quot;, &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Approved Before Leave&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34347" oldID="kcap1564723485789_6211">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34348" oldID="kcap1564723485789_6212">
+            <saw:text>Average Days</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd1335d6bc34a84aa">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case when &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Approved Before Leave&quot; = &#39;T&#39; then &#39;Approved Before Leave&#39; else &#39;Not Approved Before Leave&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34349" oldID="kcap1564723485789_6213">
+            <saw:text>F_DHA_STAFF_LEAVE_ST</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723661572_34350" oldID="kcap1564723485789_6214">
+            <saw:text>Leave Approval Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when MONTH(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) &gt; 6 then cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) as char(4)) || &#39;/&#39; || cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;)+1 as char(4)) else cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;)-1 as char(4)) || &#39;/&#39; || cast(YEAR(&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;) as char(4)) end</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">Case when &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Unplanned Leave&quot; = &#39;T&#39; then &#39;Unplanned Leave&#39; else &#39;Planned Leave&#39; end</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Month End&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">Case when &quot;F_DHA_STAFF_LEAVE_ST&quot;.&quot;Approved Before Leave&quot; = &#39;T&#39; then &#39;Approved Before Leave&#39; else &#39;Not Approved Before Leave&#39; end</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c6bf12a5c9dffef9a" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="pivotTableView!1"/></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Staff+Leave" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c6bf12a5c9dffef9a"/>
+            <saw:edgeLayer type="column" columnID="c70f897e75dd3af05"/>
+            <saw:edgeLayer type="column" columnID="c0ca4c4e1629c7703"/>
+            <saw:edgeLayer type="column" columnID="c0e8ed73d2dbd433d"/>
+            <saw:edgeLayer type="column" columnID="cce15d4372be0b889"/>
+            <saw:edgeLayer type="column" columnID="c0f15f91151911a3f"/>
+            <saw:edgeLayer type="column" columnID="c91bc221fcdd25e65"/>
+            <saw:edgeLayer type="column" columnID="c15953228c37789bf"/>
+            <saw:edgeLayer type="column" columnID="c0b89b3b44e360eca"/>
+            <saw:edgeLayer type="column" columnID="c6dfc60f1158725b6"/>
+            <saw:edgeLayer type="column" columnID="ccc1a6370de390a66"/>
+            <saw:edgeLayer type="column" columnID="c42e6c9a83c6efa41"/>
+            <saw:edgeLayer type="column" columnID="ca9a1f6a9a17127e9"/>
+            <saw:edgeLayer type="column" columnID="c490d95a3a0854be6"/>
+            <saw:edgeLayer type="column" columnID="cd1335d6bc34a84aa"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" clientEventChannels="EV_LEAVE_TYPE" clientEventEnabled="true">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="false">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t2" grandTotalPosition="none"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ccc1a6370de390a66"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t3" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cce15d4372be0b889">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c15953228c37789bf">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t1" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c0f15f91151911a3f"/>
+            <saw:edgeLayer type="column" columnID="cd1335d6bc34a84aa"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c490d95a3a0854be6"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c0f15f91151911a3f"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="ccc1a6370de390a66"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c42e6c9a83c6efa41"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="ca9a1f6a9a17127e9"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c490d95a3a0854be6"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cd1335d6bc34a84aa"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c0b89b3b44e360eca"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c6dfc60f1158725b6"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c70f897e75dd3af05"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

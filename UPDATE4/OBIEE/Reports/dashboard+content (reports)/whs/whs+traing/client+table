@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;WHS&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf702acc9ec84bd34">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Client Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3528ce5fd223172d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CAST(&quot;F Client Course Training&quot;.&quot;Client Id&quot; As INT)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Client Type&quot;</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">CONTRACTOR</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c3528ce5fd223172d_alcb1d9a9db0f876d3">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[clm]/contractor/dashboard.action</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                            <saw:prompt>contractorId</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments/>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[clm]/contractor/dashboard.action?contractorId=@{1}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723804617_59171" oldID="kcap1564723563472_24266">
+                        <saw:text>Drill to Client Details</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c3528ce5fd223172d"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Client Type&quot;</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">AGENT</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c3528ce5fd223172d_ale3444a9cda0e7662">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[clm]/agent/dashboard.action</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                            <saw:prompt>agentId</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments/>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[clm]/agent/dashboard.action?agentId=@{1}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723804617_59172" oldID="kcap1564723563472_24267">
+                        <saw:text>Drill to Client Detail</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c3528ce5fd223172d"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804616_59147" oldID="kcap1564723563472_24242">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723804616_59148" oldID="kcap1564723563472_24243">
+            <saw:text>Client ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cddc57bc09b3300db">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Client Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3752327d600cfae6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Registered&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804616_59149" oldID="kcap1564723563472_24244">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59150" oldID="kcap1564723563472_24245">
+            <saw:text>Registered Flag</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc5a339d9661a9966">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Course Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c38a9c032502f4d85" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(distinct(&quot;F Client Course Training&quot;.&quot;Client Learner Id&quot;))</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c38a9c032502f4d85_ala5f9ee9edecaf58e">
+                <saw:action>
+                  <saw:actionName>Client Drill Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/WHS/WHS Traing/Client Drill Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723804617_59167" oldID="kcap1564723563472_24262">
+                  <saw:text>Drill to Detail</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59151" oldID="kcap1564723563472_24246">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59152" oldID="kcap1564723563472_24247">
+            <saw:text>Registered</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5106a625409e5a35">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Sum(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;Completed&#39; then 1 else 0 End)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c5106a625409e5a35_albcc9e0ab95faa130">
+                <saw:action>
+                  <saw:actionName>Client Drill Report Comp</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/WHS/WHS Traing/Client Drill Report Comp</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723804617_59168" oldID="kcap1564723563472_24263">
+                  <saw:text>Drill to Detail</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59153" oldID="kcap1564723563472_24248">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59154" oldID="kcap1564723563472_24249">
+            <saw:text>Completed</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c57b7dca1814a9698">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Sum(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;Enrolled&#39; then 1 else 0 End)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c57b7dca1814a9698_al297620b60252ab90">
+                <saw:action>
+                  <saw:actionName>Client Drill Report Enrolled</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/WHS/WHS Traing/Client Drill Report Enrolled</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723804617_59169" oldID="kcap1564723563472_24264">
+                  <saw:text>Drill to Detail</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59155" oldID="kcap1564723563472_24250">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59156" oldID="kcap1564723563472_24251">
+            <saw:text>Enrolled</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4e397b67f12a99e6" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Sum(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;In Progress&#39; then 1 else 0 End)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c4e397b67f12a99e6_al983d40d8e30b4d75">
+                <saw:action>
+                  <saw:actionName>Client Drill Report Inprogress</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/WHS/WHS Traing/Client Drill Report Inprogress</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723804617_59170" oldID="kcap1564723563472_24265">
+                  <saw:text>Drill to Detail</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59157" oldID="kcap1564723563472_24252">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59158" oldID="kcap1564723563472_24253">
+            <saw:text>In Progress</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c143adee366dbe2b3" aggRule="max">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Max(&quot;F Client Course Training&quot;.&quot;Registration Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59159" oldID="kcap1564723563472_24254">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59160" oldID="kcap1564723563472_24255">
+            <saw:text>Last Registered</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceb56293798c1d3a6" aggRule="max">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Max(&quot;F Client Course Training&quot;.&quot;Completion Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59161" oldID="kcap1564723563472_24256">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59162" oldID="kcap1564723563472_24257">
+            <saw:text>Last Completed</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6e9bb4063d4f4a61" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(SUM(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;Completed&#39; then 1 else 0 End) *1.00 / ( count(distinct(&quot;F Client Course Training&quot;.&quot;Client Learner Id&quot;))) ) * 100.00</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="none">
+            <saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59163" oldID="kcap1564723563472_24258">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59164" oldID="kcap1564723563472_24259">
+            <saw:text>Completed %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd7293da115f8c485">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case when (SUM(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;Completed&#39; then 1 else 0 End) *1.00 / ( count(distinct(&quot;F Client Course Training&quot;.&quot;Client Learner Id&quot;))) ) * 100.00 = 0 then &#39;None&#39; when (SUM(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;Completed&#39; then 1 else 0 End) *1.00 / ( count(distinct(&quot;F Client Course Training&quot;.&quot;Client Learner Id&quot;))) ) * 100.00= 100.00 then &#39;All&#39; when (SUM(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;Completed&#39; then 1 else 0 End) *1.00 / ( count(distinct(&quot;F Client Course Training&quot;.&quot;Client Learner Id&quot;))) ) * 100.00 between 0 and 100 then &#39;Partial&#39; Else &#39;None&#39; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59165" oldID="kcap1564723563472_24260">
+            <saw:text>F Client Course Training</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723804617_59166" oldID="kcap1564723563472_24261">
+            <saw:text>Completed Status</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Client Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">CAST(&quot;F Client Course Training&quot;.&quot;Client Id&quot; As INT)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Client Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Registered&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Course Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">Max(&quot;F Client Course Training&quot;.&quot;Registration Date&quot;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">Max(&quot;F Client Course Training&quot;.&quot;Completion Date&quot;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">Case when (SUM(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;Completed&#39; then 1 else 0 End) *1.00 / ( count(distinct(&quot;F Client Course Training&quot;.&quot;Client Learner Id&quot;))) ) * 100.00 = 0 then &#39;NONE&#39; when (SUM(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;Completed&#39; then 1 else 0 End) *1.00 / ( count(distinct(&quot;F Client Course Training&quot;.&quot;Client Learner Id&quot;))) ) * 100.00= 100.00 then &#39;ALL&#39; when (SUM(Case when &quot;F Client Course Training&quot;.&quot;Status&quot; = &#39;Completed&#39; then 1 else 0 End) *1.00 / ( count(distinct(&quot;F Client Course Training&quot;.&quot;Client Learner Id&quot;))) ) * 100.00 between 0 and 100 then &#39;PARTIAL&#39; Else &#39;NONE&#39; End</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval">PV_STATUS</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Client Course Training&quot;.&quot;Active Only&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="40">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf702acc9ec84bd34"/>
+            <saw:edgeLayer type="column" columnID="c3528ce5fd223172d"/>
+            <saw:edgeLayer type="column" columnID="cddc57bc09b3300db"/>
+            <saw:edgeLayer type="column" columnID="c38a9c032502f4d85"/>
+            <saw:edgeLayer type="column" columnID="cc5a339d9661a9966"/>
+            <saw:edgeLayer type="column" columnID="c5106a625409e5a35"/>
+            <saw:edgeLayer type="column" columnID="c57b7dca1814a9698"/>
+            <saw:edgeLayer type="column" columnID="c4e397b67f12a99e6"/>
+            <saw:edgeLayer type="column" columnID="c6e9bb4063d4f4a61"/>
+            <saw:edgeLayer type="column" columnID="c143adee366dbe2b3"/>
+            <saw:edgeLayer type="column" columnID="ceb56293798c1d3a6"/>
+            <saw:edgeLayer type="column" columnID="cd7293da115f8c485"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

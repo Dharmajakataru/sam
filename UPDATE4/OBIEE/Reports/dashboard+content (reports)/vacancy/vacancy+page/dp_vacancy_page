@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:view xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saw:globalFilterPrompt" name="">
+  <saw:prompts scope="dashboard" subjectArea="&quot;Corporate Property&quot;">
+    <saw:promptStep setWidthToAllPrompts="true" autoApplyPrompt="true" showResetButton="false">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:variablePrompt" columnID="c0" required="false" subjectArea="&quot;Corporate Property&quot;">
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="1">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" dataType="date" sourceFormula="SELECT &quot;Vacancy&quot;.&quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot; FROM &quot;Vacancy&quot; WHERE &quot;Vacancy&quot;.&quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot; &gt;= CAST(&#39;21-MAY-2015&#39; AS DATE) ORDER BY 1 desc">
+            <saw:promptChoices/>
+          </saw:promptSource>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="presentationVariable" variableFormula="PV_RUN_DATE"/>
+          </saw:setPromptVariables>
+          <saw:promptOperator/>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:label>
+            <saw:caption captionID="kcap1564723783382_56384" oldID="kcap1564723577436_26262">
+              <saw:text>Effective Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            
+          <saw:promptDefaultValue>RV_DFL_DATE</saw:promptDefaultValue></saw:promptDefaultValues>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:variablePrompt" columnID="c1" required="false" placedOnNewColumn="true" subjectArea="&quot;Corporate Property&quot;">
+          <saw:promptUIControl xsi:type="saw:dropDown" maxChoices="1"/>
+          <saw:promptSource xsi:type="saw:choiceList" dataType="string" useCaptionOnly="true">
+            <saw:promptChoices>
+              <saw:promptChoice>
+                <saw:caption captionID="kcap1564723783382_56386" oldID="kcap1564723577436_26264">
+                  <saw:text>Number of Properties</saw:text>
+                </saw:caption>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:caption captionID="kcap1564723783382_56387" oldID="kcap1564723577436_26265">
+                  <saw:text>Percentage of Properties</saw:text>
+                </saw:caption>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:caption captionID="kcap1564723783382_56388" oldID="kcap1564723577436_26266">
+                  <saw:text>Avg Days Vacant</saw:text>
+                </saw:caption>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:caption captionID="kcap1564723783382_56389" oldID="kcap1564723577436_26267">
+                  <saw:text>Vacant Not Available By Asset Status</saw:text>
+                </saw:caption>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:caption captionID="kcap1564723783382_56390" oldID="kcap1564723577436_26268">
+                  <saw:text>Avg Turnaround Days</saw:text>
+                </saw:caption>
+              </saw:promptChoice>
+            </saw:promptChoices>
+          </saw:promptSource>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="presentationVariable" variableFormula="PV_DISPLAY_TYPE"/>
+          </saw:setPromptVariables>
+          <saw:promptOperator/>
+          <saw:constrainPrompt type="none"/>
+          <saw:label>
+            <saw:caption captionID="kcap1564723783382_56385" oldID="kcap1564723577436_26263">
+              <saw:text>Select Display Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="specificCustomValue" usingCodeValue="false">
+            <saw:promptDefaultValue>Percentage of Properties</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:displayFormat/>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:view>
