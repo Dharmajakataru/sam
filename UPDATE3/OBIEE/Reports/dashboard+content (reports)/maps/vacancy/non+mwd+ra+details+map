@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Vacancy&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8a0ec8fd6ae112d8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF FVNP&quot;.&quot;MANAGEMENT_AREA&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c43fc181e7f90b5d8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF FVNP&quot;.&quot;DHF&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c77e193554268073c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c77e193554268073c_albd5454be0691a54c">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723708673_41840" oldID="kcap1564723511027_11276">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c77e193554268073c"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723708673_41837" oldID="kcap1564723511027_11273">
+            <saw:text>Dim Non MWD RA</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723708673_41838" oldID="kcap1564723511027_11274">
+            <saw:text>Property ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8a4839e6f11f1889">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Longitude&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="12" maxDigits="12"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c38c1b7c4ce62a74a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Latitude&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="12" maxDigits="12"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2b75959aca98828b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;Member GRE&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723708673_41839" oldID="kcap1564723511027_11275">
+            <saw:text>Filter Title</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c07b13595643b4974">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Current Member GRE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9050782682830dfd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Street Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c605801132bde05c1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Rentbill Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe2cef03833113f8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Tenancy ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="notNull" protected="true">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF FVNP&quot;.&quot;MANAGEMENT_AREA&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Posting Based DHF Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Rentbill Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">DMCA</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Non MWD RA&quot;.&quot;Latitude&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!2"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="narrativeView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="narrativeView!2"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!4"/></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://actlabor.org.au/blog/act-election-announcements/protecting-jobs-and-investing-in-our-homes/"/>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723708672_41824" oldID="kcap1564723511027_11260">
+          <saw:text>Load JS</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723708672_41825" oldID="kcap1564723511027_11261">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/BasesMappingData.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/dhf.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery-migrate-1.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.qtip.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/flexigrid.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jshashtable-2.1_src.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/dha_mapping_obiee_whereisV2t.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/whereis-maps/jquery.qtip.min.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/whereis-maps/flexigrid-1.1/css/flexigrid.pack.css&quot; /&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723708672_41826" oldID="kcap1564723511027_11262">
+          <saw:text>Map Container</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723708672_41827" oldID="kcap1564723511027_11263">
+          <saw:text>&lt;style type=&quot;text/css&quot;&gt;
+#content
+{
+	width: 100%;
+	background-color: #eee;
+	clear: both;
+}
+#mapContainer
+{
+	height: 720px;
+	background-color: #fff;
+	border: solid 1px #888;
+	clear: both;
+	position: relative;
+	z-index: 0;
+}
+
+.ui-tooltip .ui-tooltip-content,
+.ui-tooltip p,
+.ui-tooltip ul,
+.ui-tooltip li,
+.ui-tooltip,
+.qtip {
+    /*max-height: 300px;
+    overflow-x: auto;
+    overflow-y: auto;*/
+
+    max-width: 1200px;
+    min-width: 50px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    border-color: #666;
+}
+
+.qtip-light .qtip-titlebar{background-color:#505050;color:#f3f3f3}
+
+div.dhaMapLegend {
+z-index:20000;
+    display:block;
+
+background-color:rgba(255,255,255,0.1);
+border:1px solid #ddd;
+}
+
+.dhaLegendTable th(text-aligin:center}
+
+&lt;/style&gt;
+
+&lt;div id=&quot;content&quot; style=&quot;width:1500px&quot;&gt;
+    &lt;div id=&quot;mapContainer&quot; class=&quot;dhaMapContainer&quot; style=&quot;float:left;width:1200px&quot; &gt;
+        &lt;div id=&quot;loading&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+         &lt;div id=&quot;dhaLegendContainer&quot; style=&quot;float:right&quot;&gt;
+             &lt;div id=&quot;dhaMapLegend&quot; class=&quot;dhaMapLegend&quot; style=&quot;width:280px&quot;&gt;
+             &lt;/div&gt;
+&lt;a href=&#39;#&#39; onclick=&quot;	generateMarkers_init();&quot;&gt;&lt;img src=&quot;/custom_styles/s_dha/dha/refresh.png&quot; /&gt;&lt;/a&gt;
+         &lt;/div&gt;
+
+ &lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723708672_41828" oldID="kcap1564723511027_11264">
+          <saw:text>Filter By</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:narrative rowCount="1">
+        <saw:caption fmt="html" captionID="kcap1564723708672_41829" oldID="kcap1564723511027_11265">
+          <saw:text>var filterBy=&quot;@{c2b75959aca98828b}&quot;;</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723708672_41830" oldID="kcap1564723511027_11266">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:postfix>
+        <saw:caption fmt="html" captionID="kcap1564723708672_41831" oldID="kcap1564723511027_11267">
+          <saw:text>&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:postfix>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!2">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723708672_41832" oldID="kcap1564723511027_11268">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+cols = [{name:&quot;UPRN&quot;, width:50}, {name:&quot;Member GRE&quot;, width:150}, {name:&quot;Address&quot;, width:200}];
+
+function dhaLoaded() {
+  geocoder=new EMS.Service.Geocode;
+  map=new EMS.Map(&quot;mapContainer&quot;,{zoom:0,onInit:setupMap});
+}
+
+var props = [], i=0;
+uniqueColHdr=&quot;Issue Key&quot;;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:narrative rowCount="50000">
+        <saw:caption fmt="html" captionID="kcap1564723708672_41833" oldID="kcap1564723511027_11269">
+          <saw:text>props[i]={uprn:@{c77e193554268073c},lat:@{c38c1b7c4ce62a74a},lon:@{c8a4839e6f11f1889},fVal:&#39;@{c07b13595643b4974}&#39;, &#39;Member GRE&#39;:&#39;@{c07b13595643b4974}&#39;, uniqueCol:&#39;@{c77e193554268073c}&#39;, Address:&#39;@{c9050782682830dfd}&#39;};i++;</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:postfix>
+        <saw:caption fmt="html" captionID="kcap1564723708672_41834" oldID="kcap1564723511027_11270">
+          <saw:text>var totalRowCount= i;
+displayBases=false;
+displayTotalsCheckbox=false;
+
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.ems.sensis.com.au/v2/web/js/ems/?token=2499777234106764371&quot;&gt;&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:postfix>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!4">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723708672_41835" oldID="kcap1564723511027_11271">
+          <saw:text>Footer</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723708672_41836" oldID="kcap1564723511027_11272">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+ setTimeout(function(){if (typeof map == &quot;undefined&quot;) setupMap();},1000);
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

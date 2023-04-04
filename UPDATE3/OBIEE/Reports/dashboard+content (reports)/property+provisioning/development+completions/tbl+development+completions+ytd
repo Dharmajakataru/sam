@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c14c8a0665d987eca" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;42. Dim Dev Completions Period&quot;.&quot;MONTH_END_DATE&quot;= @{v_month_for}{&#39;30/SEP/2013&#39;} AND &quot;42. Dim Dev Completions Period&quot;.&quot;FIN_YEAR&quot; in (@{v_fin_year_for}{2014}) THEN sum(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) ELSE 0 END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c14c8a0665d987eca_ale97f1ce63bc23e00">
+                <saw:action>
+                  <saw:actionName>Drill Through Development Completions Current Month</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Provisioning/Development Completions/Drill Through Development Completions Current Month</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723738909_48838" oldID="kcap1564723527322_16089">
+                  <saw:text>Drill Through Development Completions Current Month</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723738908_48826" oldID="kcap1564723527322_16077">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723738908_48827" oldID="kcap1564723527322_16078">
+            <saw:text>Completed Current Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c14c8a0665d987eca_albc8ae73e43008718">
+                  <saw:action>
+                    <saw:actionName>Drill Through Development Completions Current Month</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Provisioning/Development Completions/Drill Through Development Completions Current Month</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723738909_48840" oldID="kcap1564723527322_16091">
+                    <saw:text>Drill Through Development Completions Current Month</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cba8f0122f8aa0d72" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;42. Dim Dev Completions Period&quot;.&quot;MONTH_END_DATE&quot; BETWEEN&quot;42. Dim Dev Completions Period&quot;.&quot;FIN_YEAR_START_DATE&quot; AND @{v_month_for}{&#39;30/SEP/2013&#39;} AND &quot;42. Dim Dev Completions Period&quot;.&quot;FIN_YEAR&quot; in (@{v_fin_year_for}{2014}) THEN sum(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) ELSE 0 END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cba8f0122f8aa0d72_al2cafe3518c82d6d1">
+                <saw:action>
+                  <saw:actionName>Drill Through Development Completions</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Provisioning/Development Completions/Drill Through Development Completions</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723738909_48839" oldID="kcap1564723527322_16090">
+                  <saw:text>Drill Through Development Completions</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723738908_48828" oldID="kcap1564723527322_16079">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723738908_48829" oldID="kcap1564723527322_16080">
+            <saw:text>Completed Year To Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cba8f0122f8aa0d72_al40bef5c79ae21b19">
+                  <saw:action>
+                    <saw:actionName>Drill Through Development Completions</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Provisioning/Development Completions/Drill Through Development Completions</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723738909_48841" oldID="kcap1564723527322_16092">
+                    <saw:text>Drill Through Development Completions</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5dd4dda311953a07" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;42. Dim Dev Completions Period&quot;.&quot;MONTH_END_DATE&quot; BETWEEN&quot;42. Dim Dev Completions Period&quot;.&quot;FIN_YEAR_START_DATE&quot; AND @{v_month_for}{&#39;30/SEP/2013&#39;} AND &quot;42. Dim Dev Completions Period&quot;.&quot;FIN_YEAR&quot; in (@{v_fin_year_for}{2014}) THEN sum(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) ELSE 0 END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723738908_48830" oldID="kcap1564723527322_16081">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723738909_48831" oldID="kcap1564723527322_16082">
+            <saw:text>Completed (YTD)</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cca665379cb912f59">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;42. Dim Dev Completions Period&quot;.&quot;MONTH_END_DATE&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="MMM YY"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723738909_48832" oldID="kcap1564723527322_16083">
+            <saw:text>Dim Dev Completions Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723738909_48833" oldID="kcap1564723527322_16084">
+            <saw:text>Forecast for Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7d869ed20c1045f2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdcb585b4374e8356">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;GDT Status End Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;42. Dim Dev Completions Period&quot;.&quot;FIN_YEAR&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval" default="2014">v_fin_year_for</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;RNTB&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval" default="DOD">v_rent_bill_client</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(&quot;42. Dim Dev Completions Period&quot;.&quot;MONTH_END_DATE&quot; as date)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="notIn">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">GDT</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">ZZ</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;95. Fact Jira Properties&quot;.&quot;Dev Civil Works Stage ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:eval">v_ownership_dev</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c7d869ed20c1045f2"/>
+            <saw:edgeLayer type="column" columnID="cdcb585b4374e8356"/>
+            <saw:edgeLayer type="column" columnID="c14c8a0665d987eca"/>
+            <saw:edgeLayer type="column" columnID="cba8f0122f8aa0d72"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="lineBar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723738909_48834" oldID="kcap1564723527322_16085">
+            <saw:text>Development Completions By Month</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cca665379cb912f59"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c5dd4dda311953a07"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections displayAsSlider="false"/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats syncAxis="true">
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723738909_48836" oldID="kcap1564723527322_16087">
+              <saw:text>Month</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723738909_48837" oldID="kcap1564723527322_16088">
+              <saw:text>Developments Completed</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="lineBar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723738909_48835" oldID="kcap1564723527322_16086">
+            <saw:text>Development Completions YTD By DHF Area</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cdcb585b4374e8356"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c5dd4dda311953a07"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="none" transparentFill="true"/>
+      <saw:axesFormats syncAxis="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cca665379cb912f59"/>
+            <saw:edgeLayer type="column" columnID="cba8f0122f8aa0d72"/>
+            <saw:edgeLayer type="column" columnID="c6398da39c50edcc9" visibility="hidden"/>
+            <saw:edgeLayer type="column" columnID="c6006c5ef77653edf" visibility="hidden"/>
+            <saw:edgeLayer type="column" columnID="cce4517a25018a43e" visibility="hidden"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:view xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saw:globalFilterPrompt" name="">
+  <saw:prompts scope="dashboard" subjectArea="&quot;Managed Properties&quot;">
+    <saw:promptStep autoApplyPrompt="true" showResetButton="false">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c0" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Management Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728783_47285" oldID="kcap1564723572759_25607">
+              <saw:text>Management Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Management Area&quot; FROM &quot;Managed Properties&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c17" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728783_47286" oldID="kcap1564723572759_25608">
+              <saw:text>DHF Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="presentationVariable" variableFormula="PV_DHF"/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c16" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Ownership Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728783_47287" oldID="kcap1564723572759_25609">
+              <saw:text>Ownership</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false">
+            <saw:promptDefaultValue>DHA Investment MCA</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Ownership Desc&quot; FROM &quot;Managed Properties&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c26" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Provisioning Status&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728783_47288" oldID="kcap1564723572759_25610">
+              <saw:text>Provisioning Status</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c33" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Beds&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728783_47289" oldID="kcap1564723572759_25611">
+              <saw:text>Beds</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c20" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Compliancy&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728783_47290" oldID="kcap1564723572759_25612">
+              <saw:text>Compliancy</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+          <saw:description>
+            <saw:caption captionID="kcap1564723728783_47291" oldID="kcap1564723572759_25613">
+              <saw:text>Used to determine if a DOD client property meets the Housing Classification Property</saw:text>
+            </saw:caption>
+          </saw:description>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c21" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;SRC&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728783_47292" oldID="kcap1564723572759_25614">
+              <saw:text>SRC</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c1" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Client Description&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728783_47293" oldID="kcap1564723572759_25615">
+              <saw:text>Client</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false">
+            <saw:promptDefaultValue>@{PV_RENT}</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c3" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Housing Solution Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47294" oldID="kcap1564723572759_25616">
+              <saw:text>Housing Solution</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+          <saw:description>
+            <saw:caption captionID="kcap1564723728784_47295" oldID="kcap1564723572759_25617">
+              <saw:text>Indicates under what agreement the Tenant occupied the property</saw:text>
+            </saw:caption>
+          </saw:description>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c4" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Class&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47296" oldID="kcap1564723572759_25618">
+              <saw:text>Property Class</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c5" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47297" oldID="kcap1564723572759_25619">
+              <saw:text>Asset Status</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+          <saw:description>
+            <saw:caption captionID="kcap1564723728784_47298" oldID="kcap1564723572759_25620">
+              <saw:text>The primary indicator of how the property is managed</saw:text>
+            </saw:caption>
+          </saw:description>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c6" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Type&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47299" oldID="kcap1564723572759_25621">
+              <saw:text>Property Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Property Type&quot; FROM &quot;Managed Properties&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c8" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Category&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47300" oldID="kcap1564723572759_25622">
+              <saw:text>Category</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+          <saw:description>
+            <saw:caption captionID="kcap1564723728784_47301" oldID="kcap1564723572759_25623">
+              <saw:text>Grouping of Ownership</saw:text>
+            </saw:caption>
+          </saw:description>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c10" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Market Type Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47302" oldID="kcap1564723572759_25624">
+              <saw:text>Market Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c11" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Acquisition Type Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47303" oldID="kcap1564723572759_25625">
+              <saw:text>Acquisition Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c12" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Acquisition Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47304" oldID="kcap1564723572759_25626">
+              <saw:text>Acquisition Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false">
+            <saw:promptDefaultValue>FY 2012</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Acquisition Date FY&quot; FROM &quot;Managed Properties&quot; order by 1 desc"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c13" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Construction Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47305" oldID="kcap1564723572759_25627">
+              <saw:text>Construction Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Construction Date FY&quot; FROM &quot;Managed Properties&quot; order by 1 desc"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c14" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Status Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47306" oldID="kcap1564723572759_25628">
+              <saw:text>Property Status</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+          <saw:description>
+            <saw:caption captionID="kcap1564723728784_47307" oldID="kcap1564723572759_25629">
+              <saw:text>Used in conjunction with the Status Reason Filter to determine current occupation status</saw:text>
+            </saw:caption>
+          </saw:description>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c15" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Status Reason Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" includeAllChoices="false" maxChoices="-1">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47308" oldID="kcap1564723572759_25630">
+              <saw:text>Status Reason</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+          <saw:description>
+            <saw:caption captionID="kcap1564723728784_47309" oldID="kcap1564723572759_25631">
+              <saw:text>Used in conjunction with the Property Status Filter to determine current occupation status</saw:text>
+            </saw:caption>
+          </saw:description>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c18" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Construction Project Type&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47310" oldID="kcap1564723572759_25632">
+              <saw:text>Construction Project Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c22" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Dwelling Type&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47311" oldID="kcap1564723572759_25633">
+              <saw:text>Dwelling Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c23" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Age Of Property&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47312" oldID="kcap1564723572759_25634">
+              <saw:text>Age Of Property</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Age Of Property&quot; FROM &quot;Managed Properties&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c7" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Vacancy Flag&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47313" oldID="kcap1564723572759_25635">
+              <saw:text>Vacancy Flag</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c24" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Disp Settlement FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47314" oldID="kcap1564723572759_25636">
+              <saw:text>Disposal Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Disp Settlement FY&quot; FROM &quot;Managed Properties&quot; order by 1 desc"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c27" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Maintenance Area Name&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47315" oldID="kcap1564723572759_25637">
+              <saw:text>Maintenance Area Name</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none">
+            <saw:constrainedByFormula>
+              <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Inspection Area&quot;</sawx:expr>
+            </saw:constrainedByFormula>
+          </saw:constrainPrompt>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Maintenance Area Name&quot; FROM &quot;Managed Properties&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c28" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Inspection Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47316" oldID="kcap1564723572759_25638">
+              <saw:text>Inspection Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="specificPrompts">
+            <saw:constrainedByFormula>
+              <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Maintenance Area Name&quot;</sawx:expr>
+            </saw:constrainedByFormula>
+          </saw:constrainPrompt>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c29" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Manager&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47317" oldID="kcap1564723572759_25639">
+              <saw:text>Property Manager</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c30" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Portfolio Classification&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47318" oldID="kcap1564723572759_25640">
+              <saw:text>Portfolio Classification</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c41" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Development&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47319" oldID="kcap1564723572759_25641">
+              <saw:text>Property Development</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c34" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;UPRN&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="175" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47320" oldID="kcap1564723572759_25642">
+              <saw:text>Select or Enter a UPRN (separated by &#39;;&#39;)</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c32" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Property Base Locator&quot;.&quot;Base Id&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:dropDown" maxChoices="1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47321" oldID="kcap1564723572759_25643">
+              <saw:text>Defence Base</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="presentationVariable" variableFormula="PV_BASE"/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c31" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Property Base Locator&quot;.&quot;Distance&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:dropDown" maxChoices="1" includeAllChoices="false">
+            <saw:customWidth width="59" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47322" oldID="kcap1564723572759_25644">
+              <saw:text>Distance from Base</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT 0 FROM &quot;Managed Properties&quot; UNION SELECT 5 FROM &quot;Managed Properties&quot; UNION SELECT 10 FROM &quot;Managed Properties&quot; UNION SELECT 15 FROM &quot;Managed Properties&quot; UNION SELECT 20 FROM &quot;Managed Properties&quot; UNION SELECT 25 FROM &quot;Managed Properties&quot; UNION SELECT 30 FROM &quot;Managed Properties&quot; " xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c35" subjectArea="&quot;Managed Properties&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Last Reason Code&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47323" oldID="kcap1564723572759_25645">
+              <saw:text>Last Reason Code</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c36" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Reservation Type&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="170" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47324" oldID="kcap1564723572759_25646">
+              <saw:text>Reservation Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c37" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Has Asbestos Survey&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47325" oldID="kcap1564723572759_25647">
+              <saw:text>Has Asbestos Survey</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Has Asbestos Survey&quot; FROM &quot;Managed Properties&quot; FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c38" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Has Asbestos&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47326" oldID="kcap1564723572759_25648">
+              <saw:text>Has Asbestos</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c39" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asbestos Risk Rating&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47327" oldID="kcap1564723572759_25649">
+              <saw:text>Asbestos Risk Rating</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c40" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asbestos Inspection Date&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47328" oldID="kcap1564723572759_25650">
+              <saw:text>Asbestos Inspection Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c42" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Strata Flag&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723728784_47329" oldID="kcap1564723572759_25651">
+              <saw:text>Strata Y/N</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Strata Flag&quot; FROM &quot;Managed Properties&quot; FETCH FIRST 65001 ROWS ONLY" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c43" subjectArea="&quot;Managed Properties&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;MCA In Priority Location&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+      <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c44" subjectArea="&quot;Managed Properties&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Underperforming Asset Y/N&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:label><saw:caption><saw:text>Underperforming Asset Flag</saw:text></saw:caption></saw:label><saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Managed Properties&quot;.&quot;Underperforming Asset Y/N&quot; FROM &quot;Managed Properties&quot; FETCH FIRST 65001 ROWS ONLY"/></saw:prompt></saw:individualPrompts>
+      <saw:customWidth width="170" using="custompixels"/>
+      <saw:displayFormat>
+        <saw:formatSpec/>
+      </saw:displayFormat>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:view>

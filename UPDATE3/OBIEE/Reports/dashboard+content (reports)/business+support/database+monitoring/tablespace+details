@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Database Monitoring&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca1bb66605b6d17fb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_DETAILS_DM&quot;.&quot;Server Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdb1a3d3e07648046">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_DETAILS_DM&quot;.&quot;Tablespace&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="clientEvent">
+            <saw:clientEventSpec channel="ts_name"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfd76d8ccbb95d1f0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_DETAILS_DM&quot;.&quot;Total Space&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6a0f4f12891248b2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_DETAILS_DM&quot;.&quot;Free Space&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c212de4d97cb5b0a9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_DETAILS_DM&quot;.&quot;Contiguous Space&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c97785cec60e29874">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_DETAILS_DM&quot;.&quot;Used Space&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf2915dbe5b914f2c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_DETAILS_DM&quot;.&quot;Pctused&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c05f1a780870200ae"/>
+                    <sawx:expr xsi:type="xsd:string">Y</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec fontColor="#FFFFFF" wrapText="true" backgroundColor="#FF0000"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723638041_30313" oldID="kcap1564723468151_3556">
+            <saw:text>MV_TABLESPACE_DETAILS_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723638041_30314" oldID="kcap1564723468151_3557">
+            <saw:text>% Used</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8b0ade5a729ca876">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_DATABASES_DM&quot;.&quot;Database Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c05f1a780870200ae">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_DETAILS_DM&quot;.&quot;Problem&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdd116830c27e9991">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV_TABLESPACE_TABLESPACES_DM&quot;.&quot;Database Name&quot; ||&#39;:&#39;||&quot;MV_TABLESPACE_TABLESPACES_DM&quot;.&quot;Tablespace&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="clientEvent" fontColor="#0000FF">
+            <saw:clientEventSpec channel="db_ts_name"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c97785cec60e29874" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="false" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true" hidecolumns="false"/>
+  <saw:views currentView="0" textDelivery="compoundView!1" parentsBefore="true" includeNewColumns="true" nullSuppress="true" valueHierarchyIndent="false">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" clientEventChannels="db_name" clientEventEnabled="true">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c8b0ade5a729ca876"/>
+            <saw:edgeLayer type="column" columnID="ca1bb66605b6d17fb"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:columnOrder>
+            <saw:columnOrderRef columnID="c97785cec60e29874" direction="descending"/>
+          </saw:columnOrder>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cdd116830c27e9991">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723638041_30315" oldID="kcap1564723468151_3558">
+                  <saw:text>Database &amp; Tablespace</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c05f1a780870200ae"/>
+            <saw:edgeLayer type="column" columnID="cfd76d8ccbb95d1f0"/>
+            <saw:edgeLayer type="column" columnID="c6a0f4f12891248b2"/>
+            <saw:edgeLayer type="column" columnID="c212de4d97cb5b0a9"/>
+            <saw:edgeLayer type="column" columnID="c97785cec60e29874"/>
+            <saw:edgeLayer type="column" columnID="cf2915dbe5b914f2c"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c05f1a780870200ae"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ca1bb66605b6d17fb"/>
+            <saw:edgeLayer type="column" columnID="c8b0ade5a729ca876"/>
+            <saw:edgeLayer type="column" columnID="cfd76d8ccbb95d1f0"/>
+            <saw:edgeLayer type="column" columnID="cdb1a3d3e07648046"/>
+            <saw:edgeLayer type="column" columnID="c212de4d97cb5b0a9"/>
+            <saw:edgeLayer type="column" columnID="c97785cec60e29874"/>
+            <saw:edgeLayer type="column" columnID="cf2915dbe5b914f2c"/>
+            <saw:edgeLayer type="column" columnID="c6a0f4f12891248b2"/>
+            <saw:edgeLayer type="column" columnID="cd4e621cc8975ef80"/>
+            <saw:edgeLayer type="column" columnID="c02011e1dc809b79f"/>
+            <saw:edgeLayer type="column" columnID="c14daca6547eef476"/>
+            <saw:edgeLayer type="column" columnID="cdd116830c27e9991"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+      <saw:pageEdgeState>
+        <saw:QDR>
+          <saw:staticMemberGroup>
+            <saw:groupType>
+              <sawx:columnRefExpr columnID="c05f1a780870200ae"/>
+            </saw:groupType>
+            <saw:members xsi:type="saw:stringMembers">
+              <saw:value>Y</saw:value>
+            </saw:members>
+          </saw:staticMemberGroup>
+        </saw:QDR>
+        <saw:selectionGroups>
+          <saw:selectionGroup columnID="c05f1a780870200ae" groupID="0"/>
+        </saw:selectionGroups>
+      </saw:pageEdgeState>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

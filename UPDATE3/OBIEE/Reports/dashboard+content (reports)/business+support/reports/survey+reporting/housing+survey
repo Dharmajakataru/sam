@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Database Monitoring&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd5ccabe75597672f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Surname&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1bc85810b99476c0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Given Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c08fee413155d253a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank&quot; = &#39;PTETRN&#39; then &#39;PTE&#39; when &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank&quot; = &#39;SMN_T&#39; then &#39;SMN&#39; when &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank&quot; = &#39;AC/WT&#39; then &#39;AC/W&#39;   when &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank&quot; in (&#39;APS1&#39;, &#39;APS2&#39;, &#39;APS3&#39;, &#39;APS4&#39;, &#39;APS5&#39;, &#39;APS6&#39;, &#39;EL1&#39;, &#39;EL2&#39;) and &quot;Dim Person&quot;.&quot;Gender&quot; in (&#39;M&#39;, &#39;m&#39;) then &#39;Mr.&#39; when &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank&quot; in (&#39;APS1&#39;, &#39;APS2&#39;, &#39;APS3&#39;, &#39;APS4&#39;, &#39;APS5&#39;, &#39;APS6&#39;, &#39;EL1&#39;, &#39;EL2&#39;) and &quot;Dim Person&quot;.&quot;Gender&quot; in (&#39;F&#39;, &#39;f&#39;) then &#39;Ms.&#39; ELSE &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank&quot;   END</sawx:expr>
+        </saw:columnFormula>
+      <saw:tableHeading><saw:caption fmt="text"><saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Rank</saw:text></saw:caption></saw:columnHeading></saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c001adbb41cd37eb2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; = &#39;Private Trainee&#39; then &#39;Private&#39; WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; = &#39;Seaman Trainee&#39; then &#39;Seaman&#39; WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; = &#39;Aircraftman/woman Trainee&#39; then &#39;Aircraftman/woman&#39; WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; in  (&#39;APS1&#39;, &#39;APS2&#39;, &#39;APS3&#39;, &#39;APS4&#39;, &#39;APS5&#39;, &#39;APS6&#39;, &#39;Executive Level 1&#39;, &#39;Executive Level 2&#39;, &#39;Senior Executive Service&#39;) and &quot;Dim Person&quot;.&quot;Gender&quot; in (&#39;M&#39;, &#39;m&#39;) then &#39;Mr.&#39; WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; in  (&#39;APS&#39;, &#39;APS1&#39;, &#39;APS2&#39;, &#39;APS3&#39;, &#39;APS4&#39;, &#39;APS5&#39;, &#39;APS6&#39;, &#39;Executive Level 1&#39;, &#39;Executive Level 2&#39;, &#39;Senior Executive Service&#39;) and &quot;Dim Person&quot;.&quot;Gender&quot; in (&#39;F&#39;, &#39;f&#39;) then &#39;Ms.&#39; else &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; end</sawx:expr>
+        </saw:columnFormula>
+      <saw:tableHeading><saw:caption fmt="text"><saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Rank In Full</saw:text></saw:caption></saw:columnHeading></saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbe245d6610c69ca9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Service&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdd342a8a2647e4e8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Pmkeys Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31355" oldID="kcap1564723640516_30615">
+            <saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31356" oldID="kcap1564723640516_30616">
+            <saw:text>Employee Id</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c72162c76ca4b103f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Gender&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc4f83085bf3005a5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Marital Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c48d78c1a66618a90">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Home Phone&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31357" oldID="kcap1564723640516_30617">
+            <saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31358" oldID="kcap1564723640516_30618">
+            <saw:text>Home Phone</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cce68785e2a73adfb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Mobile Number&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c910b1305f111e1e3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Work Phone&quot;</sawx:expr>
+        </saw:columnFormula>
+        
+        
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce6b5d0f855a5e2c5"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Spouse Phone&quot;</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Spouse Phone</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cab89ab9c07029377">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Preferred1&quot;</sawx:expr>
+        </saw:columnFormula>
+        
+        
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4c14b54d484316da">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Preferred2&quot;</sawx:expr>
+        </saw:columnFormula>
+        
+        
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c852c931be09f7014">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Preferred3&quot;</sawx:expr>
+        </saw:columnFormula>
+        
+        
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c27f45a4228e2f322">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Uprn&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31367" oldID="kcap1564723640516_30627">
+            <saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31368" oldID="kcap1564723640516_30628">
+            <saw:text>Property Id</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd922cdfb104662f6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb47e553b46695b5d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Relocation Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4c9b6ac051ffba16"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">case when &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Relocation Reason&quot; = &#39;Chg Dependant Status&#39; then &#39;Y&#39; else &#39;N&#39; end</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Change Dependant Status</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c59de1cf2a9f7e331">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Losing Housing Solution&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc1737cc5fe58123f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Gaining Housing Solution&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7deb44181a813804">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Gaining Hs Specific&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca87afbb4d047b79a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Occupancy Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31369" oldID="kcap1564723640516_30629">
+            <saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31370" oldID="kcap1564723640516_30630">
+            <saw:text>Occupancy Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc361e00fa8d2acae">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Gre&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbf29366de64cf963">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Grs&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf686c932333d7afc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Gaining Hmc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc602ed39d0867c79">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Losing Hmc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2f211839d9173373">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Relocation Case&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb748a3aa3e46395b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Created By&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca53a72ef5935e20a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Current State&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1fdb5486ea7a8fad">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Construction Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c65a63b885d557a1d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Dim Managed Properties&quot;.&quot;Age House&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31371" oldID="kcap1564723640516_30631">
+            <saw:text>MV Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31372" oldID="kcap1564723640517_30632">
+            <saw:text>Property Age</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1c29e949cfd9d625">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Dwelling Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3afaf23ce8be42ff">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Post Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc1bce87b86d0aeb7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Occ Move Expense Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31373" oldID="kcap1564723640517_30633">
+            <saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31374" oldID="kcap1564723640517_30634">
+            <saw:text>Relocation Expense Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca1f2b02d222c8acf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Lockdown Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb2737b324565eae9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Date Preview Established&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1df60828f7269548">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Children Age 0 4&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cab2973daccfa6c32">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Children Age 5 12&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c56f5e1ac6b7dda02">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Child Age Over 13&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31375" oldID="kcap1564723640517_30635">
+            <saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31376" oldID="kcap1564723640517_30636">
+            <saw:text>Children Age Over 13</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4bebaf1384817e7f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Viewed No Of Props&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31377" oldID="kcap1564723640517_30637">
+            <saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31378" oldID="kcap1564723640517_30638">
+            <saw:text>Number of Properties Viewed</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd22c4547d67c75d6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Children Age 0 4&quot;+&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Children Age 5 12&quot;+&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Child Age Over 13&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31379" oldID="kcap1564723640517_30639">
+            <saw:text>VIEW_RELOCATIONS_OCCUPIED_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31380" oldID="kcap1564723640517_30640">
+            <saw:text>Total Children</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c90127d2f05dd1f22">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Flash Detail&quot;.&quot;DNC Desc&quot; is not null then &#39;&#39; else &quot;D Flash Detail&quot;.&quot;Flash Detail&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31381" oldID="kcap1564723640517_30641">
+            <saw:text>D Flash Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723646181_31382" oldID="kcap1564723640517_30642">
+            <saw:text>Flash Detail</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    <saw:column xsi:type="saw:regularColumn" columnID="cb1cf2e21270e97b2"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Person&quot;.&quot;Home Phone Pref&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c423f93317d44fb0f"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Person&quot;.&quot;Mobile Phone Pref&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c21aaf8746161fb8b"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Person&quot;.&quot;Work Phone Pref&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:logical" op="or">
+          <sawx:expr xsi:type="sawx:comparison" op="equal">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Losing Housing Solution&quot;</sawx:expr>
+            <sawx:expr xsi:type="xsd:string">Service Residence</sawx:expr>
+          </sawx:expr>
+          <sawx:expr xsi:type="sawx:comparison" op="equal">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Gaining Housing Solution&quot;</sawx:expr>
+            <sawx:expr xsi:type="xsd:string">Service Residence</sawx:expr>
+          </sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="notIn">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Relocation Reason&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Death</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Discharge</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Marriage Breakdown</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Overseas Deployment</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">RSA:Discharge</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">RSA:Marriage Breakdown</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">RSA:Overseas Deployment</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">RSA:Death</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Marital Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">MWOD</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Service&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Army</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Navy</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">RAAF</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(&quot;D Flash Detail&quot;.&quot;Survey DNC YN&quot;, &#39;N&#39;)</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">N</sawx:expr>
+        </sawx:expr>
+      <sawx:expr xsi:type="sawx:list" op="notIn"><sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; = &#39;Private Trainee&#39; then &#39;Private&#39; WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; = &#39;Seaman Trainee&#39; then &#39;Seaman&#39; WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; = &#39;Aircraftman/woman Trainee&#39; then &#39;Aircraftman/woman&#39; WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; in  (&#39;APS1&#39;, &#39;APS2&#39;, &#39;APS3&#39;, &#39;APS4&#39;, &#39;APS5&#39;, &#39;APS6&#39;, &#39;Executive Level 1&#39;, &#39;Executive Level 2&#39;) and &quot;Dim Person&quot;.&quot;Gender&quot; in (&#39;M&#39;, &#39;m&#39;) then &#39;Mr.&#39; WHEN &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; in  (&#39;APS1&#39;, &#39;APS2&#39;, &#39;APS3&#39;, &#39;APS4&#39;, &#39;APS5&#39;, &#39;APS6&#39;, &#39;Executive Level 1&#39;, &#39;Executive Level 2&#39;) and &quot;Dim Person&quot;.&quot;Gender&quot; in (&#39;F&#39;, &#39;f&#39;) then &#39;Ms.&#39; else &quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Rank In Full&quot; end</sawx:expr><sawx:expr xsi:type="xsd:string">Admiral</sawx:expr><sawx:expr xsi:type="xsd:string">Rear Admiral</sawx:expr><sawx:expr xsi:type="xsd:string">Vice Admiral</sawx:expr><sawx:expr xsi:type="xsd:string">General</sawx:expr><sawx:expr xsi:type="xsd:string">Lieutenant General</sawx:expr><sawx:expr xsi:type="xsd:string">Major General</sawx:expr><sawx:expr xsi:type="xsd:string">Air Chief Marshal</sawx:expr><sawx:expr xsi:type="xsd:string">Air Marshal</sawx:expr><sawx:expr xsi:type="xsd:string">Air Vice Marshal</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:comparison" op="notEqual"><sawx:expr xsi:type="sawx:sqlExpression">&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Moved Into Same Property&quot;</sawx:expr><sawx:expr xsi:type="sawx:untypedLiteral">Y</sawx:expr></sawx:expr></sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="cd5ccabe75597672f" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Reports+-+Business+Support" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cdd342a8a2647e4e8">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+              </saw:headerFormat>
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="st_cdd342a8a2647e4e8" subTotalPosition="none">
+                    <saw:memberFormat>
+                      <saw:displayFormat>
+                        <saw:formatSpec wrapText="true"/>
+                      </saw:displayFormat>
+                    </saw:memberFormat>
+                  </saw:displaySubTotal>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cd5ccabe75597672f"/>
+            <saw:edgeLayer type="column" columnID="c1bc85810b99476c0"/>
+            <saw:edgeLayer type="column" columnID="c08fee413155d253a"/>
+            <saw:edgeLayer type="column" columnID="c001adbb41cd37eb2"/>
+            <saw:edgeLayer type="column" columnID="cbe245d6610c69ca9"/>
+            <saw:edgeLayer type="column" columnID="c72162c76ca4b103f"/>
+            <saw:edgeLayer type="column" columnID="cc4f83085bf3005a5"/>
+            <saw:edgeLayer type="column" columnID="cb1cf2e21270e97b2"/><saw:edgeLayer type="column" columnID="c423f93317d44fb0f"/><saw:edgeLayer type="column" columnID="c21aaf8746161fb8b"/><saw:edgeLayer type="column" columnID="c48d78c1a66618a90"/>
+            <saw:edgeLayer type="column" columnID="cce68785e2a73adfb"/>
+            <saw:edgeLayer type="column" columnID="c910b1305f111e1e3"/>
+            <saw:edgeLayer type="column" columnID="ce6b5d0f855a5e2c5"/><saw:edgeLayer type="column" columnID="cab89ab9c07029377"/>
+            <saw:edgeLayer type="column" columnID="c4c14b54d484316da"/>
+            <saw:edgeLayer type="column" columnID="c852c931be09f7014"/>
+            <saw:edgeLayer type="column" columnID="c27f45a4228e2f322">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+              </saw:headerFormat>
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cd922cdfb104662f6"/>
+            <saw:edgeLayer type="column" columnID="cb47e553b46695b5d"/>
+            <saw:edgeLayer type="column" columnID="c4c9b6ac051ffba16"/><saw:edgeLayer type="column" columnID="c59de1cf2a9f7e331"/>
+            <saw:edgeLayer type="column" columnID="cc1737cc5fe58123f"/>
+            <saw:edgeLayer type="column" columnID="c7deb44181a813804">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723646181_31384" oldID="kcap1564723640517_30644">
+                  <saw:text>Gaining HS Specific</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="ca87afbb4d047b79a"/>
+            <saw:edgeLayer type="column" columnID="cc361e00fa8d2acae">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723646181_31385" oldID="kcap1564723640517_30645">
+                  <saw:text>GRE</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cbf29366de64cf963">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723646181_31386" oldID="kcap1564723640517_30646">
+                  <saw:text>GRS</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cf686c932333d7afc">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723646181_31387" oldID="kcap1564723640517_30647">
+                  <saw:text>Gaining HMC</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cc602ed39d0867c79">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723646181_31388" oldID="kcap1564723640517_30648">
+                  <saw:text>Losing HMC</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c2f211839d9173373"/>
+            <saw:edgeLayer type="column" columnID="ca53a72ef5935e20a"/>
+            <saw:edgeLayer type="column" columnID="c3afaf23ce8be42ff"/>
+            <saw:edgeLayer type="column" columnID="c1fdb5486ea7a8fad"/>
+            <saw:edgeLayer type="column" columnID="c65a63b885d557a1d"/>
+            <saw:edgeLayer type="column" columnID="c1c29e949cfd9d625"/>
+            <saw:edgeLayer type="column" columnID="cc1bce87b86d0aeb7"/>
+            <saw:edgeLayer type="column" columnID="ca1f2b02d222c8acf"/>
+            <saw:edgeLayer type="column" columnID="cb2737b324565eae9"/>
+            <saw:edgeLayer type="column" columnID="c1df60828f7269548"/>
+            <saw:edgeLayer type="column" columnID="cab2973daccfa6c32"/>
+            <saw:edgeLayer type="column" columnID="c56f5e1ac6b7dda02"/>
+            <saw:edgeLayer type="column" columnID="cd22c4547d67c75d6"/>
+            <saw:edgeLayer type="column" columnID="c4bebaf1384817e7f"/>
+            <saw:edgeLayer type="column" columnID="cb748a3aa3e46395b"/>
+            <saw:edgeLayer type="column" columnID="c90127d2f05dd1f22"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Database Monitoring&quot;">
+    <saw:promptStep>
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c27" subjectArea="&quot;Database Monitoring&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">Cast(&quot;VIEW_RELOCATIONS_OCCUPIED_DM&quot;.&quot;Occupancy Date&quot; As Date)</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723646181_31383" oldID="kcap1564723640517_30643">
+              <saw:text>Occupancy Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="sql" usingCodeValue="false">
+            
+            
+          <saw:promptDefaultValue>select  current_date from &quot;Database Monitoring&quot;</saw:promptDefaultValue><saw:promptDefaultValue>select current_date from &quot;Database Monitoring&quot;</saw:promptDefaultValue></saw:promptDefaultValues>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:report>

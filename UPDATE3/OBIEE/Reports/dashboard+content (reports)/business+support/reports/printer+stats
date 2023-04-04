@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Database Monitoring&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8dae97533a55d79f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DHA_PRINTER_STATS_DM&quot;.&quot;USERNAME&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641497_31018" oldID="kcap1564723471234_4183">
+            <saw:text>DHA_PRINTER_STATS_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723641497_31019" oldID="kcap1564723471234_4184">
+            <saw:text>User Name</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd074387f70f80ea5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DHA_PRINTER_STATS_DM&quot;.&quot;PRINTER&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641497_31020" oldID="kcap1564723471234_4185">
+            <saw:text>DHA_PRINTER_STATS_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723641497_31021" oldID="kcap1564723471234_4186">
+            <saw:text>Printer</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c26291f2d57c99c46">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;DHA_PRINTER_STATS_DM&quot;.&quot;PAGES_PRINTED&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723641497_31022" oldID="kcap1564723471234_4187">
+            <saw:text>DHA_PRINTER_STATS_DM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723641497_31023" oldID="kcap1564723471234_4188">
+            <saw:text>Pages Printed</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:special" op="prompted">
+        <sawx:expr xsi:type="sawx:sqlExpression">&quot;DHA_PRINTER_STATS_DM&quot;.&quot;PRINT_DATE&quot;</sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c26291f2d57c99c46" direction="descending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1" colSpan="2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1" colSpan="2"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!2"/><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Reports+-+Business+Support">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723641497_31017" oldID="kcap1564723471234_4182">
+          <saw:text>Printer Statistics by Printer and User</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cd074387f70f80ea5"/>
+            <saw:edgeLayer type="column" columnID="c26291f2d57c99c46" aggRule="sum"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c8dae97533a55d79f"/>
+            <saw:edgeLayer type="column" columnID="c26291f2d57c99c46" aggRule="sum"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Database Monitoring&quot;">
+    <saw:promptStep>
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c4" subjectArea="&quot;Database Monitoring&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;DHA_PRINTER_STATS_DM&quot;.&quot;PRINT_DATE&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723641497_31024" oldID="kcap1564723471234_4189">
+              <saw:text>From Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:report>

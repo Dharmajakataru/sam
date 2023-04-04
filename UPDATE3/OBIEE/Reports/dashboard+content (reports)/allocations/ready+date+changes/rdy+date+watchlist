@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Allocations&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c12e264007e5076d8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPDIFF(SQL_TSI_DAY, &quot;D Rdy Dt Changes&quot;.&quot;Report Date&quot;,CURRENT_DATE)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723631516_29390" oldID="kcap1564723464106_2798">
+            <saw:text>Actual</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c005f6fd2d52d0786">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&#39;|| CHAR(62) ||case when TIMESTAMPDIFF(SQL_TSI_DAY,&quot;D Rdy Dt Changes&quot;.&quot;Report Date&quot;, CURRENT_DATE)&gt; 7 then  &#39;Dates Require Investigation &gt; 7 Days&#39; Else &#39;Dates Require Investigation &lt;= 7 Days&#39; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action" hAlign="center">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c005f6fd2d52d0786_al2feb62d416813f53">
+                <saw:action>
+                  <saw:actionName>SR MCA Ready Date Amendments Drill Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/Ready Date Changes/SR MCA Ready Date Amendments Drill Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723631516_29395" oldID="kcap1564723464106_2803">
+                  <saw:text>Drill to Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c005f6fd2d52d0786_alcef3513404ac03e1">
+                  <saw:action>
+                    <saw:actionName>SR MCA Ready Date Amendments Drill Report</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Allocations/Ready Date Changes/SR MCA Ready Date Amendments Drill Report</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723631516_29399" oldID="kcap1564723464106_2807">
+                    <saw:text>Drill to Details</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723631516_29391" oldID="kcap1564723464106_2799">
+            <saw:text>Watchlist Description</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cab52c7a92eb34007">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(1)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cab52c7a92eb34007_al405696c96f7d0f00">
+                <saw:action>
+                  <saw:actionName>SR MCA Ready Date Amendments Drill Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/Ready Date Changes/SR MCA Ready Date Amendments Drill Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723631516_29396" oldID="kcap1564723464106_2804">
+                  <saw:text>Drill to Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c005f6fd2d52d0786"/>
+                    <sawx:expr xsi:type="xsd:string">&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&gt;Dates Require Investigation &lt;= 7 Days</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/icons_l/02_warning.png" wrapText="true" hAlign="center"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c005f6fd2d52d0786"/>
+                    <sawx:expr xsi:type="xsd:string">&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&gt;Dates Require Investigation &gt; 7 Days</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/icons_l/01_alert.png" wrapText="true" hAlign="center"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631516_29392" oldID="kcap1564723464106_2800">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3e90ab0ff446c896">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c3e90ab0ff446c896_albd1e76860f30e9e4">
+                <saw:action>
+                  <saw:actionName>SR MCA Ready Date Amendments Drill Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/Ready Date Changes/SR MCA Ready Date Amendments Drill Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723631516_29397" oldID="kcap1564723464106_2805">
+                  <saw:text>Drill to Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c3e90ab0ff446c896_alc3067e7e3c6d47cb">
+                  <saw:action>
+                    <saw:actionName>SR MCA Ready Date Amendments Drill Report</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Allocations/Ready Date Changes/SR MCA Ready Date Amendments Drill Report</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723631516_29400" oldID="kcap1564723464106_2808">
+                    <saw:text>Drill to Details</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9a7359d691251d87">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Property Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1a4760347c3656f4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when TIMESTAMPDIFF(SQL_TSI_DAY,&quot;D Rdy Dt Changes&quot;.&quot;Report Date&quot;, CURRENT_DATE)&gt; 7 then 2 Else 1 End</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723631516_29393" oldID="kcap1564723464106_2801">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723631516_29394" oldID="kcap1564723464106_2802">
+            <saw:text>Sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Property Id&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="null">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Checkbox&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c005f6fd2d52d0786" direction="descending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723631516_29389" oldID="kcap1564723464106_2797">
+          <saw:text>SR &amp; MCA Ready Date Amendments</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c12e264007e5076d8"/>
+            <saw:edgeLayer type="column" columnID="c005f6fd2d52d0786"/>
+            <saw:edgeLayer type="column" columnID="cab52c7a92eb34007"/>
+            <saw:edgeLayer type="column" columnID="c3e90ab0ff446c896"/>
+            <saw:edgeLayer type="column" columnID="c9a7359d691251d87"/>
+            <saw:edgeLayer type="column" columnID="c4109cfc8575a3d6a"/>
+            <saw:edgeLayer type="column" columnID="c1a4760347c3656f4"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c3e90ab0ff446c896"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723631516_29398" oldID="kcap1564723464106_2806">
+                  <saw:text>Total</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c1a4760347c3656f4"/>
+            <saw:edgeLayer type="column" columnID="c005f6fd2d52d0786"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="cab52c7a92eb34007" aggRule="count"/>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

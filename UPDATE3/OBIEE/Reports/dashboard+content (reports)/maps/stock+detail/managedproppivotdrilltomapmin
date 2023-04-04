@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160" cacheControl="bypassCache">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Managed Properties&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c55ed327f976cfc88">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbc133a32f55b1268">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Longitude&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="12" maxDigits="12"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c171760c07122c874">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Latitude&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="12" maxDigits="12"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c630c5fc5e8837630">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;@{PV_COL1}{Client Description}&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723708386_41748" oldID="kcap1564723510794_11186">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723708386_41749" oldID="kcap1564723510794_11187">
+            <saw:text>Col1</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7aa85b3566701dd1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">ifnull(&quot;Dim Managed Properties&quot;.&quot;@{PV_COL1}{Client Description}&quot;, &#39;NULL&#39;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723708386_41750" oldID="kcap1564723510794_11188">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723708386_41751" oldID="kcap1564723510794_11189">
+            <saw:text>Col1 Value</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca396f18e0fcff240">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;@{PV_BASE}{Empty}&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723708386_41752" oldID="kcap1564723510794_11190">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723708386_41753" oldID="kcap1564723510794_11191">
+            <saw:text>Selected Base</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7c98ecd548988fa8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;@{PV_DHF}{Empty}&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723708386_41754" oldID="kcap1564723510794_11192">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723708386_41755" oldID="kcap1564723510794_11193">
+            <saw:text>Selected DHF</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Class&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Rent Bill&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Acquisition Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Current Agreement Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Acquisition Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Construction Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Category&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Market Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Ownership&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Construction Project Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Provisioning Year&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;SRC&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Compliancy&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Dwelling Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Acquisition Type Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Age Of Property&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Client Description&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Housing Solution Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Market Type Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Status Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Status Reason Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Ownership Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Vacancy Flag&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Disp Settlement FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Inspection Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Provisioning Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Maintenance Area Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Manager&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Portfolio Classification&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Beds&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Lease End FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property Base Locator&quot;.&quot;Base Id&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property Base Locator&quot;.&quot;Distance&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Longitude&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;@{PV_COL1}{Client Description}&#39;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;UPRN&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Last Reason Code&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Reservation Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Has Asbestos Survey&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Has Asbestos&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asbestos Risk Rating&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asbestos Inspection Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Development&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Strata Flag&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;MCA In Priority Location&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:prefix>SET VARIABLE DISABLE_CACHE_HIT=1;</saw:prefix>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!3"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Stock+Detail">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723708386_41734" oldID="kcap1564723510794_11172">
+          <saw:text>Map of Properties by @{PV_COL1}{Test}</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723708386_41735" oldID="kcap1564723510794_11173">
+          <saw:text>Load JS</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723708386_41736" oldID="kcap1564723510794_11174">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/BasesMappingData.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/dhf.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery-migrate-1.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.qtip.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/flexigrid.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jshashtable-2.1_src.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/dha_mapping_obiee_whereisV2t.js&quot;&gt;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/dhaSwitch.css&quot; /&gt;
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/whereis-maps/jquery.qtip.min.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/whereis-maps/flexigrid-1.1/css/flexigrid.pack.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/whereis-maps/dhaMapPlusQtip.css&quot; /&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:narrative rowCount="20000">
+        <saw:caption fmt="html" captionID="kcap1564723708386_41737" oldID="kcap1564723510794_11175">
+          <saw:text>props[i]={uprn:@{c55ed327f976cfc88},lat:@{c171760c07122c874},lon:@{cbc133a32f55b1268},fVal:&#39;@{c7aa85b3566701dd1}&#39;, [filterBy]: &#39;@{c7aa85b3566701dd1}&#39;};i++;</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723708386_41738" oldID="kcap1564723510794_11176">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+cols = [{name:&quot;UPRN&quot;, width:50}, {name:filterBy, width:140}];
+
+
+function dhaLoaded() {
+  //EMS.MarkerProximityCombiner.prototype._copyMarker=dhaCopyMarker;
+  geocoder=new EMS.Service.Geocode;
+  map=new EMS.Map(&quot;mapContainer&quot;,{zoom:0,onInit:setupMap});
+}
+
+var props = [], i=0;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:postfix>
+        <saw:caption fmt="html" captionID="kcap1564723708386_41739" oldID="kcap1564723510794_11177">
+          <saw:text>var totalRowCount= i;
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.ems.sensis.com.au/v2/web/js/ems/?token=2499777234106764371&quot;&gt;&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:postfix>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723708386_41740" oldID="kcap1564723510794_11178">
+          <saw:text>Map Container</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723708386_41741" oldID="kcap1564723510794_11179">
+          <saw:text>&lt;style type=&quot;text/css&quot;&gt;
+#content
+{
+
+	width: 100%;
+	background-color: #eee;
+	clear: both;
+}
+#mapContainer
+{
+        height: 770px;
+	background-color: #fff;
+	border: solid 1px #888;
+	clear: both;
+	position: relative;
+	z-index: 0;
+}
+
+
+div.dhaMapLegend {
+z-index:20000;
+    display:block;
+
+background-color:rgba(255,255,255,0.1);
+border:1px solid #ddd;
+}
+
+.dhaLegendTable th(text-aligin:center}
+&lt;/style&gt;
+
+&lt;div id=&quot;content&quot; style=&quot;width:1500px&quot;&gt;
+    &lt;div id=&quot;mapContainer&quot; class=&quot;dhaMapContainer&quot; style=&quot;float:left;width:1200px&quot; &gt;
+        &lt;div id=&quot;loading&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+         &lt;div id=&quot;dhaLegendContainer&quot; style=&quot;float:right&quot;&gt;
+             &lt;div id=&quot;dhaMapLegend&quot; class=&quot;dhaMapLegend&quot; style=&quot;width:280px&quot;&gt;
+             &lt;/div&gt;
+             &lt;a href=&#39;#&#39; onclick=&quot;	generateMarkers_init();&quot;&gt;&lt;img src=&quot;/custom_styles/s_dha/dha/refresh.png&quot; /&gt;&lt;/a&gt;
+         &lt;/div&gt;
+
+ &lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+      <saw:displayFormat>
+        <saw:formatSpec/>
+      </saw:displayFormat>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!3">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723708386_41742" oldID="kcap1564723510794_11180">
+          <saw:text>Footer</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723708386_41743" oldID="kcap1564723510794_11181">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+  var hasHdr=document.getElementById(&quot;idHeaderTitleCell&quot;);
+  if(!hasHdr) document.getElementById(&quot;mapContainer&quot;).style.height=&quot;820px&quot;;
+ setTimeout(function(){if (typeof map == &quot;undefined&quot;) setupMap();},1000);
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723708386_41744" oldID="kcap1564723510794_11182">
+          <saw:text>Filter By</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:narrative rowCount="1">
+        <saw:caption fmt="html" captionID="kcap1564723708386_41745" oldID="kcap1564723510794_11183">
+          <saw:text>var filterBy=&quot;@{c630c5fc5e8837630}&quot;; selectedBase=&#39;@{ca396f18e0fcff240}&#39;;selectedDHF=&#39;@{c7c98ecd548988fa8}&#39;;</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723708386_41746" oldID="kcap1564723510794_11184">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:postfix>
+        <saw:caption fmt="html" captionID="kcap1564723708386_41747" oldID="kcap1564723510794_11185">
+          <saw:text>&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:postfix>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>
