@@ -1,0 +1,2617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1b92730ca0f68855">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;PD&#39;, &#39;HB&#39;) THEN &#39;1. DHA Owned-Not Available for use&#39;  WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;PP&#39; THEN  &#39;2. Prospective new land to become available for use&#39;  WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; THEN  CASE WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;block&#39;) THEN  &#39;2. Prospective new land to become available for use&#39;  WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;dwelling&#39;) THEN  &#39;3. DHA Available for use&#39; END WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;LV&#39;, &#39;LD&#39;)  THEN &#39;3. DHA Available for use&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46149" oldID="kcap1564723517431_13710">
+            <saw:text>Asset Status Group</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46150" oldID="kcap1564723517431_13711">
+            <saw:text>Asset Status Group</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce75cd270deb2a846">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;Land Vacant&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot; IS NOT NULL THEN &#39;Land Vacant Allocated to a Project&#39;  WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;block&#39;) THEN &#39;GDT to Block&#39; WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;dwelling&#39;) THEN &#39;GDT to Dwelling&#39; ELSE &quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="ce75cd270deb2a846_al0a1dc6e96e4c51f0">
+                <saw:action>
+                  <saw:actionName>PropertyListDrill_Land</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46179" oldID="kcap1564723517431_13740">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46151" oldID="kcap1564723517431_13712">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46152" oldID="kcap1564723517431_13713">
+            <saw:text>Asset status calculated</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf8f1b6616c898eae">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &#39;@{v_ownership}&#39; IS NULL THEN &#39;&quot;Aust Maritime Safety Authority&quot; &quot;Customs Lease&quot; &quot;Customs Owned&quot; &quot;DHA Annuity Offbase&quot; &quot;DHA Common Area&quot; &quot;DHA Inventory MCA&quot; &quot;DHA Inventory&quot; &quot;DHA Investment MCA&quot; &quot;DHA Investment&quot; &quot;DoD Annuity OnBase&quot; &quot;DoD Heritage&quot; &quot;DoD Owned&quot; &quot;Leased Institutional&quot; &quot;Leased MCA&quot; &quot;Leased Pre 96&quot; &quot;Leased&quot; &quot;Onbase Excision&quot; &quot;Strata Common Area&quot; &quot;UNKNOWN&quot;&#39; ELSE &#39;&quot;&#39;||REPLACE(&#39;@{v_ownership}&#39;,&#39;,&#39;,&#39;&quot; &quot;&#39; ) || &#39;&quot;&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46153" oldID="kcap1564723517431_13714">
+            <saw:text>v_ownership</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46154" oldID="kcap1564723517431_13715">
+            <saw:text>v_ownership</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c705e306b1f5d23ba">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c705e306b1f5d23ba_al3e546796acf0bd7f">
+                <saw:action>
+                  <saw:actionName>PropertyListDrill_Land</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46180" oldID="kcap1564723517431_13741">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46155" oldID="kcap1564723517431_13716">
+            <saw:text>DHF Area</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c705e306b1f5d23ba_al93748648eec3ff44">
+                  <saw:action>
+                    <saw:actionName>PropertyListDrill_Land</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723723466_46189" oldID="kcap1564723517431_13750">
+                    <saw:text>Drill to Property Details</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7c1854477be68322">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceb847fd5b6a74674" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;PD&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="ceb847fd5b6a74674_albe9cdded24f22c23">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="false">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                      <saw:prompt>col3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                      <saw:prompt>val3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                      <saw:prompt>op3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false">
+                      <saw:prompt>col4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false">
+                      <saw:prompt>val4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="14" type="string" mandatory="true" removable="true" order="13" multiValues="false">
+                      <saw:prompt>op4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>PD</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Block</saw:value>
+                    </saw:assign>
+                    <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=&quot;@{10}&quot;&amp;op3=@{11}&amp;col4=@{12}&amp;val4=@{13}&amp;op4=@{14}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46181" oldID="kcap1564723517431_13742">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c705e306b1f5d23ba"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46156" oldID="kcap1564723517431_13717">
+            <saw:text>DHA owned - not available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46157" oldID="kcap1564723517431_13718">
+            <saw:text>Possible Disposal</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true" interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="ceb847fd5b6a74674_al83f2c28ee87e7a05">
+                  <saw:action>
+                    <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                        <saw:prompt>Action</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                        <saw:prompt>path</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                        <saw:prompt>col1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                        <saw:prompt>val1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                        <saw:prompt>op1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                        <saw:prompt>col2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                        <saw:prompt>val2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                        <saw:prompt>op2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                        <saw:prompt>col3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                        <saw:prompt>val3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                        <saw:prompt>op3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Navigate</saw:value>
+                      </saw:assign>
+                      <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                      </saw:assign>
+                      <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>PD</saw:value>
+                      </saw:assign>
+                      <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Block</saw:value>
+                      </saw:assign>
+                      <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                      <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=@{10}&amp;op3=@{11}</saw:url>
+                      <saw:request>GET</saw:request>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723723466_46190" oldID="kcap1564723517431_13751">
+                    <saw:text>Drill to Property Details</saw:text>
+                  </saw:caption>
+                  <saw:paramMapping>
+                    <saw:assign xsi:type="saw:anyTypeAssign" name="10" fixed="true" hidden="true">
+                      <saw:mapping xsi:type="saw:contextColumnMappingType">
+                        <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                      </saw:mapping>
+                    </saw:assign>
+                  </saw:paramMapping>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdf674cd6984a750e" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;HB&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cdf674cd6984a750e_albc68b1489b971bf9">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                      <saw:prompt>col3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                      <saw:prompt>val3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                      <saw:prompt>op3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false">
+                      <saw:prompt>col4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false">
+                      <saw:prompt>val4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="14" type="string" mandatory="true" removable="true" order="13" multiValues="false">
+                      <saw:prompt>op4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>HB</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Block</saw:value>
+                    </saw:assign>
+                    <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=&quot;@{10}&quot;&amp;op3=@{11}&amp;col4=@{12}&amp;val4=@{13}&amp;op4=@{14}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46182" oldID="kcap1564723517431_13743">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c705e306b1f5d23ba"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46158" oldID="kcap1564723517431_13719">
+            <saw:text>DHA owned - not available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cdf674cd6984a750e_albacb8b405fe4d7a6">
+                  <saw:action>
+                    <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                        <saw:prompt>Action</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                        <saw:prompt>path</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                        <saw:prompt>col1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                        <saw:prompt>val1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                        <saw:prompt>op1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                        <saw:prompt>col2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                        <saw:prompt>val2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                        <saw:prompt>op2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                        <saw:prompt>col3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                        <saw:prompt>val3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                        <saw:prompt>op3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Navigate</saw:value>
+                      </saw:assign>
+                      <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                      </saw:assign>
+                      <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>HB</saw:value>
+                      </saw:assign>
+                      <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Block</saw:value>
+                      </saw:assign>
+                      <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.Ownership Description&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                      <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=@{10}&amp;op3=@{11}</saw:url>
+                      <saw:request>GET</saw:request>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723723466_46191" oldID="kcap1564723517431_13752">
+                    <saw:text>Drill to Property Details</saw:text>
+                  </saw:caption>
+                  <saw:paramMapping>
+                    <saw:assign xsi:type="saw:anyTypeAssign" name="10" fixed="true" hidden="true">
+                      <saw:mapping xsi:type="saw:contextColumnMappingType">
+                        <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                      </saw:mapping>
+                    </saw:assign>
+                  </saw:paramMapping>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46159" oldID="kcap1564723517431_13720">
+            <saw:text>Handback Pending</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf17e52d0eab5561b" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN(&#39;HB&#39;, &#39;PD&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" fontStyle="bold" width="20px">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46160" oldID="kcap1564723517431_13721">
+            <saw:text>DHA owned - not available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46161" oldID="kcap1564723517431_13722">
+            <saw:text>Total</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1ed1405d7260aeab" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c1ed1405d7260aeab_al374a1e0421ee95b6">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                      <saw:prompt>col3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                      <saw:prompt>val3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                      <saw:prompt>op3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="12" type="string" mandatory="false" removable="true" order="11" multiValues="false">
+                      <saw:prompt>col4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="13" type="string" mandatory="false" removable="true" order="12" multiValues="false">
+                      <saw:prompt>val4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="14" type="string" mandatory="false" removable="true" order="13" multiValues="false">
+                      <saw:prompt>op4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>GDT</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Block</saw:value>
+                    </saw:assign>
+                    <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=&quot;@{10}&quot;&amp;op3=@{11}&amp;col4=@{12}&amp;val4=@{13}&amp;op4=@{14}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46183" oldID="kcap1564723517431_13744">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c705e306b1f5d23ba"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46162" oldID="kcap1564723517431_13723">
+            <saw:text>Prospective new land to become available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true" interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c1ed1405d7260aeab_al8f408bea68de5613">
+                  <saw:action>
+                    <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                        <saw:prompt>Action</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                        <saw:prompt>path</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                        <saw:prompt>col1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                        <saw:prompt>val1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                        <saw:prompt>op1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                        <saw:prompt>col2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                        <saw:prompt>val2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                        <saw:prompt>op2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                        <saw:prompt>col3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                        <saw:prompt>val3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                        <saw:prompt>op3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Navigate</saw:value>
+                      </saw:assign>
+                      <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                      </saw:assign>
+                      <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>GDT</saw:value>
+                      </saw:assign>
+                      <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Block</saw:value>
+                      </saw:assign>
+                      <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                      <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=@{10}&amp;op3=@{11}</saw:url>
+                      <saw:request>GET</saw:request>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723723466_46192" oldID="kcap1564723517431_13753">
+                    <saw:text>Drill to Property Details</saw:text>
+                  </saw:caption>
+                  <saw:paramMapping>
+                    <saw:assign xsi:type="saw:anyTypeAssign" name="10" fixed="true" hidden="true">
+                      <saw:mapping xsi:type="saw:contextColumnMappingType">
+                        <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                      </saw:mapping>
+                    </saw:assign>
+                  </saw:paramMapping>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46163" oldID="kcap1564723517431_13724">
+            <saw:text>GDT to Block</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c932583feac2d3e1f" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;PP&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c932583feac2d3e1f_alc31fa5f895ef26d6">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                      <saw:prompt>col3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                      <saw:prompt>val3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                      <saw:prompt>op3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false">
+                      <saw:prompt>col4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false">
+                      <saw:prompt>val4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="14" type="string" mandatory="true" removable="true" order="13" multiValues="false">
+                      <saw:prompt>op4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>PP</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Block</saw:value>
+                    </saw:assign>
+                    <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=&quot;@{10}&quot;&amp;op3=@{11}&amp;col4=@{12}&amp;val4=@{13}&amp;op4=@{14}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46184" oldID="kcap1564723517431_13745">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c705e306b1f5d23ba"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46164" oldID="kcap1564723517431_13725">
+            <saw:text>Prospective new land to become available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true" interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c932583feac2d3e1f_al66759308acbf63a8">
+                  <saw:action>
+                    <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                        <saw:prompt>Action</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                        <saw:prompt>path</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                        <saw:prompt>col1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                        <saw:prompt>val1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                        <saw:prompt>op1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                        <saw:prompt>col2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                        <saw:prompt>val2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                        <saw:prompt>op2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                        <saw:prompt>col3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                        <saw:prompt>val3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                        <saw:prompt>op3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Navigate</saw:value>
+                      </saw:assign>
+                      <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                      </saw:assign>
+                      <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>PP</saw:value>
+                      </saw:assign>
+                      <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Block</saw:value>
+                      </saw:assign>
+                      <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                      <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=@{10}&amp;op3=@{11}</saw:url>
+                      <saw:request>GET</saw:request>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723723466_46193" oldID="kcap1564723517431_13754">
+                    <saw:text>Drill to Property Details</saw:text>
+                  </saw:caption>
+                  <saw:paramMapping>
+                    <saw:assign xsi:type="saw:anyTypeAssign" name="10" fixed="true" hidden="true">
+                      <saw:mapping xsi:type="saw:contextColumnMappingType">
+                        <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                      </saw:mapping>
+                    </saw:assign>
+                  </saw:paramMapping>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46165" oldID="kcap1564723517431_13726">
+            <saw:text>Purchase Pending</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc2e0ee9f56d5a5e0" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN(&#39;GDT&#39;,&#39;PP&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" fontStyle="bold" width="20px">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46166" oldID="kcap1564723517431_13727">
+            <saw:text>Prospective new land to become available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46167" oldID="kcap1564723517431_13728">
+            <saw:text>Total</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1b45987af369bf3a" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Dwelling&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c1b45987af369bf3a_al8dbe42645f051e24">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                      <saw:prompt>col3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                      <saw:prompt>val3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                      <saw:prompt>op3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false">
+                      <saw:prompt>col4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false">
+                      <saw:prompt>val4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="14" type="string" mandatory="true" removable="true" order="13" multiValues="false">
+                      <saw:prompt>op4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>GDT</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Dwelling</saw:value>
+                    </saw:assign>
+                    <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=&quot;@{10}&quot;&amp;op3=@{11}&amp;col4=@{12}&amp;val4=@{13}&amp;op4=@{14}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46185" oldID="kcap1564723517431_13746">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c705e306b1f5d23ba"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46168" oldID="kcap1564723517431_13729">
+            <saw:text>DHA owned available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c1b45987af369bf3a_alaf68bda97c3d38f2">
+                  <saw:action>
+                    <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                        <saw:prompt>Action</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                        <saw:prompt>path</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                        <saw:prompt>col1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                        <saw:prompt>val1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                        <saw:prompt>op1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                        <saw:prompt>col2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                        <saw:prompt>val2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                        <saw:prompt>op2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                        <saw:prompt>col3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                        <saw:prompt>val3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                        <saw:prompt>op3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Navigate</saw:value>
+                      </saw:assign>
+                      <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                      </saw:assign>
+                      <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>GDT</saw:value>
+                      </saw:assign>
+                      <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Dwelling</saw:value>
+                      </saw:assign>
+                      <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                      <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=@{10}&amp;op3=@{11}</saw:url>
+                      <saw:request>GET</saw:request>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723723466_46194" oldID="kcap1564723517431_13755">
+                    <saw:text>Drill to Property Details</saw:text>
+                  </saw:caption>
+                  <saw:paramMapping>
+                    <saw:assign xsi:type="saw:anyTypeAssign" name="10" fixed="true" hidden="true">
+                      <saw:mapping xsi:type="saw:contextColumnMappingType">
+                        <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                      </saw:mapping>
+                    </saw:assign>
+                  </saw:paramMapping>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46169" oldID="kcap1564723517431_13730">
+            <saw:text>GDT to Dwelling</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc25346d909439851" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;LD&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; IN(&#39;Block&#39;, &#39;Dwelling&#39;) THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cc25346d909439851_ald5d17958612969b6">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                      <saw:prompt>col3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                      <saw:prompt>val3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                      <saw:prompt>op3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false">
+                      <saw:prompt>col4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false">
+                      <saw:prompt>val4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="14" type="string" mandatory="true" removable="true" order="13" multiValues="false">
+                      <saw:prompt>op4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>LD</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Block&quot;&quot;Dwelling&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                    <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=@{10}&amp;op3=@{11}&amp;col4=@{12}&amp;val4=@{13}&amp;op4=@{14}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46186" oldID="kcap1564723517431_13747">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c705e306b1f5d23ba"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46170" oldID="kcap1564723517431_13731">
+            <saw:text>DHA owned available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cc25346d909439851_ald8ab5c72c138154c">
+                  <saw:action>
+                    <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                        <saw:prompt>Action</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                        <saw:prompt>path</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                        <saw:prompt>col1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                        <saw:prompt>val1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                        <saw:prompt>op1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                        <saw:prompt>col2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                        <saw:prompt>val2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                        <saw:prompt>op2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                        <saw:prompt>col3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                        <saw:prompt>val3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                        <saw:prompt>op3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Navigate</saw:value>
+                      </saw:assign>
+                      <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                      </saw:assign>
+                      <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>LD</saw:value>
+                      </saw:assign>
+                      <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;Block&quot;&quot;Dwelling&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                      <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                      <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=@{7}&amp;op2=@{8}&amp;col3=@{9}&amp;val3=@{10}&amp;op3=@{11}</saw:url>
+                      <saw:request>GET</saw:request>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723723466_46195" oldID="kcap1564723517431_13756">
+                    <saw:text>Drill to Property Details</saw:text>
+                  </saw:caption>
+                  <saw:paramMapping>
+                    <saw:assign xsi:type="saw:anyTypeAssign" name="10" fixed="true" hidden="true">
+                      <saw:mapping xsi:type="saw:contextColumnMappingType">
+                        <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                      </saw:mapping>
+                    </saw:assign>
+                  </saw:paramMapping>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46171" oldID="kcap1564723517431_13732">
+            <saw:text>Land under development</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccdd26810e1d22343" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;LV&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; IN(&#39;Block&#39;, &#39;Dwelling&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot; IS NULL THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="ccdd26810e1d22343_alb8ee0c5a8ad1f593">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                      <saw:prompt>col3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                      <saw:prompt>val3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                      <saw:prompt>op3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false">
+                      <saw:prompt>col4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false">
+                      <saw:prompt>val4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="14" type="string" mandatory="true" removable="true" order="13" multiValues="false">
+                      <saw:prompt>op4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="15" type="string" mandatory="true" removable="true" order="14" multiValues="false">
+                      <saw:prompt>col5</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="16" type="string" mandatory="true" removable="true" order="15" multiValues="false">
+                      <saw:prompt>val5</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="17" type="string" mandatory="true" removable="true" order="16" multiValues="false">
+                      <saw:prompt>op5</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>LV</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Block&quot;&quot;Dwelling&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                    <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="13" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>0</saw:value>
+                    </saw:assign>
+                    <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>null</saw:value>
+                    </saw:assign>
+                    <saw:assign name="15" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="17" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=@{10}&amp;op3=@{11}&amp;col4=@{12}&amp;val4=&quot;@{13}&quot;&amp;op4=@{14}&amp;col5=@{15}&amp;val5=@{16}&amp;op5=@{17}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46187" oldID="kcap1564723517431_13748">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c705e306b1f5d23ba"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="16" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46172" oldID="kcap1564723517431_13733">
+            <saw:text>DHA owned available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46173" oldID="kcap1564723517431_13734">
+            <saw:text>Land vacant unallocated</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="ccdd26810e1d22343_al7091baaeebc5606d">
+                  <saw:action>
+                    <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                        <saw:prompt>Action</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                        <saw:prompt>path</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                        <saw:prompt>col1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                        <saw:prompt>val1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                        <saw:prompt>op1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                        <saw:prompt>col2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                        <saw:prompt>val2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                        <saw:prompt>op2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                        <saw:prompt>col3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                        <saw:prompt>val3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                        <saw:prompt>op3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false">
+                        <saw:prompt>col4</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false">
+                        <saw:prompt>val4</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="14" type="string" mandatory="true" removable="true" order="13" multiValues="false">
+                        <saw:prompt>op4</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Navigate</saw:value>
+                      </saw:assign>
+                      <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                      </saw:assign>
+                      <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>LV</saw:value>
+                      </saw:assign>
+                      <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;Block&quot;&quot;Dwelling&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                      <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>0</saw:value>
+                      </saw:assign>
+                      <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>null</saw:value>
+                      </saw:assign>
+                      <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                      <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=@{7}&amp;op2=@{8}&amp;col3=@{9}&amp;val3=&quot;@{10}&quot;&amp;op3=@{11}&amp;col4=@{12}&amp;val4=@{13}&amp;op4=@{14}</saw:url>
+                      <saw:request>GET</saw:request>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723723466_46196" oldID="kcap1564723517431_13757">
+                    <saw:text>Drill to Property Details</saw:text>
+                  </saw:caption>
+                  <saw:paramMapping>
+                    <saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true">
+                      <saw:mapping xsi:type="saw:contextColumnMappingType">
+                        <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                      </saw:mapping>
+                    </saw:assign>
+                  </saw:paramMapping>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0b57384059a44c9b" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;LV&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; IN(&#39;Block&#39;, &#39;Dwelling&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot; IS NOT NULL THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="20px" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c0b57384059a44c9b_al1404c0e5d52dbc29">
+                <saw:action>
+                  <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>Action</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                      <saw:prompt>path</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                      <saw:prompt>col1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                      <saw:prompt>val1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                      <saw:prompt>op1</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                      <saw:prompt>col2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                      <saw:prompt>val2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                      <saw:prompt>op2</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                      <saw:prompt>col3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                      <saw:prompt>val3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                      <saw:prompt>op3</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false">
+                      <saw:prompt>col4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false">
+                      <saw:prompt>val4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="14" type="string" mandatory="true" removable="true" order="13" multiValues="false">
+                      <saw:prompt>op4</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="15" type="string" mandatory="true" removable="true" order="14" multiValues="false">
+                      <saw:prompt>col5</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="16" type="string" mandatory="true" removable="true" order="15" multiValues="false">
+                      <saw:prompt>val5</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="17" type="string" mandatory="true" removable="true" order="16" multiValues="false">
+                      <saw:prompt>op5</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Navigate</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>LV</saw:value>
+                    </saw:assign>
+                    <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>eq</saw:value>
+                    </saw:assign>
+                    <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;Block&quot;&quot;Dwelling&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                    <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="13" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>0</saw:value>
+                    </saw:assign>
+                    <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>nnull</saw:value>
+                    </saw:assign>
+                    <saw:assign name="15" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                    </saw:assign>
+                    <saw:assign name="17" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>cany</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=&quot;@{7}&quot;&amp;op2=@{8}&amp;col3=@{9}&amp;val3=@{10}&amp;op3=@{11}&amp;col4=@{12}&amp;val4=&quot;@{13}&quot;&amp;op4=@{14}&amp;col5=@{15}&amp;val5=@{16}&amp;op5=@{17}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723466_46188" oldID="kcap1564723517431_13749">
+                  <saw:text>Drill to Property Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c705e306b1f5d23ba"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="16" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46174" oldID="kcap1564723517431_13735">
+            <saw:text>DHA owned available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46175" oldID="kcap1564723517431_13736">
+            <saw:text>Land vacant allocated to project</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c0b57384059a44c9b_alf149cc225c987d5b">
+                  <saw:action>
+                    <saw:actionName>Navigate - @[biserver]</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                        <saw:prompt>Action</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                        <saw:prompt>path</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                        <saw:prompt>col1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="4" type="string" mandatory="true" removable="true" order="3" multiValues="false">
+                        <saw:prompt>val1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="5" type="string" mandatory="true" removable="true" order="4" multiValues="false">
+                        <saw:prompt>op1</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="6" type="string" mandatory="true" removable="true" order="5" multiValues="false">
+                        <saw:prompt>col2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="7" type="string" mandatory="true" removable="true" order="6" multiValues="false">
+                        <saw:prompt>val2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="8" type="string" mandatory="true" removable="true" order="7" multiValues="false">
+                        <saw:prompt>op2</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="9" type="string" mandatory="true" removable="true" order="8" multiValues="false">
+                        <saw:prompt>col3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="10" type="string" mandatory="true" removable="true" order="9" multiValues="false">
+                        <saw:prompt>val3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="11" type="string" mandatory="true" removable="true" order="10" multiValues="false">
+                        <saw:prompt>op3</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="12" type="string" mandatory="true" removable="true" order="11" multiValues="false">
+                        <saw:prompt>col4</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="13" type="string" mandatory="true" removable="true" order="12" multiValues="false">
+                        <saw:prompt>val4</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                      <saw:parameter name="14" type="string" mandatory="true" removable="true" order="13" multiValues="false">
+                        <saw:prompt>op4</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>Navigate</saw:value>
+                      </saw:assign>
+                      <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Property Portfolio/Land Availability/PropertyListDrill_Land</saw:value>
+                      </saw:assign>
+                      <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="4" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>LV</saw:value>
+                      </saw:assign>
+                      <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>eq</saw:value>
+                      </saw:assign>
+                      <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;Block&quot;&quot;Dwelling&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="8" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                      <saw:assign name="9" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="10" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>0</saw:value>
+                      </saw:assign>
+                      <saw:assign name="11" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>nnull</saw:value>
+                      </saw:assign>
+                      <saw:assign name="12" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</saw:value>
+                      </saw:assign>
+                      <saw:assign name="14" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>cany</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                      <saw:url aliasedLocation="true">@[biserver]?PortalGo&amp;Action=@{1}&amp;path=@{2}&amp;col1=@{3}&amp;val1=&quot;@{4}&quot;&amp;op1=@{5}&amp;col2=@{6}&amp;val2=@{7}&amp;op2=@{8}&amp;col3=@{9}&amp;val3=&quot;@{10}&quot;&amp;op3=@{11}&amp;col4=@{12}&amp;val4=@{13}&amp;op4=@{14}</saw:url>
+                      <saw:request>GET</saw:request>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723723466_46197" oldID="kcap1564723517431_13758">
+                    <saw:text>Drill to Property Details</saw:text>
+                  </saw:caption>
+                  <saw:paramMapping>
+                    <saw:assign xsi:type="saw:anyTypeAssign" name="13" fixed="true" hidden="true">
+                      <saw:mapping xsi:type="saw:contextColumnMappingType">
+                        <sawx:columnRefExpr columnID="cf8f1b6616c898eae"/>
+                      </saw:mapping>
+                    </saw:assign>
+                  </saw:paramMapping>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c08d651c8d2d57cac" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;LD&#39;, &#39;LV&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; IN(&#39;Block&#39;, &#39;Dwelling&#39;) THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;)  WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Dwelling&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;)  END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" fontStyle="bold" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46176" oldID="kcap1564723517431_13737">
+            <saw:text>DHA owned available for use</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46177" oldID="kcap1564723517431_13738">
+            <saw:text>Total</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cba466062501fa6f7" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN(&#39;HB&#39;, &#39;PD&#39;, &#39;GDT&#39;, &#39;PP&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) 
+WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;LD&#39;, &#39;LV&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; IN(&#39;Block&#39;, &#39;Dwelling&#39;) THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;)  
+WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Dwelling&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;)  END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" fontStyle="bold" wrapText="true" backgroundColor="#EFEDDE" width="20px" interaction="none">
+            <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723466_46178" oldID="kcap1564723517431_13739">
+            <saw:text>Grand Total</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec fontStyle="bold" wrapText="true" interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c41ff964b176cbb86">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="caa9bf379c5d866a8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Class&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">6</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN(&#39;HB&#39;, &#39;PD&#39;, &#39;GDT&#39;, &#39;PP&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;) 
+WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;LD&#39;, &#39;LV&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; IN(&#39;Block&#39;, &#39;Dwelling&#39;) THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;)  
+WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Dwelling&#39; THEN SUM(&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot;)  END</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="true" groupoperations="true" calcitemoperations="true" showhidesubtotal="true" showhiderunningsum="true" inclexclcolumns="true"/>
+  <saw:views textDelivery="compoundView!1" includeNewColumns="true" currentView="0" valueHierarchyIndent="false" parentsBefore="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1" colSpan="2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!2"/>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell colSpan="2" viewName="narrativeView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723723466_46144" oldID="kcap1564723517431_13705">
+          <saw:text>charts</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723723466_46145" oldID="kcap1564723517431_13706">
+          <saw:text>Single Lots - Availability</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" headingDisplay="table2Rows" rowsPerPage="100">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:columnOrder>
+            <saw:columnOrderRef columnID="c705e306b1f5d23ba" direction="ascending"/>
+          </saw:columnOrder>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c705e306b1f5d23ba"/>
+            <saw:edgeLayer type="column" columnID="ceb847fd5b6a74674">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cdf674cd6984a750e"/>
+            <saw:edgeLayer type="column" columnID="cf17e52d0eab5561b"/>
+            <saw:edgeLayer type="column" columnID="c1ed1405d7260aeab"/>
+            <saw:edgeLayer type="column" columnID="c932583feac2d3e1f"/>
+            <saw:edgeLayer type="column" columnID="cc2e0ee9f56d5a5e0"/>
+            <saw:edgeLayer type="column" columnID="c1b45987af369bf3a"/>
+            <saw:edgeLayer type="column" columnID="cc25346d909439851"/>
+            <saw:edgeLayer type="column" columnID="ccdd26810e1d22343"/>
+            <saw:edgeLayer type="column" columnID="c0b57384059a44c9b"/>
+            <saw:edgeLayer type="column" columnID="c08d651c8d2d57cac"/>
+            <saw:edgeLayer type="column" columnID="cba466062501fa6f7"/>
+            <saw:edgeLayer type="column" columnID="cf8f1b6616c898eae" visibility="hidden"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="pie" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="always" label="nameValue" position="below" transparentBackground="true" valueAs="value" abbreviation="default" waterfallValueAs="actual">
+          <saw:textFormat/>
+        </saw:dataLabels>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c0b57384059a44c9b"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c1b92730ca0f68855"/>
+          </saw:category>
+          <saw:measureLabels/>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="pie">
+            <saw:columnRef columnID="cba466062501fa6f7"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="ce75cd270deb2a846"/>
+          </saw:seriesGenerator>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="none" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="pie" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="always" label="nameValue" position="below" transparentBackground="true" valueAs="value" abbreviation="default" waterfallValueAs="actual">
+          <saw:textFormat/>
+        </saw:dataLabels>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:measureLabels/>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="pie">
+            <saw:columnRef columnID="cba466062501fa6f7"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="ce75cd270deb2a846"/>
+          </saw:seriesGenerator>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="none" transparentFill="true">
+        <saw:textFormat/>
+      </saw:legendFormat>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c705e306b1f5d23ba"/>
+            <saw:edgeLayer type="column" columnID="ceb847fd5b6a74674"/>
+            <saw:edgeLayer type="column" columnID="cdf674cd6984a750e"/>
+            <saw:edgeLayer type="column" columnID="cf17e52d0eab5561b"/>
+            <saw:edgeLayer type="column" columnID="c1ed1405d7260aeab"/>
+            <saw:edgeLayer type="column" columnID="c932583feac2d3e1f"/>
+            <saw:edgeLayer type="column" columnID="cc2e0ee9f56d5a5e0"/>
+            <saw:edgeLayer type="column" columnID="c1b45987af369bf3a"/>
+            <saw:edgeLayer type="column" columnID="cc25346d909439851"/>
+            <saw:edgeLayer type="column" columnID="ccdd26810e1d22343"/>
+            <saw:edgeLayer type="column" columnID="c0b57384059a44c9b"/>
+            <saw:edgeLayer type="column" columnID="c08d651c8d2d57cac"/>
+            <saw:edgeLayer type="column" columnID="cba466062501fa6f7"/>
+            <saw:edgeLayer type="column" columnID="c41ff964b176cbb86"/>
+            <saw:edgeLayer type="column" columnID="caa9bf379c5d866a8"/>
+            <saw:edgeLayer type="column" columnID="c1b92730ca0f68855"/>
+            <saw:edgeLayer type="column" columnID="ce75cd270deb2a846"/>
+            <saw:edgeLayer type="column" columnID="cf8f1b6616c898eae"/>
+            <saw:edgeLayer type="column" columnID="c1ebca5a41d7f052e"/>
+            <saw:edgeLayer type="column" columnID="c7c1854477be68322"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723723466_46146" oldID="kcap1564723517431_13707">
+          <saw:text>table</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723723466_46147" oldID="kcap1564723517431_13708">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-80px; left:80px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!2"/>
+    <saw:view xsi:type="saw:viewSelector" name="viewSelector!1">
+      <saw:viewSelectorCaption position="left">
+        <saw:caption captionID="kcap1564723723466_46148" oldID="kcap1564723517431_13709">
+          <saw:text>Select View</saw:text>
+        </saw:caption>
+      </saw:viewSelectorCaption>
+      <saw:viewList>
+        <saw:viewItem type="view" name="tableView!1"/>
+        <saw:viewItem type="view" name="compoundView!1"/>
+      </saw:viewList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Property Provisioning&quot;"/>
+</saw:report>

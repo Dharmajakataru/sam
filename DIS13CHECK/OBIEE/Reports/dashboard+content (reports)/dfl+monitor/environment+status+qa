@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160" cacheControl="bypassCache">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;DFL Monitor&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccc81bc3b42e35b2d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DFL_RUN_ENVIRONMENTS_DFL&quot;.&quot;Environment&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0bea2c4649177f92" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;DFL_RUN_RESULTS_DFL&quot;.&quot;Status Value&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0bea2c4649177f92"/>
+                    <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/light/stop/3g.gif" wrapText="true" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0bea2c4649177f92"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/light/stop/2y.gif" wrapText="true" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0bea2c4649177f92"/>
+                    <sawx:expr xsi:type="xsd:decimal">-1</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/light/stop/1r.gif" wrapText="true" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723674434_35748" oldID="kcap1564723489577_6754">
+            <saw:text>DFL_RUN_RESULTS_DFL</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723674434_35749" oldID="kcap1564723489577_6755">
+            <saw:text>Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7bdcb9a4749434ad">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DFL_RUN_RESULTS_DFL&quot;.&quot;Task&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb91de3c2551350a1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DFL_RUN_RESULTS_DFL&quot;.&quot;Sort Order&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" width="20px" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc7994423a610878f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DFL_RUN_RESULTS_DFL&quot;.&quot;Environment Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" width="20px" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb8e45ff42d3c03c1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">max(&quot;DFL_RUN_RESULTS_DFL&quot;.&quot;Refresh Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy H:mm"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:comparison" op="equal">
+        <sawx:expr xsi:type="sawx:sqlExpression">&quot;DFL_RUN_ENVIRONMENTS_DFL&quot;.&quot;Environment&quot;</sawx:expr>
+        <sawx:expr xsi:type="xsd:string">QA</sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="cc7994423a610878f" direction="ascending"/>
+      <saw:columnOrderRef columnID="cb91de3c2551350a1" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtgauge!3"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cb91de3c2551350a1"/>
+            <saw:edgeLayer type="column" columnID="c7bdcb9a4749434ad"/>
+            <saw:edgeLayer type="column" columnID="c0bea2c4649177f92"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtgauge" name="dvtgauge!1">
+      <saw:display type="gauge" subtype="default" renderFormat="default" mode="online">
+        <saw:style effect="2d"/>
+      </saw:display>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="ccc81bc3b42e35b2d"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cc7994423a610878f"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cb8e45ff42d3c03c1"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c0bea2c4649177f92"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:gaugeProperties gaugeSize="default" showBorder="false" bgColor="" borderColor="" width="200" height="210">
+        <saw:gaugePointers>
+          <saw:gaugePointer>
+            <saw:pointerFormat color="" needleStyle="needle"/>
+            <saw:columnRef columnID="c0bea2c4649177f92"/>
+          </saw:gaugePointer>
+        </saw:gaugePointers>
+        <saw:scale labelsDisplay="default" defaultTicks="true" scaleDefault="false">
+          <saw:scaleMin>
+            <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+          </saw:scaleMin>
+          <saw:scaleMax>
+            <sawx:expr xsi:type="xsd:decimal">5</sawx:expr>
+          </saw:scaleMax>
+        </saw:scale>
+        <saw:gaugeRanges>
+          <saw:colorRange color="#FFFF00" rangeType="dynamic" labelType="dynamic">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35753" oldID="kcap1564723489578_6759">
+                <saw:text>0</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+            </saw:rangeLow>
+            <saw:rangeHigh>
+              <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+            </saw:rangeHigh>
+          </saw:colorRange>
+          <saw:colorRange color="#FFFF00" rangeType="custom" labelType="dynamic">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35754" oldID="kcap1564723489578_6760">
+                <saw:text>0</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+            </saw:rangeLow>
+            <saw:rangeHigh>
+              <sawx:expr xsi:type="xsd:decimal">2</sawx:expr>
+            </saw:rangeHigh>
+          </saw:colorRange>
+          <saw:colorRange color="#669966" rangeType="custom">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35755" oldID="kcap1564723489578_6761">
+                <saw:text>Critical</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <sawx:expr xsi:type="xsd:decimal">2</sawx:expr>
+            </saw:rangeLow>
+            <saw:rangeHigh>
+              <sawx:expr xsi:type="xsd:decimal">3</sawx:expr>
+            </saw:rangeHigh>
+          </saw:colorRange>
+          <saw:colorRange color="#669966" rangeType="custom">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35756" oldID="kcap1564723489578_6762">
+                <saw:text>Warning</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <sawx:expr xsi:type="xsd:decimal">3</sawx:expr>
+            </saw:rangeLow>
+            <saw:rangeHigh>
+              <sawx:expr xsi:type="xsd:decimal">4</sawx:expr>
+            </saw:rangeHigh>
+          </saw:colorRange>
+          <saw:colorRange color="#336633" rangeType="custom">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35757" oldID="kcap1564723489578_6763">
+                <saw:text>Good</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <sawx:expr xsi:type="xsd:decimal">4</sawx:expr>
+            </saw:rangeLow>
+            <saw:rangeHigh/>
+          </saw:colorRange>
+        </saw:gaugeRanges>
+        <saw:gaugeGoal goalType="high"/>
+        <saw:typeSpecificFormat thickness="1"/>
+        <saw:gaugeTitles>
+          <saw:gaugeTitle name="footer">
+            <saw:caption captionID="kcap1564723674434_35750" oldID="kcap1564723489577_6756">
+              <saw:text>@1</saw:text>
+            </saw:caption>
+          </saw:gaugeTitle>
+        </saw:gaugeTitles>
+      </saw:gaugeProperties>
+      <saw:gaugeCanvasFormat gaugesPerRow="3" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor=""/>
+      <saw:legendFormat transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtgauge" name="dvtgauge!2">
+      <saw:display type="gauge" subtype="ledBar" renderFormat="default" mode="online">
+        <saw:style effect="2d"/>
+      </saw:display>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="ccc81bc3b42e35b2d"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cc7994423a610878f"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cb8e45ff42d3c03c1"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c0bea2c4649177f92"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:gaugeProperties gaugeSize="default" showBorder="false" bgColor="" borderColor="">
+        <saw:gaugePointers>
+          <saw:gaugePointer>
+            <saw:pointerFormat color="" needleStyle="needle"/>
+            <saw:columnRef columnID="c0bea2c4649177f92"/>
+          </saw:gaugePointer>
+        </saw:gaugePointers>
+        <saw:scale labelsDisplay="default" defaultTicks="true" scaleDefault="false">
+          <saw:scaleMin>
+            <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+          </saw:scaleMin>
+          <saw:scaleMax>
+            <sawx:expr xsi:type="xsd:decimal">5</sawx:expr>
+          </saw:scaleMax>
+        </saw:scale>
+        <saw:gaugeRanges>
+          <saw:colorRange color="#008000" rangeType="dynamic" labelType="dynamic">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35758" oldID="kcap1564723489578_6764">
+                <saw:text>0</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+            </saw:rangeLow>
+            <saw:rangeHigh>
+              <saw:columnRef columnID="c0bea2c4649177f92"/>
+            </saw:rangeHigh>
+          </saw:colorRange>
+          <saw:colorRange color="#FFFF00" rangeType="measure">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35759" oldID="kcap1564723489578_6765">
+                <saw:text>Warning</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <saw:columnRef columnID="c0bea2c4649177f92"/>
+            </saw:rangeLow>
+            <saw:rangeHigh>
+              <sawx:expr xsi:type="xsd:decimal">5</sawx:expr>
+            </saw:rangeHigh>
+          </saw:colorRange>
+          <saw:colorRange color="#FF0000" rangeType="custom">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35760" oldID="kcap1564723489578_6766">
+                <saw:text>Good</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <sawx:expr xsi:type="xsd:decimal">5</sawx:expr>
+            </saw:rangeLow>
+            <saw:rangeHigh/>
+          </saw:colorRange>
+        </saw:gaugeRanges>
+        <saw:gaugeGoal goalType="high"/>
+        <saw:typeSpecificFormat thickness="1"/>
+        <saw:gaugeTitles>
+          <saw:gaugeTitle name="footer">
+            <saw:caption captionID="kcap1564723674434_35751" oldID="kcap1564723489577_6757">
+              <saw:text>@1</saw:text>
+            </saw:caption>
+          </saw:gaugeTitle>
+        </saw:gaugeTitles>
+      </saw:gaugeProperties>
+      <saw:gaugeCanvasFormat gaugesPerRow="3" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor=""/>
+      <saw:legendFormat transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtgauge" name="dvtgauge!3">
+      <saw:display type="gauge" subtype="bulb" renderFormat="default" mode="online">
+        <saw:style effect="3d"/>
+      </saw:display>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cc7994423a610878f"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="ccc81bc3b42e35b2d"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c0bea2c4649177f92"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:gaugeProperties gaugeSize="custom" showBorder="false" height="100" width="150" bgColor="" borderColor="">
+        <saw:gaugePointers>
+          <saw:gaugePointer>
+            <saw:pointerFormat color="" needleStyle="needle"/>
+            <saw:columnRef columnID="c0bea2c4649177f92"/>
+          </saw:gaugePointer>
+        </saw:gaugePointers>
+        <saw:scale labelsDisplay="default" defaultTicks="true" scaleDefault="true"/>
+        <saw:gaugeRanges>
+          <saw:colorRange color="#FF0000" labelType="custom">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35761" oldID="kcap1564723489578_6767">
+                <saw:text>Failed</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+            </saw:rangeLow>
+            <saw:rangeHigh>
+              <sawx:expr xsi:type="xsd:decimal">3</sawx:expr>
+            </saw:rangeHigh>
+          </saw:colorRange>
+          <saw:colorRange color="#008000" rangeType="custom" labelType="custom">
+            <saw:markerLabel>
+              <saw:caption captionID="kcap1564723674434_35762" oldID="kcap1564723489578_6768">
+                <saw:text>Completed</saw:text>
+              </saw:caption>
+            </saw:markerLabel>
+            <saw:rangeLow>
+              <sawx:expr xsi:type="xsd:decimal">3</sawx:expr>
+            </saw:rangeLow>
+            <saw:rangeHigh/>
+          </saw:colorRange>
+        </saw:gaugeRanges>
+        <saw:gaugeGoal goalType="high"/>
+        <saw:typeSpecificFormat thickness="1"/>
+        <saw:gaugeTitles>
+          <saw:gaugeTitle name="footer">
+            <saw:caption truncate="false" truncateLength="0" captionID="kcap1564723674434_35752" oldID="kcap1564723489577_6758">
+              <saw:text>@1</saw:text>
+            </saw:caption>
+            <saw:textFormat fontStyle="bold"/>
+          </saw:gaugeTitle>
+        </saw:gaugeTitles>
+      </saw:gaugeProperties>
+      <saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="false" bgColor="" borderColor="">
+        <saw:gaugeTitle name="title">
+          <saw:caption>
+            <saw:text/>
+          </saw:caption>
+        </saw:gaugeTitle>
+      </saw:gaugeCanvasFormat>
+      <saw:legendFormat transparentFill="true" position="none"/>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="text" captionID="kcap1564723674434_35746" oldID="kcap1564723489577_6752">
+          <saw:text>Size of indicator 150 X 100</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:narrative rowCount="1">
+        <saw:caption fmt="text" captionID="kcap1564723674434_35747" oldID="kcap1564723489577_6753">
+          <saw:text>Refreshed: @{cb8e45ff42d3c03c1}</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:displayFormat>
+        <saw:formatSpec fontSize="10"/>
+      </saw:displayFormat>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Workflow Transitions&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c56a788b3bd7a955a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Jira Source&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c076a5321c61b7f96">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;User&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0afae62067ec2808">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Project&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c06640b351b18f315">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Issue Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8d0f1e74a6437bfa">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Transition From&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cff2ff860ba85a81a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Transition To&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c12991a04c1d0a7dd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Time to Transition&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c163929f1781f2836">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&#39; || case when &quot;F Workflow Transitions&quot;.&quot;Time to Transition&quot; &gt;= 86400 then cast(truncate((&quot;F Workflow Transitions&quot;.&quot;Time to Transition&quot; / (24*60*60)), 0) as char(5)) || &#39; days, &#39; end || case when &quot;F Workflow Transitions&quot;.&quot;Time to Transition&quot; &gt;= 3600 then cast(truncate(((mod(&quot;F Workflow Transitions&quot;.&quot;Time to Transition&quot;, (24*60*60)))/3600), 0) as char(5)) || &#39; hours, &#39; end || case when &quot;F Workflow Transitions&quot;.&quot;Time to Transition&quot; &gt; 60 then cast(truncate(((mod(&quot;F Workflow Transitions&quot;.&quot;Time to Transition&quot;, (60*60)))/60), 0) as char(5)) || &#39; minutes &#39;  end || case when &quot;F Workflow Transitions&quot;.&quot;Time to Transition&quot; &lt; 3600 then cast(mod(&quot;F Workflow Transitions&quot;.&quot;Time to Transition&quot;, 60) as char(5)) || &#39; seconds &#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723807837_59578" oldID="kcap1564723564722_24529">
+            <saw:text>F Workflow Transitions</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723807837_59579" oldID="kcap1564723564722_24530">
+            <saw:text>Time to Transition</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca68a7f443d93014d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Time Since Create&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0362fa832f5ddeb9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&#39; || case when &quot;F Workflow Transitions&quot;.&quot;Time Since Create&quot; &gt;= 86400 then cast(truncate((&quot;F Workflow Transitions&quot;.&quot;Time Since Create&quot; / (24*60*60)), 0) as char(5)) || &#39; days, &#39; end || case when &quot;F Workflow Transitions&quot;.&quot;Time Since Create&quot; &gt;= 3600 then cast(truncate(((mod(&quot;F Workflow Transitions&quot;.&quot;Time Since Create&quot;, (24*60*60)))/3600), 0) as char(5)) || &#39; hours, &#39; end || case when &quot;F Workflow Transitions&quot;.&quot;Time Since Create&quot; &gt; 60 then cast(truncate(((mod(&quot;F Workflow Transitions&quot;.&quot;Time Since Create&quot;, (60*60)))/60), 0) as char(5)) || &#39; minutes &#39;  end || case when &quot;F Workflow Transitions&quot;.&quot;Time Since Create&quot; &lt; 3600 then cast(mod(&quot;F Workflow Transitions&quot;.&quot;Time Since Create&quot;, 60) as char(5)) || &#39; seconds &#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723807837_59580" oldID="kcap1564723564722_24531">
+            <saw:text>F Workflow Transitions</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723807837_59581" oldID="kcap1564723564722_24532">
+            <saw:text>Time Since Create</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2e11052aece4271c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;a target=&quot;_blank&quot; href=&quot;https://&#39; || LOWER(REPLACE(&quot;F Workflow Transitions&quot;.&quot;Jira Source&quot;, &#39; &#39;, &#39;&#39;)) || case when VALUEOF(&quot;RV_ENV_NAME&quot;) != &#39;prod&#39; then &#39;-&#39; || VALUEOF(&quot;RV_ENV_NAME&quot;) end || &#39;.dha.gov.au/browse/&#39; || &quot;F Workflow Transitions&quot;.&quot;Pkey&quot; || &#39;&quot;&gt;&#39; || &quot;F Workflow Transitions&quot;.&quot;Pkey&quot; || &#39;&lt;/a&gt;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723807837_59582" oldID="kcap1564723564722_24533">
+            <saw:text>F Workflow Transitions</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723807837_59583" oldID="kcap1564723564722_24534">
+            <saw:text>PKey</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1a8490249c3d9706">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Org Unit&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c249d749ee36289dd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;KPI Limit&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c197aea68712b9cd3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;KPI Met&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbdc175ad719a4cd9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Issue Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="caa9f166db7520ae1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Last Execution Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy HH:mm:ss"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf30247fe73acc993">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Transition Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce3c7374d0c005bd0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Workflowname&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdcead0ce1b40d8df">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Issue Create Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy HH:mm:ss"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    <saw:column xsi:type="saw:regularColumn" columnID="c1df41988e600c4c8"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Inspection Reason&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;User&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Jira Source&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Project&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Transition To&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Transition From&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;KPI Met&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:logical" op="or"><sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Org Unit&quot;</sawx:expr>
+        </sawx:expr><sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">TRIM(BOTH &#39; &#39; FROM &quot;F Workflow Transitions&quot;.&quot;User&quot;)</sawx:expr>
+        <sawx:expr xsi:type="sawx:eval">PV_OR_USER</sawx:expr></sawx:expr></sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Workflowname&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Issue Create Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Issue Create Date FM&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Issue Type&quot;</sawx:expr>
+        </sawx:expr>
+      <sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Inspection Reason&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;F Workflow Transitions&quot;.&quot;Issue Create Date FM&quot;) || &#39; &#39; ||  CAST(YEAR(&quot;F Workflow Transitions&quot;.&quot;Issue Create Date FM&quot;) as CHAR(4))</sawx:expr></sawx:expr></sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c0afae62067ec2808" direction="ascending"/>
+      <saw:columnOrderRef columnID="c06640b351b18f315" direction="ascending"/>
+      <saw:columnOrderRef columnID="c2e11052aece4271c" direction="ascending"/>
+      <saw:columnOrderRef columnID="caa9f166db7520ae1" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="2" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Workflow+Transition+Detail"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c56a788b3bd7a955a"/>
+            <saw:edgeLayer type="column" columnID="c076a5321c61b7f96"/>
+            <saw:edgeLayer type="column" columnID="c1a8490249c3d9706"/>
+            <saw:edgeLayer type="column" columnID="c0afae62067ec2808"/>
+            <saw:edgeLayer type="column" columnID="c06640b351b18f315"/>
+            <saw:edgeLayer type="column" columnID="c2e11052aece4271c"/>
+            <saw:edgeLayer type="column" columnID="ce3c7374d0c005bd0"/>
+            <saw:edgeLayer type="column" columnID="c8d0f1e74a6437bfa"/>
+            <saw:edgeLayer type="column" columnID="cff2ff860ba85a81a"/>
+            <saw:edgeLayer type="column" columnID="c163929f1781f2836"/>
+            <saw:edgeLayer type="column" columnID="cdcead0ce1b40d8df"/>
+            <saw:edgeLayer type="column" columnID="c0362fa832f5ddeb9"/>
+            <saw:edgeLayer type="column" columnID="caa9f166db7520ae1"/>
+            <saw:edgeLayer type="column" columnID="c12991a04c1d0a7dd"/>
+            <saw:edgeLayer type="column" columnID="ca68a7f443d93014d"/>
+            <saw:edgeLayer type="column" columnID="c249d749ee36289dd"/>
+            <saw:edgeLayer type="column" columnID="c197aea68712b9cd3"/>
+            <saw:edgeLayer type="column" columnID="cbdc175ad719a4cd9"/>
+            <saw:edgeLayer type="column" columnID="cf30247fe73acc993"/>
+          <saw:edgeLayer type="column" columnID="c1df41988e600c4c8"/></saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

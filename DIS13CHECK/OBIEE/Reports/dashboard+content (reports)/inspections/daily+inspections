@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Inspections&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf7279a39a8947674">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4b19dc9f3561768c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(&quot;D Inspection&quot;.&quot;Inspection Date&quot; as char(40))</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39140" oldID="kcap1564723499186_9047">
+            <saw:text>D Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39141" oldID="kcap1564723499186_9048">
+            <saw:text>Inspection Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf8e1fae8303f97ef">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;D Inspection&quot;.&quot;Inspection Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39142" oldID="kcap1564723499186_9049">
+            <saw:text>D Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39143" oldID="kcap1564723499186_9050">
+            <saw:text>Financial Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c71901c2fe1549eaf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;D Inspection&quot;.&quot;Property ID&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c71901c2fe1549eaf_al61f883312395f855">
+                <saw:action>
+                  <saw:actionName>Inspections Detail Report - BY Reason</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Inspections/Inspections Detail Report - BY Reason</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723690340_39153" oldID="kcap1564723499186_9060">
+                  <saw:text>Daily Inspection Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39144" oldID="kcap1564723499186_9051">
+            <saw:text>D Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39145" oldID="kcap1564723499186_9052">
+            <saw:text>Total Count</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c37a68e083d490fb4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case  
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;JUL&#39; Then &#39;1&#39;   
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;AUG&#39; Then &#39;2&#39;  
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;SEP&#39; Then &#39;3&#39; 
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;OCT&#39; Then &#39;4&#39; 
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;NOV&#39; Then &#39;5&#39; 
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;DEC&#39; Then &#39;6&#39; 
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;JAN&#39; Then &#39;7&#39; 
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;FEB&#39; Then &#39;8&#39; 
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;MAR&#39; Then &#39;9&#39; 
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;APR&#39; Then &#39;91&#39; 
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;MAY&#39; Then &#39;92&#39; 
+when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;JUN&#39; Then &#39;93&#39; 
+else &quot;Dim Period&quot;.&quot;Month Abbrevation&quot;  end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39146" oldID="kcap1564723499186_9053">
+            <saw:text>Dim Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39147" oldID="kcap1564723499186_9054">
+            <saw:text>Sort Order</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c78ee76c1945435cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">@{PV_FIN_YEAR}</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39148" oldID="kcap1564723499186_9055">
+            <saw:text>Dim Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39149" oldID="kcap1564723499186_9056">
+            <saw:text>PV_FIN_YEAR</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cca7bc3081d8af26d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">@{PV_CURRENT_DATE}</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39150" oldID="kcap1564723499186_9057">
+            <saw:text>D Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723690340_39151" oldID="kcap1564723499186_9058">
+            <saw:text>PV_CURRENT_DATE</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period&quot;.&quot;Financial Year&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="null">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Cancellation Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Process&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Inspection Not Required</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Primary Attendee&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;D Inspection&quot;.&quot;Inspection Date&quot;)</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c37a68e083d490fb4" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf7279a39a8947674"/>
+            <saw:edgeLayer type="column" columnID="c4b19dc9f3561768c"/>
+            <saw:edgeLayer type="column" columnID="c71901c2fe1549eaf"/>
+            <saw:edgeLayer type="column" columnID="c37a68e083d490fb4"/>
+            <saw:edgeLayer type="column" columnID="cca7bc3081d8af26d"/>
+            <saw:edgeLayer type="column" columnID="cf8e1fae8303f97ef"/>
+            <saw:edgeLayer type="column" columnID="c78ee76c1945435cb"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="basic" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="430" width="1240">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c37a68e083d490fb4"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c4b19dc9f3561768c"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c78ee76c1945435cb"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c71901c2fe1549eaf"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption truncate="false" truncateLength="0" captionID="kcap1564723690340_39152" oldID="kcap1564723499186_9059">
+              <saw:text>Daily Inspections for FY @{variables.PV_FIN_YEAR}</saw:text>
+            </saw:caption>
+            <saw:displayFormat>
+              <saw:formatSpec fontColor="#663366" fontStyle="bold,italic"/>
+            </saw:displayFormat>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#336633"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Inspections&quot;"/>
+</saw:report>

@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Inspections&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c733bfb6188695a55">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Periodic Property&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca0c0da1dadf9b5c1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(trim(cast(YEAR(case when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Overdue Not Booked&#39; then current_date when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Next Inspection Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Due Not Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booking Required&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot;  else &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; end) as char))||CASE WHEN LENGTH(cast( MONTH(case when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Overdue Not Booked&#39; then current_date when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Next Inspection Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Due Not Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booking Required&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot;  else &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; end) as char)) &lt; 2 THEN &#39;0&#39;||cast( MONTH(case when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Overdue Not Booked&#39; then current_date when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Next Inspection Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Due Not Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booking Required&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot;  else &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; end) as char)   ELSE cast( MONTH(case when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Overdue Not Booked&#39; then current_date when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Next Inspection Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Due Not Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booking Required&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot;  else &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; end) as char)END as int)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39413" oldID="kcap1564723500325_9291">
+            <saw:text>MV D Periodic Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39414" oldID="kcap1564723500325_9292">
+            <saw:text>Sort Inspection Due Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce0e0f634787a1961">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">TRIM(BOTH &#39; &#39; from cast (YEAR(case when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Overdue Not Booked&#39; then current_date when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Next Inspection Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Due Not Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booking Required&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot;  else &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; end) as char )) ||  &#39;/&#39;  || cast(MONTHNAME(case when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Overdue Not Booked&#39; then current_date when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Next Inspection Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Due Not Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booking Required&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot;  else &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; end) as char )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="ce0e0f634787a1961_al35c65e4b8d37e632">
+                <saw:action>
+                  <saw:actionName>Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Inspections/Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723692019_39429" oldID="kcap1564723500325_9307">
+                  <saw:text>Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39415" oldID="kcap1564723500325_9293">
+            <saw:text>MV D Periodic Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39416" oldID="kcap1564723500325_9294">
+            <saw:text>Inspection Due Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="ce0e0f634787a1961_al38f0b76bb956a50d">
+                  <saw:action>
+                    <saw:actionName>Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Inspections/Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723692019_39432" oldID="kcap1564723500325_9310">
+                    <saw:text>Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c92b4eda1eb63ebf6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;MV D Periodic Inspection&quot;.&quot;UPRN&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c92b4eda1eb63ebf6_al8f5a917c037f9653">
+                <saw:action>
+                  <saw:actionName>Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Inspections/Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723692019_39430" oldID="kcap1564723500325_9308">
+                  <saw:text>Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39417" oldID="kcap1564723500325_9295">
+            <saw:text>MV D Periodic Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39418" oldID="kcap1564723500325_9296">
+            <saw:text>Total Count</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfd457cfb1e10e61e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPADD(SQL_TSI_MONTH, 7, TIMESTAMPADD(SQL_TSI_DAY, ( DAYOFMONTH(CURRENT_DATE) * -1) + 1, CURRENT_DATE))</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39419" oldID="kcap1564723500325_9297">
+            <saw:text>MV D Periodic Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39420" oldID="kcap1564723500325_9298">
+            <saw:text>Inspection Due Date +365</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cddfbb74fdb3a2394">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; =  &#39;Booking Required&#39; then 1 when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booked&#39; then 2 when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; =  &#39;Due Not Booked&#39; then 3 when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; =  &#39;Overdue Not Booked&#39; then 4 else 0 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39421" oldID="kcap1564723500325_9299">
+            <saw:text>MV D Periodic Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39422" oldID="kcap1564723500325_9300">
+            <saw:text>Sort Status</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cecd1e0b329c5bb1e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Overdue Not Booked&#39; then 1  when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Due Not Booked&#39; then 2 when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booked&#39;  then 3 when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booking Required&#39; then 4 else 0 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39423" oldID="kcap1564723500325_9301">
+            <saw:text>MV D Periodic Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39424" oldID="kcap1564723500325_9302">
+            <saw:text>Sort Status Pivot</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6817e2eb2b238a27">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV D Periodic Inspection&quot;.&quot;Status&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c6817e2eb2b238a27_al70c7192a5afaeb23">
+                <saw:action>
+                  <saw:actionName>Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Inspections/Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723692019_39431" oldID="kcap1564723500325_9309">
+                  <saw:text>Drill Through Periodic Inspections - Civilian Tenancies Monthly</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c33d1e32b250626bf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(case when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Overdue Not Booked&#39; then current_date when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Next Inspection Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Due Not Booked&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; when &quot;MV D Periodic Inspection&quot;.&quot;Status&quot; = &#39;Booking Required&#39; then &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot;  else &quot;MV D Periodic Inspection&quot;.&quot;Inspection Due Date&quot; end)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39425" oldID="kcap1564723500325_9303">
+            <saw:text>MV D Periodic Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723692019_39426" oldID="kcap1564723500325_9304">
+            <saw:text>Inspection Due Date Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c44b35ac45b68e55f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading/>
+        <saw:columnHeading/>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV D Periodic Inspection&quot;.&quot;Agreement Type&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">LOUT</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">TADS</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Periodic Property&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Periodic Property&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Periodic Property&quot;.&quot;Ownership&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Periodic Property&quot;.&quot;Current Property Reason Code&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Periodic Property&quot;.&quot;Property Manager&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c1ed8d5c8247b8452" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c733bfb6188695a55"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ce0e0f634787a1961"/>
+            <saw:edgeLayer type="column" columnID="c92b4eda1eb63ebf6"/>
+            <saw:edgeLayer type="column" columnID="cfd457cfb1e10e61e"/>
+            <saw:edgeLayer type="column" columnID="c52ecf52c839a67a7"/>
+            <saw:edgeLayer type="column" columnID="ca288599cacfd6944"/>
+            <saw:edgeLayer type="column" columnID="c1ed8d5c8247b8452"/>
+            <saw:edgeLayer type="column" columnID="cddfbb74fdb3a2394"/>
+            <saw:edgeLayer type="column" columnID="c11995120568b1042"/>
+            <saw:edgeLayer type="column" columnID="cbba9a39e32248f5f"/>
+            <saw:edgeLayer type="column" columnID="c64e5be1b29fc7190"/>
+            <saw:edgeLayer type="column" columnID="c33d1e32b250626bf"/>
+            <saw:edgeLayer type="column" columnID="ca0c0da1dadf9b5c1"/>
+            <saw:edgeLayer type="column" columnID="c44b35ac45b68e55f"/>
+            <saw:edgeLayer type="column" columnID="cecd1e0b329c5bb1e"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+      <saw:pageEdgeState>
+        <saw:QDR>
+          <saw:staticMemberGroup>
+            <saw:groupType>
+              <sawx:columnRefExpr columnID="c733bfb6188695a55"/>
+            </saw:groupType>
+            <saw:members xsi:type="saw:stringMembers">
+              <saw:value>Wodonga HMC</saw:value>
+            </saw:members>
+          </saw:staticMemberGroup>
+        </saw:QDR>
+        <saw:selectionGroups>
+          <saw:selectionGroup columnID="c733bfb6188695a55" groupID="0"/>
+        </saw:selectionGroups>
+      </saw:pageEdgeState>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="280" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723692019_39427" oldID="kcap1564723500325_9305">
+            <saw:text>Civilian Tenancies Monthly</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="ca0c0da1dadf9b5c1"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c33d1e32b250626bf"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="ce0e0f634787a1961"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c92b4eda1eb63ebf6"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="cddfbb74fdb3a2394"/>
+          </saw:seriesGenerator>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c6817e2eb2b238a27"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page/>
+        <saw:sections displayAsSlider="true"/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1"/>
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:title mode="custom"/>
+          <saw:labels rotate="-90" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c6817e2eb2b238a27" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c6817e2eb2b238a27"/>
+                  <sawx:expr xsi:type="xsd:string">Booking Required</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#333366"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c6817e2eb2b238a27" position="1">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c6817e2eb2b238a27"/>
+                  <sawx:expr xsi:type="xsd:string">Booked</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#336633"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c6817e2eb2b238a27" position="2">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c6817e2eb2b238a27"/>
+                  <sawx:expr xsi:type="xsd:string">Due Not Booked</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF9933"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c6817e2eb2b238a27" position="3">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c6817e2eb2b238a27"/>
+                  <sawx:expr xsi:type="xsd:string">Overdue Not Booked</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ca0c0da1dadf9b5c1"/>
+            <saw:edgeLayer type="column" columnID="c33d1e32b250626bf"/>
+            <saw:edgeLayer type="column" columnID="ce0e0f634787a1961"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t2" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c44b35ac45b68e55f"/>
+            <saw:edgeLayer type="column" columnID="cecd1e0b329c5bb1e"/>
+            <saw:edgeLayer type="column" columnID="c6817e2eb2b238a27"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c92b4eda1eb63ebf6"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t3" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ca0c0da1dadf9b5c1"/>
+            <saw:edgeLayer type="column" columnID="c33d1e32b250626bf"/>
+            <saw:edgeLayer type="column" columnID="ce0e0f634787a1961"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t4" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c44b35ac45b68e55f"/>
+            <saw:edgeLayer type="column" columnID="cecd1e0b329c5bb1e"/>
+            <saw:edgeLayer type="column" columnID="c6817e2eb2b238a27"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c92b4eda1eb63ebf6">
+          <saw:showAs type="percentOfAxis" axis="column">
+            <saw:displayFormat>
+              <saw:formatSpec>
+                <saw:dataFormat xsi:type="saw:percent" minDigits="1" maxDigits="1" scale="2"/>
+              </saw:formatSpec>
+            </saw:displayFormat>
+          </saw:showAs>
+          <saw:memberFormat>
+            <saw:displayFormat>
+              <saw:formatSpec wrapText="true"/>
+            </saw:displayFormat>
+            <saw:caption captionID="kcap1564723692019_39428" oldID="kcap1564723500325_9306">
+              <saw:text>Percentage</saw:text>
+            </saw:caption>
+          </saw:memberFormat>
+          <saw:dataBodyFormat/>
+        </saw:measure>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>
