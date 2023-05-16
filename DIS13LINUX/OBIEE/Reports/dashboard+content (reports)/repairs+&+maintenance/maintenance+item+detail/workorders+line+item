@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Work Orders&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3c0649a80ef5ece5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca9daf706cfa4fa1d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="ca9daf706cfa4fa1d_al0359c7319b31ebc3">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723751299_51455" oldID="kcap1564723535095_18437">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="ca9daf706cfa4fa1d"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751298_51423" oldID="kcap1564723535095_18405">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723751298_51424" oldID="kcap1564723535095_18406">
+            <saw:text>Property ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5c9e62718b17a4cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Full Property Address&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cab882e43cf25ee5a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Rent Bill&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c37ec3025cde167d7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c445f7986c951f7bb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Job Number&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c36a6431e983cf124"/>
+                    <sawx:expr xsi:type="xsd:string">MQUO</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c445f7986c951f7bb_al6d365417d102b8ae">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[hsm]/property/maintenance/item/view.action</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                            <saw:prompt>requestTimestamp</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                            <saw:prompt>propertyId</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="3" type="string" mandatory="false" removable="true" order="2" multiValues="false">
+                            <saw:prompt>key</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>1306383846371</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[hsm]/property/maintenance/item/view.action?requestTimestamp=@{1}&amp;propertyId=@{2}&amp;key=@{3}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723751299_51457" oldID="kcap1564723535095_18439">
+                        <saw:text>View Maintenance Item in HSM</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="ca9daf706cfa4fa1d"/>
+                          </saw:mapping>
+                        </saw:assign>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="3" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c445f7986c951f7bb"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c36a6431e983cf124"/>
+                    <sawx:expr xsi:type="xsd:string">MQUO</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c445f7986c951f7bb_alc900a52173d0ece6">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[hsm]/property/maintenance/quote/view.action</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>requestTimestamp</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                            <saw:prompt>propertyId</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="3" type="string" mandatory="true" removable="true" order="2" multiValues="false">
+                            <saw:prompt>key</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>1306383846371</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[hsm]/property/maintenance/quote/view.action?requestTimestamp=@{1}&amp;propertyId=@{2}&amp;key=@{3}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723751299_51458" oldID="kcap1564723535095_18440">
+                        <saw:text>View Maintenance Quote in HSM</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="ca9daf706cfa4fa1d"/>
+                          </saw:mapping>
+                        </saw:assign>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="3" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c445f7986c951f7bb"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c851979d3f0cc096b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Job Description&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" style="width: none;">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="@[html]&lt;div style=&quot;width:500px;word-wrap:break-word;white-space:pre-line&quot;&gt;@H&lt;/div&gt;"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6952bb141f983bd9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Item Description&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c13b3dcefd2b442e1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Quantity Range&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cebc54be2eb48bf26">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Reporting Status&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c50d27b3a66071608">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Maintenance Area Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c36c8be4d75f6a40b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Inspection Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c083b53114b8b53cc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Property Development&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3a1f9924be03aaed">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Ownership&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc93ebebb0fe8fcb6"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Previous Charge Type&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c6f12fbc41dee18fc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Charge Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column><saw:column xsi:type="saw:regularColumn" columnID="ccfdffd8cd717087b"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Invoice Amend Reason&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="ccd1f354a3887ca9e"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Lease Edition&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c1ca768ba55161ea2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Registered Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cab8cbee17421f4a5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Allocation Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c925d649ffa183dbf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Target End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c36b4be6b3ab62d73">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Completion Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c18b1121a05662f9d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Invoice Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc9a2d2ef88c810b2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Invoice Received Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb85bd203a71d1511">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Approved Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4ae4f2ec2382bd3d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Item ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7e3cadfda791979f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Template ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cac3deb1c98451a7f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Invoice Number&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2a31c7d92e05b276">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Completed To Invoiced Days&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cab5b4947898d1112">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Invoiced To Approved Days&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c33d2f6d914ac7f03">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Required To Invoiced Days&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c46abe06713bf1486">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Required To Approved Days&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751298_51425" oldID="kcap1564723535095_18407">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751298_51426" oldID="kcap1564723535095_18408">
+            <saw:text>Required To Approved Days</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c532d3ff67d31b6ef">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Required To Completed Days&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c56e7b6ee5e218d0b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Emergency Indicator&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce9589c13105226bd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Property Manager&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8393db6141777a11">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Reporter&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751298_51427" oldID="kcap1564723535095_18409">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51428" oldID="kcap1564723535095_18410">
+            <saw:text>Contact Officer</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      
+      <saw:column xsi:type="saw:regularColumn" columnID="cfa5ce88af0c3be70">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Trade&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5649baab65fd2789">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Maintenance Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe83a307b147deca">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Procurement Method&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51429" oldID="kcap1564723535095_18411">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51430" oldID="kcap1564723535095_18412">
+            <saw:text>Procurement Method</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdb8b4c10cebff382">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Location&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfaac33b51bc87f9f"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Fixture Maintenance Type&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c8ea307e63404f26b"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Fixture Type&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c16bc6c64d84db30d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;MV Workorders&quot;.&quot;Total Cost Incl GST&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51431" oldID="kcap1564723535095_18413">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51432" oldID="kcap1564723535095_18414">
+            <saw:text>Total Cost Incl GST</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c86a68bc4ce5a2c31">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;MV Workorders&quot;.&quot;Total Cost Excl GST&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51433" oldID="kcap1564723535095_18415">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51434" oldID="kcap1564723535095_18416">
+            <saw:text>Total Cost Excl GST</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2a54ac3f6306db62">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;MV Workorders&quot;.&quot;Total Cost GST&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51435" oldID="kcap1564723535095_18417">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51436" oldID="kcap1564723535095_18418">
+            <saw:text>Total Cost GST</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c95d21ed98c475384">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;MV Workorders&quot;.&quot;Actuals Ex GST&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51437" oldID="kcap1564723535095_18419">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51438" oldID="kcap1564723535095_18420">
+            <saw:text>Actuals Ex GST</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce6b36b25139b9159">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;MV Workorders&quot;.&quot;Committed Ex GST&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51439" oldID="kcap1564723535095_18421">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51440" oldID="kcap1564723535095_18422">
+            <saw:text>Committed Ex GST</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdc46c821f6c016e8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;MV Workorders&quot;.&quot;Estimated Amount&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51441" oldID="kcap1564723535095_18423">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51442" oldID="kcap1564723535095_18424">
+            <saw:text>Estimated Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd95a047acabc1078">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;MV Workorders&quot;.&quot;Diff Bet Actual And Estimated&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51443" oldID="kcap1564723535095_18425">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51444" oldID="kcap1564723535095_18426">
+            <saw:text>Diff Bet Actual And Estimated</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cea468bcf6d9725f7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Contractor Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1d92567feafc3e19">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;ABN&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfb86d8d3a8569606">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Australian Owned&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0d2bb625f520e50b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Indigenous&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51445" oldID="kcap1564723535095_18427">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51446" oldID="kcap1564723535095_18428">
+            <saw:text>Indigenous Owned</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4a88202747f52512">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Company Size&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6c2c706eaadf72bf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Tender Reference&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c15f6e35336601afd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Cost Tier&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c33daf6d7c3bf9d47">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Quality Tier&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9051e448bd14087f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Recall Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cee3c8a51ebddabcd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Override Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd2d5a4096bd1d6c9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Override User&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c73a5744255324daa">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Override Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c467add7624fbe7d0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Overridden Cost Tier&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c89754439f041e467">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Overridden Quality Tier&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c80e0fdb5b62fc638">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Overridden Contractor ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c80e0fdb5b62fc638_al883b28d51859d0d6">
+                <saw:action>
+                  <saw:actionName>Navigate - @[clm]/console/audit</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>contractorId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[clm]/console/audit?type=CONTRACTOR.CONTRACT_RATE&amp;filterKey=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723751299_51456" oldID="kcap1564723535095_18438">
+                  <saw:text>View in CLM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c80e0fdb5b62fc638"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51447" oldID="kcap1564723535095_18429">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51448" oldID="kcap1564723535095_18430">
+            <saw:text>Overridden Contractor Rate ID</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c161116f5aa905611">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Overridden Contractor Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c981f654a913572bb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;GL Account&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf3e63501fb8c1e07">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T0 Patch Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      
+      <saw:column xsi:type="saw:regularColumn" columnID="ce649629339002909">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Age Of Property&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdc9775e04a827d97">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Raised From ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4bdb747be695cc04">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Raised From Inspection Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cba59c26f6920bf1c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Request Decision Dependant&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51449" oldID="kcap1564723535095_18431">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51450" oldID="kcap1564723535095_18432">
+            <saw:text>MREQ Decision Dependant</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c784fb659e5e43a5b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T1 Document Loader&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51451" oldID="kcap1564723535095_18433">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51452" oldID="kcap1564723535095_18434">
+            <saw:text>T1 Document Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8f8e67911d92b83f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T1 Batch Sequence&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbc9feb64f8c23f3a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T1 Doc Id&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c01c4c08cd12d2ea3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Event Description&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf4973110fb22cfe3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Maintenance Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c48354b0884a3f5cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Raising Organisation Unit&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c36a6431e983cf124">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">LEFT(&quot;MV Workorders&quot;.&quot;Job Number&quot;, 4)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51453" oldID="kcap1564723535095_18435">
+            <saw:text>MV Workorders</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723751299_51454" oldID="kcap1564723535095_18436">
+            <saw:text>Type</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    <saw:column xsi:type="saw:regularColumn" columnID="ca0ff928b40b50fed"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Employee Id&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c1dba2179eafc2ecc"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Cancellation Date&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c791f1170d6ca411a"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Labour (Hours)&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c667437527b51ecc5"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Labour (Minutes)&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c50c747160540f27b"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Total Labour (Minutes)&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cd8e208751ddb3ef6"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Material Cost&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Reporting Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Contract Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Contract Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Maintenance Area Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Inspection Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Ownership&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Age Of Property&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Project Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Delivery Year&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T4&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Rent Bill&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Trade&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Procurement Method&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Maintenance Code&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Charge Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;GL Account&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Registered Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Allocation Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Accrued Or Actual Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Accrued Or Actual Date FM&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Future Maint Start Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Target End Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Completion Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Invoice Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Approved Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Reporter&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;UPRN&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Raising Organisation Unit&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Template ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Accrued Or Actual Month&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T1 Document Loader&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;T1 Batch Sequence&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Approved Month&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Charge Category&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;UPRN&quot;</sawx:expr>
+          
+        <sawx:expr xsi:type="xsd:decimal">-1</sawx:expr></sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Target End Date IND&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Active Event&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Quantity Range&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(&quot;MV Workorders&quot;.&quot;Registered Date&quot; as date)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(&quot;MV Workorders&quot;.&quot;Target End Date&quot; as date)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Job Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Raised From Inspection Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Cost Tier&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Quality Tier&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Override Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Priority Code&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Contractor ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Recall Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Property Manager&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Request Decision Dependant&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Property Development&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Maintenance Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;UPRN&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Job Number&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Australian Owned&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Indigenous&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Company Size&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Tender Reference&quot;</sawx:expr>
+        </sawx:expr>
+      <sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Fixture Maintenance Type&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Fixture Type&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Development Project Key&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Development Stage Key&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Construction Project Key&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Defect Claim Type&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Acquisition Type&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:sql">IFNULL(&quot;MV Workorders&quot;.&quot;Upgrade Project Key&quot;, &#39;CWB-&#39;) LIKE &#39;%@{pv_upgrade}%&#39;</sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Workorders&quot;.&quot;Event Description&quot;</sawx:expr></sawx:expr></sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true" currentView="2">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Maintenance+Item+Detail"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="100" autoPreview="false">
+      
+    <saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="c3c0649a80ef5ece5" aggRule="none" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="ca9daf706cfa4fa1d" aggRule="count" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c5c9e62718b17a4cb" aggRule="none" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cab882e43cf25ee5a" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c37ec3025cde167d7" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c445f7986c951f7bb" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c851979d3f0cc096b" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c6952bb141f983bd9" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c13b3dcefd2b442e1" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cebc54be2eb48bf26" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c50d27b3a66071608" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c36c8be4d75f6a40b" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c083b53114b8b53cc" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c3a1f9924be03aaed" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cc93ebebb0fe8fcb6" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c6f12fbc41dee18fc" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="ccfdffd8cd717087b" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="ccd1f354a3887ca9e" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c1ca768ba55161ea2" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cab8cbee17421f4a5" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c925d649ffa183dbf" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c36b4be6b3ab62d73" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c18b1121a05662f9d" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cc9a2d2ef88c810b2" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cb85bd203a71d1511" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c4ae4f2ec2382bd3d" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c7e3cadfda791979f" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cac3deb1c98451a7f" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c2a31c7d92e05b276" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cab5b4947898d1112" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c33d2f6d914ac7f03" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c46abe06713bf1486" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c532d3ff67d31b6ef" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c56e7b6ee5e218d0b" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="ce9589c13105226bd" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c8393db6141777a11" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c48354b0884a3f5cb" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cfa5ce88af0c3be70" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c5649baab65fd2789" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cfe83a307b147deca" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cdb8b4c10cebff382" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cfaac33b51bc87f9f" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c8ea307e63404f26b" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c16bc6c64d84db30d" aggRule="none" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c86a68bc4ce5a2c31" aggRule="none" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c2a54ac3f6306db62" aggRule="none" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cdc9775e04a827d97" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c4bdb747be695cc04" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cba59c26f6920bf1c" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c95d21ed98c475384" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="ce6b36b25139b9159" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cdc46c821f6c016e8" aggRule="none" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cd95a047acabc1078" aggRule="none" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cea468bcf6d9725f7" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c1d92567feafc3e19" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cfb86d8d3a8569606" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c0d2bb625f520e50b" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c4a88202747f52512" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c6c2c706eaadf72bf" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c15f6e35336601afd" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c33daf6d7c3bf9d47" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c9051e448bd14087f" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cee3c8a51ebddabcd" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cd2d5a4096bd1d6c9" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c73a5744255324daa" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c467add7624fbe7d0" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c89754439f041e467" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c80e0fdb5b62fc638" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c161116f5aa905611" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c981f654a913572bb" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cf3e63501fb8c1e07" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="ce649629339002909" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c784fb659e5e43a5b" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c8f8e67911d92b83f" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cbc9feb64f8c23f3a" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c01c4c08cd12d2ea3" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cf4973110fb22cfe3" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c36a6431e983cf124" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="ca0ff928b40b50fed" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c1dba2179eafc2ecc" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c791f1170d6ca411a" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c667437527b51ecc5" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="c50c747160540f27b" uiTableName="MV Workorders"/><saw:edgeLayer type="column" columnID="cd8e208751ddb3ef6" uiTableName="MV Workorders"/></saw:edgeLayers></saw:edge><saw:edge axis="column"/></saw:edges></saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

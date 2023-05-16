@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160"><saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Staff&quot;" withinHierarchy="true"><saw:columns><saw:column xsi:type="saw:regularColumn" columnID="c7ee029d56354593f"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Empname&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c079b6538d9d7d834"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave Start Date Text&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c5c9794bad833d14e"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave End Date Text&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c78616adcfbec87fb"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave Type&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c09b5a618238907c7"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave Start Date&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c90ee4a8fd862f055"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave End Date&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c7a9d8229ce759608"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Actual Job Title&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c2209d106d2948206"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Currently On Leave&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c7f18c823c2eb0fd9"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave Resume Duties&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cfda08653888fe34c"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Location Desc&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cd3f11488251cd356"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Org Unit Level 03&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c30696e00328bc35e"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPDIFF(SQL_TSI_DAY, CURRENT_DATE, &quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave Start Date&quot;)</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>F_DHA_STAFF_LEAVE_DETAIL_ST</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Days until start date</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cd37fe2310b482179"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Org Unit Level 04&quot;</sawx:expr></saw:columnFormula></saw:column><saw:column xsi:type="saw:regularColumn" columnID="cafbb70b8c73f6c89"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">case when TIMESTAMPADD(SQL_TSI_DAY, (@{PV_NUM_DAYS_PAST}{0} * -1), CURRENT_DATE) between &quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave Start Date&quot; and &quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave End Date&quot;  OR  TIMESTAMPADD(SQL_TSI_DAY, (@{PV_NUM_DAYS}{30}), CURRENT_DATE) between &quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave Start Date&quot; and &quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave End Date&quot; then 1 else 0 end</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>F_DHA_STAFF_LEAVE_DETAIL_ST</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>In Range</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c91724e8fcd066e17"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPADD(SQL_TSI_DAY, -90, CURRENT_DATE)</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>F_DHA_STAFF_LEAVE_DETAIL_ST</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>From</saw:text></saw:caption></saw:columnHeading></saw:column><saw:column xsi:type="saw:regularColumn" columnID="c0dcee94fc0f90397"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPADD(SQL_TSI_DAY, (@{PV_NUM_DAYS}{30}), CURRENT_DATE)</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>F_DHA_STAFF_LEAVE_DETAIL_ST</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>To</saw:text></saw:caption></saw:columnHeading></saw:column></saw:columns><saw:filter><sawx:expr xsi:type="sawx:logical" op="and"><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Org Unit Level 03&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Org Unit Level 04&quot;</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:logical" op="or"><sawx:expr xsi:type="sawx:sql">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave Start Date&quot; between TIMESTAMPADD(SQL_TSI_DAY, (@{pv_num_days_past}{0} * -1), CURRENT_DATE) AND TIMESTAMPADD(SQL_TSI_DAY, @{pv_num_days}{30}, CURRENT_DATE)</sawx:expr><sawx:expr xsi:type="sawx:sql">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Leave End Date&quot; between TIMESTAMPADD(SQL_TSI_DAY, (@{pv_num_days_past}{0} * -1), CURRENT_DATE) AND TIMESTAMPADD(SQL_TSI_DAY, @{pv_num_days}{30}, CURRENT_DATE)</sawx:expr></sawx:expr></sawx:expr></saw:filter></saw:criteria><saw:views currentView="0"><saw:view xsi:type="saw:compoundView" name="compoundView!1"><saw:cvTable><saw:cvRow><saw:cvCell viewName="htmlview!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!2"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="narrativeView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="htmlview!3"/></saw:cvRow></saw:cvTable></saw:view><saw:view xsi:type="saw:titleView" name="titleView!1"/><saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false"><saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true"><saw:edgeLayers><saw:edgeLayer type="column" columnID="c7ee029d56354593f"/><saw:edgeLayer type="column" columnID="c079b6538d9d7d834"/><saw:edgeLayer type="column" columnID="c5c9794bad833d14e"/><saw:edgeLayer type="column" columnID="c78616adcfbec87fb"/><saw:edgeLayer type="column" columnID="c09b5a618238907c7"/><saw:edgeLayer type="column" columnID="c90ee4a8fd862f055"/><saw:edgeLayer type="column" columnID="c7a9d8229ce759608"/><saw:edgeLayer type="column" columnID="c2209d106d2948206"/><saw:edgeLayer type="column" columnID="c7f18c823c2eb0fd9"/><saw:edgeLayer type="column" columnID="cfda08653888fe34c"/><saw:edgeLayer type="column" columnID="cd3f11488251cd356"/><saw:edgeLayer type="column" columnID="c30696e00328bc35e"/><saw:edgeLayer type="column" columnID="cd37fe2310b482179"/><saw:edgeLayer type="column" columnID="cafbb70b8c73f6c89"/><saw:edgeLayer type="column" columnID="c91724e8fcd066e17"/><saw:edgeLayer type="column" columnID="c0dcee94fc0f90397"/></saw:edgeLayers></saw:edge><saw:edge axis="column" showColumnHeader="rollover"/></saw:edges></saw:view><saw:view xsi:type="saw:htmlview" name="htmlview!1"><saw:viewCaption><saw:caption><saw:text>Style and JS Files</saw:text></saw:caption></saw:viewCaption><saw:staticText><saw:caption fmt="html"><saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery-migrate-1.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/d3/d3.v2.js&quot;&gt;&lt;/script&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+html,body,#wrapper {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+.chart {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+.axis path,.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.rec-leave {
+	fill: #33b5e5;
+}
+
+.spec-leave {
+	fill: #CC0000;
+}
+
+.sick-leave {
+	fill: #669900;
+}
+
+.mat-leave {
+	fill: #ffd700;
+}
+
+#tag {
+  color: white;
+  background: #FA283D;
+  width: 150px;
+  position: absolute;
+  display: none;
+  padding:3px 6px;
+  margin-left: -80px;
+  font-size: 11px;
+}
+
+
+
+#tag:before {
+  border: solid transparent;
+  content: &#39; &#39;;
+  height: 0;
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  width: 0;
+  border-width: 10px;
+  border-bottom-color: #FA283D;
+  top: -20px;
+}
+
+&lt;/style&gt;
+</saw:text></saw:caption></saw:staticText></saw:view><saw:view xsi:type="saw:htmlview" name="htmlview!2"><saw:viewCaption><saw:caption><saw:text>D3 Gantt Function</saw:text></saw:caption></saw:viewCaption><saw:staticText><saw:caption fmt="html"><saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+
+d3.gantt = function() {
+    var FIT_TIME_DOMAIN_MODE = &quot;fit&quot;;
+    var FIXED_TIME_DOMAIN_MODE = &quot;fixed&quot;;
+    
+    var margin = {
+	top : 20,
+	right : 120,
+	bottom : 20,
+	left : 170
+    };
+    var timeDomainStart = d3.time.day.offset(new Date(),-3);
+    var timeDomainEnd = d3.time.hour.offset(new Date(),+3);
+    var timeDomainMode = FIT_TIME_DOMAIN_MODE;// fixed or fit
+    var taskTypes = [];
+    var taskStatus = [];
+    //var height = document.body.clientHeight - margin.top - margin.bottom-5;
+    var height = 500;
+    var width = document.body.clientWidth - margin.right - margin.left-5;
+
+    var tickFormat = &quot;%H:%M&quot;;
+
+    var keyFunction = function(d) {
+	return d.startDate + d.taskName + d.endDate;
+    };
+
+    var rectTransform = function(d) {
+	return &quot;translate(&quot; + x(d.startDate) + &quot;,&quot; + y(d.taskName) + &quot;)&quot;;
+    };
+
+    var x = d3.time.scale().domain([ timeDomainStart, timeDomainEnd ]).range([ 0, width ]).clamp(true);
+
+    var y = d3.scale.ordinal().domain(taskTypes).rangeRoundBands([ 0, height - margin.top - margin.bottom ], .1);
+    
+    var xAxis = d3.svg.axis().scale(x).orient(&quot;bottom&quot;).tickFormat(d3.time.format(tickFormat)).tickSubdivide(true)
+	    .tickSize(8).tickPadding(8);
+
+    var yAxis = d3.svg.axis().scale(y).orient(&quot;left&quot;).tickSize(0);
+
+    var initTimeDomain = function() {
+	if (timeDomainMode === FIT_TIME_DOMAIN_MODE) {
+	    if (tasks === undefined || tasks.length &lt; 1) {
+		timeDomainStart = d3.time.day.offset(new Date(), -3);
+		timeDomainEnd = d3.time.hour.offset(new Date(), +3);
+		return;
+	    }
+	    tasks.sort(function(a, b) {
+		return a.endDate - b.endDate;
+	    });
+	    timeDomainEnd = tasks[tasks.length - 1].endDate;
+	    tasks.sort(function(a, b) {
+		return a.startDate - b.startDate;
+	    });
+	    timeDomainStart = tasks[0].startDate;
+	}
+    };
+
+    var initAxis = function() {
+	x = d3.time.scale().domain([ timeDomainStart, timeDomainEnd ]).range([ 0, width ]).clamp(true);
+	y = d3.scale.ordinal().domain(taskTypes).rangeRoundBands([ 0, height - margin.top - margin.bottom ], .1);
+	xAxis = d3.svg.axis().scale(x).orient(&quot;bottom&quot;).tickFormat(d3.time.format(tickFormat)).tickSubdivide(true)
+		.tickSize(8).tickPadding(8);
+
+	yAxis = d3.svg.axis().scale(y).orient(&quot;left&quot;).tickSize(0);
+    };
+    
+    function gantt(tasks) {
+	
+	initTimeDomain();
+	initAxis();
+	
+	var svg = d3.select(&quot;#gannt-container&quot;)
+	.append(&quot;svg&quot;)
+	.attr(&quot;class&quot;, &quot;chart&quot;)
+	.attr(&quot;width&quot;, width + margin.left + margin.right)
+	.attr(&quot;height&quot;, height + margin.top + margin.bottom)
+	.append(&quot;g&quot;)
+        .attr(&quot;class&quot;, &quot;gantt-chart&quot;)
+	.attr(&quot;width&quot;, width + margin.left + margin.right)
+	.attr(&quot;height&quot;, height + margin.top + margin.bottom)
+	.attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;, &quot; + margin.top + &quot;)&quot;);
+	
+     var rectangles = svg.selectAll(&quot;.chart&quot;)
+	 .data(tasks, keyFunction)
+	 .enter();
+	 
+	 
+	 var innerRects = rectangles.append(&quot;rect&quot;)
+	 .attr(&quot;rx&quot;, 5)
+         .attr(&quot;ry&quot;, 5)
+	 .attr(&quot;class&quot;, function(d){ 
+	     if(taskStatus[d.status] == null){ return &quot;bar&quot;;}
+	     return taskStatus[d.status];
+	     }) 
+	 .attr(&quot;y&quot;, 0)
+	 .attr(&quot;transform&quot;, rectTransform)
+	 .attr(&quot;height&quot;, function(d) { return y.rangeBand(); })
+	 .attr(&quot;width&quot;, function(d) { 
+	     return (x(d.endDate) - x(d.startDate)); 
+	     });
+		 
+	innerRects.on(&#39;mouseover&#39;, function(e) {
+        var tag = &quot;&quot;;
+
+          tag = &quot;Employee: &quot; + d3.select(this).data()[0].taskName + &quot;&lt;br/&gt;&quot; + 
+                &quot;Leave Type: &quot; + d3.select(this).data()[0].status + &quot;&lt;br/&gt;&quot; + 
+                &quot;Starts: &quot; + (&quot;&quot; + d3.select(this).data()[0].startDate).slice(0,15) + &quot;&lt;br/&gt;&quot; + 
+                &quot;Ends: &quot; + (&quot;&quot; + d3.select(this).data()[0].endDate).slice(0,15) + &quot;&lt;br/&gt;&quot;;
+
+	var output = document.getElementById(&quot;tag&quot;);
+	
+	var matrix = this.getScreenCTM()
+            .translate(+this.getAttribute(&quot;cx&quot;),
+                     +this.getAttribute(&quot;cy&quot;));
+
+        output.style.left = (window.pageXOffset + matrix.e + 10) + &quot;px&quot;;
+        output.style.top  = (window.pageYOffset + matrix.f + 20) + &quot;px&quot;;
+//		output.style.left = (matrix.e - 20) + &quot;px&quot;;
+//        output.style.top  = (matrix.f - 50) + &quot;px&quot;;
+ 		
+         output.innerHTML = tag;
+//         output.style.top = y;
+//         output.style.left = x;
+         output.style.display = &quot;block&quot;;
+		 
+       })
+	   .on(&#39;mouseout&#39;, function() {
+         var output = document.getElementById(&quot;tag&quot;);
+         output.style.display = &quot;none&quot;;
+             });
+
+	 
+	 svg.append(&quot;g&quot;)
+	 .attr(&quot;class&quot;, &quot;x axis&quot;)
+	 .attr(&quot;transform&quot;, &quot;translate(0, &quot; + (height - margin.top - margin.bottom) + &quot;)&quot;)
+	 .transition()
+	 .call(xAxis);
+	 
+	 svg.append(&quot;g&quot;).attr(&quot;class&quot;, &quot;y axis&quot;).transition().call(yAxis);
+	 
+	 return gantt;
+
+    };
+    
+    gantt.redraw = function(tasks) {
+
+	initTimeDomain();
+	initAxis();
+	
+        var svg = d3.select(&quot;svg&quot;);
+
+        var ganttChartGroup = svg.select(&quot;.gantt-chart&quot;);
+        var rect = ganttChartGroup.selectAll(&quot;rect&quot;).data(tasks, keyFunction);
+        
+        rect.enter()
+         .insert(&quot;rect&quot;,&quot;:first-child&quot;)
+         .attr(&quot;rx&quot;, 5)
+         .attr(&quot;ry&quot;, 5)
+	 .attr(&quot;class&quot;, function(d){ 
+	     if(taskStatus[d.status] == null){ return &quot;bar&quot;;}
+	     return taskStatus[d.status];
+	     }) 
+	 .transition()
+	 .attr(&quot;y&quot;, 0)
+	 .attr(&quot;transform&quot;, rectTransform)
+	 .attr(&quot;height&quot;, function(d) { return y.rangeBand(); })
+	 .attr(&quot;width&quot;, function(d) { 
+	     return (x(d.endDate) - x(d.startDate)); 
+	     });
+
+        rect.transition()
+          .attr(&quot;transform&quot;, rectTransform)
+	 .attr(&quot;height&quot;, function(d) { return y.rangeBand(); })
+	 .attr(&quot;width&quot;, function(d) { 
+	     return (x(d.endDate) - x(d.startDate)); 
+	     });
+        
+	rect.exit().remove();
+
+	svg.select(&quot;.x&quot;).transition().call(xAxis);
+	svg.select(&quot;.y&quot;).transition().call(yAxis);
+	
+	return gantt;
+    };
+
+    gantt.margin = function(value) {
+	if (!arguments.length)
+	    return margin;
+	margin = value;
+	return gantt;
+    };
+
+    gantt.timeDomain = function(value) {
+	if (!arguments.length)
+	    return [ timeDomainStart, timeDomainEnd ];
+	timeDomainStart = +value[0], timeDomainEnd = +value[1];
+	return gantt;
+    };
+
+    /**
+     * @param {string}
+     *                vale The value can be &quot;fit&quot; - the domain fits the data or
+     *                &quot;fixed&quot; - fixed domain.
+     */
+    gantt.timeDomainMode = function(value) {
+	if (!arguments.length)
+	    return timeDomainMode;
+        timeDomainMode = value;
+        return gantt;
+
+    };
+
+    gantt.taskTypes = function(value) {
+	if (!arguments.length)
+	    return taskTypes;
+	taskTypes = value;
+	return gantt;
+    };
+    
+    gantt.taskStatus = function(value) {
+	if (!arguments.length)
+	    return taskStatus;
+	taskStatus = value;
+	return gantt;
+    };
+
+    gantt.width = function(value) {
+	if (!arguments.length)
+	    return width;
+	width = +value;
+	return gantt;
+    };
+
+    gantt.height = function(value) {
+	if (!arguments.length)
+	    return height;
+	height = +value;
+	return gantt;
+    };
+
+    gantt.tickFormat = function(value) {
+	if (!arguments.length)
+	    return tickFormat;
+	tickFormat = value;
+	return gantt;
+    };
+
+
+    
+    return gantt;
+};
+
+&lt;/script&gt;
+</saw:text></saw:caption></saw:staticText></saw:view><saw:view xsi:type="saw:htmlview" name="htmlview!3"><saw:viewCaption><saw:caption><saw:text>Legend</saw:text></saw:caption></saw:viewCaption><saw:staticText><saw:caption fmt="html"><saw:text> &lt;svg width=&quot;1000&quot; height=&quot;50&quot;&gt;
+  &lt;rect x=&quot;20&quot; y=&quot;5&quot; rx=&quot;5&quot; ry=&quot;5&quot; width=&quot;25&quot; height=&quot;25&quot; style=&quot;fill:#CC0000&quot; /&gt;
+  &lt;text x=&quot;70&quot; y=&quot;20&quot; &gt;Special Leave&lt;/text&gt;
+  &lt;rect x=&quot;220&quot; y=&quot;5&quot; rx=&quot;5&quot; ry=&quot;5&quot; width=&quot;25&quot; height=&quot;25&quot; style=&quot;fill:#33b5e5&quot; /&gt;
+  &lt;text x=&quot;270&quot; y=&quot;20&quot; &gt;Recreational Leave&lt;/text&gt;
+  &lt;rect x=&quot;420&quot; y=&quot;5&quot; rx=&quot;5&quot; ry=&quot;5&quot; width=&quot;25&quot; height=&quot;25&quot; style=&quot;fill:#669900&quot; /&gt;
+  &lt;text x=&quot;470&quot; y=&quot;20&quot; &gt;Sick/Carers Leave&lt;/text&gt;
+  &lt;rect x=&quot;620&quot; y=&quot;5&quot; rx=&quot;5&quot; ry=&quot;5&quot; width=&quot;25&quot; height=&quot;25&quot; style=&quot;fill:#FFD700&quot; /&gt;  
+  &lt;text x=&quot;670&quot; y=&quot;20&quot; &gt;Maternity Leave&lt;/text&gt;
+&lt;/svg&gt;
+</saw:text></saw:caption></saw:staticText></saw:view><saw:view xsi:type="saw:narrativeView" name="narrativeView!1"><saw:prefix><saw:caption fmt="html"><saw:text>&lt;div id=&quot;tag&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;gannt-container&quot;&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+var tasks = [];
+var taskNames = [];
+var taskStatus = { &quot;MATERNITY&quot; : &quot;mat-leave&quot;, &quot;SPECIAL&quot; : &quot;spec-leave&quot;, &quot;RECREATIONAL&quot; : &quot;rec-leave&quot;,  &quot;SICK/CARERS&quot; : &quot;sick-leave&quot; };
+var counter = 0;
+var prevTaskName=&quot;&quot;;
+</saw:text></saw:caption></saw:prefix><saw:narrative rowCount="300"><saw:caption fmt="html"><saw:text>if(counter == 0) {
+  taskNames.push(&#39;@{c7ee029d56354593f}&#39;.replace(/&amp;quot;/g, &#39;&quot;&#39;).replace(/&amp;amp;/g, &#39;&amp;&#39;).replace(/&amp;#39;/g, &quot;&#39;&quot;));
+} else {
+ if (prevTaskName !== &quot;@{c7ee029d56354593f}&quot;) { taskNames.push(&quot;@{c7ee029d56354593f}&quot;.replace(/&amp;quot;/g, &#39;&quot;&#39;).replace(/&amp;amp;/g, &#39;&amp;&#39;).replace(/&amp;#39;/g, &quot;&#39;&quot;)); }
+}
+tasks.push({&quot;taskName&quot; : &quot;@{c7ee029d56354593f}&quot;, &quot;startDate&quot; :getDateFromString( &quot;@{c079b6538d9d7d834}&quot;), &quot;endDate&quot; : getDateFromString(&quot;@{c5c9794bad833d14e}&quot;), &quot;status&quot; : &quot;@{c78616adcfbec87fb}&quot;});
+
+prevTaskName = &quot;@{c7ee029d56354593f}&quot;;
+
+counter++;
+</saw:text></saw:caption></saw:narrative><saw:postfix><saw:caption fmt="html"><saw:text>
+tasks.sort(function(a, b) {
+    return a.endDate - b.endDate;
+});
+var maxDate = tasks[tasks.length - 1].endDate;
+tasks.sort(function(a, b) {
+    return a.startDate - b.startDate;
+});
+var minDate = tasks[0].startDate;
+
+//var format = &quot;%H:%M&quot;;
+var format = &quot;%d/%m/%Y&quot;;
+
+var gantt = d3.gantt().taskTypes(taskNames).taskStatus(taskStatus).tickFormat(format);
+gantt(tasks);
+
+function getDateFromString(strDate) {
+	var from = strDate.split(&quot;/&quot;);
+
+	if (strDate.indexOf(&quot;:&quot;) &gt; 0) {
+		from[2] = from[2].slice(0, 4);
+		from[3] = strDate.slice(-5,-3);
+		from[4] = strDate.slice(-2);
+		return new Date(from[2], from[1] - 1, from[0], from[3], from[4]);
+		
+	} else {
+		return new Date(from[2], from[1] - 1, from[0]);
+	}
+
+}
+
+&lt;/script&gt;
+</saw:text></saw:caption></saw:postfix></saw:view><saw:view xsi:type="saw:filtersView" name="filtersView!1"/></saw:views><saw:prompts scope="report" subjectArea="&quot;Staff&quot;"><saw:promptStep><saw:individualPrompts><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c11" subjectArea="&quot;Staff&quot;" required="false"><saw:formula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Org Unit Level 03&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:dropDown" maxChoices="1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:label><saw:caption><saw:text>Org Unit Level 03</saw:text></saw:caption></saw:label><saw:promptDefaultValues type="specificValue" usingCodeValue="false"><saw:promptDefaultValue>Bus Enablement Division</saw:promptDefaultValue></saw:promptDefaultValues><saw:constrainPrompt type="none"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Org Unit Level 03&quot; FROM &quot;Staff&quot; FETCH FIRST 65001 ROWS ONLY"/></saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c14" subjectArea="&quot;Staff&quot;" required="false"><saw:formula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Org Unit Level 04&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:label><saw:caption><saw:text>Org Unit Level 04</saw:text></saw:caption></saw:label><saw:promptDefaultValues type="specificValue" usingCodeValue="false"><saw:promptDefaultValue>Business Solutions &amp; Tech</saw:promptDefaultValue></saw:promptDefaultValues><saw:constrainPrompt type="specificPrompts"><saw:constrainedByFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;F_DHA_STAFF_LEAVE_DETAIL_ST&quot;.&quot;Org Unit Level 03&quot;</sawx:expr></saw:constrainedByFormula></saw:constrainPrompt><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource xsi:type="saw:allChoices"/></saw:prompt><saw:prompt xsi:type="saw:variablePrompt" columnID="c13" required="false"><saw:promptUIControl xsi:type="saw:dropDown" maxChoices="1"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptSource xsi:type="saw:choiceList" dataType="numeric" useCaptionOnly="true"><saw:promptChoices><saw:promptChoice><saw:caption><saw:text>0</saw:text></saw:caption></saw:promptChoice><saw:promptChoice><saw:caption><saw:text>30</saw:text></saw:caption></saw:promptChoice><saw:promptChoice><saw:caption><saw:text>60</saw:text></saw:caption></saw:promptChoice><saw:promptChoice><saw:caption><saw:text>90</saw:text></saw:caption></saw:promptChoice></saw:promptChoices></saw:promptSource><saw:setPromptVariables><saw:setPromptVariable location="value" type="presentationVariable" variableFormula="pv_num_days_past"/></saw:setPromptVariables><saw:promptOperator/><saw:constrainPrompt type="none"/><saw:label><saw:caption><saw:text>From (days ago)</saw:text></saw:caption></saw:label><saw:promptDefaultValues type="specificCustomValue" usingCodeValue="false"><saw:promptDefaultValue>0</saw:promptDefaultValue></saw:promptDefaultValues></saw:prompt><saw:prompt xsi:type="saw:variablePrompt" columnID="c12" required="false"><saw:promptUIControl xsi:type="saw:dropDown" maxChoices="1"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptSource xsi:type="saw:choiceList" dataType="numeric" useCaptionOnly="true"><saw:promptChoices><saw:promptChoice><saw:caption><saw:text>30</saw:text></saw:caption></saw:promptChoice><saw:promptChoice><saw:caption><saw:text>60</saw:text></saw:caption></saw:promptChoice><saw:promptChoice><saw:caption><saw:text>90</saw:text></saw:caption></saw:promptChoice></saw:promptChoices></saw:promptSource><saw:setPromptVariables><saw:setPromptVariable location="value" type="presentationVariable" variableFormula="pv_num_days"/></saw:setPromptVariables><saw:promptOperator/><saw:constrainPrompt type="none"/><saw:label><saw:caption><saw:text>To (days in future)</saw:text></saw:caption></saw:label><saw:promptDefaultValues type="specificCustomValue" usingCodeValue="false"><saw:promptDefaultValue>30</saw:promptDefaultValue></saw:promptDefaultValues></saw:prompt></saw:individualPrompts><saw:customWidth width="120" using="custompixels"/><saw:title><saw:caption><saw:text>Page 1</saw:text></saw:caption></saw:title></saw:promptStep></saw:prompts></saw:report>

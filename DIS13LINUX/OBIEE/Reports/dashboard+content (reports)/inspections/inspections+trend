@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Inspections&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c08a74956e3f4eedc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c022fa3e9ffa3cc1d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691585_39370" oldID="kcap1564723500103_9248">
+            <saw:text>Dim Property</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691585_39371" oldID="kcap1564723500103_9249">
+            <saw:text>Dummy Column</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb028536830f9f6be">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;FY &#39;||cast(&quot;Dim Period&quot;.&quot;Financial Year&quot; as char)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691585_39372" oldID="kcap1564723500103_9250">
+            <saw:text>Dim Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723691585_39373" oldID="kcap1564723500103_9251">
+            <saw:text>Financial Year</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c558387ddb98f3bb6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Dim Period&quot;.&quot;Financial Year&quot; = VALUEOF(&quot;RV_CURRENT_FIN_YEAR_STRING&quot;) then &#39;Completed &amp; Booked&#39; else  &#39;FY &#39;||cast(&quot;Dim Period&quot;.&quot;Financial Year&quot; as char) end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691585_39374" oldID="kcap1564723500103_9252">
+            <saw:text>Dim Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691585_39375" oldID="kcap1564723500103_9253">
+            <saw:text>Financial Year Graph</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf0df6fa13d82a83c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period&quot;.&quot;Financial Year&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691585_39376" oldID="kcap1564723500103_9254">
+            <saw:text>Dim Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691585_39377" oldID="kcap1564723500103_9255">
+            <saw:text>Financial Year sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8b6a39d97d8fe9c0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period&quot;.&quot;Month Abbrevation&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0048220199ce278f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case  when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;JUL&#39; Then &#39;1&#39;   when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;AUG&#39; Then &#39;2&#39;  when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;SEP&#39; Then &#39;3&#39; when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;OCT&#39; Then &#39;4&#39; when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;NOV&#39; Then &#39;5&#39; when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;DEC&#39; Then &#39;6&#39; when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;JAN&#39; Then &#39;7&#39; when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;FEB&#39; Then &#39;8&#39; when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;MAR&#39; Then &#39;9&#39; when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;APR&#39; Then &#39;91&#39; when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;MAY&#39; Then &#39;92&#39; when &quot;Dim Period&quot;.&quot;Month Abbrevation&quot; = &#39;JUN&#39; Then &#39;93&#39; else &quot;Dim Period&quot;.&quot;Month Abbrevation&quot;  end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691585_39378" oldID="kcap1564723500103_9256">
+            <saw:text>Dim Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39379" oldID="kcap1564723500103_9257">
+            <saw:text>Sort Order</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c01a0a6f2456280fb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period&quot;.&quot;Financial Year&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39380" oldID="kcap1564723500103_9258">
+            <saw:text>Dim Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39381" oldID="kcap1564723500103_9259">
+            <saw:text>Financial Year Number</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca570964e3245a09a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c639ea46e7f45f793">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Key Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cba60ec4609c7f51e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPDIFF(SQL_TSI_DAY, &quot;D Inspection&quot;.&quot;Inspection Date&quot;,&quot;D Inspection&quot;.&quot;Key Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39382" oldID="kcap1564723500103_9260">
+            <saw:text>D Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39383" oldID="kcap1564723500103_9261">
+            <saw:text>Difference</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c23b947882570ee06">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when TIMESTAMPDIFF(SQL_TSI_DAY, &quot;D Inspection&quot;.&quot;Inspection Date&quot;,&quot;D Inspection&quot;.&quot;Key Date&quot;) &gt;= 42 then &#39;Met&#39;  else &#39;Missed&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c23b947882570ee06_al6a49ac1e588ffe64">
+                <saw:action>
+                  <saw:actionName>Inspections Detail Report - Resolved</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Inspections/Inspections Detail Report - Resolved</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723691586_39390" oldID="kcap1564723500103_9268">
+                  <saw:text>PVI Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39384" oldID="kcap1564723500103_9262">
+            <saw:text>D Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39385" oldID="kcap1564723500103_9263">
+            <saw:text>Status</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccecd69395da4792c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4c34ff3144406315">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Status&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c4c34ff3144406315_al023d1ccf7d5ba42b">
+                <saw:action>
+                  <saw:actionName>Inspections Trend Detail Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Inspections/Inspections Trend Detail Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723691586_39391" oldID="kcap1564723500103_9269">
+                  <saw:text>Inspections Trend Detail Report</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39386" oldID="kcap1564723500103_9264">
+            <saw:text>D Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39387" oldID="kcap1564723500103_9265">
+            <saw:text>Inspection Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdec9a0dfca6a9249">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c21617355389a2e9f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;D Inspection&quot;.&quot;Property ID&quot;  )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c21617355389a2e9f_alfff42edfd8ae8276">
+                <saw:action>
+                  <saw:actionName>Inspections Trend Detail Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Inspections/Inspections Trend Detail Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723691586_39392" oldID="kcap1564723500103_9270">
+                  <saw:text>Inspections Trend Detail Report</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39388" oldID="kcap1564723500103_9266">
+            <saw:text>D Inspection</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723691586_39389" oldID="kcap1564723500103_9267">
+            <saw:text>Total Count</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Reason&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="null">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Cancellation Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:logical" op="or">
+          <sawx:expr xsi:type="sawx:logical" op="and">
+            <sawx:expr xsi:type="sawx:comparison" op="equal">
+              <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Status&quot;</sawx:expr>
+              <sawx:expr xsi:type="xsd:string">Inspection Completed</sawx:expr>
+            </sawx:expr>
+            <sawx:expr xsi:type="sawx:list" op="in">
+              <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period&quot;.&quot;Financial Year&quot;</sawx:expr>
+              <sawx:expr xsi:type="sawx:variable" op="server">RV_PREVIOUS_FIN_YEAR_STRING</sawx:expr>
+              <sawx:expr xsi:type="sawx:variable" op="server">RV_TWO_PREVIOUS_FIN_YEAR_STRING</sawx:expr>
+            </sawx:expr>
+          </sawx:expr>
+          <sawx:expr xsi:type="sawx:logical" op="and">
+            <sawx:expr xsi:type="sawx:list" op="in">
+              <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Inspection&quot;.&quot;Inspection Status&quot;</sawx:expr>
+              <sawx:expr xsi:type="xsd:string">Inspection Booked</sawx:expr>
+              <sawx:expr xsi:type="xsd:string">Inspection Completed</sawx:expr>
+            </sawx:expr>
+            <sawx:expr xsi:type="sawx:comparison" op="equal">
+              <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period&quot;.&quot;Financial Year&quot;</sawx:expr>
+              <sawx:expr xsi:type="sawx:variable" op="server">RV_CURRENT_FIN_YEAR_STRING</sawx:expr>
+            </sawx:expr>
+          </sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="cf0df6fa13d82a83c" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="none"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cb028536830f9f6be"/>
+            <saw:edgeLayer type="column" columnID="c21617355389a2e9f"/>
+            <saw:edgeLayer type="column" columnID="c558387ddb98f3bb6"/>
+            <saw:edgeLayer type="column" columnID="cf0df6fa13d82a83c"/>
+            <saw:edgeLayer type="column" columnID="c01a0a6f2456280fb"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="700">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c0048220199ce278f"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c8b6a39d97d8fe9c0"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c21617355389a2e9f"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="cf0df6fa13d82a83c"/>
+          </saw:seriesGenerator>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c558387ddb98f3bb6"/>
+          </saw:seriesGenerator>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c01a0a6f2456280fb"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections displayAsSlider="true" sectionSliderLimit="150"/>
+        <saw:page/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption>
+              <saw:text/>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="800">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c0048220199ce278f"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c8b6a39d97d8fe9c0"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c558387ddb98f3bb6"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cf0df6fa13d82a83c"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c01a0a6f2456280fb"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c21617355389a2e9f"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="cdec9a0dfca6a9249"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections displayAsSlider="false"/>
+        <saw:page>
+          <saw:column>
+            <saw:columnRef columnID="cb028536830f9f6be"/>
+          </saw:column>
+        </saw:page>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:pageEdgeState>
+        <saw:QDR>
+          <saw:staticMemberGroup>
+            <saw:groupType>
+              <sawx:columnRefExpr columnID="cb028536830f9f6be"/>
+            </saw:groupType>
+            <saw:members xsi:type="saw:stringMembers">
+              <saw:value>FY 2015</saw:value>
+            </saw:members>
+          </saw:staticMemberGroup>
+        </saw:QDR>
+        <saw:selectionGroups>
+          <saw:selectionGroup columnID="cb028536830f9f6be" groupID="0"/>
+        </saw:selectionGroups>
+      </saw:pageEdgeState>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cb028536830f9f6be"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t2" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c0048220199ce278f"/>
+            <saw:edgeLayer type="column" columnID="c8b6a39d97d8fe9c0"/>
+            <saw:edgeLayer type="column" columnID="c558387ddb98f3bb6"/>
+            <saw:edgeLayer type="column" columnID="cf0df6fa13d82a83c"/>
+            <saw:edgeLayer type="column" columnID="c01a0a6f2456280fb"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cdec9a0dfca6a9249"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c21617355389a2e9f"/>
+      </saw:measuresList>
+      <saw:pageEdgeState>
+        <saw:QDR>
+          <saw:staticMemberGroup>
+            <saw:groupType>
+              <sawx:columnRefExpr columnID="cb028536830f9f6be"/>
+            </saw:groupType>
+            <saw:members xsi:type="saw:stringMembers">
+              <saw:value>FY 2015</saw:value>
+            </saw:members>
+          </saw:staticMemberGroup>
+        </saw:QDR>
+        <saw:selectionGroups>
+          <saw:selectionGroup columnID="cb028536830f9f6be" groupID="0"/>
+        </saw:selectionGroups>
+      </saw:pageEdgeState>
+      <saw:nestedViews>
+        <saw:nestedView position="above">
+          <saw:view xsi:type="saw:dvtchart" name="pivotTableView!1::GridChart">
+            <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+              <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+            </saw:display>
+            <saw:canvasFormat height="330" width="800">
+              <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+            </saw:canvasFormat>
+            <saw:legendFormat position="default" transparentFill="true"/>
+            <saw:selections>
+              <saw:categories>
+                <saw:category>
+                  <saw:columnRef columnID="c0048220199ce278f"/>
+                </saw:category>
+                <saw:category>
+                  <saw:columnRef columnID="c8b6a39d97d8fe9c0"/>
+                </saw:category>
+              </saw:categories>
+              <saw:measures showMeasureLabelsOnCategory="false">
+                <saw:column measureType="y">
+                  <saw:columnRef columnID="c21617355389a2e9f"/>
+                </saw:column>
+              </saw:measures>
+              <saw:seriesGenerators>
+                <saw:seriesGenerator>
+                  <saw:columnRef columnID="cdec9a0dfca6a9249"/>
+                </saw:seriesGenerator>
+                <saw:measureLabels/>
+              </saw:seriesGenerators>
+            </saw:selections>
+          </saw:view>
+        </saw:nestedView>
+      </saw:nestedViews>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cdec9a0dfca6a9249"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="none"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c01a0a6f2456280fb"/>
+            <saw:edgeLayer type="column" columnID="cb028536830f9f6be"/>
+            <saw:edgeLayer type="column" columnID="c4c34ff3144406315"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c21617355389a2e9f"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723691585_39369" oldID="kcap1564723500103_9247">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-65px; left:10px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  </saw:views>
+</saw:report>

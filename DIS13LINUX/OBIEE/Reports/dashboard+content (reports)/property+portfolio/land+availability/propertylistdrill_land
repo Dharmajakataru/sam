@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb1ee0d7c3c9606d8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;PD&#39;, &#39;HB&#39;) THEN &#39;1. DHA Owned-Not Available for use&#39;  WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;PP&#39; THEN  &#39;2. Prospective new land to become available for use&#39;  WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; THEN  CASE WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;block&#39;) THEN  &#39;2. Prospective new land to become available for use&#39;  WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;dwelling&#39;) THEN  &#39;3. DHA Available for use&#39; END WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;LV&#39;, &#39;LD&#39;)  THEN &#39;3. DHA Available for use&#39; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723311_46134" oldID="kcap1564723517269_13695">
+            <saw:text>Asset Status Group</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723311_46135" oldID="kcap1564723517269_13696">
+            <saw:text>Asset Status Group</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8310a48661c947b4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;Land Vacant&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot; IS NOT NULL THEN &#39;Land Vacant Allocated to a Project&#39;  WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;block&#39;) THEN &#39;GDT to Block&#39; WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;dwelling&#39;) THEN &#39;GDT to Dwelling&#39; ELSE &quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723311_46136" oldID="kcap1564723517269_13697">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723311_46137" oldID="kcap1564723517269_13698">
+            <saw:text>Asset Status Calculated</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5058385cd32e57ac">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="true">
+              <saw:actionLink actionLinkID="c5058385cd32e57ac_alb47a625e5bbd816f">
+                <saw:action>
+                  <saw:actionName>Navigate - @[staffservices]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>property_id</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[staffservices]?property_id=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723311_46141" oldID="kcap1564723517269_13702">
+                  <saw:text>View Property in Homefind</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c5058385cd32e57ac"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c5058385cd32e57ac_al9f1faa0226caec52">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723723311_46142" oldID="kcap1564723517269_13703">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c5058385cd32e57ac"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c02c3f6c3c9071b0d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c99b21211a4e8774b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc3f2c9fb31eb09f5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;State&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce16938b135a2136d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Post Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c397d7902b0913119">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Management Area Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1f39d28605e74cc4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c07b2d806103c436b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Class&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc3d74bc93cad09f8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Ownership&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c417bb8b52ec6e131">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Current Property Status Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3d85cb26f1bd48a3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Current Property Reason Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c172ce53a7f40c028">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c616555a4646ad502">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c65bb9bddc993d63a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Asset Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c86a55bf6e151dd52">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Prov&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5d238a3121b8eb24">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Beds&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8d7509d3897d7d97">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Market Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3dbb64c1380c825f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Market Type Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9bd51116218096e1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Compliancy&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c95fe477bf20cbb59">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca296c53243cb6a76">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Rent Area Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc11fdb6e7f5af92e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Maintenance Area Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0f5517cadd13da53">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Repairs Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c124acadd2f462f61">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8561a764aec97396">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Commitment Approval No&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5fb498f76e25805d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Acquisition Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c544e51327d46ae03">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Construction Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca74c4e90c2321cd6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Cons Project Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8d0cbd8162c8c22d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf090c172d9394a32">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Provisioning Year&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb42ae4ef2f65d8d9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Estimated No Of Lots&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb23e6aa6ad47e02b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723723311_46138" oldID="kcap1564723517269_13699">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723723311_46139" oldID="kcap1564723517269_13700">
+            <saw:text>Property Type Descr</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7bbc99410974f190">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Dwelling Type Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c604403feb810c04d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Dwelling Subtype Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c214771cee9355f26">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;House Size&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1c08775959da1607">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Current Lessor&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd6c7b52e4da1e6af">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Lease Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c07c3d57c421d20f9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Lease Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c70e22034e7aa8ac2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Lease End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6ac03d270d14ee16">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Lease Revised End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbacfa4f0346a99db">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Purchase Price&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9907157faaf97cba">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Land Value&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb1c579a255ee4dde">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;House Value&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9a89ef55c2bd1bb3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Current Agreement Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c48cd1bcc2da7e3dd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Let Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c857dead65b4f4d27">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Void Availble Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c926d165a0abaa117">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Void Unavailble Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccaa3802debddb030">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Ready Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c826cbdf869a56ca2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Turnaround Days&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb1d401a7c4a3816c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Current Occupant&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3ea219b289fd06ac">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Home Number&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c96a93f15cf23698f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Employment Employee ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdd5ac44a42391ee7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Daytime Phone&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c31ab118e2de6f7f5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Mobile Number&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc9cd7738b8d19dfd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Email Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3761c7cc892037f3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;First Effect Rent Bill Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe5b7237c51e01bb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Dwelling Type Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c76fafee448dc8032" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot; = &#39;Land Vacant&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot; IS NOT NULL THEN &#39;Land Vacant Allocated to a Project&#39; ELSE &quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot; END</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c1e4660e21dae1438" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c1fce4da9ed2a56cf" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdb37d35a79cdd378">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c155a90b16522486e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN(&#39;HB&#39;, &#39;PD&#39;, &#39;GDT&#39;, &#39;PP&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN 
+&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot; WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;LD&#39;, &#39;LV&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; IN(&#39;Block&#39;, &#39;Dwelling&#39;) THEN 
+&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot; WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Dwelling&#39; THEN 
+&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot; 
+ELSE 
+0
+END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723723311_46140" oldID="kcap1564723517269_13701">
+            <saw:text>Property Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c6e9bc7c7d61b72a5" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;Land Vacant&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot; IS NOT NULL THEN &#39;Land Vacant Allocated to a Project&#39;  WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;block&#39;) THEN &#39;GDT to Block&#39; WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;dwelling&#39;) THEN &#39;GDT to Dwelling&#39; ELSE &quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot; END</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c0296247cd2f380e9" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;Land Vacant&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot; IS NOT NULL THEN &#39;Land Vacant Allocated to a Project&#39;  WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;block&#39;) THEN &#39;GDT to Block&#39; WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;dwelling&#39;) THEN &#39;GDT to Dwelling&#39; ELSE &quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot; END</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="ce33c08032614d8a4" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;Land Vacant&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot; IS NOT NULL THEN &#39;Land Vacant Allocated to a Project&#39;  WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;block&#39;) THEN &#39;GDT to Block&#39; WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;dwelling&#39;) THEN &#39;GDT to Dwelling&#39; ELSE &quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot; END</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="ce402124b2e5ab120" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &#39;@{v_ownership}&#39; IS NULL THEN &#39;-1&#39; ELSE &quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;END</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c62630c5cf67b7259" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Class&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">6</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;PD&#39;, &#39;HB&#39;) THEN &#39;1. DHA Owned-Not Available for use&#39;  WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;PP&#39; THEN  &#39;2. Prospective new land to become available for use&#39;  WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; THEN  CASE WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;block&#39;) THEN  &#39;2. Prospective new land to become available for use&#39;  WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;dwelling&#39;) THEN  &#39;3. DHA Available for use&#39; END WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;LV&#39;, &#39;LD&#39;)  THEN &#39;3. DHA Available for use&#39; END</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;Land Vacant&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot; IS NOT NULL THEN &#39;Land Vacant Allocated to a Project&#39;  WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;block&#39;) THEN &#39;GDT to Block&#39; WHEN UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;) = UPPER(&#39;greenfield transition to block&#39;) AND UPPER(&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;) = UPPER(&#39;dwelling&#39;) THEN &#39;GDT to Dwelling&#39; ELSE &quot;30. Dim Managed Properties&quot;.&quot;Asset Status Desc&quot; END</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Capital Program Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="greater">
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN(&#39;HB&#39;, &#39;PD&#39;, &#39;GDT&#39;, &#39;PP&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Block&#39; THEN 
+&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot; WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; IN (&#39;LD&#39;, &#39;LV&#39;) AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; IN(&#39;Block&#39;, &#39;Dwelling&#39;) THEN 
+&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot; WHEN &quot;30. Dim Managed Properties&quot;.&quot;Asset Status&quot; = &#39;GDT&#39; AND &quot;30. Dim Managed Properties&quot;.&quot;Property Type Descr&quot; = &#39;Dwelling&#39; THEN 
+&quot;30. Dim Managed Properties&quot;.&quot;Property Count&quot; 
+ELSE 
+0
+END</sawx:expr>
+          <sawx:expr xsi:type="sawx:untypedLiteral">0</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;30. Dim Managed Properties&quot;.&quot;Ownership Description&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;@{v_ownership}&#39;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="filtersView!1">
+            <saw:displayFormat>
+              <saw:formatSpec hAlign="left"/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Land+Availability"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="250">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true">
+          <saw:edgeLayers/>
+        </saw:edge>
+        <saw:edge axis="section">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cb23e6aa6ad47e02b"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cb1ee0d7c3c9606d8"/>
+            <saw:edgeLayer type="column" columnID="c8310a48661c947b4"/>
+            <saw:edgeLayer type="column" columnID="c397d7902b0913119"/>
+            <saw:edgeLayer type="column" columnID="c1f39d28605e74cc4"/>
+            <saw:edgeLayer type="column" columnID="c5058385cd32e57ac" aggRule="count">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t2" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c02c3f6c3c9071b0d"/>
+            <saw:edgeLayer type="column" columnID="c99b21211a4e8774b"/>
+            <saw:edgeLayer type="column" columnID="cc3f2c9fb31eb09f5"/>
+            <saw:edgeLayer type="column" columnID="ce16938b135a2136d"/>
+            <saw:edgeLayer type="column" columnID="c07b2d806103c436b"/>
+            <saw:edgeLayer type="column" columnID="cc3d74bc93cad09f8"/>
+            <saw:edgeLayer type="column" columnID="c417bb8b52ec6e131"/>
+            <saw:edgeLayer type="column" columnID="c3d85cb26f1bd48a3"/>
+            <saw:edgeLayer type="column" columnID="c172ce53a7f40c028"/>
+            <saw:edgeLayer type="column" columnID="c616555a4646ad502"/>
+            <saw:edgeLayer type="column" columnID="c65bb9bddc993d63a"/>
+            <saw:edgeLayer type="column" columnID="c86a55bf6e151dd52"/>
+            <saw:edgeLayer type="column" columnID="c5d238a3121b8eb24"/>
+            <saw:edgeLayer type="column" columnID="c8d7509d3897d7d97"/>
+            <saw:edgeLayer type="column" columnID="c3dbb64c1380c825f"/>
+            <saw:edgeLayer type="column" columnID="c9bd51116218096e1"/>
+            <saw:edgeLayer type="column" columnID="c95fe477bf20cbb59"/>
+            <saw:edgeLayer type="column" columnID="ca296c53243cb6a76"/>
+            <saw:edgeLayer type="column" columnID="cc11fdb6e7f5af92e"/>
+            <saw:edgeLayer type="column" columnID="c0f5517cadd13da53"/>
+            <saw:edgeLayer type="column" columnID="c124acadd2f462f61"/>
+            <saw:edgeLayer type="column" columnID="c8561a764aec97396"/>
+            <saw:edgeLayer type="column" columnID="c5fb498f76e25805d"/>
+            <saw:edgeLayer type="column" columnID="c544e51327d46ae03"/>
+            <saw:edgeLayer type="column" columnID="ca74c4e90c2321cd6"/>
+            <saw:edgeLayer type="column" columnID="c8d0cbd8162c8c22d"/>
+            <saw:edgeLayer type="column" columnID="cf090c172d9394a32"/>
+            <saw:edgeLayer type="column" columnID="cb42ae4ef2f65d8d9"/>
+            <saw:edgeLayer type="column" columnID="c7bbc99410974f190"/>
+            <saw:edgeLayer type="column" columnID="c604403feb810c04d"/>
+            <saw:edgeLayer type="column" columnID="c214771cee9355f26"/>
+            <saw:edgeLayer type="column" columnID="c1c08775959da1607"/>
+            <saw:edgeLayer type="column" columnID="cd6c7b52e4da1e6af"/>
+            <saw:edgeLayer type="column" columnID="c07c3d57c421d20f9"/>
+            <saw:edgeLayer type="column" columnID="c70e22034e7aa8ac2"/>
+            <saw:edgeLayer type="column" columnID="c6ac03d270d14ee16"/>
+            <saw:edgeLayer type="column" columnID="cbacfa4f0346a99db"/>
+            <saw:edgeLayer type="column" columnID="c9907157faaf97cba"/>
+            <saw:edgeLayer type="column" columnID="cb1c579a255ee4dde"/>
+            <saw:edgeLayer type="column" columnID="c9a89ef55c2bd1bb3"/>
+            <saw:edgeLayer type="column" columnID="c48cd1bcc2da7e3dd"/>
+            <saw:edgeLayer type="column" columnID="c857dead65b4f4d27"/>
+            <saw:edgeLayer type="column" columnID="c926d165a0abaa117"/>
+            <saw:edgeLayer type="column" columnID="ccaa3802debddb030"/>
+            <saw:edgeLayer type="column" columnID="c826cbdf869a56ca2"/>
+            <saw:edgeLayer type="column" columnID="cb1d401a7c4a3816c"/>
+            <saw:edgeLayer type="column" columnID="c3ea219b289fd06ac"/>
+            <saw:edgeLayer type="column" columnID="c96a93f15cf23698f"/>
+            <saw:edgeLayer type="column" columnID="cdd5ac44a42391ee7"/>
+            <saw:edgeLayer type="column" columnID="c31ab118e2de6f7f5"/>
+            <saw:edgeLayer type="column" columnID="cc9cd7738b8d19dfd"/>
+            <saw:edgeLayer type="column" columnID="c3761c7cc892037f3"/>
+            <saw:edgeLayer type="column" columnID="cfe5b7237c51e01bb"/>
+            <saw:edgeLayer type="column" columnID="c155a90b16522486e"/>
+            <saw:edgeLayer type="column" columnID="cdb37d35a79cdd378"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+      <saw:greenBarFormat greenBar="allLayers" enabled="false"/>
+      <saw:sectionContent>
+        <saw:displayFormat>
+          <saw:formatSpec wrapText="true"/>
+        </saw:displayFormat>
+      </saw:sectionContent>
+    </saw:view>
+    <saw:view xsi:type="saw:filtersView" name="filtersView!1"/>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Property Provisioning&quot;"/>
+</saw:report>

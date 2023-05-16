@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Tenancy&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cefe68874f8e84660">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(*)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655661_33313" oldID="kcap1564723651597_32654">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655661_33314" oldID="kcap1564723651597_32655">
+            <saw:text>Quantity</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccd208320e5edbd7a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;MV Tenancy&quot;.&quot;DHF Area&quot; in (&#39;Cairns&#39;,&#39;Townsville&#39;) then &#39;Nth QLD&#39;  when &quot;MV Tenancy&quot;.&quot;DHF Area&quot; in (&#39;Brisbane&#39;,&#39;Gold Coast&#39;,&#39;Ipswich&#39;,&#39;Toowoomba&#39;) then &#39;Sth QLD&#39; when Upper(&quot;MV Tenancy&quot;.&quot;DHF Area&quot;) in (&#39;NORTHERN NSW&#39;) then 	&#39;Nth NSW&#39; when &quot;MV Tenancy&quot;.&quot;DHF Area&quot; in (&#39;Glenbrook&#39;,&#39;Liverpool&#39;,&#39;Richmond&#39;,&#39;Sydney&#39;,&#39;Newcastle&#39;,&#39;Northern NSW&#39;,&#39;Singleton&#39;) then &#39;Nth NSW&#39; when &quot;MV Tenancy&quot;.&quot;DHF Area&quot; in (&#39;Nowra&#39;,&#39;Canberra&#39;,&#39;Wagga Wagga&#39;,&#39;Wodonga&#39;) then &#39;Sth NSW&#39; when &quot;MV Tenancy&quot;.&quot;DHF Area&quot; in (&#39;East Sale&#39;,&#39;Frankston&#39;,&#39;Hobart&#39;,&#39;Melbourne&#39;,&#39;Puckapunyal&#39;) then &#39;Vic&#39;  when &quot;MV Tenancy&quot;.&quot;DHF Area&quot; in (&#39;Adelaide&#39;) then &#39;SA&#39; when &quot;MV Tenancy&quot;.&quot;DHF Area&quot; in (&#39;Broome&#39;,&#39;Exmouth&#39;,&#39;Geraldton&#39;,&#39;Karratha&#39;,&#39;Pearce&#39;,&#39;Perth&#39;,&#39;Rockingham&#39;) then &#39;WA&#39;  when &quot;MV Tenancy&quot;.&quot;DHF Area&quot; in (&#39;Darwin&#39;,&#39;Pine Gap - Alice Springs&#39;,&#39;Tindal&#39;) then &#39;NT&#39; ELSE  &quot;MV Tenancy&quot;.&quot;DHF Area&quot; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655661_33315" oldID="kcap1564723651597_32656">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655661_33316" oldID="kcap1564723651597_32657">
+            <saw:text>Region</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9d8ef0d5c68f4190">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Service&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655661_33317" oldID="kcap1564723651597_32658">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723655661_33318" oldID="kcap1564723651597_32659">
+            <saw:text>Service</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8308103a92a1f5d8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;MV Tenancy&quot;.&quot;Housing Solution&quot; = &#39;LIA&#39; then &#39;LIA&#39; else &#39;RA&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655661_33319" oldID="kcap1564723651597_32660">
+            <saw:text>MV Tenancy</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723655661_33320" oldID="kcap1564723651597_32661">
+            <saw:text>Housing Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Tenant&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Y</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Current Service&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Army</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Navy</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">RAAF</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;Housing Solution&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">FRA-MA</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">LIA</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">PRA</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Partial RA</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Partial RA-MA</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">RA</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">RA-MA</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Tenancy&quot;.&quot;DHF Area&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">UNKNOWN</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Contractual+Reports" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ccd208320e5edbd7a"/>
+            <saw:edgeLayer type="column" columnID="c9d8ef0d5c68f4190"/>
+            <saw:edgeLayer type="column" columnID="c8308103a92a1f5d8"/>
+            <saw:edgeLayer type="column" columnID="cefe68874f8e84660"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

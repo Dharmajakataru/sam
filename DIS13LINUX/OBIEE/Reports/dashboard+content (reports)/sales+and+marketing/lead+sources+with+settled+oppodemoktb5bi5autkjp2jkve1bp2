@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Runway&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce8686815a85e9d6a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rwy Sources&quot;.&quot;Source Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c18ed375d1f506ac7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rwy Sources&quot;.&quot;Top Parent Souce Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c095ce70c6bf5d0f2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rwy Sources&quot;.&quot;Source Full Path&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c959bac4c61c55e34">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rwy Sources&quot;.&quot;Has Children Y/N&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1bb9e7e2dea57f91">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Opp Status Periods&quot;.&quot;Fin Year Name&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action"><saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="c1bb9e7e2dea57f91_alea33a31da8aeb544"><saw:action><saw:actionName>Lead Sources With Settled Opportunities DT</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>__navigateToBIContent__</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Lead Sources With Settled Opportunities DT</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>__navigateToBIContent__</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false" openNewWindow="true"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to Detail</saw:text></saw:caption></saw:actionLink></saw:actionLinks></saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723765494_53657" oldID="kcap1564723544406_20352">
+            <saw:text>Dim Opp Status Periods</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action"><saw:actionLinks showPopupMenuForOneLink="true"><saw:actionLink actionLinkID="c1bb9e7e2dea57f91_alfc449bfd43ee2452"><saw:action><saw:actionName>Lead Sources With Settled Opportunities DT</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>__navigateToBIContent__</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Lead Sources With Settled Opportunities DT</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>__navigateToBIContent__</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false" openNewWindow="true"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to Detail</saw:text></saw:caption></saw:actionLink></saw:actionLinks></saw:formatSpec>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723765494_53658" oldID="kcap1564723544406_20353">
+            <saw:text>Financial Year</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c96a7c63856f6dcd2" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">COUNT(&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Opp Status ID&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true"><saw:actionLink actionLinkID="c96a7c63856f6dcd2_al56f588d9635661df"><saw:action><saw:actionName>Lead Sources and Lead to Settlement Days DT</saw:actionName><saw:parameters allowExtraParameters="true"><saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false"><saw:prompt>__navigateToBIContent__</saw:prompt><saw:description/></saw:parameter></saw:parameters><saw:assignments><saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign"><saw:value>/shared/Components/Dashboard Content/Sales and Marketing/Lead Sources and Lead to Settlement Days DT</saw:value></saw:assign></saw:assignments><saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true"><saw:functionName>__navigateToBIContent__</saw:functionName><saw:scriptLanguage>JScript</saw:scriptLanguage><saw:scriptPath/></saw:implementation><saw:clientImplementation><saw:customisation invokeConfirmation="false" openNewWindow="true"/></saw:clientImplementation></saw:action><saw:caption><saw:text>Drill to Details</saw:text></saw:caption></saw:actionLink></saw:actionLinks></saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            
+            
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c23f4c6d93ea079c5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">COUNT(&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Opp Status ID&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723765494_53659" oldID="kcap1564723544406_20354">
+            <saw:text>Fact Rwy Opportunity Statuses</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723765494_53660" oldID="kcap1564723544406_20355">
+            <saw:text>No. Of Opportunities</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rwy Opportunity Statuses&quot;.&quot;Status Desc&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Settle</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:subQuery" op="equal" protected="true">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rwy Sources&quot;.&quot;Top Parent Souce ID&quot;</sawx:expr>
+          <saw:catalogColumnRef path="/shared/Components/Dashboard Content/Sales and Marketing/Lead Sources - Top Level" columnID="c6639fd41659ae1ed"/>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:views currentView="0">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec borderPosition="none"/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723765494_53653" oldID="kcap1564723544406_20348">
+          <saw:text>Table View</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c6639fd41659ae1ed"/>
+            <saw:edgeLayer type="column" columnID="ce8686815a85e9d6a"/>
+            <saw:edgeLayer type="column" columnID="c96a7c63856f6dcd2"/>
+            <saw:edgeLayer type="column" columnID="cf20f9d3fdcfe4a42"/>
+            <saw:edgeLayer type="column" columnID="c095ce70c6bf5d0f2"/>
+            <saw:edgeLayer type="column" columnID="c18ed375d1f506ac7"/>
+            <saw:edgeLayer type="column" columnID="c70ec10d97cb58d55"/>
+            <saw:edgeLayer type="column" columnID="c959bac4c61c55e34"/>
+            <saw:edgeLayer type="column" columnID="c23f4c6d93ea079c5"/>
+          </saw:edgeLayers>
+          <saw:columnOrder>
+            <saw:columnOrderRef columnID="c095ce70c6bf5d0f2" direction="ascending"/>
+          </saw:columnOrder>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="900">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c959bac4c61c55e34"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c18ed375d1f506ac7"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c23f4c6d93ea079c5"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections displayAsSlider="true">
+          <saw:section>
+            <saw:columnRef columnID="c1bb9e7e2dea57f91"/>
+          </saw:section>
+        </saw:sections>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:labels rotate="-90" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723765494_53661" oldID="kcap1564723544406_20356">
+              <saw:text>Lead Sources</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723765494_53662" oldID="kcap1564723544406_20357">
+              <saw:text>No. Of Settled Leads</saw:text>
+            </saw:caption>
+          </saw:title>
+          <saw:scale scaleValues="datarangezoom" defaultTicks="true"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="900">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c1bb9e7e2dea57f91"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c959bac4c61c55e34"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c23f4c6d93ea079c5"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:sections displayAsSlider="true">
+          <saw:section>
+            <saw:columnRef columnID="c18ed375d1f506ac7"/>
+          </saw:section>
+        </saw:sections>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="line">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat lineStyle="default" lineWidth="7" symbol="square" symbolColor="#FF0000"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+      <saw:axesFormats>
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:labels rotate="-90" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723765495_53663" oldID="kcap1564723544406_20358">
+              <saw:text>Lead Sources</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723765495_53664" oldID="kcap1564723544406_20359">
+              <saw:text>No. of Settled Leads</saw:text>
+            </saw:caption>
+          </saw:title>
+          <saw:scale scaleValues="datarangezoom" defaultTicks="true"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c1bb9e7e2dea57f91"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t2" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c18ed375d1f506ac7"/>
+            <saw:edgeLayer type="column" columnID="c959bac4c61c55e34"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c96a7c63856f6dcd2"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1">
+            <saw:displayFormat>
+              <saw:formatSpec borderPosition="none"/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723765494_53654" oldID="kcap1564723544406_20349">
+          <saw:text>Chart View</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!3">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!2">
+            <saw:displayFormat>
+              <saw:formatSpec borderPosition="none"/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!4">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="viewSelector!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:viewSelector" name="viewSelector!1">
+      <saw:viewSelectorCaption position="left">
+        <saw:caption captionID="kcap1564723765494_53655" oldID="kcap1564723544406_20350">
+          <saw:text>Select View</saw:text>
+        </saw:caption>
+      </saw:viewSelectorCaption>
+      <saw:viewList>
+        <saw:viewItem type="view" name="compoundView!1"/>
+        <saw:viewItem type="view" name="compoundView!2"/>
+      </saw:viewList>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723765494_53656" oldID="kcap1564723544406_20351">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-120px; left:250px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+    </saw:view>
+  </saw:views>
+</saw:report>

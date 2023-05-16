@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Tenancy&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4838ed7fc0524f0e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;DSRG Region&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cd9e87e0833e74ae8"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#999999" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c84d822b09d8e8626">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;Base Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:hierarchicalColumn" columnID="ce4deb18eed4c6b18" hierarchyID="LIA Check Ins Check Outs" tableName="&quot;Tenancy LIA&quot;" dimensionID="LIA Check Ins Check Outs">
+        <saw:hierarchyLevels>
+          <saw:hierarchyLevel levelID="Total"/>
+          <saw:hierarchyLevel levelID="Region">
+            <saw:displayFormat>
+              <saw:formatSpec suppress="suppress" backgroundColor="#CCCCCC" wrapText="true"/>
+            </saw:displayFormat>
+          </saw:hierarchyLevel>
+          <saw:hierarchyLevel levelID="Base"/>
+        </saw:hierarchyLevels>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfaeccbb25188245a" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Tenancy LIA&quot;.&quot;Process Checkout Week Days&quot; &lt;= 0 then &#39;0 Days&#39;   when &quot;Tenancy LIA&quot;.&quot;Process Checkout Week Days&quot; = 1 then &#39;1 Days&#39;    when &quot;Tenancy LIA&quot;.&quot;Process Checkout Week Days&quot; = 2 then &#39;2 Days&#39;   when &quot;Tenancy LIA&quot;.&quot;Process Checkout Week Days&quot; = 3 then &#39;3 Days&#39;   when &quot;Tenancy LIA&quot;.&quot;Process Checkout Week Days&quot; = 4 then &#39;4 Days&#39;   when &quot;Tenancy LIA&quot;.&quot;Process Checkout Week Days&quot; = 5 then &#39;5 Days&#39; else &#39;6+ Days&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723770847_54292" oldID="kcap1564723546029_20768">
+            <saw:text>Tenancy LIA</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723770847_54293" oldID="kcap1564723546029_20769">
+            <saw:text>Number of Days to Process Checkout</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd9e87e0833e74ae8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;Tenancy LIA&quot;.&quot;Allocation Id&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c4838ed7fc0524f0e"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#CCCCCC" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c84d822b09d8e8626"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#FFFFFF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723770847_54294" oldID="kcap1564723546029_20770">
+            <saw:text>Tenancy LIA</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723770847_54295" oldID="kcap1564723546029_20771">
+            <saw:text>Allocation Id</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb1ef24513871ce33">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;Leap&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd7f7f0fe9554e8f0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;Allocation Actual End Date Month&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723770847_54296" oldID="kcap1564723546029_20772">
+            <saw:text>Tenancy LIA</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723770847_54297" oldID="kcap1564723546029_20773">
+            <saw:text>Allocation Actual End Date Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c80139a93f4aa75b6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;Allocation Actual End Date FY&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723770847_54298" oldID="kcap1564723546029_20774">
+            <saw:text>Tenancy LIA</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723770847_54299" oldID="kcap1564723546029_20775">
+            <saw:text>Allocation Actual End Date FY</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;DSRG Region&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;Base Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;Leap&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;Allocation Actual End Date FY&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Tenancy LIA&quot;.&quot;Allocation Actual End Date Month&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c97ee372bbf35adf3">
+              <saw:drillState>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c97ee372bbf35adf3"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="National"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>1</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c97ee372bbf35adf3"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c97ee372bbf35adf3" groupID="0"/>
+                  </saw:selectionGroups>
+                </saw:drillStep>
+              </saw:drillState>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cfaeccbb25188245a"/>
+            <saw:edgeLayer type="column" columnID="cd9e87e0833e74ae8"/>
+            <saw:edgeLayer type="column" columnID="c679cb4387eb305d3"/>
+            <saw:edgeLayer type="column" columnID="c2f8ff7c7df8ba84b"/>
+            <saw:edgeLayer type="column" columnID="c8238c0b0b263dc18"/>
+            <saw:edgeLayer type="column" columnID="caa0ed660e9b714a6"/>
+            <saw:edgeLayer type="column" columnID="cdd00af3b48f15216"/>
+            <saw:edgeLayer type="column" columnID="c99920ad410cb9d7c"/>
+            <saw:edgeLayer type="column" columnID="c87257210a1320dea"/>
+            <saw:edgeLayer type="column" columnID="c5a1085890d3106a9"/>
+            <saw:edgeLayer type="column" columnID="c4064a3f248029490"/>
+            <saw:edgeLayer type="column" columnID="cd7f7f0fe9554e8f0"/>
+            <saw:edgeLayer type="column" columnID="c80139a93f4aa75b6"/>
+            <saw:edgeLayer type="column" columnID="cb1ef24513871ce33"/>
+            <saw:edgeLayer type="column" columnID="ce4deb18eed4c6b18"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" rowsPerPage="100">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="none"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4838ed7fc0524f0e" visibility="hidden"/>
+            <saw:edgeLayer type="column" columnID="c84d822b09d8e8626" visibility="hidden">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="ce4deb18eed4c6b18">
+              <saw:drillState>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Total"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>1</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="ce4deb18eed4c6b18" groupID="0"/>
+                  </saw:selectionGroups>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Central and West</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="ce4deb18eed4c6b18" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="ce4deb18eed4c6b18" levelID="Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Northern NSW</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="ce4deb18eed4c6b18" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="ce4deb18eed4c6b18" levelID="Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Queensland</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="ce4deb18eed4c6b18" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="ce4deb18eed4c6b18" levelID="Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Southern NSW</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="ce4deb18eed4c6b18" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="ce4deb18eed4c6b18" levelID="Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Victoria/Tasmania</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="ce4deb18eed4c6b18"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="ce4deb18eed4c6b18" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="ce4deb18eed4c6b18" levelID="Total">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+              </saw:drillState>
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723770847_54300" oldID="kcap1564723546029_20776">
+                  <saw:text>LIA Check Outs</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="none"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cfaeccbb25188245a"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="cd9e87e0833e74ae8">
+          <saw:showAs type="percentOfAxis" axis="row">
+            <saw:displayFormat>
+              <saw:formatSpec>
+                <saw:dataFormat xsi:type="saw:percent" minDigits="1" maxDigits="1" scale="2"/>
+              </saw:formatSpec>
+            </saw:displayFormat>
+          </saw:showAs>
+          <saw:dataBodyFormat/>
+        </saw:measure>
+      </saw:measuresList>
+      <saw:sectionContent>
+        <saw:displayFormat>
+          <saw:formatSpec/>
+        </saw:displayFormat>
+      </saw:sectionContent>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4838ed7fc0524f0e" visibility="hidden"/>
+            <saw:edgeLayer type="column" columnID="c84d822b09d8e8626" visibility="hidden"/>
+            <saw:edgeLayer type="column" columnID="c87257210a1320dea">
+              <saw:drillState>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="National"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>1</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="c87257210a1320dea" groupID="0"/>
+                  </saw:selectionGroups>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Central and West</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="c87257210a1320dea" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c87257210a1320dea" levelID="National">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Northern NSW</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="c87257210a1320dea" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c87257210a1320dea" levelID="National">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Queensland</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="c87257210a1320dea" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c87257210a1320dea" levelID="National">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Southern NSW</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="c87257210a1320dea" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c87257210a1320dea" levelID="National">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="Region"/>
+                          <saw:members xsi:type="saw:stringMembers">
+                            <saw:value>Victoria/Tasmania</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="c87257210a1320dea" groupID="0"/>
+                  </saw:selectionGroups>
+                  <saw:drillParents>
+                    <saw:drillParent columnID="c87257210a1320dea" levelID="National">
+                      <saw:members xsi:type="saw:integerMembers">
+                        <saw:value>1</saw:value>
+                      </saw:members>
+                    </saw:drillParent>
+                  </saw:drillParents>
+                </saw:drillStep>
+                <saw:drillStep drillType="down">
+                  <saw:QDR>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c4838ed7fc0524f0e"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c84d822b09d8e8626"/>
+                      </saw:groupType>
+                      <saw:members xsi:type="saw:specialValueMembers">
+                        <saw:value specialValue="any"/>
+                      </saw:members>
+                    </saw:staticMemberGroup>
+                    <saw:staticMemberGroup>
+                      <saw:groupType>
+                        <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                      </saw:groupType>
+                      <saw:hierarchyMembers>
+                        <saw:hierarchyLevelMembers>
+                          <saw:hierarchyLevel levelID="National"/>
+                          <saw:members xsi:type="saw:integerMembers">
+                            <saw:value>1</saw:value>
+                          </saw:members>
+                        </saw:hierarchyLevelMembers>
+                      </saw:hierarchyMembers>
+                    </saw:staticMemberGroup>
+                    <saw:target>
+                      <sawx:columnRefExpr columnID="c87257210a1320dea"/>
+                    </saw:target>
+                  </saw:QDR>
+                  <saw:selectionGroups>
+                    <saw:selectionGroup columnID="c4838ed7fc0524f0e" groupID="0"/>
+                    <saw:selectionGroup columnID="c84d822b09d8e8626" groupID="0"/>
+                    <saw:selectionGroup columnID="c87257210a1320dea" groupID="0"/>
+                  </saw:selectionGroups>
+                </saw:drillStep>
+              </saw:drillState>
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723770847_54301" oldID="kcap1564723546029_20777">
+                  <saw:text>LIA Check Ins</saw:text>
+                </saw:caption>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="cd7f7f0fe9554e8f0"/>
+            <saw:edgeLayer type="column" columnID="c80139a93f4aa75b6"/>
+            <saw:edgeLayer type="column" columnID="cb1ef24513871ce33"/>
+            <saw:edgeLayer type="column" columnID="ce4deb18eed4c6b18"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:edgeLayers/>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="cd9e87e0833e74ae8">
+          <saw:showAs type="percentOfAxis" axis="row">
+            <saw:displayFormat>
+              <saw:formatSpec>
+                <saw:dataFormat xsi:type="saw:percent" minDigits="1" maxDigits="1" scale="2"/>
+              </saw:formatSpec>
+            </saw:displayFormat>
+          </saw:showAs>
+          <saw:dataBodyFormat/>
+        </saw:measure>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!3" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4838ed7fc0524f0e"/>
+            <saw:edgeLayer type="column" columnID="c84d822b09d8e8626"/>
+            <saw:edgeLayer type="column" columnID="c87257210a1320dea"/>
+            <saw:edgeLayer type="column" columnID="ce4deb18eed4c6b18"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cfaeccbb25188245a"/>
+            <saw:edgeLayer type="column" columnID="c679cb4387eb305d3"/>
+            <saw:edgeLayer type="column" columnID="c2f8ff7c7df8ba84b"/>
+            <saw:edgeLayer type="column" columnID="c8238c0b0b263dc18"/>
+            <saw:edgeLayer type="column" columnID="caa0ed660e9b714a6"/>
+            <saw:edgeLayer type="column" columnID="cdd00af3b48f15216"/>
+            <saw:edgeLayer type="column" columnID="c99920ad410cb9d7c"/>
+            <saw:edgeLayer type="column" columnID="c5a1085890d3106a9"/>
+            <saw:edgeLayer type="column" columnID="c4064a3f248029490"/>
+            <saw:edgeLayer type="column" columnID="cd7f7f0fe9554e8f0"/>
+            <saw:edgeLayer type="column" columnID="c80139a93f4aa75b6"/>
+            <saw:edgeLayer type="column" columnID="cb1ef24513871ce33"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="cd9e87e0833e74ae8">
+          <saw:showAs type="percentOfAxis" axis="row">
+            <saw:displayFormat>
+              <saw:formatSpec>
+                <saw:dataFormat xsi:type="saw:percent" minDigits="1" maxDigits="1" scale="2"/>
+              </saw:formatSpec>
+            </saw:displayFormat>
+          </saw:showAs>
+          <saw:dataBodyFormat/>
+        </saw:measure>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

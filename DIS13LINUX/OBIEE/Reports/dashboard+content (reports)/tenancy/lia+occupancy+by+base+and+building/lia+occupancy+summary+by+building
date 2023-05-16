@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Tenancy&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c697c98279ccb5180">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim LIA Summary&quot;.&quot;DSRG Region&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc7886e9c84b0be96">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim LIA Summary&quot;.&quot;DSRG Sub Region&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c546f0576f76dada6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim LIA Summary&quot;.&quot;Base Name&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd3d9afd935b5b98c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim LIA Summary&quot;.&quot;Structure Building ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd58c348f8b13721f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim LIA Summary&quot;.&quot;Building Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c92ecd7fc8630aabd" aggRule="avg">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum( case when MONTHNAME(CURRENT_DATE) = &quot;Dim Period LIA&quot;.&quot;Month&quot; and YEAR(CURRENT_DATE) = &quot;Dim Period LIA&quot;.&quot;Year&quot; then 1 else  &quot;Dim LIA Summary&quot;.&quot;Possible Bed Count Available&quot; /  (DAYOFMONTH(TIMESTAMPADD(SQL_TSI_DAY,DAYOFMONTH(CAST(&#39;01&#39;||&#39;-&#39;||&quot;Dim Period LIA&quot;.&quot;Month&quot;||&#39;-&#39;||TRIM(CAST(&quot;Dim Period LIA&quot;.&quot;Year&quot; AS CHAR))  AS DATE)) * -1 , TIMESTAMPADD(SQL_TSI_MONTH, 1, CAST(&#39;01&#39;||&#39;-&#39;||&quot;Dim Period LIA&quot;.&quot;Month&quot;||&#39;-&#39;||TRIM(CAST(&quot;Dim Period LIA&quot;.&quot;Year&quot; AS CHAR))  AS DATE))) )) end )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c697c98279ccb5180"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#CCCCCC" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cc7886e9c84b0be96"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#FFFFFF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771800_54478" oldID="kcap1564723546747_20887">
+            <saw:text>Dim LIA Summary</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771800_54479" oldID="kcap1564723546747_20888">
+            <saw:text>Old Number Of Beds</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc5ca288f4f7eee96">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Dim LIA Summary&quot;.&quot;Allocated Bed Count&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c697c98279ccb5180"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#CCCCCC" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cc7886e9c84b0be96"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true" backgroundColor="#FFFFFF"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771800_54480" oldID="kcap1564723546747_20889">
+            <saw:text>Dim LIA Summary</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771800_54481" oldID="kcap1564723546747_20890">
+            <saw:text>Number of Bed Nights Occupied</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c30132edd624eb47e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Dim LIA Summary&quot;.&quot;Possible Bed Count Available&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c697c98279ccb5180"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#CCCCCC" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cc7886e9c84b0be96"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#FFFFFF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771801_54482" oldID="kcap1564723546747_20891">
+            <saw:text>Dim LIA Summary</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771801_54483" oldID="kcap1564723546747_20892">
+            <saw:text>Potential Number Of Bed Nights</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c43602eadba4b233b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">(sum(&quot;Dim LIA Summary&quot;.&quot;Allocated Bed Count&quot; )/sum(&quot;Dim LIA Summary&quot;.&quot;Possible Bed Count Available&quot; )) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c697c98279ccb5180"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#CCCCCC" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="notNull">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cc7886e9c84b0be96"/>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec backgroundColor="#FFFFFF" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771801_54484" oldID="kcap1564723546747_20893">
+            <saw:text>Dim LIA Summary</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771801_54485" oldID="kcap1564723546747_20894">
+            <saw:text>Occupancy %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7fb5338880f9dfbc" aggRule="avg">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Dim LIA Summary&quot;.&quot;Possible Bed Count Available&quot; / (DAYOFMONTH(TIMESTAMPADD(SQL_TSI_DAY,DAYOFMONTH(CAST(&#39;01&#39;||&#39;-&#39;||&quot;Dim Period LIA&quot;.&quot;Month&quot;||&#39;-&#39;||TRIM(CAST(&quot;Dim Period LIA&quot;.&quot;Year&quot; AS CHAR))  AS DATE)) * -1 , TIMESTAMPADD(SQL_TSI_MONTH, 1, CAST(&#39;01&#39;||&#39;-&#39;||&quot;Dim Period LIA&quot;.&quot;Month&quot;||&#39;-&#39;||TRIM(CAST(&quot;Dim Period LIA&quot;.&quot;Year&quot; AS CHAR))  AS DATE))) )))</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771801_54486" oldID="kcap1564723546747_20895">
+            <saw:text>Dim LIA Summary</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771801_54487" oldID="kcap1564723546747_20896">
+            <saw:text>Number of Beds</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0e480b33580bf3b8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;FY &#39; || cast(&quot;Dim Period LIA&quot;.&quot;Financial Year&quot; as char(4))</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771801_54488" oldID="kcap1564723546747_20897">
+            <saw:text>Dim Period LIA</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723771801_54489" oldID="kcap1564723546747_20898">
+            <saw:text>Financial Year</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cea403aad6bfe0547">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period LIA&quot;.&quot;Month&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe5ade5ad41a1042">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period LIA&quot;.&quot;Fin Month Num&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Period LIA&quot;.&quot;Financial Year&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim LIA Summary&quot;.&quot;Base Name&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim LIA Summary&quot;.&quot;Leap&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723771800_54477" oldID="kcap1564723546747_20886">
+          <saw:text>LIA Occupancy Summary By Base &amp; Building</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="100">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c697c98279ccb5180"/>
+            <saw:edgeLayer type="column" columnID="cc7886e9c84b0be96"/>
+            <saw:edgeLayer type="column" columnID="c546f0576f76dada6"/>
+            <saw:edgeLayer type="column" columnID="cd3d9afd935b5b98c"/>
+            <saw:edgeLayer type="column" columnID="cd58c348f8b13721f"/>
+            <saw:edgeLayer type="column" columnID="c92ecd7fc8630aabd"/>
+            <saw:edgeLayer type="column" columnID="cc5ca288f4f7eee96"/>
+            <saw:edgeLayer type="column" columnID="c30132edd624eb47e"/>
+            <saw:edgeLayer type="column" columnID="c43602eadba4b233b"/>
+            <saw:edgeLayer type="column" columnID="c0e480b33580bf3b8"/>
+            <saw:edgeLayer type="column" columnID="cea403aad6bfe0547"/>
+            <saw:edgeLayer type="column" columnID="cfe5ade5ad41a1042"/>
+            <saw:edgeLayer type="column" columnID="c7fb5338880f9dfbc"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" rowsPerPage="100">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c697c98279ccb5180"/>
+            <saw:edgeLayer type="column" columnID="cc7886e9c84b0be96"/>
+            <saw:edgeLayer type="column" columnID="c546f0576f76dada6"/>
+            <saw:edgeLayer type="column" columnID="cd58c348f8b13721f"/>
+            <saw:edgeLayer type="column" columnID="cd3d9afd935b5b98c"/>
+            <saw:edgeLayer type="column" columnID="c7fb5338880f9dfbc"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="measure"/>
+            <saw:edgeLayer type="column" columnID="c0e480b33580bf3b8"/>
+            <saw:edgeLayer type="column" columnID="cfe5ade5ad41a1042"/>
+            <saw:edgeLayer type="column" columnID="cea403aad6bfe0547"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c43602eadba4b233b"/>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>
