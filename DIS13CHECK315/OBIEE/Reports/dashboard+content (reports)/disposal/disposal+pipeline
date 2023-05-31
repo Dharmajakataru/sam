@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Managed Properties&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cceb8eb2847979e15">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true">
+              <saw:actionLink actionLinkID="cceb8eb2847979e15_al8a74b06a79e90166">
+                <saw:action>
+                  <saw:actionName>Disposal Pipeline Drill Through</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Disposal/Disposal Pipeline Drill Through</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723675494_36106" oldID="kcap1564723490702_7106">
+                  <saw:text>Disposal Pipeline Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cceb8eb2847979e15_aldd2755d6b421cf5c">
+                  <saw:action>
+                    <saw:actionName>Disposal Pipeline Drill Through</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Disposal/Disposal Pipeline Drill Through</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723675494_36111" oldID="kcap1564723490702_7111">
+                    <saw:text>Disposal Pipeline Drill</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccf28a54ecd46398d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Ownership&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cece477219e31dab6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Disposal&quot;.&quot;Umbrella Status&quot; IN (&#39;Portfolio Assessment&#39;,&#39;Awaiting Listing Confirmation&#39;,&#39;Listed&#39;) THEN &#39;Estimated&#39;  When &quot;D Disposal&quot;.&quot;Umbrella Status&quot; IN (&#39;Under Offer&#39;, &#39;Exchanged&#39;, &#39;Completed&#39;) Then &#39;Actual&#39; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="@[html]&lt;div class=&quot;topHdr&quot;&gt;@H&lt;/div&gt;"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36085" oldID="kcap1564723490702_7085">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36086" oldID="kcap1564723490702_7086">
+            <saw:text>Dummy Column</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf892d0d7a7351ba8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Disposal&quot;.&quot;Umbrella Status&quot; IN (&#39;Portfolio Assessment&#39;,&#39;Awaiting Listing Confirmation&#39;,&#39;Listed&#39;) THEN 1  When &quot;D Disposal&quot;.&quot;Umbrella Status&quot; IN (&#39;Under Offer&#39;, &#39;Exchanged&#39;, &#39;Completed&#39;) Then 2 End</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36087" oldID="kcap1564723490702_7087">
+            <saw:text>D Disposal</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36088" oldID="kcap1564723490702_7088">
+            <saw:text>Dummy Sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5b1d988ab155ded3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Disposal&quot;.&quot;Status Sort&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36089" oldID="kcap1564723490702_7089">
+            <saw:text>Status Sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbd0ca3c0b31043c0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;D Disposal&quot;.&quot;Settlement Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36090" oldID="kcap1564723490702_7090">
+            <saw:text>D Disposal</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36091" oldID="kcap1564723490702_7091">
+            <saw:text>Settlement Date Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce6e94e7dbed07cbd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Disposal&quot;.&quot;Current Status&quot; in ( &#39;Listed&#39;,&#39;Awaiting Listing Confirmation&#39;,&#39;Offer Accepted&#39;) then (&quot;D Disposal&quot;.&quot;List Price&quot;-ifnull(&quot;Dim Managed Properties&quot;.&quot;Current Carrying Cost&quot;,0)-(&quot;D Disposal&quot;.&quot;List Price&quot; * 0.025)) else    0 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36092" oldID="kcap1564723490702_7092">
+            <saw:text>D Disposal</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36093" oldID="kcap1564723490702_7093">
+            <saw:text>Do no delete Estimated Profit</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf0c9f7ded4131409">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Disposal&quot;.&quot;Umbrella Status&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true">
+              <saw:actionLink actionLinkID="cf0c9f7ded4131409_al274811231180d1af">
+                <saw:action>
+                  <saw:actionName>Disposal Pipeline Drill Through</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Disposal/Disposal Pipeline Drill Through</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723675494_36107" oldID="kcap1564723490702_7107">
+                  <saw:text>Disposal Pipeline Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36094" oldID="kcap1564723490702_7094">
+            <saw:text>D Disposal</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cf0c9f7ded4131409_al40966204e530c6b5">
+                  <saw:action>
+                    <saw:actionName>Disposal Pipeline Drill Through</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Disposal/Disposal Pipeline Drill Through</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723675494_36112" oldID="kcap1564723490702_7112">
+                    <saw:text>Disposal Pipeline Drill</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36095" oldID="kcap1564723490702_7095">
+            <saw:text>Current Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd36b018f3aa6117d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Case When &quot;D Disposal&quot;.&quot;Umbrella Status&quot; in (&#39;Exchanged&#39;, &#39;Completed&#39;, &#39;Under Offer&#39;) Then &quot;D Disposal&quot;.&quot;Sale Price&quot;  when &quot;D Disposal&quot;.&quot;Umbrella Status&quot; in (&#39;Awaiting Listing Confirmation&#39;, &#39;Listed&#39;, &#39;Portfolio Assessment&#39;) Then   IFNULL(&quot;D Disposal&quot;.&quot;List Price&quot;, &quot;D Disposal&quot;.&quot;Assessment Valuation Capital Value&quot;) Else 0 End</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true">
+              <saw:actionLink actionLinkID="cd36b018f3aa6117d_alc0ca3d37115dade4">
+                <saw:action>
+                  <saw:actionName>Disposal Pipeline Drill Through</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Disposal/Disposal Pipeline Drill Through</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723675494_36108" oldID="kcap1564723490702_7108">
+                  <saw:text>Disposal Pipeline Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723675494_36096" oldID="kcap1564723490702_7096">
+            <saw:text>D Disposal</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723675494_36097" oldID="kcap1564723490702_7097">
+            <saw:text>&lt;div class=&quot;prcHdr&quot;&gt;Price&lt;/div&gt;</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cacc2d538fd31702c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">1</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true">
+              <saw:actionLink actionLinkID="cacc2d538fd31702c_ale81c7937ceddb0c7">
+                <saw:action>
+                  <saw:actionName>Disposal Pipeline Drill Through</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Disposal/Disposal Pipeline Drill Through</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723675494_36109" oldID="kcap1564723490702_7109">
+                  <saw:text>Disposal Pipeline Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36098" oldID="kcap1564723490702_7098">
+            <saw:text>D Disposal</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36099" oldID="kcap1564723490702_7099">
+            <saw:text>Count of Property Id</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c086661c52e03dee4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Disposal&quot;.&quot;Property ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c47aa6677f3fe00a7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Dim Managed Properties&quot;.&quot;Ownership&quot; &lt;&gt; &#39;N&#39; and    &quot;D Disposal&quot;.&quot;Umbrella Status&quot; in    ( &#39;Completed&#39;,&#39;Under Offer&#39;,&#39;Exchanged&#39;) then (&quot;D Disposal&quot;.&quot;Sale Price&quot;-ifnull(&quot;Dim Managed Properties&quot;.&quot;Current Carrying Cost&quot;,0)-ifnull(&quot;D Disposal&quot;.&quot;Sell Cost&quot;,0)) else     case when  &quot;D Disposal&quot;.&quot;Umbrella Status&quot;   in  (&#39;Awaiting Listing Confirmation&#39;, &#39;Listed&#39;, &#39;Portfolio Assessment&#39;) then (IFNULL(&quot;D Disposal&quot;.&quot;List Price&quot;, &quot;D Disposal&quot;.&quot;Assessment Valuation Capital Value&quot;)-ifnull(&quot;Dim Managed Properties&quot;.&quot;Current Carrying Cost&quot;,0)-ifnull(&quot;D Disposal&quot;.&quot;Sell Cost&quot;,0)) else    0 end  End</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="true">
+              <saw:actionLink actionLinkID="c47aa6677f3fe00a7_ala7026f397653dd41">
+                <saw:action>
+                  <saw:actionName>Disposal Pipeline Drill Through</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Disposal/Disposal Pipeline Drill Through</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723675494_36110" oldID="kcap1564723490702_7110">
+                  <saw:text>Disposal Pipeline Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723675494_36100" oldID="kcap1564723490702_7100">
+            <saw:text>D Disposal</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723675494_36101" oldID="kcap1564723490702_7101">
+            <saw:text>&lt;div class=&quot;prfHdr&quot;&gt;Profit&lt;/div&gt;</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce380bba67e14e406">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Disposal&quot;.&quot;Settlement Date&quot; is not null then &#39;FY &#39;||SUBSTRING(&quot;Dim Period Disp&quot;.&quot;FIN_YEAR_NAME&quot;,6,4) ELSE &#39;Invalid Date&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36102" oldID="kcap1564723490702_7102">
+            <saw:text>Dim Period Disp</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36103" oldID="kcap1564723490702_7103">
+            <saw:text>Settlement Date FY</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="cb5f1294a3a2ce9ab" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Disposal&quot;.&quot;Settlement Date&quot; is not null then &#39;FY &#39;||SUBSTRING(&quot;Dim Period Disp&quot;.&quot;FIN_YEAR_NAME&quot;,6,4) ELSE null end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36104" oldID="kcap1564723490702_7104">
+            <saw:text>D Disposal</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723675494_36105" oldID="kcap1564723490702_7105">
+            <saw:text>Settlement Date FY</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c27706a014f125255" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Disposal&quot;.&quot;Settlement Date&quot; is not null then &#39;FY &#39;||SUBSTRING(&quot;Dim Period Disp&quot;.&quot;FIN_YEAR_NAME&quot;,6,4) ELSE null end</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c5b32514a0b24714d" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Disposal&quot;.&quot;Settlement Date&quot; is not null then &#39;FY &#39;||SUBSTRING(&quot;Dim Period Disp&quot;.&quot;FIN_YEAR_NAME&quot;,6,4) ELSE null end</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cac7dc9025c4dac29">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Disposal&quot;.&quot;Umbrella Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c7293ae9d30cef3d2" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Dim Period Disp&quot;.&quot;FIN_MONTH&quot;  not in (10,11,12) then &#39;0&#39;||trim(cast(&quot;Dim Period Disp&quot;.&quot;FIN_MONTH&quot; as char))||&#39; &#39;||&quot;Dim Period Disp&quot;.&quot;MONTH_ABBREV&quot; else trim(cast(&quot;Dim Period Disp&quot;.&quot;FIN_MONTH&quot; as char))||&#39; &#39;||&quot;Dim Period Disp&quot;.&quot;MONTH_ABBREV&quot;  end</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Disposal&quot;.&quot;Property ID&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Ownership Desc&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Disposal&quot;.&quot;Settlement Date&quot; is not null then &#39;FY &#39;||SUBSTRING(&quot;Dim Period Disp&quot;.&quot;FIN_YEAR_NAME&quot;,6,4) ELSE null end</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Dim Period Disp&quot;.&quot;FIN_MONTH&quot;  not in (10,11,12) then &#39;0&#39;||trim(cast(&quot;Dim Period Disp&quot;.&quot;FIN_MONTH&quot; as char))||&#39; &#39;||&quot;Dim Period Disp&quot;.&quot;MONTH_ABBREV&quot; else trim(cast(&quot;Dim Period Disp&quot;.&quot;FIN_MONTH&quot; as char))||&#39; &#39;||&quot;Dim Period Disp&quot;.&quot;MONTH_ABBREV&quot;  end</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Disposal&quot;.&quot;Umbrella Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Awaiting Listing Confirmation</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Completed</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Exchanged</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Listed</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Portfolio Assessment</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Under Offer</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Dwelling Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Disposal&quot;.&quot;Current Status&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="false" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true" hidecolumns="false"/>
+  <saw:views textDelivery="compoundView!1" parentsBefore="true" includeNewColumns="true" nullSuppress="true" currentView="0" valueHierarchyIndent="false">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723675493_36082" oldID="kcap1564723490702_7082">
+          <saw:text>Estimated Profit</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:columnOrder>
+            <saw:columnOrderRef columnID="c086661c52e03dee4" direction="ascending"/>
+          </saw:columnOrder>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cceb8eb2847979e15"/>
+            <saw:edgeLayer type="column" columnID="ccf28a54ecd46398d"/>
+            <saw:edgeLayer type="column" columnID="cbd0ca3c0b31043c0"/>
+            <saw:edgeLayer type="column" columnID="ce6e94e7dbed07cbd"/>
+            <saw:edgeLayer type="column" columnID="cacc2d538fd31702c"/>
+            <saw:edgeLayer type="column" columnID="c47aa6677f3fe00a7"/>
+            <saw:edgeLayer type="column" columnID="c086661c52e03dee4"/>
+            <saw:edgeLayer type="column" columnID="ce380bba67e14e406"/>
+            <saw:edgeLayer type="column" columnID="cece477219e31dab6"/>
+            <saw:edgeLayer type="column" columnID="c5b1d988ab155ded3"/>
+            <saw:edgeLayer type="column" columnID="cac7dc9025c4dac29"/>
+            <saw:edgeLayer type="column" columnID="cf892d0d7a7351ba8"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cceb8eb2847979e15"/>
+            <saw:edgeLayer type="column" columnID="ccf28a54ecd46398d"/>
+            <saw:edgeLayer type="column" columnID="cbd0ca3c0b31043c0"/>
+            <saw:edgeLayer type="column" columnID="ce6e94e7dbed07cbd"/>
+            <saw:edgeLayer type="column" columnID="cacc2d538fd31702c"/>
+            <saw:edgeLayer type="column" columnID="c47aa6677f3fe00a7"/>
+            <saw:edgeLayer type="column" columnID="ce380bba67e14e406"/>
+            <saw:edgeLayer type="column" columnID="cece477219e31dab6"/>
+            <saw:edgeLayer type="column" columnID="c5b1d988ab155ded3"/>
+            <saw:edgeLayer type="column" columnID="cac7dc9025c4dac29"/>
+            <saw:edgeLayer type="column" columnID="cf892d0d7a7351ba8"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cceb8eb2847979e15"/>
+            <saw:edgeLayer type="column" columnID="ce380bba67e14e406"/>
+            <saw:edgeLayer type="column" columnID="cece477219e31dab6"/>
+            <saw:edgeLayer type="column" columnID="c5b1d988ab155ded3"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf0c9f7ded4131409"/>
+            <saw:edgeLayer type="measure"/>
+            <saw:edgeLayer type="column" columnID="c47aa6677f3fe00a7"/>
+            <saw:edgeLayer type="column" columnID="cac7dc9025c4dac29"/>
+            <saw:edgeLayer type="column" columnID="cf892d0d7a7351ba8"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="cacc2d538fd31702c" aggRule="sum"/>
+        <saw:measure columnID="ce6e94e7dbed07cbd" aggRule="sum"/>
+        <saw:measure columnID="cd36b018f3aa6117d" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="3d"/>
+      </saw:display>
+      <saw:canvasFormat height="500" width="1000">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cceb8eb2847979e15"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c47aa6677f3fe00a7"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="ce380bba67e14e406"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cece477219e31dab6"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c5b1d988ab155ded3"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cac7dc9025c4dac29"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cf892d0d7a7351ba8"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cd36b018f3aa6117d"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="cf0c9f7ded4131409"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723675493_36083" oldID="kcap1564723490702_7083">
+          <saw:text>Estimated Profit</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t3" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cceb8eb2847979e15"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t2" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+              <saw:dataBodyFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:dataBodyFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf892d0d7a7351ba8"/>
+            <saw:edgeLayer type="column" columnID="cece477219e31dab6"/>
+            <saw:edgeLayer type="column" columnID="c5b1d988ab155ded3"/>
+            <saw:edgeLayer type="column" columnID="cf0c9f7ded4131409"/>
+            <saw:edgeLayer type="measure"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="cacc2d538fd31702c" aggRule="sum"/>
+        <saw:measure columnID="cd36b018f3aa6117d" aggRule="sum"/>
+        <saw:measure columnID="c47aa6677f3fe00a7" aggRule="sum"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="bar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="500" width="1000">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cceb8eb2847979e15"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cece477219e31dab6"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c5b1d988ab155ded3"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cac7dc9025c4dac29"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cf892d0d7a7351ba8"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cd36b018f3aa6117d"/>
+          </saw:column>
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c47aa6677f3fe00a7"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723675494_36084" oldID="kcap1564723490702_7084">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+(function (document) {
+	var estCols=0, actCols=0, coln=0;
+	var lnks = document.getElementsByClassName(&quot;topHdr&quot;);
+	
+	for (var i=0; i&lt;lnks.length;i++) {
+		args = lnks[i].innerHTML;
+		if(args === &#39;Estimated&#39;) estCols = lnks[i].parentNode.colSpan;
+		if(args === &#39;Actual&#39;) actCols = lnks[i].parentNode.colSpan;
+	}
+	
+	var lnks = document.getElementsByClassName(&quot;prcHdr&quot;);
+	for (var i=0; i&lt;lnks.length;i++) {
+		args = lnks[i].innerHTML;
+		coln = lnks[i].parentNode.parentNode.parentNode.parentNode.parentNode.cellIndex;
+		if(coln &lt;= estCols+1) {
+			lnks[i].innerHTML = &#39;List Price&#39;;
+		} else {
+			lnks[i].innerHTML = &#39;Sale Price&#39;;
+		}
+	}
+
+	var lnks = document.getElementsByClassName(&quot;prfHdr&quot;);
+	for (var i=0; i&lt;lnks.length;i++) {
+		args = lnks[i].innerHTML;
+		coln = lnks[i].parentNode.parentNode.parentNode.parentNode.parentNode.cellIndex;
+		if(coln &lt;= estCols+1) {
+			lnks[i].innerHTML = &#39;Estimated Profit&#39;;
+		} else {
+			lnks[i].innerHTML = &#39;Actual Profit&#39;;
+		}
+	}
+	
+
+	var lnks = document.getElementsByClassName(&quot;PTCHC0 PTHT OOLT&quot;);
+	for (var i=0; i&lt;lnks.length;i++) {
+		args = lnks[i].innerHTML;
+		if(args === &#39;&amp;lt;div class=&quot;prcHdr&quot;&amp;gt;Price&amp;lt;/div&amp;gt;&#39;) lnks[i].innerHTML = &#39;Price&#39;;
+		if(args === &#39;&amp;lt;div class=&quot;prfHdr&quot;&amp;gt;Profit&amp;lt;/div&amp;gt;&#39;) lnks[i].innerHTML = &#39;Profit&#39;;
+	}
+	
+})(document);
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

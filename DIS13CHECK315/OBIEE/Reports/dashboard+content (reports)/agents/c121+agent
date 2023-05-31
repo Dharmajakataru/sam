@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:ibot xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:cond="com.oracle.bi/conditions/v1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" priority="normal">
+  <saw:schedule timeZoneId="(GMT+10:00) Canberra, Melbourne, Sydney" disabled="false">
+    <saw:start startImmediately="true"/>
+    <saw:recurrence runOnce="true"/>
+  </saw:schedule>
+  <saw:dataVisibility type="runAsUser" runAs="stephenh" runAsGuid="\82\6f\ac\e0\48\cb\b8\4d\b7\97\bc\9d\bb\ae\ca\4e"/>
+  <cond:condition/>
+  <saw:choose>
+    <saw:when condition="true">
+      <saw:deliveryContent disposition="attachment" format="csv">
+        <saw:reportRef path="/shared/Components/Dashboard Content/Property Portfolio/Reports/C121 Property Report"/>
+        <saw:headline>
+          <saw:caption>
+            <saw:text>The C121 Report</saw:text>
+          </saw:caption>
+        </saw:headline>
+        <saw:attachmentMessage>
+          <saw:caption>
+            <saw:text>C121 report</saw:text>
+          </saw:caption>
+        </saw:attachmentMessage>
+      </saw:deliveryContent>
+      <saw:postActions/>
+    </saw:when>
+    <saw:otherwise>
+      <saw:postActions/>
+    </saw:otherwise>
+  </saw:choose>
+  <saw:deliveryDestinations>
+    <saw:destination category="pcemail"/>
+  </saw:deliveryDestinations>
+  <saw:recipients specificRecipients="true" subscribers="false" customize="false">
+    <saw:specificRecipients>
+      <saw:user name="stephenh" guid="\82\6f\ac\e0\48\cb\b8\4d\b7\97\bc\9d\bb\ae\ca\4e"/>
+    </saw:specificRecipients>
+    <saw:subscribers/>
+  </saw:recipients>
+  <saw:emailRecipients/>
+</saw:ibot>

@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Corporate Property&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca0be81c4c951332e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Count(*)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28953" oldID="kcap1564723462071_2389">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28954" oldID="kcap1564723462071_2390">
+            <saw:text>Count Rentband Graph</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5060dcb61a04bd30">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39; &#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28955" oldID="kcap1564723462071_2391">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading/>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0920ac6a5ac4aab2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">EVALUATE(&#39;TO_DATE(%1 || TO_CHAR(%2,%3))&#39; as date, &#39;01 &#39;, case when&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; &lt; VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;) then  TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) ELSE &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; end, &#39;Mon yyyy&#39;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action" style="width:15px">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="MMM yyyy"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              
+            <saw:actionLink actionLinkID="c0920ac6a5ac4aab2_al045f8b8882ac72cf">
+                <saw:action>
+                  <saw:actionName>RA Demand Drill Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/MCA Supply And RA Demand/RA Demand Drill Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723629490_28979" oldID="kcap1564723462071_2415">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+              </saw:actionLink></saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723629490_28956" oldID="kcap1564723462071_2392">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723629490_28957" oldID="kcap1564723462071_2393">
+            <saw:text>Month</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd423bc2da4d19a33">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot;&lt; VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;) then  TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt;&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) ELSE&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28958" oldID="kcap1564723462071_2394">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28959" oldID="kcap1564723462071_2395">
+            <saw:text>Housing Required Week</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5ed262d64075d315">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPDIFF(SQL_TSI_DAY, Current_Date,&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28960" oldID="kcap1564723462071_2396">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28961" oldID="kcap1564723462071_2397">
+            <saw:text>Sortcol</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c08793f2d50ecad8a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd24184309c3babf2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;GRE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c02fedbfbcddf3128">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;Children Number&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c68004861e97f8251">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; &lt; 5 then cast(&quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; as CHAR(1)) else &#39;5+&#39; end ||  &#39; Bdr - &#39; || case when &quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; &gt; 4 then &#39;5+&#39; else cast(&quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; as CHAR(1)) end || &#39; child&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28962" oldID="kcap1564723462071_2398">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28963" oldID="kcap1564723462071_2399">
+            <saw:text>Desc</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c138960a187fc0193">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Count(*)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c138960a187fc0193_alb73a0253d5746b54">
+                <saw:action>
+                  <saw:actionName>RA Demand Drill Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/MCA Supply And RA Demand/RA Demand Drill Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723629490_28980" oldID="kcap1564723462071_2416">
+                  <saw:text>View Member Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28964" oldID="kcap1564723462071_2400">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28965" oldID="kcap1564723462071_2401">
+            <saw:text>Count</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c659112da4d88d10f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;User Type&quot; = &#39;M&#39; then &#39;Full HF&#39; else &#39;Preview&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28966" oldID="kcap1564723462071_2402">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28967" oldID="kcap1564723462071_2403">
+            <saw:text>User Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c39ea7b99673f6e3f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;AFR ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb1ceb3060b882739">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;DHF&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="cb1ceb3060b882739_ale8326a39da35797e">
+                <saw:action>
+                  <saw:actionName>RA Demand Drill Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/MCA Supply And RA Demand/RA Demand Drill Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723629490_28981" oldID="kcap1564723462071_2417">
+                  <saw:text>View Member Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="cb1ceb3060b882739_ald80b141bf269420f">
+                  <saw:action>
+                    <saw:actionName>RA Demand Drill Report</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Allocations/MCA Supply And RA Demand/RA Demand Drill Report</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723629490_28987" oldID="kcap1564723462072_2423">
+                    <saw:text>View Member Details</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca94aae865ac2500b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28968" oldID="kcap1564723462071_2404">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28969" oldID="kcap1564723462071_2405">
+            <saw:text>Housing Required Week - Actual</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cde42f7766c81656e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; &lt; VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;) then  cast( DayOfMonth(TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;))) as char(2)) || &#39;/&#39; || cast(Month(TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;))) as char(2))  || &#39;/&#39; || cast(Year(TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;))) as char(4)) when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt; &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then cast(TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) as CHAR(10)) || &#39; +&#39; ELSE Cast(&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; as CHAR(10)) end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28970" oldID="kcap1564723462071_2406">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28971" oldID="kcap1564723462071_2407">
+            <saw:text>Housing Required Date Header</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c15095ea8d7bdf068">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">EVALUATE(&#39;TO_CHAR(%1,%2)&#39; as char(11), case when &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; &lt; VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;) then  TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt;=&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) ELSE&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; end, &#39;dd Mon yyyy&#39;) ||  case when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt;= &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then &#39; +&#39; else &#39;&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action" style="width:15px">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              
+            <saw:actionLink actionLinkID="c15095ea8d7bdf068_al53cdd24ff2392100">
+                <saw:action>
+                  <saw:actionName>RA Demand Drill Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/MCA Supply And RA Demand/RA Demand Drill Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723629490_28982" oldID="kcap1564723462071_2418">
+                  <saw:text>View Details</saw:text>
+                </saw:caption>
+              </saw:actionLink></saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723629490_28972" oldID="kcap1564723462071_2408">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723629490_28973" oldID="kcap1564723462071_2409">
+            <saw:text>Week Begin Date Hdr</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd24f60375010e619">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">Count(*)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="true">
+              <saw:actionLink actionLinkID="cd24f60375010e619_al5ebdea7809b0cd76">
+                <saw:action>
+                  <saw:actionName>RA Demand Drill Report</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/MCA Supply And RA Demand/RA Demand Drill Report</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723629490_28983" oldID="kcap1564723462071_2419">
+                  <saw:text>View details for GRE</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="cd24f60375010e619_al4b386f319bb21bd8">
+                <saw:action>
+                  <saw:actionName>RA Demand Drill Report1</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/MCA Supply And RA Demand/RA Demand Drill Report1</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723629490_28984" oldID="kcap1564723462071_2420">
+                  <saw:text>View details for All GRE</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28974" oldID="kcap1564723462071_2410">
+            <saw:text>Fact Non SR Demand</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723629490_28975" oldID="kcap1564723462071_2411">
+            <saw:text>Member Count -  Graph</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c071ce08d93547528">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;User Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9255ce14d30955f8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; &lt; VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;) then  TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt; &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) ELSE &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="ca92540cf3ca2a73a" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; &lt; 5 then cast(&quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; as CHAR(1)) else &#39;5+&#39; end ||  &#39; Bdr - &#39; || case when &quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; &gt; 4 then &#39;5+&#39; else cast(&quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; as CHAR(1)) end || &#39; child&#39;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c5858a58089c4998a" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; &lt; 5 then cast(&quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; as CHAR(1)) else &#39;5+&#39; end ||  &#39; Bdr - &#39; || case when &quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; &gt; 4 then &#39;5+&#39; else cast(&quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; as CHAR(1)) end || &#39; child&#39;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="ca97c87dfb13f1bb7" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Marital Status&quot; = &#39;MWD&#39; and &quot;Fact Non SR Demand&quot;.&quot;Housing Sol Requested&quot; in (&#39;RA&#39;,&#39;Partial RA&#39;,&#39;RA-MA&#39;,&#39;Partial RA-MA&#39;, &#39;FRA-MA&#39;) then &#39;MWD(u) RA&#39;
+when &quot;Fact Non SR Demand&quot;.&quot;Marital Status&quot;=&#39;MWD(S)&#39; and &quot;Fact Non SR Demand&quot;.&quot;Housing Sol Requested&quot; in  (&#39;RA&#39;,&#39;Partial RA&#39;,&#39;RA-MA&#39;,&#39;Partial RA-MA&#39;, &#39;FRA-MA&#39;) then &#39;MWD RA&#39;
+when&quot;Fact Non SR Demand&quot;.&quot;Marital Status&quot;=&#39;MWOD&#39; and &quot;Fact Non SR Demand&quot;.&quot;Housing Sol Requested&quot; in (&#39;RA&#39;,&#39;Partial RA&#39;,&#39;RA-MA&#39;,&#39;Partial RA-MA&#39;, &#39;FRA-MA&#39;) then &#39;MWOD RA&#39;
+when&quot;Fact Non SR Demand&quot;.&quot;Marital Status&quot;=&#39;MWOD&#39; and &quot;Fact Non SR Demand&quot;.&quot;Housing Sol Requested&quot; in (&#39;MCA&#39;,&#39;MCA MKII&#39;) then &#39;MCA&#39;
+ END</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="cd26cef6a8d401806" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;DHF&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="cfa005d650fa5d41a" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;GRE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c7dfb78a24ee2a3b2" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;GRE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c9a58915fe21101f7" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; &lt; VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;) then  TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt; &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) ELSE &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; end</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c474d7545fa0bfd20" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">EVALUATE(&#39;TO_CHAR(%1,%2)&#39; as char(11), case when &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; &lt; VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;) then  TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt;=&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) ELSE&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; end, &#39;dd Mon yyyy&#39;) ||  case when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt;= &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then &#39; +&#39; else &#39;&#39; end</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="c079a2dfe3dc60196" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; &lt; 5 then cast(&quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; as CHAR(1)) else &#39;5+&#39; end ||  &#39; Bdr - &#39; || case when &quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; &gt; 4 then &#39;5+&#39; else cast(&quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; as CHAR(1)) end || &#39; child&#39;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;User Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; &lt; 5 then cast(&quot;Fact Non SR Demand&quot;.&quot;Bedroom Entitlement&quot; as CHAR(1)) else &#39;5+&#39; end ||  &#39; Bdr - &#39; || case when &quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; &gt; 4 then &#39;5+&#39; else cast(&quot;Fact Non SR Demand&quot;.&quot;Children Number&quot; as CHAR(1)) end || &#39; child&#39;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;GRE&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Non SR Demand&quot;.&quot;DHF&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Marital Status&quot; = &#39;MWD&#39; and &quot;Fact Non SR Demand&quot;.&quot;Housing Sol Requested&quot; in (&#39;RA&#39;,&#39;Partial RA&#39;,&#39;RA-MA&#39;,&#39;Partial RA-MA&#39;, &#39;FRA-MA&#39;) then &#39;MWD RA&#39;
+when &quot;Fact Non SR Demand&quot;.&quot;Marital Status&quot;=&#39;MWD(S)&#39; and &quot;Fact Non SR Demand&quot;.&quot;Housing Sol Requested&quot; in  (&#39;RA&#39;,&#39;Partial RA&#39;,&#39;RA-MA&#39;,&#39;Partial RA-MA&#39;, &#39;FRA-MA&#39;) then &#39;MWD(U) RA&#39;
+when &quot;Fact Non SR Demand&quot;.&quot;Marital Status&quot;=&#39;MWOD&#39; and &quot;Fact Non SR Demand&quot;.&quot;Housing Sol Requested&quot; in (&#39;RA&#39;,&#39;Partial RA&#39;,&#39;RA-MA&#39;,&#39;Partial RA-MA&#39;, &#39;FRA-MA&#39;) then &#39;MWOD RA&#39;
+when &quot;Fact Non SR Demand&quot;.&quot;Marital Status&quot; in (&#39;MWOD&#39;, &#39;MWD(S)&#39;) and &quot;Fact Non SR Demand&quot;.&quot;Housing Sol Requested&quot; in (&#39;MCA&#39;,&#39;MCA MKII&#39;) then &#39;MCA&#39;
+ END</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; &lt; VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;) then  TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt; &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) ELSE &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; end</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">EVALUATE(&#39;TO_CHAR(%1,%2)&#39; as char(11), case when &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; &lt; VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;) then  TIMESTAMPADD(SQL_TSI_DAY, -7, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt;=&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) ELSE&quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; end, &#39;dd Mon yyyy&#39;) ||  case when TIMESTAMPADD(SQL_TSI_DAY, 84, VALUEOF(&quot;RV_WEEK_BEGIN_DATE&quot;)) &lt;= &quot;Fact Non SR Demand&quot;.&quot;Week Begin Date&quot; then &#39; +&#39; else &#39;&#39; end</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;DHF&quot;.&quot;DHF&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c5ed262d64075d315" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="3" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723629490_28943" oldID="kcap1564723462071_2379">
+          <saw:text>RA Demand - Members Requiring RA</saw:text>
+        </saw:caption>
+        <saw:displayFormat>
+          <saw:formatSpec hAlign="center" wrapText="true" fontColor="#000000"/>
+        </saw:displayFormat>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1">
+      
+      
+    <saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t2" grandTotalPosition="before"/>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="cb1ceb3060b882739"/><saw:edgeLayer type="column" columnID="cd24184309c3babf2"/></saw:edgeLayers></saw:edge><saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723629490_28985" oldID="kcap1564723462071_2421">
+                  <saw:text>Members</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="c0920ac6a5ac4aab2"/></saw:edgeLayers></saw:edge></saw:edges><saw:measuresList>
+        
+      <saw:measure columnID="c138960a187fc0193"/></saw:measuresList></saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723629490_28944" oldID="kcap1564723462071_2380">
+          <saw:text>Compound Layout:Weekly Pivot</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!3">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!3" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723629490_28945" oldID="kcap1564723462071_2381">
+          <saw:text>RA Demand - Members Requiring RA</saw:text>
+        </saw:caption>
+        <saw:displayFormat>
+          <saw:formatSpec hAlign="center" wrapText="true" fontColor="#000000"/>
+        </saw:displayFormat>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2">
+      
+      
+    <saw:edges><saw:edge axis="page" showColumnHeader="true"/><saw:edge axis="section"/><saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t4" grandTotalPosition="before"/>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="cb1ceb3060b882739"/><saw:edgeLayer type="column" columnID="cd24184309c3babf2"/></saw:edgeLayers></saw:edge><saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t3" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723629490_28986" oldID="kcap1564723462071_2422">
+                  <saw:text>Members</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          
+        <saw:edgeLayers><saw:edgeLayer type="column" columnID="c9255ce14d30955f8"/><saw:edgeLayer type="column" columnID="c15095ea8d7bdf068"/></saw:edgeLayers></saw:edge></saw:edges><saw:measuresList>
+        
+      <saw:measure columnID="c138960a187fc0193"/></saw:measuresList></saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!3">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723629490_28946" oldID="kcap1564723462071_2382">
+          <saw:text>Compound Layout: Weekly Graphs</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!2" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723629490_28947" oldID="kcap1564723462071_2383">
+          <saw:text>RA Demand - Members Requiring RA</saw:text>
+        </saw:caption>
+        <saw:displayFormat>
+          <saw:formatSpec hAlign="center" wrapText="true" fontColor="#000000"/>
+        </saw:displayFormat>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723629490_28948" oldID="kcap1564723462071_2384">
+          <saw:text>Graph Weekly</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="475" width="750">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption>
+            <saw:text/>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c9255ce14d30955f8"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c15095ea8d7bdf068"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cd24f60375010e619"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="cfa005d650fa5d41a"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723629490_28976" oldID="kcap1564723462071_2412">
+              <saw:text>Number of Members</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723629490_28977" oldID="kcap1564723462071_2413">
+              <saw:text>Housing Required Week</saw:text>
+            </saw:caption>
+          </saw:title>
+          <saw:labels rotate="90" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cfa005d650fa5d41a" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="cfa005d650fa5d41a"/>
+                  <sawx:expr xsi:type="xsd:string">RB1</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cfa005d650fa5d41a" position="1">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="cfa005d650fa5d41a"/>
+                  <sawx:expr xsi:type="xsd:string">RB2</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#7EB679"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cfa005d650fa5d41a" position="2">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="cfa005d650fa5d41a"/>
+                  <sawx:expr xsi:type="xsd:string">RB3</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#003366"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cfa005d650fa5d41a" position="3">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="cfa005d650fa5d41a"/>
+                  <sawx:expr xsi:type="xsd:string">RB4</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC9933"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cfa005d650fa5d41a" position="4">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="cfa005d650fa5d41a"/>
+                  <sawx:expr xsi:type="xsd:string">RB1A</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#993333"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cfa005d650fa5d41a" position="5">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="cfa005d650fa5d41a"/>
+                  <sawx:expr xsi:type="xsd:string">RB5</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC99FF"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!4">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!4">
+            <saw:displayFormat>
+              <saw:formatSpec hAlign="center"/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723629490_28949" oldID="kcap1564723462071_2385">
+          <saw:text>Compound Layout: Graph Monthly</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!4" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723629490_28950" oldID="kcap1564723462071_2386">
+          <saw:text>RA Demand - Members Requiring RA</saw:text>
+        </saw:caption>
+        <saw:displayFormat>
+          <saw:formatSpec hAlign="center" wrapText="true" fontColor="#000000"/>
+        </saw:displayFormat>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723629490_28951" oldID="kcap1564723462071_2387">
+          <saw:text>Graph Monthly</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:display type="bar" subtype="stacked" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="475" width="750">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption>
+            <saw:text/>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c0920ac6a5ac4aab2"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cd24f60375010e619"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="c7dfb78a24ee2a3b2"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723629490_28978" oldID="kcap1564723462071_2414">
+              <saw:text>Number of Members</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c7dfb78a24ee2a3b2" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c7dfb78a24ee2a3b2"/>
+                  <sawx:expr xsi:type="xsd:string">RB1</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c7dfb78a24ee2a3b2" position="1">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c7dfb78a24ee2a3b2"/>
+                  <sawx:expr xsi:type="xsd:string">RB2</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#7EB679"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c7dfb78a24ee2a3b2" position="2">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c7dfb78a24ee2a3b2"/>
+                  <sawx:expr xsi:type="xsd:string">RB3</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#003366"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c7dfb78a24ee2a3b2" position="3">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c7dfb78a24ee2a3b2"/>
+                  <sawx:expr xsi:type="xsd:string">RB4</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC9933"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c7dfb78a24ee2a3b2" position="4">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c7dfb78a24ee2a3b2"/>
+                  <sawx:expr xsi:type="xsd:string">RB1A</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#993333"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c7dfb78a24ee2a3b2" position="5">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c7dfb78a24ee2a3b2"/>
+                  <sawx:expr xsi:type="xsd:string">RB5</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC99FF"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723629490_28952" oldID="kcap1564723462071_2388">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-100px; left:10px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

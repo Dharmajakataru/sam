@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:view xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saw:globalFilterPrompt" name="">
+  <saw:prompts scope="dashboard" subjectArea="&quot;Workflow Transitions&quot;">
+    <saw:promptStep setWidthToAllPrompts="true" showResetButton="false">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c3" subjectArea="&quot;Workflow Transitions&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Jira Source&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723807201_59517" oldID="kcap1564723578962_26494">
+              <saw:text>Jira Source</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="specificValue" usingCodeValue="false">
+            <saw:promptDefaultValue>Workflow Tenancy</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;JIRA_SOURCE&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c5" subjectArea="&quot;Workflow Transitions&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Project&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723807201_59518" oldID="kcap1564723578962_26495">
+              <saw:text>Project</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;PROJECT&#39;))"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c7" subjectArea="&quot;Workflow Transitions&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Issue Type&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723807201_59519" oldID="kcap1564723578962_26496">
+              <saw:text>Issue Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ISSUETYPE&#39;))"/>
+        </saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c1" subjectArea="&quot;Workflow Transitions&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;User&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723807201_59521" oldID="kcap1564723578962_26498">
+              <saw:text>User</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;DISPLAY_NAME&#39;)) "/>
+        </saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c8" subjectArea="&quot;Workflow Transitions&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Issue Create Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723807201_59520" oldID="kcap1564723578962_26497">
+              <saw:text>Issue Create Date FY</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false"><saw:promptDefaultValue>RV_CURRENT_FIN_YEAR_FY</saw:promptDefaultValue></saw:promptDefaultValues>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ISSUE_CREATE_DATE_FY&#39;))"/>
+        </saw:prompt>
+        
+        
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c10" subjectArea="&quot;Workflow Transitions&quot;" required="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">MONTHNAME(&quot;F Workflow Transitions&quot;.&quot;Issue Create Date FM&quot;) || &#39; &#39; ||  CAST(YEAR(&quot;F Workflow Transitions&quot;.&quot;Issue Create Date FM&quot;) as CHAR(4))</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"><saw:constrainedByFormula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Issue Create Date FY&quot;</sawx:expr></saw:constrainedByFormula></saw:constrainPrompt><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="select substring(&quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; FROM 4 FOR 3) || &#39; 20&#39; || substring(&quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; FROM 8 FOR 2)  s_2 FROM &quot;Detail Pivot&quot;  WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND  (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ISSUE_CREATE_DATE_FM&#39;)) ORDER BY  &#39;20&#39; || substring(&quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; FROM 8 FOR 2) || &#39;-&#39; || case substring(&quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; FROM 4 FOR 3)  when &#39;JAN&#39; then &#39;01&#39;  when &#39;FEB&#39; then &#39;02&#39;  when &#39;MAR&#39; then &#39;03&#39;  when &#39;APR&#39; then &#39;04&#39;  when &#39;MAY&#39; then &#39;05&#39;  when &#39;JUN&#39; then &#39;06&#39;  when &#39;JUL&#39; then &#39;07&#39;  when &#39;AUG&#39; then &#39;08&#39;  when &#39;SEP&#39; then &#39;09&#39;  when &#39;OCT&#39; then &#39;10&#39;  when &#39;NOV&#39; then &#39;11&#39;  when &#39;DEC&#39; then &#39;12&#39;  end DESC"/><saw:label><saw:caption><saw:text> Issue Create Month</saw:text></saw:caption></saw:label></saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c2" subjectArea="&quot;Workflow Transitions&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Transition To&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723807201_59523" oldID="kcap1564723578962_26500">
+              <saw:text>Transition To</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;END_STATUS&#39;)) "/>
+        </saw:prompt><saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c6" subjectArea="&quot;Workflow Transitions&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Org Unit&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723807201_59522" oldID="kcap1564723578962_26499">
+              <saw:text>Org Unit</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;ORG_UNIT&#39;)) and 1=1"/>
+        </saw:prompt>
+        
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c4" subjectArea="&quot;Workflow Transitions&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;KPI Met&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723807201_59524" oldID="kcap1564723578962_26501">
+              <saw:text>KPI Met</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;KPI_MET_YN&#39;)) "/>
+        </saw:prompt>
+      <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c9" subjectArea="&quot;Workflow Transitions&quot;" required="false" placedOnNewColumn="false"><saw:formula><sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;F Workflow Transitions&quot;.&quot;Inspection Reason&quot;</sawx:expr></saw:formula><saw:promptOperator op="in"/><saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false"><saw:customWidth width="120" using="custompixels"/></saw:promptUIControl><saw:promptDefaultValues type="reportDefault" usingCodeValue="false"/><saw:constrainPrompt type="none" autoSelectValue="default"/><saw:setPromptVariables><saw:setPromptVariable location="value" type="none" variableFormula=""/></saw:setPromptVariables><saw:promptSource sourceFormula="SELECT     &quot;Detail Pivot&quot;.&quot;MV_FILTERS_DP&quot;.&quot;FILTER_CHAR&quot; s_2  FROM &quot;Detail Pivot&quot; WHERE ((&quot;MV_FILTERS_DP&quot;.&quot;MV_NAME&quot; = &#39;F_JIRA_TRANSITIONS&#39;) AND (&quot;MV_FILTERS_DP&quot;.&quot;COLUMN_NAME&quot; = &#39;INSPECTION_REASON&#39;))" xsi:type="saw:sqlPromptSource"/><saw:label><saw:caption><saw:text>Inspection Reason</saw:text></saw:caption></saw:label></saw:prompt></saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:view>
