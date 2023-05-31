@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel version="2.0" xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" defaultDataSourceRef="DWH">
+   <description>
+      <![CDATA[undefined]]>
+   </description>
+   <dataProperties>
+      <property name="include_parameters" value="true"/>
+      <property name="include_null_Element" value="false"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="upper"/>
+   </dataProperties>
+   <dataSets>
+      <dataSet name="test_wise_results" type="complex">
+         <sql dataSourceRef="DWH">
+            <![CDATA[select
+r.id, r.date_key, r.dm_id, r.dra_id, r.dtg_id, r.dt_id, r.value_1, r.value_2, r.value_3, r.value_4, r.value_5, r.value_6, r.value_7, r.value_8, r.value_9,
+r.value_10, r.value_11, r.value_12, r.value_13, r.value_14, r.value_15, r.value_16, r.value_17, r.value_18, r.value_19, r.value_20, r.value_21, r.value_22,
+r.value_23, r.value_24, r.value_25, r.hyperlink_target as hyp_lnk_param
+from dfl.F_DV_RESULTS r, dfl.DIM_PERIOD p, dfl.D_DV_RESPONSIBLE_AREA dra, dfl.d_dv_tests t, dfl.d_dv_test_group g
+where r.date_key = p.date_key
+and   r.DRA_ID = dra.DRA_ID
+and   r.dt_id = t.dt_id
+and   r.dtg_id = g.dtg_id
+
+and   UPPER(g.dtg_desc) = UPPER(:P_TEST_GRP_DESC)
+and   UPPER(dra.DRA_DESC) = UPPER(:P_RESP_AREA_DESC)
+and   UPPER(t.DT_UNIQUE_TEST_DESC) = UPPER(:P_UNIQUE_TEST_DESC)
+
+and   to_date(to_char(trunc(p.FULL_DATE), 'dd/mm/yyyy'), 'dd/mm/yyyy') BETWEEN :P_MIN_FULL_DATE AND :P_DFL_DATE
+
+-- [WORKING PERFECT FOR BIP] and   to_date(to_char(trunc(p.FULL_DATE), 'dd/mm/yyyy'), 'dd/mm/yyyy') BETWEEN to_date(to_char(:P_MIN_FULL_DATE, 'dd/mm/yyyy'), 'dd/mm/yyyy') AND to_date(to_char(:P_DFL_DATE, 'dd/mm/yyyy'), 'dd/mm/yyyy')]]>
+         </sql>
+      </dataSet>
+      <dataSet name="G_1" type="complex">
+         <sql dataSourceRef="DWH">
+            <![CDATA[select mdd.DMDD_COLUMN_NO, mdd.DMDD_COLUMN_NAME,
+count(1) over (partition by t.DT_DMDH_ID) NO_OF_COLS,
+mdd.dmdd_hyperlink_yn as hyperlink_yn
+from dfl.D_DV_TESTS t, dfl.D_DV_META_DATA_DETAIL mdd
+where t.DT_DMDH_ID = mdd.DMDD_DMDH_ID
+and UPPER(t.DT_UNIQUE_TEST_DESC) = UPPER(:P_UNIQUE_TEST_DESC)
+order by mdd.DMDD_COLUMN_NO]]>
+         </sql>
+      </dataSet>
+   </dataSets>
+   <output uniqueRowName="false">
+      <nodeList name="data-structure">
+         <dataStructure tagName="DATA_DS">
+  <group name="ACTUAL_DTA" source="test_wise_results" label="ACTUAL_DTA">
+    <element name="ID" value="ID" dataType="xsd:integer" label="ID" breakOrder="None" fieldOrder="1"/>
+    <element name="DATE_KEY" value="DATE_KEY" dataType="xsd:integer" label="DATE_KEY" breakOrder="None" fieldOrder="2"/>
+    <element name="DM_ID" value="DM_ID" dataType="xsd:integer" label="DM_ID" breakOrder="None" fieldOrder="3"/>
+    <element name="DRA_ID" value="DRA_ID" dataType="xsd:integer" label="DRA_ID" breakOrder="None" fieldOrder="4"/>
+    <element name="DTG_ID" value="DTG_ID" dataType="xsd:integer" label="DTG_ID" breakOrder="None" fieldOrder="5"/>
+    <element name="DT_ID" value="DT_ID" dataType="xsd:integer" label="DT_ID" breakOrder="None" fieldOrder="6"/>
+    <element name="VALUE_1" value="VALUE_1" dataType="xsd:string" label="VALUE_1" breakOrder="None" fieldOrder="7" ifNull=""/>
+    <element name="VALUE_2" value="VALUE_2" dataType="xsd:string" label="VALUE_2" breakOrder="None" fieldOrder="8" ifNull=""/>
+    <element name="VALUE_3" value="VALUE_3" dataType="xsd:string" label="VALUE_3" breakOrder="None" fieldOrder="9" ifNull=""/>
+    <element name="VALUE_4" value="VALUE_4" dataType="xsd:string" label="VALUE_4" breakOrder="None" fieldOrder="10" ifNull=""/>
+    <element name="VALUE_5" value="VALUE_5" dataType="xsd:string" label="VALUE_5" breakOrder="None" fieldOrder="11" ifNull=""/>
+    <element name="VALUE_6" value="VALUE_6" dataType="xsd:string" label="VALUE_6" breakOrder="None" fieldOrder="12" ifNull=""/>
+    <element name="VALUE_7" value="VALUE_7" dataType="xsd:string" label="VALUE_7" breakOrder="None" fieldOrder="13" ifNull=""/>
+    <element name="VALUE_8" value="VALUE_8" dataType="xsd:string" label="VALUE_8" breakOrder="None" fieldOrder="14" ifNull=""/>
+    <element name="VALUE_9" value="VALUE_9" dataType="xsd:string" label="VALUE_9" breakOrder="None" fieldOrder="15" ifNull=""/>
+    <element name="VALUE_10" value="VALUE_10" dataType="xsd:string" label="VALUE_10" breakOrder="None" fieldOrder="16" ifNull=""/>
+    <element name="VALUE_11" value="VALUE_11" dataType="xsd:string" label="VALUE_11" breakOrder="None" fieldOrder="17"/>
+    <element name="VALUE_12" value="VALUE_12" dataType="xsd:string" label="VALUE_12" breakOrder="None" fieldOrder="18"/>
+    <element name="VALUE_13" value="VALUE_13" dataType="xsd:string" label="VALUE_13" breakOrder="None" fieldOrder="19"/>
+    <element name="VALUE_14" value="VALUE_14" dataType="xsd:string" label="VALUE_14" breakOrder="None" fieldOrder="20"/>
+    <element name="VALUE_15" value="VALUE_15" dataType="xsd:string" label="VALUE_15" breakOrder="None" fieldOrder="21"/>
+    <element name="VALUE_16" value="VALUE_16" dataType="xsd:string" label="VALUE_16" breakOrder="None" fieldOrder="22"/>
+    <element name="VALUE_17" value="VALUE_17" dataType="xsd:string" label="VALUE_17" breakOrder="None" fieldOrder="23"/>
+    <element name="VALUE_18" value="VALUE_18" dataType="xsd:string" label="VALUE_18" breakOrder="None" fieldOrder="24"/>
+    <element name="VALUE_19" value="VALUE_19" dataType="xsd:string" label="VALUE_19" breakOrder="None" fieldOrder="25"/>
+    <element name="VALUE_20" value="VALUE_20" dataType="xsd:string" label="VALUE_20" breakOrder="None" fieldOrder="26"/>
+    <element name="VALUE_21" value="VALUE_21" dataType="xsd:string" label="VALUE_21" breakOrder="None" fieldOrder="27"/>
+    <element name="VALUE_22" value="VALUE_22" dataType="xsd:string" label="VALUE_22" breakOrder="None" fieldOrder="28"/>
+    <element name="VALUE_23" value="VALUE_23" dataType="xsd:string" label="VALUE_23" breakOrder="None" fieldOrder="29"/>
+    <element name="VALUE_24" value="VALUE_24" dataType="xsd:string" label="VALUE_24" breakOrder="None" fieldOrder="30"/>
+    <element name="HYP_LNK_PARAM" value="HYP_LNK_PARAM" dataType="xsd:string" label="HYP_LNK_PARAM" breakOrder="None" fieldOrder="32"/>
+    <element name="VALUE_25" value="VALUE_25" dataType="xsd:string" label="VALUE_25" breakOrder="None" fieldOrder="31"/>
+  </group>
+  <group name="META_DATA" source="G_1" label="META_DATA">
+    <element name="DMDD_COLUMN_NO" value="DMDD_COLUMN_NO" dataType="xsd:integer" label="DMDD_COLUMN_NO" breakOrder="None" fieldOrder="1"/>
+    <element name="NO_OF_COLS" value="NO_OF_COLS" dataType="xsd:integer" label="NO_OF_COLS" breakOrder="None" fieldOrder="3"/>
+    <element name="HYPERLINK_YN" value="HYPERLINK_YN" dataType="xsd:integer" label="HYPERLINK_YN" breakOrder="None" fieldOrder="4"/>
+    <element name="DMDD_COLUMN_NAME" value="DMDD_COLUMN_NAME" dataType="xsd:string" label="DMDD_COLUMN_NAME" breakOrder="None" fieldOrder="2"/>
+  </group>
+ </dataStructure>
+      </nodeList>
+   </output>
+   <eventTriggers/>
+   <lexicals/>
+   <valueSets>
+      <valueSet id="Responsible Area" cache="false">
+         <sql dataSourceRef="DWH">
+            <![CDATA[select ra.dra_desc from dfl.d_dv_responsible_area ra order by ra.dra_desc]]>
+         </sql>
+      </valueSet>
+      <valueSet id="Test Group" cache="false">
+         <sql dataSourceRef="DWH">
+            <![CDATA[select g.dtg_desc from dfl.d_dv_test_group g order by g.dtg_desc]]>
+         </sql>
+      </valueSet>
+      <valueSet id="Test" cache="false">
+         <sql dataSourceRef="DWH">
+            <![CDATA[select t.DT_UNIQUE_TEST_DESC from dfl.d_dv_tests t, dfl.d_dv_test_group g 
+where  t.dt_dtg_id = g.dtg_id
+and    UPPER(g.dtg_desc) = UPPER(:P_TEST_GRP_DESC)
+order by t.DT_UNIQUE_TEST_DESC]]>
+         </sql>
+         <input id="P_TEST_GRP_DESC" value="${P_TEST_GRP_DESC}" dataType="xsd:string"/>
+      </valueSet>
+   </valueSets>
+   <parameters>
+      <parameter name="P_MIN_FULL_DATE" defaultValue="{$SYSDATE()$}" dataType="xsd:date" rowPlacement="1">
+         <date label="From Date" format="dd/MM/yyyy"/>
+      </parameter>
+      <parameter name="P_DFL_DATE" defaultValue="{$SYSDATE()$}" dataType="xsd:date" rowPlacement="1">
+         <date label="To Date" format="dd/MM/yyyy"/>
+      </parameter>
+      <parameter name="P_RESP_AREA_DESC" defaultValue="ABC" dataType="xsd:string" rowPlacement="1">
+         <select label="Responsible Area" valueSet="Responsible Area" noOfRecords="300" multiple="false" all="false" allValue="null"/>
+      </parameter>
+      <parameter name="P_TEST_GRP_DESC" defaultValue="ABC" dataType="xsd:string" rowPlacement="1">
+         <select label="Test Group" valueSet="Test Group" noOfRecords="300" multiple="false" all="false" allValue="null" refreshParameters="true"/>
+      </parameter>
+      <parameter name="P_UNIQUE_TEST_DESC" defaultValue="ABC" dataType="xsd:string" rowPlacement="1">
+         <select label="Test" valueSet="Test" noOfRecords="999" multiple="false" all="false" allValue="null"/>
+      </parameter>
+   </parameters>
+   <bursting/>
+   <display>
+<layouts><layout name="DATA_DS" left="28px" top="14px"/><layout name="G_1" left="400px" top="31px"/><layout name="test_wise_results" left="736px" top="17px"/><layout name="dsModalMask" left="" top=""/></layouts><groupLinks>
+</groupLinks>
+</display>
+</dataModel>

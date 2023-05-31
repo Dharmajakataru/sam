@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Estate Master&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c48d6a582f7803fe8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36690" oldID="kcap1564723492615_7665">
+            <saw:text>D DM Code</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36691" oldID="kcap1564723492615_7666">
+            <saw:text>Report Section</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:dimensionSelection>
+          <saw:selectionStep stepID="1" type="startWith" category="member" overridable="false">
+            <saw:stepMembers xsi:type="saw:staticMemberGroupDef">
+              <saw:staticMemberGroup>
+                <saw:members xsi:type="saw:specialValueMembers">
+                  <saw:value specialValue="all"/>
+                </saw:members>
+              </saw:staticMemberGroup>
+            </saw:stepMembers>
+          </saw:selectionStep>
+        </saw:dimensionSelection>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1bfd4128249d88f2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36692" oldID="kcap1564723492615_7667">
+            <saw:text>D Development Project</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36693" oldID="kcap1564723492615_7668">
+            <saw:text>Project Name</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c767cd17eaaf7923d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Cash Flow&quot;.&quot;DM Current Month Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c001c97be5df78dd0" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36694" oldID="kcap1564723492615_7669">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36695" oldID="kcap1564723492615_7670">
+            <saw:text>Project Total Budget</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb84d56e9558e5aa7" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39;  AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36696" oldID="kcap1564723492615_7671">
+            <saw:text>Budgeted Project (Baseline)</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36697" oldID="kcap1564723492615_7672">
+            <saw:text>Budgeted Project (Baseline) - YTD</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5273935e42d1f26b" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39;  AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36698" oldID="kcap1564723492615_7673">
+            <saw:text>Budgeted Project (Baseline)</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36699" oldID="kcap1564723492615_7674">
+            <saw:text>Budgeted Project (Baseline) - FY</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6369c8791f20b9d4" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D Period - Cashflow&quot;.&quot;Month End Date&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Date&quot; )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36700" oldID="kcap1564723492615_7675">
+            <saw:text>Budgeted Project (Baseline)</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36701" oldID="kcap1564723492615_7676">
+            <saw:text>Budgeted Project (Baseline) Whole Project to Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd9a1f624ad0f0500" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36702" oldID="kcap1564723492615_7677">
+            <saw:text>Budgeted Project (Baseline)</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36703" oldID="kcap1564723492615_7678">
+            <saw:text>Budgeted Project (Baseline) - Whole Project</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6b54e94fb96e4969" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39;  AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36704" oldID="kcap1564723492615_7679">
+            <saw:text>Budgeted Corporate Plan</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36705" oldID="kcap1564723492615_7680">
+            <saw:text>Budgeted Corporate Plan - YTD</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc215a8ba2986945a" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39;  AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36706" oldID="kcap1564723492615_7681">
+            <saw:text>Budgeted Corporate Plan</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36707" oldID="kcap1564723492615_7682">
+            <saw:text>Budgeted Corporate Plan - FY</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6754b3bfee22229b" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;DHA Full Finance Portfolio&#39;  AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36708" oldID="kcap1564723492615_7683">
+            <saw:text>Actuals</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36709" oldID="kcap1564723492615_7684">
+            <saw:text>Actual - Year To Date</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2189fd6e5e7632a3" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;DHA Full Finance Portfolio&#39;  AND &quot;D Period - Cashflow&quot;.&quot;Month End Date&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Date&quot; )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36710" oldID="kcap1564723492615_7685">
+            <saw:text>Actuals</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36711" oldID="kcap1564723492615_7686">
+            <saw:text>Actual - Whole Project to Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c550a57bec0fb56c6" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39;  AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; ), 0) - IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;DHA Full Finance Portfolio&#39;  AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; ), 0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36712" oldID="kcap1564723492615_7687">
+            <saw:text>Actuals</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36713" oldID="kcap1564723492615_7688">
+            <saw:text>Balance to Spend / Receive</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd12a0179d1b5cdbd" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100* (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;DHA Full Finance Portfolio&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39;  AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; ), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36714" oldID="kcap1564723492615_7689">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36715" oldID="kcap1564723492615_7690">
+            <saw:text>Actual Revenue This FY To Date as % of Project Budget</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1ae8c2d56aa5d63b" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; ), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36716" oldID="kcap1564723492615_7691">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36717" oldID="kcap1564723492615_7692">
+            <saw:text>Budgeted Project (Baseline) Revenue This FY To Date %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca45226ea50bfa089" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;DHA Full Finance Portfolio&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; ), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36718" oldID="kcap1564723492615_7693">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36719" oldID="kcap1564723492615_7694">
+            <saw:text>Actual Revenue This FY To Date as % of Corporate Plan Budget</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd5ef25c251b5dcc8" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; ), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36720" oldID="kcap1564723492615_7695">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36721" oldID="kcap1564723492615_7696">
+            <saw:text>Budgeted Corporate Plan Revenue This FY To Date %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c19098d36d79e4cc9" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;DHA Full Finance Portfolio&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Month End Date&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Date&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39;), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36722" oldID="kcap1564723492615_7697">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36723" oldID="kcap1564723492615_7698">
+            <saw:text>Actual Revenue Whole Project to Date %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1b84c5fa0cbbe826" aggRule="server">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39; AND &quot;D Period - Cashflow&quot;.&quot;Month End Date&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Date&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Revenue&#39;), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36724" oldID="kcap1564723492615_7699">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36725" oldID="kcap1564723492615_7700">
+            <saw:text>Budgeted Project (Baseline) Revenue Whole Project to Date %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cad45db0741587811" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cad45db0741587811"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36726" oldID="kcap1564723492615_7701">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text">
+            <saw:text/>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6b9254c847523704">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">SUM(0)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c6b9254c847523704"/>
+                    <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec wrapText="true">
+                  <saw:dataFormat xsi:type="saw:custom" customFormat=""/>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36727" oldID="kcap1564723492615_7702">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text">
+            <saw:text/>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c70d4580e2b136148">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100* (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;DHA Full Finance Portfolio&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39;  AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; ), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36728" oldID="kcap1564723492615_7703">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36729" oldID="kcap1564723492615_7704">
+            <saw:text>Actual Expenditure This FY To Date as % of Project Budget</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdc2be38908e2c9f2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; ), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36730" oldID="kcap1564723492615_7705">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36731" oldID="kcap1564723492615_7706">
+            <saw:text>Budgeted Project (Baseline) Expenditure This FY To Date %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7ef196282f865ce9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;DHA Full Finance Portfolio&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; ), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36732" oldID="kcap1564723492615_7707">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36733" oldID="kcap1564723492615_7708">
+            <saw:text>Actual Expenditure This FY To Date as % of Corporate Plan Budget</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6195f7de8c42f347">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; AND &quot;D Period - Cashflow&quot;.&quot;Fin Month&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Month&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Corporate Plan - Current FY&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Fin Year&quot; = &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Year&quot; ), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36734" oldID="kcap1564723492615_7709">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36735" oldID="kcap1564723492615_7710">
+            <saw:text>Budgeted Corporate Plan Expenditure This FY To Date %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbeaae44ee9c36d80">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;DHA Full Finance Portfolio&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Month End Date&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Date&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39;), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36736" oldID="kcap1564723492615_7711">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36737" oldID="kcap1564723492615_7712">
+            <saw:text>Actual Expenditure Whole Project to Date %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca944075256ec03eb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">100 * (IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39; AND &quot;D Period - Cashflow&quot;.&quot;Month End Date&quot; &lt;= &quot;D DM Cash Flow&quot;.&quot;CashFlow Upto Date&quot; ), 0) / IFNULL(FILTER(&quot;F DM CashFlow Monthly&quot;.&quot;DM Value&quot; USING &quot;D DM Cash Flow&quot;.&quot;Portfolio Name&quot; = &#39;Project Rebaselines&#39; AND &quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot; = &#39;Cost&#39;), 0) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36738" oldID="kcap1564723492615_7713">
+            <saw:text>F DM CashFlow Monthly</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723677805_36739" oldID="kcap1564723492615_7714">
+            <saw:text>Budgeted Project (Baseline) Expenditure Whole Project to Date %</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DM Code&quot;.&quot;PCG FIN Report Section Name&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Cost</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Revenue</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Empty</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c48d6a582f7803fe8" direction="descending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1" colSpan="2">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!4" colSpan="2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!2" colSpan="2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+          <saw:cvCell viewName="dvtchart!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723677805_36687" oldID="kcap1564723492615_7662">
+          <saw:text>BI</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c48d6a582f7803fe8"/>
+            <saw:edgeLayer type="column" columnID="c767cd17eaaf7923d"/>
+            <saw:edgeLayer type="column" columnID="c5273935e42d1f26b"/>
+            <saw:edgeLayer type="column" columnID="c6754b3bfee22229b"/>
+            <saw:edgeLayer type="column" columnID="c550a57bec0fb56c6"/>
+            <saw:edgeLayer type="column" columnID="c001c97be5df78dd0"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2" headingDisplay="columns">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723677805_36688" oldID="kcap1564723492615_7663">
+          <saw:text>Table with all columns</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c48d6a582f7803fe8"/>
+            <saw:edgeLayer type="column" columnID="cd9a1f624ad0f0500"/>
+            <saw:edgeLayer type="column" columnID="c6369c8791f20b9d4"/>
+            <saw:edgeLayer type="column" columnID="c2189fd6e5e7632a3"/>
+            <saw:edgeLayer type="column" columnID="cb84d56e9558e5aa7"/>
+            <saw:edgeLayer type="column" columnID="c5273935e42d1f26b"/>
+            <saw:edgeLayer type="column" columnID="c6b54e94fb96e4969"/>
+            <saw:edgeLayer type="column" columnID="cc215a8ba2986945a"/>
+            <saw:edgeLayer type="column" columnID="c6754b3bfee22229b"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="horizontal" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="700">
+        <saw:dataLabels display="always" label="default" position="below" transparentBackground="true" valueAs="default" abbreviation="default">
+          <saw:textFormat/>
+        </saw:dataLabels>
+        <saw:title mode="custom">
+          <saw:caption truncate="false" truncateLength="0" captionID="kcap1564723677805_36740" oldID="kcap1564723492615_7715">
+            <saw:text>Revenue</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:measureLabels/>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="x">
+            <saw:columnRef columnID="cd12a0179d1b5cdbd"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="c1ae8c2d56aa5d63b"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="cad45db0741587811"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="ca45226ea50bfa089"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="cd5ef25c251b5dcc8"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="c6b9254c847523704"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="c19098d36d79e4cc9"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="c1b84c5fa0cbbe826"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators/>
+        <saw:sections/>
+      </saw:selections>
+      <saw:legendFormat position="none" transparentFill="true">
+        <saw:textFormat/>
+      </saw:legendFormat>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1" displayScaleLabels="true">
+          <saw:scale scaleValues="auto" max="100" defaultTicks="true"/>
+          <saw:labels rotate="0" rotateLabels="false" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="custom"/>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:labels rotate="0" rotateLabels="false" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="custom"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cd12a0179d1b5cdbd" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="cd12a0179d1b5cdbd"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FFCC99"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c1ae8c2d56aa5d63b" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="c1ae8c2d56aa5d63b"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF9933"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="ca45226ea50bfa089" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="ca45226ea50bfa089"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#6699CC"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cd5ef25c251b5dcc8" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="cd5ef25c251b5dcc8"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#336699"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c19098d36d79e4cc9" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="c19098d36d79e4cc9"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#669966"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c1b84c5fa0cbbe826" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="c1b84c5fa0cbbe826"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#008000"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!4" headingDisplay="columns">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723677805_36689" oldID="kcap1564723492615_7664">
+          <saw:text>Table for Smartview</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c48d6a582f7803fe8"/>
+            <saw:edgeLayer type="column" columnID="c5273935e42d1f26b"/>
+            <saw:edgeLayer type="column" columnID="c6754b3bfee22229b"/>
+            <saw:edgeLayer type="column" columnID="c550a57bec0fb56c6"/>
+            <saw:edgeLayer type="column" columnID="c001c97be5df78dd0"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="bar" subtype="horizontal" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="700">
+        <saw:dataLabels display="always" label="default" position="below" transparentBackground="true" valueAs="default" abbreviation="default">
+          <saw:textFormat/>
+        </saw:dataLabels>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723677805_36741" oldID="kcap1564723492615_7716">
+            <saw:text>Expenditure</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:measureLabels/>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="x">
+            <saw:columnRef columnID="c70d4580e2b136148"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="cdc2be38908e2c9f2"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="cad45db0741587811"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="c7ef196282f865ce9"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="c6195f7de8c42f347"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="c6b9254c847523704"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="cbeaae44ee9c36d80"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="ca944075256ec03eb"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators/>
+        <saw:sections/>
+      </saw:selections>
+      <saw:legendFormat position="none" transparentFill="true">
+        <saw:textFormat/>
+      </saw:legendFormat>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1" displayScaleLabels="true">
+          <saw:scale scaleValues="auto" max="100" defaultTicks="true"/>
+          <saw:labels rotate="0" rotateLabels="false" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="custom"/>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:labels rotate="0" rotateLabels="false" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="custom"/>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c70d4580e2b136148" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="c70d4580e2b136148"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FFCC99"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cdc2be38908e2c9f2" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="cdc2be38908e2c9f2"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF9933"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c7ef196282f865ce9" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="c7ef196282f865ce9"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#6699CC"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c6195f7de8c42f347" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="c6195f7de8c42f347"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#336699"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="cbeaae44ee9c36d80" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="cbeaae44ee9c36d80"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#669966"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="ca944075256ec03eb" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+                  <saw:columnRef columnID="ca944075256ec03eb"/>
+                  <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#008000"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

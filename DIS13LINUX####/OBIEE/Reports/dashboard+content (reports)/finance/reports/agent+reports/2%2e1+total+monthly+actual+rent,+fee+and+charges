@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Finance&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf57e5bdcbfb29dd1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Ownership&quot;.&quot;Category&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf360a3ab9a0498ab">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rent Bill Detail&quot;.&quot;Market Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc99ef06764525300">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5478ffb50dc9000b" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;Fact Rent Bill Detail&quot;.&quot;UPRN&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38131" oldID="kcap1564723680322_37214">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38132" oldID="kcap1564723680322_37215">
+            <saw:text>Property Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4f16ad6f0abc1c27" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Fact Rent Bill Detail&quot;.&quot;Assessed Rent&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38133" oldID="kcap1564723680322_37216">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38134" oldID="kcap1564723680322_37217">
+            <saw:text>Assessed Rent</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c864d0a2604dda97e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Fact Rent Bill Detail&quot;.&quot;Property Management Charge&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38135" oldID="kcap1564723680322_37218">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38136" oldID="kcap1564723680322_37219">
+            <saw:text>Property Management Charge</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1f84a6fc8e80ef4c" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Fact Rent Bill Detail&quot;.&quot;Quality Maintenance Charge&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38137" oldID="kcap1564723680322_37220">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38138" oldID="kcap1564723680322_37221">
+            <saw:text>Quality Maintenance Charge</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7cf5412d2144973c" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Fact Rent Bill Detail&quot;.&quot;SMYA&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38139" oldID="kcap1564723680322_37222">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38140" oldID="kcap1564723680322_37223">
+            <saw:text>Market Yield Adjustment</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdb3b278c6f72d575" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Fact Rent Bill Detail&quot;.&quot;SVAC&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38141" oldID="kcap1564723680322_37224">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38142" oldID="kcap1564723680322_37225">
+            <saw:text>Vacancy Charge</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca07f54f06127ae38" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Fact Rent Bill Detail&quot;.&quot;SPHC&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38143" oldID="kcap1564723680323_37226">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38144" oldID="kcap1564723680323_37227">
+            <saw:text>Property Holding Charge</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cdeb13dfaafe4aa3f" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Fact Rent Bill Detail&quot;.&quot;SHPH&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38145" oldID="kcap1564723680323_37228">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38146" oldID="kcap1564723680323_37229">
+            <saw:text>Heritage Property Holding Charge</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3e0f43974eb77968">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Fact Rent Bill Detail&quot;.&quot;Assessed Rent&quot;+&quot;Fact Rent Bill Detail&quot;.&quot;Property Management Charge&quot;+&quot;Fact Rent Bill Detail&quot;.&quot;Quality Maintenance Charge&quot;+&quot;Fact Rent Bill Detail&quot;.&quot;SMYA&quot;+&quot;Fact Rent Bill Detail&quot;.&quot;SVAC&quot;+&quot;Fact Rent Bill Detail&quot;.&quot;SPHC&quot;+&quot;Fact Rent Bill Detail&quot;.&quot;SHPH&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" minDigits="2" maxDigits="2" commas="true" negativeType="minus" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38147" oldID="kcap1564723680323_37230">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723686125_38148" oldID="kcap1564723680323_37231">
+            <saw:text>Total</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rent Bill Detail&quot;.&quot;Billable&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Y</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rent Bill Detail&quot;.&quot;Rent Bill Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">DOD</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rent Bill Period&quot;.&quot;Period Start Date&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:date">2006-06-01</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Reports+Page+-+Finance"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf57e5bdcbfb29dd1"/>
+            <saw:edgeLayer type="column" columnID="cf360a3ab9a0498ab"/>
+            <saw:edgeLayer type="column" columnID="cc99ef06764525300">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t2" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c5478ffb50dc9000b"/>
+            <saw:edgeLayer type="column" columnID="c4f16ad6f0abc1c27"/>
+            <saw:edgeLayer type="column" columnID="c864d0a2604dda97e"/>
+            <saw:edgeLayer type="column" columnID="c1f84a6fc8e80ef4c"/>
+            <saw:edgeLayer type="column" columnID="c7cf5412d2144973c"/>
+            <saw:edgeLayer type="column" columnID="cdb3b278c6f72d575"/>
+            <saw:edgeLayer type="column" columnID="ca07f54f06127ae38"/>
+            <saw:edgeLayer type="column" columnID="cdeb13dfaafe4aa3f"/>
+            <saw:edgeLayer type="column" columnID="c3e0f43974eb77968"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Finance&quot;">
+    <saw:promptStep>
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c15" subjectArea="&quot;Finance&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:columnExpression" formulaUse="code">
+              <saw:columnFormula formulaUse="display">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot;</sawx:expr>
+              </saw:columnFormula>
+              <saw:columnFormula formulaUse="code">
+                <sawx:expr xsi:type="sawx:sqlExpression">DESCRIPTOR_IDOF(&quot;Finance&quot;.&quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot;)</sawx:expr>
+              </saw:columnFormula>
+            </sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false" enableSelectByCodeColumn="false">
+            <saw:customWidth width="120" using="custompixels"/>
+            <saw:codeColumnLabel>
+              <saw:caption captionID="kcap1564723686125_38150" oldID="kcap1564723680323_37233">
+                <saw:text>Period ID</saw:text>
+              </saw:caption>
+            </saw:codeColumnLabel>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723686125_38149" oldID="kcap1564723680323_37232">
+              <saw:text>Period Number</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="true">
+            <saw:promptDefaultValue>RV_DFLT_RENT_BILL_PERIOD_ID_STR</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT CAST(&quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot; AS INT), &quot;Dim Rent Bill Period&quot;.&quot;Period ID&quot; FROM &quot;Finance&quot; order by &quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot; desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+      <saw:title>
+        <saw:caption captionID="kcap1564723686125_38130" oldID="kcap1564723680322_37213">
+          <saw:text>Select Period</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:report>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Staff&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c51d81b8c6f4594ba">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;ORG_CHART_ST&quot;.&quot;NODE_ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf766f0803b419208">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;ORG_CHART_ST&quot;.&quot;NODES&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cf766f0803b419208"/>
+            <saw:edgeLayer type="column" columnID="c51d81b8c6f4594ba"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723661943_34423" oldID="kcap1564723486081_6277">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery-migrate-1.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/dha_trees.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+function dha_convert(array){
+    var map = {};
+    for(var i = 0; i &lt; array.length; i++){
+        var obj = array[i];
+        obj.children= [];
+
+        map[obj.id] = obj;
+
+        var parent = obj.parentid || &#39;-&#39;;
+        if(!map[parent]){
+            map[parent] = {
+                children: []
+            };
+        }
+        map[parent].children.push(obj);
+    }
+
+    return map[&#39;-&#39;].children;
+
+}
+
+function getById(id, myArray) {
+    return myArray.filter(function(obj) {
+      if(obj.id == id) {
+        return obj 
+      }
+    })[0]
+  }
+
+
+var units= [], line=[], i=0;
+var rownum = 0;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:narrative rowCount="400">
+        <saw:caption fmt="html" captionID="kcap1564723661944_34424" oldID="kcap1564723486081_6278">
+          <saw:text>rownum++;
+//console.debug(&#39;rownum = &#39; + rownum);
+
+try {
+var tst = &#39;@{cf766f0803b419208}&#39;;
+var tst1 = tst.replace(/&amp;quot;/g, &#39;&quot;&#39;).replace(/&amp;amp;/g, &#39;&amp;&#39;).replace(/&amp;#39;/g, &quot;&#39;&quot;);
+console.debug(&#39;tst1 = &#39; + tst1);
+//console.debug(&#39;i = &#39; + i);
+line = eval(&#39;line = [&#39; + tst1 + &#39;]&#39;);
+for(var j=0; j&lt;line.length; j++) {
+
+	var found = getById(line[j].id, units);
+
+	if (typeof(found) === &quot;undefined&quot;) { 
+		units[i] = line[j];
+		i++;
+	}
+}
+}
+catch(err) {
+console.debug(&#39;err = &#39; + err);
+}</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:postfix>
+        <saw:caption fmt="html" captionID="kcap1564723661944_34425" oldID="kcap1564723486081_6279">
+          <saw:text>var myTree = dha_convert(units);
+console.debug(&#39;Completed Narrative&#39;);
+var myTreeRoot = {&quot;id&quot;: -1, &quot;name&quot;: &quot;DHA Staff&quot;};
+myTreeRoot.children = myTree;
+
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:postfix>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723661944_34426" oldID="kcap1564723486081_6280">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/d3/d3.v2.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/d3/d3.layout.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/d3/dha_d3.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/custom_styles/s_dha/dha/d3/d3_style.css&quot; /&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+ .node circle {
+  cursor: pointer;
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+ }
+
+ .node text {
+  font-size: 11px;
+ }
+
+ path.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+ }
+
+&lt;/style&gt;
+
+    &lt;div id=&quot;body&quot;&gt;
+      &lt;div id=&quot;footer&quot;&gt;
+        DHA Staff Tree
+        &lt;div class=&quot;hint&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+
+var m = [20, 120, 20, 120],
+    w = 1280 - m[1] - m[3],
+    h = 800 - m[0] - m[2],
+    i = 0,
+    root;
+
+var tree = d3.layout.tree()
+    .size([h, w]);
+
+var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+
+var vis = d3.select(&quot;#body&quot;).append(&quot;svg:svg&quot;)
+    .attr(&quot;width&quot;, w + m[1] + m[3])
+    .attr(&quot;height&quot;, h + m[0] + m[2])
+  .append(&quot;svg:g&quot;)
+    .attr(&quot;transform&quot;, &quot;translate(&quot; + m[3] + &quot;,&quot; + m[0] + &quot;)&quot;);
+
+  root = myTreeRoot;
+  root.x0 = h / 2;
+  root.y0 = 0;
+
+  // Initialize the display to show a few nodes.
+  root.children.forEach(toggleAll);
+
+  update(root);
+
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

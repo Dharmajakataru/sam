@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;PCG&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c865dfb824ef019eb" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;F Product Output DHA Dwellings&quot;.&quot;Prop Id&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c865dfb824ef019eb_alb697e637982f9b8c">
+                <saw:action>
+                  <saw:actionName>Product Output - Provisioned Dwellings DT</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/PCG/Product Output/Product Output - Provisioned Dwellings DT</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723711063_42238" oldID="kcap1564723511853_11516">
+                  <saw:text>Drill to Detail</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42226" oldID="kcap1564723511853_11504">
+            <saw:text>F Product Output DHA Dwellings</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42227" oldID="kcap1564723511853_11505">
+            <saw:text>Dwelling Count</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9d37b01c88b7fc86">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Period&quot;.&quot;Year&quot; &gt;= YEAR(CURRENT_DATE)+4 then case when &quot;D Period&quot;.&quot;Year&quot; = YEAR(CURRENT_DATE)+4 then case when QUARTER_OF_YEAR(CURRENT_DATE) &gt; 2 then CAST(&quot;D Period&quot;.&quot;Year&quot; AS CHAR(4)) else case when &quot;D Period&quot;.&quot;Fin Qtr&quot; &gt; 2 then CAST(&quot;D Period&quot;.&quot;Year&quot; AS CHAR(4)) else &#39;Later Years&#39; end end else &#39;Later Years&#39; end else case when &quot;D Period&quot;.&quot;Year&quot; &gt;= YEAR(CURRENT_DATE) then CAST(&quot;D Period&quot;.&quot;Year&quot; AS CHAR(4)) when &quot;D Period&quot;.&quot;Year&quot; = YEAR(CURRENT_DATE)-1  and QUARTER_OF_YEAR(CURRENT_DATE) &lt;= 2 then case when &quot;D Period&quot;.&quot;Fin Qtr&quot; &lt; 3 then CAST(&quot;D Period&quot;.&quot;Year&quot; AS CHAR(4)) else &#39; Prior&#39; end else &#39; Prior&#39; end end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42228" oldID="kcap1564723511853_11506">
+            <saw:text>D Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42229" oldID="kcap1564723511853_11507">
+            <saw:text>Calendar Year Sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5baa9ade344730c5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;D Period&quot;.&quot;Year&quot; &gt;= YEAR(CURRENT_DATE)+4 then case when &quot;D Period&quot;.&quot;Year&quot; = YEAR(CURRENT_DATE)+4 then case when QUARTER_OF_YEAR(CURRENT_DATE) &gt; 2 then CAST(&quot;D Period&quot;.&quot;Year&quot; AS CHAR(4)) else case when &quot;D Period&quot;.&quot;Fin Qtr&quot; &gt; 2 then CAST(&quot;D Period&quot;.&quot;Year&quot; AS CHAR(4)) else &#39;Later Years&#39; end end else &#39;Later Years&#39; end else case when &quot;D Period&quot;.&quot;Year&quot; &gt;= YEAR(CURRENT_DATE) then CAST(&quot;D Period&quot;.&quot;Year&quot; AS CHAR(4)) when &quot;D Period&quot;.&quot;Year&quot; = YEAR(CURRENT_DATE)-1  and QUARTER_OF_YEAR(CURRENT_DATE) &lt;= 2 then case when &quot;D Period&quot;.&quot;Fin Qtr&quot; &lt; 3 then CAST(&quot;D Period&quot;.&quot;Year&quot; AS CHAR(4)) else &#39;Prior&#39; end else &#39;Prior&#39; end end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none" hAlign="center"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42230" oldID="kcap1564723511853_11508">
+            <saw:text>D Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42231" oldID="kcap1564723511853_11509">
+            <saw:text>Calendar Year</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c569746430ce5954d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case   when &quot;D Period&quot;.&quot;Year&quot; &gt;= YEAR(CURRENT_DATE)+4 then   case    when &quot;D Period&quot;.&quot;Year&quot; = YEAR(CURRENT_DATE)+4 then     case       when QUARTER_OF_YEAR(CURRENT_DATE) &gt; 2 then       &quot;D Period&quot;.&quot;Fin Year Name&quot;     else      case       when &quot;D Period&quot;.&quot;Fin Qtr&quot; &gt; 2 then        &quot;D Period&quot;.&quot;Fin Year Name&quot;      else       &#39;Later Years&#39;      end     end   else    &#39;Later Years&#39;   end else  case    when &quot;D Period&quot;.&quot;Year&quot; &gt;= YEAR(CURRENT_DATE) then    &quot;D Period&quot;.&quot;Fin Year Name&quot;   when &quot;D Period&quot;.&quot;Year&quot; = YEAR(CURRENT_DATE)-1  and QUARTER_OF_YEAR(CURRENT_DATE) &lt;= 2 then    case when &quot;D Period&quot;.&quot;Fin Qtr&quot; &lt; 3 then     &quot;D Period&quot;.&quot;Fin Year Name&quot;    else     &#39; Prior Years&#39;    end  else   &#39; Prior Years&#39;  end end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42232" oldID="kcap1564723511853_11510">
+            <saw:text>D Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42233" oldID="kcap1564723511853_11511">
+            <saw:text>Fiscal Year</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc88b5c0bf2ea2bc6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case   when &quot;D Period&quot;.&quot;Year&quot; &gt;= YEAR(CURRENT_DATE)+4 then   case    when &quot;D Period&quot;.&quot;Year&quot; = YEAR(CURRENT_DATE)+4 then     case       when QUARTER_OF_YEAR(CURRENT_DATE) &gt; 2 then       CAST(&quot;D Period&quot;.&quot;Fin Qtr&quot; AS CHAR(1))     else      case       when &quot;D Period&quot;.&quot;Fin Qtr&quot; &gt; 2 then        CAST(&quot;D Period&quot;.&quot;Fin Qtr&quot; AS CHAR(1))      else       null      end     end   else    null   end else  case    when &quot;D Period&quot;.&quot;Year&quot; &gt;= YEAR(CURRENT_DATE) then    CAST(&quot;D Period&quot;.&quot;Fin Qtr&quot; AS CHAR(1))   when &quot;D Period&quot;.&quot;Year&quot; = YEAR(CURRENT_DATE)-1  and QUARTER_OF_YEAR(CURRENT_DATE) &lt;= 2 then    case when &quot;D Period&quot;.&quot;Fin Qtr&quot; &lt; 3 then     CAST(&quot;D Period&quot;.&quot;Fin Qtr&quot; AS CHAR(1))    else     null    end  else   null  end end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="none"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42234" oldID="kcap1564723511853_11512">
+            <saw:text>D Period</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42235" oldID="kcap1564723511853_11513">
+            <saw:text>Qtr</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="none"/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8a827388cdeae285">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rent Band&quot;.&quot;Rent Band&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c8a827388cdeae285_aldd0ee436efc36e87">
+                <saw:action>
+                  <saw:actionName>Product Output - Provisioned Dwellings DT</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/PCG/Product Output/Product Output - Provisioned Dwellings DT</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723711063_42239" oldID="kcap1564723511853_11517">
+                  <saw:text>Drill to Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42236" oldID="kcap1564723511853_11514">
+            <saw:text>D Rent Band</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723711063_42237" oldID="kcap1564723511853_11515">
+            <saw:text>Rent Band</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc9d58bdbc90de24b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rent Band&quot;.&quot;ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ced5c75ca12e85008">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Product Classification&quot;.&quot;Product Classification&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="ced5c75ca12e85008_ale8cbf9c594383523">
+                <saw:action>
+                  <saw:actionName>Product Output - Provisioned Dwellings DT</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/PCG/Product Output/Product Output - Provisioned Dwellings DT</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723711063_42240" oldID="kcap1564723511853_11518">
+                  <saw:text>Drill to Details</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c79d5d1c10a4f90de">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Product Classification&quot;.&quot;ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="lessOrEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Period&quot;.&quot;Year&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:sqlExpression">YEAR(CURRENT_DATE) + 20</sawx:expr>
+        </sawx:expr><sawx:expr xsi:type="sawx:comparison" op="equal"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Include in PCG Report&quot;</sawx:expr><sawx:expr xsi:type="xsd:string">Y</sawx:expr></sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Summary&quot;</sawx:expr>
+          
+        <sawx:expr xsi:type="xsd:string">Empty</sawx:expr></sawx:expr>
+        <sawx:expr xsi:type="sawx:sql">((&quot;D Product Classification&quot;.&quot;Product Classification&quot; IN (&#39;Defence Choice&#39;, &#39;Defence MCA&#39;, &#39;Defence SR&#39;) and &quot;D Rent Band&quot;.&quot;Rent Band&quot; IN (&#39;Other&#39;, &#39;RB1&#39;, &#39;RB2&#39;, &#39;RB3&#39;, &#39;RB4&#39;)) OR (&quot;D Product Classification&quot;.&quot;Product Classification&quot; = &#39;Other Clients&#39; and &quot;D Rent Band&quot;.&quot;Rent Band&quot; = &#39;N/A&#39;))</sawx:expr>
+      <sawx:expr xsi:type="sawx:special" op="prompted"><sawx:expr xsi:type="sawx:sqlExpression">&quot;D Development Project&quot;.&quot;Status&quot;</sawx:expr></sawx:expr></sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true" hidecolumns="false"/>
+  <saw:views textDelivery="compoundView!2" parentsBefore="true" includeNewColumns="true" nullSuppress="false" currentView="2" valueHierarchyIndent="false">
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723711063_42222" oldID="kcap1564723511853_11500">
+          <saw:text>Provisioned Dwellings</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!2" scrollingEnabled="false">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723711063_42223" oldID="kcap1564723511853_11501">
+          <saw:text>Provisioned Dwellings Pivot</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c79d5d1c10a4f90de"/>
+            <saw:edgeLayer type="column" columnID="ced5c75ca12e85008"/>
+            <saw:edgeLayer type="column" columnID="cc9d58bdbc90de24b"/>
+            <saw:edgeLayer type="column" columnID="c8a827388cdeae285"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_column" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c9d37b01c88b7fc86"/>
+            <saw:edgeLayer type="column" columnID="c5baa9ade344730c5"/>
+            <saw:edgeLayer type="column" columnID="c569746430ce5954d"/>
+            <saw:edgeLayer type="column" columnID="cc88b5c0bf2ea2bc6"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c865dfb824ef019eb"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:compoundView" name="compoundView!2">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!2"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:viewCaption>
+        <saw:caption captionID="kcap1564723711063_42224" oldID="kcap1564723511853_11502">
+          <saw:text>JS Formatting</saw:text>
+        </saw:caption>
+      </saw:viewCaption>
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723711063_42225" oldID="kcap1564723511853_11503">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/whereis-maps/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready((function (d) {
+	var pvt = d.getElementsByClassName(&quot;PTChildPivotTable&quot;);
+	var fycs=null;
+	var border1 = &quot;thin solid #000000&quot;;	//start fiscal year default
+	var border2 = &quot;thin solid #FF0000&quot;; //start fiscal year default
+	
+	for (var h=0;h&lt;pvt.length; h++) {
+
+		var tbl = pvt[h].firstChild;
+
+		if (tbl.rows.length ==20) {
+			var prov11g = (tbl.rows[19].cells[0].innerHTML===&#39;Grand Total&#39;);
+			var prov12c = (tbl.rows[3].cells[0].firstChild.innerHTML===&#39;Defence MCA&#39;);
+			var prov = (prov11g || prov12c);
+			
+			if(start_cal_year ==&#39;Y&#39;) {
+				border1 = &quot;thin solid #FF0000&quot;;
+				border2 = &quot;thin solid #000000&quot;;
+			}
+
+			if(prov) {
+				//loop for vertical red lines around calendar years
+				for (var i = 0, row; row = tbl.rows[i]; i++) {
+					for (var j = 0, col; col = row.cells[j]; j++) {
+						if(i==0 &amp;&amp; start_cal_year ==&#39;Y&#39;) {if(j&gt;1 &amp;&amp; j&lt;8) {row.cells[j].style.borderRight = border1} }
+						if(i==1) {if(j&gt;1 &amp;&amp; j&lt;13 &amp;&amp; (j%2==0)) {row.cells[j].style.borderRight = border1} }
+						if(i==2 || i==3 || i==8 || i==13 || i==18) {if ((j==2) || (j&gt;1 &amp;&amp; j&lt;23 &amp;&amp; j%4==2)) {row.cells[j].style.borderRight = border1}}
+						if((i&gt;3 &amp;&amp; i&lt;8) || (i&gt;8 &amp;&amp; i&lt;13) || (i&gt;13 &amp;&amp; i&lt;18) || i==19) {if ((j==1) || (j&gt;1 &amp;&amp; j&lt;22 &amp;&amp; j%4==1)) {row.cells[j].style.borderRight = border1}}
+					}
+				}
+
+
+				//loop for vertical black lines around fiscal years
+				for (var i = 0, row; row = tbl.rows[i]; i++) {
+					for (var j = 0, col; col = row.cells[j]; j++) {
+						if(i==0 &amp;&amp; start_cal_year ==&#39;Y&#39;) {if(j&gt;2 &amp;&amp; j&lt;8) {row.cells[j].style.borderRight = border1} }
+						if(i==1) {if(j&gt;2 &amp;&amp; j&lt;12 &amp;&amp; (j%2==1)) {row.cells[j].style.borderRight = border2} }
+						if(i==2 || i==3 || i==8 || i==13 || i==18) {if ((j&gt;3 &amp;&amp; j&lt;21 &amp;&amp; j%4==0)) {row.cells[j].style.borderRight = border2}}
+						if((i&gt;3 &amp;&amp; i&lt;8) || (i&gt;8 &amp;&amp; i&lt;13) || (i&gt;13 &amp;&amp; i&lt;18) || i==19) {if ((j==3) || (j&gt;6 &amp;&amp; j&lt;20 &amp;&amp; j%4==3)) {row.cells[j].style.borderRight = border2}}
+
+						//horizontal separating lines
+						if((i==3 || i==8 || i==13) &amp;&amp; j==0) row.cells[j].style.borderBottom = &quot;thin solid #000000&quot;;
+						if(i==7 || i==12 || i==17 || i==18) row.cells[j].style.borderBottom = &quot;thin solid #000000&quot;;
+					}
+				}
+
+			}
+		}
+	}
+})(document));
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

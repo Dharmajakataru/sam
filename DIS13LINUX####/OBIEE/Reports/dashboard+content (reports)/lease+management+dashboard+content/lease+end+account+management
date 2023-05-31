@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Lease Management&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3444b794986f6ddd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Critical&#39;   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is not null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Warning&#39;    when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;)  between  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and TIMESTAMPADD(SQL_TSI_day, 90, VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and  &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;OK&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot; between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; in(&#39;Awaiting Finalisation&#39;,&#39;Completed&#39;) then &#39;Completed&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Cancel Date&quot;  between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;))  and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; = &#39;Cancelled&#39; then &#39;Cancelled&#39; ELSE NULL END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723702557_41027" oldID="kcap1564723508323_10675">
+            <saw:text>D_LEASE_HANDBACK_LM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723702558_41028" oldID="kcap1564723508323_10676">
+            <saw:text>Priority</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9bb7f87eda028c33">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when (case   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Critical&#39;   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is not null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Warning&#39;    when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;)  between  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and TIMESTAMPADD(SQL_TSI_day, 90, VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and  &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;OK&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot; between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; in(&#39;Awaiting Finalisation&#39;,&#39;Completed&#39;) then &#39;Completed&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Cancel Date&quot;  between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;))  and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; = &#39;Cancelled&#39; then &#39;Cancelled&#39; ELSE NULL END) = &#39;Critical&#39; then 1 when (case   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Critical&#39;   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is not null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Warning&#39;    when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;)  between  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and TIMESTAMPADD(SQL_TSI_day, 90, VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and  &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;OK&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot; between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; in(&#39;Awaiting Finalisation&#39;,&#39;Completed&#39;) then &#39;Completed&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Cancel Date&quot;  between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;))  and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; = &#39;Cancelled&#39; then &#39;Cancelled&#39; ELSE NULL END) = &#39;Warning&#39; then 2 when (case   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Critical&#39;   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is not null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Warning&#39;    when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;)  between  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and TIMESTAMPADD(SQL_TSI_day, 90, VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and  &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;OK&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot; between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; in(&#39;Awaiting Finalisation&#39;,&#39;Completed&#39;) then &#39;Completed&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Cancel Date&quot;  between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;))  and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; = &#39;Cancelled&#39; then &#39;Cancelled&#39; ELSE NULL END) = &#39;OK&#39; then 3 when (case   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Critical&#39;   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is not null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Warning&#39;    when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;)  between  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and TIMESTAMPADD(SQL_TSI_day, 90, VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and  &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;OK&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot; between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; in(&#39;Awaiting Finalisation&#39;,&#39;Completed&#39;) then &#39;Completed&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Cancel Date&quot;  between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;))  and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; = &#39;Cancelled&#39; then &#39;Cancelled&#39; ELSE NULL END) = &#39;Cancelled&#39; then 4 when (case   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Critical&#39;   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is not null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Warning&#39;    when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;)  between  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and TIMESTAMPADD(SQL_TSI_day, 90, VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and  &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;OK&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot; between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; in(&#39;Awaiting Finalisation&#39;,&#39;Completed&#39;) then &#39;Completed&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Cancel Date&quot;  between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;))  and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; = &#39;Cancelled&#39; then &#39;Cancelled&#39; ELSE NULL END) = &#39;Completed&#39; then 5 else 0 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723702558_41029" oldID="kcap1564723508323_10677">
+            <saw:text>D_LEASE_HANDBACK_LM</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723702558_41030" oldID="kcap1564723508323_10678">
+            <saw:text>Priority Sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c15df44e7f559c5ab">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(1)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c15df44e7f559c5ab_alf38c07bdb6fe1ce7">
+                <saw:action>
+                  <saw:actionName>LeaseEndAccountDrillDown</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Lease Management Dashboard Content/LeaseEndAccountDrillDown</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723702558_41033" oldID="kcap1564723508323_10681">
+                  <saw:text>LeaseEndAccountDrillDown</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:comparison" op="notNull">
+        <sawx:expr xsi:type="sawx:sqlExpression">case   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Critical&#39;   when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;) &lt;=  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;))   and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Fin Assess Date&quot;  is not null and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;Warning&#39;    when ifnull(&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot;,&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Lease Expiry Date&quot;)  between  TIMESTAMPADD(SQL_TSI_DAY, 30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and TIMESTAMPADD(SQL_TSI_day, 90, VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and  &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; not in (&#39;Awaiting Finalisation&#39;,&#39;Cancelled&#39;,&#39;Completed&#39;) THEN &#39;OK&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Date&quot; between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;) ) and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; in(&#39;Awaiting Finalisation&#39;,&#39;Completed&#39;) then &#39;Completed&#39; when (&quot;D_LEASE_HANDBACK_LM&quot;.&quot;Handback Cancel Date&quot;  between TIMESTAMPADD(SQL_TSI_day, -30, VALUEOF(&quot;RV_CURRENT_DATE&quot;)) and VALUEOF(&quot;RV_CURRENT_DATE&quot;))  and &quot;D_LEASE_HANDBACK_LM&quot;.&quot;Status&quot; = &#39;Cancelled&#39; then &#39;Cancelled&#39; ELSE NULL END</sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c3444b794986f6ddd"/>
+            <saw:edgeLayer type="column" columnID="c15df44e7f559c5ab"/>
+            <saw:edgeLayer type="column" columnID="c60e199b91958a04d"/>
+            <saw:edgeLayer type="column" columnID="c492ae919dbd1e4b2"/>
+            <saw:edgeLayer type="column" columnID="c9a798c0d1a2866a1"/>
+            <saw:edgeLayer type="column" columnID="c9bb7f87eda028c33"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="bar" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default">
+          <saw:textFormat/>
+        </saw:dataLabels>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723702558_41031" oldID="kcap1564723508323_10679">
+            <saw:text>Handback Priority Watchlist</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c9bb7f87eda028c33"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c3444b794986f6ddd"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c15df44e7f559c5ab"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723702558_41032" oldID="kcap1564723508323_10680">
+              <saw:text>Number of Handback Issues</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="bar">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c3444b794986f6ddd" position="0">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c3444b794986f6ddd"/>
+                  <sawx:expr xsi:type="xsd:string">Critical</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CC3333"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c3444b794986f6ddd" position="1">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c3444b794986f6ddd"/>
+                  <sawx:expr xsi:type="xsd:string">OK</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#008000"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c3444b794986f6ddd" position="2">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c3444b794986f6ddd"/>
+                  <sawx:expr xsi:type="xsd:string">Warning</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF9933"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c3444b794986f6ddd" position="3">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c3444b794986f6ddd"/>
+                  <sawx:expr xsi:type="xsd:string">Cancelled</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#F1E87D"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition columnID="c3444b794986f6ddd" position="4">
+              <saw:condition>
+                <sawx:expr xsi:type="sawx:comparison" op="equal">
+                  <saw:columnRef columnID="c3444b794986f6ddd"/>
+                  <sawx:expr xsi:type="xsd:string">Completed</sawx:expr>
+                </sawx:expr>
+              </saw:condition>
+            </saw:seriesCondition>
+            <saw:visualFormats>
+              <saw:visualFormat color="#996699"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:prefix>
+        <saw:caption fmt="html" captionID="kcap1564723702557_41026" oldID="kcap1564723508323_10674">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-45px; left:500px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;</saw:text>
+        </saw:caption>
+      </saw:prefix>
+      <saw:narrative rowCount="1"/>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Tenancy&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce785fdcfc44e963a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Lockdowns&quot;.&quot;Lockdown/Reservation FY No&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca35ee90addc1ad07">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Lockdowns&quot;.&quot;Lockdown/Reservation Month Abbrev&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cde1a6631655daed7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Lockdowns&quot;.&quot;Lockdown/Reservation Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c173222f599f365e3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;MV Lockdowns&quot;.&quot;Provisioned Client&quot; = &#39;SR&#39; and &quot;MV Lockdowns&quot;.&quot;Choice Property&quot; is NULL then &#39;SR&#39; when &quot;MV Lockdowns&quot;.&quot;Provisioned Client&quot; = &#39;SR&#39; and &quot;MV Lockdowns&quot;.&quot;Choice Property&quot; = &#39;Y&#39; then &#39;RBCH&#39; else &#39;MCA&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723627863_28634" oldID="kcap1564723460346_2133">
+            <saw:text>MV Lockdowns</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723627863_28635" oldID="kcap1564723460346_2134">
+            <saw:text>Provisioned Client</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c88c69373e8910c2b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;MV Lockdowns&quot;.&quot;Case ID&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723627863_28636" oldID="kcap1564723460346_2135">
+            <saw:text>MV Lockdowns</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723627863_28637" oldID="kcap1564723460346_2136">
+            <saw:text>Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Lockdowns&quot;.&quot;Lockdown/Reservation Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Preview Reservation</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Preview Reservation Outside of Entitlement</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;MV Lockdowns&quot;.&quot;Provisioned Client&quot; = &#39;SR&#39; and &quot;MV Lockdowns&quot;.&quot;Choice Property&quot; is NULL then &#39;SR&#39; when &quot;MV Lockdowns&quot;.&quot;Provisioned Client&quot; = &#39;SR&#39; and &quot;MV Lockdowns&quot;.&quot;Choice Property&quot; = &#39;Y&#39; then &#39;RBCH&#39; else &#39;MCA&#39; end</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Lockdowns&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Lockdowns&quot;.&quot;DHF Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Lockdowns&quot;.&quot;Current/Old&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Current</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ce785fdcfc44e963a"/>
+            <saw:edgeLayer type="column" columnID="ca35ee90addc1ad07"/>
+            <saw:edgeLayer type="column" columnID="c173222f599f365e3"/>
+            <saw:edgeLayer type="column" columnID="c3629b533a0e2d71d"/>
+            <saw:edgeLayer type="column" columnID="c1711fb903e59831b"/>
+            <saw:edgeLayer type="column" columnID="c24df11f210e426f2"/>
+            <saw:edgeLayer type="column" columnID="c88c69373e8910c2b"/>
+            <saw:edgeLayer type="column" columnID="cd3037ea765eac657"/>
+            <saw:edgeLayer type="column" columnID="cd5ae8cad71a01da2"/>
+            <saw:edgeLayer type="column" columnID="ca79ecf3602253098"/>
+            <saw:edgeLayer type="column" columnID="cde1a6631655daed7"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="lineBar" subtype="basic" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723627863_28638" oldID="kcap1564723460346_2137">
+            <saw:text>Current Reservations</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="cde1a6631655daed7"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c88c69373e8910c2b"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="X">
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723627863_28639" oldID="kcap1564723460346_2138">
+              <saw:text>Status</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!2">
+      <saw:display type="lineBar" subtype="basic" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="ca35ee90addc1ad07"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c6ccaddc0d5e97951"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cd3037ea765eac657"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c1021665e47f01413"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cd5ae8cad71a01da2"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="ca79ecf3602253098"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="cde1a6631655daed7"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="c88c69373e8910c2b"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

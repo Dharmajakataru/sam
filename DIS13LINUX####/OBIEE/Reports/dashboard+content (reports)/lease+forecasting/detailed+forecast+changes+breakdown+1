@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Lease Forecasting&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c40ef668b808830c5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;DHF&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c47e1bb2408b19a07">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Year&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c291a00dcf0fc3481">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Lease Count Start&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6f6ae7f83e594602">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Lease Count End&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8e1baac47e09f69c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Lease Expiries No Future Lease&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6f87f0010d53c241">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Trans Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c46db9c5cacb7ee34">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Detailed forecast Changes&quot;.&quot;Trans Reason&quot; = &#39;Option 1 Taken&#39; then &quot;Detailed forecast Changes&quot;.&quot;Option1 Available&quot; when &quot;Detailed forecast Changes&quot;.&quot;Trans Reason&quot; = &#39;Option 2 Taken&#39; then &quot;Detailed forecast Changes&quot;.&quot;Option2 Available&quot; when &quot;Detailed forecast Changes&quot;.&quot;Trans Reason&quot; = &#39;Renewal 1 Taken&#39; then &quot;Detailed forecast Changes&quot;.&quot;Ren1 Available&quot; when &quot;Detailed forecast Changes&quot;.&quot;Trans Reason&quot; = &#39;Renewal 2 Taken&#39; then &quot;Detailed forecast Changes&quot;.&quot;Ren2 Available&quot; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723695344_39908" oldID="kcap1564723501862_9682">
+            <saw:text>Detailed forecast Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723695344_39909" oldID="kcap1564723501862_9683">
+            <saw:text>Renewals/Options Available</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3f0bab4b758911de">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Percentage Applied&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce0d5208b8acae5fd" aggRule="sum">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Detailed forecast Changes&quot;.&quot;Lease Count&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723695344_39910" oldID="kcap1564723501862_9684">
+            <saw:text>Detailed forecast Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723695344_39911" oldID="kcap1564723501862_9685">
+            <saw:text>Renewals/Options Taken</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce0beeb61e0c9a764">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Lease Expiries Future Lease&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c914e0f048e1da23a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Forecasts&quot;.&quot;Num Years&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c071f232ce0fdcc00">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Forecasts&quot;.&quot;User Id&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c314f94f13d433027">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Forecasts&quot;.&quot;Run Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Forecast Id&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:logical" op="and">
+          <sawx:expr xsi:type="sawx:comparison" op="equal">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Trans Type&quot;</sawx:expr>
+            <sawx:expr xsi:type="xsd:string">A</sawx:expr>
+          </sawx:expr>
+          <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Detailed forecast Changes&quot;.&quot;Trans Reason&quot;</sawx:expr>
+            <sawx:expr xsi:type="xsd:string">New Lease</sawx:expr>
+          </sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Forecasts&quot;.&quot;Run Date&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Forecast+History">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723695344_39907" oldID="kcap1564723501862_9681">
+          <saw:text>Breakdown of Renewals/Options Taken</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="none">
+              <saw:dataBodyFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:dataBodyFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c40ef668b808830c5">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec fontStyle="bold" fontSize="12" wrapText="true" hAlign="left"/>
+                </saw:displayFormat>
+              </saw:memberFormat>
+            </saw:edgeLayer>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t3" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c47e1bb2408b19a07"/>
+            <saw:edgeLayer type="column" columnID="c291a00dcf0fc3481"/>
+            <saw:edgeLayer type="column" columnID="c6f6ae7f83e594602"/>
+            <saw:edgeLayer type="column" columnID="c8e1baac47e09f69c"/>
+            <saw:edgeLayer type="column" columnID="c6f87f0010d53c241"/>
+            <saw:edgeLayer type="column" columnID="c46db9c5cacb7ee34"/>
+            <saw:edgeLayer type="column" columnID="c3f0bab4b758911de"/>
+            <saw:edgeLayer type="column" columnID="ce0d5208b8acae5fd" aggRule="sum">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t2" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

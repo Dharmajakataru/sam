@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160" cacheControl="bypassCache">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Allocations&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2df50e56171c30ad">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Test Fail Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c047984d39a7ba2ea">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Test Fail Reason Code&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="caa49cdcdff1ea49c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Allocation ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="caa49cdcdff1ea49c_al1535b54a83cb42a9">
+                <saw:action>
+                  <saw:actionName>Navigate - @[clm]/member/tenancy/lia/view.action</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="0" multiValues="false">
+                      <saw:prompt>memberId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                      <saw:prompt>liaAllocationId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[clm]/member/tenancy/lia/view.action?memberId=@{1}&amp;liaAllocationId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723633035_29862" oldID="kcap1564723465536_3248">
+                  <saw:text>View in CLM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c4c2776ab562e74ce"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="caa49cdcdff1ea49c"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cef22bf3f87644208">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Occ Reference&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cef22bf3f87644208_al4c274a1e4ab56ef7">
+                <saw:action>
+                  <saw:actionName>Navigate - @[clmmember]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>employeeId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[clmmember]?employeeId=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723633035_29863" oldID="kcap1564723465536_3249">
+                  <saw:text>View in CLM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cef22bf3f87644208"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29842" oldID="kcap1564723465536_3228">
+            <saw:text>LIA Contribution Watchlist</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29843" oldID="kcap1564723465536_3229">
+            <saw:text>Employee ID</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb6d85738d69111ae">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Req Rank&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29844" oldID="kcap1564723465536_3230">
+            <saw:text>LIA Contribution Watchlist</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29845" oldID="kcap1564723465536_3231">
+            <saw:text>Rank</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce62c4e44e25f9e77">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Occ Surname&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29846" oldID="kcap1564723465536_3232">
+            <saw:text>LIA Contribution Watchlist</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29847" oldID="kcap1564723465536_3233">
+            <saw:text>Surname</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9d5f03e50d9b0a93">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Allocation Actual Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29848" oldID="kcap1564723465536_3234">
+            <saw:text>LIA Contribution Watchlist</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29849" oldID="kcap1564723465536_3235">
+            <saw:text>Actual Start Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc507383c0fb0b0e1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Allocation Actual End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29850" oldID="kcap1564723465536_3236">
+            <saw:text>LIA Contribution Watchlist</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29851" oldID="kcap1564723465536_3237">
+            <saw:text>Actual End Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb7dcdf30f0a22399">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Req Rank Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29852" oldID="kcap1564723465536_3238">
+            <saw:text>LIA Contribution Watchlist</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29853" oldID="kcap1564723465536_3239">
+            <saw:text>Room Rank Group</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c875821132fc9ac77">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Days On Report&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2074e3770872884c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;User ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7a1d0cf7743b0eaa">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;LIA Contribution Watchlist&quot;.&quot;Prev Actioned Comm&quot; is not null then &#39;&lt;table class=&quot;lia&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt; Date&lt;/th&gt;&lt;th&gt;User Id&lt;/th&gt;&lt;th&gt;Comment&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&#39; || &quot;LIA Contribution Watchlist&quot;.&quot;Prev Actioned Comm&quot; || &#39;&lt;/table&gt;&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29854" oldID="kcap1564723465536_3240">
+            <saw:text>LIA Contribution Watchlist</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29855" oldID="kcap1564723465536_3241">
+            <saw:text>Previous Actioned Comments</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3e73777d078e47f2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Checked Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf5746eb7ef684aed">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Actioned Comment&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <sawwb:writeBack xmlns:sawwb="com.siebel.analytics.web/writeback/v1" required="false" xsi:type="sawwb:editBox" inputSize="10" inputHeight="1"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3f91d36a89b0bc68">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Req ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29856" oldID="kcap1564723465536_3242">
+            <saw:text>LIA Contribution Watchlist</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29857" oldID="kcap1564723465536_3243">
+            <saw:text>Request ID</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccaea99a27eee1543">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">VALUEOF(NQ_SESSION.USER)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29858" oldID="kcap1564723465536_3244">
+            <saw:text>NQ_SESSION</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29859" oldID="kcap1564723465536_3245">
+            <saw:text>User ID</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc3e315dd31b35df6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when&quot;LIA Contribution Watchlist&quot;.&quot;Days On Report&quot; &lt;= 5 then &#39;0-5 Days&#39; when &quot;LIA Contribution Watchlist&quot;.&quot;Days On Report&quot; between 6 and 10 then &#39;6-10 Days&#39; when &quot;LIA Contribution Watchlist&quot;.&quot;Days On Report&quot;&gt;=11 then &#39;11+ Days&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29860" oldID="kcap1564723465536_3246">
+            <saw:text>LIA Contribution Watchlist</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723633035_29861" oldID="kcap1564723465536_3247">
+            <saw:text>Days on Reporting Group</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4c2776ab562e74ce">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Contact ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">case when&quot;LIA Contribution Watchlist&quot;.&quot;Days On Report&quot; &lt;= 5 then &#39;0-5 Days&#39; when &quot;LIA Contribution Watchlist&quot;.&quot;Days On Report&quot; between 6 and 10 then &#39;6-10 Days&#39; when &quot;LIA Contribution Watchlist&quot;.&quot;Days On Report&quot;&gt;=11 then &#39;11+ Days&#39; end</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Req Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;LIA Contribution Watchlist&quot;.&quot;Last Day On Report&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:sqlExpression">SELECT max(&quot;LIA Contribution Watchlist&quot;.&quot;Last Day On Report&quot;) FROM &quot;Allocations&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c047984d39a7ba2ea" direction="ascending"/>
+      <saw:columnOrderRef columnID="cef22bf3f87644208" direction="ascending"/>
+      <saw:columnOrderRef columnID="c3e73777d078e47f2" direction="descending"/>
+      <saw:columnOrderRef columnID="c875821132fc9ac77" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="true" groupoperations="true" calcitemoperations="true" showhidesubtotal="true" showhiderunningsum="true" inclexclcolumns="true" hidecolumns="true"/>
+  <saw:views textDelivery="compoundView!1" parentsBefore="true" includeNewColumns="false" nullSuppress="true" currentView="0" valueHierarchyIndent="false">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Watchlists"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:displayFormat>
+        <saw:formatSpec>
+          <sawwb:writeBack xmlns:sawwb="com.siebel.analytics.web/writeback/v1" xsi:type="sawwb:tableProperties" enabled="true" toggleTableMode="false" templateName="lia_watchlist_upd" useTemplate="true" buttonPos="right"/>
+        </saw:formatSpec>
+      </saw:displayFormat>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c047984d39a7ba2ea"/>
+            <saw:edgeLayer type="column" columnID="c2df50e56171c30ad"/>
+            <saw:edgeLayer type="column" columnID="c4c2776ab562e74ce"/>
+            <saw:edgeLayer type="column" columnID="caa49cdcdff1ea49c"/>
+            <saw:edgeLayer type="column" columnID="cef22bf3f87644208"/>
+            <saw:edgeLayer type="column" columnID="cb6d85738d69111ae"/>
+            <saw:edgeLayer type="column" columnID="ce62c4e44e25f9e77"/>
+            <saw:edgeLayer type="column" columnID="c9d5f03e50d9b0a93"/>
+            <saw:edgeLayer type="column" columnID="cc507383c0fb0b0e1"/>
+            <saw:edgeLayer type="column" columnID="cb7dcdf30f0a22399"/>
+            <saw:edgeLayer type="column" columnID="c875821132fc9ac77"/>
+            <saw:edgeLayer type="column" columnID="c2074e3770872884c"/>
+            <saw:edgeLayer type="column" columnID="c7a1d0cf7743b0eaa"/>
+            <saw:edgeLayer type="column" columnID="c3e73777d078e47f2"/>
+            <saw:edgeLayer type="column" columnID="cf5746eb7ef684aed"/>
+            <saw:edgeLayer type="column" columnID="ccaea99a27eee1543"/>
+            <saw:edgeLayer type="column" columnID="c3f91d36a89b0bc68"/>
+          </saw:edgeLayers>
+          <saw:columnOrder>
+            <saw:columnOrderRef columnID="c7a1d0cf7743b0eaa" direction="descending"/>
+          </saw:columnOrder>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723633034_29840" oldID="kcap1564723465536_3226">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/dha_custom.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+function dha_apply() {
+    var applyButton;
+	
+	var els = document.getElementsByTagName(&quot;A&quot;);
+	for (i = 0; i &lt; els.length; i++) {
+		if(els[i].innerHTML == &quot;Apply&quot;) {
+			applyButton = els[i];
+		}
+	}
+
+	if(applyButton) {
+		applyButton.click();
+	} else {
+		alert(&quot;No Apply button found&quot;);
+	}
+}
+
+&lt;/script&gt; 
+&lt;input value=&quot;Apply Comments&quot; type=&quot;button&quot; onclick=&quot;dha_apply()&quot;&gt;
+&lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;
+
+table.lia{
+border-collapse:collapse;
+border:1px solid #000000;
+}
+
+table.lia td{
+border:1px solid #000000;
+}
+
+table.lia th{
+border:1px solid #000000;
+background-color:lightgrey;
+}
+
+&lt;/style&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!2">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723633035_29841" oldID="kcap1564723465536_3227">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+dha_hideWriteBackButtons();
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Allocations&quot;"/>
+</saw:report>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Finance&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c36dbfc661a41b8d8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rent Bill Detail&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf27bc6a8b013f7f0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Property Street Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c977b4356615b23cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0bcff71ea041c071">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;State&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2c6a5dcc758c5eb3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Post Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c30280f3a0cb956b9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rent Bill Detail&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbfee80bdc145fb0e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rent Bill Detail&quot;.&quot;Rental Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c50773f2156f528aa">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Ownership&quot;.&quot;Category&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceedeefa7f23349ed">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rent Bill Detail&quot;.&quot;Market Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5cd29f3e9617c0b0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CAST(&quot;Fact Rent Bill Detail&quot;.&quot;Tenant Start Date&quot; AS DATE)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"><saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/></saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564724294238_66286">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564724294238_66287">
+            <saw:text>Lease Out Start Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cba0f9297cd3e3fe9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(&quot;Fact Rent Bill Detail&quot;.&quot;Letting Fee&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564724294238_66288">
+            <saw:text>Fact Rent Bill Detail</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564724294238_66289">
+            <saw:text>Amount</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rent Bill Detail&quot;.&quot;Letting Fee&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="notEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Rent Bill Detail&quot;.&quot;Rent Bill Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">DMCA</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:columnExpression" formulaUse="code" displayUse="display">
+            <saw:columnFormula formulaUse="display">
+              <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot;</sawx:expr>
+            </saw:columnFormula>
+          </sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Reports+Page+-+Finance" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c36dbfc661a41b8d8"/>
+            <saw:edgeLayer type="column" columnID="cf27bc6a8b013f7f0"/>
+            <saw:edgeLayer type="column" columnID="c977b4356615b23cb"/>
+            <saw:edgeLayer type="column" columnID="c0bcff71ea041c071"/>
+            <saw:edgeLayer type="column" columnID="c2c6a5dcc758c5eb3"/>
+            <saw:edgeLayer type="column" columnID="c30280f3a0cb956b9"/>
+            <saw:edgeLayer type="column" columnID="cbfee80bdc145fb0e"/>
+            <saw:edgeLayer type="column" columnID="c50773f2156f528aa"/>
+            <saw:edgeLayer type="column" columnID="ceedeefa7f23349ed"/>
+            <saw:edgeLayer type="column" columnID="c5cd29f3e9617c0b0"/>
+            <saw:edgeLayer type="column" columnID="cba0f9297cd3e3fe9"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Finance&quot;">
+    <saw:promptStep>
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c14" subjectArea="&quot;Finance&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:columnExpression" formulaUse="code">
+              <saw:columnFormula formulaUse="display">
+                <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot;</sawx:expr>
+              </saw:columnFormula>
+              <saw:columnFormula formulaUse="code">
+                <sawx:expr xsi:type="sawx:sqlExpression">DESCRIPTOR_IDOF(&quot;Finance&quot;.&quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot;)</sawx:expr>
+              </saw:columnFormula>
+            </sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false" enableSelectByCodeColumn="false">
+            <saw:customWidth width="120" using="custompixels"/>
+            <saw:codeColumnLabel>
+              <saw:caption captionID="kcap1564724294238_66291">
+                <saw:text>Period ID</saw:text>
+              </saw:caption>
+            </saw:codeColumnLabel>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564724294238_66290">
+              <saw:text>Period Number</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="true">
+            <saw:promptDefaultValue>RV_DFLT_RENT_BILL_PERIOD_ID_STR</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT CAST(&quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot; AS INT), &quot;Dim Rent Bill Period&quot;.&quot;Period ID&quot; FROM &quot;Finance&quot; order by &quot;Dim Rent Bill Period&quot;.&quot;Period Number&quot; desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:report>
