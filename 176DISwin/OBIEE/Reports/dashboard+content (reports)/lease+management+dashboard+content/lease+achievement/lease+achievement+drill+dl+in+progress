@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Managed Properties&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="caa58e67ce21d3575">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Direct In Prog&quot;.&quot;Pkey&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c269b749facc51428">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;a target=&quot;_blank&quot; href=&quot;&#39; || VALUEOF(&quot;RV_URL_WORKFLOWPM&quot;) || &quot;D Lease Direct In Prog&quot;.&quot;Pkey&quot;|| &#39;&quot;&gt;&#39; || &quot;D Lease Direct In Prog&quot;.&quot;Pkey&quot; || &#39;&lt;/a&gt;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723696849_40136" oldID="kcap1564723503209_9883">
+            <saw:text>D Lease Direct In Prog</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723696849_40137" oldID="kcap1564723503209_9884">
+            <saw:text>PKey</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8e465568241ee363">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Direct In Prog&quot;.&quot;Property ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" width="20px" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c8e465568241ee363_al139e9d5e49b9fcba">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?propertyId=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723696849_40150" oldID="kcap1564723503209_9897">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8e465568241ee363"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2336a185595a5ff3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9c3eb77b6125a6c9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Direct In Prog&quot;.&quot;Current Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6cd3fd744fc14a57">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asset Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c19910cf6a36e496c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asset Status Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40138" oldID="kcap1564723503209_9885">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40139" oldID="kcap1564723503209_9886">
+            <saw:text>Asset Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c46cf9cbec576a4a9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Compliancy&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0f23eb808bc425a7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(&quot;Dim Managed Properties&quot;.&quot;DHF Area&quot;, &#39;ZNULL&#39;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40140" oldID="kcap1564723503209_9887">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40141" oldID="kcap1564723503209_9888">
+            <saw:text>DHF Area</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0844d8169ec5ae18">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(&quot;Dim Managed Properties&quot;.&quot;Rent Bill&quot;, &#39;ZNULL&#39;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40142" oldID="kcap1564723503209_9889">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40143" oldID="kcap1564723503209_9890">
+            <saw:text>Rent Bill</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9d84a55ed37341da">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(&quot;Dim Managed Properties&quot;.&quot;Management Area&quot;, &#39;ZNULL&#39;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40144" oldID="kcap1564723503209_9891">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40145" oldID="kcap1564723503209_9892">
+            <saw:text>Management Area</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c68e4feea4864c0c0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Beds&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column columnID="caffacdb6318c09ac" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;JUL&#39; then &#39;01 &#39; when MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;AUG&#39; THEN &#39;02 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;SEP&#39; THEN &#39;03 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;OCT&#39; THEN &#39;04 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;NOV&#39; THEN &#39;05 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;DEC&#39; THEN &#39;06 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;JAN&#39; THEN &#39;07 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;FEB&#39; THEN &#39;08 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;MAR&#39; THEN &#39;09 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;APR&#39; THEN &#39;10 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;MAY&#39; THEN &#39;11 &#39; WHEN MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;) = &#39;JUN&#39; THEN &#39;12 &#39; END || MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40146" oldID="kcap1564723503209_9893">
+            <saw:text>D Lease Direct In Prog</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40147" oldID="kcap1564723503209_9894">
+            <saw:text>MONTHNAME(Lease Start Date)</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column columnID="c5ddcb85e600584be" xsi:type="saw:regularColumn">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;FY &#39;||cast(&quot;Dim Period&quot;.&quot;FIN_YEAR&quot; as varchar(4))</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c47cabe6d43710d37">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0ee5662a9fb7c7ae">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;State&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c139a5262b4780eb4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4a8fdeca0aad7e32">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Post Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb16b643853514b05">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Ownership Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40148" oldID="kcap1564723503209_9895">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723696849_40149" oldID="kcap1564723503209_9896">
+            <saw:text>Ownership</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cde05d9059180a5a8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Class&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6c20f2e3dda4be23">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Dwelling Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c511902bbef0d28be">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Client Description&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf153ffef34af0697">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;SRC&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5014983d735640b2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5d742b2644e5291f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Lease Direct In Prog&quot;.&quot;Current Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Application Received</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Awaiting Assessment of CIC Report</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Awaiting CIC Inspection</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Awaiting Desktop Review</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Awaiting Letter of Offer Approval</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Letter of Offer Sent</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Negotiations in Progress</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(&quot;Dim Managed Properties&quot;.&quot;DHF Area&quot;, &#39;ZNULL&#39;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(&quot;Dim Managed Properties&quot;.&quot;Rent Bill&quot;, &#39;ZNULL&#39;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(&quot;Dim Managed Properties&quot;.&quot;Management Area&quot;, &#39;ZNULL&#39;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;FY &#39;||cast(&quot;Dim Period&quot;.&quot;FIN_YEAR&quot; as varchar(4))</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;D Lease Direct In Prog&quot;.&quot;Lease Start Date&quot;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(&quot;Dim Managed Properties&quot;.&quot;Ownership&quot;, &#39;ZNULL&#39;)</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">IFNULL(&quot;Dim Managed Properties&quot;.&quot;Rent Band&quot;, &#39;ZNULL&#39;)</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Lease+Transactions" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c269b749facc51428"/>
+            <saw:edgeLayer type="column" columnID="c2336a185595a5ff3"/>
+            <saw:edgeLayer type="column" columnID="caffacdb6318c09ac"/>
+            <saw:edgeLayer type="column" columnID="c9c3eb77b6125a6c9"/>
+            <saw:edgeLayer type="column" columnID="c9d84a55ed37341da"/>
+            <saw:edgeLayer type="column" columnID="c0f23eb808bc425a7"/>
+            <saw:edgeLayer type="column" columnID="c0844d8169ec5ae18"/>
+            <saw:edgeLayer type="column" columnID="c8e465568241ee363"/>
+            <saw:edgeLayer type="column" columnID="c47cabe6d43710d37"/>
+            <saw:edgeLayer type="column" columnID="c0ee5662a9fb7c7ae"/>
+            <saw:edgeLayer type="column" columnID="c139a5262b4780eb4"/>
+            <saw:edgeLayer type="column" columnID="c4a8fdeca0aad7e32"/>
+            <saw:edgeLayer type="column" columnID="c19910cf6a36e496c"/>
+            <saw:edgeLayer type="column" columnID="cb16b643853514b05"/>
+            <saw:edgeLayer type="column" columnID="cde05d9059180a5a8"/>
+            <saw:edgeLayer type="column" columnID="c6c20f2e3dda4be23"/>
+            <saw:edgeLayer type="column" columnID="c511902bbef0d28be"/>
+            <saw:edgeLayer type="column" columnID="cf153ffef34af0697"/>
+            <saw:edgeLayer type="column" columnID="c68e4feea4864c0c0"/>
+            <saw:edgeLayer type="column" columnID="c46cf9cbec576a4a9"/>
+            <saw:edgeLayer type="column" columnID="c5014983d735640b2"/>
+            <saw:edgeLayer type="column" columnID="c5d742b2644e5291f"/>
+            <saw:edgeLayer type="column" columnID="c6cd3fd744fc14a57"/>
+            <saw:edgeLayer type="column" columnID="caa58e67ce21d3575"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

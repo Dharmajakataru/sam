@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:view xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saw:globalFilterPrompt" name="">
+  <saw:prompts scope="dashboard" subjectArea="&quot;General&quot;">
+    <saw:promptStep buttonsPosition="side" autoApplyPrompt="true" showResetButton="false" labelPosition="above">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c2" subjectArea="&quot;General&quot;" required="false">
+          <saw:formula>
+            
+          <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:columnExpression" formulaUse="code"><saw:columnFormula formulaUse="display"><sawx:expr xsi:type="sawx:sqlExpression">&quot;OBI_COLUMN_SELECTOR_ROW1&quot;.&quot;DISPLAY_VALUE&quot;</sawx:expr></saw:columnFormula><saw:columnFormula formulaUse="code"><sawx:expr xsi:type="sawx:sqlExpression">DESCRIPTOR_IDOF(&quot;General&quot;.&quot;OBI_COLUMN_SELECTOR_ROW1&quot;.&quot;DISPLAY_VALUE&quot;)</sawx:expr></saw:columnFormula></sawx:expr></saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:dropDown" maxChoices="1" includeAllChoices="false" enableSelectByCodeColumn="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            
+          </saw:label>
+          <saw:promptDefaultValues type="specificValue" usingCodeValue="true">
+            
+          <saw:promptDefaultValue>&quot;MV Dim Managed Properties&quot;.&quot;Dhf Area&quot;</saw:promptDefaultValue></saw:promptDefaultValues>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="presentationVariable" variableFormula="PV_ROW_SEL"/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT &quot;OBI_COLUMN_SELECTOR_ROW1&quot;.&quot;DISPLAY_VALUE&quot;, DESCRIPTOR_IDOF(&quot;OBI_COLUMN_SELECTOR_ROW1&quot;.&quot;DISPLAY_VALUE&quot;) FROM &quot;General&quot; WHERE (&quot;OBI_COLUMN_SELECTOR_ROW1&quot;.&quot;SUBJECT_AREA_ID&quot; = 38)" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="150" using="custompixels"/>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:view>

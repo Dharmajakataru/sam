@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Property Provisioning&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6e8eb2acb4593be2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;DHF&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c223322cf02371fec">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Property ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="notIn">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c223322cf02371fec"/>
+                    <sawx:expr xsi:type="xsd:string">Blank UPRN</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Invalid UPRN</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c223322cf02371fec_alf16a26fcb7fea8d1">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[staffservices]</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                            <saw:prompt>property_id</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments/>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[staffservices]?property_id=@{1}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723645610_31313" oldID="kcap1564723640128_30574">
+                        <saw:text>View Property in Homefind</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c223322cf02371fec"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:list" op="notIn">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c223322cf02371fec"/>
+                    <sawx:expr xsi:type="xsd:string">Blank UPRN</sawx:expr>
+                    <sawx:expr xsi:type="xsd:string">Invalid UPRN</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                    <saw:actionLink actionLinkID="c223322cf02371fec_al5340f1d2a47e72ac">
+                      <saw:action>
+                        <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                        <saw:parameters allowExtraParameters="true">
+                          <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                            <saw:prompt>requestTimestamp</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                          <saw:parameter name="2" type="string" mandatory="true" removable="true" order="1" multiValues="false">
+                            <saw:prompt>propertyId</saw:prompt>
+                            <saw:description/>
+                          </saw:parameter>
+                        </saw:parameters>
+                        <saw:assignments>
+                          <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                            <saw:value>1306383846371</saw:value>
+                          </saw:assign>
+                        </saw:assignments>
+                        <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                          <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                          <saw:request>GET</saw:request>
+                        </saw:implementation>
+                        <saw:clientImplementation>
+                          <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                        </saw:clientImplementation>
+                      </saw:action>
+                      <saw:caption captionID="kcap1564723645610_31314" oldID="kcap1564723640128_30575">
+                        <saw:text>View Property in HSM</saw:text>
+                      </saw:caption>
+                      <saw:paramMapping>
+                        <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                          <saw:mapping xsi:type="saw:contextColumnMappingType">
+                            <sawx:columnRefExpr columnID="c223322cf02371fec"/>
+                          </saw:mapping>
+                        </saw:assign>
+                      </saw:paramMapping>
+                    </saw:actionLink>
+                  </saw:actionLinks>
+                </saw:formatSpec>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccde9af56840b2985">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;a target=&quot;_blank&quot; href=&quot;&#39; || VALUEOF(&quot;RV_URL_WORKFLOWDS&quot;) || &quot;D Acquisition Dwelling YE&quot;.&quot;Jira Key&quot;|| &#39;&quot;&gt;&#39; || &quot;D Acquisition Dwelling YE&quot;.&quot;Jira Key&quot; || &#39;&lt;/a&gt;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723645610_31310" oldID="kcap1564723640128_30571">
+            <saw:text>D Acquisition Dwelling YE</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723645610_31311" oldID="kcap1564723640128_30572">
+            <saw:text>Jira Key</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb119a69f8d25aad2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Issue Summary&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c569655bd673f6190">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Assignee&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd10c7940ee1e1084">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Reporter&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c42c3fa4d5f7e31a0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Issue Status Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c49ceb7c030a234f5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Rejection Reason&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc3d022fe8c7f2221">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Issue Created On&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1cc64dfeb305f2b7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Delivery Year&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c40417c08f9d555b4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Expected Settlement Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c048d27056dd609ec">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Expected Settlement Date FM&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceb31ce74286507f1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Expected Settlement Date FY&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c68fc78724bb377ab">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Source (Dwelling ACQ)&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfb15f1d0e94a8d6b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Asking Price (Dwelling ACQ)&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8da414e425c6cd8a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Anticipated Rent Band&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca2d03b529a1e01e5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Vendor Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2f61ba76f567294c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Vendor Contact Person&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1e76b4a918ecd9ff">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Contact Number&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4fd3c1298fe9ee8b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Gross Margin - Planned&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c02a8afec74998968">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Approving Body&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c05e7658f020b4ac3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Purchase Price (ACQ Of Dwelling)&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c37d4a8e55457bb6a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;DHA Solicitor&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cca7f166189ae21d2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Under Offer (Dwelling ACQ)&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c963aaff4d68cb695">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Under Offer (Dwelilng ACQ) FM&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd932636368b83a72">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Under Offer (Dwelilng ACQ) FY&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5e6602b0ad9d6143">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Portfolio Region&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7524acc5f3bfe1ee">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Provisioning Year&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5dbb743019f525f5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Property Class&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c362abede280ff6b9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Property Status Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5d53bc3e7cc5f94b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Property Reason Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c22de228398386178">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Dwelling Type Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3889cc4b1a3e6014">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Dwelling Subtype Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0bd48faf868bead8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Ownership Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbf98ee56f94387dc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Ownership Description&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c40a31c8becf9b6d6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Asset Status&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce1eaf58a49e226da">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Asset Status Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd78d1770c512c826">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Asset Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca3c4ad6152755e8b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Acquisition Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceb9bf762cb325942">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Anticipated Rent Bill Client&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c103b93fd1bb83ee7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Rent Bill Client&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c94fcf5ad1265ef1a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Acquisition Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c92f8b8e0f567b1ac">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;GRS Classification&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c054bfb7b463cb6e8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Deferred Payment Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4533fc97bd7c2546">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Deferred Payment Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c20506ec75cf3db65">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Deposit Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1038887d7763577f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Deposit Paid&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7777a1902ccd231e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;A Charges&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9d5055e0f7b875d1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Acquisition Cost&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca0df4e929d81d6d9">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Beds&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe96c3a76d8d40b0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;MCA Ownership In Priority Location&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1"/></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Reports+-+Business+Support"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false" rowsPerPage="100" repeat="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="none"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c6e8eb2acb4593be2">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="st_c6e8eb2acb4593be2" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c223322cf02371fec">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="st_c223322cf02371fec" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="ccde9af56840b2985"/>
+            <saw:edgeLayer type="column" columnID="cb119a69f8d25aad2"/>
+            <saw:edgeLayer type="column" columnID="c569655bd673f6190"/>
+            <saw:edgeLayer type="column" columnID="cd10c7940ee1e1084"/>
+            <saw:edgeLayer type="column" columnID="c42c3fa4d5f7e31a0"/>
+            <saw:edgeLayer type="column" columnID="c49ceb7c030a234f5"/>
+            <saw:edgeLayer type="column" columnID="cc3d022fe8c7f2221"/>
+            <saw:edgeLayer type="column" columnID="c1cc64dfeb305f2b7"/>
+            <saw:edgeLayer type="column" columnID="c40417c08f9d555b4"/>
+            <saw:edgeLayer type="column" columnID="c048d27056dd609ec"/>
+            <saw:edgeLayer type="column" columnID="ceb31ce74286507f1"/>
+            <saw:edgeLayer type="column" columnID="c68fc78724bb377ab"/>
+            <saw:edgeLayer type="column" columnID="cfb15f1d0e94a8d6b"/>
+            <saw:edgeLayer type="column" columnID="c8da414e425c6cd8a"/>
+            <saw:edgeLayer type="column" columnID="ca2d03b529a1e01e5"/>
+            <saw:edgeLayer type="column" columnID="c2f61ba76f567294c"/>
+            <saw:edgeLayer type="column" columnID="c1e76b4a918ecd9ff"/>
+            <saw:edgeLayer type="column" columnID="c4fd3c1298fe9ee8b"/>
+            <saw:edgeLayer type="column" columnID="c02a8afec74998968"/>
+            <saw:edgeLayer type="column" columnID="c05e7658f020b4ac3"/>
+            <saw:edgeLayer type="column" columnID="c37d4a8e55457bb6a"/>
+            <saw:edgeLayer type="column" columnID="cca7f166189ae21d2"/>
+            <saw:edgeLayer type="column" columnID="c963aaff4d68cb695"/>
+            <saw:edgeLayer type="column" columnID="cd932636368b83a72"/>
+            <saw:edgeLayer type="column" columnID="c5e6602b0ad9d6143"/>
+            <saw:edgeLayer type="column" columnID="c7524acc5f3bfe1ee"/>
+            <saw:edgeLayer type="column" columnID="c5dbb743019f525f5"/>
+            <saw:edgeLayer type="column" columnID="c362abede280ff6b9"/>
+            <saw:edgeLayer type="column" columnID="c5d53bc3e7cc5f94b"/>
+            <saw:edgeLayer type="column" columnID="c22de228398386178"/>
+            <saw:edgeLayer type="column" columnID="c3889cc4b1a3e6014"/>
+            <saw:edgeLayer type="column" columnID="c0bd48faf868bead8"/>
+            <saw:edgeLayer type="column" columnID="cbf98ee56f94387dc"/>
+            <saw:edgeLayer type="column" columnID="c40a31c8becf9b6d6"/>
+            <saw:edgeLayer type="column" columnID="ce1eaf58a49e226da"/>
+            <saw:edgeLayer type="column" columnID="cd78d1770c512c826"/>
+            <saw:edgeLayer type="column" columnID="ca3c4ad6152755e8b"/>
+            <saw:edgeLayer type="column" columnID="ceb9bf762cb325942"/>
+            <saw:edgeLayer type="column" columnID="c103b93fd1bb83ee7"/>
+            <saw:edgeLayer type="column" columnID="c94fcf5ad1265ef1a"/>
+            <saw:edgeLayer type="column" columnID="c92f8b8e0f567b1ac"/>
+            <saw:edgeLayer type="column" columnID="c054bfb7b463cb6e8"/>
+            <saw:edgeLayer type="column" columnID="c4533fc97bd7c2546"/>
+            <saw:edgeLayer type="column" columnID="c20506ec75cf3db65"/>
+            <saw:edgeLayer type="column" columnID="c1038887d7763577f"/>
+            <saw:edgeLayer type="column" columnID="c7777a1902ccd231e"/>
+            <saw:edgeLayer type="column" columnID="c9d5055e0f7b875d1"/>
+            <saw:edgeLayer type="column" columnID="ca0df4e929d81d6d9"/>
+            <saw:edgeLayer type="column" columnID="cfe96c3a76d8d40b0"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Property Provisioning&quot;">
+    <saw:promptStep wrapLabelText="true" setWidthToAllPrompts="true">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c52" subjectArea="&quot;Property Provisioning&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Expected Settlement Date FY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            <saw:promptDefaultValue>RV_CURRENT_FIN_YEAR_FY</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula="@{RV_CURRENT_FIN_YEAR_FY}"/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT &quot;D Acquisition Dwelling YE&quot;.&quot;Expected Settlement Date FY&quot; FROM &quot;Property Provisioning&quot; order by 1 desc" xsi:type="saw:sqlPromptSource"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c53" subjectArea="&quot;Property Provisioning&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Acquisition Dwelling YE&quot;.&quot;Issue Status Desc&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:browse" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:promptDefaultValues type="specificValue" usingCodeValue="false">
+            <saw:promptDefaultValue>Approval Requested</saw:promptDefaultValue>
+            <saw:promptDefaultValue>Awaiting Contract Execution</saw:promptDefaultValue>
+            <saw:promptDefaultValue>Awaiting Final Contract Amendments</saw:promptDefaultValue>
+            <saw:promptDefaultValue>Awaiting Settlement</saw:promptDefaultValue>
+            <saw:promptDefaultValue>Awaiting Transfer Execution</saw:promptDefaultValue>
+            <saw:promptDefaultValue>Awaiting Uncond. Exchange</saw:promptDefaultValue>
+            <saw:promptDefaultValue>Finalising Agreement with Vendor</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource sourceFormula="SELECT &quot;D Acquisition Dwelling YE&quot;.&quot;Issue Status Desc&quot; FROM &quot;Property Provisioning&quot; FETCH FIRST 65001 ROWS ONLY" xsi:type="saw:sqlPromptSource"/>
+          <saw:label>
+            <saw:caption captionID="kcap1564723645610_31312" oldID="kcap1564723640128_30573">
+              <saw:text>Issue Status</saw:text>
+            </saw:caption>
+          </saw:label>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+      <saw:displayFormat>
+        <saw:formatSpec wrapText="true"/>
+      </saw:displayFormat>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:report>

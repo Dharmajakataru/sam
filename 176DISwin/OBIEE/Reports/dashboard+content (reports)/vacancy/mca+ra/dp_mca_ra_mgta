@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:view xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="saw:globalFilterPrompt" name="">
+  <saw:prompts scope="dashboard" subjectArea="&quot;Vacancy&quot;">
+    <saw:promptStep autoApplyPrompt="true" showResetButton="false">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c2" subjectArea="&quot;Vacancy&quot;" required="false" placedOnNewColumn="false">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">cast(&quot;Dim Period&quot;.&quot;FIN_YEAR&quot; as int)</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723780320_55992" oldID="kcap1564723577074_26206">
+              <saw:text>Fin Year</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            
+            
+          <saw:promptDefaultValue>RV_CURRENT_FIN_YEAR_STRING</saw:promptDefaultValue><saw:promptDefaultValue>RV_PREVIOUS_FIN_YEAR_STRING</saw:promptDefaultValue></saw:promptDefaultValues>
+          <saw:constrainPrompt type="none" autoSelectValue="default"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT cast(&quot;Dim Period&quot;.&quot;FIN_YEAR&quot;  as int) FROM &quot;Vacancy&quot;  where &quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot; &gt;= CAST(&#39;01-JAN-2014&#39; AS DATE) order by 1 desc"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c1" subjectArea="&quot;Vacancy&quot;" required="false" placedOnNewColumn="true">
+          <saw:formula>
+            <sawx:expr xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xsi:type="sawx:sqlExpression">&quot;Dim Management Area&quot;.&quot;Management Area&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="true">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723780320_55993" oldID="kcap1564723577074_26207">
+              <saw:text>Management Area</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="allChoices" usingCodeValue="false"/>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:sqlPromptSource" sourceFormula="SELECT &quot;Dim Management Area&quot;.&quot;Management Area&quot; FROM &quot;Vacancy&quot; where &quot;Fact Vacancy Properties&quot;.&quot;MANAGEMENT_AREA_ID&quot; is not null FETCH FIRST 65001 ROWS ONLY"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:view>

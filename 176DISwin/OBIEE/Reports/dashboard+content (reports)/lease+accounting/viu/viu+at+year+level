@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Leasing&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c531c5549330beb85">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Dim Managed Props&quot;.&quot;Uprn&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c531c5549330beb85_al6a4496cc2439e4a9">
+                <saw:action>
+                  <saw:actionName>Navigate - @[staffservices]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>property_id</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[staffservices]?property_id=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723694298_39864" oldID="kcap1564723501719_9667">
+                  <saw:text>View Property in Homefind</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c531c5549330beb85"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+              <saw:actionLink actionLinkID="c531c5549330beb85_alf83e54fce4d60828">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723694298_39865" oldID="kcap1564723501719_9668">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c531c5549330beb85"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39784" oldID="kcap1564723501719_9587">
+            <saw:text>MV Dim Managed Props</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39785" oldID="kcap1564723501719_9588">
+            <saw:text>Property ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c676a5b28dab1a8cc">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Dim Managed Props&quot;.&quot;Property Address&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c31ac4cb7162423d7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF&quot;.&quot;DHF&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39786" oldID="kcap1564723501719_9589">
+            <saw:text>D DHF</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39787" oldID="kcap1564723501719_9590">
+            <saw:text>DHF Area</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c83e8663ce91e69ce">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Snapshot Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39788" oldID="kcap1564723501719_9591">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39789" oldID="kcap1564723501719_9592">
+            <saw:text>HSM Snapshot Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb14f497f504fd039">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Ownership Description&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39790" oldID="kcap1564723501719_9593">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39791" oldID="kcap1564723501719_9594">
+            <saw:text>Ownership</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c33045ba342e20efb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;MCA Priority Location&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39792" oldID="kcap1564723501719_9595">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39793" oldID="kcap1564723501719_9596">
+            <saw:text>MCA Priority Location</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c05ae1bac81f1e003">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Valuation Date for Fair Value&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39794" oldID="kcap1564723501719_9597">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39795" oldID="kcap1564723501719_9598">
+            <saw:text>Fair Value Valuation Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c53e7ba652de85312">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Fair Value&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="0" maxDigits="0" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39796" oldID="kcap1564723501719_9599">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39797" oldID="kcap1564723501719_9600">
+            <saw:text>Fair Value</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c89f4f190d59e0af4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Valuation Date for Client Rent&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39798" oldID="kcap1564723501719_9601">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39799" oldID="kcap1564723501719_9602">
+            <saw:text>Client Rent Valuation Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8b1d77dadbbc5748">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Current Client Rent&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="paren" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39800" oldID="kcap1564723501719_9603">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39801" oldID="kcap1564723501719_9604">
+            <saw:text>Current Client Rent</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c97cc9e7fe8dfe340">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Current Lessor Rent&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" currencyTag="loc:en-AU" commas="true" negativeType="paren" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39802" oldID="kcap1564723501719_9605">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694297_39803" oldID="kcap1564723501719_9606">
+            <saw:text>Current Lessor Rent</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c775aeda6f5478ca3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;ABS Avg Weekly Earning&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39804" oldID="kcap1564723501719_9607">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39805" oldID="kcap1564723501719_9608">
+            <saw:text>ABS Avg Weekly Earning</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6eab11ff508106e5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;VIU For Fin Year Row Num&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39806" oldID="kcap1564723501719_9609">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39807" oldID="kcap1564723501719_9610">
+            <saw:text>Year</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6a2c876f59b31f9d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;VIU For Period Start Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39808" oldID="kcap1564723501719_9611">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39809" oldID="kcap1564723501719_9612">
+            <saw:text>Period Start</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf3e7c90e0aa76b20">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;VIU For Period End Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39810" oldID="kcap1564723501719_9613">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39811" oldID="kcap1564723501719_9614">
+            <saw:text>Period End</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf28b9cdcdffa1464">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;VIU For Fin Year Mid Point&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39812" oldID="kcap1564723501719_9615">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39813" oldID="kcap1564723501719_9616">
+            <saw:text>Mid Point</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0302b45ea2707fef">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Risk Discount Rate&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39814" oldID="kcap1564723501719_9617">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39815" oldID="kcap1564723501719_9618">
+            <saw:text>Risk Discount Rate</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca62c114d6ced7790">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Property Discount Rate&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39816" oldID="kcap1564723501719_9619">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39817" oldID="kcap1564723501719_9620">
+            <saw:text>Property Discount Rate</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf477a27e736e7e03">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;VIU Discount Rate&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39818" oldID="kcap1564723501719_9621">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39819" oldID="kcap1564723501719_9622">
+            <saw:text>VIU Discount Rate</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccb4669aa5acff795">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;VIU Discount Rate Percent&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="4" maxDigits="4"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39820" oldID="kcap1564723501719_9623">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39821" oldID="kcap1564723501719_9624">
+            <saw:text>VIU Discount Rate Factor</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9f548f960c4afc9e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Client Rent Growth Rate&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39822" oldID="kcap1564723501719_9625">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39823" oldID="kcap1564723501719_9626">
+            <saw:text>Client Rent Growth Rate</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb87aa92e09e9401c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Lessor Rent Growth Rate&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39824" oldID="kcap1564723501719_9627">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39825" oldID="kcap1564723501719_9628">
+            <saw:text>Lessor Rent Growth Rate</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7810ad6d2aa9414c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Forecast CPI&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39826" oldID="kcap1564723501719_9629">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39827" oldID="kcap1564723501719_9630">
+            <saw:text>Forecast CPI Rate</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4a2f5e7d9409ef7c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Forecast CPI Percent&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="4" maxDigits="4"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39828" oldID="kcap1564723501719_9631">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39829" oldID="kcap1564723501719_9632">
+            <saw:text>Forecast CPI Factor</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c306c5a47c3868c29">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;ABS Avg Weekly Earning Percent&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="4" maxDigits="4"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39830" oldID="kcap1564723501719_9633">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39831" oldID="kcap1564723501719_9634">
+            <saw:text>ABS Avg Weekly Earning Factor</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0204fc6ad29fbbf3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;ABS Avg RM Cost Percent&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="4" maxDigits="4"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39832" oldID="kcap1564723501719_9635">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39833" oldID="kcap1564723501719_9636">
+            <saw:text>ABS Avg RM Cost Factor</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8a9988b882d285c2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Vacancy Rate&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39834" oldID="kcap1564723501719_9637">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39835" oldID="kcap1564723501719_9638">
+            <saw:text>Vacancy Rate</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8c5fb95654bb102e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Lease ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c8c5fb95654bb102e_al1f7cec05a3ecd301">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsm]/property/leasing/lease/summary.action</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="1" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="2" multiValues="false">
+                      <saw:prompt>leaseId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsm]/property/leasing/lease/summary.action?propertyId=@{1}&amp;leaseId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723694298_39866" oldID="kcap1564723501719_9669">
+                  <saw:text>View Lease in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c531c5549330beb85"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c8c5fb95654bb102e"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39836" oldID="kcap1564723501719_9639">
+            <saw:text>Flags &amp; Rates</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39837" oldID="kcap1564723501719_9640">
+            <saw:text>Lease Ref</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c25da1dd9b6c94c41">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;In Flow - Rental Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39838" oldID="kcap1564723501719_9641">
+            <saw:text>Cash Inflows</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39839" oldID="kcap1564723501719_9642">
+            <saw:text>Client Rental Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf72a2d81c6eecdda">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;In Flow - PMC Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39840" oldID="kcap1564723501719_9643">
+            <saw:text>Cash Inflows</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39841" oldID="kcap1564723501719_9644">
+            <saw:text>PMC Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="caa53a7a0399334cf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;In Flow - QMC Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39842" oldID="kcap1564723501719_9645">
+            <saw:text>Cash Inflows</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39843" oldID="kcap1564723501719_9646">
+            <saw:text>QMC Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c91a01b8e86356e26">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;In Flow - Mgt. Fee Revenue Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39844" oldID="kcap1564723501719_9647">
+            <saw:text>Cash Inflows</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39845" oldID="kcap1564723501719_9648">
+            <saw:text>Mgt Fee Revenue Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2cd0293b0984cea5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;In Flow - Vacancy Charge Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39846" oldID="kcap1564723501719_9649">
+            <saw:text>Cash Inflows</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39847" oldID="kcap1564723501719_9650">
+            <saw:text>Vacancy Charge Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c372f88961e07c3bd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;In Flow - Gross Total&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" backgroundColor="#EEEEEE">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39848" oldID="kcap1564723501719_9651">
+            <saw:text>Cash Inflows</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39849" oldID="kcap1564723501719_9652">
+            <saw:text>Gross Total</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5086c1a72c7c3ad1">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;In Flow - Vacancy Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39850" oldID="kcap1564723501719_9653">
+            <saw:text>Cash Inflows</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39851" oldID="kcap1564723501719_9654">
+            <saw:text>Vacancy Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c13fa0d905ec3faf7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;In Flow - Total Cash&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" backgroundColor="#EEEEEE">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39852" oldID="kcap1564723501719_9655">
+            <saw:text>Cash Inflows</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39853" oldID="kcap1564723501719_9656">
+            <saw:text>Total Cash Inflow</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc0486bdc75f4d589">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Out Flow - RM Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39854" oldID="kcap1564723501719_9657">
+            <saw:text>Cash Outflows</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39855" oldID="kcap1564723501719_9658">
+            <saw:text>RM Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3ffb36146489e573">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Out Flow - Corporate Overhead Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39856" oldID="kcap1564723501719_9659">
+            <saw:text>Cash Outflows</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39857" oldID="kcap1564723501719_9660">
+            <saw:text>Corporate Overhead Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cefd77b89dd75f4b5">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Out Flow - Lease Liability Amount&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:displayFormat>
+            <saw:formatSpec hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39858" oldID="kcap1564723501719_9661">
+            <saw:text>Cash Outflows</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39859" oldID="kcap1564723501719_9662">
+            <saw:text>Lease Liability Increase Amount</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c5b08a10cfe47e815">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Out Flow - Total Cash&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" backgroundColor="#EEEEEE">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:displayFormat>
+            <saw:formatSpec backgroundColor="#EEEEEE" hAlign="center" wrapText="true"/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39860" oldID="kcap1564723501719_9663">
+            <saw:text>Cash Outflows</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39861" oldID="kcap1564723501719_9664">
+            <saw:text>Total Cash Outflow</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce7804c23ef0789cd">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Net Cash Flow&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39862" oldID="kcap1564723501719_9665">
+            <saw:text>Net Cash Flow</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc3891e3aec206505">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Discounted Net Cash Flow&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:currency" commas="true" negativeType="paren" minDigits="2" maxDigits="2" currencyTag="loc:en-AU"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723694298_39863" oldID="kcap1564723501719_9666">
+            <saw:text>Gross VIU</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Run Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D DHF&quot;.&quot;DHF&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;MV Dim Managed Props&quot;.&quot;Uprn&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;Ownership Description&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;F Value In Use&quot;.&quot;MCA Priority Location&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">CAST(&quot;F Value In Use&quot;.&quot;Lease ID&quot; AS INT)</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder/>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Gross+VIU" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false" rowsPerPage="300" repeat="false" clientEventChannels="viu_uprn" clientEventEnabled="true" headingDisplay="table2Rows">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section" insertPageBreak="false" showBlankRows="false" headings="above">
+          <saw:displayFormat>
+            <saw:formatSpec wrapText="false"/>
+          </saw:displayFormat>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c83e8663ce91e69ce"/>
+            <saw:edgeLayer type="column" columnID="c531c5549330beb85" insertPageBreak="false">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="st_c531c5549330beb85" subTotalPosition="none">
+                    <saw:memberFormat>
+                      <saw:displayFormat>
+                        <saw:formatSpec wrapText="true"/>
+                      </saw:displayFormat>
+                      <saw:caption captionID="kcap1564723694298_39867" oldID="kcap1564723501719_9670">
+                        <saw:text>UPRN Total</saw:text>
+                      </saw:caption>
+                    </saw:memberFormat>
+                  </saw:displaySubTotal>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c8c5fb95654bb102e"/>
+            <saw:edgeLayer type="column" columnID="c676a5b28dab1a8cc" insertPageBreak="false"/>
+            <saw:edgeLayer type="column" columnID="c31ac4cb7162423d7"/>
+            <saw:edgeLayer type="column" columnID="cb14f497f504fd039"/>
+            <saw:edgeLayer type="column" columnID="c33045ba342e20efb">
+              <saw:headerFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec/>
+                </saw:displayFormat>
+              </saw:headerFormat>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c7810ad6d2aa9414c"/>
+            <saw:edgeLayer type="column" columnID="c775aeda6f5478ca3"/>
+            <saw:edgeLayer type="column" columnID="c8a9988b882d285c2"/>
+            <saw:edgeLayer type="column" columnID="c05ae1bac81f1e003"/>
+            <saw:edgeLayer type="column" columnID="c53e7ba652de85312"/>
+            <saw:edgeLayer type="column" columnID="c89f4f190d59e0af4"/>
+            <saw:edgeLayer type="column" columnID="c8b1d77dadbbc5748"/>
+            <saw:edgeLayer type="column" columnID="c97cc9e7fe8dfe340"/>
+            <saw:edgeLayer type="column" columnID="c0302b45ea2707fef"/>
+            <saw:edgeLayer type="column" columnID="ca62c114d6ced7790"/>
+            <saw:edgeLayer type="column" columnID="cf477a27e736e7e03"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c6eab11ff508106e5"/>
+            <saw:edgeLayer type="column" columnID="c6a2c876f59b31f9d"/>
+            <saw:edgeLayer type="column" columnID="cf3e7c90e0aa76b20"/>
+            <saw:edgeLayer type="column" columnID="cf28b9cdcdffa1464"/>
+            <saw:edgeLayer type="column" columnID="c4a2f5e7d9409ef7c"/>
+            <saw:edgeLayer type="column" columnID="c306c5a47c3868c29"/>
+            <saw:edgeLayer type="column" columnID="c0204fc6ad29fbbf3"/>
+            <saw:edgeLayer type="column" columnID="ccb4669aa5acff795"/>
+            <saw:edgeLayer type="column" columnID="c9f548f960c4afc9e"/>
+            <saw:edgeLayer type="column" columnID="cb87aa92e09e9401c"/>
+            <saw:edgeLayer type="column" columnID="c25da1dd9b6c94c41"/>
+            <saw:edgeLayer type="column" columnID="cf72a2d81c6eecdda"/>
+            <saw:edgeLayer type="column" columnID="caa53a7a0399334cf"/>
+            <saw:edgeLayer type="column" columnID="c91a01b8e86356e26"/>
+            <saw:edgeLayer type="column" columnID="c2cd0293b0984cea5"/>
+            <saw:edgeLayer type="column" columnID="c372f88961e07c3bd"/>
+            <saw:edgeLayer type="column" columnID="c5086c1a72c7c3ad1"/>
+            <saw:edgeLayer type="column" columnID="c13fa0d905ec3faf7"/>
+            <saw:edgeLayer type="column" columnID="cc0486bdc75f4d589"/>
+            <saw:edgeLayer type="column" columnID="c3ffb36146489e573"/>
+            <saw:edgeLayer type="column" columnID="cefd77b89dd75f4b5"/>
+            <saw:edgeLayer type="column" columnID="c5b08a10cfe47e815"/>
+            <saw:edgeLayer type="column" columnID="ce7804c23ef0789cd"/>
+            <saw:edgeLayer type="column" columnID="cc3891e3aec206505"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

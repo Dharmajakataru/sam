@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Work Orders&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb34f54592df56746">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="true">
+              <saw:actionLink actionLinkID="cb34f54592df56746_alae3670ee0005e0a7">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>requestTimestamp</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>1306383846371</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?requestTimestamp=@{1}&amp;propertyId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723655755_33348" oldID="kcap1564723651698_32689">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="cb34f54592df56746"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6f524814952480d0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;PROPERTY_STREET_ADDRESS&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c74985309e642637b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;ADDR_LINE2&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd09e0e5d8e582b97">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;ADDR_LINE3&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ccfe4132ebcf21f2a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;POST_CODE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca266045775ff862a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Management Area&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9cf7015f654c5442">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Repairs Area&quot;.&quot;Maintenance Area Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd3ce1f837eb347bf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property Desc&quot;.&quot;POWN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33329" oldID="kcap1564723651697_32670">
+            <saw:text>Dim Property Desc</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33330" oldID="kcap1564723651697_32671">
+            <saw:text>Ownership</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c866eaacf1b8330fb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;AGREEMENT_TYPE&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8cb7278eb6290c62">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;PIN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c83baedb3b7c55d4a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;Employee ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1ffe1492afff78c6">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;Current Tenant&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c61d4146034086680">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property Desc&quot;.&quot;ASST&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33331" oldID="kcap1564723651697_32672">
+            <saw:text>Dim Property Desc</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33332" oldID="kcap1564723651697_32673">
+            <saw:text>Asset Status</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cff83caace9c15e0b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs&quot;.&quot;Job Number&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8d1468b58d65c172">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs&quot;.&quot;JOB_DESCRIPTION&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c523a7f94f6c98c20">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Contractor&quot;.&quot;Contractor Name&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4c0c427dfb8306cf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs&quot;.&quot;REPORTING_STATUS&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c25ba58d51fd2bf8c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs&quot;.&quot;Priority Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd1b327545cabb8cf">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;REG_TO_COMPLETION_DAYS&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8f409cf57cdcf8f0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;KPI_1DAY&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd4238a1067ef4b70">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs Charge Types&quot;.&quot;Charge Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c03a8752b337caa3a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Maintenance Locations&quot;.&quot;Maint. Location Description&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33333" oldID="kcap1564723651697_32674">
+            <saw:text>D Maintenance Locations</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33334" oldID="kcap1564723651697_32675">
+            <saw:text>Location Description</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9f895049f92a3e40">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim SOR&quot;.&quot;Type Of Work Description&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c026ede0f3d138ff8">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim SOR&quot;.&quot;SOR Code&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb5c0f83f08479e88">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;REGD_DATE&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c247f474b49a8e892">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;Fact Job&quot;.&quot;Registered Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33335" oldID="kcap1564723651697_32676">
+            <saw:text>Fact Job</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33336" oldID="kcap1564723651697_32677">
+            <saw:text>Registered Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfe1c05ae1f4b234e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">YEAR(&quot;Fact Job&quot;.&quot;Registered Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33337" oldID="kcap1564723651697_32678">
+            <saw:text>Fact Job</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33338" oldID="kcap1564723651697_32679">
+            <saw:text>Registered Year</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6e43058795a480ef">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;Allocation Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7970320bab019e1d">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;Appointment Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce260c42a664d473b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;Completion Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c38ae4f885c5d636a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTHNAME(&quot;Fact Job&quot;.&quot;Completion Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33339" oldID="kcap1564723651697_32680">
+            <saw:text>Fact Job</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33340" oldID="kcap1564723651697_32681">
+            <saw:text>Completion Month</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ceaf18e14659b934b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">YEAR(&quot;Fact Job&quot;.&quot;Completion Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33341" oldID="kcap1564723651697_32682">
+            <saw:text>Fact Job</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655755_33342" oldID="kcap1564723651698_32683">
+            <saw:text>Completion Year</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd6ce1605368c3f15">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;Invoice Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3e880961b097905a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;Invoice Received Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c54a94dd902f36551">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;Approved Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf74acd09246dac31">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;Current Status Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:custom" customFormat="dd/MM/yyyy"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs&quot;.&quot;PRIORITY_CODE&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">EMERGENCY</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs Charge Types&quot;.&quot;CHARGE_CODE&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">R</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">RI</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">WI</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;AGREEMENT_TYPE&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">AS</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">MRA</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">SR</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="notIn">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs&quot;.&quot;REPORTING_STATUS&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">ALLOCATED</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">CANCELLED</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">OPEN</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      
+    <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow><saw:cvRow><saw:cvCell viewName="filtersView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Contractual+Reports" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" rowsPerPage="500" autoPreview="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t1" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cb34f54592df56746" aggRule="count">
+              <saw:levels>
+                <saw:level>
+                  <saw:displaySubTotal id="t2" subTotalPosition="none"/>
+                </saw:level>
+              </saw:levels>
+            </saw:edgeLayer>
+            <saw:edgeLayer type="column" columnID="c6f524814952480d0"/>
+            <saw:edgeLayer type="column" columnID="c74985309e642637b"/>
+            <saw:edgeLayer type="column" columnID="cd09e0e5d8e582b97"/>
+            <saw:edgeLayer type="column" columnID="ccfe4132ebcf21f2a"/>
+            <saw:edgeLayer type="column" columnID="ca266045775ff862a"/>
+            <saw:edgeLayer type="column" columnID="c9cf7015f654c5442"/>
+            <saw:edgeLayer type="column" columnID="cd3ce1f837eb347bf"/>
+            <saw:edgeLayer type="column" columnID="c866eaacf1b8330fb"/>
+            <saw:edgeLayer type="column" columnID="c8cb7278eb6290c62"/>
+            <saw:edgeLayer type="column" columnID="c83baedb3b7c55d4a"/>
+            <saw:edgeLayer type="column" columnID="c1ffe1492afff78c6"/>
+            <saw:edgeLayer type="column" columnID="c61d4146034086680"/>
+            <saw:edgeLayer type="column" columnID="cff83caace9c15e0b"/>
+            <saw:edgeLayer type="column" columnID="c8d1468b58d65c172"/>
+            <saw:edgeLayer type="column" columnID="c523a7f94f6c98c20"/>
+            <saw:edgeLayer type="column" columnID="c4c0c427dfb8306cf"/>
+            <saw:edgeLayer type="column" columnID="c25ba58d51fd2bf8c"/>
+            <saw:edgeLayer type="column" columnID="cd1b327545cabb8cf"/>
+            <saw:edgeLayer type="column" columnID="c8f409cf57cdcf8f0"/>
+            <saw:edgeLayer type="column" columnID="cd4238a1067ef4b70"/>
+            <saw:edgeLayer type="column" columnID="c03a8752b337caa3a"/>
+            <saw:edgeLayer type="column" columnID="c9f895049f92a3e40"/>
+            <saw:edgeLayer type="column" columnID="c026ede0f3d138ff8"/>
+            <saw:edgeLayer type="column" columnID="cb5c0f83f08479e88"/>
+            <saw:edgeLayer type="column" columnID="c247f474b49a8e892"/>
+            <saw:edgeLayer type="column" columnID="cfe1c05ae1f4b234e"/>
+            <saw:edgeLayer type="column" columnID="c6e43058795a480ef"/>
+            <saw:edgeLayer type="column" columnID="c7970320bab019e1d"/>
+            <saw:edgeLayer type="column" columnID="ce260c42a664d473b"/>
+            <saw:edgeLayer type="column" columnID="c38ae4f885c5d636a"/>
+            <saw:edgeLayer type="column" columnID="ceaf18e14659b934b"/>
+            <saw:edgeLayer type="column" columnID="cd6ce1605368c3f15"/>
+            <saw:edgeLayer type="column" columnID="c3e880961b097905a"/>
+            <saw:edgeLayer type="column" columnID="c54a94dd902f36551"/>
+            <saw:edgeLayer type="column" columnID="cf74acd09246dac31"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:filtersView" name="filtersView!1"/><saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Work Orders&quot;">
+    <saw:promptStep setWidthToAllPrompts="true" labelPosition="above">
+      <saw:individualPrompts>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c36" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;REGD_DATE&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723655755_33343" oldID="kcap1564723651698_32684">
+              <saw:text>Registered Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            <saw:promptDefaultValue>RV_LAST_WEEK</saw:promptDefaultValue>
+            <saw:promptDefaultValue>RV_CURRENT_DATE</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c34" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;Completion Date&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="between"/>
+          <saw:promptUIControl xsi:type="saw:calendar">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723655755_33344" oldID="kcap1564723651698_32685">
+              <saw:text>Completion Date</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="serverVariable" usingCodeValue="false">
+            <saw:promptDefaultValue>RV_LAST_WEEK</saw:promptDefaultValue>
+            <saw:promptDefaultValue>RV_CURRENT_DATE</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c35" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;AGREEMENT_TYPE&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723655755_33345" oldID="kcap1564723651698_32686">
+              <saw:text>Agreement Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="specificValue" usingCodeValue="false">
+            <saw:promptDefaultValue>AS</saw:promptDefaultValue>
+            <saw:promptDefaultValue>MRA</saw:promptDefaultValue>
+            <saw:promptDefaultValue>SR</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:specificChoices">
+            <saw:promptChoices>
+              <saw:promptChoice>
+                <saw:value>AS</saw:value>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:value>MRA</saw:value>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:value>SR</saw:value>
+              </saw:promptChoice>
+            </saw:promptChoices>
+          </saw:promptSource>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c37" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Jobs Charge Types&quot;.&quot;Charge Type&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723655755_33346" oldID="kcap1564723651698_32687">
+              <saw:text>Charge Type</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="specificValue" usingCodeValue="false">
+            <saw:promptDefaultValue>R</saw:promptDefaultValue>
+            <saw:promptDefaultValue>RI</saw:promptDefaultValue>
+            <saw:promptDefaultValue>WI</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:specificChoices">
+            <saw:promptChoices>
+              <saw:promptChoice>
+                <saw:value>R</saw:value>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:value>RI</saw:value>
+              </saw:promptChoice>
+              <saw:promptChoice>
+                <saw:value>WI</saw:value>
+              </saw:promptChoice>
+            </saw:promptChoices>
+          </saw:promptSource>
+        </saw:prompt>
+        <saw:prompt xsi:type="saw:columnFilterPrompt" columnID="c38" subjectArea="&quot;Work Orders&quot;" required="false">
+          <saw:formula>
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Job&quot;.&quot;KPI_1DAY&quot;</sawx:expr>
+          </saw:formula>
+          <saw:promptOperator op="in"/>
+          <saw:promptUIControl xsi:type="saw:multiSelect" maxChoices="-1" includeAllChoices="false">
+            <saw:customWidth width="120" using="custompixels"/>
+          </saw:promptUIControl>
+          <saw:label>
+            <saw:caption captionID="kcap1564723655755_33347" oldID="kcap1564723651698_32688">
+              <saw:text>KPI 1day</saw:text>
+            </saw:caption>
+          </saw:label>
+          <saw:promptDefaultValues type="specificValue" usingCodeValue="false">
+            <saw:promptDefaultValue>N</saw:promptDefaultValue>
+            <saw:promptDefaultValue>Y</saw:promptDefaultValue>
+            <saw:promptDefaultValue>ZNULL</saw:promptDefaultValue>
+            <saw:promptDefaultValue>*)nqgtn(*</saw:promptDefaultValue>
+          </saw:promptDefaultValues>
+          <saw:constrainPrompt type="none"/>
+          <saw:setPromptVariables>
+            <saw:setPromptVariable location="value" type="none" variableFormula=""/>
+          </saw:setPromptVariables>
+          <saw:promptSource xsi:type="saw:allChoices"/>
+        </saw:prompt>
+      </saw:individualPrompts>
+      <saw:customWidth width="120" using="custompixels"/>
+      <saw:title/>
+    </saw:promptStep>
+  </saw:prompts>
+</saw:report>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Managed Properties&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c4a3a9eec8a8cdf68">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when &quot;Dim Managed Properties&quot;.&quot;DHF Area&quot; in (&#39;Cairns&#39;,&#39;Townsville&#39;) then &#39;Nth QLD&#39;  when &quot;Dim Managed Properties&quot;.&quot;DHF Area&quot; in (&#39;Brisbane&#39;,&#39;Gold Coast&#39;,&#39;Ipswich&#39;,&#39;Toowoomba&#39;) then &#39;Sth QLD&#39; when &quot;Dim Managed Properties&quot;.&quot;DHF Area&quot; in (&#39;Glenbrook&#39;,&#39;Liverpool&#39;,&#39;Richmond&#39;,&#39;Sydney&#39;,&#39;Newcastle&#39;,&#39;Northern NSW&#39;,&#39;Singleton&#39;) then &#39;Nth NSW&#39; when &quot;Dim Managed Properties&quot;.&quot;DHF Area&quot; in (&#39;Nowra&#39;,&#39;Canberra&#39;,&#39;Wagga Wagga&#39;,&#39;Wodonga&#39;) then &#39;Sth NSW&#39; when &quot;Dim Managed Properties&quot;.&quot;DHF Area&quot; in (&#39;East Sale&#39;,&#39;Frankston&#39;,&#39;Hobart&#39;,&#39;Melbourne&#39;,&#39;Puckapunyal&#39;) then &#39;Vic&#39;  when &quot;Dim Managed Properties&quot;.&quot;DHF Area&quot; in (&#39;Adelaide&#39;) then &#39;SA&#39; when &quot;Dim Managed Properties&quot;.&quot;DHF Area&quot; in (&#39;Broome&#39;,&#39;Exmouth&#39;,&#39;Geraldton&#39;,&#39;Karratha&#39;,&#39;Pearce&#39;,&#39;Perth&#39;,&#39;Rockingham&#39;) then &#39;WA&#39;  when &quot;Dim Managed Properties&quot;.&quot;DHF Area&quot; in (&#39;Darwin&#39;,&#39;Pine Gap - Alice Springs&#39;,&#39;Tindal&#39;) then &#39;NT&#39; ELSE  &quot;Dim Managed Properties&quot;.&quot;DHF Area&quot; END</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655698_33322" oldID="kcap1564723651634_32663">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655699_33323" oldID="kcap1564723651634_32664">
+            <saw:text>Region</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c39ed9cade4cd47fe">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">CASE WHEN &quot;Dim Managed Properties&quot;.&quot;Vacancy Flag&quot; = &#39;Y&#39; THEN &#39;Houses Vacant&#39; else &#39;Houses Occupied&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655699_33324" oldID="kcap1564723651634_32665">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655699_33325" oldID="kcap1564723651634_32666">
+            <saw:text>Vacancy Flag</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c67d66a20ddd04f84" aggRule="count">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;Dim Managed Properties&quot;.&quot;UPRN&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655699_33326" oldID="kcap1564723651634_32667">
+            <saw:text>Dim Managed Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723655699_33327" oldID="kcap1564723651634_32668">
+            <saw:text>UPRN</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Property Class&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">1</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Asset Status&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">AC</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">AS</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">HO</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">OM</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">OR</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">PD</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">PLO</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">PS</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">TLO</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">TS</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Managed Properties&quot;.&quot;Rent Bill&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">DOD</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" helpUrl="https://intranet.dha.gov.au/pages/viewpage.action?spaceKey=BSTARC&amp;title=Contractual+Reports" startedDisplay="dateTime"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c67d66a20ddd04f84"/>
+            <saw:edgeLayer type="column" columnID="c39ed9cade4cd47fe"/>
+            <saw:edgeLayer type="column" columnID="c4a3a9eec8a8cdf68"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c4a3a9eec8a8cdf68"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c39ed9cade4cd47fe"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c67d66a20ddd04f84"/>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

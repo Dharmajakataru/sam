@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Corporate Property&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce2d52b925ed88cd2">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Vacancy Properties&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cf1c501e1179b371e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(    avg(case when &quot;Fact Vacancy Properties&quot;.&quot;MWD_RA&quot; is not null then &quot;Fact Vacancy Properties&quot;.&quot;MWD_RA&quot; else 0 end by &quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot;, &quot;Fact Vacancy Properties&quot;.&quot;Management Area&quot;, &quot;Fact Vacancy Properties&quot;.&quot;DHF Area&quot;)    by &quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot;, &quot;Fact Vacancy Properties&quot;.&quot;Management Area&quot;   )   /   (sum(case when &quot;Fact Vacancy Properties&quot;.&quot;MWD_RA&quot; is not null then &quot;Fact Vacancy Properties&quot;.&quot;TOTAL_DOD_OCCUPIED&quot; else 0 end by &quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot;, &quot;Fact Vacancy Properties&quot;.&quot;Management Area&quot;)    + sum(    avg(case when &quot;Fact Vacancy Properties&quot;.&quot;MWD_RA&quot; is not null then &quot;Fact Vacancy Properties&quot;.&quot;MWD_RA&quot; else 0 end by &quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot;, &quot;Fact Vacancy Properties&quot;.&quot;Management Area&quot;, &quot;Fact Vacancy Properties&quot;.&quot;DHF Area&quot;)    by &quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot;, &quot;Fact Vacancy Properties&quot;.&quot;Management Area&quot;   )  ) * 100</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="cf1c501e1179b371e_alb40fcb5bf20383e2">
+                <saw:action>
+                  <saw:actionName>Invoke a Browser Script</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Report</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Table</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="3" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Column</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="4" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Value</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="5" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Table</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="6" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Column</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="7" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                      <saw:prompt>Value</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="1" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Vacancy/KPI/PropertyListNonDod</saw:value>
+                    </saw:assign>
+                    <saw:assign name="2" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Vacancy Source Management Area</saw:value>
+                    </saw:assign>
+                    <saw:assign name="3" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Management Area</saw:value>
+                    </saw:assign>
+                    <saw:assign name="5" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Vacancy Source</saw:value>
+                    </saw:assign>
+                    <saw:assign name="6" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>MWD_RA_YN</saw:value>
+                    </saw:assign>
+                    <saw:assign name="7" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>Y</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>USERSCRIPT.customGoNavEx</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723778661_55677" oldID="kcap1564723550570_21907">
+                  <saw:text>View Property Details</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="4" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="ce2d52b925ed88cd2"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723778660_55671" oldID="kcap1564723550570_21901">
+            <saw:text>Fact Vacancy Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723778661_55672" oldID="kcap1564723550570_21902">
+            <saw:text>Actual</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbe371dfac3f26761">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">15</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723778661_55673" oldID="kcap1564723550570_21903">
+            <saw:text>Fact Vacancy Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723778661_55674" oldID="kcap1564723550570_21904">
+            <saw:text>Target</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cbd5f7d99b9e58a6c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&#39;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="less">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cf1c501e1179b371e"/>
+                    <sawx:expr xsi:type="xsd:decimal">12</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/general/checkmark.png" wrapText="true" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="between">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cf1c501e1179b371e"/>
+                    <sawx:expr xsi:type="xsd:decimal">12</sawx:expr>
+                    <sawx:expr xsi:type="xsd:decimal">14.99</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/icons_l/02_warning.png" wrapText="true" imagePlacement="left,imageOnly"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="greater">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="cf1c501e1179b371e"/>
+                    <sawx:expr xsi:type="xsd:decimal">15</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/icons_l/01_alert.png" imagePlacement="left,imageOnly" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723778661_55675" oldID="kcap1564723550570_21905">
+            <saw:text>Fact Vacancy Properties</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723778661_55676" oldID="kcap1564723550570_21906">
+            <saw:text>Status</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="notNull">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Vacancy Properties&quot;.&quot;MWD_RA&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Fact Vacancy Properties&quot;.&quot;RUN_DATE&quot;</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_DFL_DATE</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/KPI+-+Vacancy">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723778660_55669" oldID="kcap1564723550570_21899">
+          <saw:text>MWDRA KPI Drilldown</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="ce2d52b925ed88cd2"/>
+            <saw:edgeLayer type="column" columnID="cf1c501e1179b371e"/>
+            <saw:edgeLayer type="column" columnID="cbe371dfac3f26761"/>
+            <saw:edgeLayer type="column" columnID="cbd5f7d99b9e58a6c"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="lineBar" subtype="basic" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="640">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="ce2d52b925ed88cd2"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y1" riserType="bar">
+            <saw:columnRef columnID="cf1c501e1179b371e"/>
+          </saw:column>
+          <saw:column measureType="y2" riserType="line">
+            <saw:columnRef columnID="cbe371dfac3f26761"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page/>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723778660_55670" oldID="kcap1564723550570_21900">
+          <saw:text>&lt;div id=&quot;drill-into&quot; style=&quot;position:relative&quot;&gt;
+  &lt;img src=&quot;../custom_styles/s_dha/images/drillthrough.png&quot; style=&quot;width:24px; height:24px;top:-65px; left:10px; position:absolute; z-index:10;&quot; title=&quot;Click on graph to drill through&quot; alt=&quot;Click on graph to drill through&quot; /&gt;
+&lt;/div&gt;
+
+&lt;script =&quot;text/javascript&quot;&gt;
+(function() {
+  // log all calls to setArray
+  var proxied = PTPCAct;
+  PTPCAct = function() {
+    console.log(this, arguments );
+    lstClick=arguments[1];
+    return proxied.apply( this, arguments );
+  };
+})();
+
+(function() {
+  // log all calls to setArray
+  var proxied = PTPCHAct;
+  PTPCHAct = function() {
+    console.log(this, arguments );
+    lstClick=arguments[1];
+    return proxied.apply( this, arguments );
+  };
+})();
+
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

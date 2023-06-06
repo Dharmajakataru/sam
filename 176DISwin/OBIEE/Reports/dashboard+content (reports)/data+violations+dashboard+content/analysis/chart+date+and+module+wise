@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Data Violations&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd413afaabf763e9c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;02 - Dim Source Modules&quot;.&quot;Source Module Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c96b50d2ad0538e33">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;10 - Dim Period Details&quot;.&quot;Full Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:date" biFormat="dateShort"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723672358_35481" oldID="kcap1564723488576_6584">
+            <saw:text>10 - Dim Period Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723672358_35482" oldID="kcap1564723488576_6585">
+            <saw:text>Dates</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca9eac484023561d7">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTH(&quot;10 - Dim Period Details&quot;.&quot;Full Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c6832acb2e9407378">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">YEAR(&quot;10 - Dim Period Details&quot;.&quot;Full Date&quot;)</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c78fb9559fd92cd15">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">@{RV_CURRENT_DATE}</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723672358_35483" oldID="kcap1564723488576_6586">
+            <saw:text>10 - Dim Period Details</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723672358_35484" oldID="kcap1564723488576_6587">
+            <saw:text>RV_CURRENT_DATE</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cfd18b6a80d9ab62e">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;60 - Fact Violation Results&quot;.&quot;No Of Violations&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">MONTH(&quot;10 - Dim Period Details&quot;.&quot;Full Date&quot;)</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_CURRENT_CAL_MONTH_NO</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">YEAR(&quot;10 - Dim Period Details&quot;.&quot;Full Date&quot;)</sawx:expr>
+          <sawx:expr xsi:type="sawx:variable" op="server">RV_CURRENT_CAL_YEAR</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual">
+          <sawx:expr xsi:type="sawx:sqlExpression">VALUEOF(RV_CURRENT_DATE)</sawx:expr>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;10 - Dim Period Details&quot;.&quot;Full Date&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="true" groupoperations="true" calcitemoperations="true" showhidesubtotal="true" showhiderunningsum="true" inclexclcolumns="true"/>
+  <saw:views currentView="0" textDelivery="compoundView!1" includeNewColumns="true" valueHierarchyIndent="false" parentsBefore="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="narrativeView!1">
+            <saw:displayFormat>
+              <saw:formatSpec hAlign="left"/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="dvtchart!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="line" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="1100">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c96b50d2ad0538e33"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="cfd18b6a80d9ab62e"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:seriesGenerator>
+            <saw:columnRef columnID="cd413afaabf763e9c"/>
+          </saw:seriesGenerator>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+      </saw:selections>
+      <saw:legendFormat position="default" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="Y1">
+          <saw:scaleMarkers/>
+          <saw:labels/>
+          <saw:textFormat/>
+        </saw:axisFormat>
+        <saw:axisFormat axis="X" displayScaleLabels="true">
+          <saw:labels rotate="-90" rotateLabels="true" stagger="false" abbreviation="default" skipLabels="true"/>
+          <saw:textFormat/>
+          <saw:title mode="auto">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+      <saw:seriesFormats>
+        <saw:seriesFormatGroup name="line">
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="1"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#336633" lineStyle="plain" lineWidth="2" symbol="plus"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="2"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#CB3200" lineStyle="plain" lineWidth="2" symbol="plus"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="3"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#0000FF" lineStyle="plain" lineWidth="2" symbol="plus"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="4"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#003265" lineStyle="plain" lineWidth="2" symbol="plus"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+          <saw:seriesFormatRule>
+            <saw:seriesCondition position="5"/>
+            <saw:visualFormats>
+              <saw:visualFormat color="#FF0000" lineStyle="plain" lineWidth="2" symbol="plus"/>
+            </saw:visualFormats>
+          </saw:seriesFormatRule>
+        </saw:seriesFormatGroup>
+      </saw:seriesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:narrativeView" name="narrativeView!1">
+      <saw:narrative rowCount="1">
+        <saw:caption fmt="text" captionID="kcap1564723672358_35480" oldID="kcap1564723488576_6583">
+          <saw:text>Date wise modular violations for @{biServer.variables[&#39;RV_CURRENT_CAL_MONTH_NO&#39;]}-@{biServer.variables[&#39;RV_CURRENT_CAL_YEAR&#39;]}</saw:text>
+        </saw:caption>
+      </saw:narrative>
+      <saw:displayFormat>
+        <saw:formatSpec fontColor="#000080" fontStyle="bold"/>
+      </saw:displayFormat>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+  <saw:prompts scope="report" subjectArea="&quot;Data Violations&quot;"/>
+</saw:report>

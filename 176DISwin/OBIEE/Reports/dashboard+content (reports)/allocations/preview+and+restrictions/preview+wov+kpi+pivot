@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Corporate Property&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c53bc24aa5b5c0afb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPDIFF(SQL_TSI_DAY,&quot;Dim Preview Access&quot;.&quot;Date Preview Established&quot;,CURRENT_DATE)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723630082_29106" oldID="kcap1564723462626_2528">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723630082_29107" oldID="kcap1564723462626_2529">
+            <saw:text>Actual</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="paren" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats/>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c0047204425783960">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&#39;|| CHAR(62) ||case when TIMESTAMPDIFF(SQL_TSI_DAY,&quot;Dim Preview Access&quot;.&quot;Date Preview Established&quot;,CURRENT_DATE)-3 &gt; 0 then  &#39;Preview Access &gt; 3 Days&#39; else &#39;Preview Access &lt;= 3 Days&#39; end</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading/>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723630082_29108" oldID="kcap1564723462626_2530">
+            <saw:text>Watchlist Description</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c0047204425783960_al81fb1533b9b0bc14">
+                  <saw:action>
+                    <saw:actionName>Preview WOV KPI Report Drill</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Allocations/Preview and Restrictions/Preview WOV KPI Report Drill</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723630082_29118" oldID="kcap1564723462626_2540">
+                    <saw:text>Preview Drill</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:text" textFormat="html"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c0047204425783960_al8ee6231edd286ad7">
+                <saw:action>
+                  <saw:actionName>Preview WOV KPI Report Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/Preview and Restrictions/Preview WOV KPI Report Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723630082_29114" oldID="kcap1564723462626_2536">
+                  <saw:text>Preview Detail Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c1238db7f08c23a5c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">sum(1)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723630082_29109" oldID="kcap1564723462626_2531">
+            <saw:text>KPI</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action" hAlign="center">
+            <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="paren" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c1238db7f08c23a5c_al00b6f3ab948dfa76">
+                <saw:action>
+                  <saw:actionName>Preview WOV KPI Report Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/Preview and Restrictions/Preview WOV KPI Report Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723630082_29115" oldID="kcap1564723462626_2537">
+                  <saw:text>Preview Report Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+          <saw:conditionalDisplayFormats>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0047204425783960"/>
+                    <sawx:expr xsi:type="xsd:string">&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&gt;Preview Access &lt;= 3 Days</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/icons_l/02_warning.png" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+            <saw:conditionalDisplayFormat>
+              <saw:formatRule>
+                <saw:condition>
+                  <sawx:expr xsi:type="sawx:comparison" op="equal">
+                    <sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0047204425783960"/>
+                    <sawx:expr xsi:type="xsd:string">&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&gt;Preview Access &gt; 3 Days</sawx:expr>
+                  </sawx:expr>
+                </saw:condition>
+                <saw:formatSpec image="fmap:meters/status/icons_l/01_alert.png" wrapText="true"/>
+              </saw:formatRule>
+            </saw:conditionalDisplayFormat>
+          </saw:conditionalDisplayFormats>
+        </saw:displayFormat>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c8760ef2da0c15b31">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" width="100px" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c8760ef2da0c15b31_albf7479af6c4f7fb8">
+                <saw:action>
+                  <saw:actionName>Preview WOV KPI Report Drill</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                      <saw:prompt>__navigateToBIContent__</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments>
+                    <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                      <saw:value>/shared/Components/Dashboard Content/Allocations/Preview and Restrictions/Preview WOV KPI Report Drill</saw:value>
+                    </saw:assign>
+                  </saw:assignments>
+                  <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                    <saw:functionName>__navigateToBIContent__</saw:functionName>
+                    <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                    <saw:scriptPath/>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723630082_29116" oldID="kcap1564723462626_2538">
+                  <saw:text>Preview Drill</saw:text>
+                </saw:caption>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723630082_29110" oldID="kcap1564723462626_2532">
+            <saw:text>Dim Property</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec interaction="action">
+              <saw:actionLinks showPopupMenuForOneLink="false">
+                <saw:actionLink actionLinkID="c8760ef2da0c15b31_al26c5d901fac42b7b">
+                  <saw:action>
+                    <saw:actionName>Preview WOV KPI Report Drill</saw:actionName>
+                    <saw:parameters allowExtraParameters="true">
+                      <saw:parameter name="__navigateToBIContent__" type="string" mandatory="true" removable="true" order="999" multiValues="false">
+                        <saw:prompt>__navigateToBIContent__</saw:prompt>
+                        <saw:description/>
+                      </saw:parameter>
+                    </saw:parameters>
+                    <saw:assignments>
+                      <saw:assign name="__navigateToBIContent__" fixed="true" hidden="true" parentFixed="false" parentHidden="false" xsi:type="saw:stringAssign">
+                        <saw:value>/shared/Components/Dashboard Content/Allocations/Preview and Restrictions/Preview WOV KPI Report Drill</saw:value>
+                      </saw:assign>
+                    </saw:assignments>
+                    <saw:implementation xsi:type="saw:ScriptActionType" executeOnClient="true">
+                      <saw:functionName>__navigateToBIContent__</saw:functionName>
+                      <saw:scriptLanguage>JScript</saw:scriptLanguage>
+                      <saw:scriptPath/>
+                    </saw:implementation>
+                    <saw:clientImplementation>
+                      <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                    </saw:clientImplementation>
+                  </saw:action>
+                  <saw:caption captionID="kcap1564723630082_29119" oldID="kcap1564723462626_2541">
+                    <saw:text>Preview Drill</saw:text>
+                  </saw:caption>
+                </saw:actionLink>
+              </saw:actionLinks>
+            </saw:formatSpec>
+          </saw:displayFormat>
+          <saw:caption fmt="html" captionID="kcap1564723630082_29111" oldID="kcap1564723462626_2533">
+            <saw:text>Losing HMC</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cea0dd87cd8f4b68f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Preview Access&quot;.&quot;Employee ID&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c29c1b9d9bf278550">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when TIMESTAMPDIFF(SQL_TSI_DAY,&quot;Dim Preview Access&quot;.&quot;Date Preview Established&quot;,CURRENT_DATE)-3 &gt; 0 then 2 else 1 end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723630082_29112" oldID="kcap1564723462626_2534">
+            <saw:text>Dim Preview Access</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723630082_29113" oldID="kcap1564723462626_2535">
+            <saw:text>Sort</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:comparison" op="equal">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;Current Tenant&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">Y</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;Housing Solution&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">AS</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">MRA</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">SR</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="null">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Tenancy&quot;.&quot;Vacancy Date&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:sql">&quot;Dim Tenancy&quot;.&quot;Occupancy Date&quot; &lt;= current_date</sawx:expr>
+        <sawx:expr xsi:type="sawx:sql">&quot;Dim Preview Access&quot;.&quot;Inactive Date&quot; &gt; current_date or &quot;Dim Preview Access&quot;.&quot;Inactive Date&quot;  is null</sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="greater">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Preview Access&quot;.&quot;Bedroom Entitlement&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c0047204425783960" direction="descending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="pivotTableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+      <saw:title>
+        <saw:caption fmt="text" captionID="kcap1564723630082_29105" oldID="kcap1564723462626_2527">
+          <saw:text>Preview Without Vacancy</saw:text>
+        </saw:caption>
+      </saw:title>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c53bc24aa5b5c0afb"/>
+            <saw:edgeLayer type="column" columnID="c0047204425783960"/>
+            <saw:edgeLayer type="column" columnID="cf47801aaf69421b9"/>
+            <saw:edgeLayer type="column" columnID="cd077bbec01d68019"/>
+            <saw:edgeLayer type="column" columnID="cf8f816653225ed4e"/>
+            <saw:edgeLayer type="column" columnID="c8b7a58111ef159ac"/>
+            <saw:edgeLayer type="column" columnID="c1238db7f08c23a5c"/>
+            <saw:edgeLayer type="column" columnID="c8760ef2da0c15b31"/>
+            <saw:edgeLayer type="column" columnID="c1039a2a9507d3f8e"/>
+            <saw:edgeLayer type="column" columnID="c1da93f33c4c89c5d"/>
+            <saw:edgeLayer type="column" columnID="c29c1b9d9bf278550"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c53bc24aa5b5c0afb"/>
+        <saw:measure columnID="c0047204425783960"/>
+        <saw:measure columnID="cf47801aaf69421b9"/>
+        <saw:measure columnID="cd077bbec01d68019"/>
+        <saw:measure columnID="cf8f816653225ed4e"/>
+        <saw:measure columnID="c8b7a58111ef159ac"/>
+        <saw:measure columnID="c1238db7f08c23a5c"/>
+      </saw:measuresList>
+    </saw:view>
+    <saw:view xsi:type="saw:pivotTableView" name="pivotTableView!1">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="gt_row" grandTotalPosition="after"/>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c8760ef2da0c15b31"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column">
+          <saw:displayGrandTotals>
+            <saw:displayGrandTotal id="t2" grandTotalPosition="after">
+              <saw:memberFormat>
+                <saw:displayFormat>
+                  <saw:formatSpec wrapText="true" vAlign="middle"/>
+                </saw:displayFormat>
+                <saw:caption captionID="kcap1564723630082_29117" oldID="kcap1564723462626_2539">
+                  <saw:text>Total</saw:text>
+                </saw:caption>
+              </saw:memberFormat>
+            </saw:displayGrandTotal>
+          </saw:displayGrandTotals>
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c29c1b9d9bf278550"/>
+            <saw:edgeLayer type="column" columnID="c0047204425783960"/>
+          </saw:edgeLayers>
+        </saw:edge>
+      </saw:edges>
+      <saw:measuresList>
+        <saw:measure columnID="c1238db7f08c23a5c" aggRule="count">
+          <saw:memberFormat>
+            <saw:displayFormat>
+              <saw:formatSpec wrapText="true"/>
+            </saw:displayFormat>
+          </saw:memberFormat>
+        </saw:measure>
+      </saw:measuresList>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Allocations&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c82bd162db1736b00">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Checkbox&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca313020a6e1bbb60">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Actioned Comment&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <sawwb:writeBack xmlns:sawwb="com.siebel.analytics.web/writeback/v1" required="false" xsi:type="sawwb:editBox" inputSize="50" inputHeight="1"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c42670a672e3b71ed">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">VALUEOF(NQ_SESSION.USER)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29430" oldID="kcap1564723464251_2838">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29431" oldID="kcap1564723464251_2839">
+            <saw:text>User</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd6a6310b7f1b8d81">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">cast(DAYOFMONTH(&quot;D Rdy Dt Changes&quot;.&quot;Report Date&quot;) as char(2))  || &#39;-&#39; || MONTHNAME(&quot;D Rdy Dt Changes&quot;.&quot;Report Date&quot;) || &#39;-&#39; || cast(YEAR(&quot;D Rdy Dt Changes&quot;.&quot;Report Date&quot;) as char(4))</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" visibility="hidden"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29432" oldID="kcap1564723464251_2840">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29433" oldID="kcap1564723464251_2841">
+            <saw:text>Report Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c21d3792e9bc36875">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Property Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true" interaction="action">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+            <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+              <saw:actionLink actionLinkID="c21d3792e9bc36875_al0aaa6dcfdcd981da">
+                <saw:action>
+                  <saw:actionName>Navigate - @[hsmproperty]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>propertyId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[hsmproperty]?propertyId=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723631657_29456" oldID="kcap1564723464251_2864">
+                  <saw:text>View Property in HSM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c21d3792e9bc36875"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29434" oldID="kcap1564723464251_2842">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29435" oldID="kcap1564723464251_2843">
+            <saw:text>Property ID</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c40f847ac7b163b8c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Management Area&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29436" oldID="kcap1564723464251_2844">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29437" oldID="kcap1564723464251_2845">
+            <saw:text>HMC</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c12910c9ed04e729b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Rent Area Desc&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29438" oldID="kcap1564723464251_2846">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29439" oldID="kcap1564723464251_2847">
+            <saw:text>Rent Area</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ca34c031de2b7054b">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Reason Test Failed&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9df599e936455abb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Employee Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c9df599e936455abb_ale4722a240f9f9ef5">
+                <saw:action>
+                  <saw:actionName>Navigate - @[clmmember]</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>employeeId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[clmmember]?employeeId=@{1}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723631657_29457" oldID="kcap1564723464251_2865">
+                  <saw:text>View in CLM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c9df599e936455abb"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29440" oldID="kcap1564723464251_2848">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29441" oldID="kcap1564723464251_2849">
+            <saw:text>Employee ID</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce5fc7908f7de133f">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Rank&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c12a68495ecc69c8a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Surname&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c09c45893538f6a44">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Occupying Case Id&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+            <saw:actionLinks showPopupMenuForOneLink="false">
+              <saw:actionLink actionLinkID="c09c45893538f6a44_aldc395bb1cac6fc7b">
+                <saw:action>
+                  <saw:actionName>Navigate - @[clm]/member/housing/summary.action</saw:actionName>
+                  <saw:parameters allowExtraParameters="true">
+                    <saw:parameter name="1" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>employeeId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                    <saw:parameter name="2" type="string" mandatory="false" removable="true" order="999" multiValues="false">
+                      <saw:prompt>afrId</saw:prompt>
+                      <saw:description/>
+                    </saw:parameter>
+                  </saw:parameters>
+                  <saw:assignments/>
+                  <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                    <saw:url aliasedLocation="true">@[clm]/member/housing/summary.action?employeeId=@{1}&amp;afrId=@{2}</saw:url>
+                    <saw:request>GET</saw:request>
+                  </saw:implementation>
+                  <saw:clientImplementation>
+                    <saw:customisation invokeConfirmation="false" openNewWindow="true"/>
+                  </saw:clientImplementation>
+                </saw:action>
+                <saw:caption captionID="kcap1564723631657_29458" oldID="kcap1564723464251_2866">
+                  <saw:text>View in CLM</saw:text>
+                </saw:caption>
+                <saw:paramMapping>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c9df599e936455abb"/>
+                    </saw:mapping>
+                  </saw:assign>
+                  <saw:assign xsi:type="saw:anyTypeAssign" name="2" fixed="true" hidden="true">
+                    <saw:mapping xsi:type="saw:contextColumnMappingType">
+                      <sawx:columnRefExpr columnID="c09c45893538f6a44"/>
+                    </saw:mapping>
+                  </saw:assign>
+                </saw:paramMapping>
+              </saw:actionLink>
+            </saw:actionLinks>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29442" oldID="kcap1564723464251_2850">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29443" oldID="kcap1564723464251_2851">
+            <saw:text>Occupying Case ID</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cb659a4c4de15af00">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Rent Bill Client&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29444" oldID="kcap1564723464251_2852">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29445" oldID="kcap1564723464251_2853">
+            <saw:text>Housing Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2c1beb4763fe5659">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Occupancy Date&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c801f9284c5cf8bc4">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Old Ready Date&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29446" oldID="kcap1564723464251_2854">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29447" oldID="kcap1564723464251_2855">
+            <saw:text>Previous Ready Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c40b09be023f6153a">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;N Rdy Dt&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29448" oldID="kcap1564723464251_2856">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29449" oldID="kcap1564723464251_2857">
+            <saw:text>New Ready Date</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c527e129234c51a44">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Days Chnged At Rdy Dt&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29450" oldID="kcap1564723464251_2858">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29451" oldID="kcap1564723464251_2859">
+            <saw:text>RD Days Changed</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c13e841cb7971a237">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">TIMESTAMPDIFF(SQL_TSI_DAY,&quot;D Rdy Dt Changes&quot;.&quot;Report Date&quot;,CURRENT_DATE)</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29452" oldID="kcap1564723464251_2860">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29453" oldID="kcap1564723464251_2861">
+            <saw:text>No of Days on Report</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cd1995e061411a559">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&#39;|| CHAR(62) ||case when TIMESTAMPDIFF(SQL_TSI_DAY,&quot;D Rdy Dt Changes&quot;.&quot;Report Date&quot;, CURRENT_DATE)&gt; 7 then  &#39;Dates Require Investigation &gt; 7 Days&#39; Else &#39;Dates Require Investigation &lt;= 7 Days&#39; End</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec visibility="hidden" suppress="suppress" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29454" oldID="kcap1564723464251_2862">
+            <saw:text>D Rdy Dt Changes</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723631657_29455" oldID="kcap1564723464251_2863">
+            <saw:text>Num of Days</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Management Area&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Property Id&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:comparison" op="null">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;D Rdy Dt Changes&quot;.&quot;Checkbox&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&#39;&lt;img src=&quot;../custom_styles/sk_dha/catalog/kpi_ena.png&quot; title=&quot;KPI&quot;&#39;|| CHAR(62) ||case when TIMESTAMPDIFF(SQL_TSI_DAY,&quot;D Rdy Dt Changes&quot;.&quot;Report Date&quot;, CURRENT_DATE)&gt; 7 then  &#39;Dates Require Investigation &gt; 7 Days&#39; Else &#39;Dates Require Investigation &lt;= 7 Days&#39; End</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c9df599e936455abb" direction="ascending"/>
+      <saw:columnOrderRef columnID="c13e841cb7971a237" direction="descending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="titleView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!1"/>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+        <saw:cvRow>
+          <saw:cvCell viewName="htmlview!2"/>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" helpUrl="https://intranet.dha.gov.au/display/BSTARC/Watchlists"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1">
+      <saw:displayFormat>
+        <saw:formatSpec>
+          <sawwb:writeBack xmlns:sawwb="com.siebel.analytics.web/writeback/v1" xsi:type="sawwb:tableProperties" enabled="true" toggleTableMode="false" templateName="d_rdy_dt_changes_upd" useTemplate="true" buttonPos="right"/>
+        </saw:formatSpec>
+      </saw:displayFormat>
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c82bd162db1736b00"/>
+            <saw:edgeLayer type="column" columnID="c42670a672e3b71ed"/>
+            <saw:edgeLayer type="column" columnID="cd6a6310b7f1b8d81"/>
+            <saw:edgeLayer type="column" columnID="c21d3792e9bc36875"/>
+            <saw:edgeLayer type="column" columnID="c40f847ac7b163b8c"/>
+            <saw:edgeLayer type="column" columnID="c12910c9ed04e729b"/>
+            <saw:edgeLayer type="column" columnID="ca34c031de2b7054b"/>
+            <saw:edgeLayer type="column" columnID="c9df599e936455abb"/>
+            <saw:edgeLayer type="column" columnID="ce5fc7908f7de133f"/>
+            <saw:edgeLayer type="column" columnID="c12a68495ecc69c8a"/>
+            <saw:edgeLayer type="column" columnID="c09c45893538f6a44"/>
+            <saw:edgeLayer type="column" columnID="cb659a4c4de15af00"/>
+            <saw:edgeLayer type="column" columnID="c2c1beb4763fe5659"/>
+            <saw:edgeLayer type="column" columnID="c801f9284c5cf8bc4"/>
+            <saw:edgeLayer type="column" columnID="c40b09be023f6153a"/>
+            <saw:edgeLayer type="column" columnID="c527e129234c51a44"/>
+            <saw:edgeLayer type="column" columnID="c13e841cb7971a237"/>
+            <saw:edgeLayer type="column" columnID="ca313020a6e1bbb60"/>
+            <saw:edgeLayer type="column" columnID="cd1995e061411a559"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!1">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723631656_29428" oldID="kcap1564723464251_2836">
+          <saw:text>&lt;script type=&quot;text/javascript&quot; src=&quot;../custom_styles/js/dha/dha_custom.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+function dha_apply() {
+    var applyButton;
+	
+	var els = document.getElementsByTagName(&quot;A&quot;);
+	for (i = 0; i &lt; els.length; i++) {
+		if(els[i].innerHTML == &quot;Apply&quot;) {
+			applyButton = els[i];
+		}
+	}
+
+	if(applyButton) {
+		applyButton.click();
+	} else {
+		alert(&quot;No Apply button found&quot;);
+	}
+}
+
+&lt;/script&gt; 
+&lt;input value=&quot;Apply Comments&quot; type=&quot;button&quot; onclick=&quot;dha_apply()&quot;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+    <saw:view xsi:type="saw:htmlview" name="htmlview!2">
+      <saw:staticText>
+        <saw:caption fmt="html" captionID="kcap1564723631657_29429" oldID="kcap1564723464251_2837">
+          <saw:text>&lt;script type=&quot;text/javascript&quot;&gt;
+dha_hideWriteBackButtons();
+&lt;/script&gt;</saw:text>
+        </saw:caption>
+      </saw:staticText>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>  &lt;style&gt;
+  p{color:grey}
+  ,ErrorTitle{color:red;font-size:20px}
+  ,ResultLinksCell{display:none}
+  &lt;/style&gt;  
+  &lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>

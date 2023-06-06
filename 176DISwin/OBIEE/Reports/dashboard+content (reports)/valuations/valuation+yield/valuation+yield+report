@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+  <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Valuations&quot;" withinHierarchy="true">
+    <saw:columns>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9e316c0a6af5c8cb">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;DHF&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c96b8c07f55cfecf3">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Suburb&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7f7cb8caa3690dcd" aggRule="serverAggregate">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;UPRN&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58251" oldID="kcap1564723560892_23559">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58252" oldID="kcap1564723560892_23560">
+            <saw:text>UPRN</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c801aff1cce6a8d90">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Valuation ID&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="suppress" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:columnHeading>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c3a0d48eaf1b1a0b0">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property Desc&quot;.&quot;BEDS&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true"/>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="html" captionID="kcap1564723799332_58253" oldID="kcap1564723560892_23561">
+            <saw:text>Dim Property Desc</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="html" captionID="kcap1564723799332_58254" oldID="kcap1564723560892_23562">
+            <saw:text>Beds</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c96002583b1a15f6c">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Dwelling Type&quot;</sawx:expr>
+        </saw:columnFormula>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c2e6561d9f58ec099">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Type&quot;</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58255" oldID="kcap1564723560892_23563">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58256" oldID="kcap1564723560892_23564">
+            <saw:text>Valuation Type</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c9b90fc954db723be">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">((&quot;Dim Valuation&quot;.&quot;Market Rent&quot;*52)/&quot;Dim Valuation&quot;.&quot;Capital Value&quot;)*100</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58257" oldID="kcap1564723560892_23565">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58258" oldID="kcap1564723560892_23566">
+            <saw:text>Valuation Yield</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="cc9df6fd947447388">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;Dim Valuation&quot;.&quot;Valuation ID&quot;)</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58259" oldID="kcap1564723560892_23567">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58260" oldID="kcap1564723560892_23568">
+            <saw:text>Valuation Count</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c7f0012956a174c82">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">round((((&quot;Dim Valuation&quot;.&quot;Market Rent&quot;*52)/&quot;Dim Valuation&quot;.&quot;Capital Value&quot;)*100),2) 
+
+ -  (round(avg(round(((&quot;Dim Valuation&quot;.&quot;Market Rent&quot;*52)/&quot;Dim Valuation&quot;.&quot;Capital Value&quot;)*100,2) by count(&quot;Dim Valuation&quot;.&quot;Valuation ID&quot;)),2))</sawx:expr>
+        </saw:columnFormula>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58261" oldID="kcap1564723560892_23569">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58262" oldID="kcap1564723560892_23570">
+            <saw:text>Yield Difference from Mean</saw:text>
+          </saw:caption>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="ce3ae24798b90ac31">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">case when (stddev(((&quot;Dim Valuation&quot;.&quot;Market Rent&quot;*52)/&quot;Dim Valuation&quot;.&quot;Capital Value&quot;)*100 by count(&quot;Dim Valuation&quot;.&quot;Valuation ID&quot;))) = 0 then 0 else     
+
+
+ (  round((((&quot;Dim Valuation&quot;.&quot;Market Rent&quot;*52)/&quot;Dim Valuation&quot;.&quot;Capital Value&quot;)*100),2)    -  (round(avg(round(((&quot;Dim Valuation&quot;.&quot;Market Rent&quot;*52)/&quot;Dim Valuation&quot;.&quot;Capital Value&quot;)*100,2) by count(&quot;Dim Valuation&quot;.&quot;Valuation ID&quot;)),2))) 
+
+
+  /       (round(stddev( (round ( ( (&quot;Dim Valuation&quot;.&quot;Market Rent&quot;*52)/&quot;Dim Valuation&quot;.&quot;Capital Value&quot; )*100,2))  by count(&quot;Dim Valuation&quot;.&quot;Valuation ID&quot;) ),2)  ) end</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58263" oldID="kcap1564723560892_23571">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58264" oldID="kcap1564723560892_23572">
+            <saw:text>Std Dev Difference from Mean</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c02827a8555654275">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">avg(((&quot;Dim Valuation&quot;.&quot;Market Rent&quot;*52)/&quot;Dim Valuation&quot;.&quot;Capital Value&quot;)*100 by count(&quot;Dim Valuation&quot;.&quot;Valuation ID&quot;))</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58265" oldID="kcap1564723560892_23573">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58266" oldID="kcap1564723560892_23574">
+            <saw:text>Mean Yield</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+      <saw:column xsi:type="saw:regularColumn" columnID="c98624fefe3bdb210">
+        <saw:columnFormula>
+          <sawx:expr xsi:type="sawx:sqlExpression">stddev( (round ( ( (&quot;Dim Valuation&quot;.&quot;Market Rent&quot;*52)/&quot;Dim Valuation&quot;.&quot;Capital Value&quot; )*100,2))  by count(&quot;Dim Valuation&quot;.&quot;Valuation ID&quot;) )</sawx:expr>
+        </saw:columnFormula>
+        <saw:displayFormat>
+          <saw:formatSpec suppress="repeat" wrapText="true">
+            <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="2" maxDigits="2"/>
+          </saw:formatSpec>
+        </saw:displayFormat>
+        <saw:tableHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58267" oldID="kcap1564723560892_23575">
+            <saw:text>Dim Valuation</saw:text>
+          </saw:caption>
+        </saw:tableHeading>
+        <saw:columnHeading>
+          <saw:caption fmt="text" captionID="kcap1564723799332_58268" oldID="kcap1564723560892_23576">
+            <saw:text>Std Dev</saw:text>
+          </saw:caption>
+          <saw:displayFormat>
+            <saw:formatSpec/>
+          </saw:displayFormat>
+        </saw:columnHeading>
+      </saw:column>
+    </saw:columns>
+    <saw:filter>
+      <sawx:expr xsi:type="sawx:logical" op="and">
+        <sawx:expr xsi:type="sawx:list" op="in">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Ownership&quot;</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">A</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">AM</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">H</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">HI</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">HM</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">L</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">X</sawx:expr>
+          <sawx:expr xsi:type="xsd:string">XM</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:logical" op="and">
+          <sawx:expr xsi:type="sawx:comparison" op="notNull">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Capital Value&quot;</sawx:expr>
+          </sawx:expr>
+          <sawx:expr xsi:type="sawx:comparison" op="greater">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Capital Value&quot;</sawx:expr>
+            <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+          </sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:logical" op="and">
+          <sawx:expr xsi:type="sawx:comparison" op="notNull">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Market Rent&quot;</sawx:expr>
+          </sawx:expr>
+          <sawx:expr xsi:type="sawx:comparison" op="greater">
+            <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Market Rent&quot;</sawx:expr>
+            <sawx:expr xsi:type="xsd:decimal">0</sawx:expr>
+          </sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:sql">cast(&quot;Dim Valuation&quot;.&quot;Valuation Date&quot; as date)&lt; current_date and cast(&quot;Dim Valuation&quot;.&quot;Valuation Date&quot; as date) &gt; TIMESTAMPADD(SQL_TSI_MONTH,-@{PV_MONTHS}{3},current_date)</sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;DHF&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Valuation&quot;.&quot;Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Suburb&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property&quot;.&quot;Dwelling Type&quot;</sawx:expr>
+        </sawx:expr>
+        <sawx:expr xsi:type="sawx:special" op="prompted">
+          <sawx:expr xsi:type="sawx:sqlExpression">&quot;Dim Property Desc&quot;.&quot;BEDS&quot;</sawx:expr>
+        </sawx:expr>
+      </sawx:expr>
+    </saw:filter>
+    <saw:columnOrder>
+      <saw:columnOrderRef columnID="c9e316c0a6af5c8cb" direction="ascending"/>
+      <saw:columnOrderRef columnID="c96b8c07f55cfecf3" direction="ascending"/>
+      <saw:columnOrderRef columnID="c7f0012956a174c82" direction="descending"/>
+      <saw:columnOrderRef columnID="c7f7cb8caa3690dcd" direction="ascending"/>
+      <saw:columnOrderRef columnID="c801aff1cce6a8d90" direction="ascending"/>
+    </saw:columnOrder>
+  </saw:criteria>
+  <saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="false" groupoperations="false" calcitemoperations="false" showhidesubtotal="false" showhiderunningsum="false" inclexclcolumns="true"/><saw:views currentView="0" textDelivery="compoundView!1" valueHierarchyIndent="false" parentsBefore="true" includeNewColumns="true" nullSuppress="true">
+    <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+      <saw:cvTable>
+        <saw:cvRow>
+          <saw:cvCell viewName="tableView!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+          <saw:cvCell viewName="dvtchart!1">
+            <saw:displayFormat>
+              <saw:formatSpec/>
+            </saw:displayFormat>
+          </saw:cvCell>
+        </saw:cvRow>
+      </saw:cvTable>
+    </saw:view>
+    <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+    <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="cc9df6fd947447388"/>
+            <saw:edgeLayer type="column" columnID="c02827a8555654275"/>
+            <saw:edgeLayer type="column" columnID="c98624fefe3bdb210"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c9e316c0a6af5c8cb"/>
+            <saw:edgeLayer type="column" columnID="c96b8c07f55cfecf3"/>
+            <saw:edgeLayer type="column" columnID="c7f7cb8caa3690dcd"/>
+            <saw:edgeLayer type="column" columnID="c801aff1cce6a8d90"/>
+            <saw:edgeLayer type="column" columnID="c3a0d48eaf1b1a0b0"/>
+            <saw:edgeLayer type="column" columnID="c96002583b1a15f6c"/>
+            <saw:edgeLayer type="column" columnID="c2e6561d9f58ec099"/>
+            <saw:edgeLayer type="column" columnID="c9b90fc954db723be"/>
+            <saw:edgeLayer type="column" columnID="c7f0012956a174c82"/>
+            <saw:edgeLayer type="column" columnID="ce3ae24798b90ac31"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+    <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+      <saw:display type="scatter" subtype="default" renderFormat="default" mode="online">
+        <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="2d"/>
+      </saw:display>
+      <saw:canvasFormat height="330" width="630">
+        <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default" abbreviation="default">
+          <saw:textFormat/>
+        </saw:dataLabels>
+        <saw:title mode="custom">
+          <saw:caption captionID="kcap1564723799332_58269" oldID="kcap1564723560892_23577">
+            <saw:text>Valuation Yield</saw:text>
+          </saw:caption>
+        </saw:title>
+      </saw:canvasFormat>
+      <saw:selections>
+        <saw:categories>
+          <saw:category>
+            <saw:columnRef columnID="c9e316c0a6af5c8cb"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c96b8c07f55cfecf3"/>
+          </saw:category>
+          <saw:category>
+            <saw:columnRef columnID="c96002583b1a15f6c"/>
+          </saw:category>
+        </saw:categories>
+        <saw:measures showMeasureLabelsOnCategory="false">
+          <saw:column measureType="y">
+            <saw:columnRef columnID="c9b90fc954db723be"/>
+          </saw:column>
+          <saw:column measureType="x">
+            <saw:columnRef columnID="c801aff1cce6a8d90"/>
+          </saw:column>
+        </saw:measures>
+        <saw:seriesGenerators>
+          <saw:measureLabels/>
+        </saw:seriesGenerators>
+        <saw:page/>
+      </saw:selections>
+      <saw:legendFormat position="none" transparentFill="true"/>
+      <saw:axesFormats>
+        <saw:axisFormat axis="X">
+          <saw:scale scaleValues="datarangezoom" defaultTicks="true"/>
+          <saw:scaleMarkers/>
+          <saw:labels/>
+          <saw:textFormat/>
+        </saw:axisFormat>
+        <saw:axisFormat axis="Y1">
+          <saw:scaleMarkers>
+            <saw:scaleMarker color="#CC3333" xsi:type="saw:scaleMarkerLine">
+              <saw:markerLabel>
+                <saw:title mode="custom">
+                  <saw:caption captionID="kcap1564723799332_58271" oldID="kcap1564723560892_23579">
+                    <saw:text>mean yield</saw:text>
+                  </saw:caption>
+                </saw:title>
+              </saw:markerLabel>
+              <saw:lineWidth>
+                <sawx:expr xsi:type="xsd:decimal">2</sawx:expr>
+              </saw:lineWidth>
+              <saw:linePosition>
+                <saw:columnRef columnID="c02827a8555654275"/>
+              </saw:linePosition>
+            </saw:scaleMarker>
+          </saw:scaleMarkers>
+          <saw:title mode="custom">
+            <saw:caption captionID="kcap1564723799332_58270" oldID="kcap1564723560892_23578">
+              <saw:text>Yield</saw:text>
+            </saw:caption>
+          </saw:title>
+        </saw:axisFormat>
+      </saw:axesFormats>
+    </saw:view>
+    <saw:view xsi:type="saw:tableView" name="tableView!2" scrollingEnabled="false">
+      <saw:edges>
+        <saw:edge axis="page" showColumnHeader="true"/>
+        <saw:edge axis="section"/>
+        <saw:edge axis="row" showColumnHeader="true">
+          <saw:edgeLayers>
+            <saw:edgeLayer type="column" columnID="c3a0d48eaf1b1a0b0"/>
+            <saw:edgeLayer type="column" columnID="c96002583b1a15f6c"/>
+            <saw:edgeLayer type="column" columnID="c9e316c0a6af5c8cb"/>
+            <saw:edgeLayer type="column" columnID="c62635ba6cf1a9efd"/>
+            <saw:edgeLayer type="column" columnID="c00c0e886b314adff"/>
+            <saw:edgeLayer type="column" columnID="c96b8c07f55cfecf3"/>
+            <saw:edgeLayer type="column" columnID="c9b90fc954db723be"/>
+            <saw:edgeLayer type="column" columnID="c7f7cb8caa3690dcd"/>
+            <saw:edgeLayer type="column" columnID="c801aff1cce6a8d90" aggRule="sum"/>
+            <saw:edgeLayer type="column" columnID="c3a9992ef4d9943e2"/>
+            <saw:edgeLayer type="column" columnID="cc9df6fd947447388"/>
+            <saw:edgeLayer type="column" columnID="ce982221c265f7e08"/>
+            <saw:edgeLayer type="column" columnID="c7f0012956a174c82"/>
+            <saw:edgeLayer type="column" columnID="ce3ae24798b90ac31"/>
+            <saw:edgeLayer type="column" columnID="c02827a8555654275"/>
+            <saw:edgeLayer type="column" columnID="c98624fefe3bdb210"/>
+            <saw:edgeLayer type="column" columnID="c2e6561d9f58ec099"/>
+            <saw:edgeLayer type="column" columnID="c8f75591e0b307d7d"/>
+          </saw:edgeLayers>
+        </saw:edge>
+        <saw:edge axis="column" showColumnHeader="rollover"/>
+      </saw:edges>
+    </saw:view>
+  <saw:view xsi:type="saw:noresultsview" name="noresultsview!1"><saw:detail><saw:caption fmt="html"><saw:text>&lt;style&gt;
+p{color:grey}
+,ErrorTitle{color:red;font-size:20px}
+,ResultLinksCell{display:none}
+&lt;/style&gt;  
+&lt;p style=&quot;font-size:30px&quot;&gt;No Data found based on Selection Criteria&lt;/p&gt;</saw:text></saw:caption></saw:detail></saw:view></saw:views>
+</saw:report>
